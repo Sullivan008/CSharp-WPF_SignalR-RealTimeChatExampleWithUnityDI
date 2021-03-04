@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChatExampleClient", "SignalRChatExampleClient\SignalRChatExampleClient.csproj", "{F335640E-8325-47BC-B61B-12B98E63C723}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client", "Application.Client\Application.Client.csproj", "{F335640E-8325-47BC-B61B-12B98E63C723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChatExampleServer", "SignalRChatExampleServer\SignalRChatExampleServer.csproj", "{DDE8353F-EC9C-4910-A7D6-632B830BA874}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Server", "Application.Server\Application.Server.csproj", "{DDE8353F-EC9C-4910-A7D6-632B830BA874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Models", "Application.Models\Application.Models.csproj", "{50F2C707-713A-4000-9ED1-9670E91D41B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DDE8353F-EC9C-4910-A7D6-632B830BA874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE8353F-EC9C-4910-A7D6-632B830BA874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE8353F-EC9C-4910-A7D6-632B830BA874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F2C707-713A-4000-9ED1-9670E91D41B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F2C707-713A-4000-9ED1-9670E91D41B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F2C707-713A-4000-9ED1-9670E91D41B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F2C707-713A-4000-9ED1-9670E91D41B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
