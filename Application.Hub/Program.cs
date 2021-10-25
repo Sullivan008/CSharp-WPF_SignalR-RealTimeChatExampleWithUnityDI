@@ -5,6 +5,8 @@ using Application.Utilities.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 
 namespace Application.Hub
 {
@@ -26,6 +28,11 @@ namespace Application.Hub
 
                     builder.AddInMemoryCollection(new[] { environment })
                         .AddEnvironmentVariables();
+                })
+                .ConfigureLogging((context, logging) =>
+                {
+                    logging.SetMinimumLevel(LogLevel.Trace);
+                    logging.AddNLog(context.Configuration);
                 })
                 .ConfigureWebHostDefaults(builder =>
                 {
