@@ -1,14 +1,10 @@
-﻿using Application.Client.Windows.Main.ViewModels.Interfaces;
-
-namespace Application.Client.Windows.Main
+﻿namespace Application.Client.Windows.Main
 {
     public partial class MainWindow
     {
-        public MainWindow(IMainWindowViewModel mainWindowViewModel)
+        public MainWindow()
         {
             InitializeComponent();
-
-            DataContext = mainWindowViewModel;
         }
     }
 }

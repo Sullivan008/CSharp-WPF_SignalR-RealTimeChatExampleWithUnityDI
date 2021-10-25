@@ -1,54 +1,130 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Windows;
 using System.Windows.Threading;
-using Application.Client.Container;
-using Application.Client.Container.Unity;
-using Application.Client.Core.Environment.Enums;
-using Application.Client.Core.Environment.Services.Interfaces;
-using Application.Client.Core.Exceptions.Models;
+using Application.Client.Dialogs.MessageDialog.Extensions.DependencyInjection;
+using Application.Client.Dialogs.MessageDialog.Interfaces;
+using Application.Client.Dialogs.MessageDialog.Models;
+using Application.Client.Infrastructure.Environment.Enums;
+using Application.Client.Infrastructure.ErrorHandling.Constants;
+using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
+using Application.Client.Infrastructure.ErrorHandling.Models;
+using Application.Client.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Main;
+using Application.Utilities.Extensions;
+using Application.Utilities.Guard;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 
 namespace Application.Client
 {
     public partial class App
     {
-        private IEnvironmentService _environmentService;
+        private readonly IHost _host;
 
-        protected override void OnStartup(StartupEventArgs e)
+        public App()
         {
-            base.OnStartup(e);
+            _host = new HostBuilder()
+                .ConfigureHostConfiguration(builder =>
+                {
+                    KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
+                        Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
 
-            log4net.Config.XmlConfigurator.Configure();
-
-            Bootstrapper.Init();
-
-            _environmentService = DependencyInjector.Retrieve<IEnvironmentService>();
-
-            DependencyInjector.Retrieve<MainWindow>().Show();
+                    builder.AddInMemoryCollection(new[] { environment })
+                           .AddEnvironmentVariables();
+                })
+                .ConfigureAppConfiguration(builder =>
+                {
+                    builder.SetBasePath(Directory.GetCurrentDirectory())
+                           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                })
+                .ConfigureServices(ConfigureServices)
+                .ConfigureLogging((context, logging) =>
+                {
+                    logging.ClearProviders();
+                    logging.SetMinimumLevel(LogLevel.Trace);
+                    logging.AddNLog(context.Configuration);
+                })
+                .Build();
         }
 
-        private void App_OnStartup(object sender, StartupEventArgs e)
+        protected override async void OnStartup(StartupEventArgs e)
         {
+            await _host.StartAsync();
+
+            ConfigureDataBindingErrorListener();
+
             Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
+
+            MainWindow mainWindow = _host.Services.GetRequiredService<MainWindow>();
+
+            Guard.ThrowIfNull(mainWindow, nameof(mainWindow));
+
+            mainWindow.Show();
+
+            base.OnStartup(e);
+        }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            using (_host)
+            {
+                await _host.StopAsync(TimeSpan.FromSeconds(5));
+            }
+
+            base.OnExit(e);
+        }
+
+        private static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMainWindow();
+
+            services.AddMessageDialog();
+        }
+
+        private static void ConfigureDataBindingErrorListener()
+        {
+            PresentationTraceSources.Refresh();
+            PresentationTraceSources.DataBindingSource.Switch.Level = SourceLevels.Error;
+            PresentationTraceSources.DataBindingSource.Listeners.Add(new BindingErrorTraceListener());
         }
 
         private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            EnvironmentType environmentType = _environmentService.GetEnvironmentType();
-            ErrorModel errorModel = new ErrorModel(environmentType, e.Exception);
+            IHostEnvironment hostEnvironment = _host.Services.GetRequiredService<IHostEnvironment>();
+            ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
+
+            logger.LogError(e.Exception, e.Exception.Message);
+
+            ErrorModel errorModel = new()
+            {
+                Message = e.Exception.Message,
+                Exception = hostEnvironment.IsDevelopment() ? e.Exception.ToString() : ErrorConstants.NON_DEVELOPMENT_EXCEPTION_MESSAGE
+            };
 
             ShowUnhandledException(errorModel);
 
             e.Handled = true;
         }
 
-        private static void ShowUnhandledException(ErrorModel errorModel)
+        private async void ShowUnhandledException(ErrorModel errorModel)
         {
-            string errorMessage = $"An application error occured.\n\n{errorModel.Message}.\n\n{errorModel.Exception}";
+            IMessageDialog messageDialog = _host.Services.GetRequiredService<IMessageDialog>();
 
-            if (MessageBox.Show(errorMessage, "Application Error", MessageBoxButton.OK, MessageBoxImage.Error) == MessageBoxResult.OK)
+            await messageDialog.ShowDialogAsync(new MessageDialogOptions
             {
-                Current.Shutdown();
-            }
+                Content = $"An application error occurred.\n\n{errorModel.Message}.\n\n{errorModel.Exception}",
+                Title = "Application Error",
+                Button = MessageBoxButton.OK,
+                Icon = MessageBoxImage.Error
+            });
+
+            Current.Shutdown();
         }
     }
 }
