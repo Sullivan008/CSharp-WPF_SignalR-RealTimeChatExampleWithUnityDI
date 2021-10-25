@@ -1,0 +1,23 @@
+<Project>
+	<PropertyGroup>
+		<VersionMajor>$([System.DateTime]::Now.ToString("yy"))</VersionMajor>
+		<VersionMinor>$([System.DateTime]::Now.ToString("MM"))</VersionMinor>
+		<VersionPatch Condition="'$(VersionPatch)' == ''">$([System.DateTime]::UtcNow.Date.Subtract($([System.DateTime]::Parse("2000-01-01"))).TotalDays)</VersionPatch>
+		<VersionRevision Condition="'$(VersionRevision)' == ''">$([System.Math]::Floor($([MSBuild]::Divide($([System.DateTime]::UtcNow.TimeOfDay.TotalSeconds), 1.32))))</VersionRevision>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+		<GenerateAssemblyInformationalVersionAttribute>False</GenerateAssemblyInformationalVersionAttribute>
+		<FileVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</FileVersion>
+		<AssemblyVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</AssemblyVersion>
+		<Product>SignalR Chat Example</Product>
+		<Copyright>Copyright © Péter Kozák $([System.DateTime]::UtcNow.ToString("yyyy")) - All Rights Reserved</Copyright>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<LangVersion>9.0</LangVersion>
+	</PropertyGroup>
+</Project>
