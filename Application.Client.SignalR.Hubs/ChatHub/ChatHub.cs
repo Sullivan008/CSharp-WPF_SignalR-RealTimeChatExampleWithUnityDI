@@ -28,7 +28,7 @@ namespace Application.Client.SignalR.Hubs.ChatHub
             _hubConnection = new HubConnectionBuilder()
                 .AddJsonProtocol()
                 .WithUrl($"{hubConfigurations.Value.BaseUrl}/{nameof(ChatHub)}")
-                .WithAutomaticReconnect(new []{new TimeSpan(0,0,0,0,_hubConfigurations.Value.ReconnectTimeInterval!.Value)})
+                .WithAutomaticReconnect(new[] {TimeSpan.Zero, TimeSpan.Zero, TimeSpan.Zero, TimeSpan.FromMilliseconds(_hubConfigurations.Value.ReconnectTimeInterval!.Value)})
                 .Build();
             
             Task.Run(ConnectAsync).Wait();
