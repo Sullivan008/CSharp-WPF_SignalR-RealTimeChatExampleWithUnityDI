@@ -12,6 +12,8 @@ using Application.Client.Infrastructure.ErrorHandling.Constants;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.Infrastructure.ErrorHandling.Models;
 using Application.Client.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
+using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Main;
 using Application.Utilities.Extensions;
 using Application.Utilities.Guard;
@@ -41,9 +43,13 @@ namespace Application.Client
                 .ConfigureAppConfiguration(builder =>
                 {
                     builder.SetBasePath(Directory.GetCurrentDirectory())
-                           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                           .AddJsonFile("signalrsettings.json", optional: false, reloadOnChange: true);
                 })
-                .ConfigureServices(ConfigureServices)
+                .ConfigureServices((context, services) =>
+                {
+                    ConfigureServices(context.Configuration, services);
+                })
                 .ConfigureLogging((context, logging) =>
                 {
                     logging.ClearProviders();
@@ -80,8 +86,11 @@ namespace Application.Client
             base.OnExit(e);
         }
 
-        private static void ConfigureServices(IServiceCollection services)
+        private void ConfigureServices(IConfiguration configuration, IServiceCollection services)
         {
+            services.AddHubConfigurations(configuration);
+            services.AddChatHub();
+
             services.AddMainWindow();
 
             services.AddMessageDialog();
