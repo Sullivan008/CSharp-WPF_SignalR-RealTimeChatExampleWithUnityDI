@@ -17,7 +17,7 @@ namespace Application.Client.SignalR.Hubs.ChatHub
         private readonly HubConnection _hubConnection;
 
         private readonly IOptions<HubConfigurations> _hubConfigurations;
-        
+
         public bool IsConnected => _hubConnection.State == HubConnectionState.Connected;
 
         public ChatHub(ILogger<ChatHub> logger, IOptions<HubConfigurations> hubConfigurations)
@@ -28,8 +28,12 @@ namespace Application.Client.SignalR.Hubs.ChatHub
             _hubConnection = new HubConnectionBuilder()
                 .AddJsonProtocol()
                 .WithUrl($"{hubConfigurations.Value.BaseUrl}/{nameof(ChatHub)}")
-                .WithAutomaticReconnect(new[] {TimeSpan.Zero, TimeSpan.Zero, TimeSpan.Zero, TimeSpan.FromMilliseconds(_hubConfigurations.Value.ReconnectTimeInterval!.Value)})
+                .WithAutomaticReconnect()
                 .Build();
+
+            _hubConnection.Closed += OnClosedHubConnection;
+            _hubConnection.Reconnected += OnReconnectedHubConnection;
+            _hubConnection.Reconnecting += OnReconnectingHubConnection;
             
             Task.Run(ConnectAsync).Wait();
         }
@@ -44,13 +48,34 @@ namespace Application.Client.SignalR.Hubs.ChatHub
 
                     break;
                 }
-                catch(HttpRequestException ex)
+                catch (HttpRequestException ex)
                 {
                     _logger.LogError(ex, ex.Message);
 
                     await Task.Delay(_hubConfigurations.Value.ReconnectTimeInterval!.Value);
                 }
             }
+        }
+
+        private async Task OnClosedHubConnection(Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+
+            await ConnectAsync();
+
+            await Task.CompletedTask;
+        }
+
+        private async Task OnReconnectingHubConnection(Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+
+            await Task.CompletedTask;
+        }
+
+        private async Task OnReconnectedHubConnection(string arg)
+        {
+            await Task.CompletedTask;
         }
     }
 }

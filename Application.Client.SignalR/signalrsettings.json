@@ -1,6 +1,6 @@
 {
   "HUB_CONFIGURATIONS": {
     "BaseUrl": "http://localhost:5000",
-    "ReconnectTimeInterval":  1000 
+    "ReconnectTimeInterval":  30000 
   }
 }
