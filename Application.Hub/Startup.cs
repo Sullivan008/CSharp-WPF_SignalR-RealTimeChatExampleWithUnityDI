@@ -34,7 +34,8 @@ namespace Application.Hub
         {
             services.Configure<HubConfigurations>(_configuration.GetSection(ConfigurationType.HubConfigurations.GetEnumMemberAttrValue()));
 
-            services.AddSignalR();
+            services.AddSignalR()
+                    .AddNewtonsoftJsonProtocol();
         }
     }
 }
