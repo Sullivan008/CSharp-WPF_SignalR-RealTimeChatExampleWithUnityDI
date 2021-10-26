@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Application.Hub.Infrastructure.Environment.Enums;
 using Application.Utilities.Extensions;
+using Application.Web.Hub.Infrastructure.Environment.Enums;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 
-namespace Application.Hub
+namespace Application.Web.Hub
 {
     public class Program
     {

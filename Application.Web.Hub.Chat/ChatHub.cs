@@ -1,6 +1,6 @@
-﻿using Application.Hub.Chat.Interfaces;
+﻿using Application.Web.Hub.Chat.Interfaces;
 
-namespace Application.Hub.Chat
+namespace Application.Web.Hub.Chat
 {
     public class ChatHub : Microsoft.AspNetCore.SignalR.Hub<IChatHub>
     { }

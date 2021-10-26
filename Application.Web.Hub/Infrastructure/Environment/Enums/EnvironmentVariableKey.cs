@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Application.Hub.Infrastructure.Environment.Enums
+namespace Application.Web.Hub.Infrastructure.Environment.Enums
 {
     public enum EnvironmentVariableKey
     {

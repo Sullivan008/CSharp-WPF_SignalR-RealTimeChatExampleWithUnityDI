@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Application.Hub.Chat\Application.Hub.Chat.csproj" />
+		<ProjectReference Include="..\Application.Web.Hub.Chat\Application.Web.Hub.Chat.csproj" />
 		<ProjectReference Include="..\Application.Utilities\Application.Utilities.csproj" />
 	</ItemGroup>
 
