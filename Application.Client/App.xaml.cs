@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
+using Application.Client.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Client.Dialogs.MessageDialog.Extensions.DependencyInjection;
 using Application.Client.Dialogs.MessageDialog.Interfaces;
 using Application.Client.Dialogs.MessageDialog.Models;
@@ -88,6 +89,9 @@ namespace Application.Client
 
         private void ConfigureServices(IConfiguration configuration, IServiceCollection services)
         {
+            services.AddMemoryCache();
+            services.AddCacheRepositories();
+
             services.AddHubConfigurations(configuration);
             services.AddChatHub();
 

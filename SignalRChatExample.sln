@@ -30,6 +30,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR", "Application.Client.SignalR\Application.Client.SignalR.csproj", "{4A12AF32-9AFA-4C97-AE39-14FD39A72605}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Cache", "Application.Client.Cache\Application.Client.Cache.csproj", "{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Web.Cache", "Application.Web.Cache\Application.Web.Cache.csproj", "{D75E4768-405D-42EB-9961-C216E621A2DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +84,14 @@ Global
 		{4A12AF32-9AFA-4C97-AE39-14FD39A72605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A12AF32-9AFA-4C97-AE39-14FD39A72605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A12AF32-9AFA-4C97-AE39-14FD39A72605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75E4768-405D-42EB-9961-C216E621A2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75E4768-405D-42EB-9961-C216E621A2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75E4768-405D-42EB-9961-C216E621A2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75E4768-405D-42EB-9961-C216E621A2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
