@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Application.Client.Cache.Infrastructure.Enums;
-using Application.Client.Cache.Infrastructure.Models.Interfaces;
-using Application.Client.Cache.Infrastructure.Models.Options;
-using Application.Client.Cache.Infrastructure.Services.Interfaces;
 using Application.Utilities.Extensions;
+using Application.Web.Cache.Infrastructure.Enums;
+using Application.Web.Cache.Infrastructure.Models.Interfaces;
+using Application.Web.Cache.Infrastructure.Models.Options;
+using Application.Web.Cache.Infrastructure.Services.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Application.Client.Cache.Infrastructure.Services
+namespace Application.Web.Cache.Infrastructure.Services
 {
     public class ApplicationCacheService : IApplicationCacheService
     {

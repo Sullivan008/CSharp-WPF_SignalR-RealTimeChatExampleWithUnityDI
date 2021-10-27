@@ -1,4 +1,5 @@
-﻿using Application.Client.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
+﻿using Application.Web.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
+using Application.Web.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Web.Hub.Chat;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,6 +25,7 @@ namespace Application.Web.Hub
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
+            services.AddCacheServices();
             services.AddCacheRepositories();
 
             services.AddSignalR()

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Application.Client.Cache.Infrastructure.Repository.Interfaces;
+using Application.Web.Cache.Infrastructure.Repository.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.Cache.Infrastructure.Repository.Extensions.DependencyInjection
+namespace Application.Web.Cache.Infrastructure.Repository.Extensions.DependencyInjection
 {
     public static class RepositoryServiceCollectionExtension
     {

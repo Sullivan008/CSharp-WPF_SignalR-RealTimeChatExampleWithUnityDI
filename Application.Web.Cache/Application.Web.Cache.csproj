@@ -14,9 +14,4 @@
 		<ProjectReference Include="..\Application.Utilities\Application.Utilities.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-    <Folder Include="DataModels\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

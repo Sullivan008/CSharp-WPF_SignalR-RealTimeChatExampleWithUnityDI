@@ -1,7 +1,7 @@
-﻿using Application.Client.Cache.Infrastructure.Services.Interfaces;
+﻿using Application.Web.Cache.Infrastructure.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.Cache.Infrastructure.Services.Extensions.DependencyInjection
+namespace Application.Web.Cache.Infrastructure.Services.Extensions.DependencyInjection
 {
     public static class ServicesServiceCollectionExtension
     {

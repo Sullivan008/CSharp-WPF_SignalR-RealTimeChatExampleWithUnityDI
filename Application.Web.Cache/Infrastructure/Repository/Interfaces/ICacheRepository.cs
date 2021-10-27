@@ -1,6 +1,6 @@
-﻿using Application.Client.Cache.Infrastructure.Models.Interfaces;
+﻿using Application.Web.Cache.Infrastructure.Models.Interfaces;
 
-namespace Application.Client.Cache.Infrastructure.Repository.Interfaces
+namespace Application.Web.Cache.Infrastructure.Repository.Interfaces
 {
     public interface ICacheRepository<TCacheDataModel> where TCacheDataModel : ICacheDataModel
     {
