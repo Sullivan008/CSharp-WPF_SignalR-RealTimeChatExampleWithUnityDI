@@ -57,23 +57,29 @@ namespace Application.Client.SignalR.Hubs.ChatHub
             }
         }
 
-        private async Task OnClosedHubConnection(Exception ex)
+        private async Task OnClosedHubConnection(Exception? ex)
         {
-            _logger.LogError(ex, ex.Message);
+            if (ex != null)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
 
             await ConnectAsync();
 
             await Task.CompletedTask;
         }
 
-        private async Task OnReconnectingHubConnection(Exception ex)
+        private async Task OnReconnectingHubConnection(Exception? ex)
         {
-            _logger.LogError(ex, ex.Message);
+            if (ex != null)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
 
             await Task.CompletedTask;
         }
 
-        private async Task OnReconnectedHubConnection(string arg)
+        private async Task OnReconnectedHubConnection(string? arg)
         {
             await Task.CompletedTask;
         }
