@@ -1,16 +1,13 @@
-﻿using System;
+﻿namespace Application.Client.Infrastructure.ErrorHandling.DataBinding.Exceptions;
 
-namespace Application.Client.Infrastructure.ErrorHandling.DataBinding.Exceptions
+public class DataBindingErrorException : Exception
 {
-    public class DataBindingErrorException : Exception
-    {
-        public DataBindingErrorException()
-        { }
+    public DataBindingErrorException()
+    { }
 
-        public DataBindingErrorException(string? message) : base(message)
-        { }
+    public DataBindingErrorException(string? message) : base(message)
+    { }
 
-        public DataBindingErrorException(string? message, Exception innerException) : base(message, innerException)
-        { }
-    }
+    public DataBindingErrorException(string? message, Exception innerException) : base(message, innerException)
+    { }
 }

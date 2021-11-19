@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
@@ -24,120 +22,119 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 
-namespace Application.Client
+namespace Application.Client;
+
+public partial class App
 {
-    public partial class App
+    private readonly IHost _host;
+
+    public App()
     {
-        private readonly IHost _host;
-
-        public App()
-        {
-            _host = new HostBuilder()
-                .ConfigureHostConfiguration(builder =>
-                {
-                    KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
-                        Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
-
-                    builder.AddInMemoryCollection(new[] { environment })
-                           .AddEnvironmentVariables();
-                })
-                .ConfigureAppConfiguration(builder =>
-                {
-                    builder.SetBasePath(Directory.GetCurrentDirectory())
-                           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                           .AddJsonFile("signalrsettings.json", optional: false, reloadOnChange: true);
-                })
-                .ConfigureServices((context, services) =>
-                {
-                    ConfigureServices(context.Configuration, services);
-                })
-                .ConfigureLogging((context, logging) =>
-                {
-                    logging.ClearProviders();
-                    logging.SetMinimumLevel(LogLevel.Trace);
-                    logging.AddNLog(context.Configuration);
-                })
-                .Build();
-        }
-
-        protected override async void OnStartup(StartupEventArgs e)
-        {
-            await _host.StartAsync();
-
-            ConfigureDataBindingErrorListener();
-
-            Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
-
-            MainWindow mainWindow = _host.Services.GetRequiredService<MainWindow>();
-
-            Guard.ThrowIfNull(mainWindow, nameof(mainWindow));
-
-            mainWindow.Show();
-
-            base.OnStartup(e);
-        }
-
-        protected override async void OnExit(ExitEventArgs e)
-        {
-            using (_host)
+        _host = new HostBuilder()
+            .ConfigureHostConfiguration(configurationBuilder =>
             {
-                await _host.StopAsync(TimeSpan.FromSeconds(5));
-            }
+                KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
+                    Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
 
-            base.OnExit(e);
-        }
-
-        private void ConfigureServices(IConfiguration configuration, IServiceCollection services)
-        {
-            services.AddMemoryCache();
-            services.AddCacheRepositories();
-
-            services.AddHubConfigurations(configuration);
-            services.AddChatHub();
-
-            services.AddMainWindow();
-
-            services.AddMessageDialog();
-        }
-
-        private static void ConfigureDataBindingErrorListener()
-        {
-            PresentationTraceSources.Refresh();
-            PresentationTraceSources.DataBindingSource.Switch.Level = SourceLevels.Error;
-            PresentationTraceSources.DataBindingSource.Listeners.Add(new BindingErrorTraceListener());
-        }
-
-        private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
-        {
-            IHostEnvironment hostEnvironment = _host.Services.GetRequiredService<IHostEnvironment>();
-            ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
-
-            logger.LogError(e.Exception, e.Exception.Message);
-
-            ErrorModel errorModel = new()
+                configurationBuilder.AddInMemoryCollection(new[] { environment })
+                                    .AddEnvironmentVariables();
+            })
+            .ConfigureAppConfiguration(configurationBuilder =>
             {
-                Message = e.Exception.Message,
-                Exception = hostEnvironment.IsDevelopment() ? e.Exception.ToString() : ErrorConstants.NON_DEVELOPMENT_EXCEPTION_MESSAGE
-            };
-
-            ShowUnhandledException(errorModel);
-
-            e.Handled = true;
-        }
-
-        private async void ShowUnhandledException(ErrorModel errorModel)
-        {
-            IMessageDialog messageDialog = _host.Services.GetRequiredService<IMessageDialog>();
-
-            await messageDialog.ShowDialogAsync(new MessageDialogOptions
+                configurationBuilder.SetBasePath(Directory.GetCurrentDirectory())
+                                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                                    .AddJsonFile("signalrsettings.json", optional: false, reloadOnChange: true);
+            })
+            .ConfigureServices((hostBuilderContext, serviceCollection) =>
             {
-                Content = $"An application error occurred.\n\n{errorModel.Message}.\n\n{errorModel.Exception}",
-                Title = "Application Error",
-                Button = MessageBoxButton.OK,
-                Icon = MessageBoxImage.Error
-            });
+                ConfigureServices(hostBuilderContext.Configuration, serviceCollection);
+            })
+            .ConfigureLogging((hostBuilderContext, loggingBuilder) =>
+            {
+                loggingBuilder.ClearProviders();
+                loggingBuilder.SetMinimumLevel(LogLevel.Trace);
+                loggingBuilder.AddNLog(hostBuilderContext.Configuration);
+            })
+            .Build();
+    }
 
-            Current.Shutdown();
+    protected override async void OnStartup(StartupEventArgs eventArgs)
+    {
+        await _host.StartAsync();
+
+        ConfigureDataBindingErrorListener();
+
+        Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
+
+        MainWindow mainWindow = _host.Services.GetRequiredService<MainWindow>();
+
+        Guard.ThrowIfNull(mainWindow, nameof(mainWindow));
+
+        mainWindow.Show();
+
+        base.OnStartup(eventArgs);
+    }
+
+    protected override async void OnExit(ExitEventArgs eventArgs)
+    {
+        using (_host)
+        {
+            await _host.StopAsync(TimeSpan.FromSeconds(5));
         }
+
+        base.OnExit(eventArgs);
+    }
+
+    private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddMemoryCache();
+        serviceCollection.AddCacheRepositories();
+
+        serviceCollection.AddHubConfigurations(configuration);
+        serviceCollection.AddChatHub();
+
+        serviceCollection.AddMainWindow();
+
+        serviceCollection.AddMessageDialog();
+    }
+
+    private static void ConfigureDataBindingErrorListener()
+    {
+        PresentationTraceSources.Refresh();
+        PresentationTraceSources.DataBindingSource.Switch.Level = SourceLevels.Error;
+        PresentationTraceSources.DataBindingSource.Listeners.Add(new BindingErrorTraceListener());
+    }
+
+    private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs eventArgs)
+    {
+        IHostEnvironment hostEnvironment = _host.Services.GetRequiredService<IHostEnvironment>();
+        ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
+
+        logger.LogError(eventArgs.Exception, eventArgs.Exception.Message);
+
+        ErrorModel errorModel = new()
+        {
+            Message = eventArgs.Exception.Message,
+            Exception = hostEnvironment.IsDevelopment() ? eventArgs.Exception.ToString() : ErrorConstants.NON_DEVELOPMENT_EXCEPTION_MESSAGE
+        };
+
+        ShowUnhandledException(errorModel);
+
+        eventArgs.Handled = true;
+    }
+
+    private async void ShowUnhandledException(ErrorModel errorModel)
+    {
+        IMessageDialog messageDialog = _host.Services.GetRequiredService<IMessageDialog>();
+
+        await messageDialog.ShowDialogAsync(new MessageDialogOptions
+        {
+            Content = $"An application error occurred.\n\n{errorModel.Message}.\n\n{errorModel.Exception}",
+            Title = "Application Error",
+            Button = MessageBoxButton.OK,
+            Icon = MessageBoxImage.Error
+        });
+
+        Current.Shutdown();
     }
 }

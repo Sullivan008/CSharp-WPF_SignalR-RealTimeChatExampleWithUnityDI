@@ -1,10 +1,9 @@
-﻿namespace Application.Client.Windows.Main
+﻿namespace Application.Client.Windows.Main;
+
+public partial class MainWindow
 {
-    public partial class MainWindow
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
