@@ -1,32 +1,31 @@
 ﻿using Application.Utilities.Guard;
 using Application.Web.Cache.Infrastructure.Models.Interfaces;
 
-namespace Application.Web.Cache.DataModels.ChatHub.Participant
+namespace Application.Web.Cache.DataModels.ChatHub.Participant;
+
+public class ParticipantDataModel : ICacheDataModel
 {
-    public class ParticipantDataModel : ICacheDataModel
+    private string? _connectionId;
+    public string ConnectionId
     {
-        private string? _connectionId;
-        public string ConnectionId
+        get
         {
-            get
-            {
-                Guard.ThrowIfNullOrWhitespace(_connectionId, nameof(ConnectionId));
+            Guard.ThrowIfNullOrWhitespace(_connectionId, nameof(ConnectionId));
 
-                return _connectionId!;
-            }
-            set => _connectionId = value;
+            return _connectionId!;
         }
+        set => _connectionId = value;
+    }
 
-        private string? _nickName;
-        public string NickName
+    private string? _nickName;
+    public string NickName
+    {
+        get
         {
-            get
-            {
-                Guard.ThrowIfNullOrWhitespace(_nickName, nameof(NickName));
+            Guard.ThrowIfNullOrWhitespace(_nickName, nameof(NickName));
 
-                return _nickName!;
-            }
-            set => _nickName = value;
+            return _nickName!;
         }
+        set => _nickName = value;
     }
 }

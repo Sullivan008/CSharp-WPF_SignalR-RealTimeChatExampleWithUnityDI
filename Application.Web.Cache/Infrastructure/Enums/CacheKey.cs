@@ -1,10 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Application.Web.Cache.Infrastructure.Enums
+namespace Application.Web.Cache.Infrastructure.Enums;
+
+public enum CacheKey
 {
-    public enum CacheKey
-    {
-        [EnumMember(Value = "CHAT_HUB")]
-        ChatHub = 1
-    }
+    [EnumMember(Value = "CHAT_HUB")]
+    ChatHub = 1
 }

@@ -1,11 +1,10 @@
-﻿using System.Collections.Concurrent;
-using Application.Web.Cache.DataModels.ChatHub.Participant;
+﻿using Application.Web.Cache.DataModels.ChatHub.Participant;
 using Application.Web.Cache.Infrastructure.Models.Interfaces;
+using System.Collections.Concurrent;
 
-namespace Application.Web.Cache.DataModels.ChatHub
+namespace Application.Web.Cache.DataModels.ChatHub;
+
+public class ChatHubDataModel : ICacheDataModel
 {
-    public class ChatHubDataModel : ICacheDataModel
-    {
-        public ConcurrentDictionary<string, ParticipantDataModel> Participants = new();
-    }
+    public ConcurrentDictionary<string, ParticipantDataModel> Participants = new();
 }
