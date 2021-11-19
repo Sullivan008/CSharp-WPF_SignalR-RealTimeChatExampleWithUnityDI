@@ -1,10 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Application.Web.Hub.Infrastructure.Environment.Enums
+namespace Application.Web.Hub.Infrastructure.Environment.Enums;
+
+public enum EnvironmentVariableKey
 {
-    public enum EnvironmentVariableKey
-    {
-        [EnumMember(Value = "ASPNETCORE_ENVIRONMENT")]
-        AspNetCoreEnvironment
-    }
+    [EnumMember(Value = "ASPNETCORE_ENVIRONMENT")]
+    AspNetCoreEnvironment
 }
