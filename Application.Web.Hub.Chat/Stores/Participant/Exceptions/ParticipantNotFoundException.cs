@@ -1,16 +1,13 @@
-﻿using System;
+﻿namespace Application.Web.Hub.Chat.Stores.Participant.Exceptions;
 
-namespace Application.Web.Hub.Chat.Stores.Participant.Exceptions
+public class ParticipantNotFoundException : Exception
 {
-    public class ParticipantNotFoundException : Exception
-    {
-        public ParticipantNotFoundException()
-        { }
+    public ParticipantNotFoundException()
+    { }
 
-        public ParticipantNotFoundException(string message) : base(message)
-        { }
+    public ParticipantNotFoundException(string message) : base(message)
+    { }
 
-        public ParticipantNotFoundException(string message, Exception innerException) : base(message, innerException)
-        { }
-    }
+    public ParticipantNotFoundException(string message, Exception innerException) : base(message, innerException)
+    { }
 }

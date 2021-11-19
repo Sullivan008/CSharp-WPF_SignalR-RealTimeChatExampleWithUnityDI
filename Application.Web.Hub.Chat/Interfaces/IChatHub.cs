@@ -1,5 +1,4 @@
-﻿namespace Application.Web.Hub.Chat.Interfaces
-{
-    public interface IChatHub
-    { }
-}
+﻿namespace Application.Web.Hub.Chat.Interfaces;
+
+public interface IChatHub
+{ }
