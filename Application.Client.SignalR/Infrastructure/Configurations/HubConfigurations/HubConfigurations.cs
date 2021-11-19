@@ -1,9 +1,8 @@
-﻿namespace Application.Client.SignalR.Infrastructure.Configurations.HubConfigurations
-{
-    public class HubConfigurations
-    {
-        public string? BaseUrl { get; init; }
+﻿namespace Application.Client.SignalR.Infrastructure.Configurations.HubConfigurations;
 
-        public int? ReconnectTimeInterval { get; init; }
-    }
+public class HubConfigurations
+{
+    public string? BaseUrl { get; init; }
+
+    public int? ReconnectTimeInterval { get; init; }
 }

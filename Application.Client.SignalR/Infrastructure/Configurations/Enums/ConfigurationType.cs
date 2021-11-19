@@ -1,10 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Application.Client.SignalR.Infrastructure.Configurations.Enums
+namespace Application.Client.SignalR.Infrastructure.Configurations.Enums;
+
+public enum ConfigurationType
 {
-    public enum ConfigurationType
-    {
-        [EnumMember(Value = "HUB_CONFIGURATIONS")]
-        HubConfigurations = 1
-    }
+    [EnumMember(Value = "HUB_CONFIGURATIONS")]
+    HubConfigurations = 1
 }
