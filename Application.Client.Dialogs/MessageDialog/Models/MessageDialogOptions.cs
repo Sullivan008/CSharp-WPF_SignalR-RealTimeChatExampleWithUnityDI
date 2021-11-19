@@ -1,49 +1,48 @@
-﻿using System.Windows;
-using Application.Utilities.Guard;
+﻿using Application.Utilities.Guard;
+using System.Windows;
 
-namespace Application.Client.Dialogs.MessageDialog.Models
+namespace Application.Client.Dialogs.MessageDialog.Models;
+
+public class MessageDialogOptions
 {
-    public class MessageDialogOptions
+    public MessageBoxImage? Icon { get; init; }
+
+    private readonly MessageBoxButton? _button;
+    public MessageBoxButton Button
     {
-        public MessageBoxImage? Icon { get; init; }
-
-        private readonly MessageBoxButton? _button;
-        public MessageBoxButton Button
+        get
         {
-            get
-            {
-                Guard.ThrowIfNull(_button, nameof(Button));
+            Guard.ThrowIfNull(_button, nameof(Button));
 
-                return _button!.Value;
-            }
-
-            init => _button = value;
+            return _button!.Value;
         }
+
+        init => _button = value;
+    }
         
-        private readonly string? _title;
-        public string Title
+    private readonly string? _title;
+    public string Title
+    {
+        get
         {
-            get
-            {
-                Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
+            Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
 
-                return _title!;
-            }
-
-            init => _title = value;
+            return _title!;
         }
 
-        private readonly string? _content;
-        public string Content
-        {
-            get
-            {
-                Guard.ThrowIfNullOrWhitespace(_content, nameof(Content));
+        init => _title = value;
+    }
 
-                return _content!;
-            }
+    private readonly string? _content;
+    public string Content
+    {
+        get
+        {
+            Guard.ThrowIfNullOrWhitespace(_content, nameof(Content));
+
+            return _content!;
+        }
             
-            init => _content = value;
-        }
+        init => _content = value;
     }
 }

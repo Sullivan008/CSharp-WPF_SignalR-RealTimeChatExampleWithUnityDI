@@ -1,21 +1,20 @@
 ﻿using Application.Client.Dialogs.MessageDialog.Enums;
 using Application.Utilities.Guard;
 
-namespace Application.Client.Dialogs.MessageDialog.Models
+namespace Application.Client.Dialogs.MessageDialog.Models;
+
+public class MessageDialogResult
 {
-    public class MessageDialogResult
+    private readonly MessageDialogResultType? _messageDialogResultType;
+    public MessageDialogResultType MessageDialogResultType
     {
-        private readonly MessageDialogResultType? _messageDialogResultType;
-        public MessageDialogResultType MessageDialogResultType
+        get
         {
-            get
-            {
-                Guard.ThrowIfNull(_messageDialogResultType, nameof(MessageDialogResultType));
+            Guard.ThrowIfNull(_messageDialogResultType, nameof(MessageDialogResultType));
 
-                return _messageDialogResultType!.Value;
-            }
-
-            init => _messageDialogResultType = value;
+            return _messageDialogResultType!.Value;
         }
+
+        init => _messageDialogResultType = value;
     }
 }
