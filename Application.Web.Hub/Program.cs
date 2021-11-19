@@ -13,39 +13,39 @@ using NLog.Extensions.Logging;
 
 IHostBuilder hostBuilder = 
     Host.CreateDefaultBuilder(args)
-        .ConfigureHostConfiguration(builder =>
+        .ConfigureHostConfiguration(configurationBuilder =>
         {
             KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
                 Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
 
-            builder.AddInMemoryCollection(new[] { environment })
-                .AddEnvironmentVariables();
+            configurationBuilder.AddInMemoryCollection(new[] { environment })
+                                .AddEnvironmentVariables();
         })
-        .ConfigureLogging((context, logging) =>
+        .ConfigureLogging((hostBuilderContext, loggingBuilder) =>
         {
-            logging.SetMinimumLevel(LogLevel.Trace);
-            logging.AddNLog(context.Configuration);
+            loggingBuilder.SetMinimumLevel(LogLevel.Trace);
+            loggingBuilder.AddNLog(hostBuilderContext.Configuration);
         })
-        .ConfigureWebHostDefaults(builder =>
+        .ConfigureWebHostDefaults(webHostBuilder =>
         {
-            builder.Configure((webHostBuilderContext, applicationBuilder) =>
+            webHostBuilder.Configure((webHostBuilderContext, applicationBuilder) =>
             {
                 applicationBuilder.UseRouting();
 
-                applicationBuilder.UseEndpoints(endpoints =>
+                applicationBuilder.UseEndpoints(endpointRouteBuilder =>
                 {
-                    endpoints.MapHub<ChatHub>(nameof(ChatHub));
+                    endpointRouteBuilder.MapHub<ChatHub>(nameof(ChatHub));
                 });
             });
         })
-        .ConfigureServices(services =>
+        .ConfigureServices(serviceCollection =>
         {
-            services.AddMemoryCache();
-            services.AddCacheServices();
-            services.AddCacheRepositories();
+            serviceCollection.AddMemoryCache();
+            serviceCollection.AddCacheServices();
+            serviceCollection.AddCacheRepositories();
 
-            services.AddSignalR()
-                .AddNewtonsoftJsonProtocol();
+            serviceCollection.AddSignalR()
+                             .AddNewtonsoftJsonProtocol();
         });
 
 hostBuilder.Build().Run();
