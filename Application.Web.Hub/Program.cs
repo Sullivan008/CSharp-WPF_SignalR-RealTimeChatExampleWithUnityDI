@@ -1,42 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using Application.Utilities.Extensions;
+﻿using Application.Utilities.Extensions;
+using Application.Web.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
+using Application.Web.Cache.Infrastructure.Services.Extensions.DependencyInjection;
+using Application.Web.Hub.Chat;
 using Application.Web.Hub.Infrastructure.Environment.Enums;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 
-namespace Application.Web.Hub
-{
-    public class Program
-    {
-        public static void Main(string[] args)
+IHostBuilder hostBuilder = 
+    Host.CreateDefaultBuilder(args)
+        .ConfigureHostConfiguration(builder =>
         {
-            CreateHostBuilder(args)
-                .Build()
-                .Run();
-        }
+            KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
+                Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureHostConfiguration(builder =>
-                {
-                    KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
-                        Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
+            builder.AddInMemoryCollection(new[] { environment })
+                .AddEnvironmentVariables();
+        })
+        .ConfigureLogging((context, logging) =>
+        {
+            logging.SetMinimumLevel(LogLevel.Trace);
+            logging.AddNLog(context.Configuration);
+        })
+        .ConfigureWebHostDefaults(builder =>
+        {
+            builder.Configure((webHostBuilderContext, applicationBuilder) =>
+            {
+                applicationBuilder.UseRouting();
 
-                    builder.AddInMemoryCollection(new[] { environment })
-                        .AddEnvironmentVariables();
-                })
-                .ConfigureLogging((context, logging) =>
+                applicationBuilder.UseEndpoints(endpoints =>
                 {
-                    logging.SetMinimumLevel(LogLevel.Trace);
-                    logging.AddNLog(context.Configuration);
-                })
-                .ConfigureWebHostDefaults(builder =>
-                {
-                    builder.UseStartup<Startup>();
+                    endpoints.MapHub<ChatHub>(nameof(ChatHub));
                 });
-    }
-}
+            });
+        })
+        .ConfigureServices(services =>
+        {
+            services.AddMemoryCache();
+            services.AddCacheServices();
+            services.AddCacheRepositories();
+
+            services.AddSignalR()
+                .AddNewtonsoftJsonProtocol();
+        });
+
+hostBuilder.Build().Run();

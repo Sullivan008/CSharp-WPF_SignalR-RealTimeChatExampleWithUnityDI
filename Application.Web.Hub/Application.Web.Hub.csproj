@@ -1,25 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
-
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" Version="6.0.0" />
-	  <PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" Version="6.0.0" />
+		<PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<ProjectReference Include="..\Application.Web.Cache\Application.Web.Cache.csproj" />
 		<ProjectReference Include="..\Application.Web.Hub.Chat\Application.Web.Hub.Chat.csproj" />
 		<ProjectReference Include="..\Application.Utilities\Application.Utilities.csproj" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<None Update="appsettings.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -28,5 +24,4 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
-
 </Project>
