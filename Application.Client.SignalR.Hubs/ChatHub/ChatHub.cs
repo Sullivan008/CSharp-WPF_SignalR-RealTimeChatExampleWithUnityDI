@@ -1,87 +1,83 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.SignalR.Infrastructure.Configurations.HubConfigurations;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Application.Client.SignalR.Hubs.ChatHub
+namespace Application.Client.SignalR.Hubs.ChatHub;
+
+public class ChatHub : IChatHub
 {
-    public class ChatHub : IChatHub
+    private readonly ILogger<ChatHub> _logger;
+
+    private readonly HubConnection _hubConnection;
+
+    private readonly IOptions<HubConfigurations> _hubConfigurations;
+
+    public bool IsConnected => _hubConnection.State == HubConnectionState.Connected;
+
+    public ChatHub(ILogger<ChatHub> logger, IOptions<HubConfigurations> hubConfigurations)
     {
-        private readonly ILogger<ChatHub> _logger;
+        _logger = logger;
+        _hubConfigurations = hubConfigurations;
 
-        private readonly HubConnection _hubConnection;
+        _hubConnection = new HubConnectionBuilder()
+            .AddJsonProtocol()
+            .WithUrl($"{hubConfigurations.Value.BaseUrl}/{nameof(ChatHub)}")
+            .WithAutomaticReconnect()
+            .Build();
 
-        private readonly IOptions<HubConfigurations> _hubConfigurations;
-
-        public bool IsConnected => _hubConnection.State == HubConnectionState.Connected;
-
-        public ChatHub(ILogger<ChatHub> logger, IOptions<HubConfigurations> hubConfigurations)
-        {
-            _logger = logger;
-            _hubConfigurations = hubConfigurations;
-
-            _hubConnection = new HubConnectionBuilder()
-                .AddJsonProtocol()
-                .WithUrl($"{hubConfigurations.Value.BaseUrl}/{nameof(ChatHub)}")
-                .WithAutomaticReconnect()
-                .Build();
-
-            _hubConnection.Closed += OnClosedHubConnection;
-            _hubConnection.Reconnected += OnReconnectedHubConnection;
-            _hubConnection.Reconnecting += OnReconnectingHubConnection;
+        _hubConnection.Closed += OnClosedHubConnection;
+        _hubConnection.Reconnected += OnReconnectedHubConnection;
+        _hubConnection.Reconnecting += OnReconnectingHubConnection;
             
-            Task.Run(ConnectAsync).Wait();
-        }
+        Task.Run(ConnectAsync).Wait();
+    }
 
-        private async Task ConnectAsync()
+    private async Task ConnectAsync()
+    {
+        while (!IsConnected)
         {
-            while (!IsConnected)
+            try
             {
-                try
-                {
-                    await _hubConnection.StartAsync();
+                await _hubConnection.StartAsync();
 
-                    break;
-                }
-                catch (HttpRequestException ex)
-                {
-                    _logger.LogError(ex, ex.Message);
-
-                    await Task.Delay(_hubConfigurations.Value.ReconnectTimeInterval!.Value);
-                }
+                break;
             }
-        }
-
-        private async Task OnClosedHubConnection(Exception? ex)
-        {
-            if (ex != null)
+            catch (HttpRequestException ex)
             {
                 _logger.LogError(ex, ex.Message);
+
+                await Task.Delay(_hubConfigurations.Value.ReconnectTimeInterval!.Value);
             }
-
-            await ConnectAsync();
-
-            await Task.CompletedTask;
         }
+    }
 
-        private async Task OnReconnectingHubConnection(Exception? ex)
+    private async Task OnClosedHubConnection(Exception? ex)
+    {
+        if (ex != null)
         {
-            if (ex != null)
-            {
-                _logger.LogError(ex, ex.Message);
-            }
-
-            await Task.CompletedTask;
+            _logger.LogError(ex, ex.Message);
         }
 
-        private async Task OnReconnectedHubConnection(string? arg)
+        await ConnectAsync();
+
+        await Task.CompletedTask;
+    }
+
+    private async Task OnReconnectingHubConnection(Exception? ex)
+    {
+        if (ex != null)
         {
-            await Task.CompletedTask;
+            _logger.LogError(ex, ex.Message);
         }
+
+        await Task.CompletedTask;
+    }
+
+    private async Task OnReconnectedHubConnection(string? arg)
+    {
+        await Task.CompletedTask;
     }
 }
