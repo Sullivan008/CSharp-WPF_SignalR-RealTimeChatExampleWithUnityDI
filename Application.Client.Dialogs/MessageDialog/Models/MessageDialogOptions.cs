@@ -1,5 +1,5 @@
-﻿using Application.Utilities.Guard;
-using System.Windows;
+﻿using System.Windows;
+using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Dialogs.MessageDialog.Models;
 

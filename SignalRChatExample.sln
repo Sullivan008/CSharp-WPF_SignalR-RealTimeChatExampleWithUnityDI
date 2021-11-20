@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Models", "Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.Hub", "Application.Web.Hub\Application.Web.Hub.csproj", "{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Utilities", "Application.Utilities\Application.Utilities.csproj", "{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Common.Utilities", "Application.Common.Utilities\Application.Common.Utilities.csproj", "{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC9A5334-BC67-443F-AC42-B650857090BE}"
 	ProjectSection(SolutionItems) = preProject
@@ -36,7 +36,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.Cache", "Ap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Common", "Application.Common", "{B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Common.Cache", "Application.Common.Cache\Application.Common.Cache.csproj", "{461D0BFD-F98D-454D-8F01-A55355FD383B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Common.Cache", "Application.Common.Cache\Application.Common.Cache.csproj", "{461D0BFD-F98D-454D-8F01-A55355FD383B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +105,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
 		{461D0BFD-F98D-454D-8F01-A55355FD383B} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

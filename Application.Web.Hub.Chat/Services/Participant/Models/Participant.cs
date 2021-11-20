@@ -1,4 +1,4 @@
-﻿using Application.Utilities.Guard;
+﻿using Application.Common.Utilities.Guard;
 
 namespace Application.Web.Hub.Chat.Services.Participant.Models;
 

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.Serialization;
 
-namespace Application.Utilities.Extensions;
+namespace Application.Common.Utilities.Extensions;
 
 public static class EnumExtension
 {

@@ -12,7 +12,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Application.Common.Cache\Application.Common.Cache.csproj" />
-		<ProjectReference Include="..\Application.Utilities\Application.Utilities.csproj" />
+		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
 
 </Project>

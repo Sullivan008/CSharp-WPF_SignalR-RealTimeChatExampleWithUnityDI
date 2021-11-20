@@ -1,6 +1,6 @@
 ﻿using Application.Client.SignalR.Infrastructure.Configurations.Enums;
 using Application.Client.SignalR.Infrastructure.Configurations.HubConfigurations;
-using Application.Utilities.Extensions;
+using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,7 +1,7 @@
 ﻿using Application.Common.Cache.Infrastructure.Models.Interfaces;
 using Application.Common.Cache.Infrastructure.Models.Options;
 using Application.Common.Cache.Infrastructure.Services.Interfaces;
-using Application.Utilities.Extensions;
+using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Application.Common.Cache.Infrastructure.Services;

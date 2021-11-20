@@ -1,5 +1,5 @@
 ﻿using Application.Common.Cache.Infrastructure.Models.Interfaces;
-using Application.Utilities.Guard;
+using Application.Common.Utilities.Guard;
 
 namespace Application.Web.Cache.DataModels.ChatHub.Participants;
 

@@ -1,4 +1,4 @@
-﻿namespace Application.Utilities.Guard;
+﻿namespace Application.Common.Utilities.Guard;
 
 public static class Guard
 {

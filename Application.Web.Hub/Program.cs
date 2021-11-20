@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
-using Application.Utilities.Extensions;
+using Application.Common.Utilities.Extensions;
 using Application.Web.Cache.Infrastructure.Interfaces;
 using Application.Web.Hub.Chat;
 using Application.Web.Hub.Infrastructure.Environment.Enums;

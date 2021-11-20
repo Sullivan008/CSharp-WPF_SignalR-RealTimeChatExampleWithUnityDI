@@ -13,7 +13,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Application.Web.Cache\Application.Web.Cache.csproj" />
 		<ProjectReference Include="..\Application.Web.Hub.Chat\Application.Web.Hub.Chat.csproj" />
-		<ProjectReference Include="..\Application.Utilities\Application.Utilities.csproj" />
+		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="appsettings.json">

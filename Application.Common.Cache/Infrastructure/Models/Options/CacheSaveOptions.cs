@@ -1,5 +1,5 @@
 ﻿using Application.Common.Cache.Infrastructure.Models.Interfaces;
-using Application.Utilities.Guard;
+using Application.Common.Utilities.Guard;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Application.Common.Cache.Infrastructure.Models.Options;
