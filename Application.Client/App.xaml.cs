@@ -45,7 +45,7 @@ public partial class App
             {
                 configurationBuilder.SetBasePath(Directory.GetCurrentDirectory())
                                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                                    .AddJsonFile("signalrsettings.json", optional: false, reloadOnChange: true);
+                                    .AddJsonFile("appsettings.signalr.json", optional: false, reloadOnChange: true);
             })
             .ConfigureServices((hostBuilderContext, serviceCollection) =>
             {
