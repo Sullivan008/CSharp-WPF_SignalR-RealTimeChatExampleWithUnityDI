@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Server", "Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Models", "Application.Models\Application.Models.csproj", "{50F2C707-713A-4000-9ED1-9670E91D41B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.Hub", "Application.Web.Hub\Application.Web.Hub.csproj", "{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR", "Application.Web.SignalR\Application.Web.SignalR.csproj", "{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Common.Utilities", "Application.Common.Utilities\Application.Common.Utilities.csproj", "{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}"
 EndProject
@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.Hub.Chat", "Application.Web.Hub.Chat\Application.Web.Hub.Chat.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hub.Chat", "Application.Web.SignalR.Hub.Chat\Application.Web.SignalR.Hub.Chat.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
 EndProject
@@ -32,11 +32,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Cache", "Application.Client.Cache\Application.Client.Cache.csproj", "{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.Cache", "Application.Web.Cache\Application.Web.Cache.csproj", "{D75E4768-405D-42EB-9961-C216E621A2DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Cache", "Application.Web.SignalR.Cache\Application.Web.SignalR.Cache.csproj", "{D75E4768-405D-42EB-9961-C216E621A2DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Common", "Application.Common", "{B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Common.Cache", "Application.Common.Cache\Application.Common.Cache.csproj", "{461D0BFD-F98D-454D-8F01-A55355FD383B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web", "Application.Web", "{B0314A75-4B67-42FD-B698-5C0257A18ED2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,7 +107,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
 		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
+		{9C0F8661-C90D-4236-8D54-7D60616C56A5} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
+		{D75E4768-405D-42EB-9961-C216E621A2DE} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
 		{461D0BFD-F98D-454D-8F01-A55355FD383B} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
