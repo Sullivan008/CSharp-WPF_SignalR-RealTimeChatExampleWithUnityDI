@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
-using Application.Client.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
+using Application.Client.Cache.Infrastructure.Interfaces;
 using Application.Client.Dialogs.MessageDialog.Extensions.DependencyInjection;
 using Application.Client.Dialogs.MessageDialog.Interfaces;
 using Application.Client.Dialogs.MessageDialog.Models;
@@ -14,6 +15,7 @@ using Application.Client.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Main;
+using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Utilities.Extensions;
 using Application.Utilities.Guard;
 using Microsoft.Extensions.Configuration;
@@ -88,7 +90,7 @@ public partial class App
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
         serviceCollection.AddMemoryCache();
-        serviceCollection.AddCacheRepositories();
+        serviceCollection.AddCacheRepositories(Assembly.GetAssembly(typeof(IAssemblyMarker))!);
 
         serviceCollection.AddHubConfigurations(configuration);
         serviceCollection.AddChatHub();

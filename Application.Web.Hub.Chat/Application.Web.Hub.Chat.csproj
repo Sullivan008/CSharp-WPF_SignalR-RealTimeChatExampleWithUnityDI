@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Application.Common.Cache\Application.Common.Cache.csproj" />
     <ProjectReference Include="..\Application.Web.Cache\Application.Web.Cache.csproj" />
   </ItemGroup>
 

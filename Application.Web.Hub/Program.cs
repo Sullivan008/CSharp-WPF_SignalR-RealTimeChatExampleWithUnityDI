@@ -1,6 +1,8 @@
-﻿using Application.Utilities.Extensions;
-using Application.Web.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
-using Application.Web.Cache.Infrastructure.Services.Extensions.DependencyInjection;
+﻿using System.Reflection;
+using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
+using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
+using Application.Utilities.Extensions;
+using Application.Web.Cache.Infrastructure.Interfaces;
 using Application.Web.Hub.Chat;
 using Application.Web.Hub.Infrastructure.Environment.Enums;
 using Microsoft.AspNetCore.Builder;
@@ -42,7 +44,7 @@ IHostBuilder hostBuilder =
         {
             serviceCollection.AddMemoryCache();
             serviceCollection.AddCacheServices();
-            serviceCollection.AddCacheRepositories();
+            serviceCollection.AddCacheRepositories(Assembly.GetAssembly(typeof(IAssemblyMarker))!);
 
             serviceCollection.AddSignalR()
                              .AddNewtonsoftJsonProtocol();
