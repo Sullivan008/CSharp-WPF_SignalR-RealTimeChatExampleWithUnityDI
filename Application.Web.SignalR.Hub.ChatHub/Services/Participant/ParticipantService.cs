@@ -1,10 +1,10 @@
 ﻿using Application.Common.Cache.Infrastructure.Repository.Interfaces;
 using Application.Web.SignalR.Cache.DataModels.ChatHub.Participants;
 using Application.Web.SignalR.Cache.Keys;
-using Application.Web.SignalR.Hub.Chat.Services.Participant.Exceptions;
-using Application.Web.SignalR.Hub.Chat.Services.Participant.Interfaces;
+using Application.Web.SignalR.Hub.ChatHub.Services.Participant.Exceptions;
+using Application.Web.SignalR.Hub.ChatHub.Services.Participant.Interfaces;
 
-namespace Application.Web.SignalR.Hub.Chat.Services.Participant;
+namespace Application.Web.SignalR.Hub.ChatHub.Services.Participant;
 
 public class ParticipantService : IParticipantService
 {
@@ -15,7 +15,7 @@ public class ParticipantService : IParticipantService
         _participantsCacheRepository = participantsCacheRepository;
     }
 
-    public Models.Participant GetParticipant(string nickName)
+    public Hub.ChatHub.Services.Participant.Models.Participant GetParticipant(string nickName)
     {
         Participants cachedParticipants = _participantsCacheRepository.GetItem();
 
@@ -24,14 +24,14 @@ public class ParticipantService : IParticipantService
             throw new ParticipantNotFoundException($"Cannot be found participant among participants with the following nickname: '{nickName}'!");
         }
 
-        return new Models.Participant
+        return new Hub.ChatHub.Services.Participant.Models.Participant
         {
             ConnectionId = cachedParticipant.ConnectionId,
             NickName = cachedParticipant.NickName
         };
     }
 
-    public Models.Participant GetParticipantByConnectionId(string connectionId)
+    public Hub.ChatHub.Services.Participant.Models.Participant GetParticipantByConnectionId(string connectionId)
     {
         Participants cachedParticipants = _participantsCacheRepository.GetItem();
         Cache.DataModels.ChatHub.Participants.Participant? participantDataModel = cachedParticipants.Values.SingleOrDefault(x => x.ConnectionId == connectionId);
@@ -41,25 +41,25 @@ public class ParticipantService : IParticipantService
             throw new ParticipantNotFoundException($"Cannot be found participant among participants with the following connection id: '{connectionId}'!");
         }
             
-        return new Models.Participant
+        return new Hub.ChatHub.Services.Participant.Models.Participant
         {
             ConnectionId = participantDataModel.ConnectionId,
             NickName = participantDataModel.NickName
         };
     }
 
-    public IReadOnlyCollection<Models.Participant> GetParticipants()
+    public IReadOnlyCollection<Hub.ChatHub.Services.Participant.Models.Participant> GetParticipants()
     {
         Participants cachedParticipants = _participantsCacheRepository.GetItem();
 
-        return cachedParticipants.Values.Select(x => new Models.Participant
+        return cachedParticipants.Values.Select(x => new Hub.ChatHub.Services.Participant.Models.Participant
         {
             NickName = x.NickName,
             ConnectionId = x.ConnectionId
         }).ToList();
     }
 
-    public void AddParticipant(Models.Participant participant)
+    public void AddParticipant(Hub.ChatHub.Services.Participant.Models.Participant participant)
     {
         Participants cachedParticipants = _participantsCacheRepository.GetItem();
         Cache.DataModels.ChatHub.Participants.Participant participantDataModel = new()

@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hub.Chat", "Application.Web.SignalR.Hub.Chat\Application.Web.SignalR.Hub.Chat.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hub.ChatHub", "Application.Web.SignalR.Hub.ChatHub\Application.Web.SignalR.Hub.ChatHub.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
 EndProject

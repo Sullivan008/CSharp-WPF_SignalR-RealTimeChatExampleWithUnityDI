@@ -1,6 +1,6 @@
 ﻿using Application.Common.Utilities.Guard;
 
-namespace Application.Web.SignalR.Hub.Chat.Services.Participant.Models;
+namespace Application.Web.SignalR.Hub.ChatHub.Services.Participant.Models;
 
 public class Participant
 {

@@ -13,7 +13,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Application.Web.SignalR.Cache\Application.Web.SignalR.Cache.csproj" />
 		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
-		<ProjectReference Include="..\Application.Web.SignalR.Hub.Chat\Application.Web.SignalR.Hub.Chat.csproj" />
+		<ProjectReference Include="..\Application.Web.SignalR.Hub.ChatHub\Application.Web.SignalR.Hub.ChatHub.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="appsettings.json">

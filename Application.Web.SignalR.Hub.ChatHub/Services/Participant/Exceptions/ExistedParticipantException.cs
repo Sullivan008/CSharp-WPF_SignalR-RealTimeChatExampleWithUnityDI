@@ -1,4 +1,4 @@
-﻿namespace Application.Web.SignalR.Hub.Chat.Services.Participant.Exceptions;
+﻿namespace Application.Web.SignalR.Hub.ChatHub.Services.Participant.Exceptions;
 
 public class ExistedParticipantException : Exception
 {

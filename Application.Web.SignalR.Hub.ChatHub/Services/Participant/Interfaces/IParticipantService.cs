@@ -1,4 +1,4 @@
-﻿namespace Application.Web.SignalR.Hub.Chat.Services.Participant.Interfaces;
+﻿namespace Application.Web.SignalR.Hub.ChatHub.Services.Participant.Interfaces;
 
 public interface IParticipantService
 {
