@@ -12,7 +12,7 @@ using Application.Client.Infrastructure.ErrorHandling.Constants;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.Infrastructure.ErrorHandling.Models;
 using Application.Client.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
+using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Main;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;

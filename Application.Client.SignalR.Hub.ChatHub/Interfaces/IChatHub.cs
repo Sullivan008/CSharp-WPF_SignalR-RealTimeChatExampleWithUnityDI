@@ -1,4 +1,4 @@
-﻿namespace Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+﻿namespace Application.Client.SignalR.Hub.ChatHub.Interfaces;
 
 public interface IChatHub
 {

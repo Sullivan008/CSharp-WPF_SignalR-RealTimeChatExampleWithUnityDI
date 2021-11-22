@@ -1,7 +1,7 @@
-﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+﻿using Application.Client.SignalR.Hub.ChatHub.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
+namespace Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 
 public static class ChatHubServiceCollectionExtension
 {
