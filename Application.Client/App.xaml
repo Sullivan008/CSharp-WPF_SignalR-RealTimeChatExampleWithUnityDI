@@ -1,6 +1,17 @@
 ﻿<Application x:Class="Application.Client.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:v="clr-namespace:Application.Client.Windows.Main.Views.SignIn"
+             xmlns:vm="clr-namespace:Application.Client.Windows.Main.Views.SignIn.ViewModels">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Application.Client.D;component/Windows/Views/DataTemplates.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type vm:SignInViewModel}">
+                <v:SignInView/>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
