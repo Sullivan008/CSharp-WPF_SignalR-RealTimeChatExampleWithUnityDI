@@ -1,11 +1,11 @@
 ﻿using Application.Client.Common.Commands;
-using Application.Client.Windows.Main.ViewModels;
-using Application.Client.Windows.Main.Views.SignIn.ViewModels;
+using Application.Client.Windows.Implementations.Main.Window.ViewModels;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.Interfaces;
 
-namespace Application.Client.Windows.Main.Commands;
+namespace Application.Client.Windows.Implementations.Main.Window.Commands;
 
-public class WindowLoadedCommand : AsyncCommandBase<MainWindowViewModel, EventArgs>
+internal class WindowLoadedCommand : AsyncCommandBase<MainWindowViewModel, EventArgs>
 {
     private readonly IViewNavigationService<MainWindow> _viewNavigationService;
 

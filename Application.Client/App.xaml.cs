@@ -1,9 +1,4 @@
-﻿using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Windows;
-using System.Windows.Threading;
-using Application.Client.Cache.Infrastructure.Interfaces;
+﻿using Application.Client.Cache.Infrastructure.Interfaces;
 using Application.Client.D.Extensions.DependencyInjection;
 using Application.Client.Dialogs.MessageDialog.Extensions.DependencyInjection;
 using Application.Client.Dialogs.MessageDialog.Interfaces;
@@ -11,11 +6,11 @@ using Application.Client.Dialogs.MessageDialog.Models;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.Infrastructure.ErrorHandling.Models;
-using Application.Client.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Main;
 using Application.Client.Windows.Services.Interfaces;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
@@ -25,6 +20,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace Application.Client;
 
@@ -99,7 +99,7 @@ public partial class App
 
         serviceCollection.AddDDialog();
         serviceCollection.AddApplicationWindow();
-        
+
         serviceCollection.AddMessageDialog();
     }
 

@@ -21,6 +21,7 @@
 	  <ProjectReference Include="..\Application.Client.D\Application.Client.D.csproj" />
 	  <ProjectReference Include="..\Application.Client.SignalR.Hub.ChatHub\Application.Client.SignalR.Hub.ChatHub.csproj" />
 	  <ProjectReference Include="..\Application.Client.SignalR\Application.Client.SignalR.csproj" />
+	  <ProjectReference Include="..\Application.Client.Windows.Implementations.Main\Application.Client.Windows.Implementations.Main.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.Navigation.ViewNavigation\Application.Client.Windows.Navigation.ViewNavigation.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows\Application.Client.Windows.csproj" />
 	  <ProjectReference Include="..\Application.Common.Cache\Application.Common.Cache.csproj" />
@@ -34,19 +35,6 @@
 		<None Update="NLog.config">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Windows\Main\Views\SignIn\SignInView.xaml.cs">
-	    <SubType>Code</SubType>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Page Update="Windows\Main\Views\SignIn\SignInView.xaml">
-	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-	    <SubType>Designer</SubType>
-	  </Page>
 	</ItemGroup>
 
 </Project>

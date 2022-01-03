@@ -1,20 +1,20 @@
-﻿using Application.Client.Windows.Main;
-using Application.Client.Windows.Main.ViewModels;
-using Application.Client.Windows.Main.Views.SignIn.ViewModels;
+﻿using Application.Client.Windows.Implementations.Main.Window;
+using Application.Client.Windows.Implementations.Main.Window.ViewModels;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels;
 using Application.Client.Windows.Navigation.ViewNavigation.Abstractions.ViewModels;
 using Application.Client.Windows.Navigation.ViewNavigation.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.Interfaces;
 using Application.Client.Windows.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.Infrastructure.Extensions.DependencyInjection;
+namespace Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 
-public static class ClientServiceCollectionExtension
+public static class MainWindowServiceCollectionExtension
 {
     public static IServiceCollection AddMainWindow(this IServiceCollection @this)
     {
         @this.AddNavigationWindow<MainWindow, MainWindowViewModel>(NavigationWindowPageViewModelFactories);
-        
+
         return @this;
     }
 

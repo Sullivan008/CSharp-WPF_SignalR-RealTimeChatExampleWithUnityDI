@@ -1,6 +1,6 @@
 ﻿using Application.Client.Windows.Navigation.ViewNavigation.Abstractions.Windows;
 
-namespace Application.Client.Windows.Main;
+namespace Application.Client.Windows.Implementations.Main.Window;
 
 public partial class MainWindow : NavigationWindow
 {
