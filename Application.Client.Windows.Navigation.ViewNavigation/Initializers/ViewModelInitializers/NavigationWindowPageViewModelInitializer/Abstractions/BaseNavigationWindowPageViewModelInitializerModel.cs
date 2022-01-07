@@ -1,0 +1,4 @@
+﻿namespace Application.Client.Windows.Navigation.ViewNavigation.Initializers.ViewModelInitializers.NavigationWindowPageViewModelInitializer.Abstractions;
+
+public abstract class BaseNavigationWindowPageViewModelInitializerModel
+{ }

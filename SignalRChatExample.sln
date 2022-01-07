@@ -54,7 +54,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.Implementations", "Application.Client.Windows.Implementations", "{3E715E21-3178-43ED-A480-098C18EEF36B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.Implementations.Main", "Application.Client.Windows.Implementations.Main\Application.Client.Windows.Implementations.Main.csproj", "{7BA1D597-8833-49EC-AFBD-CCE407A93830}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.Main", "Application.Client.Windows.Implementations.Main\Application.Client.Windows.Implementations.Main.csproj", "{7BA1D597-8833-49EC-AFBD-CCE407A93830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

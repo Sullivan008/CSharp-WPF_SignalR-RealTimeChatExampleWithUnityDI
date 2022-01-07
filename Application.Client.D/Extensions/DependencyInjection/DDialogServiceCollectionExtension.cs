@@ -1,6 +1,5 @@
 ﻿using Application.Client.D.Windows;
 using Application.Client.D.Windows.ViewModels;
-using Application.Client.D.Windows.Views.First;
 using Application.Client.D.Windows.Views.First.ViewModels;
 using Application.Client.D.Windows.Views.Second.ViewModels;
 using Application.Client.Windows.Navigation.ViewNavigation.Abstractions.ViewModels;
@@ -14,15 +13,13 @@ public static class FindDialogServiceCollectionExtension
 {
     public static IServiceCollection AddDDialog(this IServiceCollection @this)
     {
-        @this.AddNavigationWindow<DWindow, DWindowViewModel>(NavigationWindowPageViewModelFactories);
+        @this.RegisterViewNavigationService<DWindow>();
+        @this.RegisterNavigationWindow<DWindow, DWindowViewModel>();
+
+        @this.RegisterNavigationWindowPageViewModelFactories(NavigationWindowPageViewModelFactories);
 
         return @this;
     }
-
-    private static IReadOnlyDictionary<Type, Type> NavigationWindowPageViews => new Dictionary<Type, Type>
-    {
-        { typeof(FirstView), typeof(FirstViewModel) }
-    };
 
     private static IReadOnlyDictionary<Type, Func<IServiceProvider, Func<IViewNavigationService<DWindow>, NavigationWindowPageViewModelBase<DWindow>>>> NavigationWindowPageViewModelFactories
     {

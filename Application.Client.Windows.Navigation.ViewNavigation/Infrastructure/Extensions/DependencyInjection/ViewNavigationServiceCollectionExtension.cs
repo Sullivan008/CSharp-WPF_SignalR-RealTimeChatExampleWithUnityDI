@@ -9,23 +9,7 @@ namespace Application.Client.Windows.Navigation.ViewNavigation.Infrastructure.Ex
 
 public static class ViewNavigationServiceCollectionExtension
 {
-    public static IServiceCollection AddNavigationWindow<TNavigationWindow, TNavigationWindowViewModel>(this IServiceCollection @this,
-        IReadOnlyDictionary<Type, Func<IServiceProvider, Func<IViewNavigationService<TNavigationWindow>, NavigationWindowPageViewModelBase<TNavigationWindow>>>> navigationWindowPageViewModelFactories)
-        where TNavigationWindow : NavigationWindow
-        where TNavigationWindowViewModel : NavigationWindowViewModelBase<TNavigationWindow>
-    {
-        @this.RegisterViewNavigationService<TNavigationWindow>();
-        @this.RegisterNavigationWindow<TNavigationWindow, TNavigationWindowViewModel>();
-
-        navigationWindowPageViewModelFactories.Keys.ForEach(key =>
-        {
-            @this.RegisterNavigationWindowPageViewModelFactory(key, navigationWindowPageViewModelFactories[key]);
-        });
-
-        return @this;
-    }
-
-    private static void RegisterViewNavigationService<TNavigationWindow>(this IServiceCollection @this) where TNavigationWindow : NavigationWindow
+    public static void RegisterViewNavigationService<TNavigationWindow>(this IServiceCollection @this) where TNavigationWindow : NavigationWindow
     {
         @this.AddTransient<Func<TNavigationWindow, IViewNavigationService<TNavigationWindow>>>(serviceProvider =>
         {
@@ -33,7 +17,7 @@ public static class ViewNavigationServiceCollectionExtension
         });
     }
 
-    private static void RegisterNavigationWindow<TNavigationWindow, TNavigationWindowViewModel>(this IServiceCollection @this)
+    public static void RegisterNavigationWindow<TNavigationWindow, TNavigationWindowViewModel>(this IServiceCollection @this)
         where TNavigationWindow : NavigationWindow
         where TNavigationWindowViewModel : NavigationWindowViewModelBase<TNavigationWindow>
     {
@@ -51,11 +35,21 @@ public static class ViewNavigationServiceCollectionExtension
         });
     }
 
-    private static void RegisterNavigationWindowPageViewModelFactory<TNavigationWindow, TPageViewModel>(this IServiceCollection @this, Type serviceType,
-        Func<IServiceProvider, Func<IViewNavigationService<TNavigationWindow>, TPageViewModel>> implementationFactory)
-        where TNavigationWindow : NavigationWindow
-        where TPageViewModel : NavigationWindowPageViewModelBase<TNavigationWindow>
+    public static void RegisterNavigationWindowPageViewModelInitializers(this IServiceCollection @this, IReadOnlyDictionary<Type, Type> navigationWindowPageViewModelInitializers)
     {
-        @this.AddTransient(serviceType, implementationFactory);
+        navigationWindowPageViewModelInitializers.Keys.ForEach(key =>
+        {
+            @this.AddTransient(key, navigationWindowPageViewModelInitializers[key]);
+        });
+    }
+
+    public static void RegisterNavigationWindowPageViewModelFactories<TNavigationWindow, TPageViewModel>(this IServiceCollection @this,
+        IReadOnlyDictionary<Type, Func<IServiceProvider, Func<IViewNavigationService<TNavigationWindow>, TPageViewModel>>> navigationWindowPageViewModelFactories) where TNavigationWindow : NavigationWindow 
+                                                                                                                                                                   where TPageViewModel : NavigationWindowPageViewModelBase<TNavigationWindow>
+    {
+        navigationWindowPageViewModelFactories.Keys.ForEach(key =>
+        {
+            @this.AddTransient(key, navigationWindowPageViewModelFactories[key]);
+        });
     }
 }
