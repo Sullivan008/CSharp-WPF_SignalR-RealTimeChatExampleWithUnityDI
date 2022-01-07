@@ -1,13 +1,13 @@
 ﻿using System.Windows.Input;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.Commands;
-using Application.Client.Windows.Navigation.ViewNavigation.Abstractions.ViewModels;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.Interfaces;
-using Application.Client.Windows.Services.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
+using Application.Client.Windows.Services.ApplicationWindow.Interfaces;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 
-public class SignInViewModel : NavigationWindowPageViewModelBase<MainWindow>
+public class SignInViewModel : PageViewModelBase<MainWindow>
 {
     private readonly IApplicationWindowService _applicationWindowService;
 

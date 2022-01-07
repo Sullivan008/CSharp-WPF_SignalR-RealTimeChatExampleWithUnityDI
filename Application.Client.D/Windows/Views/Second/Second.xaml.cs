@@ -1,15 +1,11 @@
 ﻿using System.Windows.Controls;
 
-namespace Application.Client.D.Windows.Views.Second
+namespace Application.Client.D.Windows.Views.Second;
+
+public partial class SecondView : UserControl
 {
-    /// <summary>
-    /// Interaction logic for Second.xaml
-    /// </summary>
-    public partial class SecondView : UserControl
+    public SecondView()
     {
-        public SecondView()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

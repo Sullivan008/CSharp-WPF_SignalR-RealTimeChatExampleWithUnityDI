@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using Application.Client.D.Windows.Commands;
-using Application.Client.Windows.Navigation.ViewNavigation.Abstractions.ViewModels;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Abstractions;
 
 namespace Application.Client.D.Windows.ViewModels;
 

@@ -1,9 +1,9 @@
 ﻿using Application.Client.Common.Commands;
 using Application.Client.D.Windows.Views.First.ViewModels;
 using Application.Client.D.Windows.Views.Second.ViewModels;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
 
-namespace Application.Client.D.Windows.Views.First.Commands;
+namespace Application.Client.D.Windows.Views.Second.Commands;
 
 public class GoToFirstViewCommand : AsyncCommandBase<SecondViewModel>
 {

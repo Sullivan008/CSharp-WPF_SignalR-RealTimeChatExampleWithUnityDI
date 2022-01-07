@@ -1,9 +1,7 @@
-﻿//using Application.Client.Navigation.ViewNavigation.Infrastructure.Services.Interfaces;
-
-using Application.Client.Common.Commands;
+﻿using Application.Client.Common.Commands;
 using Application.Client.D.Windows.ViewModels;
 using Application.Client.D.Windows.Views.First.ViewModels;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
 
 namespace Application.Client.D.Windows.Commands
 {
