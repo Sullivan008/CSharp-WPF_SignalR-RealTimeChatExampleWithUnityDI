@@ -5,6 +5,7 @@ using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWind
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.Navigation.ViewNavigation.Pages.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
 using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Interfaces;
@@ -45,7 +46,11 @@ public static class MainWindowServiceCollectionExtension
         get
         {
             Func<IViewNavigationService, SignInViewModel> CreateSignInViewModel(IServiceProvider serviceProvider) => 
-                viewNavigationService => new SignInViewModel(viewNavigationService, serviceProvider.GetRequiredService<INavigationWindowService>());
+                viewNavigationService => 
+                    new SignInViewModel(viewNavigationService, serviceProvider.GetRequiredService<INavigationWindowService>())
+                    {
+                        ViewData = new SignInViewDataViewModel()
+                    };
 
             return new Dictionary<Type, Func<IServiceProvider, Func<IViewNavigationService, PageViewModelBase>>>
             {

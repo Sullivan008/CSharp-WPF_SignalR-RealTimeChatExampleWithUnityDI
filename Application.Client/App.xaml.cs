@@ -82,7 +82,10 @@ public partial class App
             {
                 WindowSettings = new MainWindowSettingsViewModelInitializerModel { Title = "Test Title" }
             },
-            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel { Content = "It's from window initializer!" }
+            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
+            {
+                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from window initializer!" }
+            }
         };
 
         await navigationWindowService.ShowAsync<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel, SignInViewModel, SignInViewModelInitializerModel>(navigationWindowOptions);

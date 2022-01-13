@@ -46,7 +46,7 @@ public class ViewNavigationService : IViewNavigationService
     }
 
     private void InitializePageViewModel<TPageViewModel, TPageViewModelInitializerModel>(TPageViewModel pageViewModel, 
-        Func<TPageViewModelInitializerModel> pageViewModelInitializerFactory) where TPageViewModel : PageViewModelBase 
+        Func<TPageViewModelInitializerModel> pageViewModelInitializerFactory) where TPageViewModel : PageViewModelBase
                                                                               where TPageViewModelInitializerModel : BasePageViewModelInitializerModel
     {
         IPageViewModelInitializer<TPageViewModel, TPageViewModelInitializerModel> pageViewModelInitializer =

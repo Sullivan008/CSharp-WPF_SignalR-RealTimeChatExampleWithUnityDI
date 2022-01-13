@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="{Binding Content}"/>
+        <Label Content="{Binding ViewData.Content}"/>
 
          <Button Content="Open Test Window" Width="100" Height="20" Command="{Binding OpenTestWindowCommand}"/>
     </Grid>

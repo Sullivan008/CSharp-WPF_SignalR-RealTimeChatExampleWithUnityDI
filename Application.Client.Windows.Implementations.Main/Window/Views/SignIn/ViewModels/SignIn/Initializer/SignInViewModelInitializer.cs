@@ -1,4 +1,5 @@
 ﻿using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Interfaces;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer;
@@ -7,6 +8,12 @@ public class SignInViewModelInitializer : IPageViewModelInitializer<SignInViewMo
 {
     public void Initialize(SignInViewModel navigationWindowPageViewModel, SignInViewModelInitializerModel navigationWindowPageViewModelInitializerModel)
     {
-        navigationWindowPageViewModel.Content = navigationWindowPageViewModelInitializerModel.Content;
+        InitializeViewData((SignInViewDataViewModel)navigationWindowPageViewModel.ViewData,
+                           (SignInViewDataViewModelInitializerModel)navigationWindowPageViewModelInitializerModel.ViewDataInitializerModel);
+    }
+
+    private void InitializeViewData(SignInViewDataViewModel viewData, SignInViewDataViewModelInitializerModel viewDataInitializerModel)
+    {
+        viewData.Content = viewDataInitializerModel.Content;
     }
 }
