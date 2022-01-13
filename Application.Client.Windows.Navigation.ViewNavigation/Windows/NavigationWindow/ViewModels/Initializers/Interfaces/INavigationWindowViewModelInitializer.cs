@@ -1,0 +1,11 @@
+﻿using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Abstractions;
+using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Initializers.Abstractions.Models;
+
+namespace Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Initializers.Interfaces;
+
+public interface INavigationWindowViewModelInitializer<in TNavigationWindowViewModel, in TNavigationWindowViewModelInitializerModel>
+    where TNavigationWindowViewModel : NavigationWindowViewModelBase
+    where TNavigationWindowViewModelInitializerModel : BaseNavigationWindowViewModelInitializerModel
+{
+    public void Initialize(TNavigationWindowViewModel navigationWindowViewModel, TNavigationWindowViewModelInitializerModel navigationWindowViewModelInitializerModel);
+}

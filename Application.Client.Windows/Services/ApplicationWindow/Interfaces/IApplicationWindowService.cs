@@ -2,5 +2,5 @@
 
 public interface IApplicationWindowService
 {
-    public Task ShowAsync<TApplicationWindow>() where TApplicationWindow : Windows.ApplicationWindow.Abstractions.ApplicationWindow;
+    public Task ShowAsync<TApplicationWindow>() where TApplicationWindow : Windows.ApplicationWindow.Abstractions.Window.ApplicationWindow;
 }

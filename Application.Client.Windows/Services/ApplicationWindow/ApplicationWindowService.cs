@@ -12,7 +12,7 @@ public class ApplicationWindowService : IApplicationWindowService
         _serviceProvider = serviceProvider;
     }
 
-    public async Task ShowAsync<TApplicationWindow>() where TApplicationWindow : Windows.ApplicationWindow.Abstractions.ApplicationWindow
+    public async Task ShowAsync<TApplicationWindow>() where TApplicationWindow : Windows.ApplicationWindow.Abstractions.Window.ApplicationWindow
     {
         TApplicationWindow applicationWindow = _serviceProvider.GetRequiredService<TApplicationWindow>();
         

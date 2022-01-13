@@ -3,7 +3,7 @@ using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Init
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer;
 
-public class SignInViewModelInitializer : IPageViewModelInitializer<MainWindow, SignInViewModel, SignInViewModelInitializerModel>
+public class SignInViewModelInitializer : IPageViewModelInitializer<SignInViewModel, SignInViewModelInitializerModel>
 {
     public void Initialize(SignInViewModel navigationWindowPageViewModel, SignInViewModelInitializerModel navigationWindowPageViewModelInitializerModel)
     {

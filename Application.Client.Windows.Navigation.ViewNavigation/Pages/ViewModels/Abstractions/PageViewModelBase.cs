@@ -1,14 +1,13 @@
 ﻿using Application.Client.Common.ViewModels;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions;
 
 namespace Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
 
-public abstract class PageViewModelBase<TNavigationWindow> : ViewModelBase where TNavigationWindow : NavigationWindow
+public abstract class PageViewModelBase : ViewModelBase
 {
-    protected readonly IViewNavigationService<TNavigationWindow> ViewNavigationService;
+    protected readonly IViewNavigationService ViewNavigationService;
 
-    protected PageViewModelBase(IViewNavigationService<TNavigationWindow> viewNavigationService)
+    protected PageViewModelBase(IViewNavigationService viewNavigationService)
     {
         ViewNavigationService = viewNavigationService;
     }

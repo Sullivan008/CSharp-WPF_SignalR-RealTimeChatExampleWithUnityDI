@@ -2,18 +2,18 @@
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.Commands;
 using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
-using Application.Client.Windows.Services.ApplicationWindow.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Services.Interfaces;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 
-public class SignInViewModel : PageViewModelBase<MainWindow>
+public class SignInViewModel : PageViewModelBase
 {
-    private readonly IApplicationWindowService _applicationWindowService;
+    private readonly INavigationWindowService _navigationWindowService;
 
-    public SignInViewModel(IViewNavigationService<MainWindow> viewNavigationService, IApplicationWindowService applicationWindowService) : base(viewNavigationService)
+    public SignInViewModel(IViewNavigationService viewNavigationService, INavigationWindowService navigationWindowService) : base(viewNavigationService)
     {
-        _applicationWindowService = applicationWindowService;
+        _navigationWindowService = navigationWindowService;
     }
 
     private string _content = string.Empty;
@@ -30,5 +30,5 @@ public class SignInViewModel : PageViewModelBase<MainWindow>
     }
 
     private ICommand? _openTestWindowCommand;
-    public ICommand OpenTestWindowCommand => _openTestWindowCommand ??= new OpenTestWindowCommand(this, _applicationWindowService);
+    public ICommand OpenTestWindowCommand => _openTestWindowCommand ??= new OpenTestWindowCommand(this, _navigationWindowService);
 }

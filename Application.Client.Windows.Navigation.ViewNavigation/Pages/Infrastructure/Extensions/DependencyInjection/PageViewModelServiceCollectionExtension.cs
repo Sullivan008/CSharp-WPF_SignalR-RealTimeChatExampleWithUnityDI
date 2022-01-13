@@ -1,6 +1,5 @@
 ﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions;
 using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,9 +7,8 @@ namespace Application.Client.Windows.Navigation.ViewNavigation.Pages.Infrastruct
 
 public static class PageViewModelServiceCollectionExtension
 {
-    public static void AddPageViewModelFactories<TNavigationWindow, TPageViewModel>(this IServiceCollection @this,
-        IReadOnlyDictionary<Type, Func<IServiceProvider, Func<IViewNavigationService<TNavigationWindow>, TPageViewModel>>> pageViewModelFactories) where TNavigationWindow : NavigationWindow
-                                                                                                                                                   where TPageViewModel : PageViewModelBase<TNavigationWindow>
+    public static void AddPageViewModelFactories<TPageViewModel>(this IServiceCollection @this,
+        IReadOnlyDictionary<Type, Func<IServiceProvider, Func<IViewNavigationService, TPageViewModel>>> pageViewModelFactories) where TPageViewModel : PageViewModelBase
     {
         pageViewModelFactories.Keys.ForEach(key =>
         {

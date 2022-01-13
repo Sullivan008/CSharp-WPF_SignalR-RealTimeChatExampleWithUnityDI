@@ -1,21 +1,22 @@
 ﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Abstractions.Models;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
 using Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Abstractions;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Abstractions;
 
-public abstract class NavigationWindowViewModelBase<TNavigationWindow> : ApplicationWindowViewModelBase where TNavigationWindow : NavigationWindow.Abstractions.NavigationWindow
+public abstract class NavigationWindowViewModelBase : ApplicationWindowViewModelBase
 {
-    protected readonly IViewNavigationService<TNavigationWindow> ViewNavigationService;
+    protected readonly IViewNavigationService ViewNavigationService;
 
-    protected NavigationWindowViewModelBase(IViewNavigationService<TNavigationWindow> viewNavigationService)
+    protected NavigationWindowViewModelBase(IViewNavigationService viewNavigationService)
     {
         ViewNavigationService = viewNavigationService;
     }
-
-    private PageViewModelBase<TNavigationWindow>? _currentPage;
-    public PageViewModelBase<TNavigationWindow> CurrentPage
+    
+    private PageViewModelBase? _currentPage;
+    public PageViewModelBase CurrentPage
     {
         get => _currentPage!;
         set
@@ -25,5 +26,16 @@ public abstract class NavigationWindowViewModelBase<TNavigationWindow> : Applica
             _currentPage = value;
             OnPropertyChanged();
         }
+    }
+
+    internal void Navigate<TPageViewModel>() where TPageViewModel : PageViewModelBase
+    {
+        ViewNavigationService.Navigate<TPageViewModel>();
+    }
+
+    internal void Navigate<TPageViewModel, TPageViewModelInitializerModel>(Func<TPageViewModelInitializerModel> pageViewModelInitializerModelFactory) where TPageViewModel : PageViewModelBase
+                                                                                                                                                                   where TPageViewModelInitializerModel : BasePageViewModelInitializerModel
+    {
+        ViewNavigationService.Navigate<TPageViewModel, TPageViewModelInitializerModel>(pageViewModelInitializerModelFactory);
     }
 }

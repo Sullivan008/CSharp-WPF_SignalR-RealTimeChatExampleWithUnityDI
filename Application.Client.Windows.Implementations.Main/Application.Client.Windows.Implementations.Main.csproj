@@ -11,7 +11,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Application.Client.D\Application.Client.D.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.Navigation.ViewNavigation\Application.Client.Windows.Navigation.ViewNavigation.csproj" />
 	</ItemGroup>
 

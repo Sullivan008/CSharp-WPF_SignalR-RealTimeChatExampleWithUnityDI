@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
 using Application.Client.Cache.Infrastructure.Interfaces;
-using Application.Client.D.Extensions.DependencyInjection;
 using Application.Client.Dialogs.MessageDialog.Extensions.DependencyInjection;
 using Application.Client.Dialogs.MessageDialog.Interfaces;
 using Application.Client.Dialogs.MessageDialog.Models;
@@ -15,8 +14,13 @@ using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Window;
-using Application.Client.Windows.Services.ApplicationWindow.Interfaces;
-using Application.Client.Windows.Services.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
+using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions.Options;
+using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Services.Interfaces;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
@@ -70,8 +74,18 @@ public partial class App
 
         Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
 
-        IApplicationWindowService dialogService = _host.Services.GetRequiredService<IApplicationWindowService>();
-        await dialogService.ShowAsync<MainWindow>();
+        INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
+
+        NavigationWindowOptions<MainWindowViewModelInitializerModel, SignInViewModelInitializerModel> navigationWindowOptions = new()
+        {
+            WindowViewModelInitializerModelFactory = () => new MainWindowViewModelInitializerModel
+            {
+                WindowSettings = new MainWindowSettingsViewModelInitializerModel { Title = "Test Title" }
+            },
+            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel { Content = "It's from window initializer!" }
+        };
+
+        await navigationWindowService.ShowAsync<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel, SignInViewModel, SignInViewModelInitializerModel>(navigationWindowOptions);
 
         base.OnStartup(eventArgs);
     }
@@ -88,6 +102,8 @@ public partial class App
 
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
+        serviceCollection.AddNavigationWindowService();
+
         serviceCollection.AddMainWindow();
 
         serviceCollection.AddMemoryCache();
@@ -97,8 +113,8 @@ public partial class App
         serviceCollection.AddHubConfigurations(configuration);
         serviceCollection.AddChatHub();
 
-        serviceCollection.AddDDialog();
-        serviceCollection.AddApplicationWindowService();
+        //serviceCollection.AddDDialog();
+        //serviceCollection.AddApplicationWindowService();
 
         serviceCollection.AddMessageDialog();
     }

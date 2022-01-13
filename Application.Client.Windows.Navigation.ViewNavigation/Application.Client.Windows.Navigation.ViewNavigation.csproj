@@ -10,4 +10,7 @@
 		<ProjectReference Include="..\Application.Client.Windows\Application.Client.Windows.csproj" />
 		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Windows\NavigationWindow\Options\" />
+	</ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Windows;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions;
+﻿using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions.Window;
 
 namespace Application.Client.Windows.Implementations.Main.Window;
 

@@ -1,19 +1,12 @@
-﻿<abstractions:NavigationWindow x:Class="Application.Client.Windows.Implementations.Main.Window.MainWindow"
-                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                          xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
-                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                          xmlns:windows="clr-namespace:Application.Client.Windows.Navigation.ViewNavigation.Windows;assembly=Application.Client.Windows.Navigation.ViewNavigation"
-                          xmlns:abstractions="clr-namespace:Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions;assembly=Application.Client.Windows.Navigation.ViewNavigation"
-                          mc:Ignorable="d"
-                          Title="MainWindow" Height="450" Width="800">
-    <behaviors:Interaction.Triggers>
-        <behaviors:EventTrigger>
-            <behaviors:InvokeCommandAction Command="{Binding WindowLoadedCommand}" PassEventArgsToCommand="True"/>
-        </behaviors:EventTrigger>
-    </behaviors:Interaction.Triggers>
+﻿<window:NavigationWindow x:Class="Application.Client.Windows.Implementations.Main.Window.MainWindow"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:window="clr-namespace:Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions.Window;assembly=Application.Client.Windows.Navigation.ViewNavigation"
+                         mc:Ignorable="d"
+                         Title="{Binding WindowSettings.Title}" Height="450" Width="800">
     <Grid>
         <ContentControl Content="{Binding CurrentPage}"/>
     </Grid>
-</abstractions:NavigationWindow>
+</window:NavigationWindow>
