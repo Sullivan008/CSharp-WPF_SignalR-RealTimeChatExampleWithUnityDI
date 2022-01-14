@@ -1,5 +1,6 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Abstractions.Models;
+﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Abstractions;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Interfaces.Markers;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewModel.Interfaces.Markers;
 using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions.Options;
 using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Services.Interfaces;
 using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Abstractions;
@@ -22,7 +23,7 @@ public class NavigationWindowService : INavigationWindowService
         NavigationWindowOptions<TNavigationWindowViewModelInitializerModel> navigationWindowOptions) where TNavigationWindow : Abstractions.Window.NavigationWindow
                                                                                                      where TNavigationWindowViewModel : NavigationWindowViewModelBase
                                                                                                      where TNavigationWindowViewModelInitializerModel : BaseNavigationWindowViewModelInitializerModel
-                                                                                                     where TPageViewModel : PageViewModelBase
+                                                                                                     where TPageViewModel : IPageViewModel
     {
         TNavigationWindow navigationWindow = GetNavigationWindow<TNavigationWindow>();
 
@@ -38,8 +39,8 @@ public class NavigationWindowService : INavigationWindowService
         NavigationWindowOptions<TNavigationWindowViewModelInitializerModel, TPageViewModelInitializerModel> navigationWindowOptions) where TNavigationWindow : Abstractions.Window.NavigationWindow
                                                                                                                                      where TNavigationWindowViewModel : NavigationWindowViewModelBase
                                                                                                                                      where TNavigationWindowViewModelInitializerModel : BaseNavigationWindowViewModelInitializerModel
-                                                                                                                                     where TPageViewModel : PageViewModelBase
-                                                                                                                                     where TPageViewModelInitializerModel : BasePageViewModelInitializerModel
+                                                                                                                                     where TPageViewModel : IPageViewModel
+                                                                                                                                     where TPageViewModelInitializerModel : IPageViewModelInitializerModel
     {
         TNavigationWindow navigationWindow = GetNavigationWindow<TNavigationWindow>();
 
@@ -71,7 +72,7 @@ public class NavigationWindowService : INavigationWindowService
 
     private static void Navigate<TNavigationWindow, TNavigationWindowViewModel, TPageViewModel>(TNavigationWindow navigationWindow) where TNavigationWindow : Abstractions.Window.NavigationWindow
                                                                                                                                     where TNavigationWindowViewModel : NavigationWindowViewModelBase
-                                                                                                                                    where TPageViewModel : PageViewModelBase
+                                                                                                                                    where TPageViewModel : IPageViewModel
     {
         ((TNavigationWindowViewModel)navigationWindow.DataContext).Navigate<TPageViewModel>();
     }
@@ -79,8 +80,8 @@ public class NavigationWindowService : INavigationWindowService
     private static void Navigate<TNavigationWindow, TNavigationWindowViewModel, TPageViewModel, TPageViewModelInitializerModel>(
         TNavigationWindow navigationWindow, Func<TPageViewModelInitializerModel> pageViewModelInitializerModelFactory) where TNavigationWindow : Abstractions.Window.NavigationWindow
                                                                                                                        where TNavigationWindowViewModel : NavigationWindowViewModelBase
-                                                                                                                       where TPageViewModel : PageViewModelBase
-                                                                                                                       where TPageViewModelInitializerModel : BasePageViewModelInitializerModel
+                                                                                                                       where TPageViewModel : IPageViewModel
+                                                                                                                       where TPageViewModelInitializerModel : IPageViewModelInitializerModel
     {
         ((TNavigationWindowViewModel)navigationWindow.DataContext).Navigate<TPageViewModel, TPageViewModelInitializerModel>(pageViewModelInitializerModelFactory);
     }

@@ -1,9 +1,9 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
+﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewDataViewModel.Abstractions;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 
-public class SignInViewDataViewModel : BasePageViewDataViewModel
+public class SignInViewDataViewModel : PageViewDataViewModelBase
 {
     private string _content = string.Empty;
     public string Content

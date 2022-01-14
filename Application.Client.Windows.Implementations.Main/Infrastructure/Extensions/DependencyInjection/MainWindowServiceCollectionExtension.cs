@@ -5,11 +5,11 @@ using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWind
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
-using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Interfaces;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewModel.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewModel.Interfaces.Markers;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
 using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Services.Interfaces;
@@ -41,18 +41,14 @@ public static class MainWindowServiceCollectionExtension
         { typeof(IPageViewModelInitializer<SignInViewModel, SignInViewModelInitializerModel>), typeof(SignInViewModelInitializer) }
     };
 
-    private static IReadOnlyDictionary<Type, Func<IServiceProvider, Func<IViewNavigationService, PageViewModelBase>>> PageViewModelFactories
+    private static IReadOnlyDictionary<Type, Func<IServiceProvider, Func<IViewNavigationService, IPageViewModel>>> PageViewModelFactories
     {
         get
         {
             Func<IViewNavigationService, SignInViewModel> CreateSignInViewModel(IServiceProvider serviceProvider) => 
-                viewNavigationService => 
-                    new SignInViewModel(viewNavigationService, serviceProvider.GetRequiredService<INavigationWindowService>())
-                    {
-                        ViewData = new SignInViewDataViewModel()
-                    };
+                viewNavigationService => new SignInViewModel(viewNavigationService, serviceProvider.GetRequiredService<INavigationWindowService>());
 
-            return new Dictionary<Type, Func<IServiceProvider, Func<IViewNavigationService, PageViewModelBase>>>
+            return new Dictionary<Type, Func<IServiceProvider, Func<IViewNavigationService, IPageViewModel>>>
             {
                 { typeof(Func<IViewNavigationService, SignInViewModel>), CreateSignInViewModel }
             };

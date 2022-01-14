@@ -1,10 +1,11 @@
 ﻿using Application.Client.Common.ViewModels;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewDataViewModel.Abstractions;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
 using Application.Common.Utilities.Guard;
 
-namespace Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
+namespace Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewModel.Abstractions;
 
-public abstract class PageViewModelBase : ViewModelBase
+public abstract class PageViewModelBase<TPageViewDataViewModel> : ViewModelBase where TPageViewDataViewModel : PageViewDataViewModelBase, new()
 {
     protected readonly IViewNavigationService ViewNavigationService;
 
@@ -13,10 +14,10 @@ public abstract class PageViewModelBase : ViewModelBase
         ViewNavigationService = viewNavigationService;
     }
 
-    private BasePageViewDataViewModel? _viewData;
-    public BasePageViewDataViewModel ViewData
+    private TPageViewDataViewModel _viewData = new();
+    public TPageViewDataViewModel ViewData
     {
-        get => _viewData!;
+        get => _viewData;
         set
         {
             Guard.ThrowIfNull(value, nameof(ViewData));

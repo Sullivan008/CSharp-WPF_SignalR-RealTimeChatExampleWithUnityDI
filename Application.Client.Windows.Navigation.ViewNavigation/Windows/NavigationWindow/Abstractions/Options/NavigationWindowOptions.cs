@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Abstractions.Models;
+﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Interfaces.Markers;
 using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Initializers.Abstractions.Models;
 using Application.Client.Windows.Windows.ApplicationWindow.Abstractions.Options;
 using Application.Common.Utilities.Guard;
@@ -11,7 +11,7 @@ public class NavigationWindowOptions<TNavigationWindowViewModelInitializerModel>
 
 public class NavigationWindowOptions<TNavigationWindowViewModelInitializerModel, TPageViewModelInitializerModel> : ApplicationWindowOptions<TNavigationWindowViewModelInitializerModel>
     where TNavigationWindowViewModelInitializerModel : BaseNavigationWindowViewModelInitializerModel
-    where TPageViewModelInitializerModel : BasePageViewModelInitializerModel
+    where TPageViewModelInitializerModel : IPageViewModelInitializerModel
 {
     private readonly Func<TPageViewModelInitializerModel>? _pageViewModelInitializerModelFactory;
     public Func<TPageViewModelInitializerModel> PageViewModelInitializerFactory

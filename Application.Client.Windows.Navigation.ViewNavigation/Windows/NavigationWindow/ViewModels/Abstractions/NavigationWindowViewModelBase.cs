@@ -1,5 +1,6 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Abstractions;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Abstractions.Models;
+﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Abstractions;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Interfaces.Markers;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewModel.Interfaces.Markers;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
 using Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Abstractions;
 using Application.Common.Utilities.Guard;
@@ -15,8 +16,8 @@ public abstract class NavigationWindowViewModelBase : ApplicationWindowViewModel
         ViewNavigationService = viewNavigationService;
     }
     
-    private PageViewModelBase? _currentPage;
-    public PageViewModelBase CurrentPage
+    private IPageViewModel? _currentPage;
+    public IPageViewModel CurrentPage
     {
         get => _currentPage!;
         set
@@ -28,13 +29,13 @@ public abstract class NavigationWindowViewModelBase : ApplicationWindowViewModel
         }
     }
 
-    internal void Navigate<TPageViewModel>() where TPageViewModel : PageViewModelBase
+    internal void Navigate<TPageViewModel>() where TPageViewModel : IPageViewModel
     {
         ViewNavigationService.Navigate<TPageViewModel>();
     }
 
-    internal void Navigate<TPageViewModel, TPageViewModelInitializerModel>(Func<TPageViewModelInitializerModel> pageViewModelInitializerModelFactory) where TPageViewModel : PageViewModelBase
-                                                                                                                                                                   where TPageViewModelInitializerModel : BasePageViewModelInitializerModel
+    internal void Navigate<TPageViewModel, TPageViewModelInitializerModel>(Func<TPageViewModelInitializerModel> pageViewModelInitializerModelFactory) where TPageViewModel : IPageViewModel
+                                                                                                                                                      where TPageViewModelInitializerModel : IPageViewModelInitializerModel
     {
         ViewNavigationService.Navigate<TPageViewModel, TPageViewModelInitializerModel>(pageViewModelInitializerModelFactory);
     }

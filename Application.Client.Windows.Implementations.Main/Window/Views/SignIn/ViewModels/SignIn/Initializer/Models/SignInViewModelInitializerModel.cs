@@ -1,6 +1,7 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.Initializers.PageViewModelInitializer.Abstractions.Models;
+﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Abstractions;
+using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Interfaces.Markers;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
 
-public class SignInViewModelInitializerModel : BasePageViewModelInitializerModel
+public class SignInViewModelInitializerModel : PageViewModelInitializerModelBase<SignInViewDataViewModelInitializerModel>, IPageViewModelInitializerModel
 { }
