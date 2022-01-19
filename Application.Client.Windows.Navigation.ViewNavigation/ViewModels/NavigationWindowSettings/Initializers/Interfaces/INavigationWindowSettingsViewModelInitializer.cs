@@ -1,0 +1,11 @@
+﻿using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindowSettings.Initializers.Models.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindowSettings.Interfaces;
+
+namespace Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindowSettings.Initializers.Interfaces;
+
+public interface INavigationWindowSettingsViewModelInitializer<in TNavigationWindowSettingsViewModel, in TNavigationWindowSettingsViewModelInitializerModel>
+    where TNavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
+    where TNavigationWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
+{
+    public void Initialize(TNavigationWindowSettingsViewModel navigationWindowSettingsViewModel, TNavigationWindowSettingsViewModelInitializerModel navigationWindowSettingsViewModelInitializerModel);
+}

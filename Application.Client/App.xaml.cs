@@ -14,13 +14,12 @@ using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Window;
-using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions.Options;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Services.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.NavigationWindow.Interfaces;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
@@ -76,19 +75,23 @@ public partial class App
 
         INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
 
-        NavigationWindowOptions<MainWindowViewModelInitializerModel, SignInViewModelInitializerModel> navigationWindowOptions = new()
+        MainWindowOptions otpions = new()
         {
             WindowViewModelInitializerModelFactory = () => new MainWindowViewModelInitializerModel
             {
                 WindowSettings = new MainWindowSettingsViewModelInitializerModel { Title = "Test Title" }
-            },
-            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
-            {
-                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from window initializer!" }
             }
         };
 
-        await navigationWindowService.ShowAsync<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel, SignInViewModel, SignInViewModelInitializerModel>(navigationWindowOptions);
+            //ViewNavigationOptions = new SignInViewOptions
+            //{
+            //    PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
+            //    {
+            //        ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from window initializer!" }
+            //    }
+            //}
+
+        await navigationWindowService.ShowAsync<MainWindow, SignInViewModel>(otpions);
 
         base.OnStartup(eventArgs);
     }

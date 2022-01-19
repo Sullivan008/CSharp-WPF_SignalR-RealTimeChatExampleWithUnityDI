@@ -1,19 +1,20 @@
 ﻿using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Initializers.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindow.Initializers.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindowSettings.Initializers.Interfaces;
 
 namespace Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer;
 
 public class MainWindowViewModelInitializer : INavigationWindowViewModelInitializer<MainWindowViewModel, MainWindowViewModelInitializerModel>
 {
-    public void Initialize(MainWindowViewModel navigationWindowViewModel, MainWindowViewModelInitializerModel navigationWindowViewModelInitializerModel)
+    private readonly INavigationWindowSettingsViewModelInitializer<MainWindowSettingsViewModel, MainWindowSettingsViewModelInitializerModel> _navigationWindowSettingsViewModelInitializer;
+
+    public MainWindowViewModelInitializer(INavigationWindowSettingsViewModelInitializer<MainWindowSettingsViewModel, MainWindowSettingsViewModelInitializerModel> navigationWindowSettingsViewModelInitializer)
     {
-        InitializeWindowSettings((MainWindowSettingsViewModel)navigationWindowViewModel.WindowSettings,
-                                 (MainWindowSettingsViewModelInitializerModel)navigationWindowViewModelInitializerModel.WindowSettings);
+        _navigationWindowSettingsViewModelInitializer = navigationWindowSettingsViewModelInitializer;
     }
 
-    private static void InitializeWindowSettings(MainWindowSettingsViewModel settingsViewModel, MainWindowSettingsViewModelInitializerModel settingsViewModelInitializer)
+    public void Initialize(MainWindowViewModel navigationWindowViewModel, MainWindowViewModelInitializerModel navigationWindowViewModelInitializerModel)
     {
-        settingsViewModel.Title = settingsViewModelInitializer.Title;
-        settingsViewModel.Kefe = "Kefe";
+        _navigationWindowSettingsViewModelInitializer.Initialize(navigationWindowViewModel.WindowSettings, navigationWindowViewModelInitializerModel.WindowSettings);
     }
 }

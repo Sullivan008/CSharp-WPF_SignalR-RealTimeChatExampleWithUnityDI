@@ -1,4 +1,0 @@
-﻿namespace Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Abstractions;
-
-public abstract class PageViewDataViewModelInitializerModelBase
-{ }

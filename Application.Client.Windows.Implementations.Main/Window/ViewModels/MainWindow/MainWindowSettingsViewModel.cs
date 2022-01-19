@@ -1,8 +1,8 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Abstractions;
+﻿using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindowSettings;
 
 namespace Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 
-public class MainWindowSettingsViewModel : NavigationWindowSettingsViewModelBase
+public class MainWindowSettingsViewModel : NavigationWindowSettingsViewModel
 {
     private string _kefe;
 

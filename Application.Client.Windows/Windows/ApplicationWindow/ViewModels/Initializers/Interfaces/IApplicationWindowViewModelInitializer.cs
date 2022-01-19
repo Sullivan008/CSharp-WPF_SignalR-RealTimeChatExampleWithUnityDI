@@ -1,11 +1,10 @@
-﻿using Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Abstractions;
-using Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Initializers.Abstractions;
+﻿using Application.Client.Windows.Windows.ApplicationWindow.Interfaces;
 
 namespace Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Initializers.Interfaces;
 
 public interface IApplicationWindowViewModelInitializer<in TApplicationWindowViewModel, in TApplicationWindowViewModelInitializerModel>
-    where TApplicationWindowViewModel : ApplicationWindowViewModelBase
-    where TApplicationWindowViewModelInitializerModel : BaseApplicationWindowViewModelInitializerModel
+    where TApplicationWindowViewModel : IApplicationWindowViewModel
+    where TApplicationWindowViewModelInitializerModel : IApplicationWindowViewModelInitializerModel
 {
     public void Initialize(TApplicationWindowViewModel applicationWindowViewModel, TApplicationWindowViewModelInitializerModel applicationWindowViewModelInitializerModel);
 }

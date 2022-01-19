@@ -4,6 +4,12 @@
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 	<ItemGroup>
+	  <Compile Remove="Windows\NavigationWindow\Options\**" />
+	  <EmbeddedResource Remove="Windows\NavigationWindow\Options\**" />
+	  <None Remove="Windows\NavigationWindow\Options\**" />
+	  <Page Remove="Windows\NavigationWindow\Options\**" />
+	</ItemGroup>
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 	</ItemGroup>
 	<ItemGroup>
@@ -11,6 +17,6 @@
 		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Windows\NavigationWindow\Options\" />
+	  <Folder Include="Services\Options\" />
 	</ItemGroup>
 </Project>

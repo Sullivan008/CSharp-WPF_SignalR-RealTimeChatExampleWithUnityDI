@@ -1,12 +1,12 @@
-﻿<window:NavigationWindow x:Class="Application.Client.Windows.Implementations.Main.Window.MainWindow"
+﻿<navigationWindow:NavigationWindow x:Class="Application.Client.Windows.Implementations.Main.Window.MainWindow"
                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                         xmlns:window="clr-namespace:Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions.Window;assembly=Application.Client.Windows.Navigation.ViewNavigation"
+                         xmlns:navigationWindow="clr-namespace:Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow;assembly=Application.Client.Windows.Navigation.ViewNavigation"
                          mc:Ignorable="d"
                          Title="{Binding WindowSettings.Title}" Height="450" Width="800">
     <Grid>
         <ContentControl Content="{Binding CurrentPage}"/>
     </Grid>
-</window:NavigationWindow>
+</navigationWindow:NavigationWindow>

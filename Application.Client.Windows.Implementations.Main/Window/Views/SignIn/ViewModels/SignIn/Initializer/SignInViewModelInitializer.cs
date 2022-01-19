@@ -1,19 +1,21 @@
 ﻿using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Initializers.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageViewData.Initializers.Interfaces;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer;
 
-public class SignInViewModelInitializer : IPageViewModelInitializer<SignInViewModel, SignInViewModelInitializerModel>
+public class SignInViewModelInitializer : IPageViewViewModelInitializer<SignInViewModel, SignInViewModelInitializerModel>
 {
-    public void Initialize(SignInViewModel navigationWindowPageViewModel, SignInViewModelInitializerModel navigationWindowPageViewModelInitializerModel)
+    private readonly IPageViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> _pageViewDataViewModelInitializer;
+
+    public SignInViewModelInitializer(IPageViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> pageViewDataViewModelInitializer)
     {
-        InitializeViewData((SignInViewDataViewModel)navigationWindowPageViewModel.ViewData,
-                           (SignInViewDataViewModelInitializerModel)navigationWindowPageViewModelInitializerModel.ViewDataInitializerModel);
+        _pageViewDataViewModelInitializer = pageViewDataViewModelInitializer;
     }
 
-    private void InitializeViewData(SignInViewDataViewModel viewData, SignInViewDataViewModelInitializerModel viewDataInitializerModel)
+    public void Initialize(SignInViewModel navigationWindowPageViewModel, SignInViewModelInitializerModel navigationWindowPageViewModelInitializerModel)
     {
-        viewData.Content = viewDataInitializerModel.Content;
+        _pageViewDataViewModelInitializer.Initialize(navigationWindowPageViewModel.ViewData, navigationWindowPageViewModelInitializerModel.ViewDataInitializerModel);
     }
 }

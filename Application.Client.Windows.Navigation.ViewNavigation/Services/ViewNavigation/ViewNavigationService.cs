@@ -1,9 +1,11 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.InitializerModels.Interfaces.Markers;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModelInitializers.PageViewModelInitializer.Interfaces;
-using Application.Client.Windows.Navigation.ViewNavigation.Pages.ViewModels.PageViewModel.Interfaces.Markers;
+﻿using System.Reflection;
+using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Initializers.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Initializers.Models.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Interfaces;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Interfaces;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Abstractions.Window;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.ViewModels.Abstractions;
+using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Options;
+using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindow.Interfaces;
+using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation;
@@ -12,44 +14,52 @@ public class ViewNavigationService : IViewNavigationService
 {
     private readonly IServiceProvider _serviceProvider;
 
-    private readonly NavigationWindow _navigationWindow;
+    private readonly INavigationWindow _navigationWindow;
 
-    public ViewNavigationService(IServiceProvider serviceProvider, NavigationWindow navigationWindow)
+    public ViewNavigationService(IServiceProvider serviceProvider, INavigationWindow navigationWindow)
     {
         _serviceProvider = serviceProvider;
         _navigationWindow = navigationWindow;
     }
 
-    public void Navigate<TPageViewModel>() where TPageViewModel : IPageViewModel
+    public void Navigate<TPageViewModel>() where TPageViewModel : IPageViewViewModel
     {
         TPageViewModel pageViewModel = GetPageViewModel<TPageViewModel>();
 
         SetCurrentPage(pageViewModel);
     }
 
-    public void Navigate<TPageViewModel, TPageViewModelInitializerModel>(Func<TPageViewModelInitializerModel> pageViewModelInitializerModelFactory) where TPageViewModel : IPageViewModel
-                                                                                                                                                    where TPageViewModelInitializerModel : IPageViewModelInitializerModel
+    public void Navigate<TPageViewModel>(IViewNavigationOptions viewNavigationOptions) where TPageViewModel : IPageViewViewModel
     {
         TPageViewModel pageViewModel = GetPageViewModel<TPageViewModel>();
 
-        InitializePageViewModel(pageViewModel, pageViewModelInitializerModelFactory);
-        
+        if (viewNavigationOptions.PageViewViewModelInitializerModel != null)
+        {
+            InitializePageViewModel(pageViewModel, viewNavigationOptions.PageViewViewModelInitializerModel);
+        }
+
         SetCurrentPage(pageViewModel);
     }
 
-    private void InitializePageViewModel<TPageViewModel, TPageViewModelInitializerModel>(TPageViewModel pageViewModel, Func<TPageViewModelInitializerModel> pageViewModelInitializerModelFactory) 
-        where TPageViewModel : IPageViewModel
-        where TPageViewModelInitializerModel : IPageViewModelInitializerModel
+    private void InitializePageViewModel(IPageViewViewModel pageViewModel, IPageViewViewModelInitializerModel pageViewViewModelInitializerModel)
     {
-        IPageViewModelInitializer<TPageViewModel, TPageViewModelInitializerModel> pageViewModelInitializer =
-            _serviceProvider.GetRequiredService<IPageViewModelInitializer<TPageViewModel, TPageViewModelInitializerModel>>();
+        Type pageViewViewModelType = pageViewModel.GetType();
+        Type pageViewViewModelInitializerModelType = pageViewViewModelInitializerModel.GetType();
 
-        TPageViewModelInitializerModel pageViewModelInitializerModel = pageViewModelInitializerModelFactory();
+        Type pageViewViewModelInitializerType =
+            typeof(IPageViewViewModelInitializer<,>).MakeGenericType(pageViewViewModelType, pageViewViewModelInitializerModelType);
 
-        pageViewModelInitializer.Initialize(pageViewModel, pageViewModelInitializerModel);
+        MethodInfo pageViewViewModelInitializerInitializeMethodInfo =
+            pageViewViewModelInitializerType.GetMethods().Single();
+
+        var navigationWindowViewModelInitializer =
+            _serviceProvider.GetRequiredService(pageViewViewModelInitializerType);
+
+        pageViewViewModelInitializerInitializeMethodInfo
+            .Invoke(navigationWindowViewModelInitializer, new object[] { pageViewModel, pageViewViewModelInitializerModel });
     }
 
-    private TPageViewModel GetPageViewModel<TPageViewModel>() where TPageViewModel : IPageViewModel
+    private TPageViewModel GetPageViewModel<TPageViewModel>() where TPageViewModel : IPageViewViewModel
     {
         Func<IViewNavigationService, TPageViewModel> pageViewModelFactory = 
             _serviceProvider.GetRequiredService<Func<IViewNavigationService, TPageViewModel>>();
@@ -57,8 +67,8 @@ public class ViewNavigationService : IViewNavigationService
         return pageViewModelFactory(this);
     }
 
-    private void SetCurrentPage<TPageViewModel>(TPageViewModel pageViewModel) where TPageViewModel : IPageViewModel
+    private void SetCurrentPage<TPageViewModel>(TPageViewModel pageViewModel) where TPageViewModel : IPageViewViewModel
     {
-        ((NavigationWindowViewModelBase) _navigationWindow.DataContext).CurrentPage = pageViewModel;
+        ((INavigationWindowViewModel)_navigationWindow.DataContext).CurrentPage = pageViewModel;
     }
 }
