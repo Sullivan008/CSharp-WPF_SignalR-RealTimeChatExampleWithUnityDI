@@ -6,6 +6,5 @@ namespace Application.Client.Windows.Navigation.ViewNavigation.Services.Navigati
 
 public interface INavigationWindowService
 {
-    public Task ShowAsync<TNavigationWindow, TPageViewViewModel>(INavigationWindowOptionsModel navigationWindowOptions) where TNavigationWindow : INavigationWindow
-                                                                                                                        where TPageViewViewModel : IPageViewViewModel;
+    public Task ShowAsync<TPageViewViewModel>(INavigationWindowOptionsModel navigationWindowOptions) where TPageViewViewModel : IPageViewViewModel;
 }
