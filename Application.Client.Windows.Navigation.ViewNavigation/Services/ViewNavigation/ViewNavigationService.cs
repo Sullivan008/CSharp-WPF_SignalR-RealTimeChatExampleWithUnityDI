@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq.Expressions;
+using System.Reflection;
 using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Initializers.Interfaces;
 using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Initializers.Models.Interfaces;
 using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Interfaces;
@@ -22,16 +23,9 @@ public class ViewNavigationService : IViewNavigationService
         _navigationWindow = navigationWindow;
     }
 
-    public void Navigate<TPageViewModel>() where TPageViewModel : IPageViewViewModel
+    public void Navigate(IViewNavigationOptions viewNavigationOptions)
     {
-        TPageViewModel pageViewModel = GetPageViewModel<TPageViewModel>();
-
-        SetCurrentPage(pageViewModel);
-    }
-
-    public void Navigate<TPageViewModel>(IViewNavigationOptions viewNavigationOptions) where TPageViewModel : IPageViewViewModel
-    {
-        TPageViewModel pageViewModel = GetPageViewModel<TPageViewModel>();
+        IPageViewViewModel pageViewModel = GetPageViewModel(viewNavigationOptions.PageViewModelType);
 
         if (viewNavigationOptions.PageViewViewModelInitializerModel != null)
         {
@@ -59,12 +53,31 @@ public class ViewNavigationService : IViewNavigationService
             .Invoke(navigationWindowViewModelInitializer, new object[] { pageViewModel, pageViewViewModelInitializerModel });
     }
 
-    private TPageViewModel GetPageViewModel<TPageViewModel>() where TPageViewModel : IPageViewViewModel
+    private IPageViewViewModel GetPageViewModel(Type pageViewModelType)
     {
-        Func<IViewNavigationService, TPageViewModel> pageViewModelFactory = 
-            _serviceProvider.GetRequiredService<Func<IViewNavigationService, TPageViewModel>>();
+        Type viewNavigationService = typeof(IViewNavigationService);
 
-        return pageViewModelFactory(this);
+        Type pageViewModelFactoryType = typeof(Func<,>).MakeGenericType(viewNavigationService, pageViewModelType);
+
+        var pageViewModelFactory = _serviceProvider.GetRequiredService(pageViewModelFactoryType);
+
+        MethodInfo pageViewModelFactoryMethodInfo =
+            pageViewModelFactoryType.GetMethod("Invoke");
+
+        Func<IViewNavigationService, IPageViewViewModel> fefe = (Func<IViewNavigationService, IPageViewViewModel>)pageViewModelFactory;
+        var asdélkgjdsaélkg = fefe(this);
+
+        pageViewModelFactoryMethodInfo.Invoke(pageViewModelFactory, new object[] { this });
+
+        
+        //Func<IViewNavigationService, TPageViewModel> pageViewModelFactory = 
+        //    _serviceProvider.GetRequiredService<Func<IViewNavigationService, TPageViewModel>>();
+
+        string asd = nameof(Func<Type>.Invoke);
+
+        return null;
+
+        //return pageViewModelFactory(this);
     }
 
     private void SetCurrentPage<TPageViewModel>(TPageViewModel pageViewModel) where TPageViewModel : IPageViewViewModel

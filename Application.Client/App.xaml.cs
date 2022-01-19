@@ -83,15 +83,23 @@ public partial class App
             }
         };
 
-            //ViewNavigationOptions = new SignInViewOptions
-            //{
-            //    PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
-            //    {
-            //        ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from window initializer!" }
-            //    }
-            //}
+        SignInViewOptions viewOptions = new()
+        {
+            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
+            {
+                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from view initializer" }
+            }
+        };
 
-        await navigationWindowService.ShowAsync<MainWindow, SignInViewModel>(otpions);
+        //ViewNavigationOptions = new SignInViewOptions
+        //{
+        //    PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
+        //    {
+        //        ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from window initializer!" }
+        //    }
+        //}
+
+        await navigationWindowService.ShowAsync(otpions, viewOptions);
 
         base.OnStartup(eventArgs);
     }

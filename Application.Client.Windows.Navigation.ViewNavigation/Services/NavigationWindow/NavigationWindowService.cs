@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Interfaces;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.NavigationWindow.Options.Models;
 using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Options;
@@ -20,14 +19,14 @@ public class NavigationWindowService : INavigationWindowService
         _serviceProvider = serviceProvider;
     }
 
-    public async Task ShowAsync<TPageViewModel>(INavigationWindowOptionsModel navigationWindowOptions) where TPageViewModel : IPageViewViewModel
+    public async Task ShowAsync(INavigationWindowOptionsModel navigationWindowOptions, IViewNavigationOptions viewNavigationOptions)
     {
         INavigationWindow navigationWindow = GetNavigationWindow(navigationWindowOptions.WindowType);
 
         InitializeNavigationWindow((INavigationWindowViewModel)navigationWindow.DataContext,
                                    (INavigationWindowViewModelInitializerModel)navigationWindowOptions.WindowViewModelInitializerModel);
 
-        //Navigate<TPageViewModel>((INavigationWindowViewModel)navigationWindow.DataContext, navigationWindowOptions.ViewNavigationOptions);
+        Navigate((INavigationWindowViewModel)navigationWindow.DataContext, viewNavigationOptions);
 
         navigationWindow.Show();
 
@@ -61,8 +60,8 @@ public class NavigationWindowService : INavigationWindowService
             .Invoke(navigationWindowViewModelInitializer, new object[] {navigationWindowViewModel, navigationWindowViewModelInitializerModel});
     }
 
-    private static void Navigate<TPageViewModel>(INavigationWindowViewModel navigationWindowViewModel, IViewNavigationOptions? viewNavigationOptions) where TPageViewModel : IPageViewViewModel
+    private static void Navigate(INavigationWindowViewModel navigationWindowViewModel, IViewNavigationOptions viewNavigationOptions)
     {
-        navigationWindowViewModel.ViewNavigationService.Navigate<TPageViewModel>(viewNavigationOptions);
+        navigationWindowViewModel.ViewNavigationService.Navigate(viewNavigationOptions);
     }
 }
