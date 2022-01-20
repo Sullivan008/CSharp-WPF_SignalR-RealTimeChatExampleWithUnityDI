@@ -3,14 +3,14 @@ using Application.Client.Windows.Implementations.Main.Infrastructure.Interfaces.
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
-using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageView.Initializers.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.NavigationWindow.Interfaces;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.ViewNavigation.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.Windows.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Window.Infrastructure.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
@@ -26,7 +26,7 @@ public static class MainWindowServiceCollectionExtension
 
     public static IServiceCollection AddMainWindow(this IServiceCollection @this)
     {
-        @this.AddViewNavigationService<MainWindow>();
+        @this.AddPageViewNavigationService<MainWindow>();
         
         @this.AddNavigationWindow<MainWindow, MainWindowViewModel>();
 

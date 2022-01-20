@@ -1,0 +1,6 @@
+﻿using Application.Client.Windows.Windows.ApplicationWindow.Interfaces;
+
+namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Models.Interfaces;
+
+public interface INavigationWindowSettingsViewModelInitializerModel : IApplicationWindowSettingsViewModelInitializerModel
+{ }

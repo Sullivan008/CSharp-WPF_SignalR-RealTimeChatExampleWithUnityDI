@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindow.Initializers.Models;
+﻿using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Models;
 
 namespace Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
 

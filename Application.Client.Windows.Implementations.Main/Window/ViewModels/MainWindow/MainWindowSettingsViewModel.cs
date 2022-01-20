@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.ViewModels.NavigationWindowSettings;
+﻿using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings;
 
 namespace Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 

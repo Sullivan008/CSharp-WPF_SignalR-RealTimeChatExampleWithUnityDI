@@ -48,7 +48,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows", "Application.Client.Windows", "{704E88AB-7D2F-4C62-B2DD-3896CBE79078}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Navigation.ViewNavigation", "Application.Client.Windows.Navigation.ViewNavigation\Application.Client.Windows.Navigation.ViewNavigation.csproj", "{114101F2-2A63-4F8C-A759-3F3F398AC714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.NavigationWindow", "Application.Client.Windows.NavigationWindow\Application.Client.Windows.NavigationWindow.csproj", "{114101F2-2A63-4F8C-A759-3F3F398AC714}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.Navigation", "Application.Client.Windows.Navigation", "{799B0FB2-2EC4-4D7F-8B9B-FD9087E15963}"
 EndProject

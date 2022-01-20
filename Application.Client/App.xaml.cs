@@ -16,10 +16,9 @@ using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn;
-using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Navigation.ViewNavigation.Services.NavigationWindow.Interfaces;
+using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
@@ -83,7 +82,7 @@ public partial class App
             }
         };
 
-        SignInViewOptions viewOptions = new()
+        SignInPageViewOptions pageViewOptions = new()
         {
             PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
             {
@@ -91,7 +90,7 @@ public partial class App
             }
         };
 
-        //ViewNavigationOptions = new SignInViewOptions
+        //ViewNavigationOptions = new SignInPageViewOptions
         //{
         //    PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
         //    {
@@ -99,7 +98,7 @@ public partial class App
         //    }
         //}
 
-        await navigationWindowService.ShowAsync(otpions, viewOptions);
+        await navigationWindowService.ShowAsync(otpions, pageViewOptions);
 
         base.OnStartup(eventArgs);
     }

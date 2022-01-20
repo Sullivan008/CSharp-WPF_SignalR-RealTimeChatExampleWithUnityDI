@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.Navigation.ViewNavigation.PageViews.ViewModels.PageViewData;
+﻿using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageViewData;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;

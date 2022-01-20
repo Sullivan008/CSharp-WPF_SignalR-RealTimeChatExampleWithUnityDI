@@ -1,0 +1,7 @@
+﻿using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Models.Interfaces;
+using Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Initializers.Abstractions;
+
+namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Models;
+
+public class NavigationWindowSettingsViewModelInitializerModel : ApplicationWindowSettingsViewModelInitializerModel, INavigationWindowSettingsViewModelInitializerModel
+{ }
