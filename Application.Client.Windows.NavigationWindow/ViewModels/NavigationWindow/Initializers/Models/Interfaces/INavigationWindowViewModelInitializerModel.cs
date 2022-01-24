@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.Windows.ApplicationWindow.Interfaces;
+﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow.Initializers.Models.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Models.Interfaces;
 

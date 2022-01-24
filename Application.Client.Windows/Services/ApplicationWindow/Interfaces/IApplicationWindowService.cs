@@ -1,6 +1,8 @@
-﻿namespace Application.Client.Windows.Services.ApplicationWindow.Interfaces;
+﻿using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Options.Models.Interfaces;
+
+namespace Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Interfaces;
 
 public interface IApplicationWindowService
 {
-    public Task ShowAsync<TApplicationWindow>() where TApplicationWindow : Windows.ApplicationWindow.Abstractions.Window.ApplicationWindow;
+    public Task ShowAsync(IApplicationWindowOptionsModel applicationWindowOptions);
 }

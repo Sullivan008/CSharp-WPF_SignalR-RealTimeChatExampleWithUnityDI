@@ -1,7 +1,7 @@
-﻿using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Interfaces;
-using Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Abstractions;
+﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings;
 
-public class NavigationWindowSettingsViewModel : ApplicationWindowSettingsViewModelBase, INavigationWindowSettingsViewModel
+public class NavigationWindowSettingsViewModel : ApplicationWindowSettingsViewModel, INavigationWindowSettingsViewModel
 { }

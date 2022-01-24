@@ -44,7 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client", "Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.D", "Application.Client.D\Application.Client.D.csproj", "{DCEA6F17-1858-418B-B888-8B0551A8AFE9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows", "Application.Client.Windows\Application.Client.Windows.csproj", "{C531373C-7BEC-4116-934A-DEC710A37466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.ApplicationWindow", "Application.Client.Windows\Application.Client.Windows.ApplicationWindow.csproj", "{C531373C-7BEC-4116-934A-DEC710A37466}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows", "Application.Client.Windows", "{704E88AB-7D2F-4C62-B2DD-3896CBE79078}"
 EndProject

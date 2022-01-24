@@ -1,5 +1,5 @@
-﻿using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Models.Interfaces;
-using Application.Client.Windows.Windows.ApplicationWindow.ViewModels.Initializers.Abstractions;
+﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Models;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Models.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Models;
 

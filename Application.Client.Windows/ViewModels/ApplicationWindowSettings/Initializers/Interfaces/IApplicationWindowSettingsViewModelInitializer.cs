@@ -1,0 +1,11 @@
+﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Models.Interfaces;
+using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Interfaces;
+
+namespace Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Interfaces;
+
+public interface IApplicationWindowSettingsViewModelInitializer<in TApplicationWindowSettingsViewModel, in TApplicationWindowSettingsViewModelInitializerModel>
+    where TApplicationWindowSettingsViewModel : IApplicationWindowSettingsViewModel
+    where TApplicationWindowSettingsViewModelInitializerModel : IApplicationWindowSettingsViewModelInitializerModel
+{
+    public void Initialize(TApplicationWindowSettingsViewModel applicationWindowSettingsViewModel, TApplicationWindowSettingsViewModelInitializerModel applicationWindowSettingsViewModelInitializerModel);
+}
