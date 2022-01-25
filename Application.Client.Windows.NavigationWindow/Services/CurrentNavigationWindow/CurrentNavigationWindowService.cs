@@ -23,10 +23,12 @@ public class CurrentNavigationWindowService : ICurrentNavigationWindowService
 
     INavigationWindow ICurrentNavigationWindowService.NavigationWindow => _navigationWindow;
 
-    public void ReInitializeWindowSettings(INavigationWindowSettingsViewModelInitializerModel navigationWindowSettingsViewModelInitializerModel)
+    public void ReInitializeWindowSettings(Func<INavigationWindowSettingsViewModelInitializerModel> navigationWindowSettingsViewModelInitializerModelFactory)
     {
         INavigationWindowViewModel navigationWindowViewModel = (INavigationWindowViewModel)_navigationWindow.DataContext;
         INavigationWindowSettingsViewModel navigationWindowSettingsViewModel = (INavigationWindowSettingsViewModel)navigationWindowViewModel.WindowSettings;
+
+        INavigationWindowSettingsViewModelInitializerModel navigationWindowSettingsViewModelInitializerModel = navigationWindowSettingsViewModelInitializerModelFactory();
 
         Type navigationWindowSettingsViewModelType = navigationWindowSettingsViewModel.GetType();
         Type navigationWindowSettingsViewModelInitializerModelType = navigationWindowSettingsViewModelInitializerModel.GetType();

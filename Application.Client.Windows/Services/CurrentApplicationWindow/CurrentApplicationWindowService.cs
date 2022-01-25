@@ -23,10 +23,12 @@ public class CurrentApplicationWindowService : ICurrentApplicationWindowService
 
     IApplicationWindow ICurrentApplicationWindowService.ApplicationWindow => _applicationWindow;
 
-    public void ReInitializeWindowSettings(IApplicationWindowSettingsViewModelInitializerModel applicationWindowSettingsViewModelInitializerModel)
+    public void ReInitializeWindowSettings(Func<IApplicationWindowSettingsViewModelInitializerModel> applicationWindowSettingsViewModelInitializerModelFactory)
     {
         IApplicationWindowViewModel applicationWindowViewModel = (IApplicationWindowViewModel)_applicationWindow.DataContext;
         IApplicationWindowSettingsViewModel applicationWindowSettingsViewModel = applicationWindowViewModel.WindowSettings;
+
+        IApplicationWindowSettingsViewModelInitializerModel applicationWindowSettingsViewModelInitializerModel = applicationWindowSettingsViewModelInitializerModelFactory();
 
         Type applicationWindowSettingsViewModelType = applicationWindowSettingsViewModel.GetType();
         Type applicationWindowSettingsViewModelInitializerModelType = applicationWindowSettingsViewModelInitializerModel.GetType();

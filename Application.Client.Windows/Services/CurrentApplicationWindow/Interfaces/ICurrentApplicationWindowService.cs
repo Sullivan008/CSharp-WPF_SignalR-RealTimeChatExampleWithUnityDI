@@ -7,5 +7,5 @@ public interface ICurrentApplicationWindowService
 {
     internal IApplicationWindow ApplicationWindow { get; }
 
-    public void ReInitializeWindowSettings(IApplicationWindowSettingsViewModelInitializerModel applicationWindowSettingsViewModelInitializerModel);
+    public void ReInitializeWindowSettings(Func<IApplicationWindowSettingsViewModelInitializerModel> applicationWindowSettingsViewModelInitializerModelFactory);
 }

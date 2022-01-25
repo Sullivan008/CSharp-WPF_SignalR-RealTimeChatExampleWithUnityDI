@@ -7,5 +7,5 @@ public interface ICurrentNavigationWindowService
 {
     internal INavigationWindow NavigationWindow { get; }
 
-    public void ReInitializeWindowSettings(INavigationWindowSettingsViewModelInitializerModel navigationWindowSettingsViewModelInitializerModel);
+    public void ReInitializeWindowSettings(Func<INavigationWindowSettingsViewModelInitializerModel> navigationWindowSettingsViewModelInitializerModelFactory);
 }
