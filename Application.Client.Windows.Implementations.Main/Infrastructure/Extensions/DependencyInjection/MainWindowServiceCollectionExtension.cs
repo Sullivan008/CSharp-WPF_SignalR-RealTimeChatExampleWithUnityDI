@@ -7,6 +7,7 @@ using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNav
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
@@ -26,9 +27,9 @@ public static class MainWindowServiceCollectionExtension
 
     public static IServiceCollection AddMainWindow(this IServiceCollection @this)
     {
-        @this.AddPageViewNavigationService<MainWindow>();
-        
         @this.AddNavigationWindow<MainWindow, MainWindowViewModel>();
+        
+        @this.AddCurrentNavigationWindowService<MainWindow>();
 
         @this.AddNavigationWindowViewModelInitializers(CurrentAssembly);
         @this.AddNavigationWindowSettingsViewModelInitializers(CurrentAssembly);
@@ -37,7 +38,7 @@ public static class MainWindowServiceCollectionExtension
         @this.AddPageViewDataViewModelInitializers(CurrentAssembly);
 
         @this.AddPageViewViewModelFactory<SignInViewModel>(serviceProvider => 
-            viewNavigationService => new SignInViewModel(viewNavigationService, serviceProvider.GetRequiredService<INavigationWindowService>()));
+            (viewNavigationService, _) => new SignInViewModel(viewNavigationService, serviceProvider.GetRequiredService<INavigationWindowService>()));
 
         return @this;
     }

@@ -20,4 +20,6 @@ public class ApplicationWindowViewModel<TApplicationWindowSettingsViewModel> : V
             OnPropertyChanged();
         }
     }
+
+    IApplicationWindowSettingsViewModel IApplicationWindowViewModel.WindowSettings => WindowSettings;
 }

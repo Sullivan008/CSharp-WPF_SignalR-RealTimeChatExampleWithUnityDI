@@ -4,8 +4,8 @@ using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNav
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Interfaces;
+using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
-using Application.Client.Windows.NavigationWindow.Window.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation;
@@ -14,12 +14,12 @@ public class PageViewNavigationService : IPageViewNavigationService
 {
     private readonly IServiceProvider _serviceProvider;
 
-    private readonly INavigationWindow _navigationWindow;
+    private readonly ICurrentNavigationWindowService _currentNavigationWindowService;
 
-    public PageViewNavigationService(IServiceProvider serviceProvider, INavigationWindow navigationWindow)
+    public PageViewNavigationService(IServiceProvider serviceProvider, ICurrentNavigationWindowService currentNavigationWindowService)
     {
         _serviceProvider = serviceProvider;
-        _navigationWindow = navigationWindow;
+        _currentNavigationWindowService = currentNavigationWindowService;
     }
 
     public void Navigate(IPageViewNavigationOptions pageViewNavigationOptions)
@@ -34,15 +34,15 @@ public class PageViewNavigationService : IPageViewNavigationService
 
     private IPageViewViewModel GetPageViewViewModel(Type pageViewViewModelType)
     {
-        Type pageViewViewModelFactoryType = typeof(Func<,>)
-            .MakeGenericType(typeof(IPageViewNavigationService), pageViewViewModelType);
+        Type pageViewViewModelFactoryType = typeof(Func<,,>)
+            .MakeGenericType(typeof(IPageViewNavigationService), typeof(ICurrentNavigationWindowService), pageViewViewModelType);
 
-        Func<IPageViewNavigationService, IPageViewViewModel> pageViewViewModelFactory = 
-            (Func<IPageViewNavigationService, IPageViewViewModel>)_serviceProvider.GetRequiredService(pageViewViewModelFactoryType);
+        Func<IPageViewNavigationService, ICurrentNavigationWindowService, IPageViewViewModel> pageViewViewModelFactory =
+            (Func<IPageViewNavigationService, ICurrentNavigationWindowService, IPageViewViewModel>)_serviceProvider.GetRequiredService(pageViewViewModelFactoryType);
 
-        return pageViewViewModelFactory(this);
+        return pageViewViewModelFactory(this, _currentNavigationWindowService);
     }
-    
+
     private void InitializePageViewViewModel(Type pageViewViewModelType, IPageViewViewModel pageViewViewModel,
         Type pageViewViewModelInitializerModelType, IPageViewViewModelInitializerModel? pageViewViewModelInitializerModel)
     {
@@ -65,6 +65,8 @@ public class PageViewNavigationService : IPageViewNavigationService
 
     private void SetCurrentPage(IPageViewViewModel pageViewViewModel)
     {
-        ((INavigationWindowViewModel)_navigationWindow.DataContext).CurrentPage = pageViewViewModel;
+        INavigationWindowViewModel navigationWindowViewModel = (INavigationWindowViewModel) _currentNavigationWindowService.NavigationWindow.DataContext;
+
+        navigationWindowViewModel.CurrentPage = pageViewViewModel;
     }
 }

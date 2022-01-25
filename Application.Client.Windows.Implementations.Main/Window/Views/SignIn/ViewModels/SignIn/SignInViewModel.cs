@@ -3,6 +3,7 @@ using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.Comman
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView;
+using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;

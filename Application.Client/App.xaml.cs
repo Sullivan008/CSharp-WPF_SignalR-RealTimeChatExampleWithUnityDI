@@ -17,6 +17,7 @@ using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
@@ -116,6 +117,7 @@ public partial class App
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
         serviceCollection.AddNavigationWindowService();
+        serviceCollection.AddPageViewNavigationService();
 
         serviceCollection.AddMainWindow();
 
