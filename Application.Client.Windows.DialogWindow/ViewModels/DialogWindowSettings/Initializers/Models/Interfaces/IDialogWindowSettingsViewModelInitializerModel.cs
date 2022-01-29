@@ -1,0 +1,6 @@
+﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Models.Interfaces;
+
+namespace Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings.Initializers.Models.Interfaces;
+
+public interface IDialogWindowSettingsViewModelInitializerModel : IApplicationWindowSettingsViewModelInitializerModel
+{ }

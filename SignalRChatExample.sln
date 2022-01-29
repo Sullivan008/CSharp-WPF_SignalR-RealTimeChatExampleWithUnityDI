@@ -54,6 +54,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.Main", "Application.Client.Windows.Implementations.Main\Application.Client.Windows.Implementations.Main.csproj", "{7BA1D597-8833-49EC-AFBD-CCE407A93830}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.DialogWindow", "Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj", "{33353019-103F-415D-A9E5-DE913EAB513C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -132,6 +134,10 @@ Global
 		{7BA1D597-8833-49EC-AFBD-CCE407A93830}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BA1D597-8833-49EC-AFBD-CCE407A93830}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BA1D597-8833-49EC-AFBD-CCE407A93830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33353019-103F-415D-A9E5-DE913EAB513C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33353019-103F-415D-A9E5-DE913EAB513C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33353019-103F-415D-A9E5-DE913EAB513C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33353019-103F-415D-A9E5-DE913EAB513C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,6 +159,7 @@ Global
 		{114101F2-2A63-4F8C-A759-3F3F398AC714} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 		{3E715E21-3178-43ED-A480-098C18EEF36B} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 		{7BA1D597-8833-49EC-AFBD-CCE407A93830} = {3E715E21-3178-43ED-A480-098C18EEF36B}
+		{33353019-103F-415D-A9E5-DE913EAB513C} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
