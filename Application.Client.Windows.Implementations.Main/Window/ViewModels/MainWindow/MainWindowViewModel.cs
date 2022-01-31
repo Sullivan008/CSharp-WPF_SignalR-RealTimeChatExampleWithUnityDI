@@ -1,11 +1,11 @@
-﻿using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
+﻿using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow;
 
 namespace Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 
 public class MainWindowViewModel : NavigationWindowViewModel<MainWindowSettingsViewModel>
 {
-    public MainWindowViewModel(IPageViewNavigationService viewNavigationService) : base(viewNavigationService)
+    public MainWindowViewModel(ICurrentNavigationWindowService currentNavigationWindowService) : base(currentNavigationWindowService)
     {
         Test();
     }

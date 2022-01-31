@@ -1,18 +1,18 @@
 ﻿using Application.Client.Common.ViewModels;
-using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageViewData.Interfaces;
+using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView;
 
 public class PageViewViewModel<TPageViewDataViewModel> : ViewModelBase, IPageViewViewModel where TPageViewDataViewModel : IPageViewDataViewModel, new()
 {
-    public IPageViewNavigationService ViewNavigationService { get; }
+    public ICurrentNavigationWindowService CurrentNavigationWindowService { get; }
 
-    protected PageViewViewModel(IPageViewNavigationService viewNavigationService)
+    protected PageViewViewModel(ICurrentNavigationWindowService currentNavigationWindowService)
     {
-        ViewNavigationService = viewNavigationService;
+        CurrentNavigationWindowService = currentNavigationWindowService;
     }
 
     private TPageViewDataViewModel _viewData = new();

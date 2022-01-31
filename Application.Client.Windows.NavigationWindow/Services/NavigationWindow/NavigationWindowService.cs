@@ -60,6 +60,6 @@ public class NavigationWindowService : INavigationWindowService
 
     private static void Navigate(INavigationWindowViewModel navigationWindowViewModel, IPageViewNavigationOptions pageViewNavigationOptions)
     {
-        navigationWindowViewModel.PageViewNavigationService.Navigate(pageViewNavigationOptions);
+        navigationWindowViewModel.CurrentNavigationWindowService.Navigate(pageViewNavigationOptions);
     }
 }

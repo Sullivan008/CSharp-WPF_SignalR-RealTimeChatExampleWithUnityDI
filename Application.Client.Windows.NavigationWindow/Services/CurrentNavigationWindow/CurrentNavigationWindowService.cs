@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
+using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Interfaces;
@@ -15,10 +17,13 @@ public class CurrentNavigationWindowService : ICurrentNavigationWindowService
 
     private readonly INavigationWindow _navigationWindow;
 
-    public CurrentNavigationWindowService(IServiceProvider serviceProvider, INavigationWindow navigationWindow)
+    private readonly IPageViewNavigationService _pageViewNavigationService;
+
+    public CurrentNavigationWindowService(IServiceProvider serviceProvider, INavigationWindow navigationWindow, IPageViewNavigationService pageViewNavigationService)
     {
         _serviceProvider = serviceProvider;
         _navigationWindow = navigationWindow;
+        _pageViewNavigationService = pageViewNavigationService;
     }
 
     INavigationWindow ICurrentNavigationWindowService.NavigationWindow => _navigationWindow;
@@ -45,5 +50,10 @@ public class CurrentNavigationWindowService : ICurrentNavigationWindowService
 
         navigationWindowSettingsViewModelInitializerInitializeMethodInfo
             .Invoke(navigationWindowSettingsViewModelInitializer, new object[] { navigationWindowSettingsViewModel, navigationWindowSettingsViewModelInitializerModel });
+    }
+
+    public void Navigate(IPageViewNavigationOptions pageViewNavigationOptions)
+    {
+        _pageViewNavigationService.Navigate(pageViewNavigationOptions);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow;
-using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Interfaces;
+using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Interfaces;
 using Application.Common.Utilities.Guard;
@@ -10,12 +10,14 @@ namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindo
 public class NavigationWindowViewModel<TNavigationWindowSettingsViewModel> : ApplicationWindowViewModel<TNavigationWindowSettingsViewModel>, INavigationWindowViewModel
     where TNavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel, new()
 {
-    public IPageViewNavigationService PageViewNavigationService { get; }
+    private readonly ICurrentNavigationWindowService _currentNavigationWindowService;
 
-    public NavigationWindowViewModel(IPageViewNavigationService pageViewNavigationService)
+    public NavigationWindowViewModel(ICurrentNavigationWindowService currentNavigationWindowService)
     {
-        PageViewNavigationService = pageViewNavigationService;
+        _currentNavigationWindowService = currentNavigationWindowService;
     }
+
+    ICurrentNavigationWindowService INavigationWindowViewModel.CurrentNavigationWindowService => _currentNavigationWindowService;
 
     private IPageViewViewModel? _currentPage;
     public IPageViewViewModel CurrentPage
@@ -35,4 +37,5 @@ public class NavigationWindowViewModel<TNavigationWindowSettingsViewModel> : App
             OnPropertyChanged();
         }
     }
+
 }

@@ -4,6 +4,7 @@ using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
@@ -38,7 +39,13 @@ public static class MainWindowServiceCollectionExtension
         @this.AddPageViewDataViewModelInitializers(CurrentAssembly);
 
         @this.AddPageViewViewModelFactory<SignInViewModel>(serviceProvider => 
-            (viewNavigationService, _) => new SignInViewModel(viewNavigationService, serviceProvider.GetRequiredService<INavigationWindowService>()));
+            currentNavigationWindowService =>
+            {
+                IPageViewNavigationService pageViewNavigationService = serviceProvider.GetRequiredService<IPageViewNavigationService>();
+                
+                return new SignInViewModel(currentNavigationWindowService,
+                    serviceProvider.GetRequiredService<INavigationWindowService>());
+            });
 
         return @this;
     }
