@@ -1,21 +1,21 @@
-﻿using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+﻿using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
+using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Interfaces;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
-using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Interfaces;
-using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageViewData.Initializers.Interfaces;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer;
 
-public class SignInViewModelInitializer : IPageViewViewModelInitializer<SignInViewModel, SignInViewModelInitializerModel>
+public class SignInViewModelInitializer : IContentPresenterViewModelInitializer<SignInViewModel, SignInViewModelInitializerModel>
 {
-    private readonly IPageViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> _pageViewDataViewModelInitializer;
+    private readonly IContentPresenterViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> _contentPresenterViewDataViewModelInitializer;
 
-    public SignInViewModelInitializer(IPageViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> pageViewDataViewModelInitializer)
+    public SignInViewModelInitializer(IContentPresenterViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> contentPresenterViewDataViewModelInitializer)
     {
-        _pageViewDataViewModelInitializer = pageViewDataViewModelInitializer;
+        _contentPresenterViewDataViewModelInitializer = contentPresenterViewDataViewModelInitializer;
     }
 
-    public void Initialize(SignInViewModel navigationWindowPageViewModel, SignInViewModelInitializerModel navigationWindowPageViewModelInitializerModel)
+    public void Initialize(SignInViewModel contentPresenterViewModel, SignInViewModelInitializerModel contentPresenterViewModelInitializerModel)
     {
-        _pageViewDataViewModelInitializer.Initialize(navigationWindowPageViewModel.ViewData, navigationWindowPageViewModelInitializerModel.ViewDataInitializerModel);
+        _contentPresenterViewDataViewModelInitializer.Initialize(contentPresenterViewModel.ViewData, contentPresenterViewModelInitializerModel.ViewDataInitializerModel);
     }
 }

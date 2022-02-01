@@ -1,6 +1,8 @@
-﻿namespace Application.Client.Windows.NavigationWindow.Window.Interfaces;
+﻿using Application.Client.Windows.ApplicationWindow.Window.Interfaces;
 
-public interface INavigationWindow
+namespace Application.Client.Windows.NavigationWindow.Window.Interfaces;
+
+public interface INavigationWindow : IApplicationWindow
 {
     public object DataContext { get; set; }
 

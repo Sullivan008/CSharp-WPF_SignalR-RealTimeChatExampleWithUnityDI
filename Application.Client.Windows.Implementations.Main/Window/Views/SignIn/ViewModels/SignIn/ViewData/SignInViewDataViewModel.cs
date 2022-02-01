@@ -1,9 +1,9 @@
-﻿using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageViewData;
+﻿using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenterViewData;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 
-public class SignInViewDataViewModel : PageViewDataViewModel
+public class SignInViewDataViewModel : ContentPresenterViewDataViewModel
 {
     private string _content = string.Empty;
     public string Content

@@ -4,6 +4,6 @@ using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNav
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn;
 
-public class SignInPageViewOptions : PageViewNavigationOptions<SignInViewModel, SignInViewModelInitializerModel>
-{
-}
+//public class SignInPageViewOptions : PageViewNavigationOptions<SignInViewModel, SignInViewModelInitializerModel>
+//{
+//}

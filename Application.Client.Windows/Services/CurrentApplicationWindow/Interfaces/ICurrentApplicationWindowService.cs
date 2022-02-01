@@ -5,7 +5,7 @@ namespace Application.Client.Windows.ApplicationWindow.Services.CurrentApplicati
 
 public interface ICurrentApplicationWindowService
 {
-    internal IApplicationWindow ApplicationWindow { get; }
+    public IApplicationWindow ApplicationWindow { get; }
 
     public void ReInitializeWindowSettings(Func<IApplicationWindowSettingsViewModelInitializerModel> applicationWindowSettingsViewModelInitializerModelFactory);
 }

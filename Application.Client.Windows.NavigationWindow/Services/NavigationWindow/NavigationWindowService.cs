@@ -39,7 +39,6 @@ public class NavigationWindowService : INavigationWindowService
     }
 
     private void InitializeNavigationWindow(INavigationWindowViewModel navigationWindowViewModel, INavigationWindowViewModelInitializerModel navigationWindowViewModelInitializerModel)
-
     {
         Type navigationWindowViewModelType = navigationWindowViewModel.GetType();
         Type navigationWindowViewModelInitializerModelType = navigationWindowViewModelInitializerModel.GetType();
@@ -59,7 +58,7 @@ public class NavigationWindowService : INavigationWindowService
     }
 
     private static void Navigate(INavigationWindowViewModel navigationWindowViewModel, IPageViewNavigationOptions pageViewNavigationOptions)
-    {
+    { 
         navigationWindowViewModel.CurrentNavigationWindowService.Navigate(pageViewNavigationOptions);
     }
 }

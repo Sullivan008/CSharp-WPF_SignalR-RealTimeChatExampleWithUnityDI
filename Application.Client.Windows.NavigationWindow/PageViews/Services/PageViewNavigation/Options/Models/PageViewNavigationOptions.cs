@@ -5,8 +5,7 @@ using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.
 namespace Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models;
 
 public class PageViewNavigationOptions<TPageViewViewModel, TPageViewViewModelInitializerModel> : IPageViewNavigationOptions 
-    where TPageViewViewModel : IPageViewViewModel
-    where TPageViewViewModelInitializerModel : IPageViewViewModelInitializerModel
+
 {
     private readonly Func<TPageViewViewModelInitializerModel>? _pageViewModelInitializerModelFactory;
     public Func<TPageViewViewModelInitializerModel> PageViewModelInitializerFactory
@@ -26,7 +25,7 @@ public class PageViewNavigationOptions<TPageViewViewModel, TPageViewViewModelIni
             {
                 if (_pageViewModelInitializerModelFactory != null)
                 {
-                    _pageViewViewModelInitializerModel = _pageViewModelInitializerModelFactory();
+                    _pageViewViewModelInitializerModel = (IPageViewViewModelInitializerModel?)_pageViewModelInitializerModelFactory();
                 }
             }
 

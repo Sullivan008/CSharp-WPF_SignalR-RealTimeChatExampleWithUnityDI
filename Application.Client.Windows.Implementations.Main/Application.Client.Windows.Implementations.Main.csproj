@@ -11,6 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Application.Client.Windows.ContentPresenter\Application.Client.Windows.ContentPresenter.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow\Application.Client.Windows.NavigationWindow.csproj" />
 	</ItemGroup>
 

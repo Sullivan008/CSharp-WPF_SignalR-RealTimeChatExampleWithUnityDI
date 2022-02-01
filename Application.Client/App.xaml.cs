@@ -16,8 +16,11 @@ using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models;
+using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
@@ -83,13 +86,13 @@ public partial class App
             }
         };
 
-        SignInPageViewOptions pageViewOptions = new()
-        {
-            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
-            {
-                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from view initializer" }
-            }
-        };
+        //SignInPageViewOptions pageViewOptions = new()
+        //{
+        //    PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
+        //    {
+        //        ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from view initializer" }
+        //    }
+        //};
 
         //ViewNavigationOptions = new SignInPageViewOptions
         //{
@@ -99,7 +102,15 @@ public partial class App
         //    }
         //}
 
-        await navigationWindowService.ShowAsync(otpions, pageViewOptions);
+        IPageViewNavigationOptions options = new PageViewNavigationOptions<SignInViewModel, SignInViewModelInitializerModel>
+        {
+            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
+            {
+                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from view initializer" }
+            }
+        };
+
+        await navigationWindowService.ShowAsync(otpions, options);
 
         base.OnStartup(eventArgs);
     }

@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
-using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
+using Application.Client.Windows.ApplicationWindow.Services.CurrentApplicationWindow.Interfaces;
+using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Models.Interfaces;
+using Application.Client.Windows.ApplicationWindow.Window.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
@@ -17,13 +19,10 @@ public class CurrentNavigationWindowService : ICurrentNavigationWindowService
 
     private readonly INavigationWindow _navigationWindow;
 
-    private readonly IPageViewNavigationService _pageViewNavigationService;
-
-    public CurrentNavigationWindowService(IServiceProvider serviceProvider, INavigationWindow navigationWindow, IPageViewNavigationService pageViewNavigationService)
+    public CurrentNavigationWindowService(IServiceProvider serviceProvider, INavigationWindow navigationWindow)
     {
         _serviceProvider = serviceProvider;
         _navigationWindow = navigationWindow;
-        _pageViewNavigationService = pageViewNavigationService;
     }
 
     INavigationWindow ICurrentNavigationWindowService.NavigationWindow => _navigationWindow;
@@ -53,7 +52,14 @@ public class CurrentNavigationWindowService : ICurrentNavigationWindowService
     }
 
     public void Navigate(IPageViewNavigationOptions pageViewNavigationOptions)
-    {
+    { 
+        ((INavigationWindowViewModel)_navigationWindow.DataContext).CurrentPage = pageViewNavigationOptions.
         _pageViewNavigationService.Navigate(pageViewNavigationOptions);
+    }
+
+    IApplicationWindow ICurrentApplicationWindowService.ApplicationWindow => _navigationWindow;
+    public void ReInitializeWindowSettings(Func<IApplicationWindowSettingsViewModelInitializerModel> applicationWindowSettingsViewModelInitializerModelFactory)
+    {
+        throw new NotImplementedException();
     }
 }

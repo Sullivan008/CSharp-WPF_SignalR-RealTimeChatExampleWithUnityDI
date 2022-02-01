@@ -1,4 +1,5 @@
 ﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow;
+using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
@@ -19,8 +20,8 @@ public class NavigationWindowViewModel<TNavigationWindowSettingsViewModel> : App
 
     ICurrentNavigationWindowService INavigationWindowViewModel.CurrentNavigationWindowService => _currentNavigationWindowService;
 
-    private IPageViewViewModel? _currentPage;
-    public IPageViewViewModel CurrentPage
+    private IContentPresenterViewModel? _currentPage;
+    public IContentPresenterViewModel CurrentPage
     {
         get
         {
