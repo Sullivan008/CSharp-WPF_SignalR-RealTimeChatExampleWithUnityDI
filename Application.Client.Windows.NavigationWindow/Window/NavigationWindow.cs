@@ -2,5 +2,5 @@
 
 namespace Application.Client.Windows.NavigationWindow.Window;
 
-public class NavigationWindow : ApplicationWindow.Window.ApplicationWindow, INavigationWindow
+public class NavigationWindow : Common.Window.Window, INavigationWindow
 { }

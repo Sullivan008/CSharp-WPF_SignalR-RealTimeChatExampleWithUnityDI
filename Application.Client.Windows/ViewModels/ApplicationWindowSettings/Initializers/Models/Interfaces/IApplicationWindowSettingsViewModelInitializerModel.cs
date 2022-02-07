@@ -1,4 +1,0 @@
-﻿namespace Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Models.Interfaces;
-
-public interface IApplicationWindowSettingsViewModelInitializerModel
-{ }

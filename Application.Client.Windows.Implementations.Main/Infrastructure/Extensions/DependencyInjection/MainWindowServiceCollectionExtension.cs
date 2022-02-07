@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Interfaces.Markers;
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;

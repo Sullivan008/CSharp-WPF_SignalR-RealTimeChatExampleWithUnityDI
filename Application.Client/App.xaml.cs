@@ -12,8 +12,11 @@ using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners
 using Application.Client.Infrastructure.ErrorHandling.Models;
 using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Options.Models;
+using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Window;
+using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
@@ -23,6 +26,8 @@ using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNav
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
+using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models;
+using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models.Interfaces;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
@@ -78,13 +83,25 @@ public partial class App
 
         INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
 
-        MainWindowOptions otpions = new()
+        INavigationWindowOptionsModel windowOptions = new NavigationWindowOptionsModel<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel>
         {
-            WindowViewModelInitializerModelFactory = () => new MainWindowViewModelInitializerModel
+            WindowViewModelInitializerModel = new MainWindowViewModelInitializerModel
             {
-                WindowSettings = new MainWindowSettingsViewModelInitializerModel { Title = "Test Title" }
+                WindowSettings = new MainWindowSettingsViewModelInitializerModel
+                {
+                    Title = "Test Title"
+                }
             }
         };
+
+        //MainWindowOptions otpions = new()
+        //{
+
+        //    WindowViewModelInitializerModelFactory = () => new MainWindowViewModelInitializerModel
+        //    {
+        //        WindowSettings = new MainWindowSettingsViewModelInitializerModel { Title = "Test Title" }
+        //    }
+        //};
 
         //SignInPageViewOptions pageViewOptions = new()
         //{
@@ -110,7 +127,7 @@ public partial class App
             }
         };
 
-        await navigationWindowService.ShowAsync(otpions, options);
+        await navigationWindowService.ShowAsync(windowOptions, options);
 
         base.OnStartup(eventArgs);
     }

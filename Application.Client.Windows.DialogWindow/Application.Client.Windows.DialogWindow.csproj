@@ -7,7 +7,7 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Application.Client.Windows\Application.Client.Windows.ApplicationWindow.csproj" />
+		<ProjectReference Include="..\Application.Client.Windows.ApplicationWindow\Application.Client.Windows.ApplicationWindow.csproj" />
 		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
 </Project>

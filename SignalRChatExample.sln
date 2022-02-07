@@ -44,7 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client", "Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.D", "Application.Client.D\Application.Client.D.csproj", "{DCEA6F17-1858-418B-B888-8B0551A8AFE9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.ApplicationWindow", "Application.Client.Windows\Application.Client.Windows.ApplicationWindow.csproj", "{C531373C-7BEC-4116-934A-DEC710A37466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.ApplicationWindow", "Application.Client.Windows.ApplicationWindow\Application.Client.Windows.ApplicationWindow.csproj", "{C531373C-7BEC-4116-934A-DEC710A37466}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows", "Application.Client.Windows", "{704E88AB-7D2F-4C62-B2DD-3896CBE79078}"
 EndProject
@@ -56,7 +56,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.DialogWindow", "Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj", "{33353019-103F-415D-A9E5-DE913EAB513C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.ContentPresenter", "Application.Client.Windows.ContentPresenter\Application.Client.Windows.ContentPresenter.csproj", "{6DD3B885-A824-43DB-8990-8D6A01CC6744}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.Core", "Application.Client.Windows.Common\Application.Client.Windows.Core.csproj", "{005423E7-34D3-4699-B530-EE38568B4287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,10 +140,10 @@ Global
 		{33353019-103F-415D-A9E5-DE913EAB513C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33353019-103F-415D-A9E5-DE913EAB513C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33353019-103F-415D-A9E5-DE913EAB513C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6DD3B885-A824-43DB-8990-8D6A01CC6744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6DD3B885-A824-43DB-8990-8D6A01CC6744}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6DD3B885-A824-43DB-8990-8D6A01CC6744}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6DD3B885-A824-43DB-8990-8D6A01CC6744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005423E7-34D3-4699-B530-EE38568B4287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005423E7-34D3-4699-B530-EE38568B4287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005423E7-34D3-4699-B530-EE38568B4287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005423E7-34D3-4699-B530-EE38568B4287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -166,7 +166,7 @@ Global
 		{3E715E21-3178-43ED-A480-098C18EEF36B} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 		{7BA1D597-8833-49EC-AFBD-CCE407A93830} = {3E715E21-3178-43ED-A480-098C18EEF36B}
 		{33353019-103F-415D-A9E5-DE913EAB513C} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
-		{6DD3B885-A824-43DB-8990-8D6A01CC6744} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{005423E7-34D3-4699-B530-EE38568B4287} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

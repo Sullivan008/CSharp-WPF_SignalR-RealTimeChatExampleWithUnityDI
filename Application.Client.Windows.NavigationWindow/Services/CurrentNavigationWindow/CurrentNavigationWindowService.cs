@@ -2,6 +2,7 @@
 using Application.Client.Windows.ApplicationWindow.Services.CurrentApplicationWindow.Interfaces;
 using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Models.Interfaces;
 using Application.Client.Windows.ApplicationWindow.Window.Interfaces;
+using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
@@ -52,12 +53,12 @@ public class CurrentNavigationWindowService : ICurrentNavigationWindowService
     }
 
     public void Navigate(IPageViewNavigationOptions pageViewNavigationOptions)
-    { 
-        ((INavigationWindowViewModel)_navigationWindow.DataContext).CurrentPage = pageViewNavigationOptions.
-        _pageViewNavigationService.Navigate(pageViewNavigationOptions);
+    {
+        ((INavigationWindowViewModel)_navigationWindow.DataContext).CurrentPage = (IContentPresenterViewModel)Activator.CreateInstance(pageViewNavigationOptions.PageViewViewModelType, new object[]{null, null});
+        //_pageViewNavigationService.Navigate(pageViewNavigationOptions);
     }
 
-    IApplicationWindow ICurrentApplicationWindowService.ApplicationWindow => _navigationWindow;
+    //IApplicationWindow ICurrentApplicationWindowService.ApplicationWindow => _navigationWindow;
     public void ReInitializeWindowSettings(Func<IApplicationWindowSettingsViewModelInitializerModel> applicationWindowSettingsViewModelInitializerModelFactory)
     {
         throw new NotImplementedException();

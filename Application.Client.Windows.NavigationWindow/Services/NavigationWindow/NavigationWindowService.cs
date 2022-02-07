@@ -47,6 +47,8 @@ public class NavigationWindowService : INavigationWindowService
             .MakeGenericType(navigationWindowViewModelType, navigationWindowViewModelInitializerModelType);
 
         MethodInfo navigationWindowViewModelInitializerInitializeMethodInfo = navigationWindowViewModelInitializerType
+            .GetInterfaces()
+            .Single()
             .GetMethods()
             .Single();
 

@@ -1,10 +1,9 @@
 ﻿using System.Reflection;
-using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
+using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Interfaces;
 using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Initializers.Models.Interfaces;
-using Application.Client.Windows.NavigationWindow.PageViews.ViewModels.PageView.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Window.Interfaces;

@@ -1,6 +1,6 @@
-﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Interfaces;
+﻿using Application.Client.Windows.Core.ViewModels.WindowSettings.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Interfaces;
 
-public interface INavigationWindowSettingsViewModel : IApplicationWindowSettingsViewModel
+public interface INavigationWindowSettingsViewModel : IWindowSettingsViewModel
 { }

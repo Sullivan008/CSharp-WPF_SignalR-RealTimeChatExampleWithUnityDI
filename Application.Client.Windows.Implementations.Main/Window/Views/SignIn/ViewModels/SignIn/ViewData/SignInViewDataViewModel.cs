@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenterViewData;
+﻿using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData;
 using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;

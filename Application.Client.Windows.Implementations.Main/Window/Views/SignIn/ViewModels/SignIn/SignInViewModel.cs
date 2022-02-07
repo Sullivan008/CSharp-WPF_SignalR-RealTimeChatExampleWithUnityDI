@@ -1,5 +1,5 @@
 ﻿using System.Windows.Input;
-using Application.Client.Windows.ContentPresenter.ViewModels.ContentPresenter;
+using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.Commands;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
@@ -14,6 +14,8 @@ public class SignInViewModel : ContentPresenterViewModel<SignInViewDataViewModel
     public SignInViewModel(ICurrentNavigationWindowService currentNavigationWindowService, INavigationWindowService navigationWindowService) : base(currentNavigationWindowService)
     {
         _navigationWindowService = navigationWindowService;
+
+        var asd = System.Windows.Application.Current.Windows;
     }
     
     private ICommand? _openTestWindowCommand;

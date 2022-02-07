@@ -1,0 +1,4 @@
+﻿namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
+
+public interface IContentPresenterViewDataViewModelInitializerModel
+{ }
