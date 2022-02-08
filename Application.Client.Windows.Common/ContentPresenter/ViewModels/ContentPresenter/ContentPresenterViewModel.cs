@@ -1,10 +1,10 @@
 ﻿using Application.Client.Common.ViewModels;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
-using Application.Client.Windows.Common.Services.CurrentWindowService.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
+using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
 using Application.Common.Utilities.Guard;
 
-namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter;
+namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 
 public class ContentPresenterViewModel<TContentPresenterViewDataViewModel> : ViewModelBase, IContentPresenterViewModel 
     where TContentPresenterViewDataViewModel : IContentPresenterViewDataViewModel, new()

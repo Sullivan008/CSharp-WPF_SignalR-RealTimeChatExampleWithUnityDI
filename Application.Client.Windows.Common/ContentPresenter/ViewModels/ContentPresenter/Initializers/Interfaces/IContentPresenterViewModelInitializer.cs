@@ -1,7 +1,7 @@
-﻿using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models.Interfaces;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 
-namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
+namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
 
 public interface IContentPresenterViewModelInitializer<in TContentPresenterViewModel, in TContentPresenterViewModelInitializerModel> 
     where TContentPresenterViewModel : IContentPresenterViewModel

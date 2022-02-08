@@ -1,16 +1,10 @@
-﻿using Application.Client.Windows.ApplicationWindow.Services.CurrentApplicationWindow.Interfaces;
-using Application.Client.Windows.Common.Services.CurrentWindowService.Interfaces;
-using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
-using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Models.Interfaces;
-using Application.Client.Windows.NavigationWindow.Window.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
+using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
+using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Options.Models.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 
 public interface ICurrentNavigationWindowService : ICurrentWindowService
 {
-    internal INavigationWindow NavigationWindow { get; }
-
-    public void Navigate(IPageViewNavigationOptions pageViewNavigationOptions);
-
-    public void ReInitializeWindowSettings(Func<INavigationWindowSettingsViewModelInitializerModel> navigationWindowSettingsViewModelInitializerModelFactory);
+    public void NavigateContentPresenter(IContentPresenterNavigateOptions contentPresenterNavigateOptions);
 }

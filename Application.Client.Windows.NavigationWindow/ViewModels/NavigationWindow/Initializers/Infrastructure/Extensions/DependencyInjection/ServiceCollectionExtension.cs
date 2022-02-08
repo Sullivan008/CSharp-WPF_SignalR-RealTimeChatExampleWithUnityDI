@@ -1,30 +1,25 @@
 ﻿using System.Reflection;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Interfaces;
-using Application.Common.Utilities.Extensions;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Models.Interfaces;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddNavigationWindowViewModelInitializers(this IServiceCollection @this, Assembly sourceAssembly)
+    public static IServiceCollection AddNavigationWindowViewModelInitializer<TNavigationWindowViewModel, TNavigationWindowViewModelInitializerModel>(this IServiceCollection @this)
+        where TNavigationWindowViewModel : INavigationWindowViewModel
+        where TNavigationWindowViewModelInitializerModel : INavigationWindowViewModelInitializerModel
     {
-        Type navigationWindowViewModelInitializerType = typeof(INavigationWindowViewModelInitializer<,>);
+        Type implementationInterfaceType = typeof(INavigationWindowViewModelInitializer<TNavigationWindowViewModel, TNavigationWindowViewModelInitializerModel>);
 
-        IReadOnlyCollection<TypeInfo> implementationTypeInfos = sourceAssembly.DefinedTypes
+        Type implementationType = Assembly.GetCallingAssembly().DefinedTypes
             .Where(x => x.IsClass)
             .Where(x => !x.IsAbstract)
-            .Where(x => x != navigationWindowViewModelInitializerType)
-            .Where(x => x.GetInterfaces().Any(y => y.IsGenericType && y.GetGenericTypeDefinition() == navigationWindowViewModelInitializerType))
-            .ToHashSet();
+            .Single(x => x.GetInterfaces().Any(y => y == implementationInterfaceType && y.IsGenericType));
 
-        implementationTypeInfos.ForEach(implementationTypeInfo =>
-        {
-            implementationTypeInfo.ImplementedInterfaces.ForEach(implementedInterface =>
-            {
-                @this.AddTransient(implementedInterface, implementationTypeInfo);
-            });
-        });
+        @this.AddTransient(implementationInterfaceType, implementationType);
 
         return @this;
     }

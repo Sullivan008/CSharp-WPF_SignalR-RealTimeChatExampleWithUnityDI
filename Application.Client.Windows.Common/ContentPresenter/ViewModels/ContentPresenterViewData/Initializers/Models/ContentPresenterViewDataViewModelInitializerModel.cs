@@ -1,6 +1,6 @@
-﻿using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
 
-namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models;
+namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models;
 
 public class ContentPresenterViewDataViewModelInitializerModel : IContentPresenterViewDataViewModelInitializerModel
 { }

@@ -4,7 +4,8 @@ using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Core.ViewModels.Window.Initializer.Models;
 
-public class WindowViewModelInitializerModel<TWindowSettingsViewModelInitializerModel> : IWindowViewModelInitializerModel where TWindowSettingsViewModelInitializerModel : IWindowSettingsViewModelInitializerModel
+public class WindowViewModelInitializerModel<TWindowSettingsViewModelInitializerModel> : IWindowViewModelInitializerModel 
+    where TWindowSettingsViewModelInitializerModel : IWindowSettingsViewModelInitializerModel
 {
     private readonly TWindowSettingsViewModelInitializerModel? _windowSettings;
     public TWindowSettingsViewModelInitializerModel WindowSettings
@@ -12,10 +13,15 @@ public class WindowViewModelInitializerModel<TWindowSettingsViewModelInitializer
         get
         {
             Guard.ThrowIfNull(_windowSettings, nameof(WindowSettings));
-
+            
             return _windowSettings!;
         }
 
-        init => _windowSettings = value;
+        init
+        {
+            Guard.ThrowIfNull(value, nameof(WindowSettings));
+
+            _windowSettings = value;
+        }
     }
 }

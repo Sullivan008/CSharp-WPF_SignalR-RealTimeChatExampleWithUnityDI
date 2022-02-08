@@ -2,5 +2,5 @@
 
 namespace Application.Client.Windows.ApplicationWindow.Window;
 
-public class ApplicationWindow : Common.Window.Window, IApplicationWindow
+public class ApplicationWindow : Core.Window.Window, IApplicationWindow
 { }

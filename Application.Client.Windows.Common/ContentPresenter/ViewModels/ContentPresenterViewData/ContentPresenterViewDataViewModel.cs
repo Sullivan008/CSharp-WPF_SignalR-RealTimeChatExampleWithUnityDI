@@ -1,15 +1,7 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
+﻿using Application.Client.Common.ViewModels;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
 
-namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData;
+namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData;
 
-public class ContentPresenterViewDataViewModel : IContentPresenterViewDataViewModel, INotifyPropertyChanged
-{
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-}
+public class ContentPresenterViewDataViewModel : ViewModelBase, IContentPresenterViewDataViewModel
+{ }

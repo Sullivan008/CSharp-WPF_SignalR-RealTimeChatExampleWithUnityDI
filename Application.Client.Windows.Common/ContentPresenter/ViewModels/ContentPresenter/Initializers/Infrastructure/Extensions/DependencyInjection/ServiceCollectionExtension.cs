@@ -1,17 +1,17 @@
 ﻿using System.Reflection;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
 using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
+namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddContentPresenterViewModelInitializers(this IServiceCollection @this, Assembly sourceAssembly)
+    public static IServiceCollection AddContentPresenterViewModelInitializers(this IServiceCollection @this)
     {
         Type contentPresenterViewModelInitializerType = typeof(IContentPresenterViewModelInitializer<,>);
 
-        IReadOnlyCollection<TypeInfo> implementationTypeInfos = sourceAssembly.DefinedTypes
+        IReadOnlyCollection<TypeInfo> implementationTypeInfos = Assembly.GetCallingAssembly().DefinedTypes
             .Where(x => x.IsClass)
             .Where(x => !x.IsAbstract)
             .Where(x => x != contentPresenterViewModelInitializerType)

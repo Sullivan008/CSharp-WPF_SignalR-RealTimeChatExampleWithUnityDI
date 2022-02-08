@@ -1,5 +1,4 @@
-﻿using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
-using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
+﻿using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Window.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,12 +13,7 @@ public static class ServiceCollectionExtension
         {
             TNavigationWindow navigationWindow = Activator.CreateInstance<TNavigationWindow>();
 
-            Func<TNavigationWindow, ICurrentNavigationWindowService> currentNavigationWindowServiceFactory = 
-                serviceProvider.GetRequiredService<Func<TNavigationWindow, ICurrentNavigationWindowService>>();
-            
-            ICurrentNavigationWindowService currentNavigationWindowService = currentNavigationWindowServiceFactory(navigationWindow);
-            
-            INavigationWindowViewModel navigationWindowViewModel = (INavigationWindowViewModel)Activator.CreateInstance(typeof(TNavigationWindowViewModel), currentNavigationWindowService)!;
+            INavigationWindowViewModel navigationWindowViewModel = (INavigationWindowViewModel)Activator.CreateInstance(typeof(TNavigationWindowViewModel))!;
             navigationWindow.DataContext = navigationWindowViewModel;
         
             return navigationWindow;

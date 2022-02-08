@@ -1,4 +1,4 @@
-﻿namespace Application.Client.Windows.Common.Services.CurrentWindowService.Interfaces;
+﻿namespace Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
 
 public interface ICurrentWindowService
 { }

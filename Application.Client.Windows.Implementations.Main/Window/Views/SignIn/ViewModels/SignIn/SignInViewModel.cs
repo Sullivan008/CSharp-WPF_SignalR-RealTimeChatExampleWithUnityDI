@@ -1,5 +1,5 @@
 ﻿using System.Windows.Input;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.Commands;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;

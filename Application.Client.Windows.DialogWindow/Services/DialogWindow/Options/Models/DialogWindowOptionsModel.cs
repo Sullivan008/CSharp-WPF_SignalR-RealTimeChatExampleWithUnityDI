@@ -7,7 +7,7 @@ using Application.Client.Windows.DialogWindow.Window.Interfaces;
 namespace Application.Client.Windows.DialogWindow.Services.DialogWindow.Options.Models;
 
 public class DialogWindowOptionsModel<TDialogWindow, TDialogWindowViewModel, TDialogWindowViewModelInitializerModel> : 
-                ApplicationWindowOptionsModel<TDialogWindow, TDialogWindowViewModel, TDialogWindowViewModelInitializerModel>, IDialogWindowOptionsModel
+                ApplicationWindowShowOptionsModel<TDialogWindow, TDialogWindowViewModel, TDialogWindowViewModelInitializerModel>, IDialogWindowOptionsModel
                     where TDialogWindow : IDialogWindow
                     where TDialogWindowViewModel : IDialogWindowViewModel
                     where TDialogWindowViewModelInitializerModel : IDialogWindowViewModelInitializerModel

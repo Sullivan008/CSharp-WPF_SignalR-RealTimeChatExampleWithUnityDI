@@ -1,9 +1,10 @@
-﻿using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
+using Application.Client.Windows.Core.Services.WindowService.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 
-public interface INavigationWindowService
+public interface INavigationWindowService : IWindowService
 {
-    public Task ShowAsync(INavigationWindowOptionsModel navigationWindowOptions, IPageViewNavigationOptions pageViewNavigationOptions);
+    public Task ShowAsync(INavigationWindowShowOptionsModel navigationWindowOptions, IContentPresenterLoadOptions contentPresenterLoadOptions);
 }

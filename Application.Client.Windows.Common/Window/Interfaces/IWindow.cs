@@ -1,4 +1,4 @@
-﻿namespace Application.Client.Windows.Common.Window.Interfaces;
+﻿namespace Application.Client.Windows.Core.Window.Interfaces;
 
 public interface IWindow
 {

@@ -12,18 +12,15 @@ using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners
 using Application.Client.Infrastructure.ErrorHandling.Models;
 using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Options.Models;
-using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Options.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.Options.Models;
+using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
-using Application.Client.Windows.Implementations.Main.Window.Views.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
-using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models;
-using Application.Client.Windows.NavigationWindow.PageViews.Services.PageViewNavigation.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models;
@@ -83,7 +80,7 @@ public partial class App
 
         INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
 
-        INavigationWindowOptionsModel windowOptions = new NavigationWindowOptionsModel<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel>
+        INavigationWindowShowOptionsModel windowOptions = new NavigationWindowShowOptionsModel<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel>
         {
             WindowViewModelInitializerModel = new MainWindowViewModelInitializerModel
             {
@@ -94,40 +91,18 @@ public partial class App
             }
         };
 
-        //MainWindowOptions otpions = new()
-        //{
-
-        //    WindowViewModelInitializerModelFactory = () => new MainWindowViewModelInitializerModel
-        //    {
-        //        WindowSettings = new MainWindowSettingsViewModelInitializerModel { Title = "Test Title" }
-        //    }
-        //};
-
-        //SignInPageViewOptions pageViewOptions = new()
-        //{
-        //    PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
-        //    {
-        //        ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from view initializer" }
-        //    }
-        //};
-
-        //ViewNavigationOptions = new SignInPageViewOptions
-        //{
-        //    PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
-        //    {
-        //        ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from window initializer!" }
-        //    }
-        //}
-
-        IPageViewNavigationOptions options = new PageViewNavigationOptions<SignInViewModel, SignInViewModelInitializerModel>
+        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<SignInViewModel, SignInViewModelInitializerModel>
         {
-            PageViewModelInitializerFactory = () => new SignInViewModelInitializerModel
+            ContentPresenterViewModelInitializerModel = new SignInViewModelInitializerModel
             {
-                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel { Content = "It's from view initializer" }
+                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel
+                {
+                    Content = "It's from the new view initializer"
+                }
             }
         };
 
-        await navigationWindowService.ShowAsync(windowOptions, options);
+        await navigationWindowService.ShowAsync(windowOptions, contentPresenterLoadOptions);
 
         base.OnStartup(eventArgs);
     }
@@ -144,8 +119,8 @@ public partial class App
 
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
+        serviceCollection.AddContentPresenterService();
         serviceCollection.AddNavigationWindowService();
-        serviceCollection.AddPageViewNavigationService();
 
         serviceCollection.AddMainWindow();
 

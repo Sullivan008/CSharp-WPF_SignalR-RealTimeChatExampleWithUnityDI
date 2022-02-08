@@ -2,5 +2,5 @@
 
 namespace Application.Client.Windows.DialogWindow.Services.DialogWindow.Options.Models.Interfaces;
 
-public interface IDialogWindowOptionsModel : IApplicationWindowOptionsModel
+public interface IDialogWindowOptionsModel : IApplicationWindowShowOptionsModel
 { }

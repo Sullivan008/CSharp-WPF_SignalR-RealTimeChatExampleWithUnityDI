@@ -18,7 +18,7 @@ public class ApplicationWindowService : IApplicationWindowService
         _serviceProvider = serviceProvider;
     }
 
-    public async Task ShowAsync(IApplicationWindowOptionsModel applicationWindowOptions)
+    public async Task ShowAsync(IApplicationWindowShowOptionsModel applicationWindowOptions)
     {
         IApplicationWindow applicationWindow = GetApplicationWindow(applicationWindowOptions.WindowType);
 

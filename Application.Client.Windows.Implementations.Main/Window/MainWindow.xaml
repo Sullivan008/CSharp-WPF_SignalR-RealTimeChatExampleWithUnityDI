@@ -7,6 +7,6 @@
                          mc:Ignorable="d"
                          Title="{Binding WindowSettings.Title}" Height="450" Width="800">
     <Grid>
-        <ContentControl Content="{Binding CurrentPage}"/>
+        <ContentControl Content="{Binding ContentPresenter}"/>
     </Grid>
 </navigationWindow:NavigationWindow>

@@ -1,8 +1,8 @@
-﻿using Application.Client.Windows.Core.ViewModels.WindowSettings.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 
 namespace Application.Client.Windows.Core.ViewModels.Window.Interfaces;
 
 public interface IWindowViewModel
 {
-    public IWindowSettingsViewModel WindowSettings { get; }
+    public IContentPresenterViewModel ContentPresenter { get; set; }
 }

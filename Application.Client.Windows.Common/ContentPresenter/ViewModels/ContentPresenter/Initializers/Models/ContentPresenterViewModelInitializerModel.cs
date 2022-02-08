@@ -1,21 +1,9 @@
-﻿using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
-using Application.Common.Utilities.Guard;
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
 
-namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models;
+namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models;
 
 public class ContentPresenterViewModelInitializerModel<TContentPresenterViewDataViewModelInitializerModel> 
     where TContentPresenterViewDataViewModelInitializerModel : IContentPresenterViewDataViewModelInitializerModel, new()
 {
-    private readonly TContentPresenterViewDataViewModelInitializerModel _viewDataInitializerModel = new();
-    public TContentPresenterViewDataViewModelInitializerModel ViewDataInitializerModel
-    {
-        get
-        {
-            Guard.ThrowIfNull(_viewDataInitializerModel, nameof(ViewDataInitializerModel));
-
-            return _viewDataInitializerModel!;
-        }
-
-        init => _viewDataInitializerModel = value;
-    }
+    public TContentPresenterViewDataViewModelInitializerModel ViewDataInitializerModel { get; init; } = new();
 }

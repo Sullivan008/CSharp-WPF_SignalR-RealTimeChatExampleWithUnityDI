@@ -9,7 +9,13 @@ public class WindowSettingsViewModel : ViewModelBase, IWindowSettingsViewModel
     private string _title = string.Empty;
     public string Title
     {
-        get => _title;
+        get
+        {
+            Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
+
+            return _title;
+        }
+
         set
         {
             Guard.ThrowIfNullOrWhitespace(value, nameof(Title));

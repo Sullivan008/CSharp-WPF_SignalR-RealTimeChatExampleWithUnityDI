@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.Common.Window.Interfaces;
+﻿using Application.Client.Windows.Core.Window.Interfaces;
 
 namespace Application.Client.Windows.ApplicationWindow.Window.Interfaces;
 

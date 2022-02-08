@@ -1,14 +1,12 @@
-﻿using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
-using Application.Client.Windows.Common.Services.CurrentWindowService.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
+using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
 
-namespace Application.Client.Windows.Common.ContentPresenter.Services.ContentPresenter.Interfaces;
+namespace Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
 
 public interface IContentPresenterService
 {
-    public IContentPresenterViewModel GetContentPresenterViewModel<TContentPresenterViewModel>(ICurrentWindowService currentApplicationWindowService)
-        where TContentPresenterViewModel : IContentPresenterViewModel;
+    public IContentPresenterViewModel GetContentPresenterViewModel(Type contentPresenterViewModelType, ICurrentWindowService currentWindowService);
 
-    public void InitializeContentPresenterViewModel(IContentPresenterViewModel contentPresenterViewModel,
-        IContentPresenterViewDataViewModelInitializerModel contentPresenterViewModelInitializerModel);
+    public void InitializeContentPresenterViewModel(IContentPresenterViewModel contentPresenterViewModel, IContentPresenterViewModelInitializerModel contentPresenterViewModelInitializerModel);
 }

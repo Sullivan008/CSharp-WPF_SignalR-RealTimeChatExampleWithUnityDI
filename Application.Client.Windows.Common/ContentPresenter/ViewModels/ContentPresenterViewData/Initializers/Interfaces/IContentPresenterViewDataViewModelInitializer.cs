@@ -1,12 +1,11 @@
-﻿using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
-using Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
 
-namespace Application.Client.Windows.Common.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Interfaces;
+namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Interfaces;
 
 public interface IContentPresenterViewDataViewModelInitializer<in TContentPresenterViewDataViewModel, in TContentPresenterViewDataViewModelInitializerModel> 
     where TContentPresenterViewDataViewModel : IContentPresenterViewDataViewModel
     where TContentPresenterViewDataViewModelInitializerModel : IContentPresenterViewDataViewModelInitializerModel
 {
-    public void Initialize(TContentPresenterViewDataViewModel contentPresenterViewDataViewModel, 
-                           TContentPresenterViewDataViewModelInitializerModel contentPresenterViewDataViewModelInitializerModel);
+    public void Initialize(TContentPresenterViewDataViewModel contentPresenterViewDataViewModel, TContentPresenterViewDataViewModelInitializerModel contentPresenterViewDataViewModelInitializerModel);
 }

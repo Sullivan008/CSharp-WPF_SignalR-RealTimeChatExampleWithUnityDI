@@ -15,6 +15,11 @@ public class WindowSettingsViewModelInitializerModel : IWindowSettingsViewModelI
             return _title;
         }
 
-        init => _title = value;
+        init
+        {
+            Guard.ThrowIfNullOrWhitespace(value, nameof(Title));
+
+            _title = value;
+        }
     }
 }

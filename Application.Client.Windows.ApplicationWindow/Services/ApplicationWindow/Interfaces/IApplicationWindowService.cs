@@ -4,5 +4,5 @@ namespace Application.Client.Windows.ApplicationWindow.Services.ApplicationWindo
 
 public interface IApplicationWindowService
 {
-    public Task ShowAsync(IApplicationWindowOptionsModel applicationWindowOptions);
+    public Task ShowAsync(IApplicationWindowShowOptionsModel applicationWindowOptions);
 }

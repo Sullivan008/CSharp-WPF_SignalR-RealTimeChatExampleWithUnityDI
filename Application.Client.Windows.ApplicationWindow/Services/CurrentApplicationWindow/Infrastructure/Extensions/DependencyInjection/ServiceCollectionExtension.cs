@@ -9,7 +9,7 @@ public static class ServiceCollectionExtension
     public static IServiceCollection AddCurrentApplicationWindowService<TApplicationWindow>(this IServiceCollection @this) where TApplicationWindow : IApplicationWindow
     {
         @this.AddTransient<Func<TApplicationWindow, ICurrentApplicationWindowService>>(serviceProvider =>
-            applicationWindow => new CurrentApplicationWindowService(serviceProvider, applicationWindow));
+            applicationWindow => new CurrentApplicationWindowService(applicationWindow));
 
         return @this;
     }
