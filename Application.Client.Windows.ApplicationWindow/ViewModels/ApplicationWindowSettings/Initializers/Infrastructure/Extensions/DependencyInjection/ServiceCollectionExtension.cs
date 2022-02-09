@@ -1,30 +1,25 @@
 ﻿using System.Reflection;
 using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Interfaces;
-using Application.Common.Utilities.Extensions;
+using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Models.Interfaces;
+using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddApplicationWindowSettingsViewModelInitializers(this IServiceCollection @this, Assembly sourceAssembly)
+    public static IServiceCollection AddApplicationWindowSettingsViewModelInitializer<TApplicationWindowSettingsViewModel, TApplicationWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
+        where TApplicationWindowSettingsViewModel : IApplicationWindowSettingsViewModel
+        where TApplicationWindowSettingsViewModelInitializerModel : IApplicationWindowSettingsViewModelInitializerModel
     {
-        Type applicationWindowSettingsViewModelInitializerType = typeof(IApplicationWindowSettingsViewModelInitializer<,>);
+        Type implementationInterfaceType = typeof(IApplicationWindowSettingsViewModelInitializer<TApplicationWindowSettingsViewModel, TApplicationWindowSettingsViewModelInitializerModel>);
 
-        IReadOnlyCollection<TypeInfo> implementationTypeInfos = sourceAssembly.DefinedTypes
+        Type implementationType = Assembly.GetCallingAssembly().DefinedTypes
             .Where(x => x.IsClass)
             .Where(x => !x.IsAbstract)
-            .Where(x => x != applicationWindowSettingsViewModelInitializerType)
-            .Where(x => x.GetInterfaces().Any(y => y.IsGenericType && y.GetGenericTypeDefinition() == applicationWindowSettingsViewModelInitializerType))
-            .ToHashSet();
+            .Single(x => x.GetInterfaces().Any(y => y == implementationInterfaceType && y.IsGenericType));
 
-        implementationTypeInfos.ForEach(implementationTypeInfo =>
-        {
-            implementationTypeInfo.ImplementedInterfaces.ForEach(implementedInterface =>
-            {
-                @this.AddTransient(implementedInterface, implementationTypeInfo);
-            });
-        });
+        @this.AddTransient(implementationInterfaceType, implementationType);
 
         return @this;
     }

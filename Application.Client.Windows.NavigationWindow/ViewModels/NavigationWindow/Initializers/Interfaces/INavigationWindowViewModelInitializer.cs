@@ -5,6 +5,7 @@ using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.In
 namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Interfaces;
 
 public interface INavigationWindowViewModelInitializer<in TNavigationWindowViewModel, in TNavigationWindowViewModelInitializerModel> :
-    IWindowViewModelInitializer<TNavigationWindowViewModel, TNavigationWindowViewModelInitializerModel> where TNavigationWindowViewModel : INavigationWindowViewModel
-                                                                                                        where TNavigationWindowViewModelInitializerModel : INavigationWindowViewModelInitializerModel
+    IWindowViewModelInitializer<TNavigationWindowViewModel, TNavigationWindowViewModelInitializerModel> 
+        where TNavigationWindowViewModel : INavigationWindowViewModel
+        where TNavigationWindowViewModelInitializerModel : INavigationWindowViewModelInitializerModel
 { }

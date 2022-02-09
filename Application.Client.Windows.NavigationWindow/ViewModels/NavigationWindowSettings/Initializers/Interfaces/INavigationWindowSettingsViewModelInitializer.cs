@@ -5,6 +5,7 @@ using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSet
 namespace Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Interfaces;
 
 public interface INavigationWindowSettingsViewModelInitializer<in TNavigationWindowSettingsViewModel, in TNavigationWindowSettingsViewModelInitializerModel> : 
-    IWindowSettingsViewModelInitializer<TNavigationWindowSettingsViewModel, TNavigationWindowSettingsViewModelInitializerModel> where TNavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
-                                                                                                                                where TNavigationWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
+    IWindowSettingsViewModelInitializer<TNavigationWindowSettingsViewModel, TNavigationWindowSettingsViewModelInitializerModel> 
+        where TNavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
+        where TNavigationWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
 { }

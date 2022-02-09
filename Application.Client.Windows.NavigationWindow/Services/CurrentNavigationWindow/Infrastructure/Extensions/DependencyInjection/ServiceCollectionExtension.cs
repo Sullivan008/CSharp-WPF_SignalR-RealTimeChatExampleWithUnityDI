@@ -7,7 +7,8 @@ namespace Application.Client.Windows.NavigationWindow.Services.CurrentNavigation
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddCurrentNavigationWindowService<TNavigationWindow>(this IServiceCollection @this) where TNavigationWindow : INavigationWindow
+    public static IServiceCollection AddCurrentNavigationWindowService<TNavigationWindow>(this IServiceCollection @this) 
+        where TNavigationWindow : INavigationWindow
     {
         @this.AddTransient<Func<TNavigationWindow, ICurrentNavigationWindowService>>(serviceProvider =>
             navigationWindow => new CurrentNavigationWindowService(navigationWindow, serviceProvider.GetRequiredService<IContentPresenterService>()));

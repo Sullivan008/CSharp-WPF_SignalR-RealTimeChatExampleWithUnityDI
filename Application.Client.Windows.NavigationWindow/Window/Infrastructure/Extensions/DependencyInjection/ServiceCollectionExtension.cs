@@ -5,9 +5,11 @@ namespace Application.Client.Windows.NavigationWindow.Window.Infrastructure.Exte
 
 public static class ServiceCollectionExtension
 {
-    public static void AddNavigationWindow<TNavigationWindow>(this IServiceCollection @this)
+    public static IServiceCollection AddNavigationWindow<TNavigationWindow>(this IServiceCollection @this)
         where TNavigationWindow : INavigationWindow
     {
         @this.AddTransient(typeof(TNavigationWindow));
+
+        return @this;
     }
 }
