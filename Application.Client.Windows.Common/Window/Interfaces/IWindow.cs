@@ -3,4 +3,6 @@
 public interface IWindow
 {
     public object DataContext { get; set; }
+
+    public void Close();
 }

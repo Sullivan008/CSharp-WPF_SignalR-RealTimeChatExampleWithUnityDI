@@ -5,5 +5,5 @@ namespace Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Interf
 
 public interface IDialogWindowViewModel : IWindowViewModel
 {
-    public ICustomDialogWindowResultModel CustomDialogResult { get; }
+    public ICustomDialogWindowResultModel CustomDialogResult { get; set; }
 }

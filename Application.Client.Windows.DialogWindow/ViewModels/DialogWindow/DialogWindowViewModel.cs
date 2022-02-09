@@ -10,8 +10,6 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
     where TDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel, new()
     where TCustomDialogWindowResultModel : ICustomDialogWindowResultModel
 {
-    ICustomDialogWindowResultModel IDialogWindowViewModel.CustomDialogResult => CustomDialogResult;
-
     private TCustomDialogWindowResultModel? _customDialogResult;
     public TCustomDialogWindowResultModel CustomDialogResult
     {
@@ -27,6 +25,18 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
             Guard.ThrowIfNull(value, nameof(CustomDialogResult));
 
             _customDialogResult = value;
+        }
+    }
+
+    ICustomDialogWindowResultModel IDialogWindowViewModel.CustomDialogResult
+    {
+        get => CustomDialogResult;
+        set
+        {
+            Guard.ThrowIfNull(value, nameof(CustomDialogResult));
+            Guard.ThrowIfNotNull(CustomDialogResult, nameof(CustomDialogResult));
+
+            CustomDialogResult = (TCustomDialogWindowResultModel)value;
         }
     }
 }
