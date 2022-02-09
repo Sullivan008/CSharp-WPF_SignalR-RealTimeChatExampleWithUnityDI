@@ -10,6 +10,8 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
     where TDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel, new()
     where TCustomDialogWindowResultModel : ICustomDialogWindowResultModel
 {
+    ICustomDialogWindowResultModel IDialogWindowViewModel.CustomDialogResult => CustomDialogResult;
+
     private TCustomDialogWindowResultModel? _customDialogResult;
     public TCustomDialogWindowResultModel CustomDialogResult
     {

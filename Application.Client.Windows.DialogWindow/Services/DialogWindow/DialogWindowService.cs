@@ -1,6 +1,7 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
 using Application.Client.Windows.Core.Services.WindowService.Abstractions;
+using Application.Client.Windows.DialogWindow.Models.CustomDialogWindowResult.Interfaces;
 using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Services.DialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Services.DialogWindow.Options.Models.Interfaces;
@@ -15,7 +16,8 @@ public class DialogWindowService : WindowService, IDialogWindowService
     public DialogWindowService(IServiceProvider serviceProvider, IContentPresenterService contentPresenterService) : base(serviceProvider, contentPresenterService)
     { }
 
-    public async Task ShowDialogAsync(IDialogWindowShowDialogOptionsModel dialogWindowOptions, IContentPresenterLoadOptions contentPresenterLoadOptions)
+    public async Task<TCustomDialogWindowResultModel> ShowDialogAsync<TCustomDialogWindowResultModel>(IDialogWindowShowDialogOptionsModel dialogWindowOptions, IContentPresenterLoadOptions contentPresenterLoadOptions)
+        where TCustomDialogWindowResultModel : ICustomDialogWindowResultModel
     {
         IDialogWindow dialogWindow = (IDialogWindow)CreateWindow(dialogWindowOptions.WindowType);
 
@@ -29,7 +31,15 @@ public class DialogWindowService : WindowService, IDialogWindowService
 
         dialogWindow.ShowDialog();
 
-        await Task.CompletedTask;
+        TCustomDialogWindowResultModel customDialogWindowResult = GetCustomDialogResult<TCustomDialogWindowResultModel>(dialogWindowViewModel);
+
+        return await Task.FromResult(customDialogWindowResult);
+    }
+
+    private static TCustomDialogWindowResultModel GetCustomDialogResult<TCustomDialogWindowResultModel>(IDialogWindowViewModel dialogWindowViewModel)
+        where TCustomDialogWindowResultModel : ICustomDialogWindowResultModel
+    {
+        return (TCustomDialogWindowResultModel)dialogWindowViewModel.CustomDialogResult;
     }
 
     protected override Type CurrentWindowServiceType => typeof(ICurrentDialogWindowService);
