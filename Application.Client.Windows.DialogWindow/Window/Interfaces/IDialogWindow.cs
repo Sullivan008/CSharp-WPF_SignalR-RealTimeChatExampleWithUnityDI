@@ -1,9 +1,9 @@
-﻿namespace Application.Client.Windows.DialogWindow.Window.Interfaces;
+﻿using Application.Client.Windows.Core.Window.Interfaces;
 
-public interface IDialogWindow
+namespace Application.Client.Windows.DialogWindow.Window.Interfaces;
+
+public interface IDialogWindow : IWindow
 {
-    public object DataContext { get; set; }
-
     public bool? DialogResult { get; set; }
 
     public bool? ShowDialog();

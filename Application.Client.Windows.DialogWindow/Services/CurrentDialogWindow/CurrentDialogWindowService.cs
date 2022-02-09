@@ -1,19 +1,11 @@
-﻿using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
+﻿using Application.Client.Windows.Core.Services.CurrentWindowService.Abstractions;
+using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Window.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow;
 
-public class CurrentDialogWindowService : ICurrentDialogWindowService
+public class CurrentDialogWindowService : CurrentWindowService, ICurrentDialogWindowService
 {
-    private readonly IDialogWindow _dialogWindow;
-
-    private readonly IServiceProvider _serviceProvider;
-
-
-    public CurrentDialogWindowService(IServiceProvider serviceProvider, IDialogWindow dialogWindow)
-    {
-        _dialogWindow = dialogWindow;
-        _serviceProvider = serviceProvider;
-    }
-    
+    public CurrentDialogWindowService(IDialogWindow dialogWindow) : base(dialogWindow)
+    { }
 }

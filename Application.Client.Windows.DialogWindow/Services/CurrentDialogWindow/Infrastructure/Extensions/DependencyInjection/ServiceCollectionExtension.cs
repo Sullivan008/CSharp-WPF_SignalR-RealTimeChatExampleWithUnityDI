@@ -6,10 +6,11 @@ namespace Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.I
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddCurrentDialogWindowService<TDialogWindow>(this IServiceCollection @this) where TDialogWindow : IDialogWindow
+    public static IServiceCollection AddCurrentDialogWindowService<TDialogWindow>(this IServiceCollection @this) 
+        where TDialogWindow : IDialogWindow
     {
         @this.AddTransient<Func<TDialogWindow, ICurrentDialogWindowService>>(serviceProvider =>
-            dialogWindow => new CurrentDialogWindowService(serviceProvider, dialogWindow));
+            dialogWindow => new CurrentDialogWindowService(dialogWindow));
 
         return @this;
     }

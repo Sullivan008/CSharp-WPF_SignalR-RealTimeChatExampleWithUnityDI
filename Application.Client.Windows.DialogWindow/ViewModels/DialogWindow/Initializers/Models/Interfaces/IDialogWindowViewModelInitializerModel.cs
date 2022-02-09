@@ -1,6 +1,6 @@
-﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow.Initializers.Models.Interfaces;
+﻿using Application.Client.Windows.Core.ViewModels.Window.Initializer.Models.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Initializers.Models.Interfaces;
 
-public interface IDialogWindowViewModelInitializerModel : IApplicationWindowViewModelInitializerModel
+public interface IDialogWindowViewModelInitializerModel : IWindowViewModelInitializerModel
 { }

@@ -1,56 +1,37 @@
-﻿using System.Reflection;
+﻿using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
+using Application.Client.Windows.Core.Services.WindowService.Abstractions;
+using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Services.DialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Services.DialogWindow.Options.Models.Interfaces;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Initializers.Interfaces;
-using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Initializers.Models.Interfaces;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Window.Interfaces;
-using Application.Common.Utilities.Guard;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.DialogWindow.Services.DialogWindow;
 
-public class DialogWindowService : IDialogWindowService
+public class DialogWindowService : WindowService, IDialogWindowService
 {
-    private readonly IServiceProvider _serviceProvider;
+    public DialogWindowService(IServiceProvider serviceProvider, IContentPresenterService contentPresenterService) : base(serviceProvider, contentPresenterService)
+    { }
 
-    public DialogWindowService(IServiceProvider serviceProvider)
+    public async Task ShowDialogAsync(IDialogWindowShowDialogOptionsModel dialogWindowOptions, IContentPresenterLoadOptions contentPresenterLoadOptions)
     {
-        _serviceProvider = serviceProvider;
-    }
+        IDialogWindow dialogWindow = (IDialogWindow)CreateWindow(dialogWindowOptions.WindowType);
 
-    public async Task ShowDialogAsync(IDialogWindowOptionsModel dialogWindowOptions)
-    {
-        IDialogWindow dialogWindow = GetDialogWindow(dialogWindowOptions.WindowType);
+        IDialogWindowViewModel dialogWindowViewModel = (IDialogWindowViewModel)CreateWindowViewModel(dialogWindowOptions.WindowViewModelType);
+        InitializeWindowViewModel(dialogWindowViewModel, dialogWindowOptions.WindowViewModelInitializerModel);
 
-        InitializeDialogWindow(dialogWindowOptions.WindowViewModelType, (IDialogWindowViewModel)dialogWindow.DataContext,
-            dialogWindowOptions.WindowViewModelInitializerModelType, (IDialogWindowViewModelInitializerModel)dialogWindowOptions.WindowViewModelInitializerModel );
+        ICurrentDialogWindowService currentDialogWindowService = (ICurrentDialogWindowService)CreateCurrentWindowService(dialogWindow);
+        LoadContentPresenter(contentPresenterLoadOptions, currentDialogWindowService, dialogWindowViewModel);
 
-        bool? dialogResult = dialogWindow.ShowDialog();
-        Guard.ThrowIfNull(dialogResult, nameof(dialogResult));
+        SetWindowDataContext(dialogWindow, dialogWindowViewModel);
+
+        dialogWindow.ShowDialog();
 
         await Task.CompletedTask;
     }
 
-    private IDialogWindow GetDialogWindow(Type dialogWindowType)
-    {
-        return (IDialogWindow) _serviceProvider.GetRequiredService(dialogWindowType);
-    }
-
-    private void InitializeDialogWindow(Type dialogWindowViewModelType, IDialogWindowViewModel dialogWindowViewModel,
-        Type dialogWindowViewModelInitializerModelType, IDialogWindowViewModelInitializerModel dialogWindowViewModelInitializerModel)
-    {
-        Type dialogWindowViewModelInitializerType = typeof(IDialogWindowViewModelInitializer<,>)
-            .MakeGenericType(dialogWindowViewModelType, dialogWindowViewModelInitializerModelType);
-
-        MethodInfo dialogWindowViewModelInitializerInitializeMethodInfo = dialogWindowViewModelInitializerType
-            .GetMethods()
-            .Single();
-
-        object dialogWindowViewModelInitializer =
-            _serviceProvider.GetRequiredService(dialogWindowViewModelInitializerType);
-
-        dialogWindowViewModelInitializerInitializeMethodInfo
-            .Invoke(dialogWindowViewModelInitializer, new object[] { dialogWindowViewModel, dialogWindowViewModelInitializerModel });
-    }
+    protected override Type CurrentWindowServiceType => typeof(ICurrentDialogWindowService);
+    protected override Type WindowViewModelInitializerGenericType => typeof(IDialogWindowViewModelInitializer<,>);
 }

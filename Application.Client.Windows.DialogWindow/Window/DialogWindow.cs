@@ -2,5 +2,5 @@
 
 namespace Application.Client.Windows.DialogWindow.Window;
 
-public class DialogWindow : ApplicationWindow.Window.ApplicationWindow, IDialogWindow
+public class DialogWindow : Core.Window.Window, IDialogWindow
 { }

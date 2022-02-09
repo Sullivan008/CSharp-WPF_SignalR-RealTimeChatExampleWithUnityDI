@@ -1,6 +1,6 @@
-﻿using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow.Interfaces;
+﻿using Application.Client.Windows.Core.ViewModels.Window.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Interfaces;
 
-public interface IDialogWindowViewModel : IApplicationWindowViewModel
+public interface IDialogWindowViewModel : IWindowViewModel
 { }
