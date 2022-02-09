@@ -1,0 +1,7 @@
+﻿using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Initializers.Models;
+using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings.Initializer.Models;
+
+namespace Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow.Initializer.Models;
+
+public class MessageDialogWindowViewModelInitializerModel : DialogWindowViewModelInitializerModel<MessageDialogWindowSettingsViewModelInitializerModel>
+{ }

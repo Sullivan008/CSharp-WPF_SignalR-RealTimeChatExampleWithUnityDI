@@ -56,7 +56,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.DialogWindow", "Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj", "{33353019-103F-415D-A9E5-DE913EAB513C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.Core", "Application.Client.Windows.Common\Application.Client.Windows.Core.csproj", "{005423E7-34D3-4699-B530-EE38568B4287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Core", "Application.Client.Windows.Common\Application.Client.Windows.Core.csproj", "{005423E7-34D3-4699-B530-EE38568B4287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.Implementations.MessageDialog", "Application.Client.Windows.Implementations.MessageDialog\Application.Client.Windows.Implementations.MessageDialog.csproj", "{412A513F-272E-4CB2-9383-94FC540AC424}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,6 +146,10 @@ Global
 		{005423E7-34D3-4699-B530-EE38568B4287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{005423E7-34D3-4699-B530-EE38568B4287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{005423E7-34D3-4699-B530-EE38568B4287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412A513F-272E-4CB2-9383-94FC540AC424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412A513F-272E-4CB2-9383-94FC540AC424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412A513F-272E-4CB2-9383-94FC540AC424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412A513F-272E-4CB2-9383-94FC540AC424}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,6 +173,7 @@ Global
 		{7BA1D597-8833-49EC-AFBD-CCE407A93830} = {3E715E21-3178-43ED-A480-098C18EEF36B}
 		{33353019-103F-415D-A9E5-DE913EAB513C} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 		{005423E7-34D3-4699-B530-EE38568B4287} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{412A513F-272E-4CB2-9383-94FC540AC424} = {3E715E21-3178-43ED-A480-098C18EEF36B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
