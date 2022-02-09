@@ -11,10 +11,12 @@ public class NavigationWindowShowOptionsModel<TNavigationWindow, TNavigationWind
     where TNavigationWindowViewModel : INavigationWindowViewModel
     where TNavigationWindowViewModelInitializerModel : INavigationWindowViewModelInitializerModel
 {
-    public Type WindowType => typeof(TNavigationWindow);
+    Type INavigationWindowShowOptionsModel.WindowType => typeof(TNavigationWindow);
 
-    public Type WindowViewModelType => typeof(TNavigationWindowViewModel);
-    
+    Type INavigationWindowShowOptionsModel.WindowViewModelType => typeof(TNavigationWindowViewModel);
+
+    INavigationWindowViewModelInitializerModel INavigationWindowShowOptionsModel.WindowViewModelInitializerModel => WindowViewModelInitializerModel;
+
     private readonly TNavigationWindowViewModelInitializerModel? _windowViewModelInitializerModel;
     public TNavigationWindowViewModelInitializerModel WindowViewModelInitializerModel
     {
@@ -30,6 +32,4 @@ public class NavigationWindowShowOptionsModel<TNavigationWindow, TNavigationWind
             _windowViewModelInitializerModel = value;
         }
     }
-
-    INavigationWindowViewModelInitializerModel INavigationWindowShowOptionsModel.WindowViewModelInitializerModel => WindowViewModelInitializerModel;
 }

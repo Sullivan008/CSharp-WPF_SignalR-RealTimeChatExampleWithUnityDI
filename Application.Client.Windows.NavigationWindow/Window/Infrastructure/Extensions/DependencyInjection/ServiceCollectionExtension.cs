@@ -1,22 +1,13 @@
-﻿using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
-using Application.Client.Windows.NavigationWindow.Window.Interfaces;
+﻿using Application.Client.Windows.NavigationWindow.Window.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.NavigationWindow.Window.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {
-    public static void AddNavigationWindow<TNavigationWindow, TNavigationWindowViewModel>(this IServiceCollection @this) where TNavigationWindow : INavigationWindow
-                                                                                                                         where TNavigationWindowViewModel : INavigationWindowViewModel
+    public static void AddNavigationWindow<TNavigationWindow>(this IServiceCollection @this)
+        where TNavigationWindow : INavigationWindow
     {
-        @this.AddTransient(typeof(TNavigationWindow), serviceProvider =>
-        {
-            TNavigationWindow navigationWindow = Activator.CreateInstance<TNavigationWindow>();
-
-            INavigationWindowViewModel navigationWindowViewModel = (INavigationWindowViewModel)Activator.CreateInstance(typeof(TNavigationWindowViewModel))!;
-            navigationWindow.DataContext = navigationWindowViewModel;
-        
-            return navigationWindow;
-        });
+        @this.AddTransient(typeof(TNavigationWindow));
     }
 }

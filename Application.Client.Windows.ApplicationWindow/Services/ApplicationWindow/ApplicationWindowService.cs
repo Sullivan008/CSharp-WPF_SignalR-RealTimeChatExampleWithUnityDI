@@ -1,54 +1,38 @@
-﻿using System.Reflection;
-using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Interfaces;
+﻿using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Interfaces;
 using Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow.Options.Models.Interfaces;
+using Application.Client.Windows.ApplicationWindow.Services.CurrentApplicationWindow.Interfaces;
 using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow.Initializers.Interfaces;
-using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow.Initializers.Models.Interfaces;
 using Application.Client.Windows.ApplicationWindow.ViewModels.ApplicationWindow.Interfaces;
 using Application.Client.Windows.ApplicationWindow.Window.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
+using Application.Client.Windows.Core.Services.WindowService.Abstractions;
 
 namespace Application.Client.Windows.ApplicationWindow.Services.ApplicationWindow;
 
-public class ApplicationWindowService : IApplicationWindowService
+public class ApplicationWindowService : WindowService, IApplicationWindowService
 {
-    private readonly IServiceProvider _serviceProvider;
+    public ApplicationWindowService(IServiceProvider serviceProvider, IContentPresenterService contentPresenterService) : base(serviceProvider, contentPresenterService)
+    { }
 
-    public ApplicationWindowService(IServiceProvider serviceProvider)
+    public async Task ShowAsync(IApplicationWindowShowOptionsModel applicationWindowOptions, IContentPresenterLoadOptions contentPresenterLoadOptions)
     {
-        _serviceProvider = serviceProvider;
-    }
+        IApplicationWindow applicationWindow = (IApplicationWindow)CreateWindow(applicationWindowOptions.WindowType);
 
-    public async Task ShowAsync(IApplicationWindowShowOptionsModel applicationWindowOptions)
-    {
-        IApplicationWindow applicationWindow = GetApplicationWindow(applicationWindowOptions.WindowType);
+        IApplicationWindowViewModel applicationWindowViewModel = (IApplicationWindowViewModel)CreateWindowViewModel(applicationWindowOptions.WindowViewModelType);
+        InitializeWindowViewModel(applicationWindowViewModel, applicationWindowOptions.WindowViewModelInitializerModel);
 
-        InitializeApplicationWindow(applicationWindowOptions.WindowViewModelType, (IApplicationWindowViewModel)applicationWindow.DataContext,
-            applicationWindowOptions.WindowViewModelInitializerModelType, (IApplicationWindowViewModelInitializerModel)applicationWindowOptions.WindowViewModelInitializerModel);
+        ICurrentApplicationWindowService currentApplicationWindowService = (ICurrentApplicationWindowService)CreateCurrentWindowService(applicationWindow);
+        LoadContentPresenter(contentPresenterLoadOptions, currentApplicationWindowService, applicationWindowViewModel);
+
+        SetWindowDataContext(applicationWindow, applicationWindowViewModel);
 
         applicationWindow.Show();
 
         await Task.CompletedTask;
     }
 
-    private IApplicationWindow GetApplicationWindow(Type applicationWindowType)
-    {
-        return (IApplicationWindow)_serviceProvider.GetRequiredService(applicationWindowType);
-    }
+    protected override Type CurrentWindowServiceType => typeof(ICurrentApplicationWindowService);
 
-    private void InitializeApplicationWindow(Type applicationWindowViewModelType, IApplicationWindowViewModel applicationWindowViewModel,
-        Type applicationWindowViewModelInitializerModelType, IApplicationWindowViewModelInitializerModel applicationWindowViewModelInitializerModel)
-    {
-        Type applicationWindowViewModelInitializerType = typeof(IApplicationWindowViewModelInitializer<,>)
-            .MakeGenericType(applicationWindowViewModelType, applicationWindowViewModelInitializerModelType);
-
-        MethodInfo applicationWindowViewModelInitializerInitializeMethodInfo = applicationWindowViewModelInitializerType
-            .GetMethods()
-            .Single();
-
-        object applicationWindowViewModelInitializer =
-            _serviceProvider.GetRequiredService(applicationWindowViewModelInitializerType);
-
-        applicationWindowViewModelInitializerInitializeMethodInfo
-            .Invoke(applicationWindowViewModelInitializer, new object[] { applicationWindowViewModel, applicationWindowViewModelInitializerModel });
-    }
+    protected override Type WindowViewModelInitializerGenericType => typeof(IApplicationWindowViewModelInitializer<,>);
 }

@@ -1,11 +1,11 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
 using Application.Client.Windows.Core.Services.WindowService.Abstractions;
-using Application.Client.Windows.Core.ViewModels.Window.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Interfaces;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Window.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Services.NavigationWindow;
@@ -18,11 +18,14 @@ public class NavigationWindowService : WindowService, INavigationWindowService
     public async Task ShowAsync(INavigationWindowShowOptionsModel navigationWindowOptions, IContentPresenterLoadOptions contentPresenterLoadOptions)
     {
         INavigationWindow navigationWindow = (INavigationWindow)CreateWindow(navigationWindowOptions.WindowType);
+
+        INavigationWindowViewModel navigationWindowViewModel = (INavigationWindowViewModel)CreateWindowViewModel(navigationWindowOptions.WindowViewModelType);
+        InitializeWindowViewModel(navigationWindowViewModel, navigationWindowOptions.WindowViewModelInitializerModel);
+
         ICurrentNavigationWindowService currentNavigationWindowService = (ICurrentNavigationWindowService)CreateCurrentWindowService(navigationWindow);
+        LoadContentPresenter(contentPresenterLoadOptions, currentNavigationWindowService, navigationWindowViewModel);
 
-        InitializeWindowViewModel((IWindowViewModel)navigationWindow.DataContext, navigationWindowOptions.WindowViewModelInitializerModel);
-
-        LoadContentPresenter(contentPresenterLoadOptions, currentNavigationWindowService, (IWindowViewModel)navigationWindow.DataContext);
+        SetWindowDataContext(navigationWindow, navigationWindowViewModel);
 
         navigationWindow.Show();
 

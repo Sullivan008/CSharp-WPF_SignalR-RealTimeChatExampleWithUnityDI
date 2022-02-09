@@ -4,11 +4,9 @@ namespace Application.Client.Windows.Core.ContentPresenter.Options.Models.Interf
 
 public interface IContentPresenterLoadOptions
 {
-    public bool HasInitializeData { get; }
+    internal bool HasInitializeData { get; }
+
+    internal IContentPresenterViewModelInitializerModel? ContentPresenterViewModelInitializerModel { get; }
 
     public Type ContentPresenterViewModelType { get; }
-    
-    public Type ContentPresenterViewModelInitializerModelType { get; }
-
-    public IContentPresenterViewModelInitializerModel? ContentPresenterViewModelInitializerModel { get; }
 }

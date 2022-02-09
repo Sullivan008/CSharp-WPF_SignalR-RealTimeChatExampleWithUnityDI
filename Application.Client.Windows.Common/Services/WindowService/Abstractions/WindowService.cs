@@ -41,6 +41,11 @@ public abstract class WindowService
         return (ICurrentWindowService)currentWindowServiceFactoryInvokeMethodInfo.Invoke(currentWindowServiceFactory, new object[] { window })!;
     }
 
+    protected virtual IWindowViewModel CreateWindowViewModel(Type windowViewModelTtype)
+    {
+        return (IWindowViewModel)ServiceProvider.GetRequiredService(windowViewModelTtype);
+    }
+
     protected virtual void InitializeWindowViewModel(IWindowViewModel windowViewModel, IWindowViewModelInitializerModel windowViewModelInitializerModel)
     {
         Type windowViewModelType = windowViewModel.GetType();
@@ -60,9 +65,14 @@ public abstract class WindowService
             .Invoke(windowViewModelInitializer, new object[] { windowViewModel, windowViewModelInitializerModel });
     }
 
+    protected virtual void SetWindowDataContext(IWindow window, IWindowViewModel windowViewModel)
+    {
+        window.DataContext = windowViewModel;
+    }
+
     protected virtual void LoadContentPresenter(IContentPresenterLoadOptions contentPresenterLoadOptions, ICurrentWindowService currentWindowService, IWindowViewModel windowViewModel)
     {
-        IContentPresenterViewModel contentPresenterViewModel = 
+        IContentPresenterViewModel contentPresenterViewModel =
             ContentPresenterService.GetContentPresenterViewModel(contentPresenterLoadOptions.ContentPresenterViewModelType, currentWindowService);
 
         if (contentPresenterLoadOptions.HasInitializeData)
@@ -72,7 +82,7 @@ public abstract class WindowService
 
         windowViewModel.ContentPresenter = contentPresenterViewModel;
     }
-    
+
     protected abstract Type CurrentWindowServiceType { get; }
 
     protected abstract Type WindowViewModelInitializerGenericType { get; }

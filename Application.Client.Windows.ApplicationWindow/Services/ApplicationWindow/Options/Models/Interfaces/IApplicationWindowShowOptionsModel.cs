@@ -4,11 +4,9 @@ namespace Application.Client.Windows.ApplicationWindow.Services.ApplicationWindo
 
 public interface IApplicationWindowShowOptionsModel
 {
-    public Type WindowType { get; }
+    internal Type WindowType { get; }
 
-    public Type WindowViewModelType { get; }
+    internal Type WindowViewModelType { get; }
 
-    public Type WindowViewModelInitializerModelType { get; }
-
-    public IApplicationWindowViewModelInitializerModel WindowViewModelInitializerModel { get; }
+    internal IApplicationWindowViewModelInitializerModel WindowViewModelInitializerModel { get; }
 }

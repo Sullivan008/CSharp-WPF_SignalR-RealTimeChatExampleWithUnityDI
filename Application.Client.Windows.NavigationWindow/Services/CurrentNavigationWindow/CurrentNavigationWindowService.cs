@@ -1,5 +1,4 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
-using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
+﻿using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 using Application.Client.Windows.Core.Services.CurrentWindowService.Abstractions;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;

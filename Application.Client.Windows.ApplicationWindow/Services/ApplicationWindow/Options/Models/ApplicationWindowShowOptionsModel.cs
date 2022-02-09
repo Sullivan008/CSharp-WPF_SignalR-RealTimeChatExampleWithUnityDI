@@ -11,14 +11,14 @@ public class ApplicationWindowShowOptionsModel<TApplicationWindow, TApplicationW
     where TApplicationWindowViewModel : IApplicationWindowViewModel
     where TApplicationWindowViewModelInitializerModel : IApplicationWindowViewModelInitializerModel
 {
-    public Type WindowType => typeof(TApplicationWindow);
+    Type IApplicationWindowShowOptionsModel.WindowType => typeof(TApplicationWindow);
 
-    public Type WindowViewModelType => typeof(TApplicationWindowViewModel);
+    Type IApplicationWindowShowOptionsModel.WindowViewModelType => typeof(TApplicationWindowViewModel);
 
-    public Type WindowViewModelInitializerModelType => typeof(TApplicationWindowViewModelInitializerModel);
+    IApplicationWindowViewModelInitializerModel IApplicationWindowShowOptionsModel.WindowViewModelInitializerModel => WindowViewModelInitializerModel;
 
-    private readonly IApplicationWindowViewModelInitializerModel? _windowViewModelInitializerModel;
-    public IApplicationWindowViewModelInitializerModel WindowViewModelInitializerModel
+    private readonly TApplicationWindowViewModelInitializerModel? _windowViewModelInitializerModel;
+    public TApplicationWindowViewModelInitializerModel WindowViewModelInitializerModel
     {
         get
         {

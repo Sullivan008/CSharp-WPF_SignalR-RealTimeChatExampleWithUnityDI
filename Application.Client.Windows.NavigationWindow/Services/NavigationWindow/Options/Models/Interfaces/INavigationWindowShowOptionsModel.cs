@@ -4,9 +4,9 @@ namespace Application.Client.Windows.NavigationWindow.Services.NavigationWindow.
 
 public interface INavigationWindowShowOptionsModel
 {
-    public Type WindowType { get; }
+    internal Type WindowType { get; }
 
-    public Type WindowViewModelType { get; }
+    internal Type WindowViewModelType { get; }
 
     internal INavigationWindowViewModelInitializerModel WindowViewModelInitializerModel { get; }
 }

@@ -4,9 +4,9 @@ namespace Application.Client.Windows.NavigationWindow.Services.CurrentNavigation
 
 public interface IContentPresenterNavigateOptions
 {
-    public bool HasInitializeData { get; }
+    internal bool HasInitializeData { get; }
 
-    public Type ContentPresenterViewModelType { get; }
+    internal Type ContentPresenterViewModelType { get; }
 
-    public IContentPresenterViewModelInitializerModel? ContentPresenterViewModelInitializerModel { get; }
+    internal IContentPresenterViewModelInitializerModel? ContentPresenterViewModelInitializerModel { get; }
 }

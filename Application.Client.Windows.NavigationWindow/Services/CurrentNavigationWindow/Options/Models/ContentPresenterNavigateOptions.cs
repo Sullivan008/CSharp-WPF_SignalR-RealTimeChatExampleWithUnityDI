@@ -8,11 +8,11 @@ public class ContentPresenterNavigateOptions<TContentPresenterViewModel, TConten
     where TContentPresenterViewModel : IContentPresenterViewModel
     where TContentPresenterViewModelInitializerModel : IContentPresenterViewModelInitializerModel
 {
-    public Type ContentPresenterViewModelType => typeof(TContentPresenterViewModel);
+    Type IContentPresenterNavigateOptions.ContentPresenterViewModelType => typeof(TContentPresenterViewModel);
 
-    public bool HasInitializeData => ContentPresenterViewModelInitializerModel != null;
-
-    public TContentPresenterViewModelInitializerModel? ContentPresenterViewModelInitializerModel { get; init; }
+    bool IContentPresenterNavigateOptions.HasInitializeData => ContentPresenterViewModelInitializerModel != null;
 
     IContentPresenterViewModelInitializerModel? IContentPresenterNavigateOptions.ContentPresenterViewModelInitializerModel => ContentPresenterViewModelInitializerModel;
+
+    public TContentPresenterViewModelInitializerModel? ContentPresenterViewModelInitializerModel { get; init; }
 }
