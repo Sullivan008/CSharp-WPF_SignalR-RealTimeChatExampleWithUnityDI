@@ -1,6 +1,25 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData;
+using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Implementations.MessageDialog.Window.Views.MessageContent.ViewModels.MessageContent.ViewData;
 
 public class MessageContentViewDataViewModel : ContentPresenterViewDataViewModel
-{ }
+{
+    private string _message = string.Empty;
+    public string Message
+    {
+        get
+        {
+            Guard.ThrowIfNullOrWhitespace(_message, nameof(Message));
+
+            return _message;
+        }
+
+        set
+        {
+            Guard.ThrowIfNullOrWhitespace(value, nameof(Message));
+
+            _message = value;
+        }
+    }
+}

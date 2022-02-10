@@ -5,6 +5,8 @@ namespace Application.Client.Windows.Implementations.MessageDialog.Window.Views.
 
 public class MessageContentViewDataViewModelInitializer : IContentPresenterViewDataViewModelInitializer<MessageContentViewDataViewModel, MessageContentViewDataViewModelInitializerModel>
 {
-    public void Initialize(MessageContentViewDataViewModel contentPresenterViewDataViewModel, MessageContentViewDataViewModelInitializerModel contentPresenterViewDataViewModelInitializerModel)
-    { }
+    public void Initialize(MessageContentViewDataViewModel messageContentViewDataViewModel, MessageContentViewDataViewModelInitializerModel messageContentViewDataViewModelInitializerModel)
+    {
+        messageContentViewDataViewModel.Message = messageContentViewDataViewModelInitializerModel.Message;
+    }
 }
