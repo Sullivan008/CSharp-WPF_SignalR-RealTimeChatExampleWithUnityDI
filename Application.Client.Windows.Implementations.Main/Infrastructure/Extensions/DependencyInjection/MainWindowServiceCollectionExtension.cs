@@ -1,6 +1,7 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Services.DialogWindow.Interfaces;
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
@@ -33,7 +34,7 @@ public static class MainWindowServiceCollectionExtension
 
         @this.AddContentPresenterViewModelFactory<SignInViewModel>(serviceProvider => 
             currentWindowService => 
-                new SignInViewModel((ICurrentNavigationWindowService)currentWindowService, serviceProvider.GetRequiredService<INavigationWindowService>()));
+                new SignInViewModel((ICurrentNavigationWindowService)currentWindowService, serviceProvider.GetRequiredService<INavigationWindowService>(), serviceProvider.GetRequiredService<IDialogWindowService>()));
 
         return @this;
     }

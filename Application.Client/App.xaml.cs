@@ -15,6 +15,7 @@ using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
@@ -33,6 +34,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using ServiceCollectionExtension = Application.Client.Windows.Implementations.MessageDialog.Infrastructure.Extensions.DependencyInjection.ServiceCollectionExtension;
 
 namespace Application.Client;
 
@@ -121,8 +123,10 @@ public partial class App
     {
         serviceCollection.AddContentPresenterService();
         serviceCollection.AddNavigationWindowService();
+        serviceCollection.AddDialogWindowService();
 
         serviceCollection.AddMainWindow();
+        ServiceCollectionExtension.AddMessageDialog(serviceCollection);
 
         serviceCollection.AddMemoryCache();
         serviceCollection.AddCacheServices();
