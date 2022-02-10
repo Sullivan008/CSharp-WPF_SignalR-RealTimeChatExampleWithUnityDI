@@ -12,7 +12,7 @@ using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings.Initializer.Models;
-using Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content.ViewModels.Content;
+using Application.Client.Windows.Implementations.MessageDialog.Window.Views.MessageContent.ViewModels.MessageContent;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.Implementations.MessageDialog.Infrastructure.Extensions.DependencyInjection;
@@ -32,9 +32,9 @@ public static class ServiceCollectionExtension
         @this.AddContentPresenterViewModelInitializers();
         @this.AddContentPresenterViewDataViewModelInitializers();
 
-        @this.AddContentPresenterViewModelFactory<ContentViewModel>(serviceProvider =>
+        @this.AddContentPresenterViewModelFactory<MessageContentViewModel>(serviceProvider =>
             currentWindowService => 
-                new ContentViewModel((ICurrentDialogWindowService)currentWindowService));
+                new MessageContentViewModel((ICurrentDialogWindowService)currentWindowService));
 
         return @this;
     }
