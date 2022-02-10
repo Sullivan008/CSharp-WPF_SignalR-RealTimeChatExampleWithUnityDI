@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:window="clr-namespace:Application.Client.Windows.DialogWindow.Window;assembly=Application.Client.Windows.DialogWindow"
         mc:Ignorable="d"
-        Title="MessageDialogWindow" Height="450" Width="800">
+        Title="{Binding WindowSettings.Title}" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         
     </Grid>
