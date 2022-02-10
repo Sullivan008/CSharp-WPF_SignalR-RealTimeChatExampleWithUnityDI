@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Application.Client.Windows.Implementations.MessageDialog.Window.View.Content;
+namespace Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content;
 
 public partial class ContentView : UserControl
 {

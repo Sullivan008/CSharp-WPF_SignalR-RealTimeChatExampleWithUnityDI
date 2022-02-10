@@ -8,11 +8,11 @@ using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Initialize
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Window.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.MessageDialog.Window;
-using Application.Client.Windows.Implementations.MessageDialog.Window.View.Content.ViewModels.Content;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings.Initializer.Models;
+using Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content.ViewModels.Content;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.Implementations.MessageDialog.Infrastructure.Extensions.DependencyInjection;

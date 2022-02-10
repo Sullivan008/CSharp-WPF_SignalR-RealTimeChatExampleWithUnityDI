@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:contentViews="clr-namespace:Application.Client.Windows.Implementations.MessageDialog.Window.View.Content"
-                    xmlns:contentViewModels="clr-namespace:Application.Client.Windows.Implementations.MessageDialog.Window.View.Content.ViewModels.Content">
+                    xmlns:contentViews="clr-namespace:Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content"
+                    xmlns:contentViewModels="clr-namespace:Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content.ViewModels.Content">
     <DataTemplate DataType="{x:Type contentViewModels:ContentViewModel}">
         <contentViews:ContentView/>
     </DataTemplate>

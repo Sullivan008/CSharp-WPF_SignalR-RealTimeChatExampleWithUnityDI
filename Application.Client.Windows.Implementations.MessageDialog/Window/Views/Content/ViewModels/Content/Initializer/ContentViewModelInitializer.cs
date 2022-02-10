@@ -1,10 +1,10 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Interfaces;
-using Application.Client.Windows.Implementations.MessageDialog.Window.View.Content.ViewModels.Content.Initializer.Models;
-using Application.Client.Windows.Implementations.MessageDialog.Window.View.Content.ViewModels.Content.ViewData;
-using Application.Client.Windows.Implementations.MessageDialog.Window.View.Content.ViewModels.Content.ViewData.Initializer.Models;
+using Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content.ViewModels.Content.Initializer.Models;
+using Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content.ViewModels.Content.ViewData;
+using Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content.ViewModels.Content.ViewData.Initializer.Models;
 
-namespace Application.Client.Windows.Implementations.MessageDialog.Window.View.Content.ViewModels.Content.Initializer;
+namespace Application.Client.Windows.Implementations.MessageDialog.Window.Views.Content.ViewModels.Content.Initializer;
 
 public class ContentViewModelInitializer : IContentPresenterViewModelInitializer<ContentViewModel, ContentViewModelInitializerModel>
 {
