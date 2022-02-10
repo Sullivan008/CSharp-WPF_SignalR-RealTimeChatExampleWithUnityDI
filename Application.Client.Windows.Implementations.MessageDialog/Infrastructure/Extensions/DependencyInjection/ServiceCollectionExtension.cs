@@ -1,9 +1,14 @@
-﻿using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Infrastructure.Extensions.DependencyInjection;
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Window.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.MessageDialog.Window;
+using Application.Client.Windows.Implementations.MessageDialog.Window.View.Content.ViewModels.Content;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings;
@@ -23,7 +28,14 @@ public static class ServiceCollectionExtension
 
         @this.AddDialogWindowViewModelInitializer<MessageDialogWindowViewModel, MessageDialogWindowViewModelInitializerModel>();
         @this.AddDialogWindowSettingsViewModelInitializer<MessageDialogWindowSettingsViewModel, MessageDialogWindowSettingsViewModelInitializerModel>();
-        
+
+        @this.AddContentPresenterViewModelInitializers();
+        @this.AddContentPresenterViewDataViewModelInitializers();
+
+        @this.AddContentPresenterViewModelFactory<ContentViewModel>(serviceProvider =>
+            currentWindowService => 
+                new ContentViewModel((ICurrentDialogWindowService)currentWindowService));
+
         return @this;
     }
 }
