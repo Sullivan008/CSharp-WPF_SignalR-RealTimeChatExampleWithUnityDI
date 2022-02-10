@@ -34,7 +34,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
-using ServiceCollectionExtension = Application.Client.Windows.Implementations.MessageDialog.Infrastructure.Extensions.DependencyInjection.ServiceCollectionExtension;
+using ServiceCollectionExtension = Application.Client.Windows.Implementations.MessageBox.Infrastructure.Extensions.DependencyInjection.ServiceCollectionExtension;
 
 namespace Application.Client;
 
@@ -126,7 +126,7 @@ public partial class App
         serviceCollection.AddDialogWindowService();
 
         serviceCollection.AddMainWindow();
-        ServiceCollectionExtension.AddMessageDialog(serviceCollection);
+        ServiceCollectionExtension.AddMessageBox(serviceCollection);
 
         serviceCollection.AddMemoryCache();
         serviceCollection.AddCacheServices();
@@ -156,7 +156,7 @@ public partial class App
 
         ErrorModel errorModel = new()
         {
-            Message = eventArgs.Exception.Message,
+            Message = "eventArgs.Exception.Message",
             Exception = eventArgs.Exception.ToString()
         };
 

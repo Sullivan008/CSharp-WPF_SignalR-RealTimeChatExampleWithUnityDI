@@ -7,34 +7,34 @@ using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Infrastruc
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Window.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.Implementations.MessageDialog.Window;
-using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow;
-using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindow.Initializer.Models;
-using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings;
-using Application.Client.Windows.Implementations.MessageDialog.Window.ViewModels.MessageDialogWindowSettings.Initializer.Models;
-using Application.Client.Windows.Implementations.MessageDialog.Window.Views.MessageContent.ViewModels.MessageContent;
+using Application.Client.Windows.Implementations.MessageBox.Window;
+using Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.MessageBoxWindow;
+using Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.MessageBoxWindow.Initializer.Models;
+using Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.MessageBoxWindowSettings;
+using Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.MessageBoxWindowSettings.Initializer.Models;
+using Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.Windows.Implementations.MessageDialog.Infrastructure.Extensions.DependencyInjection;
+namespace Application.Client.Windows.Implementations.MessageBox.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddMessageDialog(this IServiceCollection @this)
+    public static IServiceCollection AddMessageBox(this IServiceCollection @this)
     {
-        @this.AddDialogWindow<MessageDialogWindow>();
-        @this.AddDialogWindowViewModel<MessageDialogWindowViewModel>();
+        @this.AddDialogWindow<MessageBoxWindow>();
+        @this.AddDialogWindowViewModel<MessageBoxWindowViewModel>();
 
-        @this.AddCurrentDialogWindowService<MessageDialogWindow>();
+        @this.AddCurrentDialogWindowService<MessageBoxWindow>();
 
-        @this.AddDialogWindowViewModelInitializer<MessageDialogWindowViewModel, MessageDialogWindowViewModelInitializerModel>();
-        @this.AddDialogWindowSettingsViewModelInitializer<MessageDialogWindowSettingsViewModel, MessageDialogWindowSettingsViewModelInitializerModel>();
+        @this.AddDialogWindowViewModelInitializer<MessageBoxWindowViewModel, MessageBoxWindowViewModelInitializerModel>();
+        @this.AddDialogWindowSettingsViewModelInitializer<MessageBoxWindowSettingsViewModel, MessageBoxWindowSettingsViewModelInitializerModel>();
 
         @this.AddContentPresenterViewModelInitializers();
         @this.AddContentPresenterViewDataViewModelInitializers();
 
-        @this.AddContentPresenterViewModelFactory<MessageContentViewModel>(serviceProvider =>
+        @this.AddContentPresenterViewModelFactory<MessageBoxViewModel>(serviceProvider =>
             currentWindowService => 
-                new MessageContentViewModel((ICurrentDialogWindowService)currentWindowService));
+                new MessageBoxViewModel((ICurrentDialogWindowService)currentWindowService));
 
         return @this;
     }

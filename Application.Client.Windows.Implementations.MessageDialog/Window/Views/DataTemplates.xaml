@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:messageContentViews="clr-namespace:Application.Client.Windows.Implementations.MessageDialog.Window.Views.MessageContent"
-                    xmlns:messageContentViewModels="clr-namespace:Application.Client.Windows.Implementations.MessageDialog.Window.Views.MessageContent.ViewModels.MessageContent">
-    <DataTemplate DataType="{x:Type messageContentViewModels:MessageContentViewModel}">
-        <messageContentViews:ContentView/>
+                    xmlns:messageBoxView="clr-namespace:Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox"
+                    xmlns:messageBoxViewModel="clr-namespace:Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox">
+    <DataTemplate DataType="{x:Type messageBoxViewModel:MessageBoxViewModel}">
+        <messageBoxView:MessageBoxView/>
     </DataTemplate>
 </ResourceDictionary>

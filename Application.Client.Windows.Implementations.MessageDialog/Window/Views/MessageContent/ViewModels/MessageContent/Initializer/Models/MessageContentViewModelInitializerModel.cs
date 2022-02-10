@@ -1,7 +1,0 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models;
-using Application.Client.Windows.Implementations.MessageDialog.Window.Views.MessageContent.ViewModels.MessageContent.ViewData.Initializer.Models;
-
-namespace Application.Client.Windows.Implementations.MessageDialog.Window.Views.MessageContent.ViewModels.MessageContent.Initializer.Models;
-
-public class MessageContentViewModelInitializerModel : ContentPresenterViewModelInitializerModel<MessageContentViewDataViewModelInitializerModel>
-{ }
