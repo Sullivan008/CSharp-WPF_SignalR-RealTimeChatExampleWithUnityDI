@@ -7,6 +7,7 @@
                      xmlns:window="clr-namespace:Application.Client.Windows.DialogWindow.Window;assembly=Application.Client.Windows.DialogWindow"
                      mc:Ignorable="d"
         ResizeMode="NoResize" SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
         MinWidth="200" MaxWidth="1672"
         MinHeight="150"
         Title="{Binding WindowSettings.Title}">
@@ -17,7 +18,5 @@
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
 
-    <Grid>
-        <ContentControl Content="{Binding ContentPresenter}"/>
-    </Grid>
+    <ContentControl Content="{Binding ContentPresenter}"/>
 </window:DialogWindow>
