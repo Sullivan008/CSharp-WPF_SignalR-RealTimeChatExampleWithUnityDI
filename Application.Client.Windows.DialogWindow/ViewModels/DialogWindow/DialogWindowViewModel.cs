@@ -20,10 +20,10 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
 
             return _customDialogResult!;
         }
-
         set
         {
             Guard.ThrowIfNull(value, nameof(CustomDialogResult));
+            Guard.ThrowIfNotNull(_customDialogResult, nameof(CustomDialogResult));
 
             _customDialogResult = value;
         }
@@ -32,13 +32,7 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
     ICustomDialogWindowResultModel IDialogWindowViewModel.CustomDialogResult
     {
         get => CustomDialogResult;
-        set
-        {
-            Guard.ThrowIfNull(value, nameof(CustomDialogResult));
-            Guard.ThrowIfNotNull(CustomDialogResult, nameof(CustomDialogResult));
-
-            CustomDialogResult = (TCustomDialogWindowResultModel)value;
-        }
+        set => CustomDialogResult = (TCustomDialogWindowResultModel)value;
     }
 
     private ICommand? _closeWindowCommand;
