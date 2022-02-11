@@ -1,5 +1,7 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
+﻿using System.Windows.Input;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
+using Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Commands;
 using Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Enums;
 using Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.ViewData;
 using Application.Common.Utilities.Guard;
@@ -48,4 +50,7 @@ public class MessageBoxViewModel : ContentPresenterViewModel<MessageBoxViewDataV
             OnPropertyChanged();
         }
     }
+
+    private ICommand? _okCommand;
+    public ICommand OkCommand => _okCommand ??= new OkCommand(this, (ICurrentDialogWindowService)CurrentWindowService);
 }

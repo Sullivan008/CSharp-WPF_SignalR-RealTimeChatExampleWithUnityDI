@@ -106,7 +106,7 @@
                 </Button>
 
                 <Button DockPanel.Dock="Right" Width="80" Height="23" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                        Content="Ok">
+                        Content="Ok" Command="{Binding OkCommand}">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
                             <Setter Property="Visibility" Value="Collapsed"/>
