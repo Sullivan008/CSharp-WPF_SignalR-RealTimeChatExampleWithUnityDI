@@ -56,9 +56,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.DialogWindow", "Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj", "{33353019-103F-415D-A9E5-DE913EAB513C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Core", "Application.Client.Windows.Common\Application.Client.Windows.Core.csproj", "{005423E7-34D3-4699-B530-EE38568B4287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Core", "Application.Client.Windows.Core\Application.Client.Windows.Core.csproj", "{005423E7-34D3-4699-B530-EE38568B4287}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.MessageBox", "Application.Client.Windows.Implementations.MessageDialog\Application.Client.Windows.Implementations.MessageBox.csproj", "{412A513F-272E-4CB2-9383-94FC540AC424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.MessageBox", "Application.Client.Windows.Implementations.MessageBox\Application.Client.Windows.Implementations.MessageBox.csproj", "{412A513F-272E-4CB2-9383-94FC540AC424}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

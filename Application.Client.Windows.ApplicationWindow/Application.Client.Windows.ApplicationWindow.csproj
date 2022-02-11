@@ -8,7 +8,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Application.Client.Common\Application.Client.Common.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.Common\Application.Client.Windows.Core.csproj" />
+	  <ProjectReference Include="..\Application.Client.Windows.Core\Application.Client.Windows.Core.csproj" />
 	  <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
 </Project>
