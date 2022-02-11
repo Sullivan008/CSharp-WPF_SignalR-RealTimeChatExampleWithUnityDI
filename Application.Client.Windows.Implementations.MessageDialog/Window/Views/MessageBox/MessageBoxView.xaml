@@ -52,8 +52,32 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" MinHeight="70" Background="White">
             <DockPanel>
-                <Image DockPanel.Dock="Left" Width="32" Height="32" Margin="30,0,0,0" HorizontalAlignment="Left" Visibility="Collapsed"/>
-                <TextBlock Width="Auto" Margin="12,20,41,15" VerticalAlignment="Center" TextWrapping="Wrap"
+                <Image DockPanel.Dock="Left" VerticalAlignment="top" Width="45" Height="45" Margin="30,20,0,20" HorizontalAlignment="Left">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding MessageBoxIcon}" Value="{x:Static enums:MessageBoxIcon.Information}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Setter Property="Source" Value="/Application.Client.Windows.Implementations.MessageBox;component/Window/Views/MessageBox/Assets/icon-information.png"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding MessageBoxIcon}" Value="{x:Static enums:MessageBoxIcon.Warning}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Setter Property="Source" Value="/Application.Client.Windows.Implementations.MessageBox;component/Window/Views/MessageBox/Assets/icon-warning.png"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding MessageBoxIcon}" Value="{x:Static enums:MessageBoxIcon.Error}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Setter Property="Source" Value="/Application.Client.Windows.Implementations.MessageBox;component/Window/Views/MessageBox/Assets/icon-error.png"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding MessageBoxIcon}" Value="{x:Static enums:MessageBoxIcon.Question}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Setter Property="Source" Value="/Application.Client.Windows.Implementations.MessageBox;component/Window/Views/MessageBox/Assets/icon-question.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <TextBlock Width="Auto" Margin="12,20,41,20" VerticalAlignment="Center" TextWrapping="Wrap"
                            Text="{Binding ViewData.Message}"/>
             </DockPanel>
         </Grid>

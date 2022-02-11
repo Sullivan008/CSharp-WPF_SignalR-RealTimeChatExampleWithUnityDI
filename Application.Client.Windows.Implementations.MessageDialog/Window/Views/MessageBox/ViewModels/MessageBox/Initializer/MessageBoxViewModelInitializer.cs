@@ -21,6 +21,11 @@ public class MessageBoxViewModelInitializer : IContentPresenterViewModelInitiali
         _viewDataInitializer.Initialize(contentPresenterViewModel.ViewData, contentPresenterViewModelInitializerModel.ViewDataInitializerModel);
 
         contentPresenterViewModel.MessageBoxButton = (MessageBoxButton)contentPresenterViewModelInitializerModel.MessageBoxButton;
+        contentPresenterViewModel.MessageBoxIcon = InitializeMessageBoxIcon(contentPresenterViewModelInitializerModel.MessageBoxIcon);
+    }
 
+    private static MessageBoxIcon InitializeMessageBoxIcon(Models.Enums.MessageBoxIcon? messageBoxIcon)
+    {
+        return messageBoxIcon.HasValue == false ? MessageBoxIcon.None : (MessageBoxIcon) messageBoxIcon.Value;
     }
 }

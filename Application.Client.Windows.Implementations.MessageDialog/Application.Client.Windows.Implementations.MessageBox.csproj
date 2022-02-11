@@ -1,9 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Window\Views\MessageBox\Assets\icon-error.png" />
+	  <None Remove="Window\Views\MessageBox\Assets\icon-information.png" />
+	  <None Remove="Window\Views\MessageBox\Assets\icon-question.png" />
+	  <None Remove="Window\Views\MessageBox\Assets\icon-warning.png" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
@@ -12,6 +19,13 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Window\Views\MessageBox\Assets\icon-error.png" />
+	  <Resource Include="Window\Views\MessageBox\Assets\icon-information.png" />
+	  <Resource Include="Window\Views\MessageBox\Assets\icon-question.png" />
+	  <Resource Include="Window\Views\MessageBox\Assets\icon-warning.png" />
 	</ItemGroup>
 
 </Project>

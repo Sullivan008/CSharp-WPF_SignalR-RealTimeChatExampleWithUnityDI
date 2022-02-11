@@ -7,6 +7,8 @@ namespace Application.Client.Windows.Implementations.MessageBox.Window.Views.Mes
 
 public class MessageBoxViewModelInitializerModel : ContentPresenterViewModelInitializerModel<MessageBoxViewDataViewModelInitializerModel>
 {
+    public MessageBoxIcon? MessageBoxIcon { get; init; }
+
     private readonly MessageBoxButton? _messageBoxButton;
     public MessageBoxButton MessageBoxButton
     {

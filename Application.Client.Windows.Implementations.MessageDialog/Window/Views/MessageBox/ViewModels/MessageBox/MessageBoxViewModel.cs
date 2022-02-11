@@ -11,6 +11,25 @@ public class MessageBoxViewModel : ContentPresenterViewModel<MessageBoxViewDataV
     public MessageBoxViewModel(ICurrentDialogWindowService currentWindowService) : base(currentWindowService)
     { }
 
+    private MessageBoxIcon? _messageBoxIcon;
+    public MessageBoxIcon MessageBoxIcon
+    {
+        get
+        {
+            Guard.ThrowIfNull(_messageBoxIcon, nameof(MessageBoxIcon));
+
+            return _messageBoxIcon!.Value;
+        }
+
+        set
+        {
+            Guard.ThrowIfNull(value, nameof(MessageBoxIcon));
+            _messageBoxIcon = value;
+
+            OnPropertyChanged();
+        }
+    }
+
     private MessageBoxButton? _messageBoxButton;
     public MessageBoxButton MessageBoxButton
     {
