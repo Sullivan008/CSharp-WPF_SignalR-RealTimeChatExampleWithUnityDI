@@ -53,4 +53,13 @@ public class MessageBoxViewModel : ContentPresenterViewModel<MessageBoxViewDataV
 
     private ICommand? _okCommand;
     public ICommand OkCommand => _okCommand ??= new OkCommand(this, (ICurrentDialogWindowService)CurrentWindowService);
+
+    private ICommand? _noCommand;
+    public ICommand NoCommand => _noCommand ??= new NoCommand(this, (ICurrentDialogWindowService)CurrentWindowService);
+
+    private ICommand? _yesCommand;
+    public ICommand YesCommand => _yesCommand ??= new YesCommand(this, (ICurrentDialogWindowService)CurrentWindowService);
+
+    private ICommand? _cancelCommand;
+    public ICommand CancelCommand => _cancelCommand ??= new CancelCommand(this, (ICurrentDialogWindowService)CurrentWindowService);
 }

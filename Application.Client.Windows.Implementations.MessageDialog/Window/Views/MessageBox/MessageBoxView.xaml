@@ -89,7 +89,7 @@
                        Margin="5,0,10,13">
 
                 <Button DockPanel.Dock="Right" Width="80" Height="23" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                        Content="Cancel">
+                        Content="Cancel" Command="{Binding CancelCommand}">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
                             <Setter Property="Visibility" Value="Collapsed"/>
@@ -123,7 +123,7 @@
                 </Button>
 
                 <Button DockPanel.Dock="Right" Width="80" Height="23" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                        Content="No">
+                        Content="No" Command="{Binding NoCommand}">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
                             <Setter Property="Visibility" Value="Collapsed"/>
@@ -140,7 +140,7 @@
                 </Button>
 
                 <Button DockPanel.Dock="Right" Width="80" Height="23" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                        Content="Yes" >
+                        Content="Yes" Command="{Binding YesCommand}">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
                             <Setter Property="Visibility" Value="Collapsed"/>
