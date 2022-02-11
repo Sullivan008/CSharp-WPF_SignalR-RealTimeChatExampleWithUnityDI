@@ -12,8 +12,11 @@ internal class CloseWindowCommand : AsyncCommandBase<MessageBoxWindowViewModel, 
 
     public override async Task ExecuteAsync(IDialogWindow window)
     {
-        CallerViewModel.CustomDialogResult = new MessageBoxWindowResult { MessageBoxResult = MessageBoxResult.None };
-        window.DialogResult = false;
+        if (window.DialogResult.HasValue == false)
+        {
+            CallerViewModel.CustomDialogResult = new MessageBoxWindowResult { MessageBoxResult = MessageBoxResult.None };
+            window.DialogResult = false;
+        }
 
         await Task.CompletedTask;
     }
