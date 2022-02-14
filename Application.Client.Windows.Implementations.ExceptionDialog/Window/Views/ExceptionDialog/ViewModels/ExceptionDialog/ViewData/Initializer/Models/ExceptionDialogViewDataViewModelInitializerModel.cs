@@ -1,0 +1,6 @@
+﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models;
+
+namespace Application.Client.Windows.Implementations.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData.Initializer.Models;
+
+public class ExceptionDialogViewDataViewModelInitializerModel : ContentPresenterViewDataViewModelInitializerModel
+{ }
