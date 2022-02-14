@@ -1,4 +1,5 @@
-﻿using Application.Client.Windows.Core.ViewModels.Window;
+﻿using System.Windows.Input;
+using Application.Client.Windows.Core.ViewModels.Window;
 using Application.Client.Windows.DialogWindow.Models.CustomDialogWindowResult.Interfaces;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings.Interfaces;
@@ -19,10 +20,10 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
 
             return _customDialogResult!;
         }
-
         set
         {
             Guard.ThrowIfNull(value, nameof(CustomDialogResult));
+            Guard.ThrowIfNotNull(_customDialogResult, nameof(CustomDialogResult));
 
             _customDialogResult = value;
         }
@@ -31,12 +32,24 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
     ICustomDialogWindowResultModel IDialogWindowViewModel.CustomDialogResult
     {
         get => CustomDialogResult;
+        set => CustomDialogResult = (TCustomDialogWindowResultModel)value;
+    }
+
+    private ICommand? _closeWindowCommand;
+    public ICommand CloseWindowCommand
+    {
+        get
+        {
+            Guard.ThrowIfNull(_closeWindowCommand, nameof(CloseWindowCommand));
+
+            return _closeWindowCommand!;
+        }
+
         set
         {
-            Guard.ThrowIfNull(value, nameof(CustomDialogResult));
-            Guard.ThrowIfNotNull(CustomDialogResult, nameof(CustomDialogResult));
+            Guard.ThrowIfNull(value, nameof(CloseWindowCommand));
 
-            CustomDialogResult = (TCustomDialogWindowResultModel)value;
+            _closeWindowCommand = value;
         }
     }
 }

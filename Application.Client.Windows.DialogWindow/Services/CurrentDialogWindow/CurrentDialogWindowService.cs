@@ -11,10 +11,18 @@ public class CurrentDialogWindowService : CurrentWindowService, ICurrentDialogWi
     public CurrentDialogWindowService(IDialogWindow dialogWindow) : base(dialogWindow)
     { }
 
-    public void SetCustomDialogWindowResult(ICustomDialogWindowResultModel customDialogWindowResult)
+    public async Task SetCustomDialogWindowResult(ICustomDialogWindowResultModel customDialogWindowResult)
     {
-        ((IDialogWindowViewModel) Window.DataContext).CustomDialogResult = customDialogWindowResult;
+        ((IDialogWindowViewModel)Window.DataContext).CustomDialogResult = customDialogWindowResult;
+        ((IDialogWindow)Window).DialogResult = true;
 
+        await Task.CompletedTask;
+    }
+
+    public async Task CloseWindow()
+    {
         Window.Close();
+
+        await Task.CompletedTask;
     }
 }

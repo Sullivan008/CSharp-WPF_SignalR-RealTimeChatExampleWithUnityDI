@@ -5,5 +5,7 @@ namespace Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.I
 
 public interface ICurrentDialogWindowService : ICurrentWindowService
 {
-    public void SetCustomDialogWindowResult(ICustomDialogWindowResultModel customDialogWindowResult);
+    public Task SetCustomDialogWindowResult(ICustomDialogWindowResultModel customDialogWindowResult);
+
+    public Task CloseWindow();
 }
