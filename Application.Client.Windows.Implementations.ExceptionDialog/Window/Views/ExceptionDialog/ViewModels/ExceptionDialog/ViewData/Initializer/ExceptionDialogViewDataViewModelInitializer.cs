@@ -6,5 +6,9 @@ namespace Application.Client.Windows.Implementations.ExceptionDialog.Window.View
 public class ExceptionDialogViewDataViewModelInitializer : IContentPresenterViewDataViewModelInitializer<ExceptionDialogViewDataViewModel, ExceptionDialogViewDataViewModelInitializerModel>
 {
     public void Initialize(ExceptionDialogViewDataViewModel contentPresenterViewDataViewModel, ExceptionDialogViewDataViewModelInitializerModel contentPresenterViewDataViewModelInitializerModel)
-    { }
+    {
+        contentPresenterViewDataViewModel.Message = contentPresenterViewDataViewModelInitializerModel.Message;
+        contentPresenterViewDataViewModel.Type = contentPresenterViewDataViewModelInitializerModel.Type.FullName!;
+        contentPresenterViewDataViewModel.StackTrace = contentPresenterViewDataViewModelInitializerModel.StackTrace;
+    }
 }
