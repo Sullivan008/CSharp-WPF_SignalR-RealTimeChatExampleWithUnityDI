@@ -17,7 +17,5 @@
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
 
-    <Grid>
-
-    </Grid>
+    <ContentControl Content="{Binding ContentPresenter}"/>
 </window:DialogWindow>
