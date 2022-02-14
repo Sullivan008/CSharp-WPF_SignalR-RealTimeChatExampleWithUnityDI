@@ -60,7 +60,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.MessageBox", "Application.Client.Windows.Implementations.MessageBox\Application.Client.Windows.Implementations.MessageBox.csproj", "{412A513F-272E-4CB2-9383-94FC540AC424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.Implementations.Exception", "Application.Client.Windows.Implementations.Exception\Application.Client.Windows.Implementations.Exception.csproj", "{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.ExceptionDialog", "Application.Client.Windows.Implementations.ExceptionDialog\Application.Client.Windows.Implementations.ExceptionDialog.csproj", "{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
