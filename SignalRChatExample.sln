@@ -60,6 +60,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.MessageBox", "Application.Client.Windows.Implementations.MessageDialog\Application.Client.Windows.Implementations.MessageBox.csproj", "{412A513F-272E-4CB2-9383-94FC540AC424}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.Implementations.Exception", "Application.Client.Windows.Implementations.Exception\Application.Client.Windows.Implementations.Exception.csproj", "{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -150,6 +152,10 @@ Global
 		{412A513F-272E-4CB2-9383-94FC540AC424}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{412A513F-272E-4CB2-9383-94FC540AC424}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{412A513F-272E-4CB2-9383-94FC540AC424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +180,7 @@ Global
 		{33353019-103F-415D-A9E5-DE913EAB513C} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 		{005423E7-34D3-4699-B530-EE38568B4287} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
 		{412A513F-272E-4CB2-9383-94FC540AC424} = {3E715E21-3178-43ED-A480-098C18EEF36B}
+		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4} = {3E715E21-3178-43ED-A480-098C18EEF36B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
