@@ -22,6 +22,7 @@
 	  <ProjectReference Include="..\Application.Client.SignalR\Application.Client.SignalR.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.ApplicationWindow\Application.Client.Windows.ApplicationWindow.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj" />
+	  <ProjectReference Include="..\Application.Client.Windows.Implementations.ExceptionDialog\Application.Client.Windows.Implementations.ExceptionDialog.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.Implementations.Main\Application.Client.Windows.Implementations.Main.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.Implementations.MessageBox\Application.Client.Windows.Implementations.MessageBox.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow\Application.Client.Windows.NavigationWindow.csproj" />

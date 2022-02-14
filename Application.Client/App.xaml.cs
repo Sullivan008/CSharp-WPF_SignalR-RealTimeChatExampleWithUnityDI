@@ -16,6 +16,7 @@ using Application.Client.Windows.Core.ContentPresenter.Options.Models;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Implementations.ExceptionDialog.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
@@ -127,6 +128,8 @@ public partial class App
 
         serviceCollection.AddMainWindow();
         ServiceCollectionExtension.AddMessageBox(serviceCollection);
+
+        serviceCollection.AddExceptionDialogWindow();
 
         serviceCollection.AddMemoryCache();
         serviceCollection.AddCacheServices();
