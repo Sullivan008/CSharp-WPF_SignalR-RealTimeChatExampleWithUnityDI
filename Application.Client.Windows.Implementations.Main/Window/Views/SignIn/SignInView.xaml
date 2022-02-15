@@ -3,8 +3,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-    </Grid>
+             d:DesignHeight="760" d:DesignWidth="450">
+
+    <materialDesign:DialogHost CloseOnClickAway="True">
+        <StackPanel>
+            <Button Margin="10 20" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="White"
+                    ToolTip="Close">
+                <materialDesign:PackIcon Kind="Close" Foreground="#A9A9A9" Width="30" Height="30"/>
+            </Button>
+
+            <Image Margin="0 -20 0 5" Height="200" Width="200"
+                   Source="/Application.Client.Windows.Implementations.Main;component/Window/Views/SignIn/Assets/chat-logo.png"/>
+
+            <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold"
+                       Text="SignalR Chat"></TextBlock>
+
+            <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center" 
+                       Text="Please add your nick name and sign in!"></TextBlock>
+
+            <TextBox Margin="0 50 0 0" Width="300" FontSize="18"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialDesign:HintAssist.Hint="Nick name" />
+
+            <Button Margin="0 40 0 0" Style="{StaticResource MaterialDesignFlatMidBgButton}" 
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2" Height="53" Width="150" materialDesign:ButtonAssist.CornerRadius="10"
+                    FontSize="18" Content="Sign In" Background="white" BorderThickness="0"/>
+        </StackPanel>
+    </materialDesign:DialogHost>
 </UserControl>
