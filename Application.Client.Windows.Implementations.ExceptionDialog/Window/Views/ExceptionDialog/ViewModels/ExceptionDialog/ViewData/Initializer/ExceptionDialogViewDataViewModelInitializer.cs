@@ -9,6 +9,16 @@ public class ExceptionDialogViewDataViewModelInitializer : IContentPresenterView
     {
         contentPresenterViewDataViewModel.Message = contentPresenterViewDataViewModelInitializerModel.Message;
         contentPresenterViewDataViewModel.Type = contentPresenterViewDataViewModelInitializerModel.Type.FullName!;
-        contentPresenterViewDataViewModel.StackTrace = contentPresenterViewDataViewModelInitializerModel.StackTrace;
+        contentPresenterViewDataViewModel.StackTrace = InitializeStackTrace(contentPresenterViewDataViewModelInitializerModel.StackTrace);
+    }
+
+    private static string InitializeStackTrace(string? stackTrace)
+    {
+        if (string.IsNullOrWhiteSpace(stackTrace))
+        {
+            return string.Empty;
+        }
+
+        return stackTrace;
     }
 }

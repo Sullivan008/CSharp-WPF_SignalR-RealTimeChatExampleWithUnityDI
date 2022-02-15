@@ -41,21 +41,5 @@ public class ExceptionDialogViewDataViewModelInitializerModel : ContentPresenter
         }
     }
 
-    private readonly string? _stackTrace;
-    public string StackTrace
-    {
-        get
-        {
-            Guard.ThrowIfNullOrWhitespace(_stackTrace, nameof(StackTrace));
-
-            return _stackTrace!;
-        }
-
-        init
-        {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(StackTrace));
-
-            _stackTrace = value;
-        }
-    }
+    public string? StackTrace { get; init; }
 }
