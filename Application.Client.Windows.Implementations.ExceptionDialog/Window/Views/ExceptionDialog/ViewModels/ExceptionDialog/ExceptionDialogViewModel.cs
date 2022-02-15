@@ -1,5 +1,8 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
+﻿using System.Windows.Input;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
+using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.Commands;
 using Application.Client.Windows.Implementations.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData;
 using Application.Common.Utilities.Guard;
 
@@ -28,4 +31,7 @@ public class ExceptionDialogViewModel : ContentPresenterViewModel<ExceptionDialo
             OnPropertyChanged();
         }
     }
+
+    private ICommand? _okCommand;
+    public ICommand OkCommand => _okCommand ??= new OkCommand(this, (ICurrentDialogWindowService)CurrentWindowService);
 }

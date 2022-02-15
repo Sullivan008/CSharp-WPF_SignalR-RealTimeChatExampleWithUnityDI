@@ -110,7 +110,7 @@
             </Expander>
         </Border>
         <Button Grid.Row="2" Width="80" Height="23" Margin="5,0,15,15" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                Content="Ok">
+                Content="Ok" Command="{Binding OkCommand}">
         </Button>
     </Grid>
 </UserControl>
