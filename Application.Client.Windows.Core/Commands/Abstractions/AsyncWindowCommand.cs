@@ -1,17 +1,18 @@
-﻿using Application.Client.Common.ViewModels;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using Application.Client.Windows.Core.ViewModels.Window.Interfaces;
 
-namespace Application.Client.Common.Commands;
+namespace Application.Client.Windows.Core.Commands.Abstractions;
 
-public abstract class AsyncCommandBase<TCallerViewModel> : ICommand where TCallerViewModel : ViewModelBase
+public abstract class AsyncWindowCommand<TCallerWindowViewModel> : ICommand 
+    where TCallerWindowViewModel : IWindowViewModel
 {
     public virtual Predicate<object?>? CanExecute { get; }
 
-    protected readonly TCallerViewModel CallerViewModel;
+    protected readonly TCallerWindowViewModel CallerViewModel;
 
     private bool _isExecuting;
 
-    protected AsyncCommandBase(TCallerViewModel callerViewModel)
+    protected AsyncWindowCommand(TCallerWindowViewModel callerViewModel)
     {
         CanExecute = default;
         CallerViewModel = callerViewModel ?? throw new ArgumentNullException(nameof(callerViewModel));
@@ -50,15 +51,16 @@ public abstract class AsyncCommandBase<TCallerViewModel> : ICommand where TCalle
     public abstract Task ExecuteAsync();
 }
 
-public abstract class AsyncCommandBase<TCallerViewModel, TCommandParameter> : ICommand where TCallerViewModel : ViewModelBase
+public abstract class AsyncWindowCommand<TCallerWindowViewModel, TCommandParameter> : ICommand
+    where TCallerWindowViewModel : IWindowViewModel
 {
     public virtual Predicate<object?>? CanExecute { get; }
 
-    protected readonly TCallerViewModel CallerViewModel;
+    protected readonly TCallerWindowViewModel CallerViewModel;
 
     private bool _isExecuting;
 
-    protected AsyncCommandBase(TCallerViewModel callerViewModel)
+    protected AsyncWindowCommand(TCallerWindowViewModel callerViewModel)
     {
         CanExecute = default;
         CallerViewModel = callerViewModel ?? throw new ArgumentNullException(nameof(callerViewModel));

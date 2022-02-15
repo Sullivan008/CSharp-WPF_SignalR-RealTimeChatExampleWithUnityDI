@@ -1,11 +1,11 @@
-﻿using Application.Client.Common.Commands;
+﻿using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
 using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.Implementations.MessageBox.Window.WindowResults.MessageBox;
 using Application.Client.Windows.Implementations.MessageBox.Window.WindowResults.MessageBox.Enums;
 
 namespace Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Commands;
 
-internal class NoCommand : AsyncCommandBase<MessageBoxViewModel>
+internal class NoCommand : AsyncContentPresenterCommand<MessageBoxViewModel>
 {
     private readonly ICurrentDialogWindowService _currentDialogWindowService;
 

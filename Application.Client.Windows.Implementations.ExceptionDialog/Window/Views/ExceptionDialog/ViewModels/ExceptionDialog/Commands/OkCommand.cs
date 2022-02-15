@@ -1,11 +1,11 @@
-﻿using Application.Client.Common.Commands;
+﻿using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
 using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.Implementations.ExceptionDialog.Window.WindowResults.ExceptionDialog;
 using Application.Client.Windows.Implementations.ExceptionDialog.Window.WindowResults.ExceptionDialog.Enums;
 
 namespace Application.Client.Windows.Implementations.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.Commands;
 
-internal class OkCommand : AsyncCommandBase<ExceptionDialogViewModel>
+internal class OkCommand : AsyncContentPresenterCommand<ExceptionDialogViewModel>
 {
     private readonly ICurrentDialogWindowService _currentDialogWindowService;
 
