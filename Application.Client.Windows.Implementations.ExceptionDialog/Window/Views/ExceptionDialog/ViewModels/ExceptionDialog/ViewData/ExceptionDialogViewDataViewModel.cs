@@ -61,4 +61,23 @@ public class ExceptionDialogViewDataViewModel : ContentPresenterViewDataViewMode
             OnPropertyChanged();
         }
     }
+
+    private string? _innerException;
+    public string InnerException
+    {
+        get
+        {
+            Guard.ThrowIfNullOrWhitespace(_innerException, nameof(InnerException));
+
+            return _innerException!;
+        }
+
+        set
+        {
+            Guard.ThrowIfNullOrWhitespace(value, nameof(InnerException));
+            _innerException = value;
+
+            OnPropertyChanged();
+        }
+    }
 }

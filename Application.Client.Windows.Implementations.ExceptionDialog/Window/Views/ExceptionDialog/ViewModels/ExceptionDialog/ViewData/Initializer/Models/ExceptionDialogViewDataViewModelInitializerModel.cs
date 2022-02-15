@@ -42,4 +42,5 @@ public class ExceptionDialogViewDataViewModelInitializerModel : ContentPresenter
     }
 
     public string? StackTrace { get; init; }
+    public Exception? InnerException { get; init; }
 }

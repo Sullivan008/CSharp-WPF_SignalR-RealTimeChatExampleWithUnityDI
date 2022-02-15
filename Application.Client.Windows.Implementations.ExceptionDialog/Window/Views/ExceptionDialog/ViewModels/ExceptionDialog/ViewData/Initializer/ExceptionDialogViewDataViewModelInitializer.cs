@@ -10,15 +10,26 @@ public class ExceptionDialogViewDataViewModelInitializer : IContentPresenterView
         contentPresenterViewDataViewModel.Message = contentPresenterViewDataViewModelInitializerModel.Message;
         contentPresenterViewDataViewModel.Type = contentPresenterViewDataViewModelInitializerModel.Type.FullName!;
         contentPresenterViewDataViewModel.StackTrace = InitializeStackTrace(contentPresenterViewDataViewModelInitializerModel.StackTrace);
+        contentPresenterViewDataViewModel.InnerException = InitializeInnerException(contentPresenterViewDataViewModelInitializerModel.InnerException);
     }
 
     private static string InitializeStackTrace(string? stackTrace)
     {
         if (string.IsNullOrWhiteSpace(stackTrace))
         {
-            return string.Empty;
+            return "-";
         }
 
         return stackTrace;
+    }
+
+    private static string InitializeInnerException(Exception? innerException)
+    {
+        if (innerException == null)
+        {
+            return "-";
+        }
+
+        return innerException.ToString();
     }
 }
