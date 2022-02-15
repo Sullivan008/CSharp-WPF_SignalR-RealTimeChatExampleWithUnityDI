@@ -144,9 +144,6 @@ public partial class App
 
         serviceCollection.AddHubConfigurations(configuration);
         serviceCollection.AddChatHub();
-
-        //serviceCollection.AddDDialog();
-        //serviceCollection.AddApplicationWindowService();
     }
 
     private static void ConfigureDataBindingErrorListener()
@@ -159,7 +156,7 @@ public partial class App
     private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs eventArgs)
     {
         LogUnhandledException(eventArgs.Exception);
-        
+
         ShowUnhandledException(eventArgs.Exception);
 
         eventArgs.Handled = true;
