@@ -83,7 +83,7 @@
                     </Style.Triggers>
                 </Style>
             </Border.Style>
-            <Expander Margin="16,16,16,8"
+            <Expander Margin="16,16,16,16"
                       Header="Exception Details">
                 <ScrollViewer Margin="0,0,0,16"
                               HorizontalScrollBarVisibility="Auto"

@@ -9,7 +9,7 @@
         ResizeMode="NoResize" SizeToContent="WidthAndHeight"
         MinHeight="50" Height="50" MaxHeight="650"
         MinWidth="700" Width="700" MaxWidth="700"
-        Title="ExceptionWindow">
+        Title="{Binding WindowSettings.Title}">
 
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Closing">
