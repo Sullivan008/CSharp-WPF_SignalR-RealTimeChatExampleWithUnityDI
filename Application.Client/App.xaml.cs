@@ -82,50 +82,6 @@ public partial class App
             .Build();
     }
 
-    protected override async void OnStartup(StartupEventArgs eventArgs)
-    {
-        await _host.StartAsync();
-
-        ConfigureDataBindingErrorListener();
-
-        Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
-
-        INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
-
-        INavigationWindowShowOptionsModel windowOptions = new NavigationWindowShowOptionsModel<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel>
-        {
-            WindowViewModelInitializerModel = new MainWindowViewModelInitializerModel
-            {
-                WindowSettings = new MainWindowSettingsViewModelInitializerModel
-                {
-                    Title = "IRC Chat"
-                }
-            }
-        };
-
-        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<SignInViewModel, SignInViewModelInitializerModel>
-        {
-            ContentPresenterViewModelInitializerModel = new SignInViewModelInitializerModel
-            {
-                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel()
-            }
-        };
-
-        await navigationWindowService.ShowAsync(windowOptions, contentPresenterLoadOptions);
-
-        base.OnStartup(eventArgs);
-    }
-
-    protected override async void OnExit(ExitEventArgs eventArgs)
-    {
-        using (_host)
-        {
-            await _host.StopAsync(TimeSpan.FromSeconds(5));
-        }
-
-        base.OnExit(eventArgs);
-    }
-
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
         serviceCollection.AddContentPresenterService();
@@ -142,6 +98,28 @@ public partial class App
 
         serviceCollection.AddHubConfigurations(configuration);
         serviceCollection.AddChatHub();
+    }
+
+    protected override async void OnStartup(StartupEventArgs eventArgs)
+    {
+        await _host.StartAsync();
+
+        ConfigureDataBindingErrorListener();
+        Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
+
+        ShowMainWindow();
+
+        base.OnStartup(eventArgs);
+    }
+
+    protected override async void OnExit(ExitEventArgs eventArgs)
+    {
+        using (_host)
+        {
+            await _host.StopAsync(TimeSpan.FromSeconds(5));
+        }
+
+        base.OnExit(eventArgs);
     }
 
     private static void ConfigureDataBindingErrorListener()
@@ -199,5 +177,31 @@ public partial class App
         };
 
         await dialogWindowService.ShowDialogAsync<ExceptionDialogWindowResult>(showDialogOptions, contentPresenterLoadOptions);
+    }
+
+    private async void ShowMainWindow()
+    {
+        INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
+
+        INavigationWindowShowOptionsModel windowOptions = new NavigationWindowShowOptionsModel<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel>
+        {
+            WindowViewModelInitializerModel = new MainWindowViewModelInitializerModel
+            {
+                WindowSettings = new MainWindowSettingsViewModelInitializerModel
+                {
+                    Title = "IRC Chat"
+                }
+            }
+        };
+
+        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<SignInViewModel, SignInViewModelInitializerModel>
+        {
+            ContentPresenterViewModelInitializerModel = new SignInViewModelInitializerModel
+            {
+                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel()
+            }
+        };
+
+        await navigationWindowService.ShowAsync(windowOptions, contentPresenterLoadOptions);
     }
 }
