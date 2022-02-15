@@ -6,14 +6,49 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style x:Key="Label"
-               TargetType="TextBlock">
+        <Style x:Key="Label" TargetType="TextBlock">
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="Margin" Value="0,8,0,4" />
         </Style>
-        <Style x:Key="Content"
-               TargetType="TextBlock">
+        <Style x:Key="Content" TargetType="TextBlock">
             <Setter Property="Margin" Value="0,4,0,8" />
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="#ADADAD" />
+            <Setter Property="Background" Value="#E4E4E4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <StackPanel Orientation="Horizontal">
+                                <ContentPresenter Width="{TemplateBinding Width}"
+                                                  Height="{TemplateBinding Height}"
+                                                  TextBlock.Foreground="{TemplateBinding Foreground}"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  TextBlock.TextAlignment="Center"
+                                                  Margin="-1, 6, 0, 0"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Control.BorderBrush" Value="#0076D7" />
+                    <Setter Property="Control.Background" Value="#E5F1FB"/>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Control.BorderBrush" Value="#005CA8" />
+                    <Setter Property="Control.Background" Value="#CFDAE3"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Control.BorderBrush" Value="#bfbfbf" />
+                    <Setter Property="Control.Background" Value="#cccccc"/>
+                    <Setter Property="Control.Foreground" Value="#A0A0A0"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -58,10 +93,8 @@
                 </ScrollViewer>
             </Expander>
         </Border>
-        <Button Grid.Row="2"
-                Margin="16"
-                Padding="8"
-                HorizontalAlignment="Right"
-                Content="Exit Application" />
+        <Button Grid.Row="2" Width="80" Height="23" Margin="5,15,15,15" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Content="Ok">
+        </Button>
     </Grid>
 </UserControl>
