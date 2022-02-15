@@ -133,8 +133,7 @@ public partial class App
         serviceCollection.AddDialogWindowService();
 
         serviceCollection.AddMainWindow();
-        serviceCollection.AddMessageBox();
-
+        serviceCollection.AddMessageBoxWindow();
         serviceCollection.AddExceptionDialogWindow();
 
         serviceCollection.AddMemoryCache();

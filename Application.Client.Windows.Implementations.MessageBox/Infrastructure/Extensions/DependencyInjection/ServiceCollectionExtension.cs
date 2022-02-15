@@ -19,7 +19,7 @@ namespace Application.Client.Windows.Implementations.MessageBox.Infrastructure.E
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddMessageBox(this IServiceCollection @this)
+    public static IServiceCollection AddMessageBoxWindow(this IServiceCollection @this)
     {
         @this.AddDialogWindow<MessageBoxWindow>();
         @this.AddDialogWindowViewModel<MessageBoxWindowViewModel>();
