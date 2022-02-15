@@ -98,7 +98,7 @@
                         <TextBlock Style="{StaticResource Content}"
                                    Text="{Binding ViewData.Type}" />
                         <TextBlock Style="{StaticResource Label}"
-                                   Text="Callstack" />
+                                   Text="Call stack" />
                         <TextBlock Style="{StaticResource Content}"
                                    Text="{Binding ViewData.StackTrace}" />
                         <TextBlock Style="{StaticResource Label}"
