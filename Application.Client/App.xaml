@@ -6,6 +6,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Application.Client.Windows.Implementations.Main;component/Window/Views/DataTemplates.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Application.Client.Windows.Implementations.MessageBox;component/Window/Views/DataTemplates.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Application.Client.Windows.Implementations.ExceptionDialog;component/Window/Views/DataTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
