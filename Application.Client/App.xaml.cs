@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
 using Application.Client.Cache.Infrastructure.Interfaces;
-using Application.Client.Dialogs.MessageDialog.Extensions.DependencyInjection;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
@@ -31,6 +30,7 @@ using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWind
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using Application.Client.Windows.Implementations.MessageBox.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models;
@@ -43,7 +43,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
-using ServiceCollectionExtension = Application.Client.Windows.Implementations.MessageBox.Infrastructure.Extensions.DependencyInjection.ServiceCollectionExtension;
 
 namespace Application.Client;
 
@@ -135,7 +134,7 @@ public partial class App
         serviceCollection.AddDialogWindowService();
 
         serviceCollection.AddMainWindow();
-        ServiceCollectionExtension.AddMessageBox(serviceCollection);
+        serviceCollection.AddMessageBox();
 
         serviceCollection.AddExceptionDialogWindow();
 
@@ -148,8 +147,6 @@ public partial class App
 
         //serviceCollection.AddDDialog();
         //serviceCollection.AddApplicationWindowService();
-
-        serviceCollection.AddMessageDialog();
     }
 
     private static void ConfigureDataBindingErrorListener()

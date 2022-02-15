@@ -17,7 +17,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Application.Client.Cache\Application.Client.Cache.csproj" />
-	  <ProjectReference Include="..\Application.Client.Dialogs.MessageDialog\Application.Client.Dialogs.MessageDialog.csproj" />
 	  <ProjectReference Include="..\Application.Client.SignalR.Hub.ChatHub\Application.Client.SignalR.Hub.ChatHub.csproj" />
 	  <ProjectReference Include="..\Application.Client.SignalR\Application.Client.SignalR.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.ApplicationWindow\Application.Client.Windows.ApplicationWindow.csproj" />
