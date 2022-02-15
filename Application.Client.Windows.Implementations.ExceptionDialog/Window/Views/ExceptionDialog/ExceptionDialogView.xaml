@@ -3,8 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d">
     <UserControl.Resources>
         <Style x:Key="Label" TargetType="TextBlock">
             <Setter Property="FontWeight" Value="Bold" />
@@ -75,16 +74,18 @@
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Exception message" />
                         <TextBlock Grid.Column="1"
-                                   Text="Test4"
+                                   Text="{Binding ViewData.Message}"
                                    TextWrapping="Wrap" />
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Exception type" />
                         <TextBlock Style="{StaticResource Content}"
-                                   Text="Test" />
+                                   TextWrapping="Wrap"
+                                   Text="{Binding ViewData.Type}" />
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Callstack" />
                         <TextBlock Style="{StaticResource Content}"
-                                   Text="Test1" />
+                                   TextWrapping="Wrap"
+                                   Text="{Binding ViewData.StackTrace}" />
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Inner exception" />
                         <TextBlock Style="{StaticResource Content}"
