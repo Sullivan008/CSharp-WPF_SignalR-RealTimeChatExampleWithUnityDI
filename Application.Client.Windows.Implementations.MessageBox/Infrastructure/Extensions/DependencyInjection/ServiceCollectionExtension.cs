@@ -39,7 +39,7 @@ public static class ServiceCollectionExtension
 
         @this.AddContentPresenterViewModelFactory<MessageBoxViewModel>(serviceProvider =>
             (currentWindowService, viewData) => 
-                new MessageBoxViewModel((ICurrentDialogWindowService)currentWindowService, (MessageBoxViewDataViewModel)viewData));
+                new MessageBoxViewModel((MessageBoxViewDataViewModel)viewData, (ICurrentDialogWindowService)currentWindowService));
 
         return @this;
     }

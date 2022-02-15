@@ -10,7 +10,7 @@ namespace Application.Client.Windows.Implementations.MessageBox.Window.Views.Mes
 
 public class MessageBoxViewModel : ContentPresenterViewModel<MessageBoxViewDataViewModel>
 {
-    public MessageBoxViewModel(ICurrentDialogWindowService currentWindowService, MessageBoxViewDataViewModel viewData) : base(currentWindowService, viewData)
+    public MessageBoxViewModel(MessageBoxViewDataViewModel viewData, ICurrentDialogWindowService currentWindowService) : base(viewData, currentWindowService)
     { }
 
     private MessageBoxIcon? _messageBoxIcon;

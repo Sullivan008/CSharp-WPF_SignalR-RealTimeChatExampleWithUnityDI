@@ -39,7 +39,7 @@ public static class ServiceCollectionExtension
 
         @this.AddContentPresenterViewModelFactory<ExceptionDialogViewModel>(serviceProvider =>
             (currentWindowService, viewData) =>
-                new ExceptionDialogViewModel((ICurrentDialogWindowService)currentWindowService, (ExceptionDialogViewDataViewModel)viewData));
+                new ExceptionDialogViewModel((ExceptionDialogViewDataViewModel)viewData, (ICurrentDialogWindowService)currentWindowService));
 
         return @this;
     }

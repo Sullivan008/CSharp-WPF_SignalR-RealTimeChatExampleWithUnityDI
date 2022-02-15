@@ -12,7 +12,7 @@ public class ContentPresenterViewModel<TContentPresenterViewDataViewModel> : INo
 {
     public ICurrentWindowService CurrentWindowService { get; }
 
-    protected ContentPresenterViewModel(ICurrentWindowService currentWindowService, TContentPresenterViewDataViewModel viewData)
+    protected ContentPresenterViewModel(TContentPresenterViewDataViewModel viewData, ICurrentWindowService currentWindowService)
     {
         ViewData = viewData;
         CurrentWindowService = currentWindowService;
@@ -21,7 +21,13 @@ public class ContentPresenterViewModel<TContentPresenterViewDataViewModel> : INo
     private TContentPresenterViewDataViewModel? _viewData;
     public TContentPresenterViewDataViewModel ViewData
     {
-        get => _viewData!;
+        get
+        {
+            Guard.ThrowIfNull(_viewData, nameof(ViewData));
+
+            return _viewData!;
+        }
+
         set
         {
             Guard.ThrowIfNull(value, nameof(ViewData));

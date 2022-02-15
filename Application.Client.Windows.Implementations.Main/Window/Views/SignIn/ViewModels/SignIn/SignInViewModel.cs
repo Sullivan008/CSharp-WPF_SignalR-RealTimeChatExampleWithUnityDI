@@ -6,6 +6,6 @@ namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.Vi
 
 public class SignInViewModel : ContentPresenterViewModel<SignInViewDataViewModel>
 {
-    public SignInViewModel(ICurrentWindowService currentWindowService, SignInViewDataViewModel viewData) : base(currentWindowService, viewData)
+    public SignInViewModel(SignInViewDataViewModel viewData, ICurrentWindowService currentWindowService) : base(viewData, currentWindowService)
     { }
 }

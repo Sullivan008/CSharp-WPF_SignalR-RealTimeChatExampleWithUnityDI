@@ -41,7 +41,7 @@ public static class MainWindowServiceCollectionExtension
 
         @this.AddContentPresenterViewModelFactory<SignInViewModel>(serviceProvider => 
             (currentWindowService, viewData) => 
-                new SignInViewModel((ICurrentNavigationWindowService)currentWindowService, (SignInViewDataViewModel)viewData));
+                new SignInViewModel((SignInViewDataViewModel)viewData, (ICurrentNavigationWindowService)currentWindowService));
 
         @this.AddTransient<IValidator<SignInViewDataViewModel>, SignInViewDataViewModelValidator>();
 
