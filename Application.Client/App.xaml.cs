@@ -5,18 +5,26 @@ using System.Windows;
 using System.Windows.Threading;
 using Application.Client.Cache.Infrastructure.Interfaces;
 using Application.Client.Dialogs.MessageDialog.Extensions.DependencyInjection;
-using Application.Client.Dialogs.MessageDialog.Interfaces;
-using Application.Client.Dialogs.MessageDialog.Models;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
-using Application.Client.Infrastructure.ErrorHandling.Models;
 using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Services.DialogWindow.Interfaces;
+using Application.Client.Windows.DialogWindow.Services.DialogWindow.Options.Models;
+using Application.Client.Windows.DialogWindow.Services.DialogWindow.Options.Models.Interfaces;
 using Application.Client.Windows.Implementations.ExceptionDialog.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow.Initializer.Models;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.ViewModels.ExceptionDialogWindowSettings.Initializer.Models;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.Initializer.Models;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData.Initializer.Models;
+using Application.Client.Windows.Implementations.ExceptionDialog.Window.WindowResults.ExceptionDialog;
 using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
@@ -153,47 +161,51 @@ public partial class App
 
     private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs eventArgs)
     {
-        ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
-
-        logger.LogError(eventArgs.Exception, eventArgs.Exception.Message);
-
-        ErrorModel errorModel = new()
-        {
-            Message = "eventArgs.Exception.Message",
-            Exception = eventArgs.Exception.ToString()
-        };
-
-        ShowUnhandledException(errorModel);
+        LogUnhandledException(eventArgs.Exception);
+        
+        ShowUnhandledException(eventArgs.Exception);
 
         eventArgs.Handled = true;
-    }
-
-    private async void ShowUnhandledException(ErrorModel errorModel)
-    {
-        IMessageDialog messageDialog = _host.Services.GetRequiredService<IMessageDialog>();
-
-        await messageDialog.ShowDialogAsync(new MessageDialogOptions
-        {
-            Content = BuildMessageContent(errorModel),
-            Title = "Application Error",
-            Button = MessageBoxButton.OK,
-            Icon = MessageBoxImage.Error
-        });
-
         Current.Shutdown();
     }
 
-    private string BuildMessageContent(ErrorModel errorModel)
+    private async void LogUnhandledException(Exception exception)
     {
-        IHostEnvironment hostEnvironment = _host.Services.GetRequiredService<IHostEnvironment>();
+        ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
+        logger.LogError(exception, exception.Message);
 
-        const string defaultMessage = "An application error occurred.\n\n";
+        await Task.CompletedTask;
+    }
 
-        if (hostEnvironment.IsDevelopment())
+    private async void ShowUnhandledException(Exception exception)
+    {
+        IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
+
+        IDialogWindowShowDialogOptionsModel showDialogOptions = new DialogWindowShowDialogOptionsModel<ExceptionDialogWindow, ExceptionDialogWindowViewModel, ExceptionDialogWindowViewModelInitializerModel>
         {
-            return $"{defaultMessage}{errorModel.Message}\n\n{errorModel.Exception}";
-        }
+            WindowViewModelInitializerModel = new ExceptionDialogWindowViewModelInitializerModel
+            {
+                WindowSettings = new ExceptionDialogWindowSettingsViewModelInitializerModel
+                {
+                    Title = "Unexpected application error"
+                }
+            }
+        };
 
-        return $"{defaultMessage}Exception available only in development envrionment.";
+        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<ExceptionDialogViewModel, ExceptionDialogViewModelInitializerModel>
+        {
+            ContentPresenterViewModelInitializerModel = new ExceptionDialogViewModelInitializerModel
+            {
+                ViewDataInitializerModel = new ExceptionDialogViewDataViewModelInitializerModel
+                {
+                    Message = exception.Message,
+                    Type = exception.GetType(),
+                    StackTrace = exception.StackTrace,
+                    InnerException = exception.InnerException
+                }
+            }
+        };
+
+        await dialogWindowService.ShowDialogAsync<ExceptionDialogWindowResult>(showDialogOptions, contentPresenterLoadOptions);
     }
 }
