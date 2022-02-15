@@ -2,20 +2,21 @@
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Interfaces;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData.Initializer.Models;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer;
 
 public class SignInViewModelInitializer : IContentPresenterViewModelInitializer<SignInViewModel, SignInViewModelInitializerModel>
 {
-    private readonly IContentPresenterViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> _contentPresenterViewDataViewModelInitializer;
+    private readonly IContentPresenterViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> _viewDataInitializer;
 
-    public SignInViewModelInitializer(IContentPresenterViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> contentPresenterViewDataViewModelInitializer)
+    public SignInViewModelInitializer(IContentPresenterViewDataViewModelInitializer<SignInViewDataViewModel, SignInViewDataViewModelInitializerModel> viewDataInitializer)
     {
-        _contentPresenterViewDataViewModelInitializer = contentPresenterViewDataViewModelInitializer;
+        _viewDataInitializer = viewDataInitializer;
     }
 
     public void Initialize(SignInViewModel contentPresenterViewModel, SignInViewModelInitializerModel contentPresenterViewModelInitializerModel)
     {
-        _contentPresenterViewDataViewModelInitializer.Initialize(contentPresenterViewModel.ViewData, contentPresenterViewModelInitializerModel.ViewDataInitializerModel);
+        _viewDataInitializer.Initialize(contentPresenterViewModel.ViewData, contentPresenterViewModelInitializerModel.ViewDataInitializerModel);
     }
 }

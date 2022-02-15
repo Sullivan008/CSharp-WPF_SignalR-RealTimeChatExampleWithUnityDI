@@ -28,8 +28,10 @@ using Application.Client.Windows.Implementations.Main.Infrastructure.Extensions.
 using Application.Client.Windows.Implementations.Main.Window;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
+using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData.Initializer.Models;
 using Application.Client.Windows.Implementations.MessageBox.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
@@ -96,7 +98,7 @@ public partial class App
             {
                 WindowSettings = new MainWindowSettingsViewModelInitializerModel
                 {
-                    Title = "Test Title"
+                    Title = "IRC Chat"
                 }
             }
         };
@@ -105,10 +107,7 @@ public partial class App
         {
             ContentPresenterViewModelInitializerModel = new SignInViewModelInitializerModel
             {
-                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel
-                {
-                    Content = "It's from the new view initializer"
-                }
+                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel()
             }
         };
 

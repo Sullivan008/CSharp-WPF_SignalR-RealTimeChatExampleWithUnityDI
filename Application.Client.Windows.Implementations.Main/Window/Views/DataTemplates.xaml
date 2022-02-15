@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:signInViews="clr-namespace:Application.Client.Windows.Implementations.Main.Window.Views.SignIn"
-                    xmlns:signIn="clr-namespace:Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn">
-    <DataTemplate DataType="{x:Type signIn:SignInViewModel}">
-        <signInViews:SignInView/>
+                    xmlns:signInView="clr-namespace:Application.Client.Windows.Implementations.Main.Window.Views.SignIn"
+                    xmlns:signInViewModel="clr-namespace:Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn">
+    <DataTemplate DataType="{x:Type signInViewModel:SignInViewModel}">
+        <signInView:SignInView/>
     </DataTemplate>
 </ResourceDictionary>

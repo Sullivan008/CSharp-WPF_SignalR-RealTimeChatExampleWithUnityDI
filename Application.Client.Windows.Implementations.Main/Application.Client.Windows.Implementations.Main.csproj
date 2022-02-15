@@ -12,8 +12,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.Implementations.ExceptionDialog\Application.Client.Windows.Implementations.ExceptionDialog.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.Implementations.MessageBox\Application.Client.Windows.Implementations.MessageBox.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow\Application.Client.Windows.NavigationWindow.csproj" />
 	</ItemGroup>
 
