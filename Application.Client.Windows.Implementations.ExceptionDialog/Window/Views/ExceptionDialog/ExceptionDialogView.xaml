@@ -57,10 +57,19 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Margin="16"
-                   FontSize="14"
-                   Text="An unexpected error occured. The application state might be corrupted."
-                   TextWrapping="Wrap" />
+        <Grid Grid.Row="0" MinHeight="70" Background="White">
+            <DockPanel>
+                <Image DockPanel.Dock="Left" Width="45" Height="45" Margin="20,20,0,20" 
+                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                       Visibility="Visible"
+                       Source="/Application.Client.Windows.Implementations.ExceptionDialog;component/Window/Views/ExceptionDialog/Assets/icon-error.png">
+                </Image>
+                <TextBlock Margin="16"
+                           FontSize="14"
+                           Text="Unhandled exception has occurred in your application. If you click Ok, the application will close immediately."
+                           TextWrapping="Wrap" />
+            </DockPanel>
+        </Grid>
 
         <Border Grid.Row="1"
                 MaxHeight="450"
