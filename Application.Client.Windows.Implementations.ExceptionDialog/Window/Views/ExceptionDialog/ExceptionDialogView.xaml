@@ -18,21 +18,16 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <!--  Info  -->
             <RowDefinition Height="auto" />
-            <!--  Exception details  -->
             <RowDefinition Height="*" />
-            <!--  Button  -->
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <!--  Info  -->
-        <TextBlock Margin="16"
+        <TextBlock Grid.Row="0" Margin="16"
                    FontSize="14"
                    Text="An unexpected error occured. The application state might be corrupted."
                    TextWrapping="Wrap" />
 
-        <!--  Exception details  -->
         <Border Grid.Row="1"
                 MaxHeight="450"
                 Background="#EEEEEE">
@@ -42,23 +37,19 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Auto"
                               VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                          <!--Exception Message-->  
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Exception message" />
                         <TextBlock Grid.Column="1"
                                    Text="Test4"
                                    TextWrapping="Wrap" />
-                          <!--Exception Type-->  
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Exception type" />
                         <TextBlock Style="{StaticResource Content}"
                                    Text="Test" />
-                          <!--Callstack-->  
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Callstack" />
                         <TextBlock Style="{StaticResource Content}"
                                    Text="Test1" />
-                          <!--Inner exception-->  
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Inner exception" />
                         <TextBlock Style="{StaticResource Content}"
@@ -67,7 +58,6 @@
                 </ScrollViewer>
             </Expander>
         </Border>
-        <!--  Close Button  -->
         <Button Grid.Row="2"
                 Margin="16"
                 Padding="8"
