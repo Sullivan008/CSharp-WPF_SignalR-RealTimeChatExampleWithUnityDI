@@ -10,7 +10,7 @@ namespace Application.Client.Windows.Implementations.ExceptionDialog.Window.View
 
 public class ExceptionDialogViewModel : ContentPresenterViewModel<ExceptionDialogViewDataViewModel>
 {
-    public ExceptionDialogViewModel(ICurrentWindowService currentWindowService) : base(currentWindowService)
+    public ExceptionDialogViewModel(ICurrentWindowService currentWindowService, ExceptionDialogViewDataViewModel viewData) : base(currentWindowService, viewData)
     { }
 
     private bool? _isDeveloperMode;

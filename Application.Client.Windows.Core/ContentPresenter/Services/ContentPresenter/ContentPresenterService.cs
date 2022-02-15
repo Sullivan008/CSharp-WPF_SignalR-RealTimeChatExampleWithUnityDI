@@ -3,6 +3,7 @@ using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
 using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,13 +20,28 @@ public class ContentPresenterService : IContentPresenterService
 
     public IContentPresenterViewModel GetContentPresenterViewModel(Type contentPresenterViewModelType, ICurrentWindowService currentWindowService)
     {
-        Type contentPresenterViewModelFactoryType = typeof(Func<,>)
-            .MakeGenericType(typeof(ICurrentWindowService), contentPresenterViewModelType);
+        Type contentPresenterViewModelFactoryType = typeof(Func<,,>)
+            .MakeGenericType(typeof(ICurrentWindowService), typeof(IContentPresenterViewDataViewModel), contentPresenterViewModelType);
 
-        Func<ICurrentWindowService, IContentPresenterViewModel> contentPresenterViewModelFactory =
-            (Func<ICurrentWindowService, IContentPresenterViewModel>)_serviceProvider.GetRequiredService(contentPresenterViewModelFactoryType);
+        Func<ICurrentWindowService, IContentPresenterViewDataViewModel, IContentPresenterViewModel> contentPresenterViewModelFactory =
+            (Func<ICurrentWindowService, IContentPresenterViewDataViewModel, IContentPresenterViewModel >)_serviceProvider.GetRequiredService(contentPresenterViewModelFactoryType);
 
-        return contentPresenterViewModelFactory(currentWindowService);
+        IContentPresenterViewDataViewModel contentPresenterViewDataViewModel = GetContentPresenterViewDataViewModel(contentPresenterViewModelType);
+
+        return contentPresenterViewModelFactory(currentWindowService, contentPresenterViewDataViewModel);
+    }
+
+    private IContentPresenterViewDataViewModel GetContentPresenterViewDataViewModel(Type contentPresenterViewModelType)
+    {
+        Type contentPresenterViewDataViewModelType = contentPresenterViewModelType.BaseType!.GenericTypeArguments.Single();
+
+        Type contentPresenterViewDataViewModelFactoryType = typeof(Func<>)
+            .MakeGenericType(contentPresenterViewDataViewModelType);
+
+        Func<IContentPresenterViewDataViewModel> contentPresenterViewDataViewModelFactory =
+            (Func<IContentPresenterViewDataViewModel>)_serviceProvider.GetRequiredService(contentPresenterViewDataViewModelFactoryType);
+
+        return contentPresenterViewDataViewModelFactory();
     }
 
     public void InitializeContentPresenterViewModel(IContentPresenterViewModel contentPresenterViewModel, IContentPresenterViewModelInitializerModel contentPresenterViewModelInitializerModel)

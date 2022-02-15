@@ -1,5 +1,6 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Services.CurrentDialogWindow.Interfaces;
@@ -13,6 +14,7 @@ using Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.Me
 using Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.MessageBoxWindowSettings;
 using Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.MessageBoxWindowSettings.Initializer.Models;
 using Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox;
+using Application.Client.Windows.Implementations.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.ViewData;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.Implementations.MessageBox.Infrastructure.Extensions.DependencyInjection;
@@ -32,9 +34,12 @@ public static class ServiceCollectionExtension
         @this.AddContentPresenterViewModelInitializers();
         @this.AddContentPresenterViewDataViewModelInitializers();
 
+        @this.AddContentPresenterViewDataViewModelFactory<MessageBoxViewDataViewModel>(serviceProvider => 
+            () => new MessageBoxViewDataViewModel());
+
         @this.AddContentPresenterViewModelFactory<MessageBoxViewModel>(serviceProvider =>
-            currentWindowService => 
-                new MessageBoxViewModel((ICurrentDialogWindowService)currentWindowService));
+            (currentWindowService, viewData) => 
+                new MessageBoxViewModel((ICurrentDialogWindowService)currentWindowService, (MessageBoxViewDataViewModel)viewData));
 
         return @this;
     }

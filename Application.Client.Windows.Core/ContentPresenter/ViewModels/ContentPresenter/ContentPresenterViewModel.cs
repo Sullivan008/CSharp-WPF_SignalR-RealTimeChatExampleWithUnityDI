@@ -8,19 +8,20 @@ using Application.Common.Utilities.Guard;
 namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 
 public class ContentPresenterViewModel<TContentPresenterViewDataViewModel> : INotifyPropertyChanged, IContentPresenterViewModel 
-    where TContentPresenterViewDataViewModel : IContentPresenterViewDataViewModel, new()
+    where TContentPresenterViewDataViewModel : IContentPresenterViewDataViewModel
 {
     public ICurrentWindowService CurrentWindowService { get; }
 
-    protected ContentPresenterViewModel(ICurrentWindowService currentWindowService)
+    protected ContentPresenterViewModel(ICurrentWindowService currentWindowService, TContentPresenterViewDataViewModel viewData)
     {
+        ViewData = viewData;
         CurrentWindowService = currentWindowService;
     }
 
-    private TContentPresenterViewDataViewModel _viewData = new();
+    private TContentPresenterViewDataViewModel? _viewData;
     public TContentPresenterViewDataViewModel ViewData
     {
-        get => _viewData;
+        get => _viewData!;
         set
         {
             Guard.ThrowIfNull(value, nameof(ViewData));

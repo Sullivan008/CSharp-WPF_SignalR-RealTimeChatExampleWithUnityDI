@@ -25,7 +25,8 @@
 
             <TextBox Margin="0,50,0,0" Width="300"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="18"
-                     materialDesign:HintAssist.Hint="Nick name" />
+                     materialDesign:HintAssist.Hint="Nick name"
+                     Text="{Binding ViewData.NickName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
 
             <Button Margin="0,40,0,0" Width="150" Height="53"
                     Style="{StaticResource MaterialDesignFlatMidBgButton}" FontSize="18" Background="#FFFFFF" BorderBrush="{x:Null}"

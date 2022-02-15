@@ -1,4 +1,5 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Interfaces;
 using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -7,7 +8,7 @@ namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPre
 public static class ServiceCollectionExtension
 {
     public static void AddContentPresenterViewModelFactory<TContentPresenterViewModel>(this IServiceCollection @this, 
-        Func<IServiceProvider, Func<ICurrentWindowService, TContentPresenterViewModel>> contentPresenterViewModelFactory) 
+        Func<IServiceProvider, Func<ICurrentWindowService, IContentPresenterViewDataViewModel, TContentPresenterViewModel>> contentPresenterViewModelFactory) 
             where TContentPresenterViewModel : IContentPresenterViewModel
     {
         @this.AddTransient(contentPresenterViewModelFactory);
