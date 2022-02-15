@@ -7,7 +7,7 @@
                      xmlns:window="clr-namespace:Application.Client.Windows.DialogWindow.Window;assembly=Application.Client.Windows.DialogWindow"
                      mc:Ignorable="d"
         ResizeMode="NoResize" SizeToContent="WidthAndHeight"
-        MinHeight="100" Height="100" MaxHeight="650"
+        MinHeight="50" Height="50" MaxHeight="650"
         MinWidth="700" Width="700" MaxWidth="700"
         Title="ExceptionWindow">
 

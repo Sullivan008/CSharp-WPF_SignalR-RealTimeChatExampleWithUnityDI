@@ -59,21 +59,30 @@
 
         <Grid Grid.Row="0" MinHeight="70" Background="White">
             <DockPanel>
-                <Image DockPanel.Dock="Left" Width="45" Height="45" Margin="20,20,0,20" 
+                <Image DockPanel.Dock="Left" Width="45" Height="45" Margin="20,18,0,18" 
                        VerticalAlignment="Top" HorizontalAlignment="Left"
                        Visibility="Visible"
                        Source="/Application.Client.Windows.Implementations.ExceptionDialog;component/Window/Views/ExceptionDialog/Assets/icon-error.png">
                 </Image>
-                <TextBlock Margin="16"
+                <TextBlock Margin="16,20,16,16"
                            FontSize="14"
                            Text="Unhandled exception has occurred in your application. If you click Ok, the application will close immediately."
                            TextWrapping="Wrap" />
             </DockPanel>
         </Grid>
 
-        <Border Grid.Row="1"
-                MaxHeight="450"
+        <Border Grid.Row="1" Margin="0,0,0,20" MaxHeight="450"
                 Background="#EEEEEE">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsDeveloperMode}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
             <Expander Margin="16,16,16,8"
                       Header="Exception Details">
                 <ScrollViewer Margin="0,0,0,16"
@@ -100,7 +109,7 @@
                 </ScrollViewer>
             </Expander>
         </Border>
-        <Button Grid.Row="2" Width="80" Height="23" Margin="5,15,15,15" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        <Button Grid.Row="2" Width="80" Height="23" Margin="5,0,15,15" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                 Content="Ok">
         </Button>
     </Grid>
