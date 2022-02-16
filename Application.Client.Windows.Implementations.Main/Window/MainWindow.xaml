@@ -3,8 +3,10 @@
                                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
                                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                                    xmlns:navigationWindow="clr-namespace:Application.Client.Windows.NavigationWindow.Window;assembly=Application.Client.Windows.NavigationWindow"
+                                   xmlns:window="clr-namespace:Application.Client.Windows.NavigationWindow.Window;assembly=Application.Client.Windows.NavigationWindow"
                                    mc:Ignorable="d"
                                    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                                    Background="{x:Null}"
@@ -12,6 +14,12 @@
                                    WindowStyle="None"
                                    WindowStartupLocation="CenterScreen"
                                    Title="{Binding WindowSettings.Title}" Height="760" Width="450">
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Closing">
+            <behaviors:InvokeCommandAction Command="{Binding CloseWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type window:NavigationWindow}}}"/>
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+
     <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}"
                          Margin="25">
         <ContentControl Content="{Binding ContentPresenter}"/>
