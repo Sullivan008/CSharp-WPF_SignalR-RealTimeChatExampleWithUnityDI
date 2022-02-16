@@ -37,6 +37,7 @@ using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infr
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models.Interfaces;
+using Application.Client.Windows.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
@@ -87,6 +88,8 @@ public partial class App
         serviceCollection.AddContentPresenterService();
         serviceCollection.AddNavigationWindowService();
         serviceCollection.AddDialogWindowService();
+
+        serviceCollection.AddToastNotificationService();
 
         serviceCollection.AddMainWindow();
         serviceCollection.AddMessageBoxWindow();
