@@ -10,4 +10,11 @@ public abstract class CurrentWindowService
     {
         Window = window;
     }
+
+    public virtual async Task CloseWindow()
+    {
+        Window.Close();
+
+        await Task.CompletedTask;
+    }
 }

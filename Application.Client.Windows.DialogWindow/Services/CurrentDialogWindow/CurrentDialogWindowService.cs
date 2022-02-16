@@ -18,11 +18,4 @@ public class CurrentDialogWindowService : CurrentWindowService, ICurrentDialogWi
 
         await Task.CompletedTask;
     }
-
-    public async Task CloseWindow()
-    {
-        Window.Close();
-
-        await Task.CompletedTask;
-    }
 }
