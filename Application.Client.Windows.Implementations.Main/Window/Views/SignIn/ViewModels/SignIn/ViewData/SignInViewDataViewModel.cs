@@ -26,6 +26,8 @@ public class SignInViewDataViewModel : ContentPresenterViewDataViewModel, IDataE
         }
     }
 
+    internal bool IsValid => _validator.Validate(this).IsValid;
+
     public string this[string columnName]
     {
         get

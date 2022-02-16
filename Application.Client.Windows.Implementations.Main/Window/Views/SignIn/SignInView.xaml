@@ -14,7 +14,7 @@
                     ToolTip="Close Application">
                 <materialDesign:PackIcon Kind="Close" Width="20" Height="20" Foreground="#A9A9A9" />
             </Button>
-            
+
             <Image Margin="0,-20,0,5" Height="200" Width="200"
                    Source="/Application.Client.Windows.Implementations.Main;component/Window/Views/SignIn/Assets/chat-logo.png"/>
 
@@ -28,10 +28,34 @@
                      materialDesign:HintAssist.Hint="Nick name"
                      Text="{Binding ViewData.NickName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
 
-            <Button Margin="0,40,0,0" Width="150" Height="53"
-                    Style="{StaticResource MaterialDesignFlatMidBgButton}" FontSize="18" Background="#FFFFFF" BorderBrush="{x:Null}"
+            <Button Margin="0,40,0,0" Width="150" Height="53" FontSize="18" Background="#FFFFFF" BorderBrush="{x:Null}"
                     materialDesign:ShadowAssist.ShadowDepth="Depth2" materialDesign:ButtonAssist.CornerRadius="10"
-                    Content="Sign In" />
+                    Content="Sign In" Command="{Binding SignInCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatMidBgButton}">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.550" From="0.5" To="1" 
+                                                             Storyboard.TargetProperty="Opacity" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.550" From="1" To="0.5" 
+                                                             Storyboard.TargetProperty="Opacity" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
     </materialDesign:DialogHost>
 </UserControl>
