@@ -1,5 +1,4 @@
-﻿using System.Windows.Input;
-using Application.Client.Windows.Core.ViewModels.Window;
+﻿using Application.Client.Windows.Core.ViewModels.Window;
 using Application.Client.Windows.DialogWindow.Models.CustomDialogWindowResult.Interfaces;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings.Interfaces;
@@ -33,23 +32,5 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TCustomDialog
     {
         get => CustomDialogResult;
         set => CustomDialogResult = (TCustomDialogWindowResultModel)value;
-    }
-
-    private ICommand? _closeWindowCommand;
-    public ICommand CloseWindowCommand
-    {
-        get
-        {
-            Guard.ThrowIfNull(_closeWindowCommand, nameof(CloseWindowCommand));
-
-            return _closeWindowCommand!;
-        }
-
-        set
-        {
-            Guard.ThrowIfNull(value, nameof(CloseWindowCommand));
-
-            _closeWindowCommand = value;
-        }
     }
 }

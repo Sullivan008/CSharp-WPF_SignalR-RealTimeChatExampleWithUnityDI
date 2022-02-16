@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 using Application.Client.Windows.Core.ViewModels.Window.Interfaces;
 using Application.Client.Windows.Core.ViewModels.WindowSettings.Interfaces;
@@ -39,6 +40,24 @@ public class WindowViewModel<TWindowSettingsViewModel> : INotifyPropertyChanged,
             _contentPresenter = value;
 
             OnPropertyChanged();
+        }
+    }
+
+    private ICommand? _closeWindowCommand;
+    public ICommand CloseWindowCommand
+    {
+        get
+        {
+            Guard.ThrowIfNull(_closeWindowCommand, nameof(CloseWindowCommand));
+
+            return _closeWindowCommand!;
+        }
+
+        set
+        {
+            Guard.ThrowIfNull(value, nameof(CloseWindowCommand));
+
+            _closeWindowCommand = value;
         }
     }
 
