@@ -192,7 +192,7 @@ public partial class App
             {
                 WindowSettings = new MainWindowSettingsViewModelInitializerModel
                 {
-                    Title = "IRC Chat"
+                    Title = "SignalR Chat"
                 }
             }
         };
