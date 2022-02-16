@@ -8,7 +8,7 @@ namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPre
 public static class ServiceCollectionExtension
 {
     public static void AddContentPresenterViewModelFactory<TContentPresenterViewModel>(this IServiceCollection @this, 
-        Func<IServiceProvider, Func<ICurrentWindowService, IContentPresenterViewDataViewModel, TContentPresenterViewModel>> contentPresenterViewModelFactory) 
+        Func<IServiceProvider, Func<IContentPresenterViewDataViewModel, ICurrentWindowService, TContentPresenterViewModel>> contentPresenterViewModelFactory) 
             where TContentPresenterViewModel : IContentPresenterViewModel
     {
         @this.AddTransient(contentPresenterViewModelFactory);

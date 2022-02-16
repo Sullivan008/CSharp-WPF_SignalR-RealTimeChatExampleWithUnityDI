@@ -5,10 +5,9 @@ namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPre
 
 public static class ServiceCollectionExtension
 {
-    public static void AddContentPresenterViewDataViewModelFactory<TContentPresenterViewDataViewModel>(this IServiceCollection @this,
-        Func<IServiceProvider, Func<TContentPresenterViewDataViewModel>> contentPresenterViewDataViewModelFactory)
-            where TContentPresenterViewDataViewModel : IContentPresenterViewDataViewModel
+    public static void AddContentPresenterViewDataViewModel<TContentPresenterViewDataViewModel>(this IServiceCollection @this)
+        where TContentPresenterViewDataViewModel : IContentPresenterViewDataViewModel
     {
-        @this.AddTransient(contentPresenterViewDataViewModelFactory);
+        @this.AddTransient(typeof(TContentPresenterViewDataViewModel));
     }
 }

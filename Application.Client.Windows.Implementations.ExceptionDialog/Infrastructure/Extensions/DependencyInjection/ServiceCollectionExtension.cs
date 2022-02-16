@@ -34,12 +34,10 @@ public static class ServiceCollectionExtension
         @this.AddContentPresenterViewModelInitializers();
         @this.AddContentPresenterViewDataViewModelInitializers();
 
-        @this.AddContentPresenterViewDataViewModelFactory<ExceptionDialogViewDataViewModel>(serviceProvider =>
-            () => new ExceptionDialogViewDataViewModel());
-
+        @this.AddContentPresenterViewDataViewModel<ExceptionDialogViewDataViewModel>();
         @this.AddContentPresenterViewModelFactory<ExceptionDialogViewModel>(serviceProvider =>
-            (currentWindowService, viewData) =>
-                new ExceptionDialogViewModel((ExceptionDialogViewDataViewModel)viewData, (ICurrentDialogWindowService)currentWindowService));
+            (contentPresenterViewDataViewModel, currentWindowService) =>
+                new ExceptionDialogViewModel((ExceptionDialogViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentDialogWindowService)currentWindowService));
 
         return @this;
     }

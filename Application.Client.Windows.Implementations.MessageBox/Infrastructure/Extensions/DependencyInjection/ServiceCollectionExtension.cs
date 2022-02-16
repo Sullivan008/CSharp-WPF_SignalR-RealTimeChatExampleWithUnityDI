@@ -34,12 +34,10 @@ public static class ServiceCollectionExtension
         @this.AddContentPresenterViewModelInitializers();
         @this.AddContentPresenterViewDataViewModelInitializers();
 
-        @this.AddContentPresenterViewDataViewModelFactory<MessageBoxViewDataViewModel>(serviceProvider => 
-            () => new MessageBoxViewDataViewModel());
-
+        @this.AddContentPresenterViewDataViewModel<MessageBoxViewDataViewModel>();
         @this.AddContentPresenterViewModelFactory<MessageBoxViewModel>(serviceProvider =>
-            (currentWindowService, viewData) => 
-                new MessageBoxViewModel((MessageBoxViewDataViewModel)viewData, (ICurrentDialogWindowService)currentWindowService));
+            (contentPresenterViewDataViewModel, currentWindowService) => 
+                new MessageBoxViewModel((MessageBoxViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentDialogWindowService)currentWindowService));
 
         return @this;
     }

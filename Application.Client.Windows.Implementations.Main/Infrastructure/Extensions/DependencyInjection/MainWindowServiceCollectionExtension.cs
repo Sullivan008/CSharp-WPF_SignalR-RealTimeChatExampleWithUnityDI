@@ -36,14 +36,12 @@ public static class MainWindowServiceCollectionExtension
         @this.AddContentPresenterViewModelInitializers();
         @this.AddContentPresenterViewDataViewModelInitializers();
 
-        @this.AddContentPresenterViewDataViewModelFactory<SignInViewDataViewModel>(serviceProvider => 
-            () => new SignInViewDataViewModel(serviceProvider.GetRequiredService<IValidator<SignInViewDataViewModel>>()));
+        @this.AddContentPresenterViewDataViewModel<SignInViewDataViewModel>();
+        @this.AddTransient<IValidator<SignInViewDataViewModel>, SignInViewDataViewModelValidator>();
 
         @this.AddContentPresenterViewModelFactory<SignInViewModel>(serviceProvider => 
-            (currentWindowService, viewData) => 
-                new SignInViewModel((SignInViewDataViewModel)viewData, (ICurrentNavigationWindowService)currentWindowService));
-
-        @this.AddTransient<IValidator<SignInViewDataViewModel>, SignInViewDataViewModelValidator>();
+            (contentPresenterViewDataViewModel, currentWindowService) => 
+                new SignInViewModel((SignInViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentNavigationWindowService)currentWindowService));
 
         return @this;
     }
