@@ -11,7 +11,7 @@
             <Button Margin="10,10,10,10" Width="40" Height="40"
                     VerticalAlignment="Top" HorizontalAlignment="Right" 
                     Style="{StaticResource MaterialDesignFloatingActionButton}" Background="#FFFFFF" BorderBrush="{x:Null}"
-                    ToolTip="Close Application">
+                    ToolTip="Close Application" Command="{Binding CloseCommand}">
                 <materialDesign:PackIcon Kind="Close" Width="20" Height="20" Foreground="#A9A9A9" />
             </Button>
 
