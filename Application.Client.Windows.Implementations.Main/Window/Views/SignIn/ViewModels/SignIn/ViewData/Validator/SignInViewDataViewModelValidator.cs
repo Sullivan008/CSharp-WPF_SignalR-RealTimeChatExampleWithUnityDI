@@ -11,6 +11,8 @@ public class SignInViewDataViewModelValidator : AbstractValidator<SignInViewData
             .NotNull()
             .WithMessage("This field is required!")
             .NotEmpty()
-            .WithMessage("This field is required!");
+            .WithMessage("This field is required!")
+            .MinimumLength(6)
+            .WithMessage("The nickname must be at least 6 characters long!");
     }
 }
