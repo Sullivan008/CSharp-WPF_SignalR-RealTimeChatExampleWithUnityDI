@@ -1,4 +1,5 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
+﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
@@ -39,9 +40,10 @@ public static class MainWindowServiceCollectionExtension
         @this.AddContentPresenterViewDataViewModel<SignInViewDataViewModel>();
         @this.AddTransient<IValidator<SignInViewDataViewModel>, SignInViewDataViewModelValidator>();
 
-        @this.AddContentPresenterViewModelFactory<SignInViewModel>(serviceProvider => 
+        @this.AddContentPresenterViewModelFactory<SignInViewModel>(serviceProvider =>
             (contentPresenterViewDataViewModel, currentWindowService) => 
-                new SignInViewModel((SignInViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentNavigationWindowService)currentWindowService));
+                new SignInViewModel((SignInViewDataViewModel) contentPresenterViewDataViewModel, (ICurrentNavigationWindowService) currentWindowService,
+                                    serviceProvider.GetRequiredService<IChatHub>()));
 
         return @this;
     }
