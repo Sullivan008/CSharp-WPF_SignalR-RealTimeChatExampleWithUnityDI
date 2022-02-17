@@ -6,8 +6,8 @@ using System.Windows.Threading;
 using Application.Client.Cache.Infrastructure.Interfaces;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
+using Application.Client.SignalR.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hub.ChatHub.Extensions.DependencyInjection;
-using Application.Client.SignalR.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
@@ -85,6 +85,8 @@ public partial class App
 
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
+        serviceCollection.AddSingleton(configuration);
+
         serviceCollection.AddContentPresenterService();
         serviceCollection.AddNavigationWindowService();
         serviceCollection.AddDialogWindowService();
