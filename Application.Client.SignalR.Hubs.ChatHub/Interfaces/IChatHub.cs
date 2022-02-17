@@ -1,6 +1,6 @@
-﻿namespace Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+﻿using Application.Client.SignalR.Core.Hubs.Interfaces;
 
-public interface IChatHub
-{
-    public bool IsConnected { get; }
-}
+namespace Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+
+public interface IChatHub : ISignalRHub
+{ }

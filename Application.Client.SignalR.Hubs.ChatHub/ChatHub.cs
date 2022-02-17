@@ -1,83 +1,66 @@
 ﻿using Application.Client.SignalR.Core.Configurations.Models;
+using Application.Client.SignalR.Core.Hubs.Abstractions;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace Application.Client.SignalR.Hubs.ChatHub;
 
-public class ChatHub : IChatHub
+public class ChatHub : SignalRHub<ChatHub>, IChatHub
 {
-    private readonly ILogger<ChatHub> _logger;
-
-    private readonly HubConnection _hubConnection;
-
-    private readonly IOptions<HubConfigurations> _hubConfigurations;
-
-    public bool IsConnected => _hubConnection.State == HubConnectionState.Connected;
-
-    public ChatHub(ILogger<ChatHub> logger, IOptions<HubConfigurations> hubConfigurations)
+    public ChatHub(ILogger<ChatHub> logger, IOptions<HubConfigurations> hubConfigurations) : base(logger, hubConfigurations)
     {
-        _logger = logger;
-        _hubConfigurations = hubConfigurations;
+        HubConnection.Closed += OnClosedHubConnection;
+        HubConnection.Reconnected += OnReconnectedHubConnection;
+        HubConnection.Reconnecting += OnReconnectingHubConnection;
 
-        _hubConnection = new HubConnectionBuilder()
-            .AddJsonProtocol()
-            .WithUrl($"{hubConfigurations.Value.BaseUrl}/{nameof(ChatHub)}")
-            .WithAutomaticReconnect()
-            .Build();
-
-        _hubConnection.Closed += OnClosedHubConnection;
-        _hubConnection.Reconnected += OnReconnectedHubConnection;
-        _hubConnection.Reconnecting += OnReconnectingHubConnection;
-            
         Task.Run(ConnectAsync).Wait();
     }
 
-    private async Task ConnectAsync()
+    protected override bool IsConnected => HubConnection.State == HubConnectionState.Connected;
+
+    protected override async Task ConnectAsync()
     {
         while (!IsConnected)
         {
             try
             {
-                await _hubConnection.StartAsync();
+                await HubConnection.StartAsync();
 
                 break;
             }
             catch (HttpRequestException ex)
             {
-                _logger.LogError(ex, ex.Message);
+                Logger.LogError(ex, ex.Message);
 
-                await Task.Delay(_hubConfigurations.Value.ReconnectTimeInterval!.Value);
+                await Task.Delay(HubConfigurations.ReconnectTimeInterval);
             }
         }
     }
 
-    private async Task OnClosedHubConnection(Exception? ex)
+    protected override async Task OnClosedHubConnection(Exception? ex)
     {
         if (ex != null)
         {
-            _logger.LogError(ex, ex.Message);
+            Logger.LogError(ex, ex.Message);
         }
 
         await ConnectAsync();
+    }
 
+    protected override async Task OnReconnectedHubConnection(string? arg)
+    {
         await Task.CompletedTask;
     }
 
-    private async Task OnReconnectingHubConnection(Exception? ex)
+    protected override async Task OnReconnectingHubConnection(Exception? ex)
     {
         if (ex != null)
         {
-            _logger.LogError(ex, ex.Message);
+            Logger.LogError(ex, ex.Message);
         }
 
-        await Task.CompletedTask;
-    }
-
-    private async Task OnReconnectedHubConnection(string? arg)
-    {
         await Task.CompletedTask;
     }
 }

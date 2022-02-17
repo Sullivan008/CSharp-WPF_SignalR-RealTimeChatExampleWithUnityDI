@@ -18,7 +18,7 @@ public class HubConfigurations
     }
 
     private readonly int? _reconnectTimeInterval;
-    public int? ReconnectTimeInterval
+    public int ReconnectTimeInterval
     {
         get
         {
