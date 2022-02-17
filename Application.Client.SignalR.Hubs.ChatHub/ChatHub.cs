@@ -34,7 +34,7 @@ public class ChatHub : SignalRHub<ChatHub>, IChatHub
             {
                 Logger.LogError(ex, ex.Message);
 
-                await Task.Delay(HubConfigurations.ReconnectTimeInterval);
+                await Task.Delay(HubConfigurations.ReconnectTimeInterval!.Value);
             }
         }
     }

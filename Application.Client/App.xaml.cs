@@ -85,8 +85,6 @@ public partial class App
 
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
-        serviceCollection.AddSingleton(configuration);
-
         serviceCollection.AddContentPresenterService();
         serviceCollection.AddNavigationWindowService();
         serviceCollection.AddDialogWindowService();
