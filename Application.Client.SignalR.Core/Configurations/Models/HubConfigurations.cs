@@ -1,6 +1,6 @@
 ﻿using Application.Common.Utilities.Guard;
 
-namespace Application.Client.SignalR.Configurations.Models;
+namespace Application.Client.SignalR.Core.Configurations.Models;
 
 public class HubConfigurations
 {

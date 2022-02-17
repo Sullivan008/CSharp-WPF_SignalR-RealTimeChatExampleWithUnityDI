@@ -1,10 +1,10 @@
-﻿using Application.Client.SignalR.Configurations.Enums;
-using Application.Client.SignalR.Configurations.Models;
+﻿using Application.Client.SignalR.Core.Configurations.Enums;
+using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.SignalR.Configurations.Infrastructure.Extensions.DependencyInjection;
+namespace Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {

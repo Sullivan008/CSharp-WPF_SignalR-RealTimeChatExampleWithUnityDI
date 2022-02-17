@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Client.SignalR\Application.Client.SignalR.csproj" />
+    <ProjectReference Include="..\Application.Client.SignalR.Core\Application.Client.SignalR.Core.csproj" />
   </ItemGroup>
 
 </Project>

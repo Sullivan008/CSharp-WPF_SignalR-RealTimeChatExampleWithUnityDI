@@ -1,11 +1,11 @@
-﻿using Application.Client.SignalR.Configurations.Models;
-using Application.Client.SignalR.Hub.ChatHub.Interfaces;
+﻿using Application.Client.SignalR.Core.Configurations.Models;
+using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Application.Client.SignalR.Hub.ChatHub;
+namespace Application.Client.SignalR.Hubs.ChatHub;
 
 public class ChatHub : IChatHub
 {

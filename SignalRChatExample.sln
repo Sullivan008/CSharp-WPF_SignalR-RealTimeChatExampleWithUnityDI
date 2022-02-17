@@ -22,9 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hub
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.Hub.ChatHub", "Application.Client.SignalR.Hub.ChatHub\Application.Client.SignalR.Hub.ChatHub.csproj", "{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.Hubs.ChatHub", "Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj", "{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR", "Application.Client.SignalR\Application.Client.SignalR.csproj", "{4A12AF32-9AFA-4C97-AE39-14FD39A72605}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.Core", "Application.Client.SignalR.Core\Application.Client.SignalR.Core.csproj", "{4A12AF32-9AFA-4C97-AE39-14FD39A72605}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Cache", "Application.Client.Cache\Application.Client.Cache.csproj", "{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C}"
 EndProject
@@ -56,7 +56,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.ExceptionDialog", "Application.Client.Windows.Implementations.ExceptionDialog\Application.Client.Windows.Implementations.ExceptionDialog.csproj", "{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Windows.ToastNotification", "Application.Client.Windows.ToastNotification\Application.Client.Windows.ToastNotification.csproj", "{BAF793A1-E11B-4978-9D70-D9251F51AA6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.ToastNotification", "Application.Client.Windows.ToastNotification\Application.Client.Windows.ToastNotification.csproj", "{BAF793A1-E11B-4978-9D70-D9251F51AA6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.SignalR", "Application.Client.SignalR", "{C39FB816-BBAF-473D-B2A2-F23264E6A439}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.SignalR.Hubs", "Application.Client.SignalR.Hubs", "{86067CBD-E34D-4E6B-BF71-F178764F1282}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,8 +157,8 @@ Global
 		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
 		{9C0F8661-C90D-4236-8D54-7D60616C56A5} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
-		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
-		{4A12AF32-9AFA-4C97-AE39-14FD39A72605} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
+		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C} = {86067CBD-E34D-4E6B-BF71-F178764F1282}
+		{4A12AF32-9AFA-4C97-AE39-14FD39A72605} = {C39FB816-BBAF-473D-B2A2-F23264E6A439}
 		{39DFEDFB-D82D-402D-B9CC-CD08CE063B0C} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
 		{D75E4768-405D-42EB-9961-C216E621A2DE} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
 		{461D0BFD-F98D-454D-8F01-A55355FD383B} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
@@ -168,6 +172,8 @@ Global
 		{412A513F-272E-4CB2-9383-94FC540AC424} = {3E715E21-3178-43ED-A480-098C18EEF36B}
 		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4} = {3E715E21-3178-43ED-A480-098C18EEF36B}
 		{BAF793A1-E11B-4978-9D70-D9251F51AA6E} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{C39FB816-BBAF-473D-B2A2-F23264E6A439} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
+		{86067CBD-E34D-4E6B-BF71-F178764F1282} = {C39FB816-BBAF-473D-B2A2-F23264E6A439}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

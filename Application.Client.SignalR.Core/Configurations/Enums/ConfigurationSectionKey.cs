@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Application.Client.SignalR.Configurations.Enums;
+namespace Application.Client.SignalR.Core.Configurations.Enums;
 
 public enum ConfigurationSectionKey
 {
