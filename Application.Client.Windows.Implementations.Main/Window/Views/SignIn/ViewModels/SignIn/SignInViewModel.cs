@@ -4,17 +4,26 @@ using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresent
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
+using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 
 public class SignInViewModel : ContentPresenterViewModel<SignInViewDataViewModel>
 {
-    public SignInViewModel(SignInViewDataViewModel viewData, ICurrentNavigationWindowService currentWindowService, IChatHub chatHub) : base(viewData, currentWindowService)
-    { }
+    private readonly IChatHub _chatHub;
+
+    private readonly IToastNotificationService _toastNotificationService;
+
+    public SignInViewModel(SignInViewDataViewModel viewData, ICurrentNavigationWindowService currentWindowService,
+        IChatHub chatHub, IToastNotificationService toastNotificationService) : base(viewData, currentWindowService)
+    {
+        _chatHub = chatHub;
+        _toastNotificationService = toastNotificationService;
+    }
 
     private ICommand? _closeCommand;
     public ICommand CloseCommand => _closeCommand ??= new CloseCommand(this, (ICurrentNavigationWindowService)CurrentWindowService);
 
     private ICommand? _signInCommand;
-    public ICommand SignInCommand => _signInCommand ??= new SignInCommand(this);
+    public ICommand SignInCommand => _signInCommand ??= new SignInCommand(this, _chatHub, _toastNotificationService);
 }

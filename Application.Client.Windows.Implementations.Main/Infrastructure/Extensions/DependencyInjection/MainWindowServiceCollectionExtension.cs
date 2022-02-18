@@ -17,6 +17,7 @@ using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.In
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Window.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -43,7 +44,7 @@ public static class MainWindowServiceCollectionExtension
         @this.AddContentPresenterViewModelFactory<SignInViewModel>(serviceProvider =>
             (contentPresenterViewDataViewModel, currentWindowService) => 
                 new SignInViewModel((SignInViewDataViewModel) contentPresenterViewDataViewModel, (ICurrentNavigationWindowService) currentWindowService,
-                                    serviceProvider.GetRequiredService<IChatHub>()));
+                                    serviceProvider.GetRequiredService<IChatHub>(), serviceProvider.GetRequiredService<IToastNotificationService>()));
 
         return @this;
     }
