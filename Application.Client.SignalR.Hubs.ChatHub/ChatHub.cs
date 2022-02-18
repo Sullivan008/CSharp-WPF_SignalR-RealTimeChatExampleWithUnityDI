@@ -14,12 +14,10 @@ public class ChatHub : SignalRHub<ChatHub>, IChatHub
         HubConnection.Closed += OnClosedHubConnection;
         HubConnection.Reconnected += OnReconnectedHubConnection;
         HubConnection.Reconnecting += OnReconnectingHubConnection;
-
-        Task.Run(ConnectAsync).Wait();
     }
 
     protected override bool IsConnected => HubConnection.State == HubConnectionState.Connected;
-
+    
     protected override async Task ConnectAsync()
     {
         while (!IsConnected)

@@ -26,7 +26,7 @@ public abstract class SignalRHub<THub> : ISignalRHub
 
         HubConnection = new HubConnectionBuilder()
             .AddJsonProtocol()
-            .WithUrl($"{HubConfigurations.BaseUrl}/{nameof(THub)}")
+            .WithUrl($"{HubConfigurations.BaseUrl}/{typeof(THub).Name}")
             .WithAutomaticReconnect()
             .Build();
     }
@@ -38,6 +38,11 @@ public abstract class SignalRHub<THub> : ISignalRHub
     }
 
     bool ISignalRHub.IsConnected => IsConnected;
+
+    async Task ISignalRHub.ConnectAsync()
+    {
+        await ConnectAsync();
+    }
 
     protected abstract bool IsConnected { get; }
 

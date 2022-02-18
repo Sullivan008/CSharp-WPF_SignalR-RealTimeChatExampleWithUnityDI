@@ -8,6 +8,7 @@ using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
+using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models;
 using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
@@ -110,6 +111,8 @@ public partial class App
         ConfigureDataBindingErrorListener();
         Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
 
+        OnConnectChatHub();
+
         ShowMainWindow();
 
         base.OnStartup(eventArgs);
@@ -180,6 +183,12 @@ public partial class App
         };
 
         await dialogWindowService.ShowDialogAsync<ExceptionDialogWindowResult>(showDialogOptions, contentPresenterLoadOptions);
+    }
+
+    private async void OnConnectChatHub()
+    {
+        IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();
+        await chatHub.ConnectAsync();
     }
 
     private async void ShowMainWindow()

@@ -3,4 +3,6 @@
 public interface ISignalRHub
 {
     public bool IsConnected { get; }
+
+    public Task ConnectAsync();
 }
