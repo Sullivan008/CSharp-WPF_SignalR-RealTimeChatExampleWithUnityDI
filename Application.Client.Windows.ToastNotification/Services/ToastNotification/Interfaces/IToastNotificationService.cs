@@ -1,6 +1,6 @@
-﻿using Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models;
+﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
 
-namespace Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
+namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
 
 public interface IToastNotificationService
 {

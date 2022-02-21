@@ -1,11 +1,10 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
-using Application.Client.Cache.Infrastructure.Interfaces;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
@@ -38,9 +37,6 @@ using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Infr
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models.Interfaces;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
-using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
-using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -95,10 +91,6 @@ public partial class App
         serviceCollection.AddMainWindow();
         serviceCollection.AddMessageBoxWindow();
         serviceCollection.AddExceptionDialogWindow();
-
-        serviceCollection.AddMemoryCache();
-        serviceCollection.AddCacheServices();
-        serviceCollection.AddCacheRepositories(Assembly.GetAssembly(typeof(IAssemblyMarker))!);
 
         serviceCollection.AddHubConfigurations(configuration);
         serviceCollection.AddChatHub();

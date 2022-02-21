@@ -17,7 +17,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Application.Client.Cache\Application.Client.Cache.csproj" />
 	  <ProjectReference Include="..\Application.Client.SignalR.Core\Application.Client.SignalR.Core.csproj" />
 	  <ProjectReference Include="..\Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.ApplicationWindow\Application.Client.Windows.ApplicationWindow.csproj" />
@@ -26,8 +25,7 @@
 	  <ProjectReference Include="..\Application.Client.Windows.Implementations.Main\Application.Client.Windows.Implementations.Main.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.Implementations.MessageBox\Application.Client.Windows.Implementations.MessageBox.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow\Application.Client.Windows.NavigationWindow.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.ToastNotification\Application.Client.Windows.ToastNotification.csproj" />
-	  <ProjectReference Include="..\Application.Common.Cache\Application.Common.Cache.csproj" />
+	  <ProjectReference Include="..\Application.Client.Windows.ToastNotification\Application.Client.Notifications.ToastNotification.csproj" />
 	  <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
 

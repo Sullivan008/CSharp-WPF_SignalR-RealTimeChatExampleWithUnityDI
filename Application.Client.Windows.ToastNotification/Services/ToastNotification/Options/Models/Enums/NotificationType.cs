@@ -1,4 +1,4 @@
-﻿namespace Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models.Enums;
+﻿namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 
 public enum NotificationType
 {

@@ -20,7 +20,7 @@
 	  <ProjectReference Include="..\Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow\Application.Client.Windows.NavigationWindow.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.ToastNotification\Application.Client.Windows.ToastNotification.csproj" />
+	  <ProjectReference Include="..\Application.Client.Windows.ToastNotification\Application.Client.Notifications.ToastNotification.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

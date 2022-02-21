@@ -1,4 +1,5 @@
-﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
+using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Infrastructure.Extensions.DependencyInjection;
@@ -17,7 +18,6 @@ using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.In
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Window.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 

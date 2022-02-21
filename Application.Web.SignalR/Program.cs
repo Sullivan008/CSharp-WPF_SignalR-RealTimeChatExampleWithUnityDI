@@ -1,5 +1,5 @@
 ﻿using Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extensions.DependencyInjection;
-using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
+using Application.Cache.Services.ApplicationCacheService.Infrastructure.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
 using Application.Web.Infrastructure.Environment.Enums;
 using Application.Web.SignalR.Hubs.Implementations.ChatHub;
@@ -41,12 +41,12 @@ IHostBuilder hostBuilder =
         .ConfigureServices(serviceCollection =>
         {
             serviceCollection.AddMemoryCache();
-            serviceCollection.AddCacheServices();
+            serviceCollection.AddApplicationCacheService();
 
             serviceCollection.AddSignalR()
                              .AddNewtonsoftJsonProtocol();
 
-            serviceCollection.AddUserManagementBusinessLogic();
+            serviceCollection.AddUserManagementModule();
         });
 
 hostBuilder.Build().Run();

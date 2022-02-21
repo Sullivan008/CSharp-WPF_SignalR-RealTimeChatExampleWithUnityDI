@@ -1,4 +1,4 @@
-﻿namespace Application.Client.Windows.ToastNotification.Services.ToastNotification.Exceptions;
+﻿namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification.Exceptions;
 
 internal class UnknownNotificationType : Exception
 {

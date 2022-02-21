@@ -1,7 +1,7 @@
-﻿using Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models.Enums;
+﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 using Application.Common.Utilities.Guard;
 
-namespace Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models;
+namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
 
 public class ShowNotificationOptions
 {

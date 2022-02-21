@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Application.Cache.Repositories\Application.Cache.Repositories.csproj" />
     <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
     <ProjectReference Include="..\Application.Web.BusinessLogic.Core\Application.BusinessLogic.Core.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Hubs.Core.csproj" />

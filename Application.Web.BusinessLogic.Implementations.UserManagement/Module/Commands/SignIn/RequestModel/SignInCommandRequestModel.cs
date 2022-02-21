@@ -1,7 +1,7 @@
 ﻿using Application.BusinessLogic.Core.MediatR.Commands.Models.RequestModels;
 using Application.Common.Utilities.Guard;
 
-namespace Application.BusinessLogic.Modules.UserManagement.Commands.SignIn.RequestModel;
+namespace Application.BusinessLogic.Modules.UserManagement.Module.Commands.SignIn.RequestModel;
 
 public class SignInCommandRequestModel : MediatRCommandRequestModel
 {

@@ -1,13 +1,13 @@
 ﻿using System.Windows.Media;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Exceptions;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Exceptions;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
 using FontAwesome5;
 using Notification.Wpf;
 using Notification.Wpf.Constants;
 using Notification.Wpf.Controls;
 
-namespace Application.Client.Windows.ToastNotification.Services.ToastNotification;
+namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification;
 
 public class ToastNotificationService : IToastNotificationService
 {
@@ -36,16 +36,16 @@ public class ToastNotificationService : IToastNotificationService
     {
         switch (notificationOptions.NotificationType)
         {
-            case Options.Models.Enums.NotificationType.Error:
+            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Error:
                 await OnShowErrorNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
-            case Options.Models.Enums.NotificationType.Warning:
+            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Warning:
                 await OnShowWarningNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
-            case Options.Models.Enums.NotificationType.Success:
+            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Success:
                 await OnShowSuccessNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
-            case Options.Models.Enums.NotificationType.Information:
+            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Information:
                 await OnShowInformationNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
             default:

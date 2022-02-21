@@ -1,10 +1,10 @@
 ﻿using System.Windows.Input;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 

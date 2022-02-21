@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using Application.BusinessLogic.Modules.UserManagement.Module.Services.User.Infrastructure.Extensions.DependencyInjection;
+using Application.Cache.Repositories.ApplicationCacheRepository.Infrastructure.Extensions.DependencyInjection;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -6,9 +8,13 @@ namespace Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extens
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddUserManagementBusinessLogic(this IServiceCollection @this)
+    public static IServiceCollection AddUserManagementModule(this IServiceCollection @this)
     {
         @this.AddMediatR(Assembly.GetExecutingAssembly());
+        
+        @this.AddApplicationCacheRepositories();
+
+        @this.AddUserService();
 
         return @this;
     }

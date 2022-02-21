@@ -1,8 +1,8 @@
-﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
+using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models;
-using Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Models.SignIn.RequestModels;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;

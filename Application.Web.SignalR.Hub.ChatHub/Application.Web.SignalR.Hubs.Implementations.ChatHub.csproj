@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Common.Cache\Application.Common.Cache.csproj" />
     <ProjectReference Include="..\Application.Web.BusinessLogic.Implementations.UserManagement\Application.BusinessLogic.Modules.UserManagement.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Hubs.Core.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Hub.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.csproj" />

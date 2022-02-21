@@ -1,5 +1,5 @@
-﻿using Application.BusinessLogic.Modules.UserManagement.Commands.SignIn;
-using Application.BusinessLogic.Modules.UserManagement.Commands.SignIn.RequestModel;
+﻿using Application.BusinessLogic.Modules.UserManagement.Module.Commands.SignIn;
+using Application.BusinessLogic.Modules.UserManagement.Module.Commands.SignIn.RequestModel;
 using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Interfaces;
 using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Models.SignIn.RequestModels;
 using Application.Web.SignalR.Hubs.Core.Abstractions;

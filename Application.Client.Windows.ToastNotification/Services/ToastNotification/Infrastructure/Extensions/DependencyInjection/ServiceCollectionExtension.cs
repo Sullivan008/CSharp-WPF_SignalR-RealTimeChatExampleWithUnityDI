@@ -1,8 +1,8 @@
-﻿using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
+﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Notification.Wpf;
 
-namespace Application.Client.Windows.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
+namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {
