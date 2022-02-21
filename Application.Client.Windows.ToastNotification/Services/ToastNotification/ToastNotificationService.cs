@@ -24,7 +24,7 @@ public class ToastNotificationService : IToastNotificationService
     {
         NotificationConstants.MessagePosition = NotificationPosition.TopRight;
         NotificationConstants.DefaulTextTrimType = NotificationTextTrimType.Trim;
-        NotificationConstants.DefaultRowCounts = 3;
+        NotificationConstants.DefaultRowCounts = 2;
 
         NotificationConstants.ErrorBackgroundColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));
         NotificationConstants.SuccessBackgroundColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"));

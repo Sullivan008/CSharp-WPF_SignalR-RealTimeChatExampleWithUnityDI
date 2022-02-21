@@ -23,15 +23,7 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
     {
         if (_chatHub.IsConnected == false)
         {
-            ShowNotificationOptions showNotificationOptions = new()
-            {
-                Title = "Internal server error!",
-                Message = "The chat server is not available! Please try again later!",
-                NotificationType = NotificationType.Error
-            };
-
-            await _toastNotificationService.ShowNotification(showNotificationOptions);
-
+            await ShowChatServerIsNotAvailableToastMessage();
             return;
         }
 
@@ -44,4 +36,16 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
     }
 
     public override Predicate<object?> CanExecute => _ => CallerViewModel.ViewData.IsValid;
+
+    private async Task ShowChatServerIsNotAvailableToastMessage()
+    {
+        ShowNotificationOptions showNotificationOptions = new()
+        {
+            Title = "Application message",
+            Message = "The chat server is not available! Please try again later!",
+            NotificationType = NotificationType.Error
+        };
+
+        await _toastNotificationService.ShowNotification(showNotificationOptions);
+    }
 }
