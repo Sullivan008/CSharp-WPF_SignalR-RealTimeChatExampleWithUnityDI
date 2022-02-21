@@ -3,6 +3,7 @@ using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
 using Application.Client.Windows.ToastNotification.Services.ToastNotification.Interfaces;
 using Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models;
 using Application.Client.Windows.ToastNotification.Services.ToastNotification.Options.Models.Enums;
+using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Models.SignIn.RequestModels;
 
 namespace Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 
@@ -34,8 +35,13 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
             return;
         }
 
-        await Task.CompletedTask;
+        SignInRequestModel requestModel = new()
+        {
+            NickName = CallerViewModel.ViewData.NickName
+        };
+
+        await _chatHub.SignInAsync(requestModel);
     }
 
-    public override Predicate<object?>? CanExecute => _ => CallerViewModel.ViewData.IsValid;
+    public override Predicate<object?> CanExecute => _ => CallerViewModel.ViewData.IsValid;
 }

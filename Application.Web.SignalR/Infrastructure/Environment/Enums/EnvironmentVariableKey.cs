@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Application.Web.SignalR.Infrastructure.Environment.Enums;
+namespace Application.Web.Infrastructure.Environment.Enums;
 
 public enum EnvironmentVariableKey
 {

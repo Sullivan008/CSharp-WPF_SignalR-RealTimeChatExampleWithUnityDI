@@ -1,10 +1,8 @@
-﻿using System.Reflection;
-using Application.Common.Cache.Infrastructure.Repository.Extensions.DependencyInjection;
+﻿using Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extensions.DependencyInjection;
 using Application.Common.Cache.Infrastructure.Services.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
-using Application.Web.SignalR.Cache.Infrastructure.Interfaces;
-using Application.Web.SignalR.Hub.ChatHub;
-using Application.Web.SignalR.Infrastructure.Environment.Enums;
+using Application.Web.Infrastructure.Environment.Enums;
+using Application.Web.SignalR.Hubs.Implementations.ChatHub;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -44,10 +42,11 @@ IHostBuilder hostBuilder =
         {
             serviceCollection.AddMemoryCache();
             serviceCollection.AddCacheServices();
-            serviceCollection.AddCacheRepositories(Assembly.GetAssembly(typeof(IAssemblyMarker))!);
 
             serviceCollection.AddSignalR()
                              .AddNewtonsoftJsonProtocol();
+
+            serviceCollection.AddUserManagementBusinessLogic();
         });
 
 hostBuilder.Build().Run();
