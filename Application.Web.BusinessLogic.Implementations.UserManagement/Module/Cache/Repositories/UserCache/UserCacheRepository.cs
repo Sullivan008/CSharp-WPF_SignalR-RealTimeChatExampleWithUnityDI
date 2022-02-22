@@ -1,11 +1,10 @@
 ﻿using Application.BusinessLogic.Modules.UserManagement.Module.Cache.Repositories.UserCache.Models.CacheDataModels;
-using Application.Cache.Repositories.ApplicationCacheRepository.Abstractions;
-using Application.Cache.Repositories.ApplicationCacheRepository.Interfaces;
-using Application.Cache.Services.ApplicationCacheService.Interfaces;
+using Application.Cache.Core.Repositories.ApplicationCache.Abstractions;
+using Application.Cache.Core.Services.ApplicationCache.Interfaces;
 
 namespace Application.BusinessLogic.Modules.UserManagement.Module.Cache.Repositories.UserCache;
 
-public class UserCacheRepository : ApplicationCacheRepository<UserManagementCacheKey,UserCacheDataModel>, IApplicationCacheRepository<UserManagementCacheKey, UserCacheDataModel>
+public class UserCacheRepository : ApplicationCacheRepository<UserManagementCacheKey,UserCacheDataModel>
 {
     public UserCacheRepository(IApplicationCacheService applicationCacheService) : base(applicationCacheService)
     { }

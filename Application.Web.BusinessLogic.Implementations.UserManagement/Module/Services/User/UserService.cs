@@ -2,7 +2,7 @@
 using Application.BusinessLogic.Modules.UserManagement.Module.Cache.Repositories.UserCache.Models.CacheDataModels;
 using Application.BusinessLogic.Modules.UserManagement.Module.Services.User.Interfaces;
 using Application.BusinessLogic.Modules.UserManagement.Module.Services.User.Models;
-using Application.Cache.Repositories.ApplicationCacheRepository.Interfaces;
+using Application.Cache.Core.Repositories.ApplicationCache.Interfaces;
 
 namespace Application.BusinessLogic.Modules.UserManagement.Module.Services.User;
 

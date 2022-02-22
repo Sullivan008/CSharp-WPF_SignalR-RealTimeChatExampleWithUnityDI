@@ -1,8 +1,8 @@
 ﻿using Application.Cache.Core.Collections.CacheData.Interfaces;
 using Application.Cache.Core.Models.CacheData.Interfaces;
-using Application.Cache.Services.ApplicationCacheService.Interfaces;
-using Application.Cache.Services.ApplicationCacheService.Options.Models.Get;
-using Application.Cache.Services.ApplicationCacheService.Options.Models.Set;
+using Application.Cache.Core.Services.ApplicationCache.Interfaces;
+using Application.Cache.Core.Services.ApplicationCache.Options.Models.GetCacheOptions;
+using Application.Cache.Core.Services.ApplicationCache.Options.Models.SetCacheOptions;
 
 namespace Application.Cache.Repositories.ApplicationCacheRepository.Abstractions;
 
@@ -26,7 +26,7 @@ public abstract class ApplicationCacheRepository<TCacheKey, TCacheDataModel>
 
     public ICacheDataCollection<TCacheDataModel> GetCollection()
     {
-        GetCollectionOptions<TCacheKey> getCollectionOptions = new() { Key = CacheKey };
+        GetItemsOptions<TCacheKey> getCollectionOptions = new() { Key = CacheKey };
 
         return _applicationCacheService.GetCollection<TCacheKey, TCacheDataModel>(getCollectionOptions);
     }

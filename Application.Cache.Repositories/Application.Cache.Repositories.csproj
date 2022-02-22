@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Cache.Core\Application.Cache.Core.csproj" />
-    <ProjectReference Include="..\Application.Cache.Service\Application.Cache.Services.csproj" />
   </ItemGroup>
 
 </Project>

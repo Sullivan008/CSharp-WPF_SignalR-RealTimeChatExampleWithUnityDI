@@ -1,5 +1,5 @@
 ﻿using Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extensions.DependencyInjection;
-using Application.Cache.Services.ApplicationCacheService.Infrastructure.Extensions.DependencyInjection;
+using Application.Cache.Core.Services.ApplicationCache.Infrastructure.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
 using Application.Web.Infrastructure.Environment.Enums;
 using Application.Web.SignalR.Hubs.Implementations.ChatHub;
