@@ -2,7 +2,7 @@
 using Application.Cache.Core.Services.ApplicationCache.Infrastructure.Extensions.DependencyInjection;
 using Application.Common.Utilities.Extensions;
 using Application.Web.Infrastructure.Environment.Enums;
-using Application.Web.SignalR.Hubs.Implementations.ChatHub;
+using Application.Web.SignalR.Hubs.ChatHub;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

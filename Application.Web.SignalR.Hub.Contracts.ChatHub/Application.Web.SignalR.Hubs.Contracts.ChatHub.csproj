@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
+    <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Hubs.Core.csproj" />
-    <ProjectReference Include="..\Application.Web.SignalR.Hubs.Contracts.Core\Application.Web.SignalR.Hubs.Contracts.Core.csproj" />
   </ItemGroup>
 
 </Project>

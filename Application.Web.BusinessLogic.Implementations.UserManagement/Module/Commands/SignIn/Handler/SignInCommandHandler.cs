@@ -1,7 +1,6 @@
 ﻿using Application.BusinessLogic.Core.MediatR.CommandHandlers.Abstractions;
 using Application.BusinessLogic.Modules.UserManagement.Module.Services.User.Interfaces;
-using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Interfaces;
-using Application.Web.SignalR.Hubs.Core.Abstractions;
+using Application.Web.SignalR.Hubs.Contracts.ChatHub.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.SignalR;
 

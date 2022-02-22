@@ -17,7 +17,7 @@
     <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
     <ProjectReference Include="..\Application.Web.BusinessLogic.Core\Application.BusinessLogic.Core.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Hubs.Core.csproj" />
-    <ProjectReference Include="..\Application.Web.SignalR.Hub.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.csproj" />
+    <ProjectReference Include="..\Application.Web.SignalR.Hub.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj" />
   </ItemGroup>
 
 </Project>

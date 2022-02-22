@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.Implementations.ChatHub", "Application.Web.SignalR.Hub.ChatHub\Application.Web.SignalR.Hubs.Implementations.ChatHub.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.ChatHub", "Application.Web.SignalR.Hub.ChatHub\Application.Web.SignalR.Hubs.ChatHub.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
 EndProject
@@ -64,9 +64,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.BusinessLogic.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.BusinessLogic.Modules.UserManagement", "Application.Web.BusinessLogic.Implementations.UserManagement\Application.BusinessLogic.Modules.UserManagement.csproj", "{E1EE6F03-1ACE-413D-A46E-3E676C940FD9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.Core", "Application.Web.SignalR.Core\Application.Web.SignalR.Hubs.Core.csproj", "{13371AEF-B114-45F4-B3BB-C531ABA520EF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub", "Application.Web.SignalR.Hub.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.csproj", "{65B0D26A-69FA-43A7-B8D4-C53F487730BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.Contracts.ChatHub", "Application.Web.SignalR.Hub.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj", "{65B0D26A-69FA-43A7-B8D4-C53F487730BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web.SignalR", "Application.Web.SignalR", "{59D44261-E957-496E-991C-AF772A1E0B51}"
 EndProject
@@ -74,17 +72,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web.SignalR.Hub
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web.SignalR.Hubs.Contracts", "Application.Web.SignalR.Hubs.Contracts", "{D7935796-A022-45F2-BAE0-F12B958C7B42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.Contracts.Core", "Application.Web.SignalR.Hubs.Contracts.Core\Application.Web.SignalR.Hubs.Contracts.Core.csproj", "{1582C78A-8496-44EC-8529-706E0308B419}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web.SignalR.Hubs.Contracts.Implementations", "Application.Web.SignalR.Hubs.Contracts.Implementations", "{E5DEA5E4-03B5-461E-97EA-B259BE2F96CA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web.SignalR.Hubs.Implementations", "Application.Web.SignalR.Hubs.Implementations", "{6C8F9EE5-9344-4A26-AB5E-0FCCA7061AB8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Cache", "Application.Cache", "{57809575-8E19-4A01-95D8-E3C451E65E4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Cache.Core", "Application.Cache.Core\Application.Cache.Core.csproj", "{6F56E9B1-362E-4564-9F02-77F2348601C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Notifications", "Application.Client.Notifications", "{C4446A85-63B3-4954-ACE3-78D8723E77B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Web.SignalR.Core", "Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj", "{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -168,22 +162,18 @@ Global
 		{E1EE6F03-1ACE-413D-A46E-3E676C940FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1EE6F03-1ACE-413D-A46E-3E676C940FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1EE6F03-1ACE-413D-A46E-3E676C940FD9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13371AEF-B114-45F4-B3BB-C531ABA520EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13371AEF-B114-45F4-B3BB-C531ABA520EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13371AEF-B114-45F4-B3BB-C531ABA520EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13371AEF-B114-45F4-B3BB-C531ABA520EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65B0D26A-69FA-43A7-B8D4-C53F487730BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65B0D26A-69FA-43A7-B8D4-C53F487730BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B0D26A-69FA-43A7-B8D4-C53F487730BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B0D26A-69FA-43A7-B8D4-C53F487730BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1582C78A-8496-44EC-8529-706E0308B419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1582C78A-8496-44EC-8529-706E0308B419}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1582C78A-8496-44EC-8529-706E0308B419}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1582C78A-8496-44EC-8529-706E0308B419}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F56E9B1-362E-4564-9F02-77F2348601C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F56E9B1-362E-4564-9F02-77F2348601C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F56E9B1-362E-4564-9F02-77F2348601C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F56E9B1-362E-4564-9F02-77F2348601C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -191,7 +181,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
 		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
-		{9C0F8661-C90D-4236-8D54-7D60616C56A5} = {6C8F9EE5-9344-4A26-AB5E-0FCCA7061AB8}
+		{9C0F8661-C90D-4236-8D54-7D60616C56A5} = {CD5C1534-4C6D-497D-B3DD-71974908B909}
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
 		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C} = {86067CBD-E34D-4E6B-BF71-F178764F1282}
 		{4A12AF32-9AFA-4C97-AE39-14FD39A72605} = {C39FB816-BBAF-473D-B2A2-F23264E6A439}
@@ -210,16 +200,13 @@ Global
 		{6492E9DA-291F-4985-9383-0C8D61608178} = {A6CBCE31-0623-4772-BFEE-8A5242619F86}
 		{55AC2D46-B12F-4190-8A55-950C66CCFB4C} = {A6CBCE31-0623-4772-BFEE-8A5242619F86}
 		{E1EE6F03-1ACE-413D-A46E-3E676C940FD9} = {55AC2D46-B12F-4190-8A55-950C66CCFB4C}
-		{13371AEF-B114-45F4-B3BB-C531ABA520EF} = {CD5C1534-4C6D-497D-B3DD-71974908B909}
-		{65B0D26A-69FA-43A7-B8D4-C53F487730BF} = {E5DEA5E4-03B5-461E-97EA-B259BE2F96CA}
+		{65B0D26A-69FA-43A7-B8D4-C53F487730BF} = {D7935796-A022-45F2-BAE0-F12B958C7B42}
 		{59D44261-E957-496E-991C-AF772A1E0B51} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
 		{CD5C1534-4C6D-497D-B3DD-71974908B909} = {59D44261-E957-496E-991C-AF772A1E0B51}
 		{D7935796-A022-45F2-BAE0-F12B958C7B42} = {CD5C1534-4C6D-497D-B3DD-71974908B909}
-		{1582C78A-8496-44EC-8529-706E0308B419} = {D7935796-A022-45F2-BAE0-F12B958C7B42}
-		{E5DEA5E4-03B5-461E-97EA-B259BE2F96CA} = {D7935796-A022-45F2-BAE0-F12B958C7B42}
-		{6C8F9EE5-9344-4A26-AB5E-0FCCA7061AB8} = {CD5C1534-4C6D-497D-B3DD-71974908B909}
 		{6F56E9B1-362E-4564-9F02-77F2348601C2} = {57809575-8E19-4A01-95D8-E3C451E65E4E}
 		{C4446A85-63B3-4954-ACE3-78D8723E77B2} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
+		{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3} = {59D44261-E957-496E-991C-AF772A1E0B51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

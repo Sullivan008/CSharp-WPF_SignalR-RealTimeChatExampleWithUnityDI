@@ -1,7 +1,7 @@
 ﻿using Application.Common.Utilities.Guard;
-using Application.Web.SignalR.Hubs.Contracts.Core.Models.RequestModels;
+using Application.Web.SignalR.Core.Hubs.Contracts.Models.RequestModels;
 
-namespace Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Models.SignIn.RequestModels;
+namespace Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
 
 public class SignInRequestModel : SignalRRequestModel
 {

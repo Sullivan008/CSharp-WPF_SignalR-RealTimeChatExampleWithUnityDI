@@ -1,7 +1,7 @@
-﻿using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Models.SignIn.RequestModels;
-using Application.Web.SignalR.Hubs.Core.Interfaces;
+﻿using Application.Web.SignalR.Core.Hubs.Interfaces;
+using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
 
-namespace Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Interfaces;
+namespace Application.Web.SignalR.Hubs.Contracts.ChatHub.Interfaces;
 
 public interface IChatHub : ISignalRHub
 {

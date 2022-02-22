@@ -1,11 +1,11 @@
 ﻿using Application.BusinessLogic.Modules.UserManagement.Module.Commands.SignIn;
 using Application.BusinessLogic.Modules.UserManagement.Module.Commands.SignIn.RequestModel;
-using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Interfaces;
-using Application.Web.SignalR.Hubs.Contracts.Implementations.ChatHub.Models.SignIn.RequestModels;
-using Application.Web.SignalR.Hubs.Core.Abstractions;
+using Application.Web.SignalR.Core.Hubs.Abstractions;
+using Application.Web.SignalR.Hubs.Contracts.ChatHub.Interfaces;
+using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
 using MediatR;
 
-namespace Application.Web.SignalR.Hubs.Implementations.ChatHub;
+namespace Application.Web.SignalR.Hubs.ChatHub;
 
 public class ChatHub : SignalRHub<IChatHub>
 {
