@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Server", "Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Models", "Application.Models\Application.Models.csproj", "{50F2C707-713A-4000-9ED1-9670E91D41B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web", "Application.Web.SignalR\Application.Web.csproj", "{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web", "Application.Web\Application.Web.csproj", "{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Common.Utilities", "Application.Common.Utilities\Application.Common.Utilities.csproj", "{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}"
 EndProject
@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.ChatHub", "Application.Web.SignalR.Hub.ChatHub\Application.Web.SignalR.Hubs.ChatHub.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.ChatHub", "Application.Web.SignalR.Hubs.ChatHub\Application.Web.SignalR.Hubs.ChatHub.csproj", "{9C0F8661-C90D-4236-8D54-7D60616C56A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
 EndProject
@@ -50,7 +50,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.ExceptionDialog", "Application.Client.Windows.Implementations.ExceptionDialog\Application.Client.Windows.Implementations.ExceptionDialog.csproj", "{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Notifications.ToastNotification", "Application.Client.Windows.ToastNotification\Application.Client.Notifications.ToastNotification.csproj", "{BAF793A1-E11B-4978-9D70-D9251F51AA6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Notifications.ToastNotification", "Application.Client.Notifications.ToastNotification\Application.Client.Notifications.ToastNotification.csproj", "{BAF793A1-E11B-4978-9D70-D9251F51AA6E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.SignalR", "Application.Client.SignalR", "{C39FB816-BBAF-473D-B2A2-F23264E6A439}"
 EndProject
@@ -58,13 +58,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.SignalR.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.BusinessLogic", "Application.BusinessLogic", "{A6CBCE31-0623-4772-BFEE-8A5242619F86}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.BusinessLogic.Core", "Application.Web.BusinessLogic.Core\Application.BusinessLogic.Core.csproj", "{6492E9DA-291F-4985-9383-0C8D61608178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.BusinessLogic.Core", "Application.BusinessLogic.Core\Application.BusinessLogic.Core.csproj", "{6492E9DA-291F-4985-9383-0C8D61608178}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.BusinessLogic.Modules", "Application.BusinessLogic.Modules", "{55AC2D46-B12F-4190-8A55-950C66CCFB4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.BusinessLogic.Modules.UserManagement", "Application.Web.BusinessLogic.Implementations.UserManagement\Application.BusinessLogic.Modules.UserManagement.csproj", "{E1EE6F03-1ACE-413D-A46E-3E676C940FD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.BusinessLogic.Modules.UserManagement", "Application.BusinessLogic.Modules.UserManagement\Application.BusinessLogic.Modules.UserManagement.csproj", "{E1EE6F03-1ACE-413D-A46E-3E676C940FD9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.Contracts.ChatHub", "Application.Web.SignalR.Hub.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj", "{65B0D26A-69FA-43A7-B8D4-C53F487730BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hubs.Contracts.ChatHub", "Application.Web.SignalR.Hubs.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj", "{65B0D26A-69FA-43A7-B8D4-C53F487730BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web.SignalR", "Application.Web.SignalR", "{59D44261-E957-496E-991C-AF772A1E0B51}"
 EndProject
