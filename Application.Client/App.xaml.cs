@@ -5,6 +5,9 @@ using System.Windows.Threading;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
@@ -103,7 +106,8 @@ public partial class App
         ConfigureDataBindingErrorListener();
         Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
 
-        OnConnectChatHub();
+        SubscribeToPublicChatHubEvents();
+        ConnectToChatHub();
 
         ShowMainWindow();
 
@@ -177,9 +181,40 @@ public partial class App
         await dialogWindowService.ShowDialogAsync<ExceptionDialogWindowResult>(showDialogOptions, contentPresenterLoadOptions);
     }
 
-    private async void OnConnectChatHub()
+    private void SubscribeToPublicChatHubEvents()
     {
         IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();
+
+        SubscribeToOnInvokeAsyncErrorChatHubEvent(chatHub);
+    }
+
+    private void SubscribeToOnInvokeAsyncErrorChatHubEvent(IChatHub chatHub)
+    {
+        ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
+
+        IToastNotificationService toastNotificationService = _host.Services.GetRequiredService<IToastNotificationService>();
+        ShowNotificationOptions showNotificationOptions = new()
+        {
+            Title = "Application message",
+            Message = "An Internal Server Error has occurred! Please contact your system administrator!",
+            NotificationType = NotificationType.Error
+        };
+
+        chatHub.OnInvokeAsyncError += async exception =>
+        {
+            await Current.Dispatcher.InvokeAsync(async () =>
+            {
+                logger.LogError(exception, exception.Message);
+
+                await toastNotificationService.ShowNotification(showNotificationOptions);
+            });
+        };
+    }
+
+    private async void ConnectToChatHub()
+    {
+        IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();
+
         await chatHub.ConnectAsync();
     }
 

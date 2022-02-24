@@ -1,7 +1,6 @@
 ﻿using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Client.SignalR.Core.Hubs.Abstractions;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
-using Application.Common.Utilities.Guard;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Logging;
@@ -66,8 +65,6 @@ public class ChatHub : SignalRHub<ChatHub>, IChatHub
 
     public async Task SignInAsync(SignInRequestModel requestModel)
     {
-        Guard.ThrowIfNull(requestModel, nameof(requestModel));
-        
-        await HubConnection.InvokeAsync(nameof(Web.SignalR.Hubs.Contracts.ChatHub.Interfaces.IChatHub.SignIn), requestModel);
+        await InvokeAsync(nameof(Web.SignalR.Hubs.Contracts.ChatHub.Interfaces.IChatHub.SignIn), requestModel);
     }
 }
