@@ -12,7 +12,7 @@ public class SignInCommandRequestModel : MediatRCommandRequestModel
         {
             Guard.ThrowIfNullOrWhitespace(_callerHubConnectionId, nameof(CallerHubConnectionId));
 
-            return _nickName!;
+            return _callerHubConnectionId!;
         }
 
         init => _callerHubConnectionId = value;
