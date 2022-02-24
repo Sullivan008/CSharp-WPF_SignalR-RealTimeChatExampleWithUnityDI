@@ -6,4 +6,10 @@ namespace Application.Cache.Core.Collections.CacheData;
 
 public class CacheDataCollection<TCacheDataModel> : Collection<TCacheDataModel>, ICacheDataCollection<TCacheDataModel>
     where TCacheDataModel : ICacheDataModel
-{ }
+{
+    public CacheDataCollection()
+    { }
+
+    public CacheDataCollection(IList<TCacheDataModel> list) : base(list)
+    { }
+}
