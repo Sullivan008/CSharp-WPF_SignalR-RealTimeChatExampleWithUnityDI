@@ -4,13 +4,15 @@ namespace Application.BusinessLogic.Modules.UserManagement.Module.Services.User.
 
 public interface IUserService
 {
-    public UserModel GetUser(string nickName);
+    public UserModel GetUserByNickName(string nickName);
 
     public UserModel GetUserByConnectionId(string connectionId);
 
     public IReadOnlyCollection<UserModel> GetUsers();
 
-    public void AddUser(UserModel participant);
+    public void AddUser(UserModel user);
 
-    public void RemoveUser(string nickName);
+    public void RemoveUserByNickName(string nickName);
+
+    public void RemoveUserByConnectionId(string connectionId);
 }
