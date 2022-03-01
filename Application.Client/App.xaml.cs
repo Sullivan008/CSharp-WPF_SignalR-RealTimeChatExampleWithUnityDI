@@ -41,6 +41,7 @@ using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Inte
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models;
 using Application.Client.Windows.NavigationWindow.Services.NavigationWindow.Options.Models.Interfaces;
 using Application.Common.Utilities.Extensions;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -106,7 +107,6 @@ public partial class App
         ConfigureDataBindingErrorListener();
         Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
 
-        SubscribeToPublicChatHubEvents();
         ConnectToChatHub();
 
         ShowMainWindow();
@@ -135,10 +135,18 @@ public partial class App
     {
         LogUnhandledException(eventArgs.Exception);
 
-        ShowUnhandledException(eventArgs.Exception);
-
         eventArgs.Handled = true;
-        Current.Shutdown();
+
+        if (eventArgs.Exception is HubException)
+        {
+            ShowToastNotificationFromHubException();
+        }
+        else
+        {
+            ShowExceptionDialogFromUnhandledException(eventArgs.Exception);
+
+            Current.Shutdown();
+        }
     }
 
     private async void LogUnhandledException(Exception exception)
@@ -149,7 +157,23 @@ public partial class App
         await Task.CompletedTask;
     }
 
-    private async void ShowUnhandledException(Exception exception)
+    private async void ShowToastNotificationFromHubException()
+    {
+        await Current.Dispatcher.InvokeAsync(async () =>
+        {
+            IToastNotificationService toastNotificationService = _host.Services.GetRequiredService<IToastNotificationService>();
+            ShowNotificationOptions showNotificationOptions = new()
+            {
+                Title = "Application message",
+                Message = "An Internal Server Error has occurred! Please contact your system administrator!",
+                NotificationType = NotificationType.Error
+            };
+
+            await toastNotificationService.ShowNotification(showNotificationOptions);
+        });
+    }
+
+    private async void ShowExceptionDialogFromUnhandledException(Exception exception)
     {
         IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
 
@@ -180,37 +204,7 @@ public partial class App
 
         await dialogWindowService.ShowDialogAsync<ExceptionDialogWindowResult>(showDialogOptions, contentPresenterLoadOptions);
     }
-
-    private void SubscribeToPublicChatHubEvents()
-    {
-        IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();
-
-        SubscribeToOnInvokeAsyncErrorChatHubEvent(chatHub);
-    }
-
-    private void SubscribeToOnInvokeAsyncErrorChatHubEvent(IChatHub chatHub)
-    {
-        ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
-
-        IToastNotificationService toastNotificationService = _host.Services.GetRequiredService<IToastNotificationService>();
-        ShowNotificationOptions showNotificationOptions = new()
-        {
-            Title = "Application message",
-            Message = "An Internal Server Error has occurred! Please contact your system administrator!",
-            NotificationType = NotificationType.Error
-        };
-
-        chatHub.OnInvokeAsyncError += async exception =>
-        {
-            await Current.Dispatcher.InvokeAsync(async () =>
-            {
-                logger.LogError(exception, exception.Message);
-
-                await toastNotificationService.ShowNotification(showNotificationOptions);
-            });
-        };
-    }
-
+    
     private async void ConnectToChatHub()
     {
         IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();

@@ -1,8 +1,6 @@
 ﻿using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Client.SignalR.Core.Hubs.Interfaces;
 using Application.Common.Utilities.Guard;
-using Application.Web.SignalR.Core.Hubs.Contracts.Models.RequestModels.Interfaces;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -13,8 +11,6 @@ namespace Application.Client.SignalR.Core.Hubs.Abstractions;
 public abstract class SignalRHub<THub> : ISignalRHub
     where THub : ISignalRHub
 {
-    private Func<Exception, Task>? _onInvokeAsyncError;
-    
     protected readonly ILogger<THub> Logger;
 
     protected readonly HubConnection HubConnection;
@@ -42,43 +38,17 @@ public abstract class SignalRHub<THub> : ISignalRHub
     }
 
     protected abstract bool IsConnected { get; }
-    
+
     protected abstract Task ConnectAsync();
-    
+
     protected abstract Task OnClosedHubConnection(Exception? ex);
 
     protected abstract Task OnReconnectingHubConnection(Exception? ex);
 
     protected abstract Task OnReconnectedHubConnection(string? arg);
-
-    protected async Task InvokeAsync<TSignalRRequestModel>(string methodName, TSignalRRequestModel requestModel)
-        where TSignalRRequestModel : ISignalRRequestModel
-    {
-        Guard.ThrowIfNullOrWhitespace(methodName, nameof(methodName));
-
-        try
-        {
-            await HubConnection.InvokeAsync(methodName, requestModel);
-        }
-        catch (HubException ex)
-        {
-            if (_onInvokeAsyncError != null)
-            {
-                Guard.ThrowIfNull(ex, nameof(ex));
-
-                await _onInvokeAsyncError(ex);
-            }
-        }
-    }
-
+    
     bool ISignalRHub.IsConnected => IsConnected;
 
-    Func<Exception, Task>? ISignalRHub.OnInvokeAsyncError
-    {
-        get => _onInvokeAsyncError;
-        set => _onInvokeAsyncError = value;
-    }
-    
     async Task ISignalRHub.ConnectAsync()
     {
         await ConnectAsync();
