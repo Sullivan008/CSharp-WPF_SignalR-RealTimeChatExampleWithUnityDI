@@ -25,5 +25,5 @@ public class SignInViewModel : ContentPresenterViewModel<SignInViewDataViewModel
     public ICommand CloseCommand => _closeCommand ??= new CloseCommand(this, (ICurrentNavigationWindowService)CurrentWindowService);
 
     private ICommand? _signInCommand;
-    public ICommand SignInCommand => _signInCommand ??= new SignInCommand(this, _chatHub, _toastNotificationService);
+    public ICommand SignInCommand => _signInCommand ??= new SignInCommand(this, _chatHub, _toastNotificationService, (ICurrentNavigationWindowService)CurrentWindowService);
 }

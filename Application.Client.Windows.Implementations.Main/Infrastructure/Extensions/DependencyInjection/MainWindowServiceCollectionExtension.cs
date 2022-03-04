@@ -9,6 +9,8 @@ using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWind
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindow.Initializer.Models;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindowSettings;
 using Application.Client.Windows.Implementations.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
+using Application.Client.Windows.Implementations.Main.Window.Views.Chat.ViewModels.Chat;
+using Application.Client.Windows.Implementations.Main.Window.Views.Chat.ViewModels.Chat.ViewData;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.Implementations.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData.Validator;
@@ -29,7 +31,7 @@ public static class MainWindowServiceCollectionExtension
     {
         @this.AddNavigationWindow<MainWindow>();
         @this.AddNavigationWindowViewModel<MainWindowViewModel>();
-        
+
         @this.AddCurrentNavigationWindowService<MainWindow>();
 
         @this.AddNavigationWindowViewModelInitializer<MainWindowViewModel, MainWindowViewModelInitializerModel>();
@@ -39,12 +41,18 @@ public static class MainWindowServiceCollectionExtension
         @this.AddContentPresenterViewDataViewModelInitializers();
 
         @this.AddContentPresenterViewDataViewModel<SignInViewDataViewModel>();
+        @this.AddContentPresenterViewDataViewModel<ChatViewDataViewModel>();
+
         @this.AddTransient<IValidator<SignInViewDataViewModel>, SignInViewDataViewModelValidator>();
 
         @this.AddContentPresenterViewModelFactory<SignInViewModel>(serviceProvider =>
-            (contentPresenterViewDataViewModel, currentWindowService) => 
-                new SignInViewModel((SignInViewDataViewModel) contentPresenterViewDataViewModel, (ICurrentNavigationWindowService) currentWindowService,
+            (contentPresenterViewDataViewModel, currentWindowService) =>
+                new SignInViewModel((SignInViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentNavigationWindowService)currentWindowService,
                                     serviceProvider.GetRequiredService<IChatHub>(), serviceProvider.GetRequiredService<IToastNotificationService>()));
+
+        @this.AddContentPresenterViewModelFactory<ChatViewModel>(serviceProvider =>
+            (contentPresenterViewDataViewModel, currentWindowService) =>
+                new ChatViewModel((ChatViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentNavigationWindowService)currentWindowService));
 
         return @this;
     }
