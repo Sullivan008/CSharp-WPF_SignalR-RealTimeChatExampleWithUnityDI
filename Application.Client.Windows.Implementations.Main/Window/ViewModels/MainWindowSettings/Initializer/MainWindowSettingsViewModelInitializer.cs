@@ -8,5 +8,6 @@ public class MainWindowSettingsViewModelInitializer : INavigationWindowSettingsV
     public void Initialize(MainWindowSettingsViewModel windowSettingsViewModel, MainWindowSettingsViewModelInitializerModel windowSettingsViewModelInitializerModel)
     {
         windowSettingsViewModel.Title = windowSettingsViewModelInitializerModel.Title;
+        windowSettingsViewModel.Height = windowSettingsViewModelInitializerModel.Height;
     }
 }

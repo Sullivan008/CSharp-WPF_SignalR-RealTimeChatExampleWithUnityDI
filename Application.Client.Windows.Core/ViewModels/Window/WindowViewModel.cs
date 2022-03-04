@@ -23,7 +23,7 @@ public class WindowViewModel<TWindowSettingsViewModel> : INotifyPropertyChanged,
             OnPropertyChanged();
         }
     }
-
+    
     private IContentPresenterViewModel? _contentPresenter;
     public IContentPresenterViewModel ContentPresenter
     {
@@ -41,6 +41,11 @@ public class WindowViewModel<TWindowSettingsViewModel> : INotifyPropertyChanged,
 
             OnPropertyChanged();
         }
+    }
+
+    IWindowSettingsViewModel IWindowViewModel.WindowSettings
+    {
+        get => WindowSettings;
     }
 
     private ICommand? _closeWindowCommand;

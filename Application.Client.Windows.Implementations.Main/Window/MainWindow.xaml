@@ -7,7 +7,7 @@
                                    xmlns:window="clr-namespace:Application.Client.Windows.NavigationWindow.Window;assembly=Application.Client.Windows.NavigationWindow"
                                    WindowStyle="None"
                                    Background="{x:Null}"
-                                   Height="760" Width="450"
+                                   Height="{Binding WindowSettings.Height, Mode=TwoWay}" Width="450"
                                    AllowsTransparency="True"
                                    WindowStartupLocation="CenterScreen"
                                    TextElement.Foreground="{DynamicResource MaterialDesignBody}">

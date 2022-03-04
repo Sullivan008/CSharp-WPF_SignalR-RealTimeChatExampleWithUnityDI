@@ -22,4 +22,17 @@ public class WindowSettingsViewModelInitializerModel : IWindowSettingsViewModelI
             _title = value;
         }
     }
+
+    private readonly int? _height;
+    public int Height
+    {
+        get
+        {
+            Guard.ThrowIfNull(_height, nameof(Height));
+
+            return _height!.Value;
+        }
+
+        init => _height = value;
+    }
 }

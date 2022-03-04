@@ -26,6 +26,29 @@ public class WindowSettingsViewModel : INotifyPropertyChanged, IWindowSettingsVi
         }
     }
 
+    private int? _height;
+    public int Height
+    {
+        get
+        {
+            Guard.ThrowIfNull(_height, nameof(Height));
+
+            return _height!.Value;
+        }
+
+        set
+        {
+            _height = value;
+
+            OnPropertyChanged();
+        }
+    }
+
+    int IWindowSettingsViewModel.Height
+    {
+        set => Height = value;
+    }
+
     public event PropertyChangedEventHandler? PropertyChanged;
     public void OnPropertyChanged([CallerMemberName] string? name = null)
     {

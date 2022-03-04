@@ -6,6 +6,9 @@ namespace Application.Client.Windows.Implementations.Main.Window.Views.Chat.View
 
 public class ChatViewModel : ContentPresenterViewModel<ChatViewDataViewModel>
 {
-    public ChatViewModel(ChatViewDataViewModel viewData, ICurrentWindowService currentWindowService) : base(viewData, currentWindowService)
-    { }
+    public ChatViewModel(ChatViewDataViewModel viewData, ICurrentWindowService currentWindowService) : base(viewData,
+        currentWindowService)
+    {
+        currentWindowService.SetWindowHeight(250);
+    }
 }
