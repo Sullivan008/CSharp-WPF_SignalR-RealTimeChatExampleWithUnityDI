@@ -32,23 +32,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web", "Applicat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client", "Application.Client", "{6991BD72-1F62-4FE3-BABA-BB353C595BBD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.ApplicationWindow", "Application.Client.Windows.ApplicationWindow\Application.Client.Windows.ApplicationWindow.csproj", "{C531373C-7BEC-4116-934A-DEC710A37466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.ApplicationWindow.Core", "Application.Client.Windows.ApplicationWindow.Core\Application.Client.Windows.ApplicationWindow.Core.csproj", "{C531373C-7BEC-4116-934A-DEC710A37466}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows", "Application.Client.Windows", "{704E88AB-7D2F-4C62-B2DD-3896CBE79078}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.NavigationWindow", "Application.Client.Windows.NavigationWindow\Application.Client.Windows.NavigationWindow.csproj", "{114101F2-2A63-4F8C-A759-3F3F398AC714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.NavigationWindow.Core", "Application.Client.Windows.NavigationWindow.Core\Application.Client.Windows.NavigationWindow.Core.csproj", "{114101F2-2A63-4F8C-A759-3F3F398AC714}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.Implementations", "Application.Client.Windows.Implementations", "{3E715E21-3178-43ED-A480-098C18EEF36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.NavigationWindow.Impl.Main", "Application.Client.Windows.NavigationWindow.Impl.Main\Application.Client.Windows.NavigationWindow.Impl.Main.csproj", "{7BA1D597-8833-49EC-AFBD-CCE407A93830}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.Main", "Application.Client.Windows.Implementations.Main\Application.Client.Windows.Implementations.Main.csproj", "{7BA1D597-8833-49EC-AFBD-CCE407A93830}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.DialogWindow", "Application.Client.Windows.DialogWindow\Application.Client.Windows.DialogWindow.csproj", "{33353019-103F-415D-A9E5-DE913EAB513C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.DialogWindow.Core", "Application.Client.Windows.DialogWindow.Core\Application.Client.Windows.DialogWindow.Core.csproj", "{33353019-103F-415D-A9E5-DE913EAB513C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Core", "Application.Client.Windows.Core\Application.Client.Windows.Core.csproj", "{005423E7-34D3-4699-B530-EE38568B4287}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.MessageBox", "Application.Client.Windows.Implementations.MessageBox\Application.Client.Windows.Implementations.MessageBox.csproj", "{412A513F-272E-4CB2-9383-94FC540AC424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.DialogWindow.Impl.MessageBox", "Application.Client.Windows.DialogWindow.Impl.MessageBox\Application.Client.Windows.DialogWindow.Impl.MessageBox.csproj", "{412A513F-272E-4CB2-9383-94FC540AC424}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.Implementations.ExceptionDialog", "Application.Client.Windows.Implementations.ExceptionDialog\Application.Client.Windows.Implementations.ExceptionDialog.csproj", "{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.DialogWindow.Impl.ExceptionDialog", "Application.Client.Windows.DialogWindow.Impl.ExceptionDialog\Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.csproj", "{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Notifications.ToastNotification", "Application.Client.Notifications.ToastNotification\Application.Client.Notifications.ToastNotification.csproj", "{BAF793A1-E11B-4978-9D70-D9251F51AA6E}"
 EndProject
@@ -78,7 +76,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Cache.Core", "A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Notifications", "Application.Client.Notifications", "{C4446A85-63B3-4954-ACE3-78D8723E77B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Web.SignalR.Core", "Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj", "{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Core", "Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj", "{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.ApplicationWindow", "Application.Client.Windows.ApplicationWindow", "{DAACCF62-7F80-4FD2-BB1A-74D2D1A0226D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.DialogWindow", "Application.Client.Windows.DialogWindow", "{8224BE6E-4235-4B0A-8003-D05809BD38D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.DialogWindow.Impl", "Application.Client.Windows.DialogWindow.Impl", "{4531723A-6425-43BB-9D71-849B26E60629}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.NavigationWindow", "Application.Client.Windows.NavigationWindow", "{6CAF6A2F-E04A-4271-B858-E0858DC51FAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.Windows.NavigationWindow.Impl", "Application.Client.Windows.NavigationWindow.Impl", "{6E13BE5A-C149-4940-BF37-853F1E5D97A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -185,15 +193,14 @@ Global
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
 		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C} = {86067CBD-E34D-4E6B-BF71-F178764F1282}
 		{4A12AF32-9AFA-4C97-AE39-14FD39A72605} = {C39FB816-BBAF-473D-B2A2-F23264E6A439}
-		{C531373C-7BEC-4116-934A-DEC710A37466} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{C531373C-7BEC-4116-934A-DEC710A37466} = {DAACCF62-7F80-4FD2-BB1A-74D2D1A0226D}
 		{704E88AB-7D2F-4C62-B2DD-3896CBE79078} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
-		{114101F2-2A63-4F8C-A759-3F3F398AC714} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
-		{3E715E21-3178-43ED-A480-098C18EEF36B} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
-		{7BA1D597-8833-49EC-AFBD-CCE407A93830} = {3E715E21-3178-43ED-A480-098C18EEF36B}
-		{33353019-103F-415D-A9E5-DE913EAB513C} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{114101F2-2A63-4F8C-A759-3F3F398AC714} = {6CAF6A2F-E04A-4271-B858-E0858DC51FAC}
+		{7BA1D597-8833-49EC-AFBD-CCE407A93830} = {6E13BE5A-C149-4940-BF37-853F1E5D97A1}
+		{33353019-103F-415D-A9E5-DE913EAB513C} = {8224BE6E-4235-4B0A-8003-D05809BD38D2}
 		{005423E7-34D3-4699-B530-EE38568B4287} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
-		{412A513F-272E-4CB2-9383-94FC540AC424} = {3E715E21-3178-43ED-A480-098C18EEF36B}
-		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4} = {3E715E21-3178-43ED-A480-098C18EEF36B}
+		{412A513F-272E-4CB2-9383-94FC540AC424} = {4531723A-6425-43BB-9D71-849B26E60629}
+		{787F7F08-0AEE-4881-8A74-B6B3DF1CEAB4} = {4531723A-6425-43BB-9D71-849B26E60629}
 		{BAF793A1-E11B-4978-9D70-D9251F51AA6E} = {C4446A85-63B3-4954-ACE3-78D8723E77B2}
 		{C39FB816-BBAF-473D-B2A2-F23264E6A439} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
 		{86067CBD-E34D-4E6B-BF71-F178764F1282} = {C39FB816-BBAF-473D-B2A2-F23264E6A439}
@@ -207,6 +214,11 @@ Global
 		{6F56E9B1-362E-4564-9F02-77F2348601C2} = {57809575-8E19-4A01-95D8-E3C451E65E4E}
 		{C4446A85-63B3-4954-ACE3-78D8723E77B2} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
 		{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3} = {59D44261-E957-496E-991C-AF772A1E0B51}
+		{DAACCF62-7F80-4FD2-BB1A-74D2D1A0226D} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{8224BE6E-4235-4B0A-8003-D05809BD38D2} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{4531723A-6425-43BB-9D71-849B26E60629} = {8224BE6E-4235-4B0A-8003-D05809BD38D2}
+		{6CAF6A2F-E04A-4271-B858-E0858DC51FAC} = {704E88AB-7D2F-4C62-B2DD-3896CBE79078}
+		{6E13BE5A-C149-4940-BF37-853F1E5D97A1} = {6CAF6A2F-E04A-4271-B858-E0858DC51FAC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

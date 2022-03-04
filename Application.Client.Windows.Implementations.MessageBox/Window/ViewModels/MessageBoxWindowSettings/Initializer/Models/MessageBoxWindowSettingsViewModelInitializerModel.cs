@@ -1,6 +1,0 @@
-﻿using Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings.Initializers.Models;
-
-namespace Application.Client.Windows.Implementations.MessageBox.Window.ViewModels.MessageBoxWindowSettings.Initializer.Models;
-
-public class MessageBoxWindowSettingsViewModelInitializerModel : DialogWindowSettingsViewModelInitializerModel
-{ }
