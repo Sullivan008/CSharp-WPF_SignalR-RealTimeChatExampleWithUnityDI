@@ -3,6 +3,7 @@ using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresent
 using Application.Client.Windows.Core.Services.CurrentWindowService.Abstractions;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Options.Models.Interfaces;
+using Application.Client.Windows.NavigationWindow.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Window.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow;
@@ -18,12 +19,14 @@ public class CurrentNavigationWindowService : CurrentWindowService, ICurrentNavi
 
     public void NavigateContentPresenter(IContentPresenterNavigateOptions contentPresenterNavigateOptions)
     {
-        IContentPresenterViewModel contentPresenterViewModel = 
+        IContentPresenterViewModel contentPresenterViewModel =
             _contentPresenterService.GetContentPresenterViewModel(contentPresenterNavigateOptions.ContentPresenterViewModelType, this);
 
         if (contentPresenterNavigateOptions.HasInitializeData)
         {
             _contentPresenterService.InitializeContentPresenterViewModel(contentPresenterViewModel, contentPresenterNavigateOptions.ContentPresenterViewModelInitializerModel!);
         }
+
+        ((INavigationWindowViewModel)Window.DataContext).ContentPresenter = contentPresenterViewModel;
     }
 }
