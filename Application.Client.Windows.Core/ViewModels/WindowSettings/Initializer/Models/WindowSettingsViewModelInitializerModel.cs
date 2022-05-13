@@ -5,23 +5,7 @@ namespace Application.Client.Windows.Core.ViewModels.WindowSettings.Initializer.
 
 public class WindowSettingsViewModelInitializerModel : IWindowSettingsViewModelInitializerModel
 {
-    private readonly string _title = string.Empty;
-    public string Title
-    {
-        get
-        {
-            Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
-
-            return _title;
-        }
-
-        init
-        {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(Title));
-
-            _title = value;
-        }
-    }
+    public string Title { get; init; } = string.Empty;
 
     private readonly int? _height;
     public int Height

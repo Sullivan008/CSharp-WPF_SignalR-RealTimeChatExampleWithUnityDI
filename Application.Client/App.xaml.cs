@@ -222,7 +222,6 @@ public partial class App
             {
                 WindowSettings = new MainWindowSettingsViewModelInitializerModel
                 {
-                    Title = "SignalR Chat",
                     Height = 750,
                     Width = 450
                 }
