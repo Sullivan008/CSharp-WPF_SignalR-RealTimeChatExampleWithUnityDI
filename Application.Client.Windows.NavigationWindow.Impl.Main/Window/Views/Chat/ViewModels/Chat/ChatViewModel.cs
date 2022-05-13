@@ -9,6 +9,7 @@ public class ChatViewModel : ContentPresenterViewModel<ChatViewDataViewModel>
     public ChatViewModel(ChatViewDataViewModel viewData, ICurrentWindowService currentWindowService) : base(viewData,
         currentWindowService)
     {
+        currentWindowService.SetWindowWidth(1000);
         currentWindowService.SetWindowHeight(250);
     }
 }

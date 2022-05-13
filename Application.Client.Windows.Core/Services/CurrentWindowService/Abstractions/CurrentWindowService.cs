@@ -25,4 +25,11 @@ public abstract class CurrentWindowService
 
         await Task.CompletedTask;
     }
+
+    public virtual async Task SetWindowWidth(int width)
+    {
+        ((IWindowViewModel) Window.DataContext).WindowSettings.Width = width;
+
+        await Task.CompletedTask;
+    }
 }

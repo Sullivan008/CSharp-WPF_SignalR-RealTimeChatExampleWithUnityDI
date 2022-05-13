@@ -6,9 +6,11 @@
                          xmlns:window="clr-namespace:Application.Client.Windows.NavigationWindow.Core.Window;assembly=Application.Client.Windows.NavigationWindow.Core"
         WindowStyle="None"
         Background="{x:Null}"
-        Height="{Binding WindowSettings.Height, Mode=TwoWay}" Width="450"
+        Top="{Binding WindowSettings.Top, Mode=TwoWay}" 
+        Left="{Binding WindowSettings.Left, Mode=TwoWay}" 
+        Width="{Binding WindowSettings.Width, Mode=TwoWay}"
+        Height="{Binding WindowSettings.Height, Mode=TwoWay}" 
         AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}">
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Closing">

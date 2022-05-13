@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using Application.Client.Windows.Core.ViewModels.WindowSettings.Interfaces;
 using Application.Common.Utilities.Guard;
 
@@ -26,19 +27,51 @@ public class WindowSettingsViewModel : INotifyPropertyChanged, IWindowSettingsVi
         }
     }
 
-    private int? _height;
-    public int Height
+    private double _height;
+    public double Height
     {
-        get
-        {
-            Guard.ThrowIfNull(_height, nameof(Height));
-
-            return _height!.Value;
-        }
-
+        get => _height;
         set
         {
             _height = value;
+            OnPropertyChanged();
+
+            CenterLocation();
+        }
+    }
+
+    private double _width;
+    public double Width
+    {
+        get => _width;
+        set
+        {
+            _width = value;
+            OnPropertyChanged();
+
+            CenterLocation();
+        }
+    }
+
+    private double _top;
+    public double Top
+    {
+        get => _top;
+        set
+        {
+            _top = value;
+
+            OnPropertyChanged();
+        }
+    }
+
+    private double _left;
+    public double Left
+    {
+        get => _left;
+        set
+        {
+            _left = value;
 
             OnPropertyChanged();
         }
@@ -49,6 +82,11 @@ public class WindowSettingsViewModel : INotifyPropertyChanged, IWindowSettingsVi
         set => Height = value;
     }
 
+    int IWindowSettingsViewModel.Width
+    {
+        set => Width = value;
+    }
+
     public event PropertyChangedEventHandler? PropertyChanged;
     public void OnPropertyChanged([CallerMemberName] string? name = null)
     {
@@ -56,5 +94,11 @@ public class WindowSettingsViewModel : INotifyPropertyChanged, IWindowSettingsVi
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+    }
+
+    private void CenterLocation()
+    {
+        Top = (SystemParameters.WorkArea.Height - Height) / 2;
+        Left = (SystemParameters.WorkArea.Width - Width) / 2;
     }
 }

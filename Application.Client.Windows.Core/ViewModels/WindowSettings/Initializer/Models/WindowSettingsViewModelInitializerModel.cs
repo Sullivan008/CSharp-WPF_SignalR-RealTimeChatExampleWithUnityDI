@@ -35,4 +35,17 @@ public class WindowSettingsViewModelInitializerModel : IWindowSettingsViewModelI
 
         init => _height = value;
     }
+
+    private readonly int? _width;
+    public int Width
+    {
+        get
+        {
+            Guard.ThrowIfNull(_width, nameof(Width));
+
+            return _width!.Value;
+        }
+
+        init => _width = value;
+    }
 }
