@@ -69,6 +69,6 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
     {
         IContentPresenterNavigateOptions navigateOptions = new ContentPresenterNavigateOptions<ChatViewModel, ChatViewModelInitializerModel>();
 
-        _currentWindowService.NavigateContentPresenter(navigateOptions);
+        _currentWindowService.NavigateTo(navigateOptions);
     }
 }
