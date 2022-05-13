@@ -1,9 +1,9 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.Window.Interfaces;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Infrastructure.Extensions.DependencyInjection;
+namespace Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtension
 {

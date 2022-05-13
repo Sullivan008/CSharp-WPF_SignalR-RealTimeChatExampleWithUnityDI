@@ -4,6 +4,8 @@ using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresent
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindow.Initializers.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindowSettings.Initializers.Infrastructure.Extensions.DependencyInjection;
@@ -18,8 +20,6 @@ using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.Vi
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData.Validator;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 

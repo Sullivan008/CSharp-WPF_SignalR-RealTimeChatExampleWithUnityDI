@@ -1,8 +1,8 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Options.Models.Interfaces;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models.Interfaces;
 
-namespace Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Options.Models;
+namespace Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models;
 
 public class ContentPresenterNavigateOptions<TContentPresenterViewModel, TContentPresenterViewModelInitializerModel> : IContentPresenterNavigateOptions
     where TContentPresenterViewModel : IContentPresenterViewModel

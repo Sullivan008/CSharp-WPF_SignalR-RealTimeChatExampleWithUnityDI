@@ -3,16 +3,16 @@
                          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                          xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
-                         xmlns:windowBehaviors="clr-namespace:Application.Client.Windows.Core.Behaviors;assembly=Application.Client.Windows.Core"
+                         xmlns:windowBehaviors="clr-namespace:Application.Client.Windows.Core.Window.Behaviors;assembly=Application.Client.Windows.Core"
                          xmlns:window="clr-namespace:Application.Client.Windows.NavigationWindow.Core.Window;assembly=Application.Client.Windows.NavigationWindow.Core"
                          WindowStyle="None"
-        Background="{x:Null}"
-        Top="{Binding WindowSettings.Top, Mode=TwoWay}" 
-        Left="{Binding WindowSettings.Left, Mode=TwoWay}" 
-        Width="{Binding WindowSettings.Width, Mode=TwoWay}"
-        Height="{Binding WindowSettings.Height, Mode=TwoWay}" 
-        AllowsTransparency="True"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+                         Background="{x:Null}"
+                         Top="{Binding WindowSettings.Top, Mode=TwoWay}" 
+                         Left="{Binding WindowSettings.Left, Mode=TwoWay}" 
+                         Width="{Binding WindowSettings.Width, Mode=TwoWay}"
+                         Height="{Binding WindowSettings.Height, Mode=TwoWay}" 
+                         AllowsTransparency="True"
+                         TextElement.Foreground="{DynamicResource MaterialDesignBody}">
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Closing">
             <behaviors:InvokeCommandAction Command="{Binding CloseWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type window:NavigationWindow}}}"/>

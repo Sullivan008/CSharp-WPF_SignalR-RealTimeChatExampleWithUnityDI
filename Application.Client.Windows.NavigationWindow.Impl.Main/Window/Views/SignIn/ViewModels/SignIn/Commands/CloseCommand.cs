@@ -1,5 +1,5 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 

@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.DialogWindow.ViewModels.DialogWindowSettings;
+﻿using Application.Client.Windows.DialogWindow.Core.ViewModels.DialogWindowSettings;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindowSettings;
 

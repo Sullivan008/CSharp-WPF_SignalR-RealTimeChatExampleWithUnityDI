@@ -36,16 +36,16 @@ public class ToastNotificationService : IToastNotificationService
     {
         switch (notificationOptions.NotificationType)
         {
-            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Error:
+            case Options.Models.Enums.NotificationType.Error:
                 await OnShowErrorNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
-            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Warning:
+            case Options.Models.Enums.NotificationType.Warning:
                 await OnShowWarningNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
-            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Success:
+            case Options.Models.Enums.NotificationType.Success:
                 await OnShowSuccessNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
-            case Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums.NotificationType.Information:
+            case Options.Models.Enums.NotificationType.Information:
                 await OnShowInformationNotification(notificationOptions.Title, notificationOptions.Message);
                 break;
             default:

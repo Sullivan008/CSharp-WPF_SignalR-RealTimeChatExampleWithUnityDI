@@ -1,12 +1,12 @@
 ﻿using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Interfaces;
 using Application.Client.Windows.Core.Services.WindowService.Abstractions;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindow.Initializers.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.Window.Interfaces;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow;
 

@@ -6,11 +6,11 @@
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                      xmlns:window="clr-namespace:Application.Client.Windows.DialogWindow.Core.Window;assembly=Application.Client.Windows.DialogWindow.Core"
                      mc:Ignorable="d"
-        ResizeMode="NoResize" SizeToContent="WidthAndHeight"
-        WindowStartupLocation="CenterScreen"
-        MinWidth="200" MaxWidth="1672"
-        MinHeight="150"
-        Title="{Binding WindowSettings.Title}">
+                     ResizeMode="NoResize" SizeToContent="WidthAndHeight"
+                     WindowStartupLocation="CenterScreen"
+                     MinWidth="200" MaxWidth="1672"
+                     MinHeight="150"
+                     Title="{Binding WindowSettings.Title}">
 
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Closing">

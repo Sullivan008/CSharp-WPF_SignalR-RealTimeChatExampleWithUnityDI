@@ -2,9 +2,9 @@
 using System.Windows.Input;
 using Microsoft.Xaml.Behaviors;
 
-namespace Application.Client.Windows.Core.Behaviors;
+namespace Application.Client.Windows.Core.Window.Behaviors;
 
-public class DragMoveBehavior : Behavior<Window.Window>
+public class DragMoveBehavior : Behavior<Window>
 {
     protected override void OnAttached()
     {
@@ -18,7 +18,7 @@ public class DragMoveBehavior : Behavior<Window.Window>
 
     private static void AssociatedObject_MouseMove(object sender, MouseEventArgs e)
     {
-        if (e.LeftButton == MouseButtonState.Pressed && sender is Window.Window window)
+        if (e.LeftButton == MouseButtonState.Pressed && sender is Window window)
         {
             if (window.WindowState == WindowState.Maximized)
             {

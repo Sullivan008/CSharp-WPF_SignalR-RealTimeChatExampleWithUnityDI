@@ -2,9 +2,9 @@
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
 

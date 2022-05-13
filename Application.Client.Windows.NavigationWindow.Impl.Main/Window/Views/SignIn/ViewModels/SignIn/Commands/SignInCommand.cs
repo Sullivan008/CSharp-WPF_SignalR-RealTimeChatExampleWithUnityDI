@@ -3,11 +3,11 @@ using Application.Client.Notifications.ToastNotification.Services.ToastNotificat
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models;
+using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.Initializer.Models;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Interfaces;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Options.Models;
-using Application.Client.Windows.NavigationWindow.Services.CurrentNavigationWindow.Options.Models.Interfaces;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;

@@ -6,7 +6,7 @@ namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Wi
 
 public class ExceptionDialogWindowResult : CustomDialogWindowResult
 {
-    public readonly ExceptionDialogResult? _exceptionDialogResult;
+    private readonly ExceptionDialogResult? _exceptionDialogResult;
     public ExceptionDialogResult ExceptionDialogResult
     {
         get
