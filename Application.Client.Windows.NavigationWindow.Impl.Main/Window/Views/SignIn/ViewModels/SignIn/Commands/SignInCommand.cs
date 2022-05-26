@@ -40,6 +40,7 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
         
         await NavigateToChatView();
 
+        await WindowReSize();
     }
 
     public override Predicate<object?> CanExecute => _ => CallerViewModel.ViewData.IsValid;
@@ -79,5 +80,12 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
         });
     }
 
+    private async Task WindowReSize()
+    {
+        await System.Windows.Application.Current.Dispatcher.BeginInvoke(async () =>
+        {
+            await _currentWindowService.SetWindowWidth(1000);
+            await _currentWindowService.SetWindowHeight(250);
+        });
     }
 }
