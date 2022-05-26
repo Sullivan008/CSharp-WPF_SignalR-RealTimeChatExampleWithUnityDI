@@ -59,7 +59,7 @@ internal class OnConnectionLostCommand : AsyncContentPresenterCommand<ChatViewMo
 
     private async Task WindowReSize()
     {
-        await System.Windows.Application.Current.Dispatcher.BeginInvoke(async () =>
+        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
         {
             await _currentWindowService.SetWindowWidth(400);
             await _currentWindowService.SetWindowHeight(750);

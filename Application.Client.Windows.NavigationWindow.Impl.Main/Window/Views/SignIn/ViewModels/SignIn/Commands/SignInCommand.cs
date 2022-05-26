@@ -47,7 +47,7 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     private async Task ShowChatServerIsNotAvailableToastMessage()
     {
-        await System.Windows.Application.Current.Dispatcher.BeginInvoke(async () =>
+        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
         {
             ShowNotificationOptions showNotificationOptions = new()
             {
@@ -72,7 +72,7 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     private async Task NavigateToChatView()
     {
-        await System.Windows.Application.Current.Dispatcher.BeginInvoke(async () =>
+        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
         {
             IContentPresenterNavigateOptions navigateOptions = new ContentPresenterNavigateOptions<ChatViewModel, ChatViewModelInitializerModel>();
 
@@ -82,7 +82,7 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     private async Task WindowReSize()
     {
-        await System.Windows.Application.Current.Dispatcher.BeginInvoke(async () =>
+        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
         {
             await _currentWindowService.SetWindowWidth(1000);
             await _currentWindowService.SetWindowHeight(250);
