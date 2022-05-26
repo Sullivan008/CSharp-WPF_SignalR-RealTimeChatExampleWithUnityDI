@@ -52,7 +52,8 @@ public static class MainWindowServiceCollectionExtension
 
         @this.AddContentPresenterViewModelFactory<ChatViewModel>(serviceProvider =>
             (contentPresenterViewDataViewModel, currentWindowService) =>
-                new ChatViewModel((ChatViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentNavigationWindowService)currentWindowService));
+                new ChatViewModel((ChatViewDataViewModel)contentPresenterViewDataViewModel, (ICurrentNavigationWindowService)currentWindowService,
+                                  serviceProvider.GetRequiredService<IChatHub>(), serviceProvider.GetRequiredService<IToastNotificationService>()));
 
         return @this;
     }
