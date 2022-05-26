@@ -45,14 +45,17 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     private async Task ShowChatServerIsNotAvailableToastMessage()
     {
-        ShowNotificationOptions showNotificationOptions = new()
+        await System.Windows.Application.Current.Dispatcher.BeginInvoke(async () =>
         {
-            Title = "Application message",
-            Message = "The chat server is not available! Please try again later!",
-            NotificationType = NotificationType.Error
-        };
+            ShowNotificationOptions showNotificationOptions = new()
+            {
+                Title = "Application message",
+                Message = "The chat server is not available! Please try again later!",
+                NotificationType = NotificationType.Error
+            };
 
-        await _toastNotificationService.ShowNotification(showNotificationOptions);
+            await _toastNotificationService.ShowNotification(showNotificationOptions);
+        });
     }
 
     private async Task SignInAsync()
