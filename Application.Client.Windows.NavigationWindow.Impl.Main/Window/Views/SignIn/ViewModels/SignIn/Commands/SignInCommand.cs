@@ -37,8 +37,9 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
         }
 
         await SignInAsync();
+        
+        await NavigateToChatView();
 
-        NavigateToChatView();
     }
 
     public override Predicate<object?> CanExecute => _ => CallerViewModel.ViewData.IsValid;
