@@ -17,40 +17,96 @@ public abstract class SignalRHub<THub> : ISignalRHub
 
     protected readonly HubConfigurations HubConfigurations;
 
+    protected Func<Exception?, Task>? ConnectionLost;
+
     protected SignalRHub(ILogger<THub> logger, IOptions<HubConfigurations> hubConfigurations)
     {
         Logger = logger;
         HubConfigurations = hubConfigurations.Value;
 
-        OnValidateHubConfigurations();
+        ValidateHubConfigurations();
 
         HubConnection = new HubConnectionBuilder()
             .AddJsonProtocol()
             .WithUrl($"{HubConfigurations.BaseUrl}/{typeof(THub).Name}")
             .WithAutomaticReconnect()
             .Build();
+
+        HubConnection.Closed += OnClosedHubConnection;
+        HubConnection.Reconnected += OnReconnectedHubConnection;
+        HubConnection.Reconnecting += OnReconnectingHubConnection;
     }
 
-    private void OnValidateHubConfigurations()
+    private void ValidateHubConfigurations()
     {
         Guard.ThrowIfNullOrWhitespace(HubConfigurations.BaseUrl, nameof(HubConfigurations.BaseUrl));
         Guard.ThrowIfNull(HubConfigurations.ReconnectTimeInterval, nameof(HubConfigurations.ReconnectTimeInterval));
     }
 
-    protected abstract bool IsConnected { get; }
+    protected virtual bool IsConnected => HubConnection.State == HubConnectionState.Connected;
 
-    protected abstract Task ConnectAsync();
+    protected virtual async Task ConnectAsync()
+    {
+        while (!IsConnected)
+        {
+            try
+            {
+                await HubConnection.StartAsync();
 
-    protected abstract Task OnClosedHubConnection(Exception? ex);
+                break;
+            }
+            catch (HttpRequestException ex)
+            {
+                Logger.LogError(ex, ex.Message);
 
-    protected abstract Task OnReconnectingHubConnection(Exception? ex);
+                await Task.Delay(HubConfigurations.ReconnectTimeInterval!.Value);
+            }
+        }
+    }
 
-    protected abstract Task OnReconnectedHubConnection(string? arg);
+    protected virtual async Task OnConnectionLost(Exception? ex)
+    {
+        if (ConnectionLost != null)
+        {
+            await ConnectionLost.Invoke(ex);
+        }
+    }
+
+    protected virtual async Task OnClosedHubConnection(Exception? ex)
+    {
+        if (ex != null)
+        {
+            Logger.LogError(ex, ex.Message);
+        }
+
+        await ConnectAsync();
+    }
+
+    protected virtual async Task OnReconnectedHubConnection(string? arg)
+    {
+        await Task.CompletedTask;
+    }
+
+    protected virtual async Task OnReconnectingHubConnection(Exception? ex)
+    {
+        if (ex != null)
+        {
+            Logger.LogError(ex, ex.Message);
+        }
+
+        await Task.CompletedTask;
+    }
     
     bool ISignalRHub.IsConnected => IsConnected;
 
     async Task ISignalRHub.ConnectAsync()
     {
         await ConnectAsync();
+    }
+    
+    Func<Exception?, Task>? ISignalRHub.ConnectionLost
+    {
+        get => ConnectionLost;
+        set => ConnectionLost = value;
     }
 }
