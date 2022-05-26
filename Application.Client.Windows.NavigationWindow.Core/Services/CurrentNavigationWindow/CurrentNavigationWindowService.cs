@@ -17,7 +17,7 @@ public class CurrentNavigationWindowService : CurrentWindowService, ICurrentNavi
         _contentPresenterService = contentPresenterService;
     }
 
-    public void NavigateTo(IContentPresenterNavigateOptions contentPresenterNavigateOptions)
+    public async Task NavigateTo(IContentPresenterNavigateOptions contentPresenterNavigateOptions)
     {
         IContentPresenterViewModel contentPresenterViewModel =
             _contentPresenterService.GetContentPresenterViewModel(contentPresenterNavigateOptions.ContentPresenterViewModelType, this);
@@ -28,5 +28,7 @@ public class CurrentNavigationWindowService : CurrentWindowService, ICurrentNavi
         }
 
         ((INavigationWindowViewModel)Window.DataContext).ContentPresenter = contentPresenterViewModel;
+
+        await Task.CompletedTask;
     }
 }

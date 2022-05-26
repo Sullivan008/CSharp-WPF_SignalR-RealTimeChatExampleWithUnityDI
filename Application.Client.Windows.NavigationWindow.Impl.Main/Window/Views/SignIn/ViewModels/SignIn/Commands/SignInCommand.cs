@@ -65,10 +65,15 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
         await _chatHub.SignInAsync(requestModel);
     }
 
-    private void NavigateToChatView()
+    private async Task NavigateToChatView()
     {
-        IContentPresenterNavigateOptions navigateOptions = new ContentPresenterNavigateOptions<ChatViewModel, ChatViewModelInitializerModel>();
+        await System.Windows.Application.Current.Dispatcher.BeginInvoke(async () =>
+        {
+            IContentPresenterNavigateOptions navigateOptions = new ContentPresenterNavigateOptions<ChatViewModel, ChatViewModelInitializerModel>();
 
-        _currentWindowService.NavigateTo(navigateOptions);
+            await _currentWindowService.NavigateTo(navigateOptions);
+        });
+    }
+
     }
 }

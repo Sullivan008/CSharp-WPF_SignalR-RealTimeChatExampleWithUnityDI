@@ -5,7 +5,5 @@ namespace Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavig
 
 public interface ICurrentNavigationWindowService : ICurrentWindowService
 {
-    public void NavigateTo(IContentPresenterNavigateOptions contentPresenterNavigateOptions);
-
-    public Task CloseWindow();
+    public Task NavigateTo(IContentPresenterNavigateOptions contentPresenterNavigateOptions);
 }
