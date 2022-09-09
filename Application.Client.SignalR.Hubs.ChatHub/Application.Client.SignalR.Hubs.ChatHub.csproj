@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Client.SignalR.Core\Application.Client.SignalR.Core.csproj" />
+    <ProjectReference Include="..\Application.Web.SignalR.Hubs.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj" />
+  </ItemGroup>
+
+</Project>

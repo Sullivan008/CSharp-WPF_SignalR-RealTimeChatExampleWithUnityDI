@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.BusinessLogic.Modules.UserManagement\Application.BusinessLogic.Modules.UserManagement.csproj" />
+    <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj" />
+    <ProjectReference Include="..\Application.Web.SignalR.Hubs.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj" />
+  </ItemGroup>
+
+</Project>

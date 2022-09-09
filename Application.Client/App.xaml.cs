@@ -1,54 +1,241 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.IO;
+using System.Windows;
 using System.Windows.Threading;
-using Application.Client.Container;
-using Application.Client.Container.Unity;
-using Application.Client.Core.Environment.Enums;
-using Application.Client.Core.Environment.Services.Interfaces;
-using Application.Client.Core.Exceptions.Models;
-using Application.Client.Windows.Main;
+using Application.Client.Infrastructure.Environment.Enums;
+using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
+using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
+using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.Options.Models;
+using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
+using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Interfaces;
+using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Options.Models;
+using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Options.Models.Interfaces;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow.Initializer.Models;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindowSettings.Initializer.Models;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.Initializer.Models;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData.Initializer.Models;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog;
+using Application.Client.Windows.DialogWindow.Impl.MessageBox.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Interfaces;
+using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models;
+using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models.Interfaces;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow.Initializer.Models;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData.Initializer.Models;
+using Application.Common.Utilities.Extensions;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 
-namespace Application.Client
+namespace Application.Client;
+
+public partial class App
 {
-    public partial class App
+    private readonly IHost _host;
+
+    public App()
     {
-        private IEnvironmentService _environmentService;
-
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
-
-            log4net.Config.XmlConfigurator.Configure();
-
-            Bootstrapper.Init();
-
-            _environmentService = DependencyInjector.Retrieve<IEnvironmentService>();
-
-            DependencyInjector.Retrieve<MainWindow>().Show();
-        }
-
-        private void App_OnStartup(object sender, StartupEventArgs e)
-        {
-            Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
-        }
-
-        private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
-        {
-            EnvironmentType environmentType = _environmentService.GetEnvironmentType();
-            ErrorModel errorModel = new ErrorModel(environmentType, e.Exception);
-
-            ShowUnhandledException(errorModel);
-
-            e.Handled = true;
-        }
-
-        private static void ShowUnhandledException(ErrorModel errorModel)
-        {
-            string errorMessage = $"An application error occured.\n\n{errorModel.Message}.\n\n{errorModel.Exception}";
-
-            if (MessageBox.Show(errorMessage, "Application Error", MessageBoxButton.OK, MessageBoxImage.Error) == MessageBoxResult.OK)
+        _host = new HostBuilder()
+            .ConfigureHostConfiguration(configurationBuilder =>
             {
-                Current.Shutdown();
-            }
+                KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
+                    Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
+
+                configurationBuilder.AddInMemoryCollection(new[] { environment })
+                                    .AddEnvironmentVariables();
+            })
+            .ConfigureAppConfiguration(configurationBuilder =>
+            {
+                configurationBuilder.SetBasePath(Directory.GetCurrentDirectory())
+                                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                                    .AddJsonFile("appsettings.signalr.json", optional: false, reloadOnChange: true);
+            })
+            .ConfigureServices((hostBuilderContext, serviceCollection) =>
+            {
+                ConfigureServices(hostBuilderContext.Configuration, serviceCollection);
+            })
+            .ConfigureLogging((hostBuilderContext, loggingBuilder) =>
+            {
+                loggingBuilder.ClearProviders();
+                loggingBuilder.SetMinimumLevel(LogLevel.Trace);
+                loggingBuilder.AddNLog(hostBuilderContext.Configuration);
+            })
+            .Build();
+    }
+
+    private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddContentPresenterService();
+        serviceCollection.AddNavigationWindowService();
+        serviceCollection.AddDialogWindowService();
+
+        serviceCollection.AddToastNotificationService();
+
+        serviceCollection.AddMainWindow();
+        serviceCollection.AddMessageBoxWindow();
+        serviceCollection.AddExceptionDialogWindow();
+
+        serviceCollection.AddHubConfigurations(configuration);
+        serviceCollection.AddChatHub();
+    }
+
+    protected override async void OnStartup(StartupEventArgs eventArgs)
+    {
+        await _host.StartAsync();
+
+        ConfigureDataBindingErrorListener();
+        Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
+
+        ConnectToChatHub();
+
+        ShowMainWindow();
+
+        base.OnStartup(eventArgs);
+    }
+
+    protected override async void OnExit(ExitEventArgs eventArgs)
+    {
+        using (_host)
+        {
+            await _host.StopAsync(TimeSpan.FromSeconds(5));
         }
+
+        base.OnExit(eventArgs);
+    }
+
+    private static void ConfigureDataBindingErrorListener()
+    {
+        PresentationTraceSources.Refresh();
+        PresentationTraceSources.DataBindingSource.Switch.Level = SourceLevels.Error;
+        PresentationTraceSources.DataBindingSource.Listeners.Add(new BindingErrorTraceListener());
+    }
+
+    private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs eventArgs)
+    {
+        LogUnhandledException(eventArgs.Exception);
+
+        eventArgs.Handled = true;
+
+        if (eventArgs.Exception is HubException)
+        {
+            ShowToastNotificationFromHubException();
+        }
+        else
+        {
+            ShowExceptionDialogFromUnhandledException(eventArgs.Exception);
+
+            Current.Shutdown();
+        }
+    }
+
+    private async void LogUnhandledException(Exception exception)
+    {
+        ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
+        logger.LogError(exception, exception.Message);
+
+        await Task.CompletedTask;
+    }
+
+    private async void ShowToastNotificationFromHubException()
+    {
+        await Current.Dispatcher.InvokeAsync(async () =>
+        {
+            IToastNotificationService toastNotificationService = _host.Services.GetRequiredService<IToastNotificationService>();
+            ShowNotificationOptions showNotificationOptions = new()
+            {
+                Title = "Application message",
+                Message = "An Internal Server Error has occurred! Please contact your system administrator!",
+                NotificationType = NotificationType.Error
+            };
+
+            await toastNotificationService.ShowNotification(showNotificationOptions);
+        });
+    }
+
+    private async void ShowExceptionDialogFromUnhandledException(Exception exception)
+    {
+        IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
+
+        IDialogWindowShowDialogOptionsModel showDialogOptions = new DialogWindowShowDialogOptionsModel<ExceptionDialogWindow, ExceptionDialogWindowViewModel, ExceptionDialogWindowViewModelInitializerModel>
+        {
+            WindowViewModelInitializerModel = new ExceptionDialogWindowViewModelInitializerModel
+            {
+                WindowSettings = new ExceptionDialogWindowSettingsViewModelInitializerModel
+                {
+                    Title = "Unexpected application error"
+                }
+            }
+        };
+
+        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<ExceptionDialogViewModel, ExceptionDialogViewModelInitializerModel>
+        {
+            ContentPresenterViewModelInitializerModel = new ExceptionDialogViewModelInitializerModel
+            {
+                ViewDataInitializerModel = new ExceptionDialogViewDataViewModelInitializerModel
+                {
+                    Message = exception.Message,
+                    Type = exception.GetType(),
+                    StackTrace = exception.StackTrace,
+                    InnerException = exception.InnerException
+                }
+            }
+        };
+
+        await dialogWindowService.ShowDialogAsync<ExceptionDialogWindowResult>(showDialogOptions, contentPresenterLoadOptions);
+    }
+    
+    private async void ConnectToChatHub()
+    {
+        IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();
+
+        await chatHub.ConnectAsync();
+    }
+
+    private async void ShowMainWindow()
+    {
+        INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
+
+        INavigationWindowShowOptionsModel windowOptions = new NavigationWindowShowOptionsModel<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel>
+        {
+            WindowViewModelInitializerModel = new MainWindowViewModelInitializerModel
+            {
+                WindowSettings = new MainWindowSettingsViewModelInitializerModel
+                {
+                    Height = 750,
+                    Width = 450
+                }
+            }
+        };
+
+        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<SignInViewModel, SignInViewModelInitializerModel>
+        {
+            ContentPresenterViewModelInitializerModel = new SignInViewModelInitializerModel
+            {
+                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel()
+            }
+        };
+
+        await navigationWindowService.ShowAsync(windowOptions, contentPresenterLoadOptions);
     }
 }

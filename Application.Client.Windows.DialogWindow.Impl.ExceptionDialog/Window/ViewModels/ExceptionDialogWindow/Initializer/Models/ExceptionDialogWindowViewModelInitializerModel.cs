@@ -1,0 +1,7 @@
+﻿using Application.Client.Windows.DialogWindow.Core.ViewModels.DialogWindow.Initializers.Models;
+using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindowSettings.Initializer.Models;
+
+namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow.Initializer.Models;
+
+public class ExceptionDialogWindowViewModelInitializerModel : DialogWindowViewModelInitializerModel<ExceptionDialogWindowSettingsViewModelInitializerModel>
+{ }
