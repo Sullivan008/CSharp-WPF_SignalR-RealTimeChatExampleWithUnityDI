@@ -30,7 +30,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Common", "Appli
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web", "Application.Web", "{B0314A75-4B67-42FD-B698-5C0257A18ED2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client", "Application.Client", "{6991BD72-1F62-4FE3-BABA-BB353C595BBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-2344}") = "Application.Client", "Application.Client", "{6991BD72-1F62-4FE3-BABA-BB353C595BBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client", "Application.Client\Application.Client.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.Windows.ApplicationWindow.Core", "Application.Client.Windows.ApplicationWindow.Core\Application.Client.Windows.ApplicationWindow.Core.csproj", "{C531373C-7BEC-4116-934A-DEC710A37466}"
 EndProject
