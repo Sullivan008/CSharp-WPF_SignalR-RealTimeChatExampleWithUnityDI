@@ -6,6 +6,7 @@
                          xmlns:windowBehaviors="clr-namespace:Application.Client.Windows.Core.Window.Behaviors;assembly=Application.Client.Windows.Core"
                          xmlns:window="clr-namespace:Application.Client.Windows.NavigationWindow.Core.Window;assembly=Application.Client.Windows.NavigationWindow.Core"
                          WindowStyle="None"
+                         ResizeMode="NoResize"
                          Background="{x:Null}"
                          Top="{Binding WindowSettings.Top, Mode=TwoWay}" 
                          Left="{Binding WindowSettings.Left, Mode=TwoWay}" 
