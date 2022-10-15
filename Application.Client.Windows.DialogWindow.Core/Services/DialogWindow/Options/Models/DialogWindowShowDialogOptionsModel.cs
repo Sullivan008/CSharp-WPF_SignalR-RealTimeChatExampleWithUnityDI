@@ -1,8 +1,8 @@
-﻿using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Options.Models.Interfaces;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Options.Models.Interfaces;
 using Application.Client.Windows.DialogWindow.Core.ViewModels.DialogWindow.Initializers.Models.Interfaces;
 using Application.Client.Windows.DialogWindow.Core.ViewModels.DialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Core.Window.Interfaces;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Options.Models;
 

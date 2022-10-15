@@ -1,7 +1,7 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Initializer.Models.Enums;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.ViewData.Initializer.Models;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Initializer.Models;
 

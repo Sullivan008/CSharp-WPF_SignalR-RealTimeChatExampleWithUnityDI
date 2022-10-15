@@ -1,6 +1,6 @@
-﻿using Application.Client.Windows.Core.ViewModels.Window.Initializer.Models.Interfaces;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.Windows.Core.ViewModels.Window.Initializer.Models.Interfaces;
 using Application.Client.Windows.Core.ViewModels.WindowSettings.Initializer.Models.Interfaces;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Core.ViewModels.Window.Initializer.Models;
 

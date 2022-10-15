@@ -1,4 +1,6 @@
-﻿namespace Application.Common.Utilities.Guard;
+﻿using App.Core.Guard.Implementation.Exceptions;
+
+namespace App.Core.Guard.Implementation;
 
 public static class Guard
 {
@@ -7,19 +9,19 @@ public static class Guard
         switch (Type.GetTypeCode(typeof(T)))
         {
             case TypeCode.String:
-            {
-                ThrowIfNullOrWhitespace(input as string, parameterName, message);
-                break;
-            }
-            default:
-            {
-                if (input is null)
                 {
-                    throw new ArgumentNullException(parameterName, message ?? "The value cannot be null!");
+                    ThrowIfNullOrWhitespace(input as string, parameterName, message);
+                    break;
                 }
+            default:
+                {
+                    if (input is null)
+                    {
+                        throw new ArgumentNullException(parameterName, message ?? "The value cannot be null!");
+                    }
 
-                break;
-            }
+                    break;
+                }
         }
     }
 
@@ -28,19 +30,19 @@ public static class Guard
         switch (Type.GetTypeCode(typeof(T)))
         {
             case TypeCode.String:
-            {
-                ThrowIfNotNullOrNotWhitespace(input as string, parameterName, message);
-                break;
-            }
-            default:
-            {
-                if (input is not null)
                 {
-                    throw new ArgumentNullException(parameterName, message ?? "The value is not null!");
+                    ThrowIfNotNullOrNotWhitespace(input as string, parameterName, message);
+                    break;
                 }
+            default:
+                {
+                    if (input is not null)
+                    {
+                        throw new ArgumentNotNullException(parameterName, message ?? "The value is not null!");
+                    }
 
-                break;
-            }
+                    break;
+                }
         }
     }
 
@@ -56,7 +58,7 @@ public static class Guard
     {
         if (!string.IsNullOrWhiteSpace(input))
         {
-            throw new ArgumentNullException(parameterName, message ?? "The value is not null!");
+            throw new ArgumentNotNullException(parameterName, message ?? "The value is not null!");
         }
     }
 }

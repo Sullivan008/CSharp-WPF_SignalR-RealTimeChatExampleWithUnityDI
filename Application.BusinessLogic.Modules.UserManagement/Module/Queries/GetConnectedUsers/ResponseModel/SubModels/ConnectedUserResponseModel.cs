@@ -1,4 +1,4 @@
-﻿using Application.Common.Utilities.Guard;
+﻿using App.Core.Guard.Implementation;
 
 namespace Application.BusinessLogic.Modules.UserManagement.Module.Queries.GetConnectedUsers.ResponseModel.SubModels;
 

@@ -1,4 +1,4 @@
-﻿using Application.Common.Utilities.Guard;
+﻿using App.Core.Guard.Implementation;
 
 namespace Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.GetConnectedUsers.ResponseModel.SubModels;
 

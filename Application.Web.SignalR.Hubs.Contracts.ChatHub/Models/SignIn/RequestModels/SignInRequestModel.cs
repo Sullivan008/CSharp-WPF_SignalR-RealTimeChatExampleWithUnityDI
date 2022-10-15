@@ -1,4 +1,4 @@
-﻿using Application.Common.Utilities.Guard;
+﻿using App.Core.Guard.Implementation;
 using Application.Web.SignalR.Core.Hubs.Contracts.Models.RequestModels;
 
 namespace Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;

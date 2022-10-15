@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using App.Core.Guard.Implementation;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Interfaces;
 using Application.Client.Windows.Core.ViewModels.Window.Interfaces;
 using Application.Client.Windows.Core.ViewModels.WindowSettings.Interfaces;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.Core.ViewModels.Window;
 

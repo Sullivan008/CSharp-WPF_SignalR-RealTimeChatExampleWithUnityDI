@@ -1,4 +1,4 @@
-﻿using Application.Common.Utilities.Guard;
+﻿using App.Core.Guard.Implementation;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Application.Cache.Core.Services.ApplicationCache.Options.Models.SetCacheOptions.Abstractions;

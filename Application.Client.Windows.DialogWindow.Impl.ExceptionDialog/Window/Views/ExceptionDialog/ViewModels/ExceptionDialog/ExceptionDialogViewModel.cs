@@ -1,10 +1,10 @@
 ﻿using System.Windows.Input;
+using App.Core.Guard.Implementation;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
 using Application.Client.Windows.DialogWindow.Core.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.Commands;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog;
 

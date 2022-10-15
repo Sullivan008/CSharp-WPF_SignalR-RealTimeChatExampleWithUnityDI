@@ -1,6 +1,6 @@
-﻿using Application.Client.SignalR.Core.Configurations.Models;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Client.SignalR.Core.Hubs.Interfaces;
-using Application.Common.Utilities.Guard;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

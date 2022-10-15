@@ -1,5 +1,5 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData;
-using Application.Common.Utilities.Guard;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData;
 

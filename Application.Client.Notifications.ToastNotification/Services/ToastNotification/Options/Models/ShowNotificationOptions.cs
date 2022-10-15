@@ -1,5 +1,5 @@
-﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
-using Application.Common.Utilities.Guard;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 
 namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
 

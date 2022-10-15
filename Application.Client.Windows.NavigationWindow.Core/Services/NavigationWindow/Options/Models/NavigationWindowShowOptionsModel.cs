@@ -1,8 +1,8 @@
-﻿using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models.Interfaces;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindow.Initializers.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindow.Interfaces;
 using Application.Client.Windows.NavigationWindow.Core.Window.Interfaces;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models;
 

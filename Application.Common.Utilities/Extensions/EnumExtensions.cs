@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.Serialization;
+using App.Core.Guard.Implementation;
 
 namespace Application.Common.Utilities.Extensions;
 
@@ -9,7 +10,7 @@ public static class EnumExtension
     {
         EnumMemberAttribute enumMemberAttr = @this.GetAttribute<EnumMemberAttribute>();
 
-        Guard.Guard.ThrowIfNullOrWhitespace(enumMemberAttr.Value, nameof(enumMemberAttr.Value));
+        Guard.ThrowIfNullOrWhitespace(enumMemberAttr.Value, nameof(enumMemberAttr.Value));
 
         return enumMemberAttr.Value!;
     }
@@ -22,7 +23,7 @@ public static class EnumExtension
         object[] attributes = memberInfo[0].GetCustomAttributes(typeof(TAttributeType), false);
         object? attribute = attributes.SingleOrDefault();
 
-        Guard.Guard.ThrowIfNull(attribute, nameof(attribute));
+        Guard.ThrowIfNull(attribute, nameof(attribute));
 
         return (TAttributeType)attribute!;
     }

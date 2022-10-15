@@ -1,8 +1,8 @@
-﻿using Application.Client.SignalR.Core.Configurations.Models;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Client.SignalR.Core.Hubs.Abstractions;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Common.Utilities.Extensions;
-using Application.Common.Utilities.Guard;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Enums;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.GetConnectedUsers.ResponseModel;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;

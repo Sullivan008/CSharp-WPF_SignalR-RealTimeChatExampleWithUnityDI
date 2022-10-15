@@ -1,8 +1,8 @@
-﻿using Application.Client.Windows.Core.ViewModels.Window;
+﻿using App.Core.Guard.Implementation;
+using Application.Client.Windows.Core.ViewModels.Window;
 using Application.Client.Windows.DialogWindow.Core.Models.CustomDialogWindowResult.Interfaces;
 using Application.Client.Windows.DialogWindow.Core.ViewModels.DialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Core.ViewModels.DialogWindowSettings.Interfaces;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.DialogWindow.Core.ViewModels.DialogWindow;
 

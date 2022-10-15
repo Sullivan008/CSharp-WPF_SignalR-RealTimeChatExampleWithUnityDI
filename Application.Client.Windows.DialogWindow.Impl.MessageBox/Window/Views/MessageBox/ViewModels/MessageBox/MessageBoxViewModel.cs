@@ -1,10 +1,10 @@
 ﻿using System.Windows.Input;
+using App.Core.Guard.Implementation;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
 using Application.Client.Windows.DialogWindow.Core.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Commands;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Enums;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.ViewData;
-using Application.Common.Utilities.Guard;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox;
 
