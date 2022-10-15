@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
+    <ProjectReference Include="..\App.Core.Guard\App.Core.Guard.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj" />
   </ItemGroup>
 

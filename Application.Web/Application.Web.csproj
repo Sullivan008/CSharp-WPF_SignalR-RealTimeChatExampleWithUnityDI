@@ -13,7 +13,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Application.BusinessLogic.Core\Application.BusinessLogic.Core.csproj" />
 		<ProjectReference Include="..\Application.BusinessLogic.Modules.UserManagement\Application.BusinessLogic.Modules.UserManagement.csproj" />
-		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 		<ProjectReference Include="..\Application.Web.SignalR.Hubs.ChatHub\Application.Web.SignalR.Hubs.ChatHub.csproj" />
 	</ItemGroup>
 	<ItemGroup>

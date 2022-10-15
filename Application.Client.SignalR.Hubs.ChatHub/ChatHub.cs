@@ -1,8 +1,8 @@
-﻿using App.Core.Guard.Implementation;
+﻿using App.Core.Extensions.Implementation.Enum;
+using App.Core.Guard.Implementation;
 using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Client.SignalR.Core.Hubs.Abstractions;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
-using Application.Common.Utilities.Extensions;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Enums;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.GetConnectedUsers.ResponseModel;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
@@ -28,11 +28,17 @@ public class ChatHub : SignalRHub<ChatHub>, IChatHub
     {
         Guard.ThrowIfNull(requestModel, nameof(requestModel));
 
-        await HubConnection.InvokeAsync(InvokableMethods.SignIn.GetEnumMemberAttrValue(), requestModel);
+        string? invokableMethodName = InvokableMethods.SignIn.GetEnumMemberAttrValue();
+        Guard.ThrowIfNullOrWhitespace(invokableMethodName, nameof(invokableMethodName));
+
+        await HubConnection.InvokeAsync(invokableMethodName!, requestModel);
     }
     
     public async Task<GetConnectedUsersResponseModel> GetConnectedUsersAsync()
     {
-        return await HubConnection.InvokeAsync<GetConnectedUsersResponseModel>(InvokableMethods.GetConnectedUsers.GetEnumMemberAttrValue());
+        string? invokableMethodName = InvokableMethods.GetConnectedUsers.GetEnumMemberAttrValue();
+        Guard.ThrowIfNullOrWhitespace(invokableMethodName, nameof(invokableMethodName));
+
+        return await HubConnection.InvokeAsync<GetConnectedUsersResponseModel>(invokableMethodName!);
     }
 }

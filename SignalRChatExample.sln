@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Models", "Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web", "Application.Web\Application.Web.csproj", "{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Common.Utilities", "Application.Common.Utilities\Application.Common.Utilities.csproj", "{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC9A5334-BC67-443F-AC42-B650857090BE}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
@@ -25,8 +23,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.Hubs.ChatHub", "Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj", "{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.Core", "Application.Client.SignalR.Core\Application.Client.SignalR.Core.csproj", "{4A12AF32-9AFA-4C97-AE39-14FD39A72605}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Common", "Application.Common", "{B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web", "Application.Web", "{B0314A75-4B67-42FD-B698-5C0257A18ED2}"
 EndProject
@@ -92,7 +88,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Core", "App.Core", "{49
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Core.Guard", "App.Core.Guard", "{4E61B1F8-D052-412D-98D4-7160DADF2968}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core.Guard", "App.Core.Guard\App.Core.Guard.csproj", "{5F3549EC-930F-493E-8EC8-403A9672F057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Core.Guard", "App.Core.Guard\App.Core.Guard.csproj", "{5F3549EC-930F-493E-8EC8-403A9672F057}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Core.Extensions", "App.Core.Extensions", "{7B15422E-64B4-4508-8D5A-B6BF3F4ED848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core.Extensions", "App.Core.Extensions\App.Core.Extensions.csproj", "{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -116,10 +116,6 @@ Global
 		{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C0F8661-C90D-4236-8D54-7D60616C56A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9C0F8661-C90D-4236-8D54-7D60616C56A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C0F8661-C90D-4236-8D54-7D60616C56A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -192,13 +188,16 @@ Global
 		{5F3549EC-930F-493E-8EC8-403A9672F057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3549EC-930F-493E-8EC8-403A9672F057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F3549EC-930F-493E-8EC8-403A9672F057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
-		{8FCCB674-35B9-4D73-85F3-6BE932C9A1F8} = {B9F9E0AB-1113-4A6D-AA3E-0A53B1CB31AE}
 		{9C0F8661-C90D-4236-8D54-7D60616C56A5} = {CD5C1534-4C6D-497D-B3DD-71974908B909}
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
 		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C} = {86067CBD-E34D-4E6B-BF71-F178764F1282}
@@ -231,6 +230,8 @@ Global
 		{6E13BE5A-C149-4940-BF37-853F1E5D97A1} = {6CAF6A2F-E04A-4271-B858-E0858DC51FAC}
 		{4E61B1F8-D052-412D-98D4-7160DADF2968} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
 		{5F3549EC-930F-493E-8EC8-403A9672F057} = {4E61B1F8-D052-412D-98D4-7160DADF2968}
+		{7B15422E-64B4-4508-8D5A-B6BF3F4ED848} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
+		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7} = {7B15422E-64B4-4508-8D5A-B6BF3F4ED848}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

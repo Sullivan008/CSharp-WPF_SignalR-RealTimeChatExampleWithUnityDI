@@ -2,6 +2,8 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
+using App.Core.Extensions.Implementation.Enum;
+using App.Core.Guard.Implementation;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
@@ -40,7 +42,6 @@ using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.Ma
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData.Initializer.Models;
-using Application.Common.Utilities.Extensions;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -59,8 +60,11 @@ public partial class App
         _host = new HostBuilder()
             .ConfigureHostConfiguration(configurationBuilder =>
             {
+                string? variable = EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue();
+                Guard.ThrowIfNullOrWhitespace(variable, nameof(variable));
+
                 KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
-                    Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
+                    Environment.GetEnvironmentVariable(variable!)!);
 
                 configurationBuilder.AddInMemoryCollection(new[] { environment })
                                     .AddEnvironmentVariables();

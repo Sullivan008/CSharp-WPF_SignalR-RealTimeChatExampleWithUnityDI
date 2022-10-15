@@ -1,6 +1,7 @@
-﻿using Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extensions.DependencyInjection;
+﻿using App.Core.Extensions.Implementation.Enum;
+using App.Core.Guard.Implementation;
+using Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extensions.DependencyInjection;
 using Application.Cache.Core.Services.ApplicationCache.Infrastructure.Extensions.DependencyInjection;
-using Application.Common.Utilities.Extensions;
 using Application.Web.Infrastructure.Environment.Enums;
 using Application.Web.SignalR.Hubs.ChatHub;
 using Microsoft.AspNetCore.Builder;
@@ -15,8 +16,11 @@ IHostBuilder hostBuilder =
     Host.CreateDefaultBuilder(args)
         .ConfigureHostConfiguration(configurationBuilder =>
         {
+            string? variable = EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue();
+            Guard.ThrowIfNullOrWhitespace(variable, nameof(variable));
+
             KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
-                Environment.GetEnvironmentVariable(EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue())!);
+                Environment.GetEnvironmentVariable(variable!)!);
 
             configurationBuilder.AddInMemoryCollection(new[] { environment })
                                 .AddEnvironmentVariables();

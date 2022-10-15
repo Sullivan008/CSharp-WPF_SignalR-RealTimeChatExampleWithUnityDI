@@ -15,7 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Application.BusinessLogic.Core\Application.BusinessLogic.Core.csproj" />
     <ProjectReference Include="..\Application.Cache.Core\Application.Cache.Core.csproj" />
-    <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Hubs.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj" />
   </ItemGroup>

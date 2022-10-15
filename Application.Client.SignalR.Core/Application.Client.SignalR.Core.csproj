@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
+    <ProjectReference Include="..\App.Core.Extensions\App.Core.Extensions.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj" />
   </ItemGroup>
 

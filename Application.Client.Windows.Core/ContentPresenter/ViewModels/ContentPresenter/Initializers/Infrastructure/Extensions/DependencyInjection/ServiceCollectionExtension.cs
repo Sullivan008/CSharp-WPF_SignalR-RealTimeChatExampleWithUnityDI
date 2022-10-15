@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
+using App.Core.Extensions.Implementation.Enumerable;
 using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Interfaces;
-using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Infrastructure.Extensions.DependencyInjection;

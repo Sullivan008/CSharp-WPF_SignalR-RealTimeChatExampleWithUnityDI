@@ -8,6 +8,6 @@
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.37" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
+	  <ProjectReference Include="..\App.Core.Extensions\App.Core.Extensions.csproj" />
 	</ItemGroup>
 </Project>

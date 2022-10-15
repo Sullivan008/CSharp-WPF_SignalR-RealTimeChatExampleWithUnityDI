@@ -26,7 +26,6 @@
 	  <ProjectReference Include="..\Application.Client.Windows.DialogWindow.Impl.MessageBox\Application.Client.Windows.DialogWindow.Impl.MessageBox.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow.Core\Application.Client.Windows.NavigationWindow.Core.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow.Impl.Main\Application.Client.Windows.NavigationWindow.Impl.Main.csproj" />
-	  <ProjectReference Include="..\Application.Common.Utilities\Application.Common.Utilities.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

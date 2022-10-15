@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
+using App.Core.Extensions.Implementation.Enumerable;
 using Application.Cache.Core.Repositories.ApplicationCache.Interfaces;
-using Application.Common.Utilities.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Cache.Core.Repositories.ApplicationCache.Infrastructure.Extensions.DependencyInjection;
