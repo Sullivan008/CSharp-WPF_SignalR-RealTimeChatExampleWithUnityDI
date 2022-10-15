@@ -1,9 +1,15 @@
 <Project>
+
 	<PropertyGroup>
-		<VersionMajor>$([System.DateTime]::Now.ToString("yy"))</VersionMajor>
-		<VersionMinor>$([System.DateTime]::Now.ToString("MM"))</VersionMinor>
-		<VersionPatch Condition="'$(VersionPatch)' == ''">$([System.DateTime]::UtcNow.Date.Subtract($([System.DateTime]::Parse("2000-01-01"))).TotalDays)</VersionPatch>
-		<VersionRevision Condition="'$(VersionRevision)' == ''">$([System.Math]::Floor($([MSBuild]::Divide($([System.DateTime]::UtcNow.TimeOfDay.TotalSeconds), 1.32))))</VersionRevision>
+		<VersionMajor>$([System.DateTime]::UtcNow.ToString("yy"))</VersionMajor>
+		<VersionMinor>$([System.DateTime]::UtcNow.Month.ToString("d2"))</VersionMinor>
+		<VersionPatch Condition="'$(VersionPatch)' == ''">$([System.DateTime]::UtcNow.Day.ToString("d2"))</VersionPatch>
+		<VersionRevision Condition="'$(VersionRevision)' == ''">$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("0"))</VersionRevision>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Authors>Péter Kozák</Authors>
+		<Copyright>Copyright © Péter Kozák. $([System.DateTime]::UtcNow.ToString("yyyy")) - All Rights Reserved.</Copyright>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -11,8 +17,6 @@
 		<GenerateAssemblyInformationalVersionAttribute>False</GenerateAssemblyInformationalVersionAttribute>
 		<FileVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</FileVersion>
 		<AssemblyVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</AssemblyVersion>
-		<Product>SignalR Chat Example</Product>
-		<Copyright>Copyright © Péter Kozák $([System.DateTime]::UtcNow.ToString("yyyy")) - All Rights Reserved</Copyright>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -20,4 +24,5 @@
 		<LangVersion>10</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
+
 </Project>
