@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\App.Core.Extensions\App.Core.Extensions.csproj" />
+	  <ProjectReference Include="..\SullyTech.Extensions\SullyTech.Extensions.csproj" />
 	</ItemGroup>
 
 </Project>

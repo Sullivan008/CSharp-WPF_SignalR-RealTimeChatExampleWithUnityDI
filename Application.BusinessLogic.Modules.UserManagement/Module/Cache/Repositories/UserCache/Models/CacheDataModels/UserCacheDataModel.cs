@@ -1,5 +1,5 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Cache.Core.Models.CacheData.Interfaces;
+﻿using Application.Cache.Core.Models.CacheData.Interfaces;
+using SullyTech.Guard;
 
 namespace Application.BusinessLogic.Modules.UserManagement.Module.Cache.Repositories.UserCache.Models.CacheDataModels;
 

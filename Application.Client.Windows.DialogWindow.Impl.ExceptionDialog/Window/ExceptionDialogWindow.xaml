@@ -4,13 +4,13 @@
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                     xmlns:window="clr-namespace:Application.Client.Windows.DialogWindow.Core.Window;assembly=Application.Client.Windows.DialogWindow.Core"
+                     xmlns:window="clr-namespace:SullyTech.Wpf.Windows.Dialog.Window;assembly=SullyTech.Wpf.Windows.Dialog.Window"
                      mc:Ignorable="d"
                      ResizeMode="NoResize" SizeToContent="WidthAndHeight"
                      WindowStartupLocation="CenterScreen"
                      MinHeight="50" Height="50" MaxHeight="650"
                      MinWidth="700" Width="700" MaxWidth="700"
-                     Title="{Binding WindowSettings.Title}">
+                     Title="{Binding Settings.Title}">
 
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Closing">
@@ -18,5 +18,5 @@
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
 
-    <ContentControl Content="{Binding ContentPresenter}"/>
+    <ContentControl Content="{Binding Presenter}"/>
 </window:DialogWindow>

@@ -1,11 +1,10 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter.Initializers.Models;
-using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Initializer.Models.Enums;
-using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.ViewData.Initializer.Models;
+﻿using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Initializer.Models.Enums;
+using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.Presenter.Models.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Initializer.Models;
 
-public class MessageBoxViewModelInitializerModel : ContentPresenterViewModelInitializerModel<MessageBoxViewDataViewModelInitializerModel>
+public class MessageBoxViewModelInitializerModel : IPresenterViewModelInitializerModel
 {
     public MessageBoxIcon? MessageBoxIcon { get; init; }
 
@@ -19,11 +18,6 @@ public class MessageBoxViewModelInitializerModel : ContentPresenterViewModelInit
             return _messageBoxButton!.Value;
         }
 
-        init
-        {
-            Guard.ThrowIfNull(value, nameof(MessageBoxButton));
-
-            _messageBoxButton = value;
-        }
+        init => _messageBoxButton = value;
     }
 }

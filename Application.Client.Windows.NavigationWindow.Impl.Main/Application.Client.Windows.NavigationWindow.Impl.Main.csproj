@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
+		<TargetFramework>net6.0-windows</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -19,7 +19,13 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Application.Client.Notifications.ToastNotification\Application.Client.Notifications.ToastNotification.csproj" />
 	  <ProjectReference Include="..\Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow.Core\Application.Client.Windows.NavigationWindow.Core.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Behaviors\SullyTech.Wpf.Windows.Core.Behaviors.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Commands\SullyTech.Wpf.Windows.Core.Commands.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers\SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.ViewModels\SullyTech.Wpf.Windows.Navigation.ViewModels.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Window\SullyTech.Wpf.Windows.Navigation.Window.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

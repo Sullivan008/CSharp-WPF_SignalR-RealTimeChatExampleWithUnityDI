@@ -2,17 +2,16 @@
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
-using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
-using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
-using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models;
-using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.Initializer.Models;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
+using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions;
+using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 
-internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
+internal class SignInCommand : AsyncCommand<SignInViewModel>
 {
     private readonly IChatHub _chatHub;
 
@@ -20,7 +19,7 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     private readonly ICurrentNavigationWindowService _currentWindowService;
 
-    public SignInCommand(SignInViewModel callerViewModel, IChatHub chatHub, IToastNotificationService toastNotificationService, 
+    public SignInCommand(SignInViewModel callerViewModel, IChatHub chatHub, IToastNotificationService toastNotificationService,
         ICurrentNavigationWindowService currentWindowService) : base(callerViewModel)
     {
         _chatHub = chatHub;
@@ -30,6 +29,8 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     public override async Task ExecuteAsync()
     {
+        throw new Exception("kenyer");
+
         if (_chatHub.IsConnected == false)
         {
             await ShowChatServerIsNotAvailableToastMessage();
@@ -37,34 +38,31 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
         }
 
         await SignInAsync();
-        
+
         await NavigateToChatView();
 
         await WindowReSize();
     }
 
-    public override Predicate<object?> CanExecute => _ => CallerViewModel.ViewData.IsValid;
+    public override Predicate<object?> CanExecute => _ => CallerViewModel.Data.IsValid;
 
     private async Task ShowChatServerIsNotAvailableToastMessage()
     {
-        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+        ShowNotificationOptions showNotificationOptions = new()
         {
-            ShowNotificationOptions showNotificationOptions = new()
-            {
-                Title = "Application message",
-                Message = "The chat server is not available! Please try again later!",
-                NotificationType = NotificationType.Error
-            };
+            Title = "Application message",
+            Message = "The chat server is not available! Please try again later!",
+            NotificationType = NotificationType.Error
+        };
 
-            await _toastNotificationService.ShowNotification(showNotificationOptions);
-        });
+        await _toastNotificationService.ShowNotification(showNotificationOptions);
     }
 
     private async Task SignInAsync()
     {
         SignInRequestModel requestModel = new()
         {
-            NickName = CallerViewModel.ViewData.NickName
+            NickName = CallerViewModel.Data.NickName
         };
 
         await _chatHub.SignInAsync(requestModel);
@@ -72,20 +70,14 @@ internal class SignInCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     private async Task NavigateToChatView()
     {
-        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
-        {
-            IContentPresenterNavigateOptions navigateOptions = new ContentPresenterNavigateOptions<ChatViewModel, ChatViewModelInitializerModel>();
+        INavigateToOptions navigateOptions = new NavigateToOptions<ChatViewModel>();
 
-            await _currentWindowService.NavigateTo(navigateOptions);
-        });
+        await _currentWindowService.NavigateToAsync(navigateOptions);
     }
 
     private async Task WindowReSize()
     {
-        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
-        {
-            await _currentWindowService.SetWindowWidth(1000);
-            await _currentWindowService.SetWindowHeight(250);
-        });
+        await _currentWindowService.SetWindowWidthAsync(1000);
+        await _currentWindowService.SetWindowHeightAsync(250);
     }
 }

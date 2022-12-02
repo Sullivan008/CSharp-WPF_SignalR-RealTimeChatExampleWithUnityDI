@@ -78,7 +78,7 @@
                     </Image.Style>
                 </Image>
                 <TextBlock Width="Auto" Margin="12,20,41,20" VerticalAlignment="Center" TextWrapping="Wrap"
-                           Text="{Binding ViewData.Message}"/>
+                           Text="{Binding Data.Message}"/>
             </DockPanel>
         </Grid>
 

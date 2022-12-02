@@ -1,10 +1,10 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.SignalR.Core.Configurations.Models;
+﻿using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Client.SignalR.Core.Hubs.Interfaces;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SullyTech.Guard;
 
 namespace Application.Client.SignalR.Core.Hubs.Abstractions;
 

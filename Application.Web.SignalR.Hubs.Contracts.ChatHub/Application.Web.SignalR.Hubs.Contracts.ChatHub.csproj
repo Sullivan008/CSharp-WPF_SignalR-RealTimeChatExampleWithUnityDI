@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App.Core.Guard\App.Core.Guard.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj" />
+    <ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
   </ItemGroup>
 
 </Project>

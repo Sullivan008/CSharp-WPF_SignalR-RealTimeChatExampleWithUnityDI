@@ -1,4 +1,4 @@
-﻿using App.Core.Guard.Implementation;
+﻿using SullyTech.Guard;
 
 namespace Application.BusinessLogic.Modules.UserManagement.Module.Queries.GetConnectedUsers.ResponseModel.SubModels;
 

@@ -1,10 +1,10 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.Windows.DialogWindow.Core.Models.CustomDialogWindowResult;
-using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox.Enums;
+﻿using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox.Enums;
+using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Dialog.Result.Interfaces.DialogResult;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox;
 
-public class MessageBoxWindowResult : CustomDialogWindowResult
+public class MessageBoxWindowResult : IDialogResult
 {
     private readonly MessageBoxResult? _messageBoxResult;
     public MessageBoxResult MessageBoxResult
@@ -16,11 +16,6 @@ public class MessageBoxWindowResult : CustomDialogWindowResult
             return _messageBoxResult!.Value;
         }
 
-        init
-        {
-            Guard.ThrowIfNull(value, nameof(MessageBoxResult));
-
-            _messageBoxResult = value;
-        }
+        init => _messageBoxResult = value;
     }
 }

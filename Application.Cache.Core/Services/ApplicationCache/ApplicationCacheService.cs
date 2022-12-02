@@ -1,6 +1,4 @@
-﻿using App.Core.Extensions.Implementation.Enum;
-using App.Core.Extensions.Implementation.Enumerable;
-using Application.Cache.Core.Collections.CacheData;
+﻿using Application.Cache.Core.Collections.CacheData;
 using Application.Cache.Core.Collections.CacheData.Interfaces;
 using Application.Cache.Core.Models.CacheData.Interfaces;
 using Application.Cache.Core.Services.ApplicationCache.Interfaces;
@@ -8,6 +6,8 @@ using Application.Cache.Core.Services.ApplicationCache.Options.Models.GetCacheOp
 using Application.Cache.Core.Services.ApplicationCache.Options.Models.RemoveOptions.Interfaces;
 using Application.Cache.Core.Services.ApplicationCache.Options.Models.SetCacheOptions.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
+using SullyTech.Extensions.Enum;
+using SullyTech.Extensions.Enumerable;
 
 namespace Application.Cache.Core.Services.ApplicationCache;
 

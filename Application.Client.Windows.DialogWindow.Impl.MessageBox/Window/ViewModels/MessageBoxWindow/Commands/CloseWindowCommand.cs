@@ -1,11 +1,11 @@
-﻿using Application.Client.Windows.Core.Commands.Abstractions;
-using Application.Client.Windows.DialogWindow.Core.Window.Interfaces;
-using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox;
+﻿using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox.Enums;
+using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Dialog.Window.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.ViewModels.MessageBoxWindow.Commands;
 
-internal class CloseWindowCommand : AsyncWindowCommand<MessageBoxWindowViewModel, IDialogWindow>
+internal class CloseWindowCommand : AsyncCommand<MessageBoxWindowViewModel, IDialogWindow>
 {
     public CloseWindowCommand(MessageBoxWindowViewModel callerViewModel) : base(callerViewModel)
     { }
@@ -14,7 +14,7 @@ internal class CloseWindowCommand : AsyncWindowCommand<MessageBoxWindowViewModel
     {
         if (window.DialogResult.HasValue == false)
         {
-            CallerViewModel.CustomDialogResult = new MessageBoxWindowResult { MessageBoxResult = MessageBoxResult.None };
+            CallerViewModel.DialogResult = new MessageBoxWindowResult { MessageBoxResult = MessageBoxResult.None };
             window.DialogResult = false;
         }
 

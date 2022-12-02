@@ -1,9 +1,9 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models;
+﻿using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData.Initializer.Models;
 
-public class ExceptionDialogViewDataViewModelInitializerModel : ContentPresenterViewDataViewModelInitializerModel
+public class ExceptionDialogViewDataViewModelInitializerModel : IPresenterDataViewModelInitializerModel
 {
     private readonly string? _message;
     public string Message
@@ -42,5 +42,6 @@ public class ExceptionDialogViewDataViewModelInitializerModel : ContentPresenter
     }
 
     public string? StackTrace { get; init; }
+
     public Exception? InnerException { get; init; }
 }

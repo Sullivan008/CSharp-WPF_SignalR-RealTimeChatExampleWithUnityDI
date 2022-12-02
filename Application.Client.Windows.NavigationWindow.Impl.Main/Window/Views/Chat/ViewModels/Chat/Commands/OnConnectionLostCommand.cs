@@ -1,21 +1,20 @@
 ﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
-using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
-using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
-using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models;
-using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
+using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions;
+using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.Commands;
 
-internal class OnConnectionLostCommand : AsyncContentPresenterCommand<ChatViewModel>
+internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
 {
     private readonly IToastNotificationService _toastNotificationService;
 
     private readonly ICurrentNavigationWindowService _currentWindowService;
-    
+
     public OnConnectionLostCommand(ChatViewModel callerViewModel, IToastNotificationService toastNotificationService,
         ICurrentNavigationWindowService currentWindowService) : base(callerViewModel)
     {
@@ -25,44 +24,39 @@ internal class OnConnectionLostCommand : AsyncContentPresenterCommand<ChatViewMo
 
     public override async Task ExecuteAsync()
     {
-        await ShowConnectionLostMessage();
-        
-        await NavigateToSignInView();
+        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+        {
+            await ShowConnectionLostMessage();
 
-        await WindowReSize();
+            await NavigateToSignInView();
+
+            await WindowReSize();
+        });
     }
 
     private async Task ShowConnectionLostMessage()
     {
-        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+        ShowNotificationOptions showNotificationOptions = new()
         {
-            ShowNotificationOptions showNotificationOptions = new()
-            {
-                Title = "Application message",
-                Message = "The application has been lost the connection with server! Please sign in again!",
-                NotificationType = NotificationType.Error
-            };
+            Title = "Application message",
+            Message = "The application has been lost the connection with server! Please sign in again!",
+            NotificationType = NotificationType.Error
+        };
 
-            await _toastNotificationService.ShowNotification(showNotificationOptions);
-        });
+        await _toastNotificationService.ShowNotification(showNotificationOptions);
     }
 
     private async Task NavigateToSignInView()
     {
-        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
-        {
-            IContentPresenterNavigateOptions navigateOptions = new ContentPresenterNavigateOptions<SignInViewModel, SignInViewModelInitializerModel>();
+        INavigateToOptions navigateOptions = new NavigateToOptions<SignInViewModel>();
 
-            await _currentWindowService.NavigateTo(navigateOptions);
-        });
+        await _currentWindowService.NavigateToAsync(navigateOptions);
+
     }
 
     private async Task WindowReSize()
     {
-        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
-        {
-            await _currentWindowService.SetWindowWidth(400);
-            await _currentWindowService.SetWindowHeight(750);
-        });
+        await _currentWindowService.SetWindowWidthAsync(400);
+        await _currentWindowService.SetWindowHeightAsync(750);
     }
 }

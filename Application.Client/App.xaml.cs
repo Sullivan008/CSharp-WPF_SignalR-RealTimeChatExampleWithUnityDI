@@ -2,8 +2,6 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
-using App.Core.Extensions.Implementation.Enum;
-using App.Core.Guard.Implementation;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
@@ -13,41 +11,37 @@ using Application.Client.Notifications.ToastNotification.Services.ToastNotificat
 using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
-using Application.Client.Windows.Core.ContentPresenter.Options.Models;
-using Application.Client.Windows.Core.ContentPresenter.Options.Models.Interfaces;
-using Application.Client.Windows.Core.ContentPresenter.Services.ContentPresenter.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Interfaces;
-using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Options.Models;
-using Application.Client.Windows.DialogWindow.Core.Services.DialogWindow.Options.Models.Interfaces;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow;
-using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow.Initializer.Models;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindowSettings.Initializer.Models;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog;
-using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.Initializer.Models;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData.Initializer.Models;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Interfaces;
-using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models;
-using Application.Client.Windows.NavigationWindow.Core.Services.NavigationWindow.Options.Models.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow.Initializer.Models;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Initializer.Models;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData.Initializer.Models;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using SullyTech.Extensions.Enum;
+using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
+using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.WindowShowOptions;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.WindowShowOptions.Interfaces;
 
 namespace Application.Client;
 
@@ -90,7 +84,6 @@ public partial class App
 
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
-        serviceCollection.AddContentPresenterService();
         serviceCollection.AddNavigationWindowService();
         serviceCollection.AddDialogWindowService();
 
@@ -110,6 +103,8 @@ public partial class App
 
         ConfigureDataBindingErrorListener();
         Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
+        TaskScheduler.UnobservedTaskException += UnobservedTaskException;
+        
 
         ConnectToChatHub();
 
@@ -153,6 +148,36 @@ public partial class App
         }
     }
 
+    private void UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs eventArgs)
+    {
+        Current.Dispatcher.BeginInvoke(() =>
+        {
+            LogUnhandledException(eventArgs.Exception);
+
+            if (eventArgs.Exception.InnerExceptions.Any())
+            {
+                Exception exception = eventArgs.Exception.InnerExceptions.First();
+
+                if (exception is HubException)
+                {
+                    ShowToastNotificationFromHubException();
+                }
+                else
+                {
+                    ShowExceptionDialogFromUnhandledException(eventArgs.Exception);
+
+                    Current.Shutdown();
+                }
+            }
+            else
+            {
+                ShowExceptionDialogFromUnhandledException(eventArgs.Exception);
+
+                Current.Shutdown();
+            }
+        });
+    }
+
     private async void LogUnhandledException(Exception exception)
     {
         ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
@@ -163,52 +188,43 @@ public partial class App
 
     private async void ShowToastNotificationFromHubException()
     {
-        await Current.Dispatcher.InvokeAsync(async () =>
+        IToastNotificationService toastNotificationService = _host.Services.GetRequiredService<IToastNotificationService>();
+        ShowNotificationOptions showNotificationOptions = new()
         {
-            IToastNotificationService toastNotificationService = _host.Services.GetRequiredService<IToastNotificationService>();
-            ShowNotificationOptions showNotificationOptions = new()
-            {
-                Title = "Application message",
-                Message = "An Internal Server Error has occurred! Please contact your system administrator!",
-                NotificationType = NotificationType.Error
-            };
+            Title = "Application message",
+            Message = "An Internal Server Error has occurred! Please contact your system administrator!",
+            NotificationType = NotificationType.Error
+        };
 
-            await toastNotificationService.ShowNotification(showNotificationOptions);
-        });
+        await toastNotificationService.ShowNotification(showNotificationOptions);
     }
 
     private async void ShowExceptionDialogFromUnhandledException(Exception exception)
     {
         IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
 
-        IDialogWindowShowDialogOptionsModel showDialogOptions = new DialogWindowShowDialogOptionsModel<ExceptionDialogWindow, ExceptionDialogWindowViewModel, ExceptionDialogWindowViewModelInitializerModel>
+        IDialogWindowShowOptions showDialogOptions = new DialogWindowShowOptions<ExceptionDialogWindow, ExceptionDialogWindowViewModel>
         {
-            WindowViewModelInitializerModel = new ExceptionDialogWindowViewModelInitializerModel
+            WindowSettingsViewModelInitializerModel = new ExceptionDialogWindowSettingsViewModelInitializerModel
             {
-                WindowSettings = new ExceptionDialogWindowSettingsViewModelInitializerModel
-                {
                     Title = "Unexpected application error"
-                }
             }
         };
 
-        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<ExceptionDialogViewModel, ExceptionDialogViewModelInitializerModel>
+        IPresenterLoadOptions contentPresenterLoadOptions = new PresenterLoadOptions<ExceptionDialogViewModel>
         {
-            ContentPresenterViewModelInitializerModel = new ExceptionDialogViewModelInitializerModel
+            PresenterDataViewModelInitializerModel = new ExceptionDialogViewDataViewModelInitializerModel
             {
-                ViewDataInitializerModel = new ExceptionDialogViewDataViewModelInitializerModel
-                {
-                    Message = exception.Message,
-                    Type = exception.GetType(),
-                    StackTrace = exception.StackTrace,
-                    InnerException = exception.InnerException
-                }
+                Message = exception.Message,
+                Type = exception.GetType(),
+                StackTrace = exception.StackTrace,
+                InnerException = exception.InnerException
             }
         };
 
         await dialogWindowService.ShowDialogAsync<ExceptionDialogWindowResult>(showDialogOptions, contentPresenterLoadOptions);
     }
-    
+
     private async void ConnectToChatHub()
     {
         IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();
@@ -220,26 +236,18 @@ public partial class App
     {
         INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
 
-        INavigationWindowShowOptionsModel windowOptions = new NavigationWindowShowOptionsModel<MainWindow, MainWindowViewModel, MainWindowViewModelInitializerModel>
+        INavigationWindowShowOptions windowOptions = new NavigationWindowShowOptions<MainWindow, MainWindowViewModel>
         {
-            WindowViewModelInitializerModel = new MainWindowViewModelInitializerModel
+            WindowSettingsViewModelInitializerModel = new MainWindowSettingsViewModelInitializerModel
             {
-                WindowSettings = new MainWindowSettingsViewModelInitializerModel
-                {
-                    Height = 750,
-                    Width = 450
-                }
+                Title = "SignalR Chat Example",
+                Height = 750,
+                Width = 450
             }
         };
 
-        IContentPresenterLoadOptions contentPresenterLoadOptions = new ContentPresenterLoadOptions<SignInViewModel, SignInViewModelInitializerModel>
-        {
-            ContentPresenterViewModelInitializerModel = new SignInViewModelInitializerModel
-            {
-                ViewDataInitializerModel = new SignInViewDataViewModelInitializerModel()
-            }
-        };
+        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<SignInViewModel>();
 
-        await navigationWindowService.ShowAsync(windowOptions, contentPresenterLoadOptions);
+        await navigationWindowService.ShowAsync(windowOptions, presenterLoadOptions);
     }
 }

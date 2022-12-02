@@ -1,9 +1,9 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData;
+﻿using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.PresenterData;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.ViewData;
 
-public class MessageBoxViewDataViewModel : ContentPresenterViewDataViewModel
+public class MessageBoxViewDataViewModel : PresenterDataViewModel
 {
     private string _message = string.Empty;
     public string Message
@@ -17,9 +17,7 @@ public class MessageBoxViewDataViewModel : ContentPresenterViewDataViewModel
 
         set
         {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(Message));
             _message = value;
-
             OnPropertyChanged();
         }
     }

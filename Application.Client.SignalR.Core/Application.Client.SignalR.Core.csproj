@@ -11,8 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App.Core.Extensions\App.Core.Extensions.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj" />
+    <ProjectReference Include="..\SullyTech.Extensions\SullyTech.Extensions.csproj" />
+    <ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
   </ItemGroup>
 
   <ItemGroup>

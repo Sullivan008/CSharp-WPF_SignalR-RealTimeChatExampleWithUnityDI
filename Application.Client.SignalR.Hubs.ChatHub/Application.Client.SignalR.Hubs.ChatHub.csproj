@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Application.Client.SignalR.Core\Application.Client.SignalR.Core.csproj" />
     <ProjectReference Include="..\Application.Web.SignalR.Hubs.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj" />
+    <ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
   </ItemGroup>
 
 </Project>

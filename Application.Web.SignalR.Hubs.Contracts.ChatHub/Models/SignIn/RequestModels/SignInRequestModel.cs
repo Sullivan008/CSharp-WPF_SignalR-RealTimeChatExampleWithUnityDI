@@ -1,5 +1,5 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Web.SignalR.Core.Hubs.Contracts.Models.RequestModels;
+﻿using Application.Web.SignalR.Core.Hubs.Contracts.Models.RequestModels;
+using SullyTech.Guard;
 
 namespace Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
 

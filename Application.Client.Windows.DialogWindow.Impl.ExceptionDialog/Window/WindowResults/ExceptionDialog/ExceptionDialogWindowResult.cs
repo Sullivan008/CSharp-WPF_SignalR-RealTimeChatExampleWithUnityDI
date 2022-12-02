@@ -1,10 +1,10 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.Windows.DialogWindow.Core.Models.CustomDialogWindowResult;
-using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog.Enums;
+﻿using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog.Enums;
+using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Dialog.Result.Interfaces.DialogResult;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog;
 
-public class ExceptionDialogWindowResult : CustomDialogWindowResult
+public class ExceptionDialogWindowResult : IDialogResult
 {
     private readonly ExceptionDialogResult? _exceptionDialogResult;
     public ExceptionDialogResult ExceptionDialogResult

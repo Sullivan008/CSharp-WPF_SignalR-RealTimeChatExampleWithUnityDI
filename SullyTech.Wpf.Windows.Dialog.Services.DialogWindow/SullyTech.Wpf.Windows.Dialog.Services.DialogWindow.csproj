@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Windows.Dialog.Services.DialogWindow</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window\SullyTech.Wpf.Windows.Dialog.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow\SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Services.Window\SullyTech.Wpf.Windows.Core.Services.Window.csproj" />
+	</ItemGroup>
+
+</Project>

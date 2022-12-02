@@ -1,11 +1,11 @@
-﻿using Application.Client.Windows.Core.Commands.Abstractions;
-using Application.Client.Windows.DialogWindow.Core.Window.Interfaces;
-using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog;
+﻿using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.WindowResults.ExceptionDialog.Enums;
+using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Dialog.Window.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.ViewModels.ExceptionDialogWindow.Commands;
 
-internal class CloseWindowCommand : AsyncWindowCommand<ExceptionDialogWindowViewModel, IDialogWindow>
+internal class CloseWindowCommand : AsyncCommand<ExceptionDialogWindowViewModel, IDialogWindow>
 {
     public CloseWindowCommand(ExceptionDialogWindowViewModel callerViewModel) : base(callerViewModel)
     { }
@@ -14,7 +14,7 @@ internal class CloseWindowCommand : AsyncWindowCommand<ExceptionDialogWindowView
     {
         if (window.DialogResult.HasValue == false)
         {
-            CallerViewModel.CustomDialogResult = new ExceptionDialogWindowResult { ExceptionDialogResult = ExceptionDialogResult.None };
+            CallerViewModel.DialogResult = new ExceptionDialogWindowResult { ExceptionDialogResult = ExceptionDialogResult.None };
             window.DialogResult = false;
         }
 

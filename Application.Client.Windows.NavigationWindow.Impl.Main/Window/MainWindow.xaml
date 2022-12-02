@@ -3,15 +3,15 @@
                          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                          xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
-                         xmlns:windowBehaviors="clr-namespace:Application.Client.Windows.Core.Window.Behaviors;assembly=Application.Client.Windows.Core"
-                         xmlns:window="clr-namespace:Application.Client.Windows.NavigationWindow.Core.Window;assembly=Application.Client.Windows.NavigationWindow.Core"
+                         xmlns:window="clr-namespace:SullyTech.Wpf.Windows.Navigation.Window;assembly=SullyTech.Wpf.Windows.Navigation.Window"
+                         xmlns:dragMoveBeahvior="clr-namespace:SullyTech.Wpf.Windows.Core.Behaviors.DragMove;assembly=SullyTech.Wpf.Windows.Core.Behaviors"
                          WindowStyle="None"
                          ResizeMode="NoResize"
                          Background="{x:Null}"
-                         Top="{Binding WindowSettings.Top, Mode=TwoWay}" 
-                         Left="{Binding WindowSettings.Left, Mode=TwoWay}" 
-                         Width="{Binding WindowSettings.Width, Mode=TwoWay}"
-                         Height="{Binding WindowSettings.Height, Mode=TwoWay}" 
+                         Top="{Binding Settings.Top, Mode=TwoWay}" 
+                         Left="{Binding Settings.Left, Mode=TwoWay}" 
+                         Width="{Binding Settings.Width, Mode=TwoWay}"
+                         Height="{Binding Settings.Height, Mode=TwoWay}" 
                          AllowsTransparency="True"
                          TextElement.Foreground="{DynamicResource MaterialDesignBody}">
     <behaviors:Interaction.Triggers>
@@ -21,11 +21,11 @@
     </behaviors:Interaction.Triggers>
 
     <behaviors:Interaction.Behaviors>
-        <windowBehaviors:DragMoveBehavior />
+        <dragMoveBeahvior:DragMoveBehavior />
     </behaviors:Interaction.Behaviors>
 
     <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}"
                          Margin="25">
-        <ContentControl Content="{Binding ContentPresenter}"/>
+        <ContentControl Content="{Binding Presenter}"/>
     </materialDesign:Card>
 </window:NavigationWindow>

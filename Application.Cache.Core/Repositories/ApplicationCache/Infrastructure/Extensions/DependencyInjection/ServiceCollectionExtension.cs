@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using App.Core.Extensions.Implementation.Enumerable;
 using Application.Cache.Core.Repositories.ApplicationCache.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using SullyTech.Extensions.Enumerable;
 
 namespace Application.Cache.Core.Repositories.ApplicationCache.Infrastructure.Extensions.DependencyInjection;
 

@@ -1,8 +1,8 @@
-﻿using Application.Client.Windows.Core.Window.Extensions;
+﻿using SullyTech.Wpf.Windows.Core.Extensions.Window;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window;
 
-public partial class MessageBoxWindow : DialogWindow.Core.Window.DialogWindow
+public partial class MessageBoxWindow : SullyTech.Wpf.Windows.Dialog.Window.DialogWindow
 {
     public MessageBoxWindow()
     {

@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel;
-using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData;
 using FluentValidation;
 using FluentValidation.Results;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.PresenterData;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 
-public class SignInViewDataViewModel : ContentPresenterViewDataViewModel, IDataErrorInfo
+public class SignInViewDataViewModel : PresenterDataViewModel, IDataErrorInfo
 {
     private readonly IValidator<SignInViewDataViewModel> _validator;
 

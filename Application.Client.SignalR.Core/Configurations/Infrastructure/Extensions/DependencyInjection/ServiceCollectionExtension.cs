@@ -1,9 +1,9 @@
-﻿using App.Core.Extensions.Implementation.Enum;
-using App.Core.Guard.Implementation;
-using Application.Client.SignalR.Core.Configurations.Enums;
+﻿using Application.Client.SignalR.Core.Configurations.Enums;
 using Application.Client.SignalR.Core.Configurations.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SullyTech.Extensions.Enum;
+using SullyTech.Guard;
 
 namespace Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 

@@ -18,15 +18,15 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Application.Client.Notifications.ToastNotification\Application.Client.Notifications.ToastNotification.csproj" />
-	  <ProjectReference Include="..\Application.Client.SignalR.Core\Application.Client.SignalR.Core.csproj" />
-	  <ProjectReference Include="..\Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.Core\Application.Client.Windows.Core.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.DialogWindow.Core\Application.Client.Windows.DialogWindow.Core.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.DialogWindow.Impl.ExceptionDialog\Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.DialogWindow.Impl.MessageBox\Application.Client.Windows.DialogWindow.Impl.MessageBox.csproj" />
-	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow.Core\Application.Client.Windows.NavigationWindow.Core.csproj" />
 	  <ProjectReference Include="..\Application.Client.Windows.NavigationWindow.Impl.Main\Application.Client.Windows.NavigationWindow.Impl.Main.csproj" />
+	  <ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.csproj" />
 	</ItemGroup>
+
+
 
 	<ItemGroup>
 		<None Update="appsettings.json">

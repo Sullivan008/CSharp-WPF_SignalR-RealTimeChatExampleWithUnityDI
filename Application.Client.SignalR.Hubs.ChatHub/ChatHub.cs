@@ -1,6 +1,4 @@
-﻿using App.Core.Extensions.Implementation.Enum;
-using App.Core.Guard.Implementation;
-using Application.Client.SignalR.Core.Configurations.Models;
+﻿using Application.Client.SignalR.Core.Configurations.Models;
 using Application.Client.SignalR.Core.Hubs.Abstractions;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Enums;
@@ -9,6 +7,8 @@ using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SullyTech.Extensions.Enum;
+using SullyTech.Guard;
 
 namespace Application.Client.SignalR.Hubs.ChatHub;
 

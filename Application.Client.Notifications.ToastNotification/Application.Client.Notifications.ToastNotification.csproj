@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net6.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
@@ -9,6 +9,6 @@
 		<PackageReference Include="Notification.Wpf" Version="6.1.0.3" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\App.Core.Guard\App.Core.Guard.csproj" />
+	  <ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 	</ItemGroup>
 </Project>

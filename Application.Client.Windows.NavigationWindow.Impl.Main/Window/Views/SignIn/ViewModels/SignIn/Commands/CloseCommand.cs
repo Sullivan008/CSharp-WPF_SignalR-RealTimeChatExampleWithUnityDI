@@ -1,9 +1,9 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
-using Application.Client.Windows.NavigationWindow.Core.Services.CurrentNavigationWindow.Interfaces;
+﻿using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 
-internal class CloseCommand : AsyncContentPresenterCommand<SignInViewModel>
+internal class CloseCommand : AsyncCommand<SignInViewModel>
 {
     private readonly ICurrentNavigationWindowService _currentWindowService;
 
@@ -14,6 +14,6 @@ internal class CloseCommand : AsyncContentPresenterCommand<SignInViewModel>
 
     public override async Task ExecuteAsync()
     {
-        await _currentWindowService.CloseWindow();
+        await _currentWindowService.CloseWindowAsync();
     }
 }

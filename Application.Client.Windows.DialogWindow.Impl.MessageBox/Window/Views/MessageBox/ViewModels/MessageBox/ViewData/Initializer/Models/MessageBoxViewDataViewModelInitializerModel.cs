@@ -1,9 +1,9 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData.Initializers.Models;
+﻿using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.ViewData.Initializer.Models;
 
-public class MessageBoxViewDataViewModelInitializerModel : ContentPresenterViewDataViewModelInitializerModel
+public class MessageBoxViewDataViewModelInitializerModel : IPresenterDataViewModelInitializerModel
 {
     private readonly string _message = string.Empty;
     public string Message
@@ -15,11 +15,6 @@ public class MessageBoxViewDataViewModelInitializerModel : ContentPresenterViewD
             return _message;
         }
 
-        init
-        {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(Message));
-
-            _message = value;
-        }
+        init => _message = value;
     }
 }

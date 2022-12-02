@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Window\SullyTech.Wpf.Windows.Navigation.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers\SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Services.Window\SullyTech.Wpf.Windows.Core.Services.Window.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -91,20 +91,20 @@
                     <StackPanel>
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Exception message" />
-                        <TextBlock Text="{Binding ViewData.Message}"
+                        <TextBlock Text="{Binding Data.Message}"
                                    TextWrapping="Wrap" />
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Exception type" />
                         <TextBlock Style="{StaticResource Content}"
-                                   Text="{Binding ViewData.Type}" />
+                                   Text="{Binding Data.Type}" />
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Call stack" />
                         <TextBlock Style="{StaticResource Content}"
-                                   Text="{Binding ViewData.StackTrace}" />
+                                   Text="{Binding Data.StackTrace}" />
                         <TextBlock Style="{StaticResource Label}"
                                    Text="Inner exception" />
                         <TextBlock Style="{StaticResource Content}"
-                                   Text="{Binding ViewData.InnerException}" />
+                                   Text="{Binding Data.InnerException}" />
                     </StackPanel>
                 </ScrollViewer>
             </Expander>

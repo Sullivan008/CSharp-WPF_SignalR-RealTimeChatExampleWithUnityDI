@@ -1,6 +1,4 @@
-﻿using App.Core.Extensions.Implementation.Enum;
-using App.Core.Guard.Implementation;
-using Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extensions.DependencyInjection;
+﻿using Application.BusinessLogic.Modules.UserManagement.Infrastructure.Extensions.DependencyInjection;
 using Application.Cache.Core.Services.ApplicationCache.Infrastructure.Extensions.DependencyInjection;
 using Application.Web.Infrastructure.Environment.Enums;
 using Application.Web.SignalR.Hubs.ChatHub;
@@ -11,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using SullyTech.Extensions.Enum;
+using SullyTech.Guard;
 
 IHostBuilder hostBuilder = 
     Host.CreateDefaultBuilder(args)

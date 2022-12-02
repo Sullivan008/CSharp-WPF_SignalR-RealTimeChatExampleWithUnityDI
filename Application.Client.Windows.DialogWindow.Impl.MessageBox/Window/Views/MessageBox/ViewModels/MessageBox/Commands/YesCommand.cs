@@ -1,11 +1,11 @@
-﻿using Application.Client.Windows.Core.ContentPresenter.Commands.Abstractions;
-using Application.Client.Windows.DialogWindow.Core.Services.CurrentDialogWindow.Interfaces;
-using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox;
+﻿using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox;
 using Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.WindowResults.MessageBox.Enums;
+using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Impl.MessageBox.Window.Views.MessageBox.ViewModels.MessageBox.Commands;
 
-internal class YesCommand : AsyncContentPresenterCommand<MessageBoxViewModel>
+internal class YesCommand : AsyncCommand<MessageBoxViewModel>
 {
     private readonly ICurrentDialogWindowService _currentDialogWindowService;
 
@@ -18,7 +18,7 @@ internal class YesCommand : AsyncContentPresenterCommand<MessageBoxViewModel>
     {
         MessageBoxWindowResult windowResult = new() { MessageBoxResult = MessageBoxResult.Yes };
 
-        await _currentDialogWindowService.SetCustomDialogWindowResult(windowResult);
-        await _currentDialogWindowService.CloseWindow();
+        await _currentDialogWindowService.SetDialogResultAsync(windowResult);
+        await _currentDialogWindowService.CloseWindowAsync();
     }
 }

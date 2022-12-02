@@ -1,9 +1,9 @@
-﻿using App.Core.Guard.Implementation;
-using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenterViewData;
+﻿using SullyTech.Guard;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.PresenterData;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData;
 
-public class ExceptionDialogViewDataViewModel : ContentPresenterViewDataViewModel
+public class ExceptionDialogViewDataViewModel : PresenterDataViewModel
 {
     private string? _message;
     public string Message
@@ -17,9 +17,7 @@ public class ExceptionDialogViewDataViewModel : ContentPresenterViewDataViewMode
 
         set
         {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(Exception));
             _message = value;
-
             OnPropertyChanged();
         }
     }
@@ -36,9 +34,7 @@ public class ExceptionDialogViewDataViewModel : ContentPresenterViewDataViewMode
 
         set
         {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(Type));
             _type = value;
-
             OnPropertyChanged();
         }
     }
@@ -55,9 +51,7 @@ public class ExceptionDialogViewDataViewModel : ContentPresenterViewDataViewMode
 
         set
         {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(StackTrace));
             _stackTrace = value;
-
             OnPropertyChanged();
         }
     }
@@ -74,9 +68,7 @@ public class ExceptionDialogViewDataViewModel : ContentPresenterViewDataViewMode
 
         set
         {
-            Guard.ThrowIfNullOrWhitespace(value, nameof(InnerException));
             _innerException = value;
-
             OnPropertyChanged();
         }
     }

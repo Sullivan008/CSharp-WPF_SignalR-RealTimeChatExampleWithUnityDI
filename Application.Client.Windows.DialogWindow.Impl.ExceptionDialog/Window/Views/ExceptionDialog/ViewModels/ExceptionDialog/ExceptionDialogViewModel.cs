@@ -1,37 +1,26 @@
 ﻿using System.Windows.Input;
-using App.Core.Guard.Implementation;
-using Application.Client.Windows.Core.ContentPresenter.ViewModels.ContentPresenter;
-using Application.Client.Windows.Core.Services.CurrentWindowService.Interfaces;
-using Application.Client.Windows.DialogWindow.Core.Services.CurrentDialogWindow.Interfaces;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.Commands;
 using Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog.ViewData;
+using Microsoft.Extensions.Hosting;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Presenter;
+using SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.Interfaces;
 
 namespace Application.Client.Windows.DialogWindow.Impl.ExceptionDialog.Window.Views.ExceptionDialog.ViewModels.ExceptionDialog;
 
-public class ExceptionDialogViewModel : ContentPresenterViewModel<ExceptionDialogViewDataViewModel>
+public class ExceptionDialogViewModel : PresenterViewModel<ExceptionDialogViewDataViewModel>
 {
-    public ExceptionDialogViewModel(ExceptionDialogViewDataViewModel viewData, ICurrentWindowService currentWindowService) : base(viewData, currentWindowService)
-    { }
+    private readonly IHostEnvironment _hostEnvironment;
 
-    private bool? _isDeveloperMode;
-    public bool IsDeveloperMode
+    private readonly ICurrentDialogWindowService _currentWindowService;
+
+    public ExceptionDialogViewModel(ExceptionDialogViewDataViewModel viewData, IHostEnvironment hostEnvironment, ICurrentDialogWindowService currentWindowService) : base(viewData)
     {
-        get
-        {
-            Guard.ThrowIfNull(_isDeveloperMode, nameof(IsDeveloperMode));
-
-            return _isDeveloperMode!.Value;
-        }
-
-        set
-        {
-            Guard.ThrowIfNull(value, nameof(IsDeveloperMode));
-            _isDeveloperMode = value;
-
-            OnPropertyChanged();
-        }
+        _hostEnvironment = hostEnvironment;
+        _currentWindowService = currentWindowService;
     }
 
+    public bool IsDeveloperMode => _hostEnvironment.IsDevelopment();
+
     private ICommand? _okCommand;
-    public ICommand OkCommand => _okCommand ??= new OkCommand(this, (ICurrentDialogWindowService)CurrentWindowService);
+    public ICommand OkCommand => _okCommand ??= new OkCommand(this, _currentWindowService);
 }

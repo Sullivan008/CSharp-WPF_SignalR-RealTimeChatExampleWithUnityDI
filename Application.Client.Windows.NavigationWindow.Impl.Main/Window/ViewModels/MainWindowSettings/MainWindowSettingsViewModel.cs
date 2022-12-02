@@ -1,4 +1,4 @@
-﻿using Application.Client.Windows.NavigationWindow.Core.ViewModels.NavigationWindowSettings;
+﻿using SullyTech.Wpf.Windows.Navigation.ViewModels.NavigationWindowSettings;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings;
 

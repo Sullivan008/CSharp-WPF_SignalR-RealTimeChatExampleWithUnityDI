@@ -1,5 +1,5 @@
-﻿using App.Core.Guard.Implementation;
-using Microsoft.Extensions.Caching.Memory;
+﻿using Microsoft.Extensions.Caching.Memory;
+using SullyTech.Guard;
 
 namespace Application.Cache.Core.Services.ApplicationCache.Options.Models.SetCacheOptions.Abstractions;
 

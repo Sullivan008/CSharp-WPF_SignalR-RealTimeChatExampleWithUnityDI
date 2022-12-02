@@ -1,4 +1,4 @@
-﻿using App.Core.Guard.Implementation;
+﻿using SullyTech.Guard;
 
 namespace Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.GetConnectedUsers.ResponseModel.SubModels;
 
