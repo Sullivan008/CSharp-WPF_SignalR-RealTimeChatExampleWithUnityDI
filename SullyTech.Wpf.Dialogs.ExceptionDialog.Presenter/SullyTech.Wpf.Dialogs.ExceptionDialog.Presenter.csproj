@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow\SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Views\ExceptionDialog\Assets\icon-error.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Views\ExceptionDialog\Assets\icon-error.png" />
+	</ItemGroup>
+
+</Project>

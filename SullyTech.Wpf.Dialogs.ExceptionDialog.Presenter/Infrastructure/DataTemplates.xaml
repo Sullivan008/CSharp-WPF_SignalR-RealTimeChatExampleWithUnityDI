@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:exceptionDialogView="clr-namespace:SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog"
+                    xmlns:exceptionDialogViewModel="clr-namespace:SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.Presenter">
+    <DataTemplate DataType="{x:Type exceptionDialogViewModel:ExceptionDialogViewModel}">
+        <exceptionDialogView:ExceptionDialogView/>
+    </DataTemplate>
+</ResourceDictionary>

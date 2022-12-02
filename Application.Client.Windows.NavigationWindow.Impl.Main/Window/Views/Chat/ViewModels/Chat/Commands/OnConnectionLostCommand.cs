@@ -56,7 +56,7 @@ internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
 
     private async Task WindowReSize()
     {
-        await _currentWindowService.SetWindowWidthAsync(400);
+        await _currentWindowService.SetWindowWidthAsync(450);
         await _currentWindowService.SetWindowHeightAsync(750);
     }
 }

@@ -29,8 +29,6 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
 
     public override async Task ExecuteAsync()
     {
-        throw new Exception("kenyer");
-
         if (_chatHub.IsConnected == false)
         {
             await ShowChatServerIsNotAvailableToastMessage();
