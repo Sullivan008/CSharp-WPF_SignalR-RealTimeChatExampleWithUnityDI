@@ -7,7 +7,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Application.Client;component/Infrastructure/ThemePacks/MaterialThemePack.xaml"/>
 
                 <ResourceDictionary Source="pack://application:,,,/Application.Client.Windows.NavigationWindow.Impl.Main;component/Window/Views/DataTemplates.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Application.Client.Windows.DialogWindow.Impl.MessageBox;component/Window/Views/DataTemplates.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.MessageDialog.Presenter;component/Infrastructure/DataTemplates.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter;component/Infrastructure/DataTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

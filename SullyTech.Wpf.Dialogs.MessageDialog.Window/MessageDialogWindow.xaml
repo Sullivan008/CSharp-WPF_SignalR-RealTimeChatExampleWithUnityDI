@@ -1,0 +1,35 @@
+﻿<window:DialogWindow x:Class="SullyTech.Wpf.Dialogs.MessageDialog.Window.MessageDialogWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+                     xmlns:dragMoveBeahvior="clr-namespace:SullyTech.Wpf.Windows.Core.Behaviors.DragMove;assembly=SullyTech.Wpf.Windows.Core.Behaviors"
+                     xmlns:window="clr-namespace:SullyTech.Wpf.Windows.Dialog.Window;assembly=SullyTech.Wpf.Windows.Dialog.Window"
+                     WindowStyle="None"
+                     ResizeMode="NoResize"
+                     Background="{x:Null}"
+                     SizeToContent="WidthAndHeight"
+                     WindowStartupLocation="CenterScreen"
+                     AllowsTransparency="True"
+                     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+                     MinWidth="200" MaxWidth="1672"
+                     MinHeight="150"
+                     Title="{Binding Settings.Title}">
+
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Closing">
+            <behaviors:InvokeCommandAction Command="{Binding CloseWindowCommand}" 
+                                           CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type window:DialogWindow}}}"/>
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+
+    <behaviors:Interaction.Behaviors>
+        <dragMoveBeahvior:DragMoveBehavior />
+    </behaviors:Interaction.Behaviors>
+
+    <materialDesign:Card Margin="25"
+                         UniformCornerRadius="15"
+                         Background="{DynamicResource MaterialDesignPaper}">
+        <ContentControl Content="{Binding Presenter}"/>
+    </materialDesign:Card>
+</window:DialogWindow>

@@ -11,7 +11,6 @@ using Application.Client.Notifications.ToastNotification.Services.ToastNotificat
 using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
-using Application.Client.Windows.DialogWindow.Impl.MessageBox.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow;
@@ -32,6 +31,7 @@ using SullyTech.Wpf.Dialogs.ExceptionDialog.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.WindowSettings.Initializer.Models;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
@@ -90,7 +90,7 @@ public partial class App
         serviceCollection.AddToastNotificationService();
 
         serviceCollection.AddMainWindow();
-        serviceCollection.AddMessageBoxWindow();
+        serviceCollection.AddMessageDialog();
         serviceCollection.AddExceptionDialog();
 
         serviceCollection.AddHubConfigurations(configuration);

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.MessageDialog.Presenter</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Result\SullyTech.Wpf.Dialogs.MessageDialog.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow\SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Views\MessageDialog\Assets\icon-error.png" />
+		<None Remove="Views\MessageDialog\Assets\icon-information.png" />
+		<None Remove="Views\MessageDialog\Assets\icon-question.png" />
+		<None Remove="Views\MessageDialog\Assets\icon-warning.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Views\MessageDialog\Assets\icon-error.png" />
+		<Resource Include="Views\MessageDialog\Assets\icon-information.png" />
+		<Resource Include="Views\MessageDialog\Assets\icon-question.png" />
+		<Resource Include="Views\MessageDialog\Assets\icon-warning.png" />
+	</ItemGroup>
+
+</Project>
