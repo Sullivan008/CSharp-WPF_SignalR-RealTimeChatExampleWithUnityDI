@@ -92,7 +92,7 @@
                     HorizontalAlignment="Right" 
                     Background="#FFFFFF" BorderBrush="{x:Null}"
                     FontSize="13"
-                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    materialDesign:ElevationAssist.Elevation="Dp2"
                     materialDesign:ButtonAssist.CornerRadius="10"
                     Content="Ok"
                     Command="{Binding OkCommand}">
