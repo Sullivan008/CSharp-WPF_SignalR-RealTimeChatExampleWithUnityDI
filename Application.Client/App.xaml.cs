@@ -4,10 +4,6 @@ using System.Windows;
 using System.Windows.Threading;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
 using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
@@ -32,6 +28,10 @@ using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Infrastructure.Extensions.Dep
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.WindowSettings.Initializer.Models;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Notifications.Toast.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Notifications.Toast.Interfaces;
+using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
+using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
@@ -87,7 +87,7 @@ public partial class App
         serviceCollection.AddNavigationWindowService();
         serviceCollection.AddDialogWindowService();
 
-        serviceCollection.AddToastNotificationService();
+        serviceCollection.AddToastNotification(configuration);
 
         serviceCollection.AddMainWindow();
         serviceCollection.AddMessageDialog();
@@ -188,7 +188,7 @@ public partial class App
 
     private async void ShowToastNotificationFromHubException()
     {
-        IToastNotificationService toastNotificationService = _host.Services.GetRequiredService<IToastNotificationService>();
+        IToastNotification toastNotification = _host.Services.GetRequiredService<IToastNotification>();
         ShowNotificationOptions showNotificationOptions = new()
         {
             Title = "Application message",
@@ -196,7 +196,7 @@ public partial class App
             NotificationType = NotificationType.Error
         };
 
-        await toastNotificationService.ShowNotification(showNotificationOptions);
+        await toastNotification.ShowNotificationAsync(showNotificationOptions);
     }
 
     private async void ShowExceptionDialogFromUnhandledException(Exception exception)

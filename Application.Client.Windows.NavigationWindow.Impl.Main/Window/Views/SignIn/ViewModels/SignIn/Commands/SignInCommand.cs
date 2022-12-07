@@ -1,9 +1,9 @@
-﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
-using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
+using SullyTech.Wpf.Notifications.Toast.Interfaces;
+using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
+using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions;
@@ -15,16 +15,16 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
 {
     private readonly IChatHub _chatHub;
 
-    private readonly IToastNotificationService _toastNotificationService;
+    private readonly IToastNotification _toastNotification;
 
     private readonly ICurrentNavigationWindowService _currentWindowService;
 
-    public SignInCommand(SignInViewModel callerViewModel, IChatHub chatHub, IToastNotificationService toastNotificationService,
+    public SignInCommand(SignInViewModel callerViewModel, IChatHub chatHub, IToastNotification toastNotification,
         ICurrentNavigationWindowService currentWindowService) : base(callerViewModel)
     {
         _chatHub = chatHub;
         _currentWindowService = currentWindowService;
-        _toastNotificationService = toastNotificationService;
+        _toastNotification = toastNotification;
     }
 
     public override async Task ExecuteAsync()
@@ -53,7 +53,7 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
             NotificationType = NotificationType.Error
         };
 
-        await _toastNotificationService.ShowNotification(showNotificationOptions);
+        await _toastNotification.ShowNotificationAsync(showNotificationOptions);
     }
 
     private async Task SignInAsync()

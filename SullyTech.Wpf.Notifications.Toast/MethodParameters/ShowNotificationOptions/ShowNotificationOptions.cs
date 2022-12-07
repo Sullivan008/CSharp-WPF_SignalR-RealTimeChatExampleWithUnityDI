@@ -1,16 +1,15 @@
-﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
-using SullyTech.Guard;
+﻿using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 
-namespace Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
+namespace SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 
-public class ShowNotificationOptions
+public sealed class ShowNotificationOptions
 {
     private readonly string? _title;
     public string Title
     {
         get
         {
-            Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
+            Guard.Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
 
             return _title!;
         }
@@ -23,7 +22,7 @@ public class ShowNotificationOptions
     {
         get
         {
-            Guard.ThrowIfNullOrWhitespace(_title, nameof(Message));
+            Guard.Guard.ThrowIfNullOrWhitespace(_title, nameof(Message));
 
             return _message!;
         }
@@ -36,7 +35,7 @@ public class ShowNotificationOptions
     {
         get
         {
-            Guard.ThrowIfNull(_notificationType, nameof(NotificationType));
+            Guard.Guard.ThrowIfNull(_notificationType, nameof(NotificationType));
 
             return _notificationType!.Value;
         }

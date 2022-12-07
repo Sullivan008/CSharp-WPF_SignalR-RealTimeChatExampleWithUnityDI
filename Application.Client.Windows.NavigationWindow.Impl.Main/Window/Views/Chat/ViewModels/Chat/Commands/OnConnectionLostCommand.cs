@@ -1,7 +1,7 @@
-﻿using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Options.Models.Enums;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
+﻿using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
+using SullyTech.Wpf.Notifications.Toast.Interfaces;
+using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
+using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions;
@@ -11,15 +11,15 @@ namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Cha
 
 internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
 {
-    private readonly IToastNotificationService _toastNotificationService;
+    private readonly IToastNotification _toastNotification;
 
     private readonly ICurrentNavigationWindowService _currentWindowService;
 
-    public OnConnectionLostCommand(ChatViewModel callerViewModel, IToastNotificationService toastNotificationService,
+    public OnConnectionLostCommand(ChatViewModel callerViewModel, IToastNotification toastNotification,
         ICurrentNavigationWindowService currentWindowService) : base(callerViewModel)
     {
         _currentWindowService = currentWindowService;
-        _toastNotificationService = toastNotificationService;
+        _toastNotification = toastNotification;
     }
 
     public override async Task ExecuteAsync()
@@ -43,7 +43,7 @@ internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
             NotificationType = NotificationType.Error
         };
 
-        await _toastNotificationService.ShowNotification(showNotificationOptions);
+        await _toastNotification.ShowNotificationAsync(showNotificationOptions);
     }
 
     private async Task NavigateToSignInView()

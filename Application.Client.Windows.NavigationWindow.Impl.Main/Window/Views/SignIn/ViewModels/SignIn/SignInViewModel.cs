@@ -1,8 +1,8 @@
 ﻿using System.Windows.Input;
-using Application.Client.Notifications.ToastNotification.Services.ToastNotification.Interfaces;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
+using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Presenter;
 using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
 
@@ -12,15 +12,15 @@ public class SignInViewModel : PresenterViewModel<SignInViewDataViewModel>
 {
     private readonly IChatHub _chatHub;
 
-    private readonly IToastNotificationService _toastNotificationService;
+    private readonly IToastNotification _toastNotification;
 
     private readonly ICurrentNavigationWindowService _currentNavigationWindowService;
 
     public SignInViewModel(SignInViewDataViewModel viewData, ICurrentNavigationWindowService currentWindowService,
-        IChatHub chatHub, IToastNotificationService toastNotificationService) : base(viewData)
+        IChatHub chatHub, IToastNotification toastNotification) : base(viewData)
     {
         _chatHub = chatHub;
-        _toastNotificationService = toastNotificationService;
+        _toastNotification = toastNotification;
         _currentNavigationWindowService = currentWindowService;
     }
 
@@ -28,5 +28,5 @@ public class SignInViewModel : PresenterViewModel<SignInViewDataViewModel>
     public ICommand CloseCommand => _closeCommand ??= new CloseCommand(this, _currentNavigationWindowService);
 
     private ICommand? _signInCommand;
-    public ICommand SignInCommand => _signInCommand ??= new SignInCommand(this, _chatHub, _toastNotificationService, _currentNavigationWindowService);
+    public ICommand SignInCommand => _signInCommand ??= new SignInCommand(this, _chatHub, _toastNotification, _currentNavigationWindowService);
 }

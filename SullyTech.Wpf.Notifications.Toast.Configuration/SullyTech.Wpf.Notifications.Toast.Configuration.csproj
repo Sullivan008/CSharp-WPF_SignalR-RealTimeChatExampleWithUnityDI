@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Notifications.Toast.Configuration</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Notification.Wpf" Version="6.1.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Extensions\SullyTech.Extensions.csproj" />
+	</ItemGroup>
+
+</Project>
