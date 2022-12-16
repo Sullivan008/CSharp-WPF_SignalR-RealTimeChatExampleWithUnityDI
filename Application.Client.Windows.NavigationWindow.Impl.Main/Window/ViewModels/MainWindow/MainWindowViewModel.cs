@@ -6,7 +6,7 @@ namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModel
 
 public class MainWindowViewModel : NavigationWindowViewModel<MainWindowSettingsViewModel>
 {
-    public MainWindowViewModel()
+    public MainWindowViewModel(MainWindowSettingsViewModel settings) : base(settings)
     {
         CloseWindowCommand = new CloseCommand(this);
     }

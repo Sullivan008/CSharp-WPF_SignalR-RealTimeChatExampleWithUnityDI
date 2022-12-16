@@ -8,14 +8,39 @@ using SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.WindowSettings;
 namespace SullyTech.Wpf.Windows.Core.ViewModels.Window;
 
 public class WindowViewModel<TWindowSettingsViewModel> : IWindowViewModel, INotifyPropertyChanged
-    where TWindowSettingsViewModel : IWindowSettingsViewModel, new()
+    where TWindowSettingsViewModel : IWindowSettingsViewModel
 {
-    private TWindowSettingsViewModel? _settings = new();
+    public WindowViewModel(TWindowSettingsViewModel settings)
+    {
+        Settings = settings;
+    }
+
+    private string? _presenterWindowId;
+    public string PresenterWindowId
+    {
+        get
+        {
+            Guard.Guard.ThrowIfNullOrWhitespace(_presenterWindowId, nameof(PresenterWindowId));
+
+            return _presenterWindowId!;
+        }
+
+        set
+        {
+            Guard.Guard.ThrowIfNotNullOrNotWhitespace(_presenterWindowId, nameof(PresenterWindowId));
+            Guard.Guard.ThrowIfNullOrWhitespace(value, nameof(value));
+
+            _presenterWindowId = value;
+        }
+    }
+
+    private TWindowSettingsViewModel? _settings;
     public TWindowSettingsViewModel Settings
     {
         get
         {
             Guard.Guard.ThrowIfNull(_settings, nameof(Settings));
+
             return _settings!;
         } 
 

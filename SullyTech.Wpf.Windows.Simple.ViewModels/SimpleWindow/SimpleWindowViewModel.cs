@@ -6,4 +6,7 @@ namespace SullyTech.Wpf.Windows.Simple.ViewModels.SimpleWindow;
 
 public class SimpleWindowViewModel<TSimpleWindowSettingsViewModel> : WindowViewModel<TSimpleWindowSettingsViewModel>, ISimpleWindowViewModel
     where TSimpleWindowSettingsViewModel : ISimpleWindowSettingsViewModel, new()
-{ }
+{
+    public SimpleWindowViewModel(TSimpleWindowSettingsViewModel settings) : base(settings)
+    { }
+}

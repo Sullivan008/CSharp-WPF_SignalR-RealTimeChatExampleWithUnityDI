@@ -24,10 +24,11 @@
 	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Commands\SullyTech.Wpf.Windows.Core.Commands.csproj" />
 	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
 	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.csproj" />
-	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.csproj" />
 	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers\SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.csproj" />
 	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.ViewModels\SullyTech.Wpf.Windows.Navigation.ViewModels.csproj" />
 	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Window\SullyTech.Wpf.Windows.Navigation.Window.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Services.SimpleWindow\SullyTech.Wpf.Windows.Simple.Services.SimpleWindow.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

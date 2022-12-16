@@ -11,7 +11,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Window\SullyTech.Wpf.Windows.Simple.Window.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.ViewModels.Initializers\SullyTech.Wpf.Windows.Simple.ViewModels.Initializers.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Services.CurrentSimpleWindow\SullyTech.Wpf.Windows.Simple.Services.CurrentSimpleWindow.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Services.Window\SullyTech.Wpf.Windows.Core.Services.Window.csproj" />
 	</ItemGroup>
 

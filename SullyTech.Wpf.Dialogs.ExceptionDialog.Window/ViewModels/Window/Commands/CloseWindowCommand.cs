@@ -5,7 +5,7 @@ using SullyTech.Wpf.Windows.Dialog.Window.Interfaces;
 
 namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Window.Commands;
 
-internal class CloseWindowCommand : AsyncCommand<ExceptionDialogWindowViewModel, IDialogWindow>
+internal sealed class CloseWindowCommand : AsyncCommand<ExceptionDialogWindowViewModel, IDialogWindow>
 {
     public CloseWindowCommand(ExceptionDialogWindowViewModel callerViewModel) : base(callerViewModel)
     { }

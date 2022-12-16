@@ -5,6 +5,8 @@ namespace SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.Window;
 
 public interface IWindowViewModel
 {
+    public string PresenterWindowId { get; set; }
+
     public IWindowSettingsViewModel Settings { get; }
 
     public IPresenterViewModel Presenter { get; set; }

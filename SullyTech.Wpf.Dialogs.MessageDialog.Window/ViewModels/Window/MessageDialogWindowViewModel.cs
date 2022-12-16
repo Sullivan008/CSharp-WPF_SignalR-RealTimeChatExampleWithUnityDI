@@ -7,7 +7,7 @@ namespace SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Window;
 
 public sealed class MessageDialogWindowViewModel : DialogWindowViewModel<MessageDialogWindowSettingsViewModel, MessageDialogResult>
 {
-    public MessageDialogWindowViewModel()
+    public MessageDialogWindowViewModel(MessageDialogWindowSettingsViewModel settings) : base(settings)
     {
         CloseWindowCommand = new CloseWindowCommand(this);
     }

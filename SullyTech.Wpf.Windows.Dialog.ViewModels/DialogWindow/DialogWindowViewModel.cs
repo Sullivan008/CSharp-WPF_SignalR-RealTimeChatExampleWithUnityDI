@@ -9,6 +9,9 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TDialogResult
     where TDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel, new()
     where TDialogResult : IDialogResult
 {
+    public DialogWindowViewModel(TDialogWindowSettingsViewModel settings) : base(settings)
+    { }
+
     private TDialogResult? _dialogResult;
     public TDialogResult DialogResult
     {

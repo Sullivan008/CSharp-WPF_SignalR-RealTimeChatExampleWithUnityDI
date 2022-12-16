@@ -1,5 +1,4 @@
-﻿using Application.Client.SignalR.Core.Configurations.Models;
-using Application.Client.SignalR.Core.Hubs.Abstractions;
+﻿using Application.Client.SignalR.Hubs.ChatHub.Configuration.Models;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Enums;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.GetConnectedUsers.ResponseModel;
@@ -9,14 +8,15 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SullyTech.Extensions.Enum;
 using SullyTech.Guard;
+using SullyTech.SignalR.Client.Core.Hub.Abstractions;
 
 namespace Application.Client.SignalR.Hubs.ChatHub;
 
-public class ChatHub : SignalRHub<ChatHub>, IChatHub
+public class ChatHub : SignalRHub<ChatHub, ChatHubConfiguration>, IChatHub
 {
-    public ChatHub(ILogger<ChatHub> logger, IOptions<HubConfigurations> hubConfigurations) : base(logger, hubConfigurations)
+    public ChatHub(ILogger<ChatHub> logger, IOptions<ChatHubConfiguration> hubConfiguration) : base(logger, hubConfiguration)
     { }
-    
+
     protected override async Task OnReconnectingHubConnection(Exception? ex)
     {
         await base.OnReconnectingHubConnection(ex);
@@ -33,7 +33,7 @@ public class ChatHub : SignalRHub<ChatHub>, IChatHub
 
         await HubConnection.InvokeAsync(invokableMethodName!, requestModel);
     }
-    
+
     public async Task<GetConnectedUsersResponseModel> GetConnectedUsersAsync()
     {
         string? invokableMethodName = InvokableMethods.GetConnectedUsers.GetEnumMemberAttrValue();

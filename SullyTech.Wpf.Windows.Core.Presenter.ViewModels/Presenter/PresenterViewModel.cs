@@ -13,6 +13,25 @@ public class PresenterViewModel<TPresenterDataViewModel> : IPresenterViewModel, 
         Data = data;
     }
 
+    private string? _presenterWindowId;
+    public string PresenterWindowId
+    {
+        get
+        {
+            Guard.Guard.ThrowIfNullOrWhitespace(_presenterWindowId, nameof(PresenterWindowId));
+
+            return _presenterWindowId!;
+        }
+
+        set
+        {
+            Guard.Guard.ThrowIfNotNullOrNotWhitespace(_presenterWindowId, nameof(PresenterWindowId));
+            Guard.Guard.ThrowIfNullOrWhitespace(value, nameof(value));
+
+            _presenterWindowId = value;
+        }
+    }
+
     private TPresenterDataViewModel? _data;
     public TPresenterDataViewModel Data
     {

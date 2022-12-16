@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.Presenter.Interfaces;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.Presenter.Models.Interfaces;
@@ -6,7 +7,7 @@ using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.PresenterData
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.PresenterData;
-using SullyTech.Wpf.Windows.Core.Services.CurrentWindow.Interfaces;
+using SullyTech.Wpf.Windows.Core.Services.Window.Interfaces;
 using SullyTech.Wpf.Windows.Core.ViewModels.Initializers.Window.Models.Interfaces;
 using SullyTech.Wpf.Windows.Core.ViewModels.Initializers.WindowSettings.Models.Interfaces;
 using SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.Window;
@@ -15,7 +16,7 @@ using SullyTech.Wpf.Windows.Core.Window.Interfaces;
 
 namespace SullyTech.Wpf.Windows.Core.Services.Window.Abstractions;
 
-public abstract class WindowService
+public abstract class WindowService : IWindowService
 {
     protected readonly IServiceProvider ServiceProvider;
 
@@ -24,16 +25,47 @@ public abstract class WindowService
         ServiceProvider = serviceProvider;
     }
 
+    public virtual async Task CloseWindowAsync(IWindow window)
+    {
+        window.Close();
+        
+        await Task.CompletedTask;
+    }
+    public virtual async Task SetWindowWidthAsync(IWindow window, double width)
+    {
+        ((IWindowViewModel)window.DataContext).Settings.Width = width;
+
+        await Task.CompletedTask;
+    }
+
+    public virtual async Task SetWindowHeightAsync(IWindow window, double height)
+    {
+        ((IWindowViewModel)window.DataContext).Settings.Height = height;
+
+        await Task.CompletedTask;
+    }
+
+    public virtual async Task<IWindow> GetWindowAsync(string windowId)
+    {
+        IWindow result = Application.Current.Windows.OfType<IWindow>()
+                                                    .Single(x => x.Id == windowId);
+
+        return await Task.FromResult(result);
+    }
+
     protected virtual IWindow CreateWindow(Type windowType)
     {
         return (IWindow)ServiceProvider.GetRequiredService(windowType);
     }
 
-    protected virtual IWindowViewModel CreateWindowViewModel(Type windowViewModelTtype)
+    protected virtual IWindowViewModel CreateWindowViewModel(IWindow window, Type windowViewModelType)
     {
-        return (IWindowViewModel)ServiceProvider.GetRequiredService(windowViewModelTtype);
+        IWindowViewModel windowViewModel = (IWindowViewModel)ServiceProvider.GetRequiredService(windowViewModelType);
+        windowViewModel.PresenterWindowId = window.Id;
+
+        return windowViewModel;
     }
-    
+
     protected virtual void InitializeWindowViewModel(IWindowViewModel windowViewModel, IWindowViewModelInitializerModel? windowViewModelInitializerModel)
     {
         if (windowViewModelInitializerModel is not null)
@@ -78,39 +110,12 @@ public abstract class WindowService
         }
     }
 
-    protected virtual ICurrentWindowService CreateCurrentWindowService(IWindow window)
+    protected virtual IPresenterViewModel CreatePresenterViewModel(IWindow window, Type presenterViewModelType)
     {
-        Type windowType = window.GetType();
-        Type currentWindowServiceFactoryType = typeof(Func<,>).MakeGenericType(windowType, CurrentWindowServiceType);
-
-        MethodInfo currentWindowServiceFactoryInvokeMethodInfo = currentWindowServiceFactoryType
-            .GetMethods()
-            .Single(x => x.Name == nameof(MethodInfo.Invoke));
-
-        object currentWindowServiceFactory = ServiceProvider.GetRequiredService(currentWindowServiceFactoryType);
-
-        return (ICurrentWindowService)currentWindowServiceFactoryInvokeMethodInfo.Invoke(currentWindowServiceFactory, new object[] { window })!;
-    }
-
-    protected virtual IPresenterViewModel CreatePresenterViewModel(Type presenterViewModelType, ICurrentWindowService currentWindowService)
-    {
-        Type presenterViewModelFactoryType =
-            typeof(Func<,,>).MakeGenericType(typeof(IPresenterDataViewModel), typeof(ICurrentWindowService), presenterViewModelType);
-
-        Func<IPresenterDataViewModel, ICurrentWindowService, IPresenterViewModel> presenterViewModelFactory =
-            (Func<IPresenterDataViewModel, ICurrentWindowService, IPresenterViewModel>)ServiceProvider.GetRequiredService(presenterViewModelFactoryType);
-
-        IPresenterDataViewModel presenterViewDataViewModel = CreatePresenterDataViewModel(presenterViewModelType);
-        IPresenterViewModel presenterViewModel = presenterViewModelFactory(presenterViewDataViewModel, currentWindowService);
+        IPresenterViewModel presenterViewModel = (IPresenterViewModel)ServiceProvider.GetRequiredService(presenterViewModelType);
+        presenterViewModel.PresenterWindowId = window.Id;
 
         return presenterViewModel;
-    }
-
-    protected virtual IPresenterDataViewModel CreatePresenterDataViewModel(Type presenterViewModelType)
-    {
-        Type presenterDataViewModelType = presenterViewModelType.BaseType!.GenericTypeArguments.Single();
-
-        return (IPresenterDataViewModel)ServiceProvider.GetRequiredService(presenterDataViewModelType);
     }
 
     protected virtual void InitializePresenterViewModel(IPresenterViewModel presenterViewModel, IPresenterViewModelInitializerModel? presenterViewModelInitializerModel)
@@ -161,8 +166,6 @@ public abstract class WindowService
     {
         window.DataContext = windowViewModel;
     }
-
-    protected abstract Type CurrentWindowServiceType { get; }
 
     protected abstract Type WindowViewModelInitializerGenericType { get; }
 

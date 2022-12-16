@@ -3,9 +3,10 @@ using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
-using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
-using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions;
-using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfacess;
+using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.Commands;
 
@@ -13,13 +14,13 @@ internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
 {
     private readonly IToastNotification _toastNotification;
 
-    private readonly ICurrentNavigationWindowService _currentWindowService;
+    private readonly INavigationWindowService _navigationWindowService;
 
     public OnConnectionLostCommand(ChatViewModel callerViewModel, IToastNotification toastNotification,
-        ICurrentNavigationWindowService currentWindowService) : base(callerViewModel)
+        INavigationWindowService navigationWindowService) : base(callerViewModel)
     {
-        _currentWindowService = currentWindowService;
         _toastNotification = toastNotification;
+        _navigationWindowService = navigationWindowService;
     }
 
     public override async Task ExecuteAsync()
@@ -28,9 +29,10 @@ internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
         {
             await ShowConnectionLostMessage();
 
-            await NavigateToSignInView();
+            INavigationWindow presenterWindow = await GetPresenterWindow();
 
-            await WindowReSize();
+            await NavigateToSignInView(presenterWindow);
+            await WindowReSize(presenterWindow);
         });
     }
 
@@ -46,17 +48,21 @@ internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
         await _toastNotification.ShowNotificationAsync(showNotificationOptions);
     }
 
-    private async Task NavigateToSignInView()
+    private async Task<INavigationWindow> GetPresenterWindow()
+    {
+        return await _navigationWindowService.GetWindowAsync(CallerViewModel.PresenterWindowId);
+    }
+
+    private async Task NavigateToSignInView(INavigationWindow presenterWindow)
     {
         INavigateToOptions navigateOptions = new NavigateToOptions<SignInViewModel>();
 
-        await _currentWindowService.NavigateToAsync(navigateOptions);
-
+        await _navigationWindowService.NavigateToAsync(presenterWindow, navigateOptions);
     }
 
-    private async Task WindowReSize()
+    private async Task WindowReSize(INavigationWindow presenterWindow)
     {
-        await _currentWindowService.SetWindowWidthAsync(450);
-        await _currentWindowService.SetWindowHeightAsync(750);
+        await _navigationWindowService.SetWindowWidthAsync(presenterWindow, 450);
+        await _navigationWindowService.SetWindowHeightAsync(presenterWindow, 750);
     }
 }

@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Threading;
 using Application.Client.Infrastructure.Environment.Enums;
 using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
-using Application.Client.SignalR.Core.Configurations.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
@@ -66,8 +65,7 @@ public partial class App
             .ConfigureAppConfiguration(configurationBuilder =>
             {
                 configurationBuilder.SetBasePath(Directory.GetCurrentDirectory())
-                                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                                    .AddJsonFile("appsettings.signalr.json", optional: false, reloadOnChange: true);
+                                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             })
             .ConfigureServices((hostBuilderContext, serviceCollection) =>
             {
@@ -84,17 +82,16 @@ public partial class App
 
     private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
     {
-        serviceCollection.AddNavigationWindowService();
         serviceCollection.AddDialogWindowService();
-
+        serviceCollection.AddNavigationWindowService();
+        
         serviceCollection.AddToastNotification(configuration);
 
         serviceCollection.AddMainWindow();
         serviceCollection.AddMessageDialog();
         serviceCollection.AddExceptionDialog();
 
-        serviceCollection.AddHubConfigurations(configuration);
-        serviceCollection.AddChatHub();
+        serviceCollection.AddChatHub(configuration);
     }
 
     protected override async void OnStartup(StartupEventArgs eventArgs)
@@ -104,7 +101,6 @@ public partial class App
         ConfigureDataBindingErrorListener();
         Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
         TaskScheduler.UnobservedTaskException += UnobservedTaskException;
-
 
         ConnectToChatHub();
 

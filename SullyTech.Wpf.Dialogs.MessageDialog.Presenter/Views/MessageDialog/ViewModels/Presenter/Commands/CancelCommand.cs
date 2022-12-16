@@ -1,24 +1,32 @@
 ﻿using SullyTech.Wpf.Dialogs.MessageDialog.Result;
 using SullyTech.Wpf.Dialogs.MessageDialog.Result.Enums;
 using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
-using SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Window.Interfaces;
 
 namespace SullyTech.Wpf.Dialogs.MessageDialog.Presenter.Views.MessageDialog.ViewModels.Presenter.Commands;
 
 internal sealed class CancelCommand : AsyncCommand<MessageDialogViewModel>
 {
-    private readonly ICurrentDialogWindowService _currentDialogWindowService;
+    private readonly IDialogWindowService _dialogWindowService;
 
-    public CancelCommand(MessageDialogViewModel callerViewModel, ICurrentDialogWindowService currentDialogWindowService) : base(callerViewModel)
+    public CancelCommand(MessageDialogViewModel callerViewModel, IDialogWindowService dialogWindowService) : base(callerViewModel)
     {
-        _currentDialogWindowService = currentDialogWindowService;
+        _dialogWindowService = dialogWindowService;
     }
 
     public override async Task ExecuteAsync()
     {
+        IDialogWindow presenterWindow = await GetPresenterWindow();
+
         MessageDialogResult dialogResult = new() { ResultType = ResultType.Cancel };
 
-        await _currentDialogWindowService.SetDialogResultAsync(dialogResult);
-        await _currentDialogWindowService.CloseWindowAsync();
+        await _dialogWindowService.SetDialogResult(presenterWindow, dialogResult);
+        await _dialogWindowService.CloseWindowAsync(presenterWindow);
+    }
+
+    private async Task<IDialogWindow> GetPresenterWindow()
+    {
+        return await _dialogWindowService.GetWindowAsync(CallerViewModel.PresenterWindowId);
     }
 }

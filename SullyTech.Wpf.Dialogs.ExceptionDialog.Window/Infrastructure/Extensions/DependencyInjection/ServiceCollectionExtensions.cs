@@ -3,8 +3,8 @@ using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Infrastructure.Extensions.
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.WindowSettings;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.WindowSettings.Initializer.Models;
-using SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindowSettings.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindowSettings.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Dialog.Window.Infrastructure.Extensions.DependencyInjection;
 
@@ -15,9 +15,10 @@ public static class ServiceCollectionExtensions
     public static void AddExceptionDialog(this IServiceCollection @this)
     {
         @this.AddDialogWindow<ExceptionDialogWindow>();
-        @this.AddCurrentDialogWindowService<ExceptionDialogWindow>();
 
         @this.AddDialogWindowViewModel<ExceptionDialogWindowViewModel>();
+        @this.AddDialogWindowSettingsViewModel<ExceptionDialogWindowSettingsViewModel>();
+
         @this.AddDialogWindowSettingsViewModelInitializer<ExceptionDialogWindowSettingsViewModel, ExceptionDialogWindowSettingsViewModelInitializerModel>();
 
         @this.AddExceptionDialogPresenter();

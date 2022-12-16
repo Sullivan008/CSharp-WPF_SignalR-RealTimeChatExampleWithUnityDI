@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.Presenter.Commands;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.PresenterData;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Presenter;
-using SullyTech.Wpf.Windows.Dialog.Services.CurrentDialogWindow.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;
 
 namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.Presenter;
 
@@ -11,16 +11,16 @@ public sealed class ExceptionDialogViewModel : PresenterViewModel<ExceptionDialo
 {
     private readonly IHostEnvironment _hostEnvironment;
 
-    private readonly ICurrentDialogWindowService _currentWindowService;
+    private readonly IDialogWindowService _dialogWindowService;
 
-    public ExceptionDialogViewModel(ExceptionDialogDataViewModel data, IHostEnvironment hostEnvironment, ICurrentDialogWindowService currentWindowService) : base(data)
+    public ExceptionDialogViewModel(ExceptionDialogDataViewModel data, IHostEnvironment hostEnvironment, IDialogWindowService dialogWindowService) : base(data)
     {
         _hostEnvironment = hostEnvironment;
-        _currentWindowService = currentWindowService;
+        _dialogWindowService = dialogWindowService;
     }
 
     public bool IsDeveloperMode => _hostEnvironment.IsDevelopment();
 
     private ICommand? _okCommand;
-    public ICommand OkCommand => _okCommand ??= new OkCommand(this, _currentWindowService);
+    public ICommand OkCommand => _okCommand ??= new OkCommand(this, _dialogWindowService);
 }

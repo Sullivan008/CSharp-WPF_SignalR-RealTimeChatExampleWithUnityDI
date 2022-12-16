@@ -5,9 +5,10 @@ using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
-using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
-using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions;
-using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfacess;
+using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 
@@ -17,14 +18,14 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
 
     private readonly IToastNotification _toastNotification;
 
-    private readonly ICurrentNavigationWindowService _currentWindowService;
+    private readonly INavigationWindowService _navigationWindowService;
 
     public SignInCommand(SignInViewModel callerViewModel, IChatHub chatHub, IToastNotification toastNotification,
-        ICurrentNavigationWindowService currentWindowService) : base(callerViewModel)
+        INavigationWindowService navigationWindowService) : base(callerViewModel)
     {
         _chatHub = chatHub;
-        _currentWindowService = currentWindowService;
         _toastNotification = toastNotification;
+        _navigationWindowService = navigationWindowService;
     }
 
     public override async Task ExecuteAsync()
@@ -37,9 +38,11 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
 
         await SignInAsync();
 
-        await NavigateToChatView();
+        INavigationWindow presenterWindow = await GetPresenterWindow();
 
-        await WindowReSize();
+        await NavigateToChatView(presenterWindow);
+
+        await WindowReSize(presenterWindow);
     }
 
     public override Predicate<object?> CanExecute => _ => CallerViewModel.Data.IsValid;
@@ -66,16 +69,21 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
         await _chatHub.SignInAsync(requestModel);
     }
 
-    private async Task NavigateToChatView()
+    private async Task<INavigationWindow> GetPresenterWindow()
+    {
+        return await _navigationWindowService.GetWindowAsync(CallerViewModel.PresenterWindowId);
+    }
+
+    private async Task NavigateToChatView(INavigationWindow presenterWindow)
     {
         INavigateToOptions navigateOptions = new NavigateToOptions<ChatViewModel>();
 
-        await _currentWindowService.NavigateToAsync(navigateOptions);
+        await _navigationWindowService.NavigateToAsync(presenterWindow, navigateOptions);
     }
 
-    private async Task WindowReSize()
+    private async Task WindowReSize(INavigationWindow presenterWindow)
     {
-        await _currentWindowService.SetWindowWidthAsync(1000);
-        await _currentWindowService.SetWindowHeightAsync(250);
+        await _navigationWindowService.SetWindowWidthAsync(presenterWindow, 1000);
+        await _navigationWindowService.SetWindowHeightAsync(presenterWindow, 250);
     }
 }

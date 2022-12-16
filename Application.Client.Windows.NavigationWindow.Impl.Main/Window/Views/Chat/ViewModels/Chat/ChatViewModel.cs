@@ -4,7 +4,7 @@ using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.Vi
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.ViewData;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Presenter;
-using SullyTech.Wpf.Windows.Navigation.Services.CurrentNavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat;
 
@@ -14,14 +14,14 @@ public class ChatViewModel : PresenterViewModel<ChatViewDataViewModel>
 
     private readonly IToastNotification _toastNotification;
 
-    private readonly ICurrentNavigationWindowService _currentNavigationWindowService;
+    private readonly INavigationWindowService _navigationWindowService;
 
-    public ChatViewModel(ChatViewDataViewModel viewData, ICurrentNavigationWindowService currentWindowService,
+    public ChatViewModel(ChatViewDataViewModel viewData, INavigationWindowService navigationWindowService,
         IChatHub chatHub, IToastNotification toastNotification) : base(viewData)
     {
         _chatHub = chatHub;
         _toastNotification = toastNotification;
-        _currentNavigationWindowService = currentWindowService;
+        _navigationWindowService = navigationWindowService;
 
         InitChatHubEvents();
     }
@@ -44,5 +44,6 @@ public class ChatViewModel : PresenterViewModel<ChatViewDataViewModel>
 
     private ICommand? _onConnectionLostCommand;
     public ICommand OnConnectionLostCommand => _onConnectionLostCommand ??=
-        new OnConnectionLostCommand(this, _toastNotification, _currentNavigationWindowService);
+        new OnConnectionLostCommand(this, _toastNotification, _navigationWindowService);
+
 }
