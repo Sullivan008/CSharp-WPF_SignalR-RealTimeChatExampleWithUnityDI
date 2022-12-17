@@ -2,10 +2,8 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
-using Application.Client.Infrastructure.Environment.Enums;
-using Application.Client.Infrastructure.ErrorHandling.DataBinding.TraceListeners;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
-using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+using Application.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow;
@@ -17,8 +15,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
-using SullyTech.Extensions.Enum;
-using SullyTech.Guard;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.Presenter;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.PresenterData.Initializer.Models;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Result;
@@ -31,6 +27,7 @@ using SullyTech.Wpf.Notifications.Toast.Infrastructure.Extensions.DependencyInje
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
+using SullyTech.Wpf.TraceListeners.BindingError;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
@@ -42,7 +39,7 @@ using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.WindowShowOptions;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.WindowShowOptions.Interfaces;
 
-namespace Application.Client;
+namespace SullyTech.App.Client.Wpf;
 
 public partial class App
 {
@@ -53,14 +50,7 @@ public partial class App
         _host = new HostBuilder()
             .ConfigureHostConfiguration(configurationBuilder =>
             {
-                string? variable = EnvironmentVariableKey.AspNetCoreEnvironment.GetEnumMemberAttrValue();
-                Guard.ThrowIfNullOrWhitespace(variable, nameof(variable));
-
-                KeyValuePair<string, string> environment = new(HostDefaults.EnvironmentKey,
-                    Environment.GetEnvironmentVariable(variable!)!);
-
-                configurationBuilder.AddInMemoryCollection(new[] { environment })
-                                    .AddEnvironmentVariables();
+                configurationBuilder.AddEnvironmentVariables("DOTNET_");
             })
             .ConfigureAppConfiguration(configurationBuilder =>
             {
@@ -69,7 +59,16 @@ public partial class App
             })
             .ConfigureServices((hostBuilderContext, serviceCollection) =>
             {
-                ConfigureServices(hostBuilderContext.Configuration, serviceCollection);
+                serviceCollection.AddDialogWindowService();
+                serviceCollection.AddNavigationWindowService();
+
+                serviceCollection.AddToastNotification(hostBuilderContext.Configuration);
+
+                serviceCollection.AddMainWindow();
+                serviceCollection.AddMessageDialog();
+                serviceCollection.AddExceptionDialog();
+
+                serviceCollection.AddChatHub(hostBuilderContext.Configuration);
             })
             .ConfigureLogging((hostBuilderContext, loggingBuilder) =>
             {
@@ -77,32 +76,18 @@ public partial class App
                 loggingBuilder.SetMinimumLevel(LogLevel.Trace);
                 loggingBuilder.AddNLog(hostBuilderContext.Configuration);
             })
-            .Build();
-    }
-
-    private static void ConfigureServices(IConfiguration configuration, IServiceCollection serviceCollection)
-    {
-        serviceCollection.AddDialogWindowService();
-        serviceCollection.AddNavigationWindowService();
-        
-        serviceCollection.AddToastNotification(configuration);
-
-        serviceCollection.AddMainWindow();
-        serviceCollection.AddMessageDialog();
-        serviceCollection.AddExceptionDialog();
-
-        serviceCollection.AddChatHub(configuration);
+            .Build()
+            .ConnectToChatHub();
     }
 
     protected override async void OnStartup(StartupEventArgs eventArgs)
     {
         await _host.StartAsync();
 
-        ConfigureDataBindingErrorListener();
-        Current.DispatcherUnhandledException += AppDispatcherUnhandledException;
-        TaskScheduler.UnobservedTaskException += UnobservedTaskException;
+        InitBindingErrorTraceListener();
 
-        ConnectToChatHub();
+        Current.DispatcherUnhandledException += OnDispatcherUnhandledException;
+        TaskScheduler.UnobservedTaskException += OnUnobservedTaskException;
 
         ShowMainWindow();
 
@@ -119,32 +104,32 @@ public partial class App
         base.OnExit(eventArgs);
     }
 
-    private static void ConfigureDataBindingErrorListener()
+    private static void InitBindingErrorTraceListener()
     {
         PresentationTraceSources.Refresh();
         PresentationTraceSources.DataBindingSource.Switch.Level = SourceLevels.Error;
         PresentationTraceSources.DataBindingSource.Listeners.Add(new BindingErrorTraceListener());
     }
 
-    private void AppDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs eventArgs)
+    private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs eventArgs)
     {
         LogUnhandledException(eventArgs.Exception);
 
-        eventArgs.Handled = true;
-
         if (eventArgs.Exception is HubException)
         {
-            ShowToastNotificationFromHubException();
+            ShowHubExceptionNotification();
         }
         else
         {
-            ShowExceptionDialogFromUnhandledException(eventArgs.Exception);
+            ShowExceptionDialog(eventArgs.Exception);
 
             Current.Shutdown();
         }
+
+        eventArgs.Handled = true;
     }
 
-    private void UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs eventArgs)
+    private void OnUnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs eventArgs)
     {
         Current.Dispatcher.BeginInvoke(() =>
         {
@@ -156,33 +141,31 @@ public partial class App
 
                 if (exception is HubException)
                 {
-                    ShowToastNotificationFromHubException();
+                    ShowHubExceptionNotification();
                 }
                 else
                 {
-                    ShowExceptionDialogFromUnhandledException(eventArgs.Exception);
+                    ShowExceptionDialog(eventArgs.Exception);
 
                     Current.Shutdown();
                 }
             }
             else
             {
-                ShowExceptionDialogFromUnhandledException(eventArgs.Exception);
+                ShowExceptionDialog(eventArgs.Exception);
 
                 Current.Shutdown();
             }
         });
     }
 
-    private async void LogUnhandledException(Exception exception)
+    private void LogUnhandledException(Exception exception)
     {
         ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
         logger.LogError(exception, exception.Message);
-
-        await Task.CompletedTask;
     }
 
-    private async void ShowToastNotificationFromHubException()
+    private async void ShowHubExceptionNotification()
     {
         IToastNotification toastNotification = _host.Services.GetRequiredService<IToastNotification>();
         ShowNotificationOptions showNotificationOptions = new()
@@ -195,11 +178,11 @@ public partial class App
         await toastNotification.ShowNotificationAsync(showNotificationOptions);
     }
 
-    private async void ShowExceptionDialogFromUnhandledException(Exception exception)
+    private async void ShowExceptionDialog(Exception exception)
     {
         IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
 
-        IDialogWindowShowOptions showDialogOptions = new DialogWindowShowOptions<ExceptionDialogWindow, ExceptionDialogWindowViewModel>
+        IDialogWindowShowOptions windowShowOptions = new DialogWindowShowOptions<ExceptionDialogWindow, ExceptionDialogWindowViewModel>
         {
             WindowSettingsViewModelInitializerModel = new ExceptionDialogWindowSettingsViewModelInitializerModel
             {
@@ -207,7 +190,7 @@ public partial class App
             }
         };
 
-        IPresenterLoadOptions contentPresenterLoadOptions = new PresenterLoadOptions<ExceptionDialogViewModel>
+        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<ExceptionDialogViewModel>
         {
             PresenterDataViewModelInitializerModel = new ExceptionDialogDataViewModelInitializerModel
             {
@@ -218,25 +201,18 @@ public partial class App
             }
         };
 
-        await dialogWindowService.ShowDialogAsync<ExceptionDialogResult>(showDialogOptions, contentPresenterLoadOptions);
-    }
-
-    private async void ConnectToChatHub()
-    {
-        IChatHub chatHub = _host.Services.GetRequiredService<IChatHub>();
-
-        await chatHub.ConnectAsync();
+        await dialogWindowService.ShowDialogAsync<ExceptionDialogResult>(windowShowOptions, presenterLoadOptions);
     }
 
     private async void ShowMainWindow()
     {
         INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
 
-        INavigationWindowShowOptions windowOptions = new NavigationWindowShowOptions<MainWindow, MainWindowViewModel>
+        INavigationWindowShowOptions windowShowOptions = new NavigationWindowShowOptions<MainWindow, MainWindowViewModel>
         {
             WindowSettingsViewModelInitializerModel = new MainWindowSettingsViewModelInitializerModel
             {
-                Title = "SignalR Chat Example",
+                Title = "SullyTech - SignalR Chat Example",
                 Height = 750,
                 Width = 450
             }
@@ -244,6 +220,6 @@ public partial class App
 
         IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<SignInViewModel>();
 
-        await navigationWindowService.ShowAsync(windowOptions, presenterLoadOptions);
+        await navigationWindowService.ShowAsync(windowShowOptions, presenterLoadOptions);
     }
 }

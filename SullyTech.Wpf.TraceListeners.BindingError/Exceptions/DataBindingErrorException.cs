@@ -1,6 +1,6 @@
-﻿namespace Application.Client.Infrastructure.ErrorHandling.DataBinding.Exceptions;
+﻿namespace SullyTech.Wpf.TraceListeners.BindingError.Exceptions;
 
-public class DataBindingErrorException : Exception
+public sealed class DataBindingErrorException : Exception
 {
     public DataBindingErrorException()
     { }
