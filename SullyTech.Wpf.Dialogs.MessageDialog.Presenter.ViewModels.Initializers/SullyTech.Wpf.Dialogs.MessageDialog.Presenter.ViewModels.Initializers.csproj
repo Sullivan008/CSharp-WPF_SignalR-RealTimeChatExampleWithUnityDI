@@ -9,8 +9,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.csproj" />
-	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.csproj" />
 	</ItemGroup>
 
 </Project>

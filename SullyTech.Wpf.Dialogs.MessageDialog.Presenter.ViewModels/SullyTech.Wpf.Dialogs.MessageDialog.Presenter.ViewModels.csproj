@@ -16,9 +16,9 @@
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Result\SullyTech.Wpf.Dialogs.MessageDialog.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.csproj" />
 	</ItemGroup>
 
 </Project>

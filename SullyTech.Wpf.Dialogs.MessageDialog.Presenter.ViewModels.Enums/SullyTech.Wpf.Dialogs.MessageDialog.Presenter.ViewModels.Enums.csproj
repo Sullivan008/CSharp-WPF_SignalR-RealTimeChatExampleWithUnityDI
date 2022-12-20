@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="PresenterData\" />
+		<Folder Include="PresenterData\" />
 	</ItemGroup>
 
 </Project>
