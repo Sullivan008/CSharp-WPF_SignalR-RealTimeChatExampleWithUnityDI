@@ -13,8 +13,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.ViewModels.Initializers.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces\SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.ViewModels.Initializers.csproj" />
 	</ItemGroup>
 
 </Project>
