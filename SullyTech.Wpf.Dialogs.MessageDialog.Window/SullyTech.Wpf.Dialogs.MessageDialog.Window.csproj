@@ -21,9 +21,6 @@
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window\SullyTech.Wpf.Windows.Dialog.Window.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels\SullyTech.Wpf.Windows.Dialog.ViewModels.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Commands\SullyTech.Wpf.Windows.Core.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Behaviors\SullyTech.Wpf.Windows.Core.Behaviors.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Extensions\SullyTech.Wpf.Windows.Core.Extensions.csproj" />
 	</ItemGroup>

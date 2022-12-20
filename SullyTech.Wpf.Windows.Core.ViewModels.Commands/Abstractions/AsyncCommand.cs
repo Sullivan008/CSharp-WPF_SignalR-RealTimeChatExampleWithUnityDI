@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.Window;
 
-namespace SullyTech.Wpf.Windows.Core.Commands.Abstractions;
+namespace SullyTech.Wpf.Windows.Core.ViewModels.Commands.Abstractions;
 
 public abstract class AsyncCommand<TICallerWindowViewModel> : ICommand
     where TICallerWindowViewModel : IWindowViewModel

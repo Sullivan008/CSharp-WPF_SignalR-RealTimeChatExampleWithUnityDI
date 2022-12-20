@@ -13,7 +13,7 @@
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window\SullyTech.Wpf.Windows.Dialog.Window.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Commands\SullyTech.Wpf.Windows.Core.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.ViewModels.Commands\SullyTech.Wpf.Windows.Core.ViewModels.Commands.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
+﻿using SullyTech.Wpf.Windows.Core.ViewModels.Commands.Abstractions;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow.Commands;
 

@@ -2,7 +2,7 @@
 using SullyTech.Wpf.Dialogs.MessageDialog.Result.Enums;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.Window;
-using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.ViewModels.Commands.Abstractions;
 
 namespace SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands.Window;
 
