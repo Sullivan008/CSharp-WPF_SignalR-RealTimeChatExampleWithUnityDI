@@ -9,10 +9,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Window\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.csproj" />
 	</ItemGroup>

@@ -8,8 +8,4 @@
 		<Product>SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Enums</Product>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<Folder Include="PresenterData\" />
-	</ItemGroup>
-
 </Project>

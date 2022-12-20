@@ -7,9 +7,6 @@ namespace SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers.Inf
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddMessageDialogWindowViewModelInitializer(this IServiceCollection @this)
-    { }
-
     public static void AddMessageDialogWindowSettingsViewModelInitializer(this IServiceCollection @this)
     {
         @this.AddDialogWindowSettingsViewModelInitializer<IMessageDialogWindowSettingsViewModel, IMessageDialogWindowSettingsViewModelInitializerModel>();

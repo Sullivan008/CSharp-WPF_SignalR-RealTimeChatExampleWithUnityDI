@@ -7,7 +7,7 @@ using InitializerIconType = SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewMo
 
 namespace SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers.Presenter;
 
-internal sealed class MessageBoxViewModelInitializer : IPresenterViewModelInitializer<IMessageDialogViewModel, IMessageDialogViewModelInitializerModel>
+internal sealed class MessageDialogViewModelInitializer : IPresenterViewModelInitializer<IMessageDialogViewModel, IMessageDialogViewModelInitializerModel>
 {
     public void Initialize(IMessageDialogViewModel presenterViewModel, IMessageDialogViewModelInitializerModel presenterViewModelInitializerModel)
     {

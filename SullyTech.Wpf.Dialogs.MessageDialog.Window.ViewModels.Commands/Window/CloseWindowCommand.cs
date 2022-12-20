@@ -1,6 +1,6 @@
 ﻿using SullyTech.Wpf.Dialogs.MessageDialog.Result;
 using SullyTech.Wpf.Dialogs.MessageDialog.Result.Enums;
-using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
 

@@ -8,7 +8,7 @@ using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers.Pres
 using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Dialogs.MessageDialog.Result.Interfaces;
-using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers.WindowSettings.Models;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.WindowSettings;
