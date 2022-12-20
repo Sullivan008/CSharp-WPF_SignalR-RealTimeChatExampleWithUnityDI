@@ -3,7 +3,7 @@ using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
-using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfaces;

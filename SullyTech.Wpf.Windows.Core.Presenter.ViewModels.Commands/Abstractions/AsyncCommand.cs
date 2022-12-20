@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.Presenter;
 
-namespace SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+namespace SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
 
 public abstract class AsyncCommand<TICallerPresenterViewModel> : ICommand
     where TICallerPresenterViewModel : IPresenterViewModel

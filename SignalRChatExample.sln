@@ -130,9 +130,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.csproj", "{B348F6F1-890C-4AC7-B984-52C25693B193}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Presenter.Commands", "SullyTech.Wpf.Windows.Core.Presenter.Commands", "{E5963D61-A6A3-4A39-953F-69B717295882}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands", "{E5963D61-A6A3-4A39-953F-69B717295882}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Presenter.Commands", "SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj", "{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.csproj", "{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Services.Window", "SullyTech.Wpf.Windows.Core.Services.Window", "{06073E56-01B8-4D34-B475-A0AED3AEFA7E}"
 EndProject
@@ -708,7 +708,7 @@ Global
 		{1C990BE4-A401-4BBF-AC18-16971F509AB2} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
 		{15C15857-1EE6-44EA-AF3D-B7A7A7222133} = {BD8E1F04-98C2-43F3-A464-B5C285ED0693}
 		{B348F6F1-890C-4AC7-B984-52C25693B193} = {1C990BE4-A401-4BBF-AC18-16971F509AB2}
-		{E5963D61-A6A3-4A39-953F-69B717295882} = {E4571A7B-93B2-42B4-A2D2-F4474AA09C4D}
+		{E5963D61-A6A3-4A39-953F-69B717295882} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
 		{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892} = {E5963D61-A6A3-4A39-953F-69B717295882}
 		{06073E56-01B8-4D34-B475-A0AED3AEFA7E} = {31EC2C38-3B98-4DE1-A1EB-774AAF889129}
 		{1CDE3A04-4C4C-4283-BF64-A685B73FC8CA} = {06073E56-01B8-4D34-B475-A0AED3AEFA7E}

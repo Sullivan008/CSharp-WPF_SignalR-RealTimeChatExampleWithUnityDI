@@ -15,7 +15,7 @@ using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.WindowSet
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
-using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;

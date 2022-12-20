@@ -1,4 +1,4 @@
-﻿using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+﻿using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 

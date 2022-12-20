@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Wpf.Windows.Core.Presenter.Commands</Product>
+		<Product>SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands</Product>
 	</PropertyGroup>
 
 	<ItemGroup>

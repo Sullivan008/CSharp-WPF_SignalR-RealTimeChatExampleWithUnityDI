@@ -1,7 +1,7 @@
 ﻿using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Dialogs.MessageDialog.Result;
 using SullyTech.Wpf.Dialogs.MessageDialog.Result.Enums;
-using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.Window.Interfaces;
 
