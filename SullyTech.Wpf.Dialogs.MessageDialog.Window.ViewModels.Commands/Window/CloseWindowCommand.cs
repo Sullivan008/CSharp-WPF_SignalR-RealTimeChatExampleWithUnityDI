@@ -4,7 +4,7 @@ using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
 
-namespace SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands.Window;
+namespace SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands.Window;
 
 public sealed class CloseWindowCommand : AsyncCommand<IMessageDialogWindowViewModel, IMessageDialogWindow>
 {

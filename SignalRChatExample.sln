@@ -326,7 +326,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.Excep
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels", "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels", "{8DF448B7-F488-4927-8AB0-6132AE45781F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands", "{166DB307-32B5-4D67-9DC2-9A674F6666C1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands", "{166DB307-32B5-4D67-9DC2-9A674F6666C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels", "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.csproj", "{3FDA2AF3-F234-490E-B286-15BB6B40BBDF}"
 EndProject
@@ -338,7 +338,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Messa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.csproj", "{5A9353C4-9E10-4D9D-9612-C217FC1BA4DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands\SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands.csproj", "{2DEDF7BE-9F0A-4469-8BDB-CEAFEA0DED81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands.csproj", "{2DEDF7BE-9F0A-4469-8BDB-CEAFEA0DED81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces", "{DAB23CC4-C332-43E6-BC62-918916CE8EA7}"
 EndProject
@@ -805,7 +805,7 @@ Global
 		{54624D15-3D67-47DB-8C55-3BAD8BAA7D48} = {BE07A8C1-1F3F-4E0D-98E1-0AC653489C04}
 		{8282D22E-CD9C-4792-B0CF-F964FCEC717D} = {BAEF2809-BB8D-4A75-8E10-D368C664B4E1}
 		{8DF448B7-F488-4927-8AB0-6132AE45781F} = {7B554C1F-AC3C-4616-8F89-9D60ECED627D}
-		{166DB307-32B5-4D67-9DC2-9A674F6666C1} = {7B554C1F-AC3C-4616-8F89-9D60ECED627D}
+		{166DB307-32B5-4D67-9DC2-9A674F6666C1} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
 		{3FDA2AF3-F234-490E-B286-15BB6B40BBDF} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
 		{642A6E66-D7A9-4FFE-91F7-0190A255AB13} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
 		{A5DA0DD5-472A-4736-ACEF-FD29973D553A} = {642A6E66-D7A9-4FFE-91F7-0190A255AB13}

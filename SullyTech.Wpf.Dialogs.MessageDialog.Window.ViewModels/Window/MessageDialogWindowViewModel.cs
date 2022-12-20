@@ -1,5 +1,5 @@
 ﻿using SullyTech.Wpf.Dialogs.MessageDialog.Result.Interfaces;
-using SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands.Window;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands.Window;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindow;
