@@ -1,5 +1,5 @@
 ﻿using System.Windows.Input;
-using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.Commands.Presenter;
+using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Commands.Presenter;
 using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Enums.Presenter;
 using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.PresenterData;
