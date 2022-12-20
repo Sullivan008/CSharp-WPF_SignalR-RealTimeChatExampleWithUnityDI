@@ -8,12 +8,12 @@ namespace SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.NavigationWin
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddNavigationWindowSettingsViewModelInitializer<TNavigationWindowSettingsViewModel, TNavigationWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
-        where TNavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
-        where TNavigationWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
+    public static void AddNavigationWindowSettingsViewModelInitializer<TINavigationWindowSettingsViewModel, TINavigationWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
+        where TINavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
+        where TINavigationWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
     {
         Type implementationInterfaceType =
-            typeof(INavigationWindowSettingsViewModelInitializer<TNavigationWindowSettingsViewModel, TNavigationWindowSettingsViewModelInitializerModel>);
+            typeof(INavigationWindowSettingsViewModelInitializer<TINavigationWindowSettingsViewModel, TINavigationWindowSettingsViewModelInitializerModel>);
 
         Type implementationType =
             Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)

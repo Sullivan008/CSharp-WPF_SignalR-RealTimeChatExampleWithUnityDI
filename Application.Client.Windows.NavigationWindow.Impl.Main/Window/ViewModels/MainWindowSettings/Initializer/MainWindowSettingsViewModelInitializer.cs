@@ -3,9 +3,9 @@ using SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.NavigationWindowS
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer;
 
-public class MainWindowSettingsViewModelInitializer : INavigationWindowSettingsViewModelInitializer<MainWindowSettingsViewModel, MainWindowSettingsViewModelInitializerModel>
+internal class MainWindowSettingsViewModelInitializer : INavigationWindowSettingsViewModelInitializer<IMainWindowSettingsViewModel, IMainWindowSettingsViewModelInitializerModel>
 {
-    public void Initialize(MainWindowSettingsViewModel windowSettingsViewModel, MainWindowSettingsViewModelInitializerModel windowSettingsViewModelInitializerModel)
+    public void Initialize(IMainWindowSettingsViewModel windowSettingsViewModel, IMainWindowSettingsViewModelInitializerModel windowSettingsViewModelInitializerModel)
     {
         windowSettingsViewModel.Title = windowSettingsViewModelInitializerModel.Title;
         windowSettingsViewModel.Width = windowSettingsViewModelInitializerModel.Width;

@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel;
 using FluentValidation;
 using FluentValidation.Results;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.PresenterData;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 
-public class SignInViewDataViewModel : PresenterDataViewModel, IDataErrorInfo
+public class SignInViewDataViewModel : PresenterDataViewModel, IDataErrorInfo, ISignInDataViewModel
 {
     private readonly IValidator<SignInViewDataViewModel> _validator;
 
@@ -26,7 +27,7 @@ public class SignInViewDataViewModel : PresenterDataViewModel, IDataErrorInfo
         }
     }
 
-    internal bool IsValid => _validator.Validate(this).IsValid;
+    public bool IsValid => _validator.Validate(this).IsValid;
 
     public string this[string columnName]
     {
@@ -62,4 +63,11 @@ public class SignInViewDataViewModel : PresenterDataViewModel, IDataErrorInfo
             return string.Empty;
         }
     }
+}
+
+public interface ISignInDataViewModel : IPresenterDataViewModel
+{
+    public string NickName { get; set; }
+
+    public bool IsValid { get; }
 }

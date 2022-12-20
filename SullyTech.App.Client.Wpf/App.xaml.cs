@@ -7,21 +7,25 @@ using Application.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.Presenter;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.PresenterData.Initializer.Models;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Result;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers.PresenterData.Models;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.Presenter;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.PresenterData;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Interfaces;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Window;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.WindowSettings.Initializer.Models;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Initializers.WindowSettings.Models;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.Window;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Notifications.Toast.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
@@ -182,7 +186,7 @@ public partial class App
     {
         IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
 
-        IDialogWindowShowOptions windowShowOptions = new DialogWindowShowOptions<ExceptionDialogWindow, ExceptionDialogWindowViewModel>
+        IDialogWindowShowOptions windowShowOptions = new DialogWindowShowOptions<IExceptionDialogWindow, IExceptionDialogWindowViewModel, IExceptionDialogWindowSettingsViewModel>
         {
             WindowSettingsViewModelInitializerModel = new ExceptionDialogWindowSettingsViewModelInitializerModel
             {
@@ -190,7 +194,7 @@ public partial class App
             }
         };
 
-        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<ExceptionDialogViewModel>
+        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<IExceptionDialogViewModel, IExceptionDialogDataViewModel>
         {
             PresenterDataViewModelInitializerModel = new ExceptionDialogDataViewModelInitializerModel
             {
@@ -201,14 +205,14 @@ public partial class App
             }
         };
 
-        await dialogWindowService.ShowDialogAsync<ExceptionDialogResult>(windowShowOptions, presenterLoadOptions);
+        await dialogWindowService.ShowDialogAsync<IExceptionDialogResult>(windowShowOptions, presenterLoadOptions);
     }
 
     private async void ShowMainWindow()
     {
         INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
 
-        INavigationWindowShowOptions windowShowOptions = new NavigationWindowShowOptions<MainWindow, MainWindowViewModel>
+        INavigationWindowShowOptions windowShowOptions = new NavigationWindowShowOptions<IMainWindow, IMainWindowViewModel, IMainWindowSettingsViewModel>
         {
             WindowSettingsViewModelInitializerModel = new MainWindowSettingsViewModelInitializerModel
             {
@@ -218,7 +222,7 @@ public partial class App
             }
         };
 
-        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<SignInViewModel>();
+        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<ISignInViewModel, ISignInDataViewModel>();
 
         await navigationWindowService.ShowAsync(windowShowOptions, presenterLoadOptions);
     }

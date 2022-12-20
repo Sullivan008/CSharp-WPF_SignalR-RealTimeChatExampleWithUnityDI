@@ -1,9 +1,8 @@
 ﻿using SullyTech.Guard;
-using SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.NavigationWindowSettings.Models.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
 
-public class MainWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
+public class MainWindowSettingsViewModelInitializerModel : IMainWindowSettingsViewModelInitializerModel
 {
     private readonly string? _title;
     public string Title

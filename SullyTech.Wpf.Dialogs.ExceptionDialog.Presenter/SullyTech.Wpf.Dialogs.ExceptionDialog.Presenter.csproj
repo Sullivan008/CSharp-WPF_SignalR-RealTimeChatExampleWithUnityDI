@@ -10,6 +10,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Result.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.csproj" />
@@ -23,11 +26,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Remove="Views\ExceptionDialog\Assets\icon-error.png" />
+		<None Remove="Infrastructure\Assets\icon-error.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Resource Include="Views\ExceptionDialog\Assets\icon-error.png" />
+		<Resource Include="Infrastructure\Assets\icon-error.png" />
 	</ItemGroup>
 
 </Project>

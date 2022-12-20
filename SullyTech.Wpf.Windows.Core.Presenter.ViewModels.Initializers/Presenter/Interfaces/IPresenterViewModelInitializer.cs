@@ -3,9 +3,9 @@ using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.Presenter;
 
 namespace SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.Presenter.Interfaces;
 
-public interface IPresenterViewModelInitializer<in TPresenterViewModel, in TPresenterViewModelInitializerModel>
-    where TPresenterViewModel : IPresenterViewModel
-    where TPresenterViewModelInitializerModel : IPresenterViewModelInitializerModel
+public interface IPresenterViewModelInitializer<in TIPresenterViewModel, in TIPresenterViewModelInitializerModel>
+    where TIPresenterViewModel : IPresenterViewModel
+    where TIPresenterViewModelInitializerModel : IPresenterViewModelInitializerModel
 {
-    public void Initialize(TPresenterViewModel presenterViewModel, TPresenterViewModelInitializerModel presenterViewModelInitializerModel);
+    public void Initialize(TIPresenterViewModel presenterViewModel, TIPresenterViewModelInitializerModel presenterViewModelInitializerModel);
 }

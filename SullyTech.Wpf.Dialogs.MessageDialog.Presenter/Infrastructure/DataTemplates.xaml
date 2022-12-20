@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:messageDialogView="clr-namespace:SullyTech.Wpf.Dialogs.MessageDialog.Presenter.Views.MessageDialog"
-                    xmlns:messageDialogViewModel="clr-namespace:SullyTech.Wpf.Dialogs.MessageDialog.Presenter.Views.MessageDialog.ViewModels.Presenter">
+                    xmlns:messageDialogViewModel="clr-namespace:SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Presenter;assembly=SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels"
+                    xmlns:messageDialogView="clr-namespace:SullyTech.Wpf.Dialogs.MessageDialog.Presenter">
     <DataTemplate DataType="{x:Type messageDialogViewModel:MessageDialogViewModel}">
         <messageDialogView:MessageDialogView/>
     </DataTemplate>

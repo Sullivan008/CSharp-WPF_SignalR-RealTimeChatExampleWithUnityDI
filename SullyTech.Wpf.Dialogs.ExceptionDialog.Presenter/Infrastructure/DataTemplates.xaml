@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:exceptionDialogView="clr-namespace:SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog"
-                    xmlns:exceptionDialogViewModel="clr-namespace:SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Views.ExceptionDialog.ViewModels.Presenter">
+                    xmlns:exceptionDialogView="clr-namespace:SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter"
+                    xmlns:exceptionDialogViewModel="clr-namespace:SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Presenter;assembly=SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels">
     <DataTemplate DataType="{x:Type exceptionDialogViewModel:ExceptionDialogViewModel}">
         <exceptionDialogView:ExceptionDialogView/>
     </DataTemplate>

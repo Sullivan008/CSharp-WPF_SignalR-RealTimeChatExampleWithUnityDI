@@ -22,18 +22,18 @@ public static class MainWindowServiceCollectionExtension
 {
     public static IServiceCollection AddMainWindow(this IServiceCollection @this)
     {
-        @this.AddNavigationWindow<MainWindow>();
+        @this.AddNavigationWindow<IMainWindow, MainWindow>();
 
-        @this.AddNavigationWindowViewModel<MainWindowViewModel>();
-        @this.AddNavigationWindowSettingsViewModel<MainWindowSettingsViewModel>();
+        @this.AddNavigationWindowViewModel<IMainWindowViewModel, MainWindowViewModel>();
+        @this.AddNavigationWindowSettingsViewModel<IMainWindowSettingsViewModel, MainWindowSettingsViewModel>();
 
-        @this.AddNavigationWindowSettingsViewModelInitializer<MainWindowSettingsViewModel, MainWindowSettingsViewModelInitializerModel>();
+        @this.AddNavigationWindowSettingsViewModelInitializer<IMainWindowSettingsViewModel, IMainWindowSettingsViewModelInitializerModel>();
 
-        @this.AddPresenterViewModel<SignInViewModel>();
-        @this.AddPresenterDataViewModel<SignInViewDataViewModel>();
+        @this.AddPresenterViewModel<ISignInViewModel, SignInViewModel>();
+        @this.AddPresenterDataViewModel<ISignInDataViewModel, SignInViewDataViewModel>();
 
-        @this.AddPresenterViewModel<ChatViewModel>();
-        @this.AddPresenterDataViewModel<ChatViewDataViewModel>();
+        @this.AddPresenterViewModel<IChatViewModel, ChatViewModel>();
+        @this.AddPresenterDataViewModel<IChatDataViewModel, ChatViewDataViewModel>();
 
         @this.AddTransient<IValidator<SignInViewDataViewModel>, SignInViewDataViewModelValidator>();
 

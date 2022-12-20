@@ -4,8 +4,8 @@ using SullyTech.Wpf.Windows.Simple.ViewModels.Interfaces.SimpleWindow;
 
 namespace SullyTech.Wpf.Windows.Simple.ViewModels.Initializers.SimpleWindow.Interfaces;
 
-public interface ISimpleWindowViewModelInitializer<in TSimpleWindowViewModel, in TSimpleWindowViewModelInitializerModel> :
-    IWindowViewModelInitializer<TSimpleWindowViewModel, TSimpleWindowViewModelInitializerModel>
-        where TSimpleWindowViewModel : ISimpleWindowViewModel
-        where TSimpleWindowViewModelInitializerModel : ISimpleWindowViewModelInitializerModel
+public interface ISimpleWindowViewModelInitializer<in TISimpleWindowViewModel, in TISimpleWindowViewModelInitializerModel> :
+    IWindowViewModelInitializer<TISimpleWindowViewModel, TISimpleWindowViewModelInitializerModel>
+        where TISimpleWindowViewModel : ISimpleWindowViewModel
+        where TISimpleWindowViewModelInitializerModel : ISimpleWindowViewModelInitializerModel
 { }

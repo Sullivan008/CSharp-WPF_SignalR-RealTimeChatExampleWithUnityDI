@@ -9,6 +9,12 @@ public interface ISimpleWindowShowOptions
 
     internal Type WindowViewModelType { get; }
 
+    internal Type WindowSettingsViewModelType { get; }
+
+    internal Type? WindowViewModelInitializerModelType { get; }
+
+    internal Type? WindowSettingsViewModelInitializerModelType { get; }
+
     internal ISimpleWindowViewModelInitializerModel? WindowViewModelInitializerModel { get; }
 
     internal ISimpleWindowSettingsViewModelInitializerModel? WindowSettingsViewModelInitializerModel { get; }

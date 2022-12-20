@@ -8,12 +8,12 @@ namespace SullyTech.Wpf.Windows.Simple.ViewModels.Initializers.SimpleWindowSetti
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddSimpleWindowSettingsViewModelInitializer<TSimpleWindowSettingsViewModel, TSimpleWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
-        where TSimpleWindowSettingsViewModel : ISimpleWindowSettingsViewModel
-        where TSimpleWindowSettingsViewModelInitializerModel : ISimpleWindowSettingsViewModelInitializerModel
+    public static void AddSimpleWindowSettingsViewModelInitializer<TISimpleWindowSettingsViewModel, TISimpleWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
+        where TISimpleWindowSettingsViewModel : ISimpleWindowSettingsViewModel
+        where TISimpleWindowSettingsViewModelInitializerModel : ISimpleWindowSettingsViewModelInitializerModel
     {
         Type implementationInterfaceType =
-            typeof(ISimpleWindowSettingsViewModelInitializer<TSimpleWindowSettingsViewModel, TSimpleWindowSettingsViewModelInitializerModel>);
+            typeof(ISimpleWindowSettingsViewModelInitializer<TISimpleWindowSettingsViewModel, TISimpleWindowSettingsViewModelInitializerModel>);
 
         Type implementationType =
             Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)

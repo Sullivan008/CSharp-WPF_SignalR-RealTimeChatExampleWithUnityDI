@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.MessageDialog.Window.Commands</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Folder Include="WindowSettings\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Commands\SullyTech.Wpf.Windows.Core.Commands.csproj" />
+	</ItemGroup>
+
+</Project>

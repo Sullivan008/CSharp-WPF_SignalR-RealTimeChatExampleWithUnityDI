@@ -7,6 +7,12 @@ public interface IPresenterLoadOptions
 {
     public Type PresenterViewModelType { get; }
 
+    public Type PresenterDataViewModelType { get; }
+
+    public Type? PresenterViewModelInitializerModelType { get; }
+
+    public Type? PresenterDataViewModelInitializerModelType { get; }
+
     public IPresenterViewModelInitializerModel? PresenterViewModelInitializerModel { get; }
 
     public IPresenterDataViewModelInitializerModel? PresenterDataViewModelInitializerModel { get; }

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.MessageDialog.Presenter.Commands</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="PresenterData\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Result\SullyTech.Wpf.Dialogs.MessageDialog.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.csproj" />
+	</ItemGroup>
+
+</Project>

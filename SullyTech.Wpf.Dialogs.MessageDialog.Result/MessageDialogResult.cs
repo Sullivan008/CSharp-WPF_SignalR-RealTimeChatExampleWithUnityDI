@@ -1,9 +1,9 @@
 ﻿using SullyTech.Wpf.Dialogs.MessageDialog.Result.Enums;
-using SullyTech.Wpf.Windows.Dialog.Result.Interfaces.DialogResult;
+using SullyTech.Wpf.Dialogs.MessageDialog.Result.Interfaces;
 
 namespace SullyTech.Wpf.Dialogs.MessageDialog.Result;
 
-public sealed class MessageDialogResult : IDialogResult
+public sealed class MessageDialogResult : IMessageDialogResult
 {
     private readonly ResultType? _resultType;
     public ResultType ResultType

@@ -5,9 +5,10 @@ namespace SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindowSettings.Infrastru
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddDialogWindowSettingsViewModel<TDialogWindowSettingsViewModel>(this IServiceCollection @this)
-        where TDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel
+    public static void AddDialogWindowSettingsViewModel<TIDialogWindowSettingsViewModel, TDialogWindowSettingsViewModel>(this IServiceCollection @this)
+        where TDialogWindowSettingsViewModel : TIDialogWindowSettingsViewModel
+        where TIDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel
     {
-        @this.AddTransient(typeof(TDialogWindowSettingsViewModel));
+        @this.AddTransient(typeof(TIDialogWindowSettingsViewModel), typeof(TDialogWindowSettingsViewModel));
     }
 }

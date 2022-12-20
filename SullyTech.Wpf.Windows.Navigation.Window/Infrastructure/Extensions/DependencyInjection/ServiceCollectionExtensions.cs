@@ -5,9 +5,10 @@ namespace SullyTech.Wpf.Windows.Navigation.Window.Infrastructure.Extensions.Depe
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddNavigationWindow<TNavigationWindow>(this IServiceCollection @this)
-        where TNavigationWindow : INavigationWindow
+    public static void AddNavigationWindow<TINavigationWindow, TNavigationWindow>(this IServiceCollection @this)
+        where TNavigationWindow : TINavigationWindow
+        where TINavigationWindow : INavigationWindow
     {
-        @this.AddTransient(typeof(TNavigationWindow));
+        @this.AddTransient(typeof(TINavigationWindow), typeof(TNavigationWindow));
     }
 }

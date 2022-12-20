@@ -17,6 +17,9 @@
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Result.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Commands\SullyTech.Wpf.Windows.Core.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Behaviors\SullyTech.Wpf.Windows.Core.Behaviors.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Extensions\SullyTech.Wpf.Windows.Core.Extensions.csproj" />

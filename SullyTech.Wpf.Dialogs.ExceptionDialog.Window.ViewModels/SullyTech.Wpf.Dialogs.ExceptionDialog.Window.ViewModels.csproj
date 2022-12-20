@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Result.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Commands\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Commands.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels\SullyTech.Wpf.Windows.Dialog.ViewModels.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,9 +1,14 @@
-﻿namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window;
+﻿using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 
-public partial class MainWindow : SullyTech.Wpf.Windows.Navigation.Window.NavigationWindow
+namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window;
+
+public partial class MainWindow : SullyTech.Wpf.Windows.Navigation.Window.NavigationWindow, IMainWindow
 {
     public MainWindow()
     {
         InitializeComponent();
     }
 }
+
+public interface IMainWindow : INavigationWindow
+{ }

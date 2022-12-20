@@ -3,7 +3,7 @@ using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions;
 using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
 using SullyTech.Wpf.Windows.Core.Window.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfacess;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.WindowShowOptions.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.NavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.NavigationWindowSettings.Interfaces;
@@ -29,14 +29,17 @@ public sealed class NavigationWindowService : WindowService, INavigationWindowSe
         INavigationWindow window = (INavigationWindow)CreateWindow(windowShowOptions.WindowType);
         INavigationWindowViewModel windowViewModel = (INavigationWindowViewModel)CreateWindowViewModel(window, windowShowOptions.WindowViewModelType);
 
-        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelInitializerModel);
-        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelInitializerModel);
+        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType, windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
+        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType, windowShowOptions.WindowSettingsViewModelInitializerModel, windowShowOptions.WindowSettingsViewModelInitializerModelType);
 
         IPresenterViewModel presenterViewModel =
             CreatePresenterViewModel(window, presenterLoadOptions.PresenterViewModelType);
 
-        InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelInitializerModel);
-        InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelInitializerModel);
+        InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelType,
+            presenterLoadOptions.PresenterViewModelInitializerModel, presenterLoadOptions.PresenterViewModelInitializerModelType);
+
+        InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelType,
+            presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
 
         SetWindowPresenter(windowViewModel, presenterViewModel);
         SetWindowDataContext(window, windowViewModel);
@@ -50,8 +53,12 @@ public sealed class NavigationWindowService : WindowService, INavigationWindowSe
     {
         IPresenterViewModel presenterViewModel = CreatePresenterViewModel(window, navigateToOptions.PresenterViewModelType);
 
-        InitializePresenterViewModel(presenterViewModel, navigateToOptions.PresenterViewModelInitializerModel);
-        InitializePresenterDataViewModel(presenterViewModel.Data, navigateToOptions.PresenterDataViewModelInitializerModel);
+        InitializePresenterViewModel(presenterViewModel, navigateToOptions.PresenterViewModelType,
+            navigateToOptions.PresenterViewModelInitializerModel, navigateToOptions.PresenterViewModelInitializerModelType);
+
+        InitializePresenterDataViewModel(presenterViewModel.Data, navigateToOptions.PresenterDataViewModelType,
+            navigateToOptions.PresenterDataViewModelInitializerModel, navigateToOptions.PresenterDataViewModelInitializerModelType);
+
 
         SetWindowPresenter((INavigationWindowViewModel)window.DataContext, presenterViewModel);
 

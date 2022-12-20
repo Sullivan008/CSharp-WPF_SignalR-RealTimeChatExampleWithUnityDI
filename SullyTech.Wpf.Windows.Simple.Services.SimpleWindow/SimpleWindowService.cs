@@ -28,14 +28,17 @@ public sealed class SimpleWindowService : WindowService, ISimpleWindowService
         ISimpleWindow window = (ISimpleWindow)CreateWindow(windowShowOptions.WindowType);
         ISimpleWindowViewModel windowViewModel = (ISimpleWindowViewModel)CreateWindowViewModel(window, windowShowOptions.WindowViewModelType);
 
-        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelInitializerModel);
-        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelInitializerModel);
+        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType, windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
+        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType, windowShowOptions.WindowSettingsViewModelInitializerModel, windowShowOptions.WindowSettingsViewModelInitializerModelType);
 
         IPresenterViewModel presenterViewModel =
             CreatePresenterViewModel(window, presenterLoadOptions.PresenterViewModelType);
 
-        InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelInitializerModel);
-        InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelInitializerModel);
+        InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelType,
+            presenterLoadOptions.PresenterViewModelInitializerModel, presenterLoadOptions.PresenterViewModelInitializerModelType);
+
+        InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelType,
+            presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
 
         SetWindowPresenter(windowViewModel, presenterViewModel);
         SetWindowDataContext(window, windowViewModel);

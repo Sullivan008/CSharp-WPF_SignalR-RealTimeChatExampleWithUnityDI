@@ -7,10 +7,10 @@ using SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.WindowSettings;
 
 namespace SullyTech.Wpf.Windows.Core.ViewModels.Window;
 
-public class WindowViewModel<TWindowSettingsViewModel> : IWindowViewModel, INotifyPropertyChanged
-    where TWindowSettingsViewModel : IWindowSettingsViewModel
+public class WindowViewModel<TIWindowSettingsViewModel> : IWindowViewModel, INotifyPropertyChanged
+    where TIWindowSettingsViewModel : IWindowSettingsViewModel
 {
-    public WindowViewModel(TWindowSettingsViewModel settings)
+    public WindowViewModel(TIWindowSettingsViewModel settings)
     {
         Settings = settings;
     }
@@ -34,8 +34,8 @@ public class WindowViewModel<TWindowSettingsViewModel> : IWindowViewModel, INoti
         }
     }
 
-    private TWindowSettingsViewModel? _settings;
-    public TWindowSettingsViewModel Settings
+    private TIWindowSettingsViewModel? _settings;
+    public TIWindowSettingsViewModel Settings
     {
         get
         {

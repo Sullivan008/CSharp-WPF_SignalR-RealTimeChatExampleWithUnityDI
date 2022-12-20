@@ -4,9 +4,9 @@ using SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces.NavigationWindowSet
 
 namespace SullyTech.Wpf.Windows.Navigation.ViewModels.NavigationWindow;
 
-public class NavigationWindowViewModel<TNavigationWindowSettingsViewModel> : WindowViewModel<TNavigationWindowSettingsViewModel>, INavigationWindowViewModel
-    where TNavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
+public class NavigationWindowViewModel<TINavigationWindowSettingsViewModel> : WindowViewModel<TINavigationWindowSettingsViewModel>, INavigationWindowViewModel
+    where TINavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
 {
-    public NavigationWindowViewModel(TNavigationWindowSettingsViewModel settings) : base(settings)
+    public NavigationWindowViewModel(TINavigationWindowSettingsViewModel settings) : base(settings)
     { }
 }

@@ -9,6 +9,12 @@ public interface INavigationWindowShowOptions
 
     internal Type WindowViewModelType { get; }
 
+    internal Type WindowSettingsViewModelType { get; }
+
+    internal Type? WindowViewModelInitializerModelType { get; }
+
+    internal Type? WindowSettingsViewModelInitializerModelType { get; }
+
     internal INavigationWindowViewModelInitializerModel? WindowViewModelInitializerModel { get; }
 
     internal INavigationWindowSettingsViewModelInitializerModel? WindowSettingsViewModelInitializerModel { get; }

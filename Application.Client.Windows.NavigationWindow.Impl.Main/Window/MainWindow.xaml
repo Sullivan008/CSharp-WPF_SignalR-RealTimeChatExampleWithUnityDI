@@ -8,6 +8,7 @@
                          WindowStyle="None"
                          ResizeMode="NoResize"
                          Background="{x:Null}"
+                         Title="{Binding Settings.Title, Mode=OneWay}"
                          Top="{Binding Settings.Top, Mode=TwoWay}" 
                          Left="{Binding Settings.Left, Mode=TwoWay}" 
                          Width="{Binding Settings.Width, Mode=TwoWay}"

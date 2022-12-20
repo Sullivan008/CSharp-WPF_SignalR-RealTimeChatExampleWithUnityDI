@@ -1,14 +1,13 @@
 ﻿using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
-using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow.Commands;
 
-internal class CloseCommand : AsyncCommand<MainWindowViewModel, INavigationWindow>
+internal class CloseCommand : AsyncCommand<MainWindowViewModel, IMainWindow>
 {
     public CloseCommand(MainWindowViewModel callerViewModel) : base(callerViewModel)
     { }
 
-    public override async Task ExecuteAsync(INavigationWindow parameter)
+    public override async Task ExecuteAsync(IMainWindow parameter)
     {
         await Task.CompletedTask;
     }

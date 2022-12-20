@@ -10,9 +10,9 @@ public interface IDialogWindowService : IWindowService
 {
     public Task<IDialogWindow> GetWindowAsync(string windowId);
 
-    public Task<TDialogResult> ShowDialogAsync<TDialogResult>(IDialogWindowShowOptions windowShowOptions, IPresenterLoadOptions presenterLoadOptions)
-        where TDialogResult : IDialogResult;
+    public Task<TIDialogResult> ShowDialogAsync<TIDialogResult>(IDialogWindowShowOptions windowShowOptions, IPresenterLoadOptions presenterLoadOptions)
+        where TIDialogResult : IDialogResult;
 
-    public Task SetDialogResult<TDialogResult>(IDialogWindow window, TDialogResult dialogResult)
-        where TDialogResult : IDialogResult;
+    public Task SetDialogResult<TIDialogResult>(IDialogWindow window, TIDialogResult dialogResult)
+        where TIDialogResult : IDialogResult;
 }

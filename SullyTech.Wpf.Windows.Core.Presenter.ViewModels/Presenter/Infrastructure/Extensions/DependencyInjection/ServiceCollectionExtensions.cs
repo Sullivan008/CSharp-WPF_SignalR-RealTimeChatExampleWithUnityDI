@@ -5,9 +5,10 @@ namespace SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Presenter.Infrastructu
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddPresenterViewModel<TPresenterViewModel>(this IServiceCollection @this)
-        where TPresenterViewModel : IPresenterViewModel
+    public static void AddPresenterViewModel<TIPresenterViewModel, TPresenterViewModel>(this IServiceCollection @this)
+        where TPresenterViewModel : TIPresenterViewModel
+        where TIPresenterViewModel : IPresenterViewModel
     {
-        @this.AddTransient(typeof(TPresenterViewModel));
+        @this.AddTransient(typeof(TIPresenterViewModel), typeof(TPresenterViewModel));
     }
 }

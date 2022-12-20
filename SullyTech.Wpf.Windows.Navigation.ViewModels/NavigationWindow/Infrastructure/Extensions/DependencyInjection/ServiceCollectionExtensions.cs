@@ -5,9 +5,10 @@ namespace SullyTech.Wpf.Windows.Navigation.ViewModels.NavigationWindow.Infrastru
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddNavigationWindowViewModel<TNavigationWindowViewModel>(this IServiceCollection @this)
-        where TNavigationWindowViewModel : INavigationWindowViewModel
+    public static void AddNavigationWindowViewModel<TINavigationWindowViewModel, TNavigationWindowViewModel>(this IServiceCollection @this)
+        where TNavigationWindowViewModel : TINavigationWindowViewModel
+        where TINavigationWindowViewModel : INavigationWindowViewModel
     {
-        @this.AddTransient(typeof(TNavigationWindowViewModel));
+        @this.AddTransient(typeof(TINavigationWindowViewModel), typeof(TNavigationWindowViewModel));
     }
 }

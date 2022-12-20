@@ -13,6 +13,8 @@ public class PresenterViewModel<TPresenterDataViewModel> : IPresenterViewModel, 
         Data = data;
     }
 
+    IPresenterDataViewModel IPresenterViewModel.Data => Data;
+
     private string? _presenterWindowId;
     public string PresenterWindowId
     {
@@ -48,8 +50,6 @@ public class PresenterViewModel<TPresenterDataViewModel> : IPresenterViewModel, 
             OnPropertyChanged();
         }
     }
-
-    IPresenterDataViewModel IPresenterViewModel.Data => Data;
 
     public event PropertyChangedEventHandler? PropertyChanged;
     public void OnPropertyChanged([CallerMemberName] string? name = null)

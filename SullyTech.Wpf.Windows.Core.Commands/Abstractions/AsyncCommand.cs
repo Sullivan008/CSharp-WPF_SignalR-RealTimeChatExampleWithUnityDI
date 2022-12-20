@@ -3,14 +3,14 @@ using SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.Window;
 
 namespace SullyTech.Wpf.Windows.Core.Commands.Abstractions;
 
-public abstract class AsyncCommand<TCallerWindowViewModel> : ICommand
-    where TCallerWindowViewModel : IWindowViewModel
+public abstract class AsyncCommand<TICallerWindowViewModel> : ICommand
+    where TICallerWindowViewModel : IWindowViewModel
 {
     private bool _isExecuting;
 
-    protected readonly TCallerWindowViewModel CallerViewModel;
+    protected readonly TICallerWindowViewModel CallerViewModel;
 
-    protected AsyncCommand(TCallerWindowViewModel callerViewModel)
+    protected AsyncCommand(TICallerWindowViewModel callerViewModel)
     {
         Guard.Guard.ThrowIfNull(callerViewModel, nameof(callerViewModel));
         CallerViewModel = callerViewModel;
@@ -51,14 +51,14 @@ public abstract class AsyncCommand<TCallerWindowViewModel> : ICommand
     public virtual Predicate<object?>? CanExecute => default;
 }
 
-public abstract class AsyncCommand<TCallerWindowViewModel, TCommandParameter> : ICommand
-    where TCallerWindowViewModel : IWindowViewModel
+public abstract class AsyncCommand<TICallerWindowViewModel, TCommandParameter> : ICommand
+    where TICallerWindowViewModel : IWindowViewModel
 {
-    protected readonly TCallerWindowViewModel CallerViewModel;
+    protected readonly TICallerWindowViewModel CallerViewModel;
 
     private bool _isExecuting;
 
-    protected AsyncCommand(TCallerWindowViewModel callerViewModel)
+    protected AsyncCommand(TICallerWindowViewModel callerViewModel)
     {
         Guard.Guard.ThrowIfNull(callerViewModel, nameof(callerViewModel));
         CallerViewModel = callerViewModel;

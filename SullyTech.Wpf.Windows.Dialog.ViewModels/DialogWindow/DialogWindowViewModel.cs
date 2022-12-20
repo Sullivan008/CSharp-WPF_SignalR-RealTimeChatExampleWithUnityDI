@@ -5,15 +5,15 @@ using SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces.DialogWindowSettings;
 
 namespace SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindow;
 
-public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TDialogResult> : WindowViewModel<TDialogWindowSettingsViewModel>, IDialogWindowViewModel
-    where TDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel, new()
-    where TDialogResult : IDialogResult
+public class DialogWindowViewModel<TIDialogWindowSettingsViewModel, TIDialogResult> : WindowViewModel<TIDialogWindowSettingsViewModel>, IDialogWindowViewModel
+    where TIDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel
+    where TIDialogResult : IDialogResult
 {
-    public DialogWindowViewModel(TDialogWindowSettingsViewModel settings) : base(settings)
+    public DialogWindowViewModel(TIDialogWindowSettingsViewModel settings) : base(settings)
     { }
 
-    private TDialogResult? _dialogResult;
-    public TDialogResult DialogResult
+    private TIDialogResult? _dialogResult;
+    public TIDialogResult DialogResult
     {
         get
         {
@@ -28,6 +28,6 @@ public class DialogWindowViewModel<TDialogWindowSettingsViewModel, TDialogResult
     IDialogResult IDialogWindowViewModel.DialogResult
     {
         get => DialogResult;
-        set => DialogResult = (TDialogResult)value;
+        set => DialogResult = (TIDialogResult)value;
     }
 }

@@ -8,12 +8,12 @@ namespace SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.Presenter
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddPresenterDataViewModelInitializer<TPresenterDataViewModel, TPresenterDataViewModelInitializerModel>(this IServiceCollection @this)
-        where TPresenterDataViewModel : IPresenterDataViewModel
-        where TPresenterDataViewModelInitializerModel : IPresenterDataViewModelInitializerModel
+    public static void AddPresenterDataViewModelInitializer<TIPresenterDataViewModel, TIPresenterDataViewModelInitializerModel>(this IServiceCollection @this)
+        where TIPresenterDataViewModel : IPresenterDataViewModel
+        where TIPresenterDataViewModelInitializerModel : IPresenterDataViewModelInitializerModel
     {
         Type implementationInterfaceType =
-            typeof(IPresenterDataViewModelInitializer<TPresenterDataViewModel, TPresenterDataViewModelInitializerModel>);
+            typeof(IPresenterDataViewModelInitializer<TIPresenterDataViewModel, TIPresenterDataViewModelInitializerModel>);
 
         Type implementationType =
             Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)

@@ -8,12 +8,12 @@ namespace SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindow.Infr
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddDialogWindowViewModelInitializer<TDialogWindowViewModel, TDialogWindowViewModelInitializerModel>(this IServiceCollection @this)
-        where TDialogWindowViewModel : IDialogWindowViewModel
-        where TDialogWindowViewModelInitializerModel : IDialogWindowViewModelInitializerModel
+    public static void AddDialogWindowViewModelInitializer<TIDialogWindowViewModel, TIDialogWindowViewModelInitializerModel>(this IServiceCollection @this)
+        where TIDialogWindowViewModel : IDialogWindowViewModel
+        where TIDialogWindowViewModelInitializerModel : IDialogWindowViewModelInitializerModel
     {
         Type implementationInterfaceType = 
-            typeof(IDialogWindowViewModelInitializer<TDialogWindowViewModel, TDialogWindowViewModelInitializerModel>);
+            typeof(IDialogWindowViewModelInitializer<TIDialogWindowViewModel, TIDialogWindowViewModelInitializerModel>);
 
         Type implementationType = Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)
                                                                             .Where(x => !x.IsAbstract)

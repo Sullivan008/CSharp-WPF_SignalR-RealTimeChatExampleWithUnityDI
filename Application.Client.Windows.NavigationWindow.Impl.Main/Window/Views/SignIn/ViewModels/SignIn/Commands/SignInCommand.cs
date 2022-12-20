@@ -1,18 +1,34 @@
 ﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.ViewData;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
+using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers.Presenter.Models;
+using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers.Presenter.Models.Enums;
+using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers.PresenterData.Models;
+using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.Presenter;
+using SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.PresenterData;
+using SullyTech.Wpf.Dialogs.MessageDialog.Result.Interfaces;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers.WindowSettings.Models;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.Window;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
+using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions;
+using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfacess;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.Commands;
 
-internal class SignInCommand : AsyncCommand<SignInViewModel>
+internal class SignInCommand : AsyncCommand<ISignInViewModel>
 {
     private readonly IChatHub _chatHub;
 
@@ -20,16 +36,43 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
 
     private readonly INavigationWindowService _navigationWindowService;
 
+    private readonly IDialogWindowService _dialogWindowService;
+
+
     public SignInCommand(SignInViewModel callerViewModel, IChatHub chatHub, IToastNotification toastNotification,
-        INavigationWindowService navigationWindowService) : base(callerViewModel)
+        INavigationWindowService navigationWindowService, IDialogWindowService dialogWindowService) : base(callerViewModel)
     {
         _chatHub = chatHub;
         _toastNotification = toastNotification;
         _navigationWindowService = navigationWindowService;
+        _dialogWindowService = dialogWindowService;
     }
 
     public override async Task ExecuteAsync()
     {
+        IDialogWindowShowOptions windowShowOptions = new DialogWindowShowOptions<IMessageDialogWindow, IMessageDialogWindowViewModel, IMessageDialogWindowSettingsViewModel>
+        {
+            WindowSettingsViewModelInitializerModel = new MessageDialogWindowSettingsViewModelInitializerModel
+            {
+                Title = "Test"
+            }
+        };
+
+        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<IMessageDialogViewModel, IMessageDialogDataViewModel>
+        {
+            PresenterViewModelInitializerModel = new MessageDialogViewModelInitializerModel
+            {
+                IconType = IconType.Information,
+                ButtonType = ButtonType.OkCancel
+            },
+            PresenterDataViewModelInitializerModel = new MessageDialogDataViewModelInitializerModel
+            {
+                Message = "Test message"
+            }
+        };
+
+        var test = await _dialogWindowService.ShowDialogAsync<IMessageDialogResult>(windowShowOptions, presenterLoadOptions);
+
         if (_chatHub.IsConnected == false)
         {
             await ShowChatServerIsNotAvailableToastMessage();
@@ -76,7 +119,7 @@ internal class SignInCommand : AsyncCommand<SignInViewModel>
 
     private async Task NavigateToChatView(INavigationWindow presenterWindow)
     {
-        INavigateToOptions navigateOptions = new NavigateToOptions<ChatViewModel>();
+        INavigateToOptions navigateOptions = new NavigateToOptions<IChatViewModel, IChatDataViewModel>();
 
         await _navigationWindowService.NavigateToAsync(presenterWindow, navigateOptions);
     }

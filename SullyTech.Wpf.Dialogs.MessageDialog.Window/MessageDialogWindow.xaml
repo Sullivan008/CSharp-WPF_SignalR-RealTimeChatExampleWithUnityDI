@@ -12,7 +12,7 @@
                      WindowStartupLocation="CenterScreen"
                      AllowsTransparency="True"
                      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-                     MinWidth="200" MaxWidth="1672"
+                     MinWidth="500" MaxWidth="1672"
                      MinHeight="150"
                      Title="{Binding Settings.Title}">
 

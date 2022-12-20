@@ -5,9 +5,10 @@ namespace SullyTech.Wpf.Windows.Simple.ViewModels.SimpleWindowSettings.Infrastru
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddSimpleWindowSettingsViewModel<TSimpleWindowSettingsViewModel>(this IServiceCollection @this)
-        where TSimpleWindowSettingsViewModel : ISimpleWindowSettingsViewModel
+    public static void AddSimpleWindowSettingsViewModel<TISimpleWindowSettingsViewModel, TSimpleWindowSettingsViewModel>(this IServiceCollection @this)
+        where TSimpleWindowSettingsViewModel : TISimpleWindowSettingsViewModel
+        where TISimpleWindowSettingsViewModel : ISimpleWindowSettingsViewModel
     {
-        @this.AddTransient(typeof(TSimpleWindowSettingsViewModel));
+        @this.AddTransient(typeof(TISimpleWindowSettingsViewModel), typeof(TSimpleWindowSettingsViewModel));
     }
 }

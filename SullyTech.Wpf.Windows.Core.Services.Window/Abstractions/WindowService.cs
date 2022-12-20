@@ -66,13 +66,11 @@ public abstract class WindowService : IWindowService
         return windowViewModel;
     }
 
-    protected virtual void InitializeWindowViewModel(IWindowViewModel windowViewModel, IWindowViewModelInitializerModel? windowViewModelInitializerModel)
+    protected virtual void InitializeWindowViewModel(IWindowViewModel windowViewModel, Type windowViewModelType, 
+        IWindowViewModelInitializerModel? windowViewModelInitializerModel, Type? windowViewModelInitializerModelType)
     {
-        if (windowViewModelInitializerModel is not null)
+        if (windowViewModelInitializerModel is not null && windowViewModelInitializerModelType is not null)
         {
-            Type windowViewModelType = windowViewModel.GetType();
-            Type windowViewModelInitializerModelType = windowViewModelInitializerModel.GetType();
-
             Type windowViewModelInitializerType =
                 WindowViewModelInitializerGenericType.MakeGenericType(windowViewModelType, windowViewModelInitializerModelType);
 
@@ -88,13 +86,11 @@ public abstract class WindowService : IWindowService
         }
     }
 
-    protected virtual void InitializeWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel, IWindowSettingsViewModelInitializerModel? windowSettingsViewModelInitializerModel)
+    protected virtual void InitializeWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel, Type windowSettingsViewModelType, 
+        IWindowSettingsViewModelInitializerModel? windowSettingsViewModelInitializerModel, Type? windowSettingsViewModelInitializerModelType)
     {
-        if (windowSettingsViewModelInitializerModel is not null)
+        if (windowSettingsViewModelInitializerModel is not null && windowSettingsViewModelInitializerModelType is not null)
         {
-            Type windowSettingsViewModelType = windowSettingsViewModel.GetType();
-            Type windowSettingsViewModelInitializerModelType = windowSettingsViewModelInitializerModel.GetType();
-
             Type windowSettingsViewModelInitializerType =
                 WindowSettingsViewModelInitializerGenericType.MakeGenericType(windowSettingsViewModelType, windowSettingsViewModelInitializerModelType);
 
@@ -118,13 +114,11 @@ public abstract class WindowService : IWindowService
         return presenterViewModel;
     }
 
-    protected virtual void InitializePresenterViewModel(IPresenterViewModel presenterViewModel, IPresenterViewModelInitializerModel? presenterViewModelInitializerModel)
+    protected virtual void InitializePresenterViewModel(IPresenterViewModel presenterViewModel, Type presenterViewModelType,
+        IPresenterViewModelInitializerModel? presenterViewModelInitializerModel, Type? presenterViewModelInitializerModelType)
     {
-        if (presenterViewModelInitializerModel is not null)
+        if (presenterViewModelInitializerModel is not null && presenterViewModelInitializerModelType is not null)
         {
-            Type presenterViewModelType = presenterViewModel.GetType();
-            Type presenterViewModelInitializerModelType = presenterViewModelInitializerModel.GetType();
-
             Type presenterViewModelInitializerType =
                 typeof(IPresenterViewModelInitializer<,>).MakeGenericType(presenterViewModelType, presenterViewModelInitializerModelType);
 
@@ -138,13 +132,11 @@ public abstract class WindowService : IWindowService
         }
     }
 
-    protected virtual void InitializePresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel, IPresenterDataViewModelInitializerModel? presenterDataViewModelInitializerModel)
+    protected virtual void InitializePresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel, Type presenterDataViewModelType,
+        IPresenterDataViewModelInitializerModel? presenterDataViewModelInitializerModel, Type? presenterDataViewModelInitializerModelType)
     {
-        if (presenterDataViewModelInitializerModel is not null)
+        if (presenterDataViewModelInitializerModel is not null && presenterDataViewModelInitializerModelType is not null)
         {
-            Type presenterDataViewModelType = presenterDataViewModel.GetType();
-            Type presenterDataViewModelInitializerModelType = presenterDataViewModelInitializerModel.GetType();
-
             Type presenterDataViewModelInitializerType =
                 typeof(IPresenterDataViewModelInitializer<,>).MakeGenericType(presenterDataViewModelType, presenterDataViewModelInitializerModelType);
 

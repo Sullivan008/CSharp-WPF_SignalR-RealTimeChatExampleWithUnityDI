@@ -15,6 +15,9 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Result\SullyTech.Wpf.Dialogs.MessageDialog.Result.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.Commands\SullyTech.Wpf.Windows.Core.Presenter.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.csproj" />
@@ -23,17 +26,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Remove="Views\MessageDialog\Assets\icon-error.png" />
-		<None Remove="Views\MessageDialog\Assets\icon-information.png" />
-		<None Remove="Views\MessageDialog\Assets\icon-question.png" />
-		<None Remove="Views\MessageDialog\Assets\icon-warning.png" />
+		<None Remove="Infrastructure\Assets\icon-error.png" />
+		<None Remove="Infrastructure\Assets\icon-information.png" />
+		<None Remove="Infrastructure\Assets\icon-question.png" />
+		<None Remove="Infrastructure\Assets\icon-warning.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Resource Include="Views\MessageDialog\Assets\icon-error.png" />
-		<Resource Include="Views\MessageDialog\Assets\icon-information.png" />
-		<Resource Include="Views\MessageDialog\Assets\icon-question.png" />
-		<Resource Include="Views\MessageDialog\Assets\icon-warning.png" />
+		<Resource Include="Infrastructure\Assets\icon-error.png" />
+		<Resource Include="Infrastructure\Assets\icon-information.png" />
+		<Resource Include="Infrastructure\Assets\icon-question.png" />
+		<Resource Include="Infrastructure\Assets\icon-warning.png" />
 	</ItemGroup>
 
 </Project>

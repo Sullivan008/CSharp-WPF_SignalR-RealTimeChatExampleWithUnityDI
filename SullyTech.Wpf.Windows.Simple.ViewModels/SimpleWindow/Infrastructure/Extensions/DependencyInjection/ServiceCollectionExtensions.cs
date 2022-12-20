@@ -5,9 +5,10 @@ namespace SullyTech.Wpf.Windows.Simple.ViewModels.SimpleWindow.Infrastructure.Ex
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddSimpleWindowViewModel<TSimpleWindowViewModel>(this IServiceCollection @this)
-        where TSimpleWindowViewModel : ISimpleWindowViewModel
+    public static void AddSimpleWindowViewModel<TISimpleWindowViewModel, TSimpleWindowViewModel>(this IServiceCollection @this)
+        where TSimpleWindowViewModel : TISimpleWindowViewModel
+        where TISimpleWindowViewModel : ISimpleWindowViewModel
     {
-        @this.AddTransient(typeof(TSimpleWindowViewModel));
+        @this.AddTransient(typeof(TISimpleWindowViewModel), typeof(TSimpleWindowViewModel));
     }
 }

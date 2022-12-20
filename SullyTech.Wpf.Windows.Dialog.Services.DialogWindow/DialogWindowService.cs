@@ -24,39 +24,42 @@ public class DialogWindowService : WindowService, IDialogWindowService
         return (IDialogWindow)window;
     }
 
-    public async Task<TDialogResult> ShowDialogAsync<TDialogResult>(IDialogWindowShowOptions windowShowOptions, IPresenterLoadOptions presenterLoadOptions)
-        where TDialogResult : IDialogResult
+    public async Task<TIDialogResult> ShowDialogAsync<TIDialogResult>(IDialogWindowShowOptions windowShowOptions, IPresenterLoadOptions presenterLoadOptions)
+        where TIDialogResult : IDialogResult
     {
         IDialogWindow window = (IDialogWindow)CreateWindow(windowShowOptions.WindowType);
         IDialogWindowViewModel windowViewModel = (IDialogWindowViewModel)CreateWindowViewModel(window, windowShowOptions.WindowViewModelType);
 
-        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelInitializerModel);
-        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelInitializerModel);
+        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType, windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
+        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType, windowShowOptions.WindowSettingsViewModelInitializerModel, windowShowOptions.WindowSettingsViewModelInitializerModelType);
 
         IPresenterViewModel presenterViewModel =
             CreatePresenterViewModel(window, presenterLoadOptions.PresenterViewModelType);
 
-        InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelInitializerModel);
-        InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelInitializerModel);
+        InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelType, 
+                                     presenterLoadOptions.PresenterViewModelInitializerModel, presenterLoadOptions.PresenterViewModelInitializerModelType);
+
+        InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelType, 
+                                         presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
 
         SetWindowPresenter(windowViewModel, presenterViewModel);
         SetWindowDataContext(window, windowViewModel);
 
         window.ShowDialog();
 
-        TDialogResult dialogResult = GetDialogResult<TDialogResult>(windowViewModel);
+        TIDialogResult dialogResult = GetDialogResult<TIDialogResult>(windowViewModel);
 
         return await Task.FromResult(dialogResult);
     }
 
-    private static TDialogResult GetDialogResult<TDialogResult>(IDialogWindowViewModel windowViewModel)
-        where TDialogResult : IDialogResult
+    private static TIDialogResult GetDialogResult<TIDialogResult>(IDialogWindowViewModel windowViewModel)
+        where TIDialogResult : IDialogResult
     {
-        return (TDialogResult)windowViewModel.DialogResult;
+        return (TIDialogResult)windowViewModel.DialogResult;
     }
 
-    public async Task SetDialogResult<TDialogResult>(IDialogWindow window, TDialogResult dialogResult)
-        where TDialogResult : IDialogResult
+    public async Task SetDialogResult<TIDialogResult>(IDialogWindow window, TIDialogResult dialogResult)
+        where TIDialogResult : IDialogResult
     {
         window.DialogResult = true;
         ((IDialogWindowViewModel)window.DataContext).DialogResult = dialogResult;

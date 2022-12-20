@@ -4,8 +4,8 @@ using SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces.NavigationWindowSet
 
 namespace SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.NavigationWindowSettings.Interfaces;
 
-public interface INavigationWindowSettingsViewModelInitializer<in TNavigationWindowSettingsViewModel, in TNavigationWindowSettingsViewModelInitializerModel> :
-    IWindowSettingsViewModelInitializer<TNavigationWindowSettingsViewModel, TNavigationWindowSettingsViewModelInitializerModel>
-        where TNavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
-        where TNavigationWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
+public interface INavigationWindowSettingsViewModelInitializer<in TINavigationWindowSettingsViewModel, in TINavigationWindowSettingsViewModelInitializerModel> :
+    IWindowSettingsViewModelInitializer<TINavigationWindowSettingsViewModel, TINavigationWindowSettingsViewModelInitializerModel>
+        where TINavigationWindowSettingsViewModel : INavigationWindowSettingsViewModel
+        where TINavigationWindowSettingsViewModelInitializerModel : INavigationWindowSettingsViewModelInitializerModel
 { }

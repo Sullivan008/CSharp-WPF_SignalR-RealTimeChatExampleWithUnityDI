@@ -3,14 +3,14 @@ using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.Presenter;
 
 namespace SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
 
-public abstract class AsyncCommand<TCallerPresenterViewModel> : ICommand
-    where TCallerPresenterViewModel : IPresenterViewModel
+public abstract class AsyncCommand<TICallerPresenterViewModel> : ICommand
+    where TICallerPresenterViewModel : IPresenterViewModel
 {
     private bool _isExecuting;
     
-    protected readonly TCallerPresenterViewModel CallerViewModel;
+    protected readonly TICallerPresenterViewModel CallerViewModel;
     
-    protected AsyncCommand(TCallerPresenterViewModel callerViewModel)
+    protected AsyncCommand(TICallerPresenterViewModel callerViewModel)
     {
         Guard.Guard.ThrowIfNull(callerViewModel, nameof(callerViewModel));
         CallerViewModel = callerViewModel;
@@ -51,14 +51,14 @@ public abstract class AsyncCommand<TCallerPresenterViewModel> : ICommand
     public virtual Predicate<object?>? CanExecute => default;
 }
 
-public abstract class AsyncCommand<TCallerPresenterViewModel, TCommandParameter> : ICommand
-    where TCallerPresenterViewModel : IPresenterViewModel
+public abstract class AsyncCommand<TICallerPresenterViewModel, TCommandParameter> : ICommand
+    where TICallerPresenterViewModel : IPresenterViewModel
 {
     private bool _isExecuting;
 
-    protected readonly TCallerPresenterViewModel CallerViewModel;
+    protected readonly TICallerPresenterViewModel CallerViewModel;
 
-    protected AsyncCommand(TCallerPresenterViewModel callerViewModel)
+    protected AsyncCommand(TICallerPresenterViewModel callerViewModel)
     {
         Guard.Guard.ThrowIfNull(callerViewModel, nameof(callerViewModel));
         CallerViewModel = callerViewModel;

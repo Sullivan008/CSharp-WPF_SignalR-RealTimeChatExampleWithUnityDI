@@ -1,11 +1,12 @@
 ﻿using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
+using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfacess;
+using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.Commands;
@@ -55,7 +56,7 @@ internal class OnConnectionLostCommand : AsyncCommand<ChatViewModel>
 
     private async Task NavigateToSignInView(INavigationWindow presenterWindow)
     {
-        INavigateToOptions navigateOptions = new NavigateToOptions<SignInViewModel>();
+        INavigateToOptions navigateOptions = new NavigateToOptions<ISignInViewModel, ISignInDataViewModel>();
 
         await _navigationWindowService.NavigateToAsync(presenterWindow, navigateOptions);
     }

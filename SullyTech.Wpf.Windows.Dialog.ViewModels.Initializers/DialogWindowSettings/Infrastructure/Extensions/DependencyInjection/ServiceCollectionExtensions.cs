@@ -8,12 +8,12 @@ namespace SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindowSetti
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddDialogWindowSettingsViewModelInitializer<TDialogWindowSettingsViewModel, TDialogWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
-        where TDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel
-        where TDialogWindowSettingsViewModelInitializerModel : IDialogWindowSettingsViewModelInitializerModel
+    public static void AddDialogWindowSettingsViewModelInitializer<TIDialogWindowSettingsViewModel, TIDialogWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
+        where TIDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel
+        where TIDialogWindowSettingsViewModelInitializerModel : IDialogWindowSettingsViewModelInitializerModel
     {
         Type implementationInterfaceType = 
-            typeof(IDialogWindowSettingsViewModelInitializer<TDialogWindowSettingsViewModel, TDialogWindowSettingsViewModelInitializerModel>);
+            typeof(IDialogWindowSettingsViewModelInitializer<TIDialogWindowSettingsViewModel, TIDialogWindowSettingsViewModelInitializerModel>);
 
         Type implementationType = Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)
                                                                             .Where(x => !x.IsAbstract)

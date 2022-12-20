@@ -1,9 +1,9 @@
 ﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Enums;
-using SullyTech.Wpf.Windows.Dialog.Result.Interfaces.DialogResult;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Interfaces;
 
 namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Result;
 
-public sealed class ExceptionDialogResult : IDialogResult
+public sealed class ExceptionDialogResult : IExceptionDialogResult
 {
     private readonly ResultType? _resultType;
     public ResultType ResultType

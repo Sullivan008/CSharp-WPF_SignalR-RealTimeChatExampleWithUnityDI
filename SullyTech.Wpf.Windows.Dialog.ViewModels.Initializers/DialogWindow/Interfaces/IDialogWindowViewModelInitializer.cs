@@ -4,8 +4,8 @@ using SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces.DialogWindow;
 
 namespace SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindow.Interfaces;
 
-public interface IDialogWindowViewModelInitializer<in TDialogWindowViewModel, in TDialogWindowViewModelInitializerModel> :
-    IWindowViewModelInitializer<TDialogWindowViewModel, TDialogWindowViewModelInitializerModel>
-        where TDialogWindowViewModel : IDialogWindowViewModel
-        where TDialogWindowViewModelInitializerModel : IDialogWindowViewModelInitializerModel
+public interface IDialogWindowViewModelInitializer<in TIDialogWindowViewModel, in TIDialogWindowViewModelInitializerModel> :
+    IWindowViewModelInitializer<TIDialogWindowViewModel, TIDialogWindowViewModelInitializerModel>
+        where TIDialogWindowViewModel : IDialogWindowViewModel
+        where TIDialogWindowViewModelInitializerModel : IDialogWindowViewModelInitializerModel
 { }

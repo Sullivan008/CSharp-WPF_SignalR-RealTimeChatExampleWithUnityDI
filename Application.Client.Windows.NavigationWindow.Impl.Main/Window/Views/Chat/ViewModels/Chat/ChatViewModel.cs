@@ -3,12 +3,14 @@ using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.Commands;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat.ViewData;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.Presenter;
+using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Presenter;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 
 namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.Chat.ViewModels.Chat;
 
-public class ChatViewModel : PresenterViewModel<ChatViewDataViewModel>
+public class ChatViewModel : PresenterViewModel<ChatViewDataViewModel>, IChatViewModel
 {
     private readonly IChatHub _chatHub;
 
@@ -25,6 +27,8 @@ public class ChatViewModel : PresenterViewModel<ChatViewDataViewModel>
 
         InitChatHubEvents();
     }
+
+    IPresenterDataViewModel IPresenterViewModel.Data => Data;
 
     private void InitChatHubEvents()
     {
@@ -45,5 +49,10 @@ public class ChatViewModel : PresenterViewModel<ChatViewDataViewModel>
     private ICommand? _onConnectionLostCommand;
     public ICommand OnConnectionLostCommand => _onConnectionLostCommand ??=
         new OnConnectionLostCommand(this, _toastNotification, _navigationWindowService);
+
+}
+
+public interface IChatViewModel : IPresenterViewModel
+{
 
 }
