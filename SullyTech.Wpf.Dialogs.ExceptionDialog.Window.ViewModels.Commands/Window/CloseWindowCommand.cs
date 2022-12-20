@@ -1,10 +1,10 @@
 ﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Result;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Enums;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Windows.Core.Commands.Abstractions;
 
-namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Commands.Window;
+namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Commands.Window;
 
 public sealed class CloseWindowCommand : AsyncCommand<IExceptionDialogWindowViewModel, IExceptionDialogWindow>
 {

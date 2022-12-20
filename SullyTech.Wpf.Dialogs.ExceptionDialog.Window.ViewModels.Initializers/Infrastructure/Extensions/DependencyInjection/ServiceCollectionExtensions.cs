@@ -7,9 +7,6 @@ namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Initializers.I
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddExceptionDialogWindowViewModelInitializer(this IServiceCollection @this)
-    { }
-
     public static void AddExceptionDialogWindowSettingsViewModelInitializer(this IServiceCollection @this)
     {
         @this.AddDialogWindowSettingsViewModelInitializer<IExceptionDialogWindowSettingsViewModel, IExceptionDialogWindowSettingsViewModelInitializerModel>();

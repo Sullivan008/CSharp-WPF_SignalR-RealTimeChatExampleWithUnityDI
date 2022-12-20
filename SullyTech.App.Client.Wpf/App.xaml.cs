@@ -22,7 +22,7 @@ using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.Pres
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Interfaces;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Initializers.WindowSettings.Models;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.WindowSettings;

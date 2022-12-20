@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 using Microsoft.Extensions.Hosting;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Commands.Presenter;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Commands.Presenter;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Presenter;

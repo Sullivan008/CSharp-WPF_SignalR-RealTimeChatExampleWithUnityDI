@@ -5,7 +5,7 @@ using SullyTech.Wpf.Windows.Core.Presenter.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.Window.Interfaces;
 
-namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.Commands.Presenter;
+namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Commands.Presenter;
 
 public sealed class OkCommand : AsyncCommand<IExceptionDialogViewModel>
 {

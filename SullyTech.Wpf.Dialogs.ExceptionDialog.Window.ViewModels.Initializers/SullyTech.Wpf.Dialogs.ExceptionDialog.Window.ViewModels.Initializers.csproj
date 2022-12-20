@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0-windows</TargetFramework>
@@ -9,12 +9,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="Window\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.csproj" />
-	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.csproj" />
 	</ItemGroup>
 
 </Project>

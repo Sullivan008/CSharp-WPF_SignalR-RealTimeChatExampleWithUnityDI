@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.csproj" />
 	</ItemGroup>
 
 </Project>

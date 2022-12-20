@@ -5,14 +5,15 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels</Product>
+		<Product>SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Commands</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Result.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Commands\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels\SullyTech.Wpf.Windows.Dialog.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window\SullyTech.Wpf.Windows.Dialog.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Commands\SullyTech.Wpf.Windows.Core.Commands.csproj" />
 	</ItemGroup>
 
 </Project>
