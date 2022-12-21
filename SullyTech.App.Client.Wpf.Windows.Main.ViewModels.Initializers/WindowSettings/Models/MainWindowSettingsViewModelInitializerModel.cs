@@ -1,15 +1,15 @@
-﻿using SullyTech.Guard;
+﻿using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.WindowSettings.Models.Interfaces;
 
-namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
+namespace SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.WindowSettings.Models;
 
-public class MainWindowSettingsViewModelInitializerModel : IMainWindowSettingsViewModelInitializerModel
+public sealed class MainWindowSettingsViewModelInitializerModel : IMainWindowSettingsViewModelInitializerModel
 {
     private readonly string? _title;
     public string Title
     {
         get
         {
-            Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
+            Guard.Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
 
             return _title!;
         }
@@ -22,7 +22,7 @@ public class MainWindowSettingsViewModelInitializerModel : IMainWindowSettingsVi
     {
         get
         {
-            Guard.ThrowIfNull(_width, nameof(Width));
+            Guard.Guard.ThrowIfNull(_width, nameof(Width));
 
             return _width!.Value;
         }
@@ -35,7 +35,7 @@ public class MainWindowSettingsViewModelInitializerModel : IMainWindowSettingsVi
     {
         get
         {
-            Guard.ThrowIfNull(_height, nameof(Height));
+            Guard.Guard.ThrowIfNull(_height, nameof(Height));
 
             return _height!.Value;
         }

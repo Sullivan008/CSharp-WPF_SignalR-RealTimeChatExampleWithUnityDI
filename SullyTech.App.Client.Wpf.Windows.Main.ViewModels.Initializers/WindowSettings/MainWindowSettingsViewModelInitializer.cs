@@ -1,9 +1,10 @@
-﻿using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
+﻿using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.WindowSettings.Models.Interfaces;
+using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.NavigationWindowSettings.Interfaces;
 
-namespace Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer;
+namespace SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.WindowSettings;
 
-internal class MainWindowSettingsViewModelInitializer : INavigationWindowSettingsViewModelInitializer<IMainWindowSettingsViewModel, IMainWindowSettingsViewModelInitializerModel>
+internal sealed class MainWindowSettingsViewModelInitializer : INavigationWindowSettingsViewModelInitializer<IMainWindowSettingsViewModel, IMainWindowSettingsViewModelInitializerModel>
 {
     public void Initialize(IMainWindowSettingsViewModel windowSettingsViewModel, IMainWindowSettingsViewModelInitializerModel windowSettingsViewModelInitializerModel)
     {

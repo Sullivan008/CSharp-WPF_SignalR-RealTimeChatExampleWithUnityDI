@@ -5,10 +5,6 @@ using System.Windows.Threading;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindow;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.ViewModels.MainWindowSettings.Initializer.Models;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
 using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Microsoft.AspNetCore.SignalR;
@@ -17,6 +13,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using SullyTech.App.Client.Wpf.Windows.Main.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.App.Client.Wpf.Windows.Main.Interfaces.Window;
+using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.WindowSettings.Models;
+using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.Window;
+using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers.PresenterData.Models;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.PresenterData;
@@ -68,9 +69,11 @@ public partial class App
 
                 serviceCollection.AddToastNotification(hostBuilderContext.Configuration);
 
-                serviceCollection.AddMainWindow();
+                serviceCollection.AddMainWindowPres();
                 serviceCollection.AddMessageDialog();
                 serviceCollection.AddExceptionDialog();
+
+                serviceCollection.AddMainWindow();
 
                 serviceCollection.AddChatHub(hostBuilderContext.Configuration);
             })

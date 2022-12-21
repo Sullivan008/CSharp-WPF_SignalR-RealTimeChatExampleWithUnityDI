@@ -22,6 +22,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Application.Client.Windows.NavigationWindow.Impl.Main\Application.Client.Windows.NavigationWindow.Impl.Main.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main\SullyTech.App.Client.Wpf.Windows.Main.csproj" />
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window\SullyTech.Wpf.Dialogs.MessageDialog.Window.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.csproj" />

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Windows.Main</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.ViewModels\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Behaviors\SullyTech.Wpf.Windows.Core.Behaviors.csproj" />
+	</ItemGroup>
+
+</Project>

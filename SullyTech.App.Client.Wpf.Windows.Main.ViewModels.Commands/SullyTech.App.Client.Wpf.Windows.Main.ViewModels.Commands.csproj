@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Commands</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.ViewModels.Commands\SullyTech.Wpf.Windows.Core.ViewModels.Commands.csproj" />
+	</ItemGroup>
+
+</Project>
