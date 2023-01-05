@@ -59,88 +59,88 @@ public class ToastNotification : IToastNotification
 
     private async Task OnShowErrorNotification(string title, string message)
     {
-        NotificationContent notificationContent = new()
-        {
-            Title = title,
-            Message = message,
-            Type = NotificationType.Error,
-            Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.ErrorColor.Foreground)),
-            Icon = new SvgAwesome
-            {
-                Icon = EFontAwesomeIcon.Solid_ExclamationCircle,
-                Height = 25,
-                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.ErrorColor.Foreground))
-            }
-        };
-
         await System.Windows.Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            NotificationContent notificationContent = new()
+            {
+                Title = title,
+                Message = message,
+                Type = NotificationType.Error,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.ErrorColor.Foreground)),
+                Icon = new SvgAwesome
+                {
+                    Icon = EFontAwesomeIcon.Solid_ExclamationCircle,
+                    Height = 25,
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.ErrorColor.Foreground))
+                }
+            };
+
             _notificationManager.Show(notificationContent);
         });
     }
 
     private async Task OnShowWarningNotification(string title, string message)
     {
-        NotificationContent notificationContent = new()
-        {
-            Title = title,
-            Message = message,
-            Type = NotificationType.Warning,
-            Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.WarningColor.Foreground)),
-            Icon = new SvgAwesome
-            {
-                Icon = EFontAwesomeIcon.Solid_ExclamationTriangle,
-                Height = 25,
-                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.WarningColor.Foreground))
-            }
-        };
-
         await System.Windows.Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            NotificationContent notificationContent = new()
+            {
+                Title = title,
+                Message = message,
+                Type = NotificationType.Warning,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.WarningColor.Foreground)),
+                Icon = new SvgAwesome
+                {
+                    Icon = EFontAwesomeIcon.Solid_ExclamationTriangle,
+                    Height = 25,
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.WarningColor.Foreground))
+                }
+            };
+
             _notificationManager.Show(notificationContent);
         });
     }
 
     private async Task OnShowSuccessNotification(string title, string message)
     {
-        NotificationContent notificationContent = new()
-        {
-            Title = title,
-            Message = message,
-            Type = NotificationType.Success,
-            Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.SuccessColor.Foreground)),
-            Icon = new SvgAwesome
-            {
-                Icon = EFontAwesomeIcon.Solid_CheckCircle,
-                Height = 25,
-                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.SuccessColor.Foreground))
-            }
-        };
-
         await System.Windows.Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            NotificationContent notificationContent = new()
+            {
+                Title = title,
+                Message = message,
+                Type = NotificationType.Success,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.SuccessColor.Foreground)),
+                Icon = new SvgAwesome
+                {
+                    Icon = EFontAwesomeIcon.Solid_CheckCircle,
+                    Height = 25,
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.SuccessColor.Foreground))
+                }
+            };
+
             _notificationManager.Show(notificationContent);
         });
     }
 
     private async Task OnShowInformationNotification(string title, string message)
     {
-        NotificationContent notificationContent = new()
-        {
-            Title = title,
-            Message = message,
-            Type = NotificationType.Information,
-            Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.InformationColor.Foreground)),
-            Icon = new SvgAwesome
-            {
-                Icon = EFontAwesomeIcon.Solid_InfoCircle,
-                Height = 25,
-                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.InformationColor.Foreground))
-            }
-        };
-
         await System.Windows.Application.Current.Dispatcher.BeginInvoke(() =>
         {
+            NotificationContent notificationContent = new()
+            {
+                Title = title,
+                Message = message,
+                Type = NotificationType.Information,
+                Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.InformationColor.Foreground)),
+                Icon = new SvgAwesome
+                {
+                    Icon = EFontAwesomeIcon.Solid_InfoCircle,
+                    Height = 25,
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_toastNotificationConfiguration.ColorConfiguration.InformationColor.Foreground))
+                }
+            };
+
             _notificationManager.Show(notificationContent);
         });
     }
