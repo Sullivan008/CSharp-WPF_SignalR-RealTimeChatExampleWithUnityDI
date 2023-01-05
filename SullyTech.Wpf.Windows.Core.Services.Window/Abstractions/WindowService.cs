@@ -27,6 +27,9 @@ public abstract class WindowService : IWindowService
 
     public virtual async Task CloseWindowAsync(IWindow window)
     {
+        OnDestroyPresenterDataViewModel(((IWindowViewModel)window.DataContext).Presenter.Data);
+        OnDestroyPresenterViewModel(((IWindowViewModel)window.DataContext).Presenter);
+
         window.Close();
         
         await Task.CompletedTask;
@@ -147,6 +150,26 @@ public abstract class WindowService : IWindowService
             presenterDataViewModelInitializerInitializeMethodInfo
                 .Invoke(presenterDataViewModelInitializer, new object[] { presenterDataViewModel, presenterDataViewModelInitializerModel });
         }
+    }
+
+    protected virtual void OnInitPresenterViewModel(IPresenterViewModel presenterViewModel)
+    {
+        presenterViewModel.OnInit();
+    }
+
+    protected virtual void OnInitPresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel)
+    {
+        presenterDataViewModel.OnInit();
+    }
+
+    protected virtual void OnDestroyPresenterViewModel(IPresenterViewModel presenterViewModel)
+    {
+        presenterViewModel.OnDestroy();
+    }
+
+    protected virtual void OnDestroyPresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel)
+    {
+        presenterDataViewModel.OnDestroy();
     }
 
     protected virtual void SetWindowPresenter(IWindowViewModel windowViewModel, IPresenterViewModel presenterViewModel)
