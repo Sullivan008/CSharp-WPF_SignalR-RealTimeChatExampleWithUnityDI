@@ -51,6 +51,16 @@ public class PresenterViewModel<TPresenterDataViewModel> : IPresenterViewModel, 
         }
     }
 
+    public virtual async Task OnInit()
+    {
+        await Task.CompletedTask;
+    }
+
+    public virtual async Task OnDestroy()
+    {
+        await Task.CompletedTask;
+    }
+
     public event PropertyChangedEventHandler? PropertyChanged;
     public void OnPropertyChanged([CallerMemberName] string? name = null)
     {

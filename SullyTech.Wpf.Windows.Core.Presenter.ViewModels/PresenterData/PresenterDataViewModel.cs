@@ -6,6 +6,16 @@ namespace SullyTech.Wpf.Windows.Core.Presenter.ViewModels.PresenterData;
 
 public class PresenterDataViewModel : IPresenterDataViewModel, INotifyPropertyChanged
 {
+    public virtual async Task OnInit()
+    {
+        await Task.CompletedTask;
+    }
+
+    public virtual async Task OnDestroy()
+    {
+        await Task.CompletedTask;
+    }
+
     public event PropertyChangedEventHandler? PropertyChanged;
     public void OnPropertyChanged([CallerMemberName] string? name = null)
     {
