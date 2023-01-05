@@ -40,6 +40,9 @@ public sealed class SimpleWindowService : WindowService, ISimpleWindowService
         InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelType,
             presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
 
+        OnInitPresenterDataViewModel(presenterViewModel.Data);
+        OnInitPresenterViewModel(presenterViewModel);
+
         SetWindowPresenter(windowViewModel, presenterViewModel);
         SetWindowDataContext(window, windowViewModel);
 
