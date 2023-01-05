@@ -4,15 +4,16 @@ using System.Windows;
 using System.Windows.Threading;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
 using Application.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Infrastructure.Extensions.DependencyInjection;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn;
-using Application.Client.Windows.NavigationWindow.Impl.Main.Window.Views.SignIn.ViewModels.SignIn.ViewData;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using SullyTech.App.Client.Wpf.Modules.Chat.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.App.Client.Wpf.Modules.Identity.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;
+using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.App.Client.Wpf.Windows.Main.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.App.Client.Wpf.Windows.Main.Interfaces.Window;
 using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.WindowSettings.Models;
@@ -69,11 +70,13 @@ public partial class App
 
                 serviceCollection.AddToastNotification(hostBuilderContext.Configuration);
 
-                serviceCollection.AddMainWindowPres();
                 serviceCollection.AddMessageDialog();
                 serviceCollection.AddExceptionDialog();
 
                 serviceCollection.AddMainWindow();
+
+                serviceCollection.AddIdentityModule();
+                serviceCollection.AddChatModule();
 
                 serviceCollection.AddChatHub(hostBuilderContext.Configuration);
             })

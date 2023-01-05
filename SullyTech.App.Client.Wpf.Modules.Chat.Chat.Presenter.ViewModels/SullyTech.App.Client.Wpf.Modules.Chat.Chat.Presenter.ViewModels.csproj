@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.csproj" />
+	</ItemGroup>
+
+</Project>

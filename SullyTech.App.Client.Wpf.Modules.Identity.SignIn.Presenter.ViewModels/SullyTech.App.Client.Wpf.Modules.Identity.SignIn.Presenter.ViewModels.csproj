@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="10.3.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Commands\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.csproj" />
+	</ItemGroup>
+
+</Project>

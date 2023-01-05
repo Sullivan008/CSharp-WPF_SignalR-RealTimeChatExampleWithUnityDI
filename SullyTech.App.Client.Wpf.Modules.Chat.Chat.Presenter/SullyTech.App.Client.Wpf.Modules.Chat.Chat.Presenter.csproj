@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.csproj" />
+	</ItemGroup>
+
+</Project>

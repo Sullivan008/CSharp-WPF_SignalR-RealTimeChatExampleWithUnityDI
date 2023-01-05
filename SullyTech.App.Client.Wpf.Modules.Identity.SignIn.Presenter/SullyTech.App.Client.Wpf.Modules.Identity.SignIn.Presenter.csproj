@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Infrastructure\Assets\chat-logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Validators\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Validators.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Infrastructure\Assets\chat-logo.png" />
+	</ItemGroup>
+
+</Project>

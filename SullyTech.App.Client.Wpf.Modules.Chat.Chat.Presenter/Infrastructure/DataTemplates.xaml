@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:chat="clr-namespace:SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter"
+                    xmlns:chatViewModel="clr-namespace:SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Presenter;assembly=SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels">
+    <DataTemplate DataType="{x:Type chatViewModel:ChatViewModel}">
+        <chat:ChatView/>
+    </DataTemplate>
+</ResourceDictionary>
