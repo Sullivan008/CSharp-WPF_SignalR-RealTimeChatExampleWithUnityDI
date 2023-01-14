@@ -42,11 +42,14 @@ public class DialogWindowService : WindowService, IDialogWindowService
         InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelType, 
                                          presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
 
-        OnInitPresenterDataViewModel(presenterViewModel.Data);
-        OnInitPresenterViewModel(presenterViewModel);
-
         SetWindowPresenter(windowViewModel, presenterViewModel);
         SetWindowDataContext(window, windowViewModel);
+
+        OnInitWindowSettingsViewModel(windowViewModel.Settings);
+        OnInitWindowViewModel(windowViewModel);
+
+        OnInitPresenterDataViewModel(presenterViewModel.Data);
+        OnInitPresenterViewModel(presenterViewModel);
 
         window.ShowDialog();
 
