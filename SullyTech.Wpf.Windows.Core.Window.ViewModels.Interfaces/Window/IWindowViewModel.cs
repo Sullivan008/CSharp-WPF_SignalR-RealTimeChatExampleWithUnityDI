@@ -13,4 +13,8 @@ public interface IWindowViewModel
     public IPresenterViewModel Presenter { get; set; }
     
     public ICommand CloseWindowCommand { get; set; }
+
+    public Task OnInit();
+
+    public Task OnDestroy();
 }

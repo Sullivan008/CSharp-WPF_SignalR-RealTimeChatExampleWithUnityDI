@@ -82,6 +82,16 @@ public class WindowViewModel<TIWindowSettingsViewModel> : IWindowViewModel, INot
 
     IWindowSettingsViewModel IWindowViewModel.Settings => Settings;
 
+    public virtual async Task OnInit()
+    {
+        await Task.CompletedTask;
+    }
+
+    public virtual async Task OnDestroy()
+    {
+        await Task.CompletedTask;
+    }
+
     public event PropertyChangedEventHandler? PropertyChanged;
     public void OnPropertyChanged([CallerMemberName] string? name = null)
     {

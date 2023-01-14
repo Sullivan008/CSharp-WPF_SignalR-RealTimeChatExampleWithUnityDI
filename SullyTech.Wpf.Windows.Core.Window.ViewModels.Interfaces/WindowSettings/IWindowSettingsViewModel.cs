@@ -15,4 +15,8 @@ public interface IWindowSettingsViewModel
     public double Left { get; set; }
 
     public double Right { get; set; }
+
+    public Task OnInit();
+
+    public Task OnDestroy();
 }
