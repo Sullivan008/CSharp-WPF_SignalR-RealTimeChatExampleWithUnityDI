@@ -1,24 +1,24 @@
-﻿using SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.Presenter;
-using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;
+﻿using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.PresenterData;
+using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
-using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.ViewModels.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions;
 using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
 using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
 
-namespace SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands.Presenter;
+namespace SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Commands.Window;
 
-public sealed class OnConnectionLostCommand : AsyncCommand<IChatViewModel>
+public sealed class OnConnectionLostCommand : AsyncCommand<IMainWindowViewModel>
 {
     private readonly IToastNotification _toastNotification;
 
     private readonly INavigationWindowService _navigationWindowService;
 
-    public OnConnectionLostCommand(IChatViewModel callerViewModel, IToastNotification toastNotification,
+    public OnConnectionLostCommand(IMainWindowViewModel callerViewModel, IToastNotification toastNotification,
         INavigationWindowService navigationWindowService) : base(callerViewModel)
     {
         _toastNotification = toastNotification;

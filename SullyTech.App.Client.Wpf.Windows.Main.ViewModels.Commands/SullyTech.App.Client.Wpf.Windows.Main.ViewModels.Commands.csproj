@@ -9,9 +9,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.ViewModels.Commands\SullyTech.Wpf.Windows.Core.ViewModels.Commands.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.csproj" />
 	</ItemGroup>
 
 </Project>
