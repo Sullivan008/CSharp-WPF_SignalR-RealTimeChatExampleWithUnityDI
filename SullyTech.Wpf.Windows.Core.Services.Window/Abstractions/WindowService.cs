@@ -30,10 +30,14 @@ public abstract class WindowService : IWindowService
         OnDestroyPresenterDataViewModel(((IWindowViewModel)window.DataContext).Presenter.Data);
         OnDestroyPresenterViewModel(((IWindowViewModel)window.DataContext).Presenter);
 
+        OnDestroyWindowSettingsViewModel(((IWindowViewModel)window.DataContext).Settings);
+        OnDestroyWindowViewModel((IWindowViewModel)window.DataContext);
+
         window.Close();
         
         await Task.CompletedTask;
     }
+
     public virtual async Task SetWindowWidthAsync(IWindow window, double width)
     {
         ((IWindowViewModel)window.DataContext).Settings.Width = width;
@@ -147,6 +151,7 @@ public abstract class WindowService : IWindowService
                                                                                                                     .Single();
 
             object presenterDataViewModelInitializer = ServiceProvider.GetRequiredService(presenterDataViewModelInitializerType);
+
             presenterDataViewModelInitializerInitializeMethodInfo
                 .Invoke(presenterDataViewModelInitializer, new object[] { presenterDataViewModel, presenterDataViewModelInitializerModel });
         }
