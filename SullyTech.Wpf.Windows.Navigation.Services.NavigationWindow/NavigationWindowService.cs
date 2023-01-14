@@ -44,10 +44,13 @@ public sealed class NavigationWindowService : WindowService, INavigationWindowSe
         SetWindowPresenter(windowViewModel, presenterViewModel);
         SetWindowDataContext(window, windowViewModel);
 
+        window.Show();
+
+        OnInitWindowSettingsViewModel(windowViewModel.Settings);
+        OnInitWindowViewModel(windowViewModel);
+
         OnInitPresenterDataViewModel(presenterViewModel.Data);
         OnInitPresenterViewModel(presenterViewModel);
-
-        window.Show();
 
         await Task.CompletedTask;
     }
