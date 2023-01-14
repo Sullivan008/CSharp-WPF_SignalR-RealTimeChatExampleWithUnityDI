@@ -152,6 +152,16 @@ public abstract class WindowService : IWindowService
         }
     }
 
+    protected virtual void OnInitWindowViewModel(IWindowViewModel windowViewModel)
+    {
+        windowViewModel.OnInit();
+    }
+
+    protected virtual void OnInitWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel)
+    {
+        windowSettingsViewModel.OnInit();
+    }
+
     protected virtual void OnInitPresenterViewModel(IPresenterViewModel presenterViewModel)
     {
         presenterViewModel.OnInit();
@@ -160,6 +170,16 @@ public abstract class WindowService : IWindowService
     protected virtual void OnInitPresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel)
     {
         presenterDataViewModel.OnInit();
+    }
+
+    protected virtual void OnDestroyWindowViewModel(IWindowViewModel windowViewModel)
+    {
+        windowViewModel.OnDestroy();
+    }
+
+    protected virtual void OnDestroyWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel)
+    {
+        windowSettingsViewModel.OnDestroy();
     }
 
     protected virtual void OnDestroyPresenterViewModel(IPresenterViewModel presenterViewModel)
