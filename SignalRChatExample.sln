@@ -20,15 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Hub
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf", "SullyTech.App.Client.Wpf\SullyTech.App.Client.Wpf.csproj", "{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.Hubs.ChatHub", "Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj", "{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Web", "Application.Web", "{B0314A75-4B67-42FD-B698-5C0257A18ED2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client", "Application.Client", "{6991BD72-1F62-4FE3-BABA-BB353C595BBD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.SignalR", "Application.Client.SignalR", "{C39FB816-BBAF-473D-B2A2-F23264E6A439}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.Client.SignalR.Hubs", "Application.Client.SignalR.Hubs", "{86067CBD-E34D-4E6B-BF71-F178764F1282}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.BusinessLogic", "Application.BusinessLogic", "{A6CBCE31-0623-4772-BFEE-8A5242619F86}"
 EndProject
@@ -252,8 +244,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.SignalR.Client.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.SignalR.Client.Core.Hub", "SullyTech.SignalR.Client.Core.Hub\SullyTech.SignalR.Client.Core.Hub.csproj", "{2041897A-AD46-4796-8DE1-F4EC1B3E5B73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Client.SignalR.Hubs.ChatHub.Configuration", "Application.Client.SignalR.Hubs.ChatHub.Configuration\Application.Client.SignalR.Hubs.ChatHub.Configuration.csproj", "{CF6EE74B-66CA-4629-A6A2-5047C866D344}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App", "SullyTech.App", "{9CF5CCB6-47FF-4FE7-9D13-F758491B2DC4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client", "SullyTech.App.Client", "{8CD610B4-2792-4779-8ED9-DD763B98520E}"
@@ -396,25 +386,37 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Mo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Modules.Chat", "SullyTech.App.Client.Wpf.Modules.Chat", "{AE6DBDF7-FF79-402D-99D0-09F5494BECA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Modules.Chat", "SullyTech.App.Client.Wpf.Modules.Chat\SullyTech.App.Client.Wpf.Modules.Chat.csproj", "{7883FAE6-0731-43AF-B849-ADFADE4D576F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Modules.Chat", "SullyTech.App.Client.Wpf.Modules.Chat\SullyTech.App.Client.Wpf.Modules.Chat.csproj", "{7883FAE6-0731-43AF-B849-ADFADE4D576F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat", "SullyTech.App.Client.Wpf.Modules.Chat.Chat", "{E1B6D42D-8E58-4150-A549-32FAA84F78A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter", "{65970154-A46E-48F9-BBFB-6E48CBF347B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.csproj", "{67619B89-66C9-4E8E-9817-7B224BC8FBF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.csproj", "{67619B89-66C9-4E8E-9817-7B224BC8FBF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels", "{C601F718-4CC0-4E6F-AB55-D0026B6EEDBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces", "{3E40E4BA-3903-46C6-90F8-E3EC55D00CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.csproj", "{0FFB5FF5-41AB-4B7C-A570-37157D0D6BE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.csproj", "{0FFB5FF5-41AB-4B7C-A570-37157D0D6BE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands", "{F0A1D122-F3D3-4F10-85FB-BAC1E0F9EF10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands.csproj", "{F82449A4-91F9-4BA9-AC4C-1F01062A3824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands.csproj", "{F82449A4-91F9-4BA9-AC4C-1F01062A3824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.csproj", "{D92D0B7C-E74E-432A-AB34-10F4CA7BE28A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels", "SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.csproj", "{D92D0B7C-E74E-432A-AB34-10F4CA7BE28A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.SignalR", "SullyTech.App.Client.SignalR", "{BBABDFEF-D455-4250-8148-3994BDB4FCE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.SignalR.Hubs", "SullyTech.App.Client.SignalR.Hubs", "{7ECDF56A-5DF6-42D1-BC49-F36937574B90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub", "SullyTech.App.Client.SignalR.Hubs.ChatHub", "{1B41CC5C-2BCF-4240-86F6-99FAE67BB1E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration", "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration", "{75E4DE05-F937-4420-BDEC-98E54849DA04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration", "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration\SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration.csproj", "{0C491341-804A-4AB6-8F87-32308B76D6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub", "SullyTech.App.Client.SignalR.Hubs.ChatHub\SullyTech.App.Client.SignalR.Hubs.ChatHub.csproj", "{A58A6580-59E8-4829-87C0-33561B4FC183}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -446,10 +448,6 @@ Global
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6492E9DA-291F-4985-9383-0C8D61608178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6492E9DA-291F-4985-9383-0C8D61608178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6492E9DA-291F-4985-9383-0C8D61608178}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -630,10 +628,6 @@ Global
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF6EE74B-66CA-4629-A6A2-5047C866D344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF6EE74B-66CA-4629-A6A2-5047C866D344}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF6EE74B-66CA-4629-A6A2-5047C866D344}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF6EE74B-66CA-4629-A6A2-5047C866D344}.Release|Any CPU.Build.0 = Release|Any CPU
 		{92B02FA9-769D-482D-BCCF-4957F240866E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{92B02FA9-769D-482D-BCCF-4957F240866E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92B02FA9-769D-482D-BCCF-4957F240866E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -782,6 +776,14 @@ Global
 		{D92D0B7C-E74E-432A-AB34-10F4CA7BE28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D92D0B7C-E74E-432A-AB34-10F4CA7BE28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D92D0B7C-E74E-432A-AB34-10F4CA7BE28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C491341-804A-4AB6-8F87-32308B76D6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C491341-804A-4AB6-8F87-32308B76D6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C491341-804A-4AB6-8F87-32308B76D6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C491341-804A-4AB6-8F87-32308B76D6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A58A6580-59E8-4829-87C0-33561B4FC183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58A6580-59E8-4829-87C0-33561B4FC183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58A6580-59E8-4829-87C0-33561B4FC183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58A6580-59E8-4829-87C0-33561B4FC183}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -790,9 +792,6 @@ Global
 		{FCD1AB6F-3262-4071-A7CA-DBDEDE97025C} = {B0314A75-4B67-42FD-B698-5C0257A18ED2}
 		{9C0F8661-C90D-4236-8D54-7D60616C56A5} = {CD5C1534-4C6D-497D-B3DD-71974908B909}
 		{7436B4CF-FBFD-4D01-A21E-BBC1FC5E1255} = {B468BF40-7139-4E83-A2E0-E02F6E9B8667}
-		{FFE2E1A3-0CB9-4EAC-9C7D-EB285318597C} = {86067CBD-E34D-4E6B-BF71-F178764F1282}
-		{C39FB816-BBAF-473D-B2A2-F23264E6A439} = {6991BD72-1F62-4FE3-BABA-BB353C595BBD}
-		{86067CBD-E34D-4E6B-BF71-F178764F1282} = {C39FB816-BBAF-473D-B2A2-F23264E6A439}
 		{6492E9DA-291F-4985-9383-0C8D61608178} = {A6CBCE31-0623-4772-BFEE-8A5242619F86}
 		{55AC2D46-B12F-4190-8A55-950C66CCFB4C} = {A6CBCE31-0623-4772-BFEE-8A5242619F86}
 		{E1EE6F03-1ACE-413D-A46E-3E676C940FD9} = {55AC2D46-B12F-4190-8A55-950C66CCFB4C}
@@ -901,7 +900,6 @@ Global
 		{A68695B6-D1B1-4372-BEED-6686EBC36B8C} = {72B05101-4E26-4A89-8785-09DE50D59703}
 		{C934C587-5198-4B1C-8FFA-1F0BA611B57E} = {A68695B6-D1B1-4372-BEED-6686EBC36B8C}
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73} = {72B05101-4E26-4A89-8785-09DE50D59703}
-		{CF6EE74B-66CA-4629-A6A2-5047C866D344} = {86067CBD-E34D-4E6B-BF71-F178764F1282}
 		{8CD610B4-2792-4779-8ED9-DD763B98520E} = {9CF5CCB6-47FF-4FE7-9D13-F758491B2DC4}
 		{96F887CC-8BD7-4541-82E2-9D1AD9889FF4} = {C9F18FD0-B9CB-4D6C-B49F-7ECC52947C48}
 		{92B02FA9-769D-482D-BCCF-4957F240866E} = {96F887CC-8BD7-4541-82E2-9D1AD9889FF4}
@@ -982,6 +980,12 @@ Global
 		{F0A1D122-F3D3-4F10-85FB-BAC1E0F9EF10} = {C601F718-4CC0-4E6F-AB55-D0026B6EEDBF}
 		{F82449A4-91F9-4BA9-AC4C-1F01062A3824} = {F0A1D122-F3D3-4F10-85FB-BAC1E0F9EF10}
 		{D92D0B7C-E74E-432A-AB34-10F4CA7BE28A} = {C601F718-4CC0-4E6F-AB55-D0026B6EEDBF}
+		{BBABDFEF-D455-4250-8148-3994BDB4FCE9} = {8CD610B4-2792-4779-8ED9-DD763B98520E}
+		{7ECDF56A-5DF6-42D1-BC49-F36937574B90} = {BBABDFEF-D455-4250-8148-3994BDB4FCE9}
+		{1B41CC5C-2BCF-4240-86F6-99FAE67BB1E7} = {7ECDF56A-5DF6-42D1-BC49-F36937574B90}
+		{75E4DE05-F937-4420-BDEC-98E54849DA04} = {1B41CC5C-2BCF-4240-86F6-99FAE67BB1E7}
+		{0C491341-804A-4AB6-8F87-32308B76D6D8} = {75E4DE05-F937-4420-BDEC-98E54849DA04}
+		{A58A6580-59E8-4829-87C0-33561B4FC183} = {1B41CC5C-2BCF-4240-86F6-99FAE67BB1E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

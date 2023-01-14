@@ -2,14 +2,14 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
-using Application.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
-using Application.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using SullyTech.App.Client.SignalR.Hubs.ChatHub.Extensions.DependencyInjection;
+using SullyTech.App.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
 using SullyTech.App.Client.Wpf.Modules.Chat.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.App.Client.Wpf.Modules.Identity.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;

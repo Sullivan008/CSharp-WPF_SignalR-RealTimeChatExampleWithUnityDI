@@ -1,8 +1,8 @@
-﻿using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SullyTech.App.Client.SignalR.Hubs.ChatHub.Interfaces;
 
-namespace Application.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
+namespace SullyTech.App.Client.SignalR.Hubs.ChatHub.Extensions.Hosting;
 
 public static class HostExtensions
 {

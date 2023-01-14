@@ -1,5 +1,5 @@
 ﻿using System.Windows.Input;
-using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+using SullyTech.App.Client.SignalR.Hubs.ChatHub.Interfaces;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Commands.Presenter;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.PresenterData;

@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Application.Client.SignalR.Hubs.ChatHub\Application.Client.SignalR.Hubs.ChatHub.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.SignalR.Hubs.ChatHub\SullyTech.App.Client.SignalR.Hubs.ChatHub.csproj" />
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />

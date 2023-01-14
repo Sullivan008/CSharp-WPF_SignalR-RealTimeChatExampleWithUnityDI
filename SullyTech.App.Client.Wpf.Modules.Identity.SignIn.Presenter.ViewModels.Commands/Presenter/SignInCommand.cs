@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Application.Client.SignalR.Hubs.ChatHub.Interfaces;
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
+using SullyTech.App.Client.SignalR.Hubs.ChatHub.Interfaces;
 using SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;

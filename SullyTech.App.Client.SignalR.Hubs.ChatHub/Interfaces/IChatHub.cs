@@ -2,7 +2,7 @@
 using Application.Web.SignalR.Hubs.Contracts.ChatHub.Models.SignIn.RequestModels;
 using SullyTech.SignalR.Client.Core.Hub.Interfaces;
 
-namespace Application.Client.SignalR.Hubs.ChatHub.Interfaces;
+namespace SullyTech.App.Client.SignalR.Hubs.ChatHub.Interfaces;
 
 public interface IChatHub : ISignalRHub
 {

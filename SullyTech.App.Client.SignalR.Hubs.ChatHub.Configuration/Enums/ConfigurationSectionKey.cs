@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Application.Client.SignalR.Hubs.ChatHub.Configuration.Enums;
+namespace SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration.Enums;
 
 public enum ConfigurationSectionKey
 {
