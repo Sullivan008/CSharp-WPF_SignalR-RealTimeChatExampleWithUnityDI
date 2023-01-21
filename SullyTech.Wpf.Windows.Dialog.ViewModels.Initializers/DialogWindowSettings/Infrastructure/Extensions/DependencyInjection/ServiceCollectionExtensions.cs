@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindowSettings.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindowSettings.Models.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces.DialogWindowSettings;
@@ -8,17 +7,14 @@ namespace SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindowSetti
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddDialogWindowSettingsViewModelInitializer<TIDialogWindowSettingsViewModel, TIDialogWindowSettingsViewModelInitializerModel>(this IServiceCollection @this)
-        where TIDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel
-        where TIDialogWindowSettingsViewModelInitializerModel : IDialogWindowSettingsViewModelInitializerModel
+    public static void AddDialogWindowSettingsViewModelInitializer<TIDialogWindowSettingsViewModel, TIDialogWindowSettingsViewModelInitializerModel,
+        TIDialogWindowSettingsViewModelInitializer, TDialogWindowSettingsViewModelInitializer>(this IServiceCollection @this)
+            where TIDialogWindowSettingsViewModel : IDialogWindowSettingsViewModel
+            where TIDialogWindowSettingsViewModelInitializerModel : IDialogWindowSettingsViewModelInitializerModel
+            where TIDialogWindowSettingsViewModelInitializer : IDialogWindowSettingsViewModelInitializer<TIDialogWindowSettingsViewModel, TIDialogWindowSettingsViewModelInitializerModel>
+            where TDialogWindowSettingsViewModelInitializer : TIDialogWindowSettingsViewModelInitializer
+
     {
-        Type implementationInterfaceType = 
-            typeof(IDialogWindowSettingsViewModelInitializer<TIDialogWindowSettingsViewModel, TIDialogWindowSettingsViewModelInitializerModel>);
-
-        Type implementationType = Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)
-                                                                            .Where(x => !x.IsAbstract)
-                                                                            .Single(x => x.GetInterfaces().Any(y => y == implementationInterfaceType && y.IsGenericType));
-
-        @this.AddTransient(implementationInterfaceType, implementationType);
+        @this.AddScoped(typeof(TIDialogWindowSettingsViewModelInitializer), typeof(TDialogWindowSettingsViewModelInitializer));
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindow.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindow.Models.Interfaces;
 using SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces.DialogWindow;
@@ -8,17 +7,13 @@ namespace SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.DialogWindow.Infr
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddDialogWindowViewModelInitializer<TIDialogWindowViewModel, TIDialogWindowViewModelInitializerModel>(this IServiceCollection @this)
-        where TIDialogWindowViewModel : IDialogWindowViewModel
-        where TIDialogWindowViewModelInitializerModel : IDialogWindowViewModelInitializerModel
+    public static void AddDialogWindowViewModelInitializer<TIDialogWindowViewModel, TIDialogWindowViewModelInitializerModel,
+        TIDialogWindowViewModelInitializer, TDialogWindowViewModelInitializer>(this IServiceCollection @this)
+            where TIDialogWindowViewModel : IDialogWindowViewModel
+            where TIDialogWindowViewModelInitializerModel : IDialogWindowViewModelInitializerModel
+            where TIDialogWindowViewModelInitializer : IDialogWindowViewModelInitializer<TIDialogWindowViewModel, TIDialogWindowViewModelInitializerModel>
+            where TDialogWindowViewModelInitializer : TIDialogWindowViewModelInitializer
     {
-        Type implementationInterfaceType = 
-            typeof(IDialogWindowViewModelInitializer<TIDialogWindowViewModel, TIDialogWindowViewModelInitializerModel>);
-
-        Type implementationType = Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)
-                                                                            .Where(x => !x.IsAbstract)
-                                                                            .Single(x => x.GetInterfaces().Any(y => y == implementationInterfaceType && y.IsGenericType));
-
-        @this.AddTransient(implementationInterfaceType, implementationType);
+        @this.AddScoped(typeof(TIDialogWindowViewModelInitializer), typeof(TDialogWindowViewModelInitializer));
     }
 }

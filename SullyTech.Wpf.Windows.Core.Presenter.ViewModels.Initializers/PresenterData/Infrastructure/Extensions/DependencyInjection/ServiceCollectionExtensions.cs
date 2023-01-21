@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.PresenterData.Interfaces;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
 using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.PresenterData;
@@ -8,18 +7,13 @@ namespace SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.Presenter
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddPresenterDataViewModelInitializer<TIPresenterDataViewModel, TIPresenterDataViewModelInitializerModel>(this IServiceCollection @this)
-        where TIPresenterDataViewModel : IPresenterDataViewModel
-        where TIPresenterDataViewModelInitializerModel : IPresenterDataViewModelInitializerModel
+    public static void AddPresenterDataViewModelInitializer<TIPresenterDataViewModel, TIPresenterDataViewModelInitializerModel,
+        TIPresenterDataViewModelInitializer, TPresenterDataViewModelInitializer>(this IServiceCollection @this)
+            where TIPresenterDataViewModel : IPresenterDataViewModel
+            where TIPresenterDataViewModelInitializerModel : IPresenterDataViewModelInitializerModel
+            where TIPresenterDataViewModelInitializer : IPresenterDataViewModelInitializer<TIPresenterDataViewModel, TIPresenterDataViewModelInitializerModel>
+            where TPresenterDataViewModelInitializer : TIPresenterDataViewModelInitializer
     {
-        Type implementationInterfaceType =
-            typeof(IPresenterDataViewModelInitializer<TIPresenterDataViewModel, TIPresenterDataViewModelInitializerModel>);
-
-        Type implementationType =
-            Assembly.GetCallingAssembly().DefinedTypes.Where(x => x.IsClass)
-                                                      .Where(x => !x.IsAbstract)
-                                                      .Single(x => x.GetInterfaces().Any(y => y == implementationInterfaceType && y.IsGenericType));
-
-        @this.AddTransient(implementationInterfaceType, implementationType);
+            @this.AddScoped(typeof(TIPresenterDataViewModelInitializer), typeof(TPresenterDataViewModelInitializer));
     }
 }
