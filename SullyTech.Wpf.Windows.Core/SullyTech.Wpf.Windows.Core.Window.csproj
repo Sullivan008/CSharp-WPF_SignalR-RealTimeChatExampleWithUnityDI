@@ -9,4 +9,8 @@
 		<Product>SullyTech.Wpf.Windows.Core.Window</Product>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.Interfaces\SullyTech.Wpf.Windows.Core.Window.Interfaces.csproj" />
+	</ItemGroup>
+
 </Project>

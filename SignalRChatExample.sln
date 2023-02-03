@@ -414,9 +414,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Signal
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration", "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration", "{75E4DE05-F937-4420-BDEC-98E54849DA04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration", "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration\SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration.csproj", "{0C491341-804A-4AB6-8F87-32308B76D6D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration", "SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration\SullyTech.App.Client.SignalR.Hubs.ChatHub.Configuration.csproj", "{0C491341-804A-4AB6-8F87-32308B76D6D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub", "SullyTech.App.Client.SignalR.Hubs.ChatHub\SullyTech.App.Client.SignalR.Hubs.ChatHub.csproj", "{A58A6580-59E8-4829-87C0-33561B4FC183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.SignalR.Hubs.ChatHub", "SullyTech.App.Client.SignalR.Hubs.ChatHub\SullyTech.App.Client.SignalR.Hubs.ChatHub.csproj", "{A58A6580-59E8-4829-87C0-33561B4FC183}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Interfaces", "SullyTech.Wpf.Windows.Core.Window.Interfaces", "{25957966-4F92-4B3E-A1BB-6EC14A1264CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Windows.Core.Window.Interfaces", "SullyTech.Wpf.Windows.Core.Window.Interfaces\SullyTech.Wpf.Windows.Core.Window.Interfaces.csproj", "{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -784,6 +788,10 @@ Global
 		{A58A6580-59E8-4829-87C0-33561B4FC183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A58A6580-59E8-4829-87C0-33561B4FC183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A58A6580-59E8-4829-87C0-33561B4FC183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -986,6 +994,8 @@ Global
 		{75E4DE05-F937-4420-BDEC-98E54849DA04} = {1B41CC5C-2BCF-4240-86F6-99FAE67BB1E7}
 		{0C491341-804A-4AB6-8F87-32308B76D6D8} = {75E4DE05-F937-4420-BDEC-98E54849DA04}
 		{A58A6580-59E8-4829-87C0-33561B4FC183} = {1B41CC5C-2BCF-4240-86F6-99FAE67BB1E7}
+		{25957966-4F92-4B3E-A1BB-6EC14A1264CC} = {66244BE9-9713-4996-82F5-C28F61C261FD}
+		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6} = {25957966-4F92-4B3E-A1BB-6EC14A1264CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
