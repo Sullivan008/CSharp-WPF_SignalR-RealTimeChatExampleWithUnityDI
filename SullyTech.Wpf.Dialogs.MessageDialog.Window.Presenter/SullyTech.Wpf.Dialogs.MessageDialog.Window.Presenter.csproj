@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Initializers.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Infrastructure\Assets\icon-error.png" />
+		<None Remove="Infrastructure\Assets\icon-information.png" />
+		<None Remove="Infrastructure\Assets\icon-question.png" />
+		<None Remove="Infrastructure\Assets\icon-warning.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Infrastructure\Assets\icon-error.png" />
+		<Resource Include="Infrastructure\Assets\icon-information.png" />
+		<Resource Include="Infrastructure\Assets\icon-question.png" />
+		<Resource Include="Infrastructure\Assets\icon-warning.png" />
+	</ItemGroup>
+
+</Project>

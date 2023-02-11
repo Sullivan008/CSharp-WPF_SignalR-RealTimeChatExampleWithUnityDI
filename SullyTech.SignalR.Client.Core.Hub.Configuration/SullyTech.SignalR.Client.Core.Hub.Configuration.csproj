@@ -14,7 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 	</ItemGroup>
 
 </Project>

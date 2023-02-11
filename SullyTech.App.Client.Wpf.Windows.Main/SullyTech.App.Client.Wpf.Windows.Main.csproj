@@ -1,8 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<UseWPF>true</UseWPF>
-		<TargetFramework>net6.0-windows</TargetFramework>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -10,14 +13,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.csproj" />
-		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.ViewModels\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Behaviors\SullyTech.Wpf.Windows.Core.Behaviors.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.Services.Main\SullyTech.App.Client.Wpf.Windows.Main.Services.Main.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.Window\SullyTech.App.Client.Wpf.Windows.Main.Window.csproj" />
 	</ItemGroup>
 
 </Project>

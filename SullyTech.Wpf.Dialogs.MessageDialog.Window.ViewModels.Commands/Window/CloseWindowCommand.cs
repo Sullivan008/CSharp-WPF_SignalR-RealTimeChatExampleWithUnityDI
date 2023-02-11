@@ -1,8 +1,8 @@
-﻿using SullyTech.Wpf.Dialogs.MessageDialog.Result;
-using SullyTech.Wpf.Dialogs.MessageDialog.Result.Enums;
-using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces.Window;
+﻿using SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.Result;
+using SullyTech.Wpf.Dialogs.MessageDialog.Window.Result.Enums;
 using SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.Window;
-using SullyTech.Wpf.Windows.Core.ViewModels.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.Window.ViewModels.Commands.Abstractions;
 
 namespace SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands.Window;
 

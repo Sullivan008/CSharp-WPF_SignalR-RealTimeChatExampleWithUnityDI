@@ -1,8 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<UseWPF>true</UseWPF>
 		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -15,14 +18,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Result\SullyTech.Wpf.Dialogs.MessageDialog.Result.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Presenter\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.Result\SullyTech.Wpf.Dialogs.MessageDialog.Window.Result.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Initializers.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.Behaviors\SullyTech.Wpf.Windows.Core.Window.Behaviors.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.Extensions\SullyTech.Wpf.Windows.Core.Window.Extensions.csproj" />
+
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window\SullyTech.Wpf.Windows.Dialog.Window.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Behaviors\SullyTech.Wpf.Windows.Core.Behaviors.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Extensions\SullyTech.Wpf.Windows.Core.Extensions.csproj" />
 	</ItemGroup>
 
 </Project>

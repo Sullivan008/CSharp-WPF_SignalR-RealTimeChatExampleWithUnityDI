@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Windows.Main.Window.Interfaces</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Window.Interfaces\SullyTech.Wpf.Windows.Navigation.Window.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

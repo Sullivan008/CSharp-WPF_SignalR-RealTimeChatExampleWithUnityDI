@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;
-using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow.Interfaces;
 
 namespace SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Commands.Presenter;
 

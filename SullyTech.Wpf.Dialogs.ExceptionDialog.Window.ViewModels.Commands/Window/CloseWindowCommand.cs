@@ -1,8 +1,8 @@
-﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Result;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Enums;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces.Window;
+﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result.Enums;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.Window;
-using SullyTech.Wpf.Windows.Core.ViewModels.Commands.Abstractions;
+using SullyTech.Wpf.Windows.Core.Window.ViewModels.Commands.Abstractions;
 
 namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Commands.Window;
 

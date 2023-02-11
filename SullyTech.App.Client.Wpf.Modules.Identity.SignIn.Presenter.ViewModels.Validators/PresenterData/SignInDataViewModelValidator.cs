@@ -11,9 +11,7 @@ internal sealed class SignInDataViewModelValidator : AbstractValidator<ISignInDa
 
         RuleFor(x => x.NickName)
             .NotNull()
-            .NotEmpty()
-            .WithMessage("This field is required!")
-            .MinimumLength(6)
-            .WithMessage("The nickname must be at least 6 characters long!");
+            .NotEmpty().WithMessage("This field is required!")
+            .MinimumLength(6).WithMessage("The nickname must be at least 6 characters long!");
     }
 }

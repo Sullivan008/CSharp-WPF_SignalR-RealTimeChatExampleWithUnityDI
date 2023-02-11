@@ -38,7 +38,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Duration="0:0:0.550" From="0.5" To="1" 
-                                                             Storyboard.TargetProperty="Opacity" />
+                                                         Storyboard.TargetProperty="Opacity" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -46,7 +46,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Duration="0:0:0.550" From="1" To="0.5" 
-                                                             Storyboard.TargetProperty="Opacity" />
+                                                         Storyboard.TargetProperty="Opacity" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>

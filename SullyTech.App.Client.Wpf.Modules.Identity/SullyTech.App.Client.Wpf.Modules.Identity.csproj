@@ -5,6 +5,10 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<Product>SullyTech.App.Client.Wpf.Modules.Identity</Product>
 	</PropertyGroup>
 

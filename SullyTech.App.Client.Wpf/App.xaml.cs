@@ -15,35 +15,20 @@ using SullyTech.App.Client.Wpf.Modules.Identity.Infrastructure.Extensions.Depend
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.App.Client.Wpf.Windows.Main.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.App.Client.Wpf.Windows.Main.Interfaces.Window;
-using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.WindowSettings.Models;
-using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.Window;
-using SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.WindowSettings;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers.PresenterData.Models;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.Presenter;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.PresenterData;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Interfaces;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces.Window;
+using SullyTech.App.Client.Wpf.Windows.Main.Services.Main.Interfaces;
+using SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers.WindowSettings.Models;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog.Interfaces;
+using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Initializers.PresenterData.Models;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Initializers.WindowSettings.Models;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.Window;
-using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.WindowSettings;
-using SullyTech.Wpf.Dialogs.MessageDialog.Window.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Dialogs.MessageDialog.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Notifications.Toast.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
 using SullyTech.Wpf.TraceListeners.BindingError;
-using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
-using SullyTech.Wpf.Windows.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions.Interfaces;
-using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.Interfaces;
-using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions;
-using SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions.Interfaces;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.WindowShowOptions;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.WindowShowOptions.Interfaces;
+using SullyTech.Wpf.Windows.Dialog.Window.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow.Infrastructure.Extensions.DependencyInjection;
 
 namespace SullyTech.App.Client.Wpf;
 
@@ -65,10 +50,12 @@ public partial class App
             })
             .ConfigureServices((hostBuilderContext, serviceCollection) =>
             {
-                serviceCollection.AddDialogWindowService();
-                serviceCollection.AddNavigationWindowService();
+                serviceCollection.AddChatHub(hostBuilderContext.Configuration);
 
                 serviceCollection.AddToastNotification(hostBuilderContext.Configuration);
+
+                serviceCollection.AddDialogWindowService();
+                serviceCollection.AddNavigationWindowService();
 
                 serviceCollection.AddMessageDialog();
                 serviceCollection.AddExceptionDialog();
@@ -77,8 +64,6 @@ public partial class App
 
                 serviceCollection.AddIdentityModule();
                 serviceCollection.AddChatModule();
-
-                serviceCollection.AddChatHub(hostBuilderContext.Configuration);
             })
             .ConfigureLogging((hostBuilderContext, loggingBuilder) =>
             {
@@ -178,58 +163,44 @@ public partial class App
     private async void ShowHubExceptionNotification()
     {
         IToastNotification toastNotification = _host.Services.GetRequiredService<IToastNotification>();
-        ShowNotificationOptions showNotificationOptions = new()
-        {
-            Title = "Application message",
-            Message = "An Internal Server Error has occurred! Please contact your system administrator!",
-            NotificationType = NotificationType.Error
-        };
 
-        await toastNotification.ShowNotificationAsync(showNotificationOptions);
+        await toastNotification.ShowNotificationAsync(
+            showNotificationOptions: new ShowNotificationOptions
+            {
+                Title = "Application message",
+                Message = "An Internal Server Error has occurred! Please contact your system administrator!",
+                NotificationType = NotificationType.Error
+            });
     }
 
     private async void ShowExceptionDialog(Exception exception)
     {
-        IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
+        IExceptionDialogService exceptionDialogService = _host.Services.GetRequiredService<IExceptionDialogService>();
 
-        IDialogWindowShowOptions windowShowOptions = new DialogWindowShowOptions<IExceptionDialogWindow, IExceptionDialogWindowViewModel, IExceptionDialogWindowSettingsViewModel>
-        {
-            WindowSettingsViewModelInitializerModel = new ExceptionDialogWindowSettingsViewModelInitializerModel
+        await exceptionDialogService.ShowDialogAsync(
+            windowSettingsViewModelInitializerModel: new ExceptionDialogWindowSettingsViewModelInitializerModel
             {
                 Title = "Unexpected Application Error"
-            }
-        };
-
-        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<IExceptionDialogViewModel, IExceptionDialogDataViewModel>
-        {
-            PresenterDataViewModelInitializerModel = new ExceptionDialogDataViewModelInitializerModel
+            },
+            presenterDataViewModelInitializerModel: new ExceptionDialogDataViewModelInitializerModel
             {
                 Message = exception.Message,
                 Type = exception.GetType(),
                 StackTrace = exception.StackTrace,
                 InnerException = exception.InnerException
-            }
-        };
-
-        await dialogWindowService.ShowDialogAsync<IExceptionDialogResult>(windowShowOptions, presenterLoadOptions);
+            });
     }
 
     private async void ShowMainWindow()
     {
-        INavigationWindowService navigationWindowService = _host.Services.GetRequiredService<INavigationWindowService>();
+        IMainWindowService mainWindowService = _host.Services.GetRequiredService<IMainWindowService>();
 
-        INavigationWindowShowOptions windowShowOptions = new NavigationWindowShowOptions<IMainWindow, IMainWindowViewModel, IMainWindowSettingsViewModel>
-        {
-            WindowSettingsViewModelInitializerModel = new MainWindowSettingsViewModelInitializerModel
+        await mainWindowService.ShowAsync<ISignInViewModel, ISignInDataViewModel>(
+            windowSettingsViewModelInitializerModel: new MainWindowSettingsViewModelInitializerModel
             {
                 Title = "SullyTech - SignalR Chat Example",
                 Height = 750,
                 Width = 450
-            }
-        };
-
-        IPresenterLoadOptions presenterLoadOptions = new PresenterLoadOptions<ISignInViewModel, ISignInDataViewModel>();
-
-        await navigationWindowService.ShowAsync(windowShowOptions, presenterLoadOptions);
+            });
     }
 }

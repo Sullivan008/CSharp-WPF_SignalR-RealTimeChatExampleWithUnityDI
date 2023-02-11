@@ -1,8 +1,8 @@
-﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Result.Interfaces;
+﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result.Interfaces;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Commands.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.WindowSettings;
-using SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindow;
+using SullyTech.Wpf.Windows.Dialog.Window.ViewModels.DialogWindow;
 
 namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Window;
 

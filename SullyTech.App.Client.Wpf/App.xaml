@@ -9,8 +9,8 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.grey.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
 
-                <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.MessageDialog.Presenter;component/Infrastructure/DataTemplates.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter;component/Infrastructure/DataTemplates.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter;component/Infrastructure/DataTemplates.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter;component/Infrastructure/DataTemplates.xaml"/>
 
                 <ResourceDictionary Source="pack://application:,,,/SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter;component/Infrastructure/DataTemplates.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter;component/Infrastructure/DataTemplates.xaml"/>

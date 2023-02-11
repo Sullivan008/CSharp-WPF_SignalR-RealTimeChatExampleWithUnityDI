@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.MessageDialog</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog\SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window\SullyTech.Wpf.Dialogs.MessageDialog.Window.csproj" />
+	</ItemGroup>
+
+</Project>

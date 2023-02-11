@@ -9,10 +9,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Commands\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels\SullyTech.Wpf.Windows.Dialog.ViewModels.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window.ViewModels\SullyTech.Wpf.Windows.Dialog.Window.ViewModels.csproj" />
 	</ItemGroup>
 
 </Project>

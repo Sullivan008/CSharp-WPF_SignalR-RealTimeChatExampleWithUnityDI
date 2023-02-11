@@ -5,16 +5,25 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<Product>SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Commands</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.App.Client.SignalR.Hubs.ChatHub\SullyTech.App.Client.SignalR.Hubs.ChatHub.csproj" />
+
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.csproj" />
+
 		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands\SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow.csproj" />
+
 	</ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.WindowSettings;
+﻿namespace SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces.WindowSettings;
 
 public interface IWindowSettingsViewModel
 {

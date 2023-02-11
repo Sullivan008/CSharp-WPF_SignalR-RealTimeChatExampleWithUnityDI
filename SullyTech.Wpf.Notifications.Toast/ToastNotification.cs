@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 using Notification.Wpf;
 using Notification.Wpf.Constants;
 using SullyTech.Wpf.Notifications.Toast.Configuration.Models;
-using SullyTech.Wpf.Notifications.Toast.Infrastructure.Exceptions;
+using SullyTech.Wpf.Notifications.Toast.Exceptions;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 

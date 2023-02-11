@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj" />
+		
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Initializers\SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Initializers.csproj" />
+	</ItemGroup>
+
+</Project>

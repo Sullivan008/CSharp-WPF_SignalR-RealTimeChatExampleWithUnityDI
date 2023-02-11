@@ -2,7 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Interfaces.PresenterData;
-using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.PresenterData;
+using SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.PresenterData;
 
 namespace SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.PresenterData;
 

@@ -1,4 +1,4 @@
-﻿using SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces.DialogWindowSettings;
+﻿using SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Interfaces.DialogWindowSettings;
 
 namespace SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.WindowSettings;
 

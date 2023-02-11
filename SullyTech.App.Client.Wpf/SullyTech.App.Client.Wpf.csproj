@@ -1,9 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<UseWPF>true</UseWPF>
-		<OutputType>WinExe</OutputType>
 		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -15,22 +21,23 @@
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.37" />
-		<PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
 		<PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat\SullyTech.App.Client.Wpf.Modules.Chat.csproj" />
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity\SullyTech.App.Client.Wpf.Modules.Identity.csproj" />
+
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Windows.Main\SullyTech.App.Client.Wpf.Windows.Main.csproj" />
+
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window\SullyTech.Wpf.Dialogs.MessageDialog.Window.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog\SullyTech.Wpf.Dialogs.MessageDialog.csproj" />
+
 		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
+
 		<ProjectReference Include="..\SullyTech.Wpf.TraceListeners.BindingError\SullyTech.Wpf.TraceListeners.BindingError.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

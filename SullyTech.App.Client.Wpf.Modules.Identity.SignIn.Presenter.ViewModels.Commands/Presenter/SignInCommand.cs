@@ -8,11 +8,11 @@ using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Inte
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions.Enums;
-using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.Abstractions;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.Interfaces;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions;
-using SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
+using SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands.Abstractions;
 using SullyTech.Wpf.Windows.Navigation.Window.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow.Interfaces;
+using SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow.MethodParameters.NavigateToOptions;
+using SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow.MethodParameters.NavigateToOptions.Interfaces;
 
 namespace SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Commands.Presenter;
 

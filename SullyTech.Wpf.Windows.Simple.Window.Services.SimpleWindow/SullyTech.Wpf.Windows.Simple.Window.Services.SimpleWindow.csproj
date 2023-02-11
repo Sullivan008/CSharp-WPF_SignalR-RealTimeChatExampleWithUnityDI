@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Windows.Simple.Window.Services.SimpleWindow</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.Services.Window\SullyTech.Wpf.Windows.Core.Window.Services.Window.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Window.Interfaces\SullyTech.Wpf.Windows.Simple.Window.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Initializers\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

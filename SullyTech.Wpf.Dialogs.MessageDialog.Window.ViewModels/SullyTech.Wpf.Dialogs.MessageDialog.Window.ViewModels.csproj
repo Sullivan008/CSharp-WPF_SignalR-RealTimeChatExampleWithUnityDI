@@ -9,10 +9,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Result\SullyTech.Wpf.Dialogs.MessageDialog.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.Result\SullyTech.Wpf.Dialogs.MessageDialog.Window.Result.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.ViewModels.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.ViewModels\SullyTech.Wpf.Windows.Dialog.ViewModels.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window.ViewModels\SullyTech.Wpf.Windows.Dialog.Window.ViewModels.csproj" />
 	</ItemGroup>
 
 </Project>

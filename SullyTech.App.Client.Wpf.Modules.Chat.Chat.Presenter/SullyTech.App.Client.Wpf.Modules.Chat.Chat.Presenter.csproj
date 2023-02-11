@@ -6,6 +6,10 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<Product>SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter</Product>
 	</PropertyGroup>
 

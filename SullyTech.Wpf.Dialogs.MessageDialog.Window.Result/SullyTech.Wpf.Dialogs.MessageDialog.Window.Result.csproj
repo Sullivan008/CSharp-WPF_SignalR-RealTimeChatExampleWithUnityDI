@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.MessageDialog.Window.Result</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window.Result.Interfaces\SullyTech.Wpf.Windows.Dialog.Window.Result.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

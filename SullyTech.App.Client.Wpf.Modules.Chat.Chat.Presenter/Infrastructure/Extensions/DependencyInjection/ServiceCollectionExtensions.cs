@@ -8,6 +8,7 @@ public static class ServiceCollectionExtensions
     public static void AddChatPresenter(this IServiceCollection @this)
     {
         @this.AddChatViewModel();
+
         @this.AddChatDataViewModel();
     }
 }

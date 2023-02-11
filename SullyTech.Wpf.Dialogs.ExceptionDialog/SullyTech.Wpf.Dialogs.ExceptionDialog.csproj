@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.ExceptionDialog</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog.csproj" />
+		
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.ExceptionDialog.Window\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.csproj" />
+	</ItemGroup>
+
+</Project>

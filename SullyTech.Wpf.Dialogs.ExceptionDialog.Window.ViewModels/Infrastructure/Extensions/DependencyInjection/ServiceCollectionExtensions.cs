@@ -3,8 +3,8 @@ using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Window;
 using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.WindowSettings;
-using SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindow.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Windows.Dialog.ViewModels.DialogWindowSettings.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Windows.Dialog.Window.ViewModels.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Windows.Dialog.Window.ViewModels.DialogWindowSettings.Infrastructure.Extensions.DependencyInjection;
 
 namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels.Infrastructure.Extensions.DependencyInjection;
 

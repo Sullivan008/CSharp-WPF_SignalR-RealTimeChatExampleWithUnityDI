@@ -44,7 +44,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Cache.Core", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Web.SignalR.Core", "Application.Web.SignalR.Core\Application.Web.SignalR.Core.csproj", "{0DBAF765-55C2-4DD9-BBE4-32F63C1FD2F3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Core", "SullyTech.Core", "{490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech", "SullyTech", "{490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Guard", "SullyTech.Guard", "{4E61B1F8-D052-412D-98D4-7160DADF2968}"
 EndProject
@@ -62,73 +62,73 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navig
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.Window", "SullyTech.Wpf.Windows.Navigation.Window\SullyTech.Wpf.Windows.Navigation.Window.csproj", "{06BC2E19-9B4F-40AB-B6E1-953EEB30E51B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.ViewModels", "SullyTech.Wpf.Windows.Navigation.ViewModels", "{669D92E4-7833-4136-8E46-96FFB2D68132}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Window.ViewModels", "SullyTech.Wpf.Windows.Navigation.Window.ViewModels", "{669D92E4-7833-4136-8E46-96FFB2D68132}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.ViewModels", "SullyTech.Wpf.Windows.Navigation.ViewModels\SullyTech.Wpf.Windows.Navigation.ViewModels.csproj", "{B454F1A6-F9C0-41E3-A4CD-C5C58348B529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.Window.ViewModels", "SullyTech.Wpf.Windows.Navigation.Window.ViewModels\SullyTech.Wpf.Windows.Navigation.Window.ViewModels.csproj", "{B454F1A6-F9C0-41E3-A4CD-C5C58348B529}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Services", "SullyTech.Wpf.Windows.Navigation.Services", "{3847C050-EDD1-4AA8-9D76-2949F3E6736E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Window.Services", "SullyTech.Wpf.Windows.Navigation.Window.Services", "{3847C050-EDD1-4AA8-9D76-2949F3E6736E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow", "SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow", "{A42CDFDD-07F3-4AD3-8322-EE5D99E58FD4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow", "SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow", "{A42CDFDD-07F3-4AD3-8322-EE5D99E58FD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow", "SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Services.NavigationWindow.csproj", "{59B56525-02DD-41F3-8103-D2CFD8C2F496}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow", "SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow\SullyTech.Wpf.Windows.Navigation.Window.Services.NavigationWindow.csproj", "{59B56525-02DD-41F3-8103-D2CFD8C2F496}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces", "{DDB9DA00-C933-4F5F-879A-883DF1F93FEE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Interfaces", "{DDB9DA00-C933-4F5F-879A-883DF1F93FEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces\SullyTech.Wpf.Windows.Navigation.ViewModels.Interfaces.csproj", "{A8F7B703-1218-4381-ABC4-8E7CA94A242D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Interfaces\SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Interfaces.csproj", "{A8F7B703-1218-4381-ABC4-8E7CA94A242D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers", "SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers", "{818973B9-3DCE-44E4-8D23-C9CB43D50E16}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Initializers", "{818973B9-3DCE-44E4-8D23-C9CB43D50E16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers", "SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers\SullyTech.Wpf.Windows.Navigation.ViewModels.Initializers.csproj", "{65877D1F-7C2D-4162-9C68-E47D4F0B67C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Initializers\SullyTech.Wpf.Windows.Navigation.Window.ViewModels.Initializers.csproj", "{65877D1F-7C2D-4162-9C68-E47D4F0B67C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core", "SullyTech.Wpf.Windows.Core", "{47E830E4-9D1D-46E7-ACFA-423E54237A1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window", "SullyTech.Wpf.Windows.Core\SullyTech.Wpf.Windows.Core.Window.csproj", "{23F886D0-ACFE-489D-BADE-2153D0CF73BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window", "SullyTech.Wpf.Windows.Core.Window\SullyTech.Wpf.Windows.Core.Window.csproj", "{23F886D0-ACFE-489D-BADE-2153D0CF73BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window", "SullyTech.Wpf.Windows.Core.Window", "{66244BE9-9713-4996-82F5-C28F61C261FD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.ViewModels", "SullyTech.Wpf.Windows.Core.ViewModels", "{D39D4313-3E17-44D0-885F-4FAE75621C88}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels", "SullyTech.Wpf.Windows.Core.Window.ViewModels", "{D39D4313-3E17-44D0-885F-4FAE75621C88}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.ViewModels.Initializers", "{5E06F7E7-3C55-4029-9B6D-C418047769AC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.Window.ViewModels.Initializers", "{5E06F7E7-3C55-4029-9B6D-C418047769AC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.ViewModels.Interfaces", "{674D9A5E-925E-4152-A195-7696A4653B4B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces", "{674D9A5E-925E-4152-A195-7696A4653B4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.csproj", "{74E6501C-B0DE-4B84-BD7E-89DCBB48718B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces.csproj", "{74E6501C-B0DE-4B84-BD7E-89DCBB48718B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.ViewModels.Initializers.csproj", "{D555B1AA-BFA1-403C-B7A7-16E5780EB037}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.Window.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Window.ViewModels.Initializers.csproj", "{D555B1AA-BFA1-403C-B7A7-16E5780EB037}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.ViewModels", "SullyTech.Wpf.Windows.Core.ViewModels\SullyTech.Wpf.Windows.Core.ViewModels.csproj", "{10DE5640-B5FE-4C35-B137-54A27CDBC6FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels", "SullyTech.Wpf.Windows.Core.Window.ViewModels\SullyTech.Wpf.Windows.Core.Window.ViewModels.csproj", "{10DE5640-B5FE-4C35-B137-54A27CDBC6FC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Services", "SullyTech.Wpf.Windows.Core.Services", "{31EC2C38-3B98-4DE1-A1EB-774AAF889129}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Services", "SullyTech.Wpf.Windows.Core.Window.Services", "{31EC2C38-3B98-4DE1-A1EB-774AAF889129}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Presenter", "SullyTech.Wpf.Windows.Core.Presenter", "{E4571A7B-93B2-42B4-A2D2-F4474AA09C4D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Presenter", "SullyTech.Wpf.Windows.Core.Window.Presenter", "{E4571A7B-93B2-42B4-A2D2-F4474AA09C4D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels", "{A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels", "{A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.csproj", "{AD0BE13F-A0E3-4B19-BEB0-B4C2A7FA2737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels\SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.csproj", "{AD0BE13F-A0E3-4B19-BEB0-B4C2A7FA2737}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces", "{BD8E1F04-98C2-43F3-A464-B5C285ED0693}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces", "{BD8E1F04-98C2-43F3-A464-B5C285ED0693}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers", "{1C990BE4-A401-4BBF-AC18-16971F509AB2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Initializers", "{1C990BE4-A401-4BBF-AC18-16971F509AB2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.csproj", "{15C15857-1EE6-44EA-AF3D-B7A7A7222133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces.csproj", "{15C15857-1EE6-44EA-AF3D-B7A7A7222133}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Initializers.csproj", "{B348F6F1-890C-4AC7-B984-52C25693B193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Initializers.csproj", "{B348F6F1-890C-4AC7-B984-52C25693B193}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands", "{E5963D61-A6A3-4A39-953F-69B717295882}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands", "{E5963D61-A6A3-4A39-953F-69B717295882}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands\SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Commands.csproj", "{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands\SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Commands.csproj", "{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Services.Window", "SullyTech.Wpf.Windows.Core.Services.Window", "{06073E56-01B8-4D34-B475-A0AED3AEFA7E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Services.Window", "SullyTech.Wpf.Windows.Core.Window.Services.Window", "{06073E56-01B8-4D34-B475-A0AED3AEFA7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Services.Window", "SullyTech.Wpf.Windows.Core.Services.Window\SullyTech.Wpf.Windows.Core.Services.Window.csproj", "{1CDE3A04-4C4C-4283-BF64-A685B73FC8CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Services.Window", "SullyTech.Wpf.Windows.Core.Window.Services.Window\SullyTech.Wpf.Windows.Core.Window.Services.Window.csproj", "{1CDE3A04-4C4C-4283-BF64-A685B73FC8CA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.ViewModels.Commands", "{F9ED1014-232C-43D0-83E9-605D4F2AD385}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Window.ViewModels.Commands", "{F9ED1014-232C-43D0-83E9-605D4F2AD385}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.ViewModels.Commands\SullyTech.Wpf.Windows.Core.ViewModels.Commands.csproj", "{7473E320-ECB0-4650-95A0-EA0BAC6D3AEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.ViewModels.Commands", "SullyTech.Wpf.Windows.Core.Window.ViewModels.Commands\SullyTech.Wpf.Windows.Core.Window.ViewModels.Commands.csproj", "{7473E320-ECB0-4650-95A0-EA0BAC6D3AEB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Behaviors", "SullyTech.Wpf.Windows.Core.Behaviors", "{744A59D7-8967-4212-B674-E354AC52A199}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Behaviors", "SullyTech.Wpf.Windows.Core.Window.Behaviors", "{744A59D7-8967-4212-B674-E354AC52A199}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Behaviors", "SullyTech.Wpf.Windows.Core.Behaviors\SullyTech.Wpf.Windows.Core.Behaviors.csproj", "{4AAFCCD2-FFA0-4F12-8BD1-F772FE8154F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Behaviors", "SullyTech.Wpf.Windows.Core.Window.Behaviors\SullyTech.Wpf.Windows.Core.Window.Behaviors.csproj", "{4AAFCCD2-FFA0-4F12-8BD1-F772FE8154F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Window", "SullyTech.Wpf.Windows.Navigation.Window", "{0F819154-65F5-4748-B914-12B7537DD9C2}"
 EndProject
@@ -138,33 +138,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Window", "SullyTech.Wpf.Windows.Dialog.Window\SullyTech.Wpf.Windows.Dialog.Window.csproj", "{DC9022D8-4808-411D-A2DC-1E2AC4DC0182}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.ViewModels", "SullyTech.Wpf.Windows.Dialog.ViewModels", "{8E827759-7675-45F5-9258-1D05FEDB03D6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.ViewModels", "SullyTech.Wpf.Windows.Dialog.Window.ViewModels", "{8E827759-7675-45F5-9258-1D05FEDB03D6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces", "{0CA5986E-DB68-448F-9D04-77AB9A496BC0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Interfaces", "{0CA5986E-DB68-448F-9D04-77AB9A496BC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces\SullyTech.Wpf.Windows.Dialog.ViewModels.Interfaces.csproj", "{87922F4D-1EE1-43CB-85E4-3EDCA3EAD501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Interfaces\SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Interfaces.csproj", "{87922F4D-1EE1-43CB-85E4-3EDCA3EAD501}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Result", "SullyTech.Wpf.Windows.Dialog.Result", "{C8EE495F-28F0-4EB6-8F94-256408F2FD1F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.Result", "SullyTech.Wpf.Windows.Dialog.Window.Result", "{C8EE495F-28F0-4EB6-8F94-256408F2FD1F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Result.Interfaces", "SullyTech.Wpf.Windows.Dialog.Result.Interfaces", "{93C264F2-C5E1-412B-9694-C49883A4ED08}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.Result.Interfaces", "SullyTech.Wpf.Windows.Dialog.Window.Result.Interfaces", "{93C264F2-C5E1-412B-9694-C49883A4ED08}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Result.Interfaces", "SullyTech.Wpf.Windows.Dialog.Result.Interfaces\SullyTech.Wpf.Windows.Dialog.Result.Interfaces.csproj", "{11A125D6-167D-433B-80DC-481D8ABB20A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Window.Result.Interfaces", "SullyTech.Wpf.Windows.Dialog.Window.Result.Interfaces\SullyTech.Wpf.Windows.Dialog.Window.Result.Interfaces.csproj", "{11A125D6-167D-433B-80DC-481D8ABB20A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.ViewModels", "SullyTech.Wpf.Windows.Dialog.ViewModels\SullyTech.Wpf.Windows.Dialog.ViewModels.csproj", "{0CD1A615-C28C-433A-B83C-82BDF9BECB2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Window.ViewModels", "SullyTech.Wpf.Windows.Dialog.Window.ViewModels\SullyTech.Wpf.Windows.Dialog.Window.ViewModels.csproj", "{0CD1A615-C28C-433A-B83C-82BDF9BECB2B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers", "SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers", "{1C2649E5-70F6-4B9A-AA5D-EDDFED49FAC4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Initializers", "{1C2649E5-70F6-4B9A-AA5D-EDDFED49FAC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers", "SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers\SullyTech.Wpf.Windows.Dialog.ViewModels.Initializers.csproj", "{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Initializers\SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Initializers.csproj", "{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Services", "SullyTech.Wpf.Windows.Dialog.Services", "{1EB047E0-F574-4B9E-A178-BDFC2A0EF545}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.Services", "SullyTech.Wpf.Windows.Dialog.Window.Services", "{1EB047E0-F574-4B9E-A178-BDFC2A0EF545}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Services.DialogWindow", "SullyTech.Wpf.Windows.Dialog.Services.DialogWindow", "{76B74AEC-1826-4FCE-86B0-D0FA53A3655D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.Services.DialogWindow", "SullyTech.Wpf.Windows.Dialog.Window.Services.DialogWindow", "{76B74AEC-1826-4FCE-86B0-D0FA53A3655D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Services.DialogWindow", "SullyTech.Wpf.Windows.Dialog.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Services.DialogWindow.csproj", "{15D514C2-195D-412B-A4FF-8CB6D26977CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Window.Services.DialogWindow", "SullyTech.Wpf.Windows.Dialog.Window.Services.DialogWindow\SullyTech.Wpf.Windows.Dialog.Window.Services.DialogWindow.csproj", "{15D514C2-195D-412B-A4FF-8CB6D26977CB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Extensions", "SullyTech.Wpf.Windows.Core.Extensions", "{98FFA0E9-B2B5-49DC-A80A-8717072DAECC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Extensions", "SullyTech.Wpf.Windows.Core.Window.Extensions", "{98FFA0E9-B2B5-49DC-A80A-8717072DAECC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Extensions", "SullyTech.Wpf.Windows.Core.Extensions\SullyTech.Wpf.Windows.Core.Extensions.csproj", "{AE8C2AA1-9A61-4E0E-9DE1-8EEB74FB5ADC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Extensions", "SullyTech.Wpf.Windows.Core.Window.Extensions\SullyTech.Wpf.Windows.Core.Window.Extensions.csproj", "{AE8C2AA1-9A61-4E0E-9DE1-8EEB74FB5ADC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple", "SullyTech.Wpf.Windows.Simple", "{615C81E0-E936-42E2-8BF4-F4AF21B6F81F}"
 EndProject
@@ -172,23 +172,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simpl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.Window", "SullyTech.Wpf.Windows.Simple.Window\SullyTech.Wpf.Windows.Simple.Window.csproj", "{E80CCFBC-F04F-45A3-8947-9396BF81C7C0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.ViewModels", "SullyTech.Wpf.Windows.Simple.ViewModels", "{A23FD6B6-A4C4-458C-AA61-DFD6D42FBBD1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Window.ViewModels", "SullyTech.Wpf.Windows.Simple.Window.ViewModels", "{A23FD6B6-A4C4-458C-AA61-DFD6D42FBBD1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Simple.ViewModels.Interfaces", "{4569C4E9-0E2C-4FDB-91DF-75EE333040A9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces", "{4569C4E9-0E2C-4FDB-91DF-75EE333040A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Simple.ViewModels.Interfaces\SullyTech.Wpf.Windows.Simple.ViewModels.Interfaces.csproj", "{3DBE155F-D81E-4408-BB57-CE598D04341C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces", "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces.csproj", "{3DBE155F-D81E-4408-BB57-CE598D04341C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.ViewModels", "SullyTech.Wpf.Windows.Simple.ViewModels\SullyTech.Wpf.Windows.Simple.ViewModels.csproj", "{642D3680-F46B-4683-B744-6CB24F4E93A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.Window.ViewModels", "SullyTech.Wpf.Windows.Simple.Window.ViewModels\SullyTech.Wpf.Windows.Simple.Window.ViewModels.csproj", "{642D3680-F46B-4683-B744-6CB24F4E93A8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.ViewModels.Initializers", "SullyTech.Wpf.Windows.Simple.ViewModels.Initializers", "{D8C00056-9F0E-4E79-B982-B3FF6FC8FBC7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Initializers", "{D8C00056-9F0E-4E79-B982-B3FF6FC8FBC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.ViewModels.Initializers", "SullyTech.Wpf.Windows.Simple.ViewModels.Initializers\SullyTech.Wpf.Windows.Simple.ViewModels.Initializers.csproj", "{E0EEE08C-3E74-44CD-8EA9-0273E092A7E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Initializers", "SullyTech.Wpf.Windows.Simple.Window.ViewModels.Initializers\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Initializers.csproj", "{E0EEE08C-3E74-44CD-8EA9-0273E092A7E1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Services", "SullyTech.Wpf.Windows.Simple.Services", "{6D48CDF2-BB03-4A60-B44B-4698ED409B14}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Window.Services", "SullyTech.Wpf.Windows.Simple.Window.Services", "{6D48CDF2-BB03-4A60-B44B-4698ED409B14}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Services.SimpleWindow", "SullyTech.Wpf.Windows.Simple.Services.SimpleWindow", "{0E76BC03-892F-46D8-8536-3DF8F9A7CC38}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Window.Services.SimpleWindow", "SullyTech.Wpf.Windows.Simple.Window.Services.SimpleWindow", "{0E76BC03-892F-46D8-8536-3DF8F9A7CC38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.Services.SimpleWindow", "SullyTech.Wpf.Windows.Simple.Services.SimpleWindow\SullyTech.Wpf.Windows.Simple.Services.SimpleWindow.csproj", "{20E42CB7-98EF-442D-8656-F6A0DA870150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.Window.Services.SimpleWindow", "SullyTech.Wpf.Windows.Simple.Window.Services.SimpleWindow\SullyTech.Wpf.Windows.Simple.Window.Services.SimpleWindow.csproj", "{20E42CB7-98EF-442D-8656-F6A0DA870150}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs", "SullyTech.Wpf.Dialogs", "{793FD0A2-9EE7-429D-A0F3-E8692B72F7A4}"
 EndProject
@@ -198,13 +198,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Excep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.csproj", "{9D387B9D-739C-4DCF-B466-C98F6CA5389E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Result", "SullyTech.Wpf.Dialogs.ExceptionDialog.Result", "{5338969D-1073-4C56-B497-7303D9CDCB13}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result", "{5338969D-1073-4C56-B497-7303D9CDCB13}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Result", "SullyTech.Wpf.Dialogs.ExceptionDialog.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Result.csproj", "{46E577D4-CFA7-4834-936F-11D6E55E9F69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Result.csproj", "{46E577D4-CFA7-4834-936F-11D6E55E9F69}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter", "{77CB76F8-0BC5-4572-846C-674E0DF94DD1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter", "{77CB76F8-0BC5-4572-846C-674E0DF94DD1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.csproj", "{4F8FB88F-A9F9-441A-9EA2-4CAD8552DB54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.csproj", "{4F8FB88F-A9F9-441A-9EA2-4CAD8552DB54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog", "SullyTech.Wpf.Dialogs.MessageDialog", "{DE6D7E6E-4AC5-49A0-BB01-C37010CFC2D4}"
 EndProject
@@ -212,13 +212,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Messa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window", "SullyTech.Wpf.Dialogs.MessageDialog.Window\SullyTech.Wpf.Dialogs.MessageDialog.Window.csproj", "{6DAAD442-5AEC-4A72-8CA5-09325027E481}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Result", "SullyTech.Wpf.Dialogs.MessageDialog.Result", "{E5F2116D-382B-459D-811B-4ADFD90B8C55}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Result", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Result", "{E5F2116D-382B-459D-811B-4ADFD90B8C55}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Result", "SullyTech.Wpf.Dialogs.MessageDialog.Result\SullyTech.Wpf.Dialogs.MessageDialog.Result.csproj", "{4251D956-F351-4B6B-B495-15ECB90B319A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Result", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Result\SullyTech.Wpf.Dialogs.MessageDialog.Window.Result.csproj", "{4251D956-F351-4B6B-B495-15ECB90B319A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter", "{6D5B9CE0-CC46-48AE-A3F1-CD03B98F3ED5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter", "{6D5B9CE0-CC46-48AE-A3F1-CD03B98F3ED5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.csproj", "{028884EA-06D8-41A1-B70E-111CDCE6C7E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.csproj", "{028884EA-06D8-41A1-B70E-111CDCE6C7E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Notifications", "SullyTech.Wpf.Notifications", "{9298AD9B-B8EF-4EF4-AC84-6AAC9AE9D331}"
 EndProject
@@ -254,41 +254,41 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.TraceListener
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf", "SullyTech.App.Client.Wpf", "{B468BF40-7139-4E83-A2E0-E02F6E9B8667}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels", "{B03A67EB-49EA-430B-B09B-108F4F77EBC3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels", "{B03A67EB-49EA-430B-B09B-108F4F77EBC3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.csproj", "{75D1A324-908F-428A-B7B5-3B6EB5083C0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.csproj", "{75D1A324-908F-428A-B7B5-3B6EB5083C0E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces", "{C8B4C43B-EAD1-4791-8B89-774C6EA11A69}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Interfaces", "{C8B4C43B-EAD1-4791-8B89-774C6EA11A69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Interfaces.csproj", "{6C28FB41-FF56-48DA-8432-6A63DE546552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Interfaces.csproj", "{6C28FB41-FF56-48DA-8432-6A63DE546552}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels", "{C1C8DD63-8FB7-4F18-BCF9-470F731DF96D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels", "{C1C8DD63-8FB7-4F18-BCF9-470F731DF96D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.csproj", "{EB7EF518-BB2E-4302-A526-49E3A78EBFD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.csproj", "{EB7EF518-BB2E-4302-A526-49E3A78EBFD5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces", "{AE413561-2932-4BA8-A7FD-48EBEF57EA2C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Interfaces", "{AE413561-2932-4BA8-A7FD-48EBEF57EA2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Interfaces.csproj", "{5FF402BD-170A-467C-8DEE-A835A21F2F23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Interfaces.csproj", "{5FF402BD-170A-467C-8DEE-A835A21F2F23}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Enums", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Enums", "{E609759B-7F34-4427-8802-0236FC6D5B11}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Enums", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Enums", "{E609759B-7F34-4427-8802-0236FC6D5B11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Enums", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Enums\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Enums.csproj", "{41541FBA-2DA8-47A0-ABD0-0D58BDBE8D70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Enums", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Enums\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Enums.csproj", "{41541FBA-2DA8-47A0-ABD0-0D58BDBE8D70}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Commands", "{44C48CD6-4118-44A3-85D2-D5BEA57044BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Commands", "{44C48CD6-4118-44A3-85D2-D5BEA57044BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Commands.csproj", "{797A99B1-450F-4475-8B36-AEC01AE5FFB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Commands.csproj", "{797A99B1-450F-4475-8B36-AEC01AE5FFB0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers", "{D65F1E61-A3CF-4784-91B6-D9D721908B51}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Initializers", "{D65F1E61-A3CF-4784-91B6-D9D721908B51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.MessageDialog.Presenter.ViewModels.Initializers.csproj", "{96BC4434-2E87-47BF-89A4-400E0C975725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.MessageDialog.Window.Presenter.ViewModels.Initializers.csproj", "{96BC4434-2E87-47BF-89A4-400E0C975725}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Commands", "{74853F81-043A-41BC-B7FB-25145EE3FFE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Commands", "{74853F81-043A-41BC-B7FB-25145EE3FFE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Commands.csproj", "{E1E7EBE5-6B1F-441B-B817-35CEC958BF05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Commands.csproj", "{E1E7EBE5-6B1F-441B-B817-35CEC958BF05}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers", "{AFE36B3A-2A1B-45D3-87E9-7531793F7831}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Initializers", "{AFE36B3A-2A1B-45D3-87E9-7531793F7831}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter.ViewModels.Initializers.csproj", "{89931EBA-FCE1-45C5-A36A-D8B44AC492DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Presenter.ViewModels.Initializers.csproj", "{89931EBA-FCE1-45C5-A36A-D8B44AC492DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels", "SullyTech.Wpf.Dialogs.ExceptionDialog.Window.ViewModels", "{EC1E9281-101D-4344-B6B2-181ADDB06DF7}"
 EndProject
@@ -334,27 +334,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Wi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main", "SullyTech.App.Client.Wpf.Windows.Main", "{E34E34D1-3025-47EC-8D7F-0460B1239138}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main", "SullyTech.App.Client.Wpf.Windows.Main\SullyTech.App.Client.Wpf.Windows.Main.csproj", "{47DD56BA-6D01-494D-9431-32E7CFA3853C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Window", "SullyTech.App.Client.Wpf.Windows.Main.Window\SullyTech.App.Client.Wpf.Windows.Main.Window.csproj", "{47DD56BA-6D01-494D-9431-32E7CFA3853C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.Interfaces", "{ACAC334D-8D84-4F71-A74B-12D9713C8A10}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.Window.Interfaces", "{ACAC334D-8D84-4F71-A74B-12D9713C8A10}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels", "{6DD52287-17AA-4052-8FB7-96007613C369}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels", "{6DD52287-17AA-4052-8FB7-96007613C369}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Interfaces.csproj", "{A95F0322-AEE8-4EE9-8050-6CAC23A06A04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.Window.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Window.Interfaces.csproj", "{A95F0322-AEE8-4EE9-8050-6CAC23A06A04}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.csproj", "{77447B38-68CC-44B8-ADE6-BA83AB83882C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels\SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.csproj", "{77447B38-68CC-44B8-ADE6-BA83AB83882C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces", "{E494D8A4-B000-4E75-B627-BE4F9BC5C1BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces", "{E494D8A4-B000-4E75-B627-BE4F9BC5C1BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Interfaces.csproj", "{3B74244B-B404-4887-82B2-148A1B190A3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj", "{3B74244B-B404-4887-82B2-148A1B190A3C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers", "{35524F3F-6179-4B21-896F-013916FA1E17}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers", "{35524F3F-6179-4B21-896F-013916FA1E17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Initializers.csproj", "{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers\SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers.csproj", "{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Commands", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Commands", "{F81693E7-6A27-41C1-B987-12D571B06FD4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Commands", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Commands", "{F81693E7-6A27-41C1-B987-12D571B06FD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Commands", "SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Commands\SullyTech.App.Client.Wpf.Windows.Main.ViewModels.Commands.csproj", "{20E86C6B-F2DD-416B-9683-5267F80528FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Commands", "SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Commands\SullyTech.App.Client.Wpf.Windows.Main.Window.ViewModels.Commands.csproj", "{20E86C6B-F2DD-416B-9683-5267F80528FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Modules", "SullyTech.App.Client.Wpf.Modules", "{4B49717C-6B3B-4943-8655-FE582B43A9F1}"
 EndProject
@@ -420,7 +420,45 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Signal
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Core.Window.Interfaces", "SullyTech.Wpf.Windows.Core.Window.Interfaces", "{25957966-4F92-4B3E-A1BB-6EC14A1264CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Windows.Core.Window.Interfaces", "SullyTech.Wpf.Windows.Core.Window.Interfaces\SullyTech.Wpf.Windows.Core.Window.Interfaces.csproj", "{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Core.Window.Interfaces", "SullyTech.Wpf.Windows.Core.Window.Interfaces\SullyTech.Wpf.Windows.Core.Window.Interfaces.csproj", "{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Simple.Window.Interfaces", "SullyTech.Wpf.Windows.Simple.Window.Interfaces", "{7F40B157-92A0-42CC-A9BF-B52763C036A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Simple.Window.Interfaces", "SullyTech.Wpf.Windows.Simple.Window.Interfaces\SullyTech.Wpf.Windows.Simple.Window.Interfaces.csproj", "{781C22C3-5B2E-4A63-B609-E18709E8FB47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Navigation.Window.Interfaces", "SullyTech.Wpf.Windows.Navigation.Window.Interfaces", "{7ADDAFFC-1338-4D4C-A659-50FF85385989}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Navigation.Window.Interfaces", "SullyTech.Wpf.Windows.Navigation.Window.Interfaces\SullyTech.Wpf.Windows.Navigation.Window.Interfaces.csproj", "{5A881D13-0EAC-4EE8-8B62-CE755F0146F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Windows.Dialog.Window.Interfaces", "SullyTech.Wpf.Windows.Dialog.Window.Interfaces", "{2AB01EB4-4879-45FF-86E3-6FF8C6D26128}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Windows.Dialog.Window.Interfaces", "SullyTech.Wpf.Windows.Dialog.Window.Interfaces\SullyTech.Wpf.Windows.Dialog.Window.Interfaces.csproj", "{04D2470B-F2CA-4A52-86B2-B59CFD9C1A6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog", "SullyTech.Wpf.Dialogs.MessageDialog\SullyTech.Wpf.Dialogs.MessageDialog.csproj", "{E261DF21-172A-45A4-B837-E8500875CA74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Services", "SullyTech.Wpf.Dialogs.MessageDialog.Services", "{BCF8C243-2CF5-4F54-B303-BDCBAD3B4323}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog", "SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog", "{EA877F0C-0619-4BA5-8E2F-C9EFC3742B2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog", "SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog\SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog.csproj", "{5676123D-ABCD-4533-BE91-C25DA82D06B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.csproj", "{D74899EE-73AD-47DF-8963-CE44D31AE6D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Services", "SullyTech.Wpf.Dialogs.ExceptionDialog.Services", "{1D4FC973-6FE9-4E47-AEDA-991F1EA90ECD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog", "{24D9A74B-B489-43E7-9BA5-9138071DAFCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog.csproj", "{A3746437-0655-43D5-8EAF-FEBFAA88CACE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Window", "SullyTech.App.Client.Wpf.Windows.Main.Window", "{090CB12D-87D3-4234-B70C-D23C872FF388}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Windows.Main", "SullyTech.App.Client.Wpf.Windows.Main\SullyTech.App.Client.Wpf.Windows.Main.csproj", "{720BA618-B052-4EF3-912E-9BDB19A32982}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Services", "SullyTech.App.Client.Wpf.Windows.Main.Services", "{C2D38D50-D00E-4292-B17F-4BDDDFC6A850}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Services.Main", "SullyTech.App.Client.Wpf.Windows.Main.Services.Main", "{0159D16F-7D93-44C6-A200-8BD81C0C31D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Windows.Main.Services.Main", "SullyTech.App.Client.Wpf.Windows.Main.Services.Main\SullyTech.App.Client.Wpf.Windows.Main.Services.Main.csproj", "{C94D5487-BEF1-4603-91EF-EF5D68011E0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -792,6 +830,42 @@ Global
 		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{781C22C3-5B2E-4A63-B609-E18709E8FB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781C22C3-5B2E-4A63-B609-E18709E8FB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781C22C3-5B2E-4A63-B609-E18709E8FB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781C22C3-5B2E-4A63-B609-E18709E8FB47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A881D13-0EAC-4EE8-8B62-CE755F0146F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A881D13-0EAC-4EE8-8B62-CE755F0146F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A881D13-0EAC-4EE8-8B62-CE755F0146F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A881D13-0EAC-4EE8-8B62-CE755F0146F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D2470B-F2CA-4A52-86B2-B59CFD9C1A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D2470B-F2CA-4A52-86B2-B59CFD9C1A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D2470B-F2CA-4A52-86B2-B59CFD9C1A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D2470B-F2CA-4A52-86B2-B59CFD9C1A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E261DF21-172A-45A4-B837-E8500875CA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E261DF21-172A-45A4-B837-E8500875CA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E261DF21-172A-45A4-B837-E8500875CA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E261DF21-172A-45A4-B837-E8500875CA74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5676123D-ABCD-4533-BE91-C25DA82D06B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5676123D-ABCD-4533-BE91-C25DA82D06B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5676123D-ABCD-4533-BE91-C25DA82D06B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5676123D-ABCD-4533-BE91-C25DA82D06B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74899EE-73AD-47DF-8963-CE44D31AE6D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74899EE-73AD-47DF-8963-CE44D31AE6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74899EE-73AD-47DF-8963-CE44D31AE6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74899EE-73AD-47DF-8963-CE44D31AE6D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3746437-0655-43D5-8EAF-FEBFAA88CACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3746437-0655-43D5-8EAF-FEBFAA88CACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3746437-0655-43D5-8EAF-FEBFAA88CACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3746437-0655-43D5-8EAF-FEBFAA88CACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720BA618-B052-4EF3-912E-9BDB19A32982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720BA618-B052-4EF3-912E-9BDB19A32982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720BA618-B052-4EF3-912E-9BDB19A32982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720BA618-B052-4EF3-912E-9BDB19A32982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94D5487-BEF1-4603-91EF-EF5D68011E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94D5487-BEF1-4603-91EF-EF5D68011E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94D5487-BEF1-4603-91EF-EF5D68011E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94D5487-BEF1-4603-91EF-EF5D68011E0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -817,9 +891,9 @@ Global
 		{C25AAEA2-21CA-45B5-95D1-A311F79D44A5} = {C9F18FD0-B9CB-4D6C-B49F-7ECC52947C48}
 		{2AF346F6-0EBC-42A1-A7CE-9C946ADE19D4} = {C25AAEA2-21CA-45B5-95D1-A311F79D44A5}
 		{06BC2E19-9B4F-40AB-B6E1-953EEB30E51B} = {0F819154-65F5-4748-B914-12B7537DD9C2}
-		{669D92E4-7833-4136-8E46-96FFB2D68132} = {2AF346F6-0EBC-42A1-A7CE-9C946ADE19D4}
+		{669D92E4-7833-4136-8E46-96FFB2D68132} = {0F819154-65F5-4748-B914-12B7537DD9C2}
 		{B454F1A6-F9C0-41E3-A4CD-C5C58348B529} = {669D92E4-7833-4136-8E46-96FFB2D68132}
-		{3847C050-EDD1-4AA8-9D76-2949F3E6736E} = {2AF346F6-0EBC-42A1-A7CE-9C946ADE19D4}
+		{3847C050-EDD1-4AA8-9D76-2949F3E6736E} = {0F819154-65F5-4748-B914-12B7537DD9C2}
 		{A42CDFDD-07F3-4AD3-8322-EE5D99E58FD4} = {3847C050-EDD1-4AA8-9D76-2949F3E6736E}
 		{59B56525-02DD-41F3-8103-D2CFD8C2F496} = {A42CDFDD-07F3-4AD3-8322-EE5D99E58FD4}
 		{DDB9DA00-C933-4F5F-879A-883DF1F93FEE} = {669D92E4-7833-4136-8E46-96FFB2D68132}
@@ -829,14 +903,14 @@ Global
 		{47E830E4-9D1D-46E7-ACFA-423E54237A1B} = {C25AAEA2-21CA-45B5-95D1-A311F79D44A5}
 		{23F886D0-ACFE-489D-BADE-2153D0CF73BB} = {66244BE9-9713-4996-82F5-C28F61C261FD}
 		{66244BE9-9713-4996-82F5-C28F61C261FD} = {47E830E4-9D1D-46E7-ACFA-423E54237A1B}
-		{D39D4313-3E17-44D0-885F-4FAE75621C88} = {47E830E4-9D1D-46E7-ACFA-423E54237A1B}
+		{D39D4313-3E17-44D0-885F-4FAE75621C88} = {66244BE9-9713-4996-82F5-C28F61C261FD}
 		{5E06F7E7-3C55-4029-9B6D-C418047769AC} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
 		{674D9A5E-925E-4152-A195-7696A4653B4B} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
 		{74E6501C-B0DE-4B84-BD7E-89DCBB48718B} = {674D9A5E-925E-4152-A195-7696A4653B4B}
 		{D555B1AA-BFA1-403C-B7A7-16E5780EB037} = {5E06F7E7-3C55-4029-9B6D-C418047769AC}
 		{10DE5640-B5FE-4C35-B137-54A27CDBC6FC} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
-		{31EC2C38-3B98-4DE1-A1EB-774AAF889129} = {47E830E4-9D1D-46E7-ACFA-423E54237A1B}
-		{E4571A7B-93B2-42B4-A2D2-F4474AA09C4D} = {47E830E4-9D1D-46E7-ACFA-423E54237A1B}
+		{31EC2C38-3B98-4DE1-A1EB-774AAF889129} = {66244BE9-9713-4996-82F5-C28F61C261FD}
+		{E4571A7B-93B2-42B4-A2D2-F4474AA09C4D} = {66244BE9-9713-4996-82F5-C28F61C261FD}
 		{A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716} = {E4571A7B-93B2-42B4-A2D2-F4474AA09C4D}
 		{AD0BE13F-A0E3-4B19-BEB0-B4C2A7FA2737} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
 		{BD8E1F04-98C2-43F3-A464-B5C285ED0693} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
@@ -849,52 +923,52 @@ Global
 		{1CDE3A04-4C4C-4283-BF64-A685B73FC8CA} = {06073E56-01B8-4D34-B475-A0AED3AEFA7E}
 		{F9ED1014-232C-43D0-83E9-605D4F2AD385} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
 		{7473E320-ECB0-4650-95A0-EA0BAC6D3AEB} = {F9ED1014-232C-43D0-83E9-605D4F2AD385}
-		{744A59D7-8967-4212-B674-E354AC52A199} = {47E830E4-9D1D-46E7-ACFA-423E54237A1B}
+		{744A59D7-8967-4212-B674-E354AC52A199} = {66244BE9-9713-4996-82F5-C28F61C261FD}
 		{4AAFCCD2-FFA0-4F12-8BD1-F772FE8154F5} = {744A59D7-8967-4212-B674-E354AC52A199}
 		{0F819154-65F5-4748-B914-12B7537DD9C2} = {2AF346F6-0EBC-42A1-A7CE-9C946ADE19D4}
 		{31AC8595-4F1E-4276-8040-1E0B44087371} = {C25AAEA2-21CA-45B5-95D1-A311F79D44A5}
 		{CB424284-8723-496F-83E4-DA920448E2EC} = {31AC8595-4F1E-4276-8040-1E0B44087371}
 		{DC9022D8-4808-411D-A2DC-1E2AC4DC0182} = {CB424284-8723-496F-83E4-DA920448E2EC}
-		{8E827759-7675-45F5-9258-1D05FEDB03D6} = {31AC8595-4F1E-4276-8040-1E0B44087371}
+		{8E827759-7675-45F5-9258-1D05FEDB03D6} = {CB424284-8723-496F-83E4-DA920448E2EC}
 		{0CA5986E-DB68-448F-9D04-77AB9A496BC0} = {8E827759-7675-45F5-9258-1D05FEDB03D6}
 		{87922F4D-1EE1-43CB-85E4-3EDCA3EAD501} = {0CA5986E-DB68-448F-9D04-77AB9A496BC0}
-		{C8EE495F-28F0-4EB6-8F94-256408F2FD1F} = {31AC8595-4F1E-4276-8040-1E0B44087371}
+		{C8EE495F-28F0-4EB6-8F94-256408F2FD1F} = {CB424284-8723-496F-83E4-DA920448E2EC}
 		{93C264F2-C5E1-412B-9694-C49883A4ED08} = {C8EE495F-28F0-4EB6-8F94-256408F2FD1F}
 		{11A125D6-167D-433B-80DC-481D8ABB20A0} = {93C264F2-C5E1-412B-9694-C49883A4ED08}
 		{0CD1A615-C28C-433A-B83C-82BDF9BECB2B} = {8E827759-7675-45F5-9258-1D05FEDB03D6}
 		{1C2649E5-70F6-4B9A-AA5D-EDDFED49FAC4} = {8E827759-7675-45F5-9258-1D05FEDB03D6}
 		{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE} = {1C2649E5-70F6-4B9A-AA5D-EDDFED49FAC4}
-		{1EB047E0-F574-4B9E-A178-BDFC2A0EF545} = {31AC8595-4F1E-4276-8040-1E0B44087371}
+		{1EB047E0-F574-4B9E-A178-BDFC2A0EF545} = {CB424284-8723-496F-83E4-DA920448E2EC}
 		{76B74AEC-1826-4FCE-86B0-D0FA53A3655D} = {1EB047E0-F574-4B9E-A178-BDFC2A0EF545}
 		{15D514C2-195D-412B-A4FF-8CB6D26977CB} = {76B74AEC-1826-4FCE-86B0-D0FA53A3655D}
-		{98FFA0E9-B2B5-49DC-A80A-8717072DAECC} = {47E830E4-9D1D-46E7-ACFA-423E54237A1B}
+		{98FFA0E9-B2B5-49DC-A80A-8717072DAECC} = {66244BE9-9713-4996-82F5-C28F61C261FD}
 		{AE8C2AA1-9A61-4E0E-9DE1-8EEB74FB5ADC} = {98FFA0E9-B2B5-49DC-A80A-8717072DAECC}
 		{615C81E0-E936-42E2-8BF4-F4AF21B6F81F} = {C25AAEA2-21CA-45B5-95D1-A311F79D44A5}
 		{EF1AB95B-4393-4622-A47C-35C2F51B650D} = {615C81E0-E936-42E2-8BF4-F4AF21B6F81F}
 		{E80CCFBC-F04F-45A3-8947-9396BF81C7C0} = {EF1AB95B-4393-4622-A47C-35C2F51B650D}
-		{A23FD6B6-A4C4-458C-AA61-DFD6D42FBBD1} = {615C81E0-E936-42E2-8BF4-F4AF21B6F81F}
+		{A23FD6B6-A4C4-458C-AA61-DFD6D42FBBD1} = {EF1AB95B-4393-4622-A47C-35C2F51B650D}
 		{4569C4E9-0E2C-4FDB-91DF-75EE333040A9} = {A23FD6B6-A4C4-458C-AA61-DFD6D42FBBD1}
 		{3DBE155F-D81E-4408-BB57-CE598D04341C} = {4569C4E9-0E2C-4FDB-91DF-75EE333040A9}
 		{642D3680-F46B-4683-B744-6CB24F4E93A8} = {A23FD6B6-A4C4-458C-AA61-DFD6D42FBBD1}
 		{D8C00056-9F0E-4E79-B982-B3FF6FC8FBC7} = {A23FD6B6-A4C4-458C-AA61-DFD6D42FBBD1}
 		{E0EEE08C-3E74-44CD-8EA9-0273E092A7E1} = {D8C00056-9F0E-4E79-B982-B3FF6FC8FBC7}
-		{6D48CDF2-BB03-4A60-B44B-4698ED409B14} = {615C81E0-E936-42E2-8BF4-F4AF21B6F81F}
+		{6D48CDF2-BB03-4A60-B44B-4698ED409B14} = {EF1AB95B-4393-4622-A47C-35C2F51B650D}
 		{0E76BC03-892F-46D8-8536-3DF8F9A7CC38} = {6D48CDF2-BB03-4A60-B44B-4698ED409B14}
 		{20E42CB7-98EF-442D-8656-F6A0DA870150} = {0E76BC03-892F-46D8-8536-3DF8F9A7CC38}
 		{793FD0A2-9EE7-429D-A0F3-E8692B72F7A4} = {C9F18FD0-B9CB-4D6C-B49F-7ECC52947C48}
 		{311C90EA-ED14-4111-9513-93A0F37E3C81} = {793FD0A2-9EE7-429D-A0F3-E8692B72F7A4}
 		{467D2CAC-FB25-4B0C-8E4A-537A98AB311B} = {311C90EA-ED14-4111-9513-93A0F37E3C81}
 		{9D387B9D-739C-4DCF-B466-C98F6CA5389E} = {467D2CAC-FB25-4B0C-8E4A-537A98AB311B}
-		{5338969D-1073-4C56-B497-7303D9CDCB13} = {311C90EA-ED14-4111-9513-93A0F37E3C81}
+		{5338969D-1073-4C56-B497-7303D9CDCB13} = {467D2CAC-FB25-4B0C-8E4A-537A98AB311B}
 		{46E577D4-CFA7-4834-936F-11D6E55E9F69} = {5338969D-1073-4C56-B497-7303D9CDCB13}
-		{77CB76F8-0BC5-4572-846C-674E0DF94DD1} = {311C90EA-ED14-4111-9513-93A0F37E3C81}
+		{77CB76F8-0BC5-4572-846C-674E0DF94DD1} = {467D2CAC-FB25-4B0C-8E4A-537A98AB311B}
 		{4F8FB88F-A9F9-441A-9EA2-4CAD8552DB54} = {77CB76F8-0BC5-4572-846C-674E0DF94DD1}
 		{DE6D7E6E-4AC5-49A0-BB01-C37010CFC2D4} = {793FD0A2-9EE7-429D-A0F3-E8692B72F7A4}
 		{7B554C1F-AC3C-4616-8F89-9D60ECED627D} = {DE6D7E6E-4AC5-49A0-BB01-C37010CFC2D4}
 		{6DAAD442-5AEC-4A72-8CA5-09325027E481} = {7B554C1F-AC3C-4616-8F89-9D60ECED627D}
-		{E5F2116D-382B-459D-811B-4ADFD90B8C55} = {DE6D7E6E-4AC5-49A0-BB01-C37010CFC2D4}
+		{E5F2116D-382B-459D-811B-4ADFD90B8C55} = {7B554C1F-AC3C-4616-8F89-9D60ECED627D}
 		{4251D956-F351-4B6B-B495-15ECB90B319A} = {E5F2116D-382B-459D-811B-4ADFD90B8C55}
-		{6D5B9CE0-CC46-48AE-A3F1-CD03B98F3ED5} = {DE6D7E6E-4AC5-49A0-BB01-C37010CFC2D4}
+		{6D5B9CE0-CC46-48AE-A3F1-CD03B98F3ED5} = {7B554C1F-AC3C-4616-8F89-9D60ECED627D}
 		{028884EA-06D8-41A1-B70E-111CDCE6C7E6} = {6D5B9CE0-CC46-48AE-A3F1-CD03B98F3ED5}
 		{9298AD9B-B8EF-4EF4-AC84-6AAC9AE9D331} = {C9F18FD0-B9CB-4D6C-B49F-7ECC52947C48}
 		{3790E83C-4876-441E-A91E-CA288B4FA7AA} = {9298AD9B-B8EF-4EF4-AC84-6AAC9AE9D331}
@@ -952,9 +1026,9 @@ Global
 		{8340E2F1-1FC4-4C43-9DF3-DBD8156CC96B} = {43BF557F-1F69-4EB8-9C27-C20D63D8DE0E}
 		{DD2F5247-F17E-40D4-8B8F-169C5531ABFA} = {B468BF40-7139-4E83-A2E0-E02F6E9B8667}
 		{E34E34D1-3025-47EC-8D7F-0460B1239138} = {DD2F5247-F17E-40D4-8B8F-169C5531ABFA}
-		{47DD56BA-6D01-494D-9431-32E7CFA3853C} = {E34E34D1-3025-47EC-8D7F-0460B1239138}
-		{ACAC334D-8D84-4F71-A74B-12D9713C8A10} = {E34E34D1-3025-47EC-8D7F-0460B1239138}
-		{6DD52287-17AA-4052-8FB7-96007613C369} = {E34E34D1-3025-47EC-8D7F-0460B1239138}
+		{47DD56BA-6D01-494D-9431-32E7CFA3853C} = {090CB12D-87D3-4234-B70C-D23C872FF388}
+		{ACAC334D-8D84-4F71-A74B-12D9713C8A10} = {090CB12D-87D3-4234-B70C-D23C872FF388}
+		{6DD52287-17AA-4052-8FB7-96007613C369} = {090CB12D-87D3-4234-B70C-D23C872FF388}
 		{A95F0322-AEE8-4EE9-8050-6CAC23A06A04} = {ACAC334D-8D84-4F71-A74B-12D9713C8A10}
 		{77447B38-68CC-44B8-ADE6-BA83AB83882C} = {6DD52287-17AA-4052-8FB7-96007613C369}
 		{E494D8A4-B000-4E75-B627-BE4F9BC5C1BE} = {6DD52287-17AA-4052-8FB7-96007613C369}
@@ -996,6 +1070,25 @@ Global
 		{A58A6580-59E8-4829-87C0-33561B4FC183} = {1B41CC5C-2BCF-4240-86F6-99FAE67BB1E7}
 		{25957966-4F92-4B3E-A1BB-6EC14A1264CC} = {66244BE9-9713-4996-82F5-C28F61C261FD}
 		{3261B743-DE83-49B8-A7A2-5E9AFDD2E2B6} = {25957966-4F92-4B3E-A1BB-6EC14A1264CC}
+		{7F40B157-92A0-42CC-A9BF-B52763C036A1} = {EF1AB95B-4393-4622-A47C-35C2F51B650D}
+		{781C22C3-5B2E-4A63-B609-E18709E8FB47} = {7F40B157-92A0-42CC-A9BF-B52763C036A1}
+		{7ADDAFFC-1338-4D4C-A659-50FF85385989} = {0F819154-65F5-4748-B914-12B7537DD9C2}
+		{5A881D13-0EAC-4EE8-8B62-CE755F0146F4} = {7ADDAFFC-1338-4D4C-A659-50FF85385989}
+		{2AB01EB4-4879-45FF-86E3-6FF8C6D26128} = {CB424284-8723-496F-83E4-DA920448E2EC}
+		{04D2470B-F2CA-4A52-86B2-B59CFD9C1A6D} = {2AB01EB4-4879-45FF-86E3-6FF8C6D26128}
+		{E261DF21-172A-45A4-B837-E8500875CA74} = {DE6D7E6E-4AC5-49A0-BB01-C37010CFC2D4}
+		{BCF8C243-2CF5-4F54-B303-BDCBAD3B4323} = {DE6D7E6E-4AC5-49A0-BB01-C37010CFC2D4}
+		{EA877F0C-0619-4BA5-8E2F-C9EFC3742B2E} = {BCF8C243-2CF5-4F54-B303-BDCBAD3B4323}
+		{5676123D-ABCD-4533-BE91-C25DA82D06B2} = {EA877F0C-0619-4BA5-8E2F-C9EFC3742B2E}
+		{D74899EE-73AD-47DF-8963-CE44D31AE6D3} = {311C90EA-ED14-4111-9513-93A0F37E3C81}
+		{1D4FC973-6FE9-4E47-AEDA-991F1EA90ECD} = {311C90EA-ED14-4111-9513-93A0F37E3C81}
+		{24D9A74B-B489-43E7-9BA5-9138071DAFCF} = {1D4FC973-6FE9-4E47-AEDA-991F1EA90ECD}
+		{A3746437-0655-43D5-8EAF-FEBFAA88CACE} = {24D9A74B-B489-43E7-9BA5-9138071DAFCF}
+		{090CB12D-87D3-4234-B70C-D23C872FF388} = {E34E34D1-3025-47EC-8D7F-0460B1239138}
+		{720BA618-B052-4EF3-912E-9BDB19A32982} = {E34E34D1-3025-47EC-8D7F-0460B1239138}
+		{C2D38D50-D00E-4292-B17F-4BDDDFC6A850} = {E34E34D1-3025-47EC-8D7F-0460B1239138}
+		{0159D16F-7D93-44C6-A200-8BD81C0C31D7} = {C2D38D50-D00E-4292-B17F-4BDDDFC6A850}
+		{C94D5487-BEF1-4603-91EF-EF5D68011E0F} = {0159D16F-7D93-44C6-A200-8BD81C0C31D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

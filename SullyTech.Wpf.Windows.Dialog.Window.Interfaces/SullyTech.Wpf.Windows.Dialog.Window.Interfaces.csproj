@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Windows.Dialog.Window.Interfaces</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.Interfaces\SullyTech.Wpf.Windows.Core.Window.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

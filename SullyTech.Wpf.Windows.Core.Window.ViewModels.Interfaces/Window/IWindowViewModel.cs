@@ -1,8 +1,8 @@
 ﻿using System.Windows.Input;
-using SullyTech.Wpf.Windows.Core.Presenter.ViewModels.Interfaces.Presenter;
-using SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.WindowSettings;
+using SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces.Presenter;
+using SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces.WindowSettings;
 
-namespace SullyTech.Wpf.Windows.Core.ViewModels.Interfaces.Window;
+namespace SullyTech.Wpf.Windows.Core.Window.ViewModels.Interfaces.Window;
 
 public interface IWindowViewModel
 {

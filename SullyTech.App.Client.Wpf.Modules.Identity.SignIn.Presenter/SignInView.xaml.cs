@@ -1,8 +1,6 @@
-﻿using System.Windows.Controls;
+﻿namespace SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter;
 
-namespace SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter;
-
-public sealed partial class SignInView : UserControl
+public sealed partial class SignInView
 {
     public SignInView()
     {

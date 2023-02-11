@@ -1,5 +1,5 @@
-﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces.Window;
-using SullyTech.Wpf.Windows.Core.Extensions.Window;
+﻿using SullyTech.Wpf.Dialogs.ExceptionDialog.Window.Interfaces;
+using SullyTech.Wpf.Windows.Core.Window.Extensions.Window;
 
 namespace SullyTech.Wpf.Dialogs.ExceptionDialog.Window;
 
