@@ -442,23 +442,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Messa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog", "SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog\SullyTech.Wpf.Dialogs.MessageDialog.Services.MessageDialog.csproj", "{5676123D-ABCD-4533-BE91-C25DA82D06B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.csproj", "{D74899EE-73AD-47DF-8963-CE44D31AE6D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.csproj", "{D74899EE-73AD-47DF-8963-CE44D31AE6D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Services", "SullyTech.Wpf.Dialogs.ExceptionDialog.Services", "{1D4FC973-6FE9-4E47-AEDA-991F1EA90ECD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog", "{24D9A74B-B489-43E7-9BA5-9138071DAFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog.csproj", "{A3746437-0655-43D5-8EAF-FEBFAA88CACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog", "SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog\SullyTech.Wpf.Dialogs.ExceptionDialog.Services.ExceptionDialog.csproj", "{A3746437-0655-43D5-8EAF-FEBFAA88CACE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Window", "SullyTech.App.Client.Wpf.Windows.Main.Window", "{090CB12D-87D3-4234-B70C-D23C872FF388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Windows.Main", "SullyTech.App.Client.Wpf.Windows.Main\SullyTech.App.Client.Wpf.Windows.Main.csproj", "{720BA618-B052-4EF3-912E-9BDB19A32982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main", "SullyTech.App.Client.Wpf.Windows.Main\SullyTech.App.Client.Wpf.Windows.Main.csproj", "{720BA618-B052-4EF3-912E-9BDB19A32982}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Services", "SullyTech.App.Client.Wpf.Windows.Main.Services", "{C2D38D50-D00E-4292-B17F-4BDDDFC6A850}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.App.Client.Wpf.Windows.Main.Services.Main", "SullyTech.App.Client.Wpf.Windows.Main.Services.Main", "{0159D16F-7D93-44C6-A200-8BD81C0C31D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.App.Client.Wpf.Windows.Main.Services.Main", "SullyTech.App.Client.Wpf.Windows.Main.Services.Main\SullyTech.App.Client.Wpf.Windows.Main.Services.Main.csproj", "{C94D5487-BEF1-4603-91EF-EF5D68011E0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.App.Client.Wpf.Windows.Main.Services.Main", "SullyTech.App.Client.Wpf.Windows.Main.Services.Main\SullyTech.App.Client.Wpf.Windows.Main.Services.Main.csproj", "{C94D5487-BEF1-4603-91EF-EF5D68011E0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Api", "SullyTech.Api", "{F46DF909-1D17-4721-B042-44B15A361EF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Api.ExceptionHandling", "SullyTech.Api.ExceptionHandling", "{FA99E584-5B08-4768-BF78-E2C564AFF921}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Api.ExceptionHandling.Exceptions", "SullyTech.Api.ExceptionHandling.Exceptions", "{1CE96917-C7BE-45C1-8AB8-F954AE684BD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Api.ExceptionHandling.Exceptions", "SullyTech.Api.ExceptionHandling.Exceptions\SullyTech.Api.ExceptionHandling.Exceptions.csproj", "{108681E6-F5F3-4232-905F-B3A80881FEBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -866,6 +874,10 @@ Global
 		{C94D5487-BEF1-4603-91EF-EF5D68011E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C94D5487-BEF1-4603-91EF-EF5D68011E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C94D5487-BEF1-4603-91EF-EF5D68011E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108681E6-F5F3-4232-905F-B3A80881FEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108681E6-F5F3-4232-905F-B3A80881FEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108681E6-F5F3-4232-905F-B3A80881FEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108681E6-F5F3-4232-905F-B3A80881FEBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1089,6 +1101,10 @@ Global
 		{C2D38D50-D00E-4292-B17F-4BDDDFC6A850} = {E34E34D1-3025-47EC-8D7F-0460B1239138}
 		{0159D16F-7D93-44C6-A200-8BD81C0C31D7} = {C2D38D50-D00E-4292-B17F-4BDDDFC6A850}
 		{C94D5487-BEF1-4603-91EF-EF5D68011E0F} = {0159D16F-7D93-44C6-A200-8BD81C0C31D7}
+		{F46DF909-1D17-4721-B042-44B15A361EF5} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
+		{FA99E584-5B08-4768-BF78-E2C564AFF921} = {F46DF909-1D17-4721-B042-44B15A361EF5}
+		{1CE96917-C7BE-45C1-8AB8-F954AE684BD2} = {FA99E584-5B08-4768-BF78-E2C564AFF921}
+		{108681E6-F5F3-4232-905F-B3A80881FEBC} = {1CE96917-C7BE-45C1-8AB8-F954AE684BD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
