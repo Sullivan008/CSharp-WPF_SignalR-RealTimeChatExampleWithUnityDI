@@ -9,6 +9,6 @@ public static class ServiceCollectionExtensions
 {
     public static void AddSignInDataViewModelValidator(this IServiceCollection @this)
     {
-        @this.AddTransient<IValidator<ISignInDataViewModel>, SignInDataViewModelValidator>();
+        @this.AddScoped<IValidator<ISignInDataViewModel>, SignInDataViewModelValidator>();
     }
 }
