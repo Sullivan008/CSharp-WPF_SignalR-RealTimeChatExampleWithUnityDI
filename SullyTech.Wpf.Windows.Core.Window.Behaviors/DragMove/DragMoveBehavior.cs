@@ -8,15 +8,15 @@ public class DragMoveBehavior : Behavior<Window>
 {
     protected override void OnAttached()
     {
-        AssociatedObject.MouseMove += AssociatedObject_MouseMove;
+        AssociatedObject.MouseLeftButtonDown += AssociatedObject_MouseLeftButtonDown;
     }
 
     protected override void OnDetaching()
     {
-        AssociatedObject.MouseMove -= AssociatedObject_MouseMove;
+        AssociatedObject.MouseLeftButtonDown -= AssociatedObject_MouseLeftButtonDown;
     }
 
-    private static void AssociatedObject_MouseMove(object sender, MouseEventArgs e)
+    private static void AssociatedObject_MouseLeftButtonDown(object sender, MouseEventArgs e)
     {
         if (e.LeftButton == MouseButtonState.Pressed && sender is Window window)
         {
