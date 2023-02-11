@@ -2,7 +2,7 @@
 
 public interface IPresenterDataViewModel
 {
-    public Task OnInit();
+    public Task OnInitAsync();
 
-    public Task OnDestroy();
+    public Task OnDestroyAsync();
 }

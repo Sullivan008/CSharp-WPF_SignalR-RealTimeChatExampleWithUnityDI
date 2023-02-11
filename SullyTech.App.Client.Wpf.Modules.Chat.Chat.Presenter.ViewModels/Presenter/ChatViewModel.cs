@@ -15,12 +15,12 @@ public sealed class ChatViewModel : PresenterViewModel<IChatDataViewModel>, ICha
         _navigationWindowService = navigationWindowService;
     }
 
-    public override async Task OnInit()
+    public override async Task OnInitAsync()
     {
-        await InitWindowSize();
+        await InitWindowSizeAsync();
     }
 
-    private async Task InitWindowSize()
+    private async Task InitWindowSizeAsync()
     {
         INavigationWindow presenterWindow = await _navigationWindowService.GetWindowAsync(PresenterWindowId);
 

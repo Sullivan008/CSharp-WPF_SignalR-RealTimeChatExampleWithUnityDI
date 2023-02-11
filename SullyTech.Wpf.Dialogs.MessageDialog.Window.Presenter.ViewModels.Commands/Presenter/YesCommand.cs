@@ -22,7 +22,7 @@ public sealed class YesCommand : AsyncCommand<IMessageDialogViewModel>
 
         MessageDialogResult dialogResult = new() { ResultType = ResultType.Yes };
 
-        await _dialogWindowService.SetDialogResult(dialogWindow, dialogResult);
+        await _dialogWindowService.SetDialogResultAsync(dialogWindow, dialogResult);
         await _dialogWindowService.CloseWindowAsync(dialogWindow);
     }
 

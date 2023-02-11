@@ -45,26 +45,28 @@ public class DialogWindowService : WindowService, IDialogWindowService
         SetWindowPresenter(windowViewModel, presenterViewModel);
         SetWindowDataContext(window, windowViewModel);
 
-        OnInitWindowSettingsViewModel(windowViewModel.Settings);
-        OnInitWindowViewModel(windowViewModel);
+        await OnInitWindowSettingsViewModel(windowViewModel.Settings);
+        await OnInitWindowViewModel(windowViewModel);
 
-        OnInitPresenterDataViewModel(presenterViewModel.Data);
-        OnInitPresenterViewModel(presenterViewModel);
+        await OnInitPresenterDataViewModel(presenterViewModel.Data);
+        await OnInitPresenterViewModel(presenterViewModel);
 
         window.ShowDialog();
 
-        TIDialogResult dialogResult = GetDialogResult<TIDialogResult>(windowViewModel);
+        TIDialogResult dialogResult = await GetDialogResultAsync<TIDialogResult>(windowViewModel);
 
         return await Task.FromResult(dialogResult);
     }
 
-    private static TIDialogResult GetDialogResult<TIDialogResult>(IDialogWindowViewModel windowViewModel)
+    private static async Task<TIDialogResult> GetDialogResultAsync<TIDialogResult>(IDialogWindowViewModel windowViewModel)
         where TIDialogResult : IDialogResult
     {
-        return (TIDialogResult)windowViewModel.DialogResult;
+        TIDialogResult result = (TIDialogResult)windowViewModel.DialogResult;
+
+        return await Task.FromResult(result);
     }
 
-    public async Task SetDialogResult<TIDialogResult>(IDialogWindow window, TIDialogResult dialogResult)
+    public async Task SetDialogResultAsync<TIDialogResult>(IDialogWindow window, TIDialogResult dialogResult)
         where TIDialogResult : IDialogResult
     {
         window.DialogResult = true;

@@ -16,7 +16,7 @@ public interface IWindowSettingsViewModel
 
     public double Right { get; set; }
 
-    public Task OnInit();
+    public Task OnInitAsync();
 
-    public Task OnDestroy();
+    public Task OnDestroyAsync();
 }

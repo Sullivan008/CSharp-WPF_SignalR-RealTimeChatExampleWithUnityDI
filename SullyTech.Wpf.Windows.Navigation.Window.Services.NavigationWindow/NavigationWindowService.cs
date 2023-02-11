@@ -46,19 +46,19 @@ public sealed class NavigationWindowService : WindowService, INavigationWindowSe
 
         window.Show();
 
-        OnInitWindowSettingsViewModel(windowViewModel.Settings);
-        OnInitWindowViewModel(windowViewModel);
+        await OnInitWindowSettingsViewModel(windowViewModel.Settings);
+        await OnInitWindowViewModel(windowViewModel);
 
-        OnInitPresenterDataViewModel(presenterViewModel.Data);
-        OnInitPresenterViewModel(presenterViewModel);
+        await OnInitPresenterDataViewModel(presenterViewModel.Data);
+        await OnInitPresenterViewModel(presenterViewModel);
 
         await Task.CompletedTask;
     }
 
     public async Task NavigateToAsync(INavigationWindow window, INavigateToOptions navigateToOptions)
     {
-        OnDestroyPresenterDataViewModel(((INavigationWindowViewModel)window.DataContext).Presenter.Data);
-        OnDestroyPresenterViewModel(((INavigationWindowViewModel)window.DataContext).Presenter);
+        await OnDestroyPresenterDataViewModel(((INavigationWindowViewModel)window.DataContext).Presenter.Data);
+        await OnDestroyPresenterViewModel(((INavigationWindowViewModel)window.DataContext).Presenter);
 
         IPresenterViewModel presenterViewModel = CreatePresenterViewModel(window, navigateToOptions.PresenterViewModelType);
 
@@ -68,8 +68,8 @@ public sealed class NavigationWindowService : WindowService, INavigationWindowSe
         InitializePresenterDataViewModel(presenterViewModel.Data, navigateToOptions.PresenterDataViewModelType,
             navigateToOptions.PresenterDataViewModelInitializerModel, navigateToOptions.PresenterDataViewModelInitializerModelType);
 
-        OnInitPresenterDataViewModel(presenterViewModel.Data);
-        OnInitPresenterViewModel(presenterViewModel);
+        await OnInitPresenterDataViewModel(presenterViewModel.Data);
+        await OnInitPresenterViewModel(presenterViewModel);
 
         SetWindowPresenter((INavigationWindowViewModel)window.DataContext, presenterViewModel);
 

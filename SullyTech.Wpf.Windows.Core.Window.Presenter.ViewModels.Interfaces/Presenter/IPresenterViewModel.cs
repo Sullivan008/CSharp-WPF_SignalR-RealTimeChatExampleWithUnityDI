@@ -8,7 +8,7 @@ public interface IPresenterViewModel
 
     public IPresenterDataViewModel Data { get; }
 
-    public Task OnInit();
+    public Task OnInitAsync();
 
-    public Task OnDestroy();
+    public Task OnDestroyAsync();
 }

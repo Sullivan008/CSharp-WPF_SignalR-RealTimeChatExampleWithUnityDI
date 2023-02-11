@@ -22,7 +22,7 @@ public sealed class CancelCommand : AsyncCommand<IMessageDialogViewModel>
 
         MessageDialogResult dialogResult = new() { ResultType = ResultType.Cancel };
 
-        await _dialogWindowService.SetDialogResult(presenterWindow, dialogResult);
+        await _dialogWindowService.SetDialogResultAsync(presenterWindow, dialogResult);
         await _dialogWindowService.CloseWindowAsync(presenterWindow);
     }
 

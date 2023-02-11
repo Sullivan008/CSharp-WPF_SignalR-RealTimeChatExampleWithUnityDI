@@ -45,11 +45,11 @@ public sealed class SimpleWindowService : WindowService, ISimpleWindowService
 
         window.Show();
 
-        OnInitWindowSettingsViewModel(windowViewModel.Settings);
-        OnInitWindowViewModel(windowViewModel);
+        await OnInitWindowSettingsViewModel(windowViewModel.Settings);
+        await OnInitWindowViewModel(windowViewModel);
 
-        OnInitPresenterDataViewModel(presenterViewModel.Data);
-        OnInitPresenterViewModel(presenterViewModel);
+        await OnInitPresenterDataViewModel(presenterViewModel.Data);
+        await OnInitPresenterViewModel(presenterViewModel);
 
         await Task.CompletedTask;
     }

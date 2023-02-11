@@ -14,7 +14,7 @@ public interface IWindowViewModel
     
     public ICommand CloseWindowCommand { get; set; }
 
-    public Task OnInit();
+    public Task OnInitAsync();
 
-    public Task OnDestroy();
+    public Task OnDestroyAsync();
 }

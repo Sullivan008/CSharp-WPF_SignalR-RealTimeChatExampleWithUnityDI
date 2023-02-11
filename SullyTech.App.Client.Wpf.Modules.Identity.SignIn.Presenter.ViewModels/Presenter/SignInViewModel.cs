@@ -32,7 +32,7 @@ public sealed class SignInViewModel : PresenterViewModel<ISignInDataViewModel>, 
     private ICommand? _signInCommand;
     public ICommand SignInCommand => _signInCommand ??= new SignInCommand(this, _chatHub, _toastNotification, _navigationWindowService);
 
-    public override async Task OnInit()
+    public override async Task OnInitAsync()
     {
         INavigationWindow presenterWindow = await _navigationWindowService.GetWindowAsync(PresenterWindowId);
 

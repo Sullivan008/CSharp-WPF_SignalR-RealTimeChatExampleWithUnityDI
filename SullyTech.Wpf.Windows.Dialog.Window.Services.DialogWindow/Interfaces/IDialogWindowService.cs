@@ -13,6 +13,6 @@ public interface IDialogWindowService : IWindowService
     public Task<TIDialogResult> ShowDialogAsync<TIDialogResult>(IDialogWindowShowOptions windowShowOptions, IPresenterLoadOptions presenterLoadOptions)
         where TIDialogResult : IDialogResult;
 
-    public Task SetDialogResult<TIDialogResult>(IDialogWindow window, TIDialogResult dialogResult)
+    public Task SetDialogResultAsync<TIDialogResult>(IDialogWindow window, TIDialogResult dialogResult)
         where TIDialogResult : IDialogResult;
 }

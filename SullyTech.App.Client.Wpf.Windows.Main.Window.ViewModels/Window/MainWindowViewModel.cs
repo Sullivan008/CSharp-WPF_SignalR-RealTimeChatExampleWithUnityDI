@@ -31,14 +31,14 @@ public sealed class MainWindowViewModel : NavigationWindowViewModel<IMainWindowS
     public ICommand OnConnectionLostCommand => _onConnectionLostCommand ??=
         new OnConnectionLostCommand(this, _toastNotification, _navigationWindowService);
 
-    public override async Task OnInit()
+    public override async Task OnInitAsync()
     {
         _chatHub.ConnectionLost += OnConnectionLost;
 
         await Task.CompletedTask;
     }
 
-    public override async Task OnDestroy()
+    public override async Task OnDestroyAsync()
     {
         _chatHub.ConnectionLost -= OnConnectionLost;
 

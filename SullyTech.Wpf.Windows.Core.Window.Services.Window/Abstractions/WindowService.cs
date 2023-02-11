@@ -27,11 +27,11 @@ public abstract class WindowService : IWindowService
 
     public virtual async Task CloseWindowAsync(IWindow window)
     {
-        OnDestroyPresenterDataViewModel(((IWindowViewModel)window.DataContext).Presenter.Data);
-        OnDestroyPresenterViewModel(((IWindowViewModel)window.DataContext).Presenter);
+        await OnDestroyPresenterDataViewModel(((IWindowViewModel)window.DataContext).Presenter.Data);
+        await OnDestroyPresenterViewModel(((IWindowViewModel)window.DataContext).Presenter);
 
-        OnDestroyWindowSettingsViewModel(((IWindowViewModel)window.DataContext).Settings);
-        OnDestroyWindowViewModel((IWindowViewModel)window.DataContext);
+        await OnDestroyWindowSettingsViewModel(((IWindowViewModel)window.DataContext).Settings);
+        await OnDestroyWindowViewModel((IWindowViewModel)window.DataContext);
 
         window.Close();
         
@@ -157,44 +157,44 @@ public abstract class WindowService : IWindowService
         }
     }
 
-    protected virtual void OnInitWindowViewModel(IWindowViewModel windowViewModel)
+    protected virtual async Task OnInitWindowViewModel(IWindowViewModel windowViewModel)
     {
-        windowViewModel.OnInit();
+        await windowViewModel.OnInitAsync();
     }
 
-    protected virtual void OnInitWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel)
+    protected virtual async Task OnInitWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel)
     {
-        windowSettingsViewModel.OnInit();
+        await windowSettingsViewModel.OnInitAsync();
     }
 
-    protected virtual void OnInitPresenterViewModel(IPresenterViewModel presenterViewModel)
+    protected virtual async Task OnInitPresenterViewModel(IPresenterViewModel presenterViewModel)
     {
-        presenterViewModel.OnInit();
+        await presenterViewModel.OnInitAsync();
     }
 
-    protected virtual void OnInitPresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel)
+    protected virtual async Task OnInitPresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel)
     {
-        presenterDataViewModel.OnInit();
+        await presenterDataViewModel.OnInitAsync();
     }
 
-    protected virtual void OnDestroyWindowViewModel(IWindowViewModel windowViewModel)
+    protected virtual async Task OnDestroyWindowViewModel(IWindowViewModel windowViewModel)
     {
-        windowViewModel.OnDestroy();
+        await windowViewModel.OnDestroyAsync();
     }
 
-    protected virtual void OnDestroyWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel)
+    protected virtual async Task OnDestroyWindowSettingsViewModel(IWindowSettingsViewModel windowSettingsViewModel)
     {
-        windowSettingsViewModel.OnDestroy();
+        await windowSettingsViewModel.OnDestroyAsync();
     }
 
-    protected virtual void OnDestroyPresenterViewModel(IPresenterViewModel presenterViewModel)
+    protected virtual async Task OnDestroyPresenterViewModel(IPresenterViewModel presenterViewModel)
     {
-        presenterViewModel.OnDestroy();
+        await presenterViewModel.OnDestroyAsync();
     }
 
-    protected virtual void OnDestroyPresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel)
+    protected virtual async Task OnDestroyPresenterDataViewModel(IPresenterDataViewModel presenterDataViewModel)
     {
-        presenterDataViewModel.OnDestroy();
+        await presenterDataViewModel.OnDestroyAsync();
     }
 
     protected virtual void SetWindowPresenter(IWindowViewModel windowViewModel, IPresenterViewModel presenterViewModel)

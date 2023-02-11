@@ -88,12 +88,12 @@ public class WindowSettingsViewModel : IWindowSettingsViewModel, INotifyProperty
         }
     }
 
-    public virtual async Task OnInit()
+    public virtual async Task OnInitAsync()
     {
         await Task.CompletedTask;
     }
 
-    public virtual async Task OnDestroy()
+    public virtual async Task OnDestroyAsync()
     {
         await Task.CompletedTask;
     }
