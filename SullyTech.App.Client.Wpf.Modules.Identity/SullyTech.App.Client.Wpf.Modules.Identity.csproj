@@ -20,4 +20,8 @@
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="Infrastructure\Resources\" />
+	</ItemGroup>
+
 </Project>

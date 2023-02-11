@@ -17,4 +17,8 @@
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.MessageDialog.Window\SullyTech.Wpf.Dialogs.MessageDialog.Window.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="Infrastructure\Resources\" />
+	</ItemGroup>
+
 </Project>

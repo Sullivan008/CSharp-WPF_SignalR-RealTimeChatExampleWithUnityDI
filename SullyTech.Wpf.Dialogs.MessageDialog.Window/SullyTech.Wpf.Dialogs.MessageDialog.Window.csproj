@@ -30,4 +30,8 @@
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Dialog.Window\SullyTech.Wpf.Windows.Dialog.Window.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="Infrastructure\Resources\" />
+	</ItemGroup>
+
 </Project>

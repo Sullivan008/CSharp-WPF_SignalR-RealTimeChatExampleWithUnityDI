@@ -1,7 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -14,6 +18,10 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Infrastructure\Resources\" />
 	</ItemGroup>
 
 </Project>
