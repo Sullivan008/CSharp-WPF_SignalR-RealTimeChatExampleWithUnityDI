@@ -1,4 +1,4 @@
-﻿namespace SullyTech.Api.ExceptionHandling.Exceptions.Api.Models;
+﻿namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiValidation.Models;
 
 public class ErrorDetails
 {

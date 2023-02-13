@@ -1,4 +1,4 @@
-﻿namespace SullyTech.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation;
+﻿namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation;
 
 public class ApiInternalModelStateValidationAggregateException : AggregateException
 {

@@ -1,6 +1,6 @@
-﻿using SullyTech.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation.Models;
+﻿using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation.Models;
 
-namespace SullyTech.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation;
+namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation;
 
 public class ApiInternalModelStateValidationException : Exception
 {

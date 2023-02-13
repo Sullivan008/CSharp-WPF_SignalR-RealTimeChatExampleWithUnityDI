@@ -1,6 +1,6 @@
-﻿using SullyTech.Api.ExceptionHandling.Exceptions.Api.Models;
+﻿using SullyTech.Web.Api.ExceptionHandling.Exceptions.Api.Models;
 
-namespace SullyTech.Api.ExceptionHandling.Exceptions.Api;
+namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.Api;
 
 public class ApiException : Exception
 {

@@ -1,6 +1,6 @@
-﻿using SullyTech.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation.Models;
+﻿using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation.Models;
 
-namespace SullyTech.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation;
+namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation;
 
 public class ApiFluentModelStateValidation : Exception
 {

@@ -1,4 +1,4 @@
-﻿namespace SullyTech.Api.ExceptionHandling.Exceptions.ApiValidation.Models;
+﻿namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation.Models;
 
 public class ErrorDetails
 {

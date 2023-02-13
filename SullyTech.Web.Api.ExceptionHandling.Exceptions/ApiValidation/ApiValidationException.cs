@@ -1,6 +1,6 @@
-﻿using SullyTech.Api.ExceptionHandling.Exceptions.ApiValidation.Models;
+﻿using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiValidation.Models;
 
-namespace SullyTech.Api.ExceptionHandling.Exceptions.ApiValidation;
+namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiValidation;
 
 public class ApiValidationException : Exception
 {
