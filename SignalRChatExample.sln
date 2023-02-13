@@ -468,6 +468,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Exception
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.ExceptionHandling.Exceptions", "SullyTech.Web.Api.ExceptionHandling.Exceptions\SullyTech.Web.Api.ExceptionHandling.Exceptions.csproj", "{108681E6-F5F3-4232-905F-B3A80881FEBC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares", "SullyTech.Web.Api.ExceptionHandling.Middlewares", "{6F669C52-D9EE-4D77-BA6D-B6784119EE81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares", "SullyTech.Web.Api.ExceptionHandling.Middlewares", "{C1E9740C-0D03-4C73-B3B1-4269B402F354}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler", "{8A9D5559-6A8C-4AC9-8414-6A85B262892D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.csproj", "{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums", "{5365D56F-897A-4172-90C8-BB494406DB82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums.csproj", "{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "{9154B175-CF2F-4832-8658-EE9480034F4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.csproj", "{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -878,6 +894,18 @@ Global
 		{108681E6-F5F3-4232-905F-B3A80881FEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{108681E6-F5F3-4232-905F-B3A80881FEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{108681E6-F5F3-4232-905F-B3A80881FEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1105,6 +1133,14 @@ Global
 		{FA99E584-5B08-4768-BF78-E2C564AFF921} = {F46DF909-1D17-4721-B042-44B15A361EF5}
 		{1CE96917-C7BE-45C1-8AB8-F954AE684BD2} = {FA99E584-5B08-4768-BF78-E2C564AFF921}
 		{108681E6-F5F3-4232-905F-B3A80881FEBC} = {1CE96917-C7BE-45C1-8AB8-F954AE684BD2}
+		{6F669C52-D9EE-4D77-BA6D-B6784119EE81} = {FA99E584-5B08-4768-BF78-E2C564AFF921}
+		{C1E9740C-0D03-4C73-B3B1-4269B402F354} = {6F669C52-D9EE-4D77-BA6D-B6784119EE81}
+		{8A9D5559-6A8C-4AC9-8414-6A85B262892D} = {C1E9740C-0D03-4C73-B3B1-4269B402F354}
+		{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82} = {8A9D5559-6A8C-4AC9-8414-6A85B262892D}
+		{5365D56F-897A-4172-90C8-BB494406DB82} = {8A9D5559-6A8C-4AC9-8414-6A85B262892D}
+		{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E} = {5365D56F-897A-4172-90C8-BB494406DB82}
+		{9154B175-CF2F-4832-8658-EE9480034F4B} = {8A9D5559-6A8C-4AC9-8414-6A85B262892D}
+		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB} = {9154B175-CF2F-4832-8658-EE9480034F4B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

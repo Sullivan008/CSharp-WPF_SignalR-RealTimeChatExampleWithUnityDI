@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Web.Api.ExceptionHandling.Exceptions\SullyTech.Web.Api.ExceptionHandling.Exceptions.csproj" />
+		<ProjectReference Include="..\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.csproj" />
+		<ProjectReference Include="..\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums.csproj" />
+	</ItemGroup>
+
+</Project>

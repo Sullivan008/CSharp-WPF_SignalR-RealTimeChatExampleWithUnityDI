@@ -2,16 +2,16 @@
 
 namespace SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation;
 
-public class ApiFluentModelStateValidation : Exception
+public class ApiFluentModelStateValidationException : Exception
 {
     public ErrorDetails ErrorDetails { get; }
 
-    public ApiFluentModelStateValidation(ErrorDetails errorDetails) : base(errorDetails.Message)
+    public ApiFluentModelStateValidationException(ErrorDetails errorDetails) : base(errorDetails.Message)
     {
         ErrorDetails = errorDetails;
     }
 
-    public ApiFluentModelStateValidation(ErrorDetails errorDetails, Exception innerException) : base(errorDetails.Message, innerException)
+    public ApiFluentModelStateValidationException(ErrorDetails errorDetails, Exception innerException) : base(errorDetails.Message, innerException)
     {
         ErrorDetails = errorDetails;
     }
