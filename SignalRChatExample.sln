@@ -484,6 +484,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Exception
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.csproj", "{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation", "SullyTech.Web.Api.Validation", "{82FDDEBB-3578-4AD1-80A5-7E83B8CBD74F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Fluent", "SullyTech.Web.Api.Validation.Fluent", "{D8AD38EF-1A92-461D-8D02-9112643C3B54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Fluent.Filters", "SullyTech.Web.Api.Validation.Fluent.Filters", "{118544D6-D06D-4CD9-9A88-F8ECA6DCC77D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Fluent.Filters", "SullyTech.Web.Api.Validation.Fluent.Filters\SullyTech.Web.Api.Validation.Fluent.Filters.csproj", "{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Internal", "SullyTech.Web.Api.Validation.Internal", "{2C5A9EFD-7E75-404B-966E-5501FAF54DDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Internal.Filters", "SullyTech.Web.Api.Validation.Internal.Filters", "{C8A6BDBB-A878-4CFF-B781-39843C2649C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Internal.Filters", "SullyTech.Web.Api.Validation.Internal.Filters\SullyTech.Web.Api.Validation.Internal.Filters.csproj", "{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Fluent.Validator", "SullyTech.Web.Api.Validation.Fluent.Validator", "{0DCE4A6A-573E-479C-8F9D-27AEB06A6261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Fluent.Validator", "SullyTech.Web.Api.Validation.Fluent.Validator\SullyTech.Web.Api.Validation.Fluent.Validator.csproj", "{4FABBB37-DFEF-4176-A4E1-4A2051837E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Fluent", "SullyTech.Web.Api.Validation.Fluent\SullyTech.Web.Api.Validation.Fluent.csproj", "{041AE64D-9CD3-494A-99B6-0F8392CB1B54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -906,6 +926,22 @@ Global
 		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FABBB37-DFEF-4176-A4E1-4A2051837E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FABBB37-DFEF-4176-A4E1-4A2051837E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FABBB37-DFEF-4176-A4E1-4A2051837E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FABBB37-DFEF-4176-A4E1-4A2051837E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1141,6 +1177,16 @@ Global
 		{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E} = {5365D56F-897A-4172-90C8-BB494406DB82}
 		{9154B175-CF2F-4832-8658-EE9480034F4B} = {8A9D5559-6A8C-4AC9-8414-6A85B262892D}
 		{3370B2F5-99B1-443F-9E6A-8B697C99C7DB} = {9154B175-CF2F-4832-8658-EE9480034F4B}
+		{82FDDEBB-3578-4AD1-80A5-7E83B8CBD74F} = {F46DF909-1D17-4721-B042-44B15A361EF5}
+		{D8AD38EF-1A92-461D-8D02-9112643C3B54} = {82FDDEBB-3578-4AD1-80A5-7E83B8CBD74F}
+		{118544D6-D06D-4CD9-9A88-F8ECA6DCC77D} = {D8AD38EF-1A92-461D-8D02-9112643C3B54}
+		{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F} = {118544D6-D06D-4CD9-9A88-F8ECA6DCC77D}
+		{2C5A9EFD-7E75-404B-966E-5501FAF54DDB} = {82FDDEBB-3578-4AD1-80A5-7E83B8CBD74F}
+		{C8A6BDBB-A878-4CFF-B781-39843C2649C4} = {2C5A9EFD-7E75-404B-966E-5501FAF54DDB}
+		{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150} = {C8A6BDBB-A878-4CFF-B781-39843C2649C4}
+		{0DCE4A6A-573E-479C-8F9D-27AEB06A6261} = {D8AD38EF-1A92-461D-8D02-9112643C3B54}
+		{4FABBB37-DFEF-4176-A4E1-4A2051837E97} = {0DCE4A6A-573E-479C-8F9D-27AEB06A6261}
+		{041AE64D-9CD3-494A-99B6-0F8392CB1B54} = {D8AD38EF-1A92-461D-8D02-9112643C3B54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
