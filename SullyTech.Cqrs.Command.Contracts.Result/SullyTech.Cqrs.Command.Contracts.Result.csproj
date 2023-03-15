@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Cqrs.Command.Contracts.Result</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Cqrs.Command.Contracts\SullyTech.Cqrs.Command.Contracts.Interfaces.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Cqrs.Command.Abstractions</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MediatR.Contracts" Version="1.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Cqrs.Command.Contracts.Result\SullyTech.Cqrs.Command.Contracts.Result.csproj" />
+	</ItemGroup>
+
+</Project>

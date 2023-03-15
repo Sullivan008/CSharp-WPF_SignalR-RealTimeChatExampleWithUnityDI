@@ -474,15 +474,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Exception
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler", "{8A9D5559-6A8C-4AC9-8414-6A85B262892D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.csproj", "{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.csproj", "{AB3C4820-45E5-40FE-9F1B-B0CC240C4E82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums", "{5365D56F-897A-4172-90C8-BB494406DB82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums.csproj", "{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums.csproj", "{625AB3A9-905B-4E0D-A25C-B3BF3D3BED9E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "{9154B175-CF2F-4832-8658-EE9480034F4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.csproj", "{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts", "SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.csproj", "{3370B2F5-99B1-443F-9E6A-8B697C99C7DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation", "SullyTech.Web.Api.Validation", "{82FDDEBB-3578-4AD1-80A5-7E83B8CBD74F}"
 EndProject
@@ -490,19 +490,49 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Fluent.Filters", "SullyTech.Web.Api.Validation.Fluent.Filters", "{118544D6-D06D-4CD9-9A88-F8ECA6DCC77D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Fluent.Filters", "SullyTech.Web.Api.Validation.Fluent.Filters\SullyTech.Web.Api.Validation.Fluent.Filters.csproj", "{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Validation.Fluent.Filters", "SullyTech.Web.Api.Validation.Fluent.Filters\SullyTech.Web.Api.Validation.Fluent.Filters.csproj", "{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Internal", "SullyTech.Web.Api.Validation.Internal", "{2C5A9EFD-7E75-404B-966E-5501FAF54DDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Internal.Filters", "SullyTech.Web.Api.Validation.Internal.Filters", "{C8A6BDBB-A878-4CFF-B781-39843C2649C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Internal.Filters", "SullyTech.Web.Api.Validation.Internal.Filters\SullyTech.Web.Api.Validation.Internal.Filters.csproj", "{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Validation.Internal.Filters", "SullyTech.Web.Api.Validation.Internal.Filters\SullyTech.Web.Api.Validation.Internal.Filters.csproj", "{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Fluent.Validator", "SullyTech.Web.Api.Validation.Fluent.Validator", "{0DCE4A6A-573E-479C-8F9D-27AEB06A6261}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Fluent.Validator", "SullyTech.Web.Api.Validation.Fluent.Validator\SullyTech.Web.Api.Validation.Fluent.Validator.csproj", "{4FABBB37-DFEF-4176-A4E1-4A2051837E97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Validation.Fluent.Validator", "SullyTech.Web.Api.Validation.Fluent.Validator\SullyTech.Web.Api.Validation.Fluent.Validator.csproj", "{4FABBB37-DFEF-4176-A4E1-4A2051837E97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Validation.Fluent", "SullyTech.Web.Api.Validation.Fluent\SullyTech.Web.Api.Validation.Fluent.csproj", "{041AE64D-9CD3-494A-99B6-0F8392CB1B54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Validation.Fluent", "SullyTech.Web.Api.Validation.Fluent\SullyTech.Web.Api.Validation.Fluent.csproj", "{041AE64D-9CD3-494A-99B6-0F8392CB1B54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs", "SullyTech.Cqrs", "{34279DD1-D462-4E29-9DF6-F4B3C0529AC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Command", "SullyTech.Cqrs.Command", "{8814624B-DC8E-4F69-AE98-384DCCC65748}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Command.Contracts", "SullyTech.Cqrs.Command.Contracts", "{B1F0DE4C-F632-4621-B001-CD9E46870DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Cqrs.Command.Contracts.Interfaces", "SullyTech.Cqrs.Command.Contracts\SullyTech.Cqrs.Command.Contracts.Interfaces.csproj", "{DBB269F1-4CA3-4B3C-94E5-F21992ECBB28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Command.Contracts.Interfaces", "SullyTech.Cqrs.Command.Contracts.Interfaces", "{CEBD8BB6-8582-446F-8D14-80B8D56733EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Command.Contracts.Result", "SullyTech.Cqrs.Command.Contracts.Result", "{C9577AD9-2C4C-4DD7-B81D-BCB4AF8561B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Cqrs.Command.Contracts.Result", "SullyTech.Cqrs.Command.Contracts.Result\SullyTech.Cqrs.Command.Contracts.Result.csproj", "{1414AB59-40FA-460D-9077-A741AA78854F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Command.Handlers", "SullyTech.Cqrs.Command.Handlers", "{20319D3D-0AB9-456E-9143-91446BD63C17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Command.Abstractions", "SullyTech.Cqrs.Command.Abstractions", "{141A78CE-79D6-435A-95CE-193B8D2E65A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Cqrs.Command.Abstractions", "SullyTech.Cqrs.Command.Abstractions\SullyTech.Cqrs.Command.Abstractions.csproj", "{DC4E9DE0-862C-442B-96EE-53BB3BE12C5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Cqrs.Command.Handlers", "SullyTech.Cqrs.Command.Handlers\SullyTech.Cqrs.Command.Handlers.csproj", "{8D79EB41-BB7C-4405-806D-CCB25328F94C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Query", "SullyTech.Cqrs.Query", "{FE4729EC-9028-493F-A9BA-B37C3AD86732}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Query.Contracts", "SullyTech.Cqrs.Query.Contracts", "{4EE92BEF-9697-4A76-8B28-984FB98F1D33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Cqrs.Query.Contracts.Interfaces", "SullyTech.Cqrs.Query.Contracts.Interfaces", "{79895090-1474-40F3-87D9-877998962C1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Cqrs.Query.Contracts.Interfaces", "SullyTech.Cqrs.Query.Contracts.Interfaces\SullyTech.Cqrs.Query.Contracts.Interfaces.csproj", "{C9A0AA93-CA3C-4930-9C27-A375B06C78DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -942,6 +972,26 @@ Global
 		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB269F1-4CA3-4B3C-94E5-F21992ECBB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB269F1-4CA3-4B3C-94E5-F21992ECBB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB269F1-4CA3-4B3C-94E5-F21992ECBB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB269F1-4CA3-4B3C-94E5-F21992ECBB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1414AB59-40FA-460D-9077-A741AA78854F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1414AB59-40FA-460D-9077-A741AA78854F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1414AB59-40FA-460D-9077-A741AA78854F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1414AB59-40FA-460D-9077-A741AA78854F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4E9DE0-862C-442B-96EE-53BB3BE12C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4E9DE0-862C-442B-96EE-53BB3BE12C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4E9DE0-862C-442B-96EE-53BB3BE12C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4E9DE0-862C-442B-96EE-53BB3BE12C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D79EB41-BB7C-4405-806D-CCB25328F94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D79EB41-BB7C-4405-806D-CCB25328F94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D79EB41-BB7C-4405-806D-CCB25328F94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D79EB41-BB7C-4405-806D-CCB25328F94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A0AA93-CA3C-4930-9C27-A375B06C78DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A0AA93-CA3C-4930-9C27-A375B06C78DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A0AA93-CA3C-4930-9C27-A375B06C78DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A0AA93-CA3C-4930-9C27-A375B06C78DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1187,6 +1237,21 @@ Global
 		{0DCE4A6A-573E-479C-8F9D-27AEB06A6261} = {D8AD38EF-1A92-461D-8D02-9112643C3B54}
 		{4FABBB37-DFEF-4176-A4E1-4A2051837E97} = {0DCE4A6A-573E-479C-8F9D-27AEB06A6261}
 		{041AE64D-9CD3-494A-99B6-0F8392CB1B54} = {D8AD38EF-1A92-461D-8D02-9112643C3B54}
+		{34279DD1-D462-4E29-9DF6-F4B3C0529AC6} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
+		{8814624B-DC8E-4F69-AE98-384DCCC65748} = {34279DD1-D462-4E29-9DF6-F4B3C0529AC6}
+		{B1F0DE4C-F632-4621-B001-CD9E46870DD5} = {8814624B-DC8E-4F69-AE98-384DCCC65748}
+		{DBB269F1-4CA3-4B3C-94E5-F21992ECBB28} = {CEBD8BB6-8582-446F-8D14-80B8D56733EE}
+		{CEBD8BB6-8582-446F-8D14-80B8D56733EE} = {B1F0DE4C-F632-4621-B001-CD9E46870DD5}
+		{C9577AD9-2C4C-4DD7-B81D-BCB4AF8561B9} = {B1F0DE4C-F632-4621-B001-CD9E46870DD5}
+		{1414AB59-40FA-460D-9077-A741AA78854F} = {C9577AD9-2C4C-4DD7-B81D-BCB4AF8561B9}
+		{20319D3D-0AB9-456E-9143-91446BD63C17} = {8814624B-DC8E-4F69-AE98-384DCCC65748}
+		{141A78CE-79D6-435A-95CE-193B8D2E65A4} = {8814624B-DC8E-4F69-AE98-384DCCC65748}
+		{DC4E9DE0-862C-442B-96EE-53BB3BE12C5F} = {141A78CE-79D6-435A-95CE-193B8D2E65A4}
+		{8D79EB41-BB7C-4405-806D-CCB25328F94C} = {20319D3D-0AB9-456E-9143-91446BD63C17}
+		{FE4729EC-9028-493F-A9BA-B37C3AD86732} = {34279DD1-D462-4E29-9DF6-F4B3C0529AC6}
+		{4EE92BEF-9697-4A76-8B28-984FB98F1D33} = {FE4729EC-9028-493F-A9BA-B37C3AD86732}
+		{79895090-1474-40F3-87D9-877998962C1B} = {4EE92BEF-9697-4A76-8B28-984FB98F1D33}
+		{C9A0AA93-CA3C-4930-9C27-A375B06C78DA} = {79895090-1474-40F3-87D9-877998962C1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
