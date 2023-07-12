@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Client.Wpf.Windows.Main.Window</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.Interfaces\App.Client.Wpf.Windows.Main.Window.Interfaces.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels\App.Client.Wpf.Windows.Main.Window.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Behaviors\SullyTech.Wpf.Controls.Window.Core.Behaviors.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard\SullyTech.Wpf.Controls.Window.Standard.csproj" />
+	</ItemGroup>
+
+</Project>

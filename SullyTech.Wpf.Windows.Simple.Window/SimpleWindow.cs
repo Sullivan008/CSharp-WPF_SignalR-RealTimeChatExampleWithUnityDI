@@ -2,5 +2,5 @@
 
 namespace SullyTech.Wpf.Windows.Simple.Window;
 
-public class SimpleWindow : Core.Window.Window, ISimpleWindow
+public class SimpleWindow : Controls.Window.Core.Window, ISimpleWindow
 { }

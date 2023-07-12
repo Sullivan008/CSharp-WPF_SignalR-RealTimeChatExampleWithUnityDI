@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Client.Wpf.Windows.Main.Window.ViewModels</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.SignalR.Hubs.Chat\App.Client.SignalR.Hubs.Chat.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Commands\App.Client.Wpf.Windows.Main.Window.ViewModels.Commands.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels\SullyTech.Wpf.Controls.Window.Standard.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Services.Navigation\SullyTech.Wpf.Services.Navigation.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.App.Client.Wpf.Modules.Identity.Presenter.SignIn.Infrastructure.Extensions.DependencyInjection;
 
 namespace SullyTech.App.Client.Wpf.Modules.Identity.Infrastructure.Extensions.DependencyInjection;
 

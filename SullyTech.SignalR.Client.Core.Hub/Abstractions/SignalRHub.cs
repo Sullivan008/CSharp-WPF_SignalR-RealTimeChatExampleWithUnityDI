@@ -13,17 +13,16 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
 {
     protected readonly ILogger<THub> Logger;
 
+
     protected readonly HubConnection HubConnection;
 
     protected readonly IHubConfiguration HubConfigurations;
 
-    protected Func<Exception?, Task>? ConnectionLost;
-
     protected SignalRHub(ILogger<THub> logger, IOptions<THubConfiguration> hubConfiguration)
     {
         Logger = logger;
-        HubConfigurations = hubConfiguration.Value;
 
+        HubConfigurations = hubConfiguration.Value;
         ValidateHubConfiguration();
 
         HubConnection = new HubConnectionBuilder()
@@ -37,13 +36,31 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
         HubConnection.Reconnecting += OnReconnectingHubConnection;
     }
 
+
     private void ValidateHubConfiguration()
     {
         Guard.Guard.ThrowIfNullOrWhitespace(HubConfigurations.BaseUrl, nameof(HubConfigurations.BaseUrl));
         Guard.Guard.ThrowIfNull(HubConfigurations.ReconnectTimeInterval, nameof(HubConfigurations.ReconnectTimeInterval));
     }
 
+    #region PROPERTIES
+
     protected virtual bool IsConnected => HubConnection.State == HubConnectionState.Connected;
+
+    bool ISignalRHub.IsConnected => IsConnected;
+
+
+    protected Func<Exception?, Task>? ConnectionLost { get; set; }
+
+    Func<Exception?, Task>? ISignalRHub.ConnectionLost
+    {
+        get => ConnectionLost;
+        set => ConnectionLost = value;
+    }
+
+    #endregion
+
+    #region METHODS
 
     protected virtual async Task ConnectAsync()
     {
@@ -64,8 +81,18 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
         }
     }
 
+    async Task ISignalRHub.ConnectAsync()
+    {
+        await ConnectAsync();
+    }
+
     protected virtual async Task OnConnectionLost(Exception? ex)
     {
+        if (ex is not null)
+        {
+            Logger.LogError(ex, ex.Message);
+        }
+
         if (ConnectionLost != null)
         {
             await ConnectionLost.Invoke(ex);
@@ -74,7 +101,7 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
 
     protected virtual async Task OnClosedHubConnection(Exception? ex)
     {
-        if (ex != null)
+        if (ex is not null)
         {
             Logger.LogError(ex, ex.Message);
         }
@@ -89,24 +116,13 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
 
     protected virtual async Task OnReconnectingHubConnection(Exception? ex)
     {
-        if (ex != null)
+        if (ex is not null)
         {
             Logger.LogError(ex, ex.Message);
         }
 
         await Task.CompletedTask;
     }
-    
-    bool ISignalRHub.IsConnected => IsConnected;
 
-    async Task ISignalRHub.ConnectAsync()
-    {
-        await ConnectAsync();
-    }
-    
-    Func<Exception?, Task>? ISignalRHub.ConnectionLost
-    {
-        get => ConnectionLost;
-        set => ConnectionLost = value;
-    }
+    #endregion
 }

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.Message.Services.MessageDialog</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow\SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Interfaces\SullyTech.Wpf.Dialogs.Message.Window.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.Interfaces\SullyTech.Wpf.Dialogs.Message.Window.Presenter.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Result\SullyTech.Wpf.Dialogs.Message.Window.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers.csproj" />
+	</ItemGroup>
+
+</Project>

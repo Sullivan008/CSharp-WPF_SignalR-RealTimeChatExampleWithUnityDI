@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Services.Window.Destroyer</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Interfaces\SullyTech.Wpf.Controls.Window.Core.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Providers.Window\SullyTech.Wpf.Controls.Window.Core.Providers.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Interfaces\SullyTech.Wpf.Controls.Window.Dialog.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Interfaces\SullyTech.Wpf.Controls.Window.Standard.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

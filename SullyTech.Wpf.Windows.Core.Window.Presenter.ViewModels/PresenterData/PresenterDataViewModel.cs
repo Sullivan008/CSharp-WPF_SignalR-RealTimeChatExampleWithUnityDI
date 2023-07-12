@@ -1,12 +1,17 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces.PresenterData;
+using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.PresenterData;
 
-namespace SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.PresenterData;
+namespace SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.PresenterData;
 
 public class PresenterDataViewModel : IPresenterDataViewModel, INotifyPropertyChanged
 {
-    public virtual async Task OnInitAsync()
+    public virtual async Task OnBeforeLoadAsync()
+    {
+        await Task.CompletedTask;
+    }
+
+    public virtual async Task OnAfterLoadAsync()
     {
         await Task.CompletedTask;
     }
@@ -17,7 +22,7 @@ public class PresenterDataViewModel : IPresenterDataViewModel, INotifyPropertyCh
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
-    public virtual void OnPropertyChanged([CallerMemberName] string? name = null)
+    public void OnPropertyChanged([CallerMemberName] string? name = null)
     {
         if (!string.IsNullOrWhiteSpace(name))
         {

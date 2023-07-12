@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

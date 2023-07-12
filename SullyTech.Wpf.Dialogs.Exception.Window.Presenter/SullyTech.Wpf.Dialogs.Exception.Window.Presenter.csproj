@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Infrastructure\Assets\icon-error.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter\SullyTech.Wpf.Controls.Window.Core.Presenter.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Infrastructure\Assets\icon-error.png" />
+	</ItemGroup>
+
+</Project>

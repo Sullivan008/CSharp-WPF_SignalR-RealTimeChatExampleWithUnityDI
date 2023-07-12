@@ -13,7 +13,7 @@ public static class ServiceCollectionExtensions
         string? configurationSectionKey = ConfigurationSectionKey.ToastNotificationConfiguration.GetEnumMemberAttrValue();
         Guard.Guard.ThrowIfNullOrWhitespace(configurationSectionKey, nameof(configurationSectionKey));
 
-        IConfigurationSection configurationSection = configuration.GetSection(configurationSectionKey);
+        IConfigurationSection configurationSection = configuration.GetSection(configurationSectionKey!);
 
         @this.Configure<ToastNotificationConfiguration>(configurationSection);
     }

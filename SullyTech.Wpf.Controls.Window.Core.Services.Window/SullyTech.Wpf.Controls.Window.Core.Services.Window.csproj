@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Windows.Core.Window.Services.Window</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Interfaces\SullyTech.Wpf.Controls.Window.Core.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

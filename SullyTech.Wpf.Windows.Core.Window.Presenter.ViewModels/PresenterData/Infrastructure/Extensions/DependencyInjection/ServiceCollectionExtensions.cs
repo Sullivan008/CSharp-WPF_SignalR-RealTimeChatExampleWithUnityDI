@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.Interfaces.PresenterData;
+using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.PresenterData;
+using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.PresenterData.SubInterfaces;
 
-namespace SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels.PresenterData.Infrastructure.Extensions.DependencyInjection;
+namespace SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.PresenterData.Infrastructure.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
@@ -10,5 +11,12 @@ public static class ServiceCollectionExtensions
         where TIPresenterDataViewModel : IPresenterDataViewModel
     {
         @this.AddTransient(typeof(TIPresenterDataViewModel), typeof(TPresenterDataViewModel));
+    }
+
+    public static void AddPresenterDataSubViewModel<TIPresenterDataSubViewModel, TPresenterDataSubViewModel>(this IServiceCollection @this)
+        where TPresenterDataSubViewModel : TIPresenterDataSubViewModel
+        where TIPresenterDataSubViewModel : IPresenterDataSubViewModel
+    {
+        @this.AddTransient(typeof(TIPresenterDataSubViewModel), typeof(TPresenterDataSubViewModel));
     }
 }

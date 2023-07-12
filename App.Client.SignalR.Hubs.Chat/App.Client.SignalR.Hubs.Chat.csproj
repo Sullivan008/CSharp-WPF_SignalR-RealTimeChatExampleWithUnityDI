@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Client.SignalR.Hubs.Chat</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.SignalR.Hubs.Chat.Configuration\App.Client.SignalR.Hubs.Chat.Configuration.csproj" />
+		<ProjectReference Include="..\Application.Web.SignalR.Hubs.Contracts.ChatHub\Application.Web.SignalR.Hubs.Contracts.ChatHub.csproj" />
+		<ProjectReference Include="..\SullyTech.SignalR.Client.Core.Hub\SullyTech.SignalR.Client.Core.Hub.csproj" />
+	</ItemGroup>
+
+</Project>

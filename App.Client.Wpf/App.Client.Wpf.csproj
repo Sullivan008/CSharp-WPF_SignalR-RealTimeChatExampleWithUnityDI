@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.App.Client.Wpf</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+		<PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.SignalR.Hubs.Chat\App.Client.SignalR.Hubs.Chat.csproj" />
+
+		<ProjectReference Include="..\App.Client.Wpf.Modules.Chat\App.Client.Wpf.Modules.Chat.csproj" />
+
+		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity\App.Client.Wpf.Modules.Identity.csproj" />
+
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main\App.Client.Wpf.Windows.Main.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception\SullyTech.Wpf.Dialogs.Exception.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message\SullyTech.Wpf.Dialogs.Message.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Services.Window.Closer\SullyTech.Wpf.Services.Window.Closer.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Services.Window.Title\SullyTech.Wpf.Services.Window.Title.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.TraceListeners.BindingError\SullyTech.Wpf.TraceListeners.BindingError.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="NLog.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>

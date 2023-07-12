@@ -18,7 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.ViewModels\SullyTech.Wpf.Windows.Core.Window.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.ViewModels\SullyTech.Wpf.Controls.Window.Core.ViewModels.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces\SullyTech.Wpf.Windows.Simple.Window.ViewModels.Interfaces.csproj" />
 	</ItemGroup>

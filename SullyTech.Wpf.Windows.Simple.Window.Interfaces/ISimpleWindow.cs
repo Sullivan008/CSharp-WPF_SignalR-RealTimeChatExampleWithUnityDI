@@ -1,4 +1,4 @@
-﻿using SullyTech.Wpf.Windows.Core.Window.Interfaces;
+﻿using SullyTech.Wpf.Controls.Window.Core.Interfaces;
 
 namespace SullyTech.Wpf.Windows.Simple.Window.Interfaces;
 

@@ -1,8 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:signInPresenter="clr-namespace:SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter"
-                    xmlns:signInPresenterViewModel="clr-namespace:SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels.Presenter;assembly=SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.ViewModels">
-    <DataTemplate DataType="{x:Type signInPresenterViewModel:SignInViewModel}">
-        <signInPresenter:SignInView/>
-    </DataTemplate>
-</ResourceDictionary>

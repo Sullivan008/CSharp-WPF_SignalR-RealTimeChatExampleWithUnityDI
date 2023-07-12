@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Services.Navigation</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Interfaces\SullyTech.Wpf.Controls.Window.Core.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Providers.Window\SullyTech.Wpf.Controls.Window.Core.Providers.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Interfaces\SullyTech.Wpf.Controls.Window.Dialog.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Interfaces\SullyTech.Wpf.Controls.Window.Standard.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Client.Wpf.Modules.Identity.Presenter.SignIn</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces\App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter\SullyTech.Wpf.Controls.Window.Core.Presenter.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Infrastructure\Assets\chat-logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Infrastructure\Assets\chat-logo.png" />
+	</ItemGroup>
+
+</Project>

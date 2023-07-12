@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Services.Window\SullyTech.Wpf.Controls.Window.Core.Services.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Interfaces\SullyTech.Wpf.Controls.Window.Standard.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.csproj" />
+	</ItemGroup>
+
+</Project>

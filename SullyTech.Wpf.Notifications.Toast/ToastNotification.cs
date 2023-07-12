@@ -4,7 +4,6 @@ using Microsoft.Extensions.Options;
 using Notification.Wpf;
 using Notification.Wpf.Constants;
 using SullyTech.Wpf.Notifications.Toast.Configuration.Models;
-using SullyTech.Wpf.Notifications.Toast.Exceptions;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
 
@@ -53,7 +52,8 @@ public class ToastNotification : IToastNotification
                 await OnShowInformationNotification(showNotificationOptions.Title, showNotificationOptions.Message);
                 break;
             default:
-                throw new UnknownNotificationTypeException("An unknown error occurred while reading the notification type!");
+                throw new NotImplementedException(
+                    $"Does not implemented - {nameof(ShowNotificationAsync)} - Operation for following Window Type [Type: {showNotificationOptions.NotificationType}]");
         }
     }
 

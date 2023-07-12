@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window\SullyTech.Wpf.Windows.Core.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window\SullyTech.Wpf.Controls.Window.Core.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Simple.Window.Interfaces\SullyTech.Wpf.Windows.Simple.Window.Interfaces.csproj" />
 	</ItemGroup>

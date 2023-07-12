@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.Exception.Service.ExceptionDialog</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Services.Window\SullyTech.Wpf.Controls.Window.Core.Services.Window.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow\SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Result\SullyTech.Wpf.Dialogs.Exception.Window.Result.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers.csproj" />
+	</ItemGroup>
+
+</Project>

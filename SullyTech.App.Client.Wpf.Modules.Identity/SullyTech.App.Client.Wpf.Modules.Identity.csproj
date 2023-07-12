@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter\SullyTech.App.Client.Wpf.Modules.Identity.SignIn.Presenter.csproj" />
+		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Identity.Presenter.SignIn\App.Client.Wpf.Modules.Identity.Presenter.SignIn.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

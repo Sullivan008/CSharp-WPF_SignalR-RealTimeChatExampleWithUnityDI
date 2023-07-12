@@ -17,10 +17,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter\SullyTech.App.Client.Wpf.Modules.Chat.Chat.Presenter.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Folder Include="Infrastructure\Resources\" />
 	</ItemGroup>
 
