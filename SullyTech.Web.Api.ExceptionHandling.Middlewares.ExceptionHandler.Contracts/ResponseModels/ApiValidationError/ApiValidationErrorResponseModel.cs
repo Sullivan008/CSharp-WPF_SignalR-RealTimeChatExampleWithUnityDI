@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiValidationError;
+﻿namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiValidationError;
 
 public sealed class ApiValidationErrorResponseModel
 {
@@ -21,19 +15,6 @@ public sealed class ApiValidationErrorResponseModel
         init => _traceId = value;
     }
 
-    private readonly string? _exceptionType;
-    public string ExceptionType
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_exceptionType, nameof(ExceptionType));
-
-            return _exceptionType!;
-        }
-
-        init => _exceptionType = value;
-    }
-
     private readonly int? _errorCode;
     public int ErrorCode
     {
@@ -45,6 +26,22 @@ public sealed class ApiValidationErrorResponseModel
         }
 
         init => _errorCode = value;
+    }
+
+    public string? ErrorMessage { get; init; }
+
+
+    private readonly string? _exceptionType;
+    public string ExceptionType
+    {
+        get
+        {
+            Guard.Guard.ThrowIfNullOrWhitespace(_exceptionType, nameof(ExceptionType));
+
+            return _exceptionType!;
+        }
+
+        init => _exceptionType = value;
     }
 
     private readonly int? _exceptionCode;
@@ -59,8 +56,6 @@ public sealed class ApiValidationErrorResponseModel
 
         init => _exceptionCode = value;
     }
-
-    public string? ExceptionMessage { get; init; }
 
     private readonly string? _exception;
     public string Exception

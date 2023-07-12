@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using SullyTech.Json.Resolvers;
 using SullyTech.Web.Api.ExceptionHandling.Exceptions.Api;
 using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation;
 using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation;
@@ -28,6 +29,7 @@ public sealed class ApiExceptionHandlerMiddleware
     public ApiExceptionHandlerMiddleware(RequestDelegate next, IWebHostEnvironment webHostEnvironment, ILogger<ApiExceptionHandlerMiddleware> logger)
     {
         _next = next;
+
         _logger = logger;
         _webHostEnvironment = webHostEnvironment;
     }
@@ -89,24 +91,29 @@ public sealed class ApiExceptionHandlerMiddleware
             $"Exception Code: {(int)ExceptionCode.ApiException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
     }
 
-    private ApiErrorResponseModel CreateApiErrorResponseModel(HttpContext httpContext, ApiException ex)
+    private static ApiErrorResponseModel CreateApiErrorResponseModel(HttpContext httpContext, ApiException ex)
     {
-        const string NON_DEVELOPMENT_EXCEPTION = "The exception available only in development environment!";
-
         return new ApiErrorResponseModel
         {
+            TraceId = httpContext.TraceIdentifier,
             ErrorCode = ex.ErrorDetails.Code,
+            ErrorMessage = ex.ErrorDetails.Message,
             ExceptionType = ex.GetType().Name,
-            ExceptionMessage = ex.ErrorDetails.Message,
             ExceptionCode = (int)ExceptionCode.ApiException,
-            Exception = _webHostEnvironment.IsDevelopment() ? ex.ToString() : NON_DEVELOPMENT_EXCEPTION,
-            TraceId = httpContext.TraceIdentifier
+            Exception = ex.ToString()
         };
     }
 
     private async Task WriteApiErrorResponse(HttpContext httpContext, ApiErrorResponseModel responseModel)
     {
-        string jsonText = JsonConvert.SerializeObject(responseModel);
+        JsonSerializerSettings jsonSerializerSettings = new()
+        {
+            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
+                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
+                : Array.Empty<string>())
+        };
+
+        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
 
         httpContext.Response.Clear();
 
@@ -115,7 +122,7 @@ public sealed class ApiExceptionHandlerMiddleware
 
         await httpContext.Response.WriteAsync(jsonText);
     }
-    
+
     #endregion
 
     #region APIValidationException Handle Methods
@@ -126,24 +133,29 @@ public sealed class ApiExceptionHandlerMiddleware
             $"Exception Code: {(int)ExceptionCode.ApiValidationException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
     }
 
-    private ApiValidationErrorResponseModel CreateApiValidationErrorResponseModel(HttpContext httpContext, ApiValidationException ex)
+    private static ApiValidationErrorResponseModel CreateApiValidationErrorResponseModel(HttpContext httpContext, ApiValidationException ex)
     {
-        const string NON_DEVELOPMENT_EXCEPTION = "The exception available only in development environment!";
-
         return new ApiValidationErrorResponseModel
         {
+            TraceId = httpContext.TraceIdentifier,
             ErrorCode = ex.ErrorDetails.Code,
+            ErrorMessage = ex.ErrorDetails.Message,
             ExceptionType = ex.GetType().Name,
-            ExceptionMessage = ex.ErrorDetails.Message,
             ExceptionCode = (int)ExceptionCode.ApiValidationException,
-            Exception = _webHostEnvironment.IsDevelopment() ? ex.ToString() : NON_DEVELOPMENT_EXCEPTION,
-            TraceId = httpContext.TraceIdentifier
+            Exception = ex.ToString()
         };
     }
 
     private async Task WriteApiValidationErrorResponse(HttpContext httpContext, ApiValidationErrorResponseModel responseModel)
     {
-        string jsonText = JsonConvert.SerializeObject(responseModel);
+        JsonSerializerSettings jsonSerializerSettings = new()
+        {
+            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
+                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
+                : Array.Empty<string>())
+        };
+
+        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
 
         httpContext.Response.Clear();
 
@@ -164,24 +176,29 @@ public sealed class ApiExceptionHandlerMiddleware
             $"Exception Code: {(int)ExceptionCode.ApiFluentModelStateValidationException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
     }
 
-    private ApiFluentModelStateValidationErrorResponseModel CreateApiFluentModelStateValidationErrorResponseModel(HttpContext httpContext, ApiFluentModelStateValidationException ex)
+    private static ApiFluentModelStateValidationErrorResponseModel CreateApiFluentModelStateValidationErrorResponseModel(HttpContext httpContext, ApiFluentModelStateValidationException ex)
     {
-        const string NON_DEVELOPMENT_EXCEPTION = "The exception available only in development environment!";
-
         return new ApiFluentModelStateValidationErrorResponseModel
         {
+            TraceId = httpContext.TraceIdentifier,
             ErrorCode = ex.ErrorDetails.Code,
+            ErrorMessage = ex.ErrorDetails.Message,
             ExceptionType = ex.GetType().Name,
-            ExceptionMessage = ex.ErrorDetails.Message,
             ExceptionCode = (int)ExceptionCode.ApiFluentModelStateValidationException,
-            Exception = _webHostEnvironment.IsDevelopment() ? ex.ToString() : NON_DEVELOPMENT_EXCEPTION,
-            TraceId = httpContext.TraceIdentifier
+            Exception = ex.ToString()
         };
     }
 
     private async Task WriteApiFluentModelStateValidationErrorResponse(HttpContext httpContext, ApiFluentModelStateValidationErrorResponseModel responseModel)
     {
-        string jsonText = JsonConvert.SerializeObject(responseModel);
+        JsonSerializerSettings jsonSerializerSettings = new()
+        {
+            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
+                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
+                : Array.Empty<string>())
+        };
+
+        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
 
         httpContext.Response.Clear();
 
@@ -197,27 +214,32 @@ public sealed class ApiExceptionHandlerMiddleware
 
     private void LogApiInternalModelStateValidationException(ApiInternalModelStateValidationAggregateException ex)
     {
-        _logger.LogError(ex, 
+        _logger.LogError(ex,
             $"Exception Code: {(int)ExceptionCode.ApiInternalModelStateValidationAggregationException} | Message: {ex.Message}");
     }
 
     private ApiInternalModelStateValidationErrorResponseModel CreateApiInternalModelStateValidationErrorResponseModel(HttpContext httpContext, ApiInternalModelStateValidationAggregateException ex)
     {
-        const string NON_DEVELOPMENT_EXCEPTION = "The exception available only in development environment!";
-
         return new ApiInternalModelStateValidationErrorResponseModel
         {
+            TraceId = httpContext.TraceIdentifier,
             ExceptionType = ex.GetType().Name,
             ExceptionCode = (int)ExceptionCode.ApiInternalModelStateValidationAggregationException,
             ExceptionMessage = ex.Message,
-            Exception = _webHostEnvironment.IsDevelopment() ? ex.ToString() : NON_DEVELOPMENT_EXCEPTION,
-            TraceId = httpContext.TraceIdentifier
+            Exception = ex.ToString()
         };
     }
 
     private async Task WriteApiInternalModelStateValidationErrorResponse(HttpContext httpContext, ApiInternalModelStateValidationErrorResponseModel responseModel)
     {
-        string jsonText = JsonConvert.SerializeObject(responseModel);
+        JsonSerializerSettings jsonSerializerSettings = new()
+        {
+            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
+                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
+                : Array.Empty<string>())
+        };
+
+        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
 
         httpContext.Response.Clear();
 
@@ -233,29 +255,32 @@ public sealed class ApiExceptionHandlerMiddleware
 
     private void LogApiInternalServerErrorException(Exception ex)
     {
-        _logger.LogError(ex, 
+        _logger.LogError(ex,
             $"Exception Code: {(int)ExceptionCode.ApiInternalServerErrorException} | Message: {ex.Message}");
     }
 
-    private ApiInternalServerErrorResponseModel CreateApiInternalServerErrorResponseModel(HttpContext httpContext, Exception ex)
+    private static ApiInternalServerErrorResponseModel CreateApiInternalServerErrorResponseModel(HttpContext httpContext, Exception ex)
     {
-        const string NON_DEVELOPMENT_EXCEPTION = "The exception available only in development environment!";
-        const string NON_DEVELOPMENT_EXCEPTION_TYPE = "The exception type available only in development environment!";
-        const string NON_DEVELOPMENT_EXCEPTION_MESSAGE = "One or more error occurred! Please contact us for more information!";
-
         return new ApiInternalServerErrorResponseModel
         {
+            TraceId = httpContext.TraceIdentifier,
             ExceptionCode = (int)ExceptionCode.ApiInternalServerErrorException,
-            Exception = _webHostEnvironment.IsDevelopment() ? ex.ToString() : NON_DEVELOPMENT_EXCEPTION,
-            ExceptionMessage = _webHostEnvironment.IsDevelopment() ? ex.Message : NON_DEVELOPMENT_EXCEPTION_MESSAGE,
-            ExceptionType = _webHostEnvironment.IsDevelopment() ? ex.GetType().Name : NON_DEVELOPMENT_EXCEPTION_TYPE,
-            TraceId = httpContext.TraceIdentifier
+            ExceptionType = ex.GetType().Name,
+            ExceptionMessage = ex.Message,
+            Exception = ex.ToString()
         };
     }
 
     private async Task WriteApiInternalServerErrorResponse(HttpContext httpContext, ApiInternalServerErrorResponseModel responseModel)
     {
-        string jsonText = JsonConvert.SerializeObject(responseModel);
+        JsonSerializerSettings jsonSerializerSettings = new()
+        {
+            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
+                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionMessage), nameof(responseModel.Exception) }
+                : Array.Empty<string>())
+        };
+
+        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
 
         httpContext.Response.Clear();
 

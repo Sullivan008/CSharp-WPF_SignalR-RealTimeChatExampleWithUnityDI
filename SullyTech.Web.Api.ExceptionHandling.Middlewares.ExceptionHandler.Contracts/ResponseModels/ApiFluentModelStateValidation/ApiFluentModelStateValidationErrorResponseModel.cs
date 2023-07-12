@@ -15,19 +15,6 @@ public sealed class ApiFluentModelStateValidationErrorResponseModel
         init => _traceId = value;
     }
 
-    private readonly string? _exceptionType;
-    public string ExceptionType
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_exceptionType, nameof(ExceptionType));
-
-            return _exceptionType!;
-        }
-
-        init => _exceptionType = value;
-    }
-
     private readonly int? _errorCode;
     public int ErrorCode
     {
@@ -39,6 +26,21 @@ public sealed class ApiFluentModelStateValidationErrorResponseModel
         }
 
         init => _errorCode = value;
+    }
+
+    public string? ErrorMessage { get; init; }
+
+    private readonly string? _exceptionType;
+    public string ExceptionType
+    {
+        get
+        {
+            Guard.Guard.ThrowIfNullOrWhitespace(_exceptionType, nameof(ExceptionType));
+
+            return _exceptionType!;
+        }
+
+        init => _exceptionType = value;
     }
 
     private readonly int? _exceptionCode;
@@ -53,8 +55,6 @@ public sealed class ApiFluentModelStateValidationErrorResponseModel
 
         init => _exceptionCode = value;
     }
-
-    public string? ExceptionMessage { get; init; }
 
     private readonly string? _exception;
     public string Exception

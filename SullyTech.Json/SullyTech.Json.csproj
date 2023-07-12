@@ -5,11 +5,11 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts</Product>
+		<Product>SullyTech.Json</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 </Project>
