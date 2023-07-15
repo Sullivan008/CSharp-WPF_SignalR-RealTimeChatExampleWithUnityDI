@@ -534,7 +534,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Contracts
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Contracts.Interfaces", "SullyTech.Web.Api.Contracts.Interfaces", "{2BE2DFE1-33B5-4DB9-8249-D6037AED711C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Contracts.Interfaces", "SullyTech.Web.Api.Contracts.Interfaces\SullyTech.Web.Api.Contracts.Interfaces.csproj", "{DB8E5324-C093-471A-B1C9-F908D961409C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Contracts.Interfaces", "SullyTech.Web.Api.Contracts.Interfaces\SullyTech.Web.Api.Contracts.Interfaces.csproj", "{DB8E5324-C093-471A-B1C9-F908D961409C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper", "SullyTech.Mapper", "{36B4909B-8FD3-43C3-BA87-D8174BD14349}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper.Core", "SullyTech.Mapper.Core", "{990C95C0-4195-422B-8A70-F5B365F4166C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Mapper.Core", "SullyTech.Mapper.Core\SullyTech.Mapper.Core.csproj", "{E789A453-69D5-418F-A463-5691A8FA52DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper.Services", "SullyTech.Mapper.Services", "{2F4E1840-F053-47FA-B062-D01C283E160B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper.Services.Mapper", "SullyTech.Mapper.Services.Mapper", "{A2BFDC9A-F44F-4F0A-839D-93979943A37A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Mapper.Services.Mapper", "SullyTech.Mapper.Services.Mapper\SullyTech.Mapper.Services.Mapper.csproj", "{8204A402-B061-4913-99A6-D5B7F1794B6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1002,6 +1014,14 @@ Global
 		{DB8E5324-C093-471A-B1C9-F908D961409C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB8E5324-C093-471A-B1C9-F908D961409C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB8E5324-C093-471A-B1C9-F908D961409C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E789A453-69D5-418F-A463-5691A8FA52DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E789A453-69D5-418F-A463-5691A8FA52DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E789A453-69D5-418F-A463-5691A8FA52DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E789A453-69D5-418F-A463-5691A8FA52DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1266,6 +1286,12 @@ Global
 		{BD9A2ED8-DAD5-457F-8993-72926DB6BA1D} = {F46DF909-1D17-4721-B042-44B15A361EF5}
 		{2BE2DFE1-33B5-4DB9-8249-D6037AED711C} = {BD9A2ED8-DAD5-457F-8993-72926DB6BA1D}
 		{DB8E5324-C093-471A-B1C9-F908D961409C} = {2BE2DFE1-33B5-4DB9-8249-D6037AED711C}
+		{36B4909B-8FD3-43C3-BA87-D8174BD14349} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
+		{990C95C0-4195-422B-8A70-F5B365F4166C} = {36B4909B-8FD3-43C3-BA87-D8174BD14349}
+		{E789A453-69D5-418F-A463-5691A8FA52DE} = {990C95C0-4195-422B-8A70-F5B365F4166C}
+		{2F4E1840-F053-47FA-B062-D01C283E160B} = {36B4909B-8FD3-43C3-BA87-D8174BD14349}
+		{A2BFDC9A-F44F-4F0A-839D-93979943A37A} = {2F4E1840-F053-47FA-B062-D01C283E160B}
+		{8204A402-B061-4913-99A6-D5B7F1794B6C} = {A2BFDC9A-F44F-4F0A-839D-93979943A37A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
