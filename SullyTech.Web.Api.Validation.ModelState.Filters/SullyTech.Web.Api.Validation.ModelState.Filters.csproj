@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -9,7 +9,7 @@
 	</ItemGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Web.Api.Validation.Internal.Filters</Product>
+		<Product>SullyTech.Web.Api.Validation.ModelState.Filters</Product>
 	</PropertyGroup>
 
 	<ItemGroup>

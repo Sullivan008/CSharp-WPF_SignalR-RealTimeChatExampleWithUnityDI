@@ -1,6 +1,8 @@
-﻿namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiValidationError;
+﻿using SullyTech.Web.Api.Contracts.Interfaces.ResponseModels;
 
-public sealed class ApiValidationErrorResponseModel
+namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiValidationError;
+
+public sealed class ApiValidationErrorResponseModel : IApiResponseModel
 {
     private readonly string? _traceId;
     public string TraceId

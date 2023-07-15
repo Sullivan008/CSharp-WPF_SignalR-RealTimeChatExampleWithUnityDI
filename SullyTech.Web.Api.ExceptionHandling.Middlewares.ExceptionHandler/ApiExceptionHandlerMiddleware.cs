@@ -6,13 +6,13 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using SullyTech.Json.Resolvers;
 using SullyTech.Web.Api.ExceptionHandling.Exceptions.Api;
-using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiFluentModelStateValidation;
-using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiInternalModelStateValidation;
+using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiModelStateValidation;
+using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiRequestModelValidation;
 using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiValidation;
 using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiError;
-using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiFluentModelStateValidation;
-using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiInternalModelStateValidationError;
 using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiInternalServerError;
+using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiModelStateValidationError;
+using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiRequestModelValidationError;
 using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiValidationError;
 using SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums;
 
@@ -56,21 +56,21 @@ public sealed class ApiExceptionHandlerMiddleware
 
             await WriteApiValidationErrorResponse(httpContext, responseModel);
         }
-        catch (ApiFluentModelStateValidationException ex)
+        catch (ApiRequestModelValidationException ex)
         {
-            LogApiFluentModelStateValidationException(ex);
+            LogApiRequestModelValidationException(ex);
 
-            ApiFluentModelStateValidationErrorResponseModel responseModel = CreateApiFluentModelStateValidationErrorResponseModel(httpContext, ex);
+            ApiRequestModelValidationErrorResponseModel responseModel = CreateApiRequestModelValidationErrorResponseModel(httpContext, ex);
 
-            await WriteApiFluentModelStateValidationErrorResponse(httpContext, responseModel);
+            await WriteApiRequestModelValidationErrorResponse(httpContext, responseModel);
         }
-        catch (ApiInternalModelStateValidationAggregateException ex)
+        catch (ApiModelStateValidationAggregateException ex)
         {
-            LogApiInternalModelStateValidationException(ex);
+            LogApiModelStateValidationException(ex);
 
-            ApiInternalModelStateValidationErrorResponseModel responseModel = CreateApiInternalModelStateValidationErrorResponseModel(httpContext, ex);
+            ApiModelStateValidationErrorResponseModel responseModel = CreateApiModelStateValidationErrorResponseModel(httpContext, ex);
 
-            await WriteApiInternalModelStateValidationErrorResponse(httpContext, responseModel);
+            await WriteApiModelStateValidationErrorResponse(httpContext, responseModel);
         }
         catch (Exception ex)
         {
@@ -83,7 +83,7 @@ public sealed class ApiExceptionHandlerMiddleware
 
     }
 
-    #region APIException Handle Methods
+    #region ApiException Handle Methods
 
     private void LogApiException(ApiException ex)
     {
@@ -125,7 +125,7 @@ public sealed class ApiExceptionHandlerMiddleware
 
     #endregion
 
-    #region APIValidationException Handle Methods
+    #region ApiValidationException Handle Methods
 
     private void LogApiValidationException(ApiValidationException ex)
     {
@@ -168,28 +168,28 @@ public sealed class ApiExceptionHandlerMiddleware
 
     #endregion
 
-    #region APIFluentModelStateValidationException Handle Methods
+    #region ApiRequestModelValidationException Handle Methods
 
-    private void LogApiFluentModelStateValidationException(ApiFluentModelStateValidationException ex)
+    private void LogApiRequestModelValidationException(ApiRequestModelValidationException ex)
     {
         _logger.LogError(ex,
-            $"Exception Code: {(int)ExceptionCode.ApiFluentModelStateValidationException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
+            $"Exception Code: {(int)ExceptionCode.ApiRequestModelValidationException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
     }
 
-    private static ApiFluentModelStateValidationErrorResponseModel CreateApiFluentModelStateValidationErrorResponseModel(HttpContext httpContext, ApiFluentModelStateValidationException ex)
+    private static ApiRequestModelValidationErrorResponseModel CreateApiRequestModelValidationErrorResponseModel(HttpContext httpContext, ApiRequestModelValidationException ex)
     {
-        return new ApiFluentModelStateValidationErrorResponseModel
+        return new ApiRequestModelValidationErrorResponseModel
         {
             TraceId = httpContext.TraceIdentifier,
             ErrorCode = ex.ErrorDetails.Code,
             ErrorMessage = ex.ErrorDetails.Message,
             ExceptionType = ex.GetType().Name,
-            ExceptionCode = (int)ExceptionCode.ApiFluentModelStateValidationException,
+            ExceptionCode = (int)ExceptionCode.ApiRequestModelValidationException,
             Exception = ex.ToString()
         };
     }
 
-    private async Task WriteApiFluentModelStateValidationErrorResponse(HttpContext httpContext, ApiFluentModelStateValidationErrorResponseModel responseModel)
+    private async Task WriteApiRequestModelValidationErrorResponse(HttpContext httpContext, ApiRequestModelValidationErrorResponseModel responseModel)
     {
         JsonSerializerSettings jsonSerializerSettings = new()
         {
@@ -210,27 +210,27 @@ public sealed class ApiExceptionHandlerMiddleware
 
     #endregion
 
-    #region APIInternalModelStateValidationException Handle Methods
+    #region ApiModelStateValidationException Handle Methods
 
-    private void LogApiInternalModelStateValidationException(ApiInternalModelStateValidationAggregateException ex)
+    private void LogApiModelStateValidationException(ApiModelStateValidationAggregateException ex)
     {
         _logger.LogError(ex,
-            $"Exception Code: {(int)ExceptionCode.ApiInternalModelStateValidationAggregationException} | Message: {ex.Message}");
+            $"Exception Code: {(int)ExceptionCode.ApiModelStateValidationAggregationException} | Message: {ex.Message}");
     }
 
-    private ApiInternalModelStateValidationErrorResponseModel CreateApiInternalModelStateValidationErrorResponseModel(HttpContext httpContext, ApiInternalModelStateValidationAggregateException ex)
+    private ApiModelStateValidationErrorResponseModel CreateApiModelStateValidationErrorResponseModel(HttpContext httpContext, ApiModelStateValidationAggregateException ex)
     {
-        return new ApiInternalModelStateValidationErrorResponseModel
+        return new ApiModelStateValidationErrorResponseModel
         {
             TraceId = httpContext.TraceIdentifier,
             ExceptionType = ex.GetType().Name,
-            ExceptionCode = (int)ExceptionCode.ApiInternalModelStateValidationAggregationException,
+            ExceptionCode = (int)ExceptionCode.ApiModelStateValidationAggregationException,
             ExceptionMessage = ex.Message,
             Exception = ex.ToString()
         };
     }
 
-    private async Task WriteApiInternalModelStateValidationErrorResponse(HttpContext httpContext, ApiInternalModelStateValidationErrorResponseModel responseModel)
+    private async Task WriteApiModelStateValidationErrorResponse(HttpContext httpContext, ApiModelStateValidationErrorResponseModel responseModel)
     {
         JsonSerializerSettings jsonSerializerSettings = new()
         {
@@ -251,7 +251,7 @@ public sealed class ApiExceptionHandlerMiddleware
 
     #endregion
 
-    #region APIInternalServerErrorException Handle Methods
+    #region ApiInternalServerErrorException Handle Methods
 
     private void LogApiInternalServerErrorException(Exception ex)
     {

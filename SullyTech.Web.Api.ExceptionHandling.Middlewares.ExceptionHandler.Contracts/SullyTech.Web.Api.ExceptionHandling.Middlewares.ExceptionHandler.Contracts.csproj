@@ -10,6 +10,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+		<ProjectReference Include="..\SullyTech.Web.Api.Contracts.Interfaces\SullyTech.Web.Api.Contracts.Interfaces.csproj" />
 	</ItemGroup>
 
 </Project>

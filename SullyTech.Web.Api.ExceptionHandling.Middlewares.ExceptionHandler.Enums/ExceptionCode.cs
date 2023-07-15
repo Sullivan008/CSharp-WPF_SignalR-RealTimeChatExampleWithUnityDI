@@ -4,7 +4,7 @@ public enum ExceptionCode
 {
     ApiException = 2,
     ApiValidationException = 4,
-    ApiFluentModelStateValidationException = 8,
-    ApiInternalModelStateValidationAggregationException = 16,
+    ApiRequestModelValidationException = 8,
+    ApiModelStateValidationAggregationException = 16,
     ApiInternalServerErrorException = 32
 }

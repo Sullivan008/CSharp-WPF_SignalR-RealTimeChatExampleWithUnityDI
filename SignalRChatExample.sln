@@ -388,11 +388,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Validation.Fluent.Filters", "SullyTech.Web.Api.Validation.Fluent.Filters\SullyTech.Web.Api.Validation.Fluent.Filters.csproj", "{8CE49BA6-F6DD-44CB-AF94-A5560DB1C43F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Internal", "SullyTech.Web.Api.Validation.Internal", "{2C5A9EFD-7E75-404B-966E-5501FAF54DDB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.ModelState", "SullyTech.Web.Api.Validation.ModelState", "{2C5A9EFD-7E75-404B-966E-5501FAF54DDB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Internal.Filters", "SullyTech.Web.Api.Validation.Internal.Filters", "{C8A6BDBB-A878-4CFF-B781-39843C2649C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.ModelState.Filters", "SullyTech.Web.Api.Validation.ModelState.Filters", "{C8A6BDBB-A878-4CFF-B781-39843C2649C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Validation.Internal.Filters", "SullyTech.Web.Api.Validation.Internal.Filters\SullyTech.Web.Api.Validation.Internal.Filters.csproj", "{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Validation.ModelState.Filters", "SullyTech.Web.Api.Validation.ModelState.Filters\SullyTech.Web.Api.Validation.ModelState.Filters.csproj", "{A3CA68D1-3E2A-41C3-9CB1-6B55DF549150}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Validation.Fluent.Validator", "SullyTech.Web.Api.Validation.Fluent.Validator", "{0DCE4A6A-573E-479C-8F9D-27AEB06A6261}"
 EndProject
@@ -528,7 +528,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web", "SullyTech.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Json", "SullyTech.Json", "{A2D26DBD-8DC9-4092-AE68-D753FB60B6D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Json", "SullyTech.Json\SullyTech.Json.csproj", "{F7A2AD97-1748-4B14-BFB0-2324C822E9EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Json", "SullyTech.Json\SullyTech.Json.csproj", "{F7A2AD97-1748-4B14-BFB0-2324C822E9EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Contracts", "SullyTech.Web.Api.Contracts", "{BD9A2ED8-DAD5-457F-8993-72926DB6BA1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Contracts.Interfaces", "SullyTech.Web.Api.Contracts.Interfaces", "{2BE2DFE1-33B5-4DB9-8249-D6037AED711C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Web.Api.Contracts.Interfaces", "SullyTech.Web.Api.Contracts.Interfaces\SullyTech.Web.Api.Contracts.Interfaces.csproj", "{DB8E5324-C093-471A-B1C9-F908D961409C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -992,6 +998,10 @@ Global
 		{F7A2AD97-1748-4B14-BFB0-2324C822E9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7A2AD97-1748-4B14-BFB0-2324C822E9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A2AD97-1748-4B14-BFB0-2324C822E9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8E5324-C093-471A-B1C9-F908D961409C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8E5324-C093-471A-B1C9-F908D961409C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8E5324-C093-471A-B1C9-F908D961409C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8E5324-C093-471A-B1C9-F908D961409C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1253,6 +1263,9 @@ Global
 		{080F1261-664E-40B3-BAAB-9188B9366F15} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
 		{A2D26DBD-8DC9-4092-AE68-D753FB60B6D7} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
 		{F7A2AD97-1748-4B14-BFB0-2324C822E9EF} = {A2D26DBD-8DC9-4092-AE68-D753FB60B6D7}
+		{BD9A2ED8-DAD5-457F-8993-72926DB6BA1D} = {F46DF909-1D17-4721-B042-44B15A361EF5}
+		{2BE2DFE1-33B5-4DB9-8249-D6037AED711C} = {BD9A2ED8-DAD5-457F-8993-72926DB6BA1D}
+		{DB8E5324-C093-471A-B1C9-F908D961409C} = {2BE2DFE1-33B5-4DB9-8249-D6037AED711C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

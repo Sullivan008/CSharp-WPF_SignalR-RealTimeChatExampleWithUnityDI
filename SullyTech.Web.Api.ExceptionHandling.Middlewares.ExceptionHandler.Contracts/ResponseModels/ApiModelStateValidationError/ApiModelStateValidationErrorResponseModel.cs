@@ -1,6 +1,8 @@
-﻿namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiFluentModelStateValidation;
+﻿using SullyTech.Web.Api.Contracts.Interfaces.ResponseModels;
 
-public sealed class ApiFluentModelStateValidationErrorResponseModel
+namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiModelStateValidationError;
+
+public sealed class ApiModelStateValidationErrorResponseModel : IApiResponseModel
 {
     private readonly string? _traceId;
     public string TraceId
@@ -14,21 +16,6 @@ public sealed class ApiFluentModelStateValidationErrorResponseModel
 
         init => _traceId = value;
     }
-
-    private readonly int? _errorCode;
-    public int ErrorCode
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNull(_errorCode, nameof(ErrorCode));
-
-            return _errorCode!.Value;
-        }
-
-        init => _errorCode = value;
-    }
-
-    public string? ErrorMessage { get; init; }
 
     private readonly string? _exceptionType;
     public string ExceptionType
@@ -55,6 +42,8 @@ public sealed class ApiFluentModelStateValidationErrorResponseModel
 
         init => _exceptionCode = value;
     }
+
+    public string? ExceptionMessage { get; init; }
 
     private readonly string? _exception;
     public string Exception

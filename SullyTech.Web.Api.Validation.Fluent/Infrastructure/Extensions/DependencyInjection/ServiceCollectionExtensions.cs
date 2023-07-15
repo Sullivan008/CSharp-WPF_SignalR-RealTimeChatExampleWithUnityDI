@@ -6,7 +6,7 @@ namespace SullyTech.Web.Api.Validation.Fluent.Infrastructure.Extensions.Dependen
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddApiFluentModelStateValidation(this IServiceCollection @this)
+    public static void AddApiRequestModelValidation(this IServiceCollection @this)
     {
         @this.AddFluentValidationAutoValidation(configuration =>
         {

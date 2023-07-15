@@ -1,6 +1,8 @@
-﻿namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiError;
+﻿using SullyTech.Web.Api.Contracts.Interfaces.ResponseModels;
 
-public sealed class ApiErrorResponseModel
+namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiError;
+
+public sealed class ApiErrorResponseModel : IApiResponseModel
 {
     private readonly string? _traceId;
     public string TraceId

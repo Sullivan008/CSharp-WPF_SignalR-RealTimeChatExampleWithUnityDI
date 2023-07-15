@@ -1,6 +1,8 @@
-﻿namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiInternalServerError;
+﻿using SullyTech.Web.Api.Contracts.Interfaces.ResponseModels;
 
-public sealed class ApiInternalServerErrorResponseModel
+namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contracts.ResponseModels.ApiInternalServerError;
+
+public sealed class ApiInternalServerErrorResponseModel : IApiResponseModel
 {
     private readonly string? _traceId;
     public string TraceId
