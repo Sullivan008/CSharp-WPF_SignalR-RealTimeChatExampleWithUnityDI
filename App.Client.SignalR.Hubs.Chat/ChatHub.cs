@@ -16,11 +16,11 @@ public class ChatHub : SignalRHub<ChatHub, ChatHubConfiguration>, IChatHub
     public ChatHub(ILogger<ChatHub> logger, IOptions<ChatHubConfiguration> hubConfiguration) : base(logger, hubConfiguration)
     { }
 
-    protected override async Task OnReconnectingHubConnection(Exception? ex)
+    protected override async Task OnReconnectingHubConnectionAsync(Exception? ex)
     {
-        await base.OnReconnectingHubConnection(ex);
+        await base.OnReconnectingHubConnectionAsync(ex);
 
-        await base.OnConnectionLost(ex);
+        await base.OnConnectionLostAsync(ex);
     }
 
     public async Task SignInAsync(SignInRequestModel requestModel)

@@ -39,14 +39,14 @@ public sealed class MainWindowViewModel : StandardWindowViewModel<IMainWindowSet
 
     public override async Task OnBeforeLoadAsync()
     {
-        _chatHub.ConnectionLost += OnConnectionLost;
+        _chatHub.ConnectionLostAsync += OnConnectionLost;
 
         await Task.CompletedTask;
     }
 
     public override async Task OnDestroyAsync()
     {
-        _chatHub.ConnectionLost -= OnConnectionLost;
+        _chatHub.ConnectionLostAsync -= OnConnectionLost;
 
         await Task.CompletedTask;
     }

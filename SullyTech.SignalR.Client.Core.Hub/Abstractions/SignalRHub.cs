@@ -31,9 +31,9 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
             .WithAutomaticReconnect()
             .Build();
 
-        HubConnection.Closed += OnClosedHubConnection;
-        HubConnection.Reconnected += OnReconnectedHubConnection;
-        HubConnection.Reconnecting += OnReconnectingHubConnection;
+        HubConnection.Closed += OnClosedHubConnectionAsync;
+        HubConnection.Reconnected += OnReconnectedHubConnectionAsync;
+        HubConnection.Reconnecting += OnReconnectingHubConnectionAsync;
     }
 
 
@@ -50,12 +50,12 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
     bool ISignalRHub.IsConnected => IsConnected;
 
 
-    protected Func<Exception?, Task>? ConnectionLost { get; set; }
+    protected Func<Exception?, Task>? ConnectionLostAsync { get; set; }
 
-    Func<Exception?, Task>? ISignalRHub.ConnectionLost
+    Func<Exception?, Task>? ISignalRHub.ConnectionLostAsync
     {
-        get => ConnectionLost;
-        set => ConnectionLost = value;
+        get => ConnectionLostAsync;
+        set => ConnectionLostAsync = value;
     }
 
     #endregion
@@ -86,20 +86,20 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
         await ConnectAsync();
     }
 
-    protected virtual async Task OnConnectionLost(Exception? ex)
+    protected virtual async Task OnConnectionLostAsync(Exception? ex)
     {
         if (ex is not null)
         {
             Logger.LogError(ex, ex.Message);
         }
 
-        if (ConnectionLost != null)
+        if (ConnectionLostAsync != null)
         {
-            await ConnectionLost.Invoke(ex);
+            await ConnectionLostAsync.Invoke(ex);
         }
     }
 
-    protected virtual async Task OnClosedHubConnection(Exception? ex)
+    protected virtual async Task OnClosedHubConnectionAsync(Exception? ex)
     {
         if (ex is not null)
         {
@@ -109,12 +109,12 @@ public abstract class SignalRHub<THub, THubConfiguration> : ISignalRHub
         await ConnectAsync();
     }
 
-    protected virtual async Task OnReconnectedHubConnection(string? arg)
+    protected virtual async Task OnReconnectedHubConnectionAsync(string? arg)
     {
         await Task.CompletedTask;
     }
 
-    protected virtual async Task OnReconnectingHubConnection(Exception? ex)
+    protected virtual async Task OnReconnectingHubConnectionAsync(Exception? ex)
     {
         if (ex is not null)
         {
