@@ -17,6 +17,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ApplicationDefinition Include="Application.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />

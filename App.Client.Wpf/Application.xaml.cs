@@ -38,11 +38,11 @@ using SullyTech.Wpf.TraceListeners.BindingError;
 
 namespace App.Client.Wpf;
 
-public partial class App
+public partial class Application
 {
     private readonly IHost _host;
 
-    public App()
+    public Application()
     {
         _host = new HostBuilder()
             .ConfigureHostConfiguration(configurationBuilder =>
@@ -168,7 +168,7 @@ public partial class App
 
     private void LogUnhandledException(Exception exception)
     {
-        ILogger<App> logger = _host.Services.GetRequiredService<ILogger<App>>();
+        ILogger<Application> logger = _host.Services.GetRequiredService<ILogger<Application>>();
         logger.LogError(exception, exception.Message);
     }
 
