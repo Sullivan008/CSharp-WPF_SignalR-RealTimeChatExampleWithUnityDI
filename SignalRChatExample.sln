@@ -82,7 +82,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Wind
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels", "{A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels", "SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.csproj", "{AD0BE13F-A0E3-4B19-BEB0-B4C2A7FA2737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.csproj", "{AD0BE13F-A0E3-4B19-BEB0-B4C2A7FA2737}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces", "{BD8E1F04-98C2-43F3-A464-B5C285ED0693}"
 EndProject

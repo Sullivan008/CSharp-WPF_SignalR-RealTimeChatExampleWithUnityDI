@@ -13,6 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Commands.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Windows.Core.Window.Presenter.ViewModels\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.csproj" />
