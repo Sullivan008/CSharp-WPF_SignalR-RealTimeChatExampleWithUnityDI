@@ -5,7 +5,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mappers</Product>
+		<Product>SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles</Product>
 	</PropertyGroup>
 
 	<ItemGroup>

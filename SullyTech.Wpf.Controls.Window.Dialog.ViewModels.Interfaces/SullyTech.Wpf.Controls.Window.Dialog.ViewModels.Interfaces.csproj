@@ -5,7 +5,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Wpf.Windows.Dialog.Window.ViewModels.Interfaces</Product>
+		<Product>SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces</Product>
 	</PropertyGroup>
 
 	<ItemGroup>

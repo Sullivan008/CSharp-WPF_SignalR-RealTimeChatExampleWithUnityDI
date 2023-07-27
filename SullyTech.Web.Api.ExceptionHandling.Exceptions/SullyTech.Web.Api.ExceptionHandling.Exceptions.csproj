@@ -5,7 +5,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Api.ExceptionHandling.Exceptions</Product>
+		<Product>SullyTech.Web.Api.ExceptionHandling.Exceptions</Product>
 	</PropertyGroup>
 
 </Project>

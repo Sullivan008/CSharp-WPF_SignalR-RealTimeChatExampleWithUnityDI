@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Wpf.Dialogs.ExceptionDialog.Presenter</Product>
+		<Product>SullyTech.Wpf.Dialogs.Exception.Window.Presenter</Product>
 	</PropertyGroup>
 
 	<ItemGroup>

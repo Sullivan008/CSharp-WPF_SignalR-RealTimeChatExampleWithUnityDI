@@ -13,7 +13,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.App.Client.Wpf</Product>
+		<Product>App.Client.Wpf</Product>
 	</PropertyGroup>
 
 	<ItemGroup>

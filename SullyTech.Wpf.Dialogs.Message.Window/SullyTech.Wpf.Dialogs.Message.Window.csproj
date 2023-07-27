@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Wpf.Dialogs.MessageDialog.Window</Product>
+		<Product>SullyTech.Wpf.Dialogs.Message.Window</Product>
 	</PropertyGroup>
 
 	<ItemGroup>

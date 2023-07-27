@@ -5,7 +5,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>SullyTech.Wpf.Windows.Core.Window.Services.Window</Product>
+		<Product>SullyTech.Wpf.Controls.Window.Core.Services.Window</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
