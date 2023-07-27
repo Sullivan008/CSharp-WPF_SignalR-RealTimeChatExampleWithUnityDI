@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping.Profiles</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Enums\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Enums.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces.csproj" />
+	  <ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

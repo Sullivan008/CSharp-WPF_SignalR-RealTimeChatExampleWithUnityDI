@@ -1,11 +1,9 @@
-﻿using System.Reflection;
+﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Core.Interfaces;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.Presenter.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.Presenter.Models.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.PresenterData.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
+using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces.Presenter;
+using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces.PresenterData;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Controls.Window.Core.Providers.Window.Interfaces;
@@ -23,12 +21,16 @@ public sealed class NavigationService : INavigationService
 {
     private readonly IServiceProvider _serviceProvider;
 
+
+    private readonly IMapper _mapper;
+
     private readonly IWindowProvider _windowProvider;
 
-    public NavigationService(IServiceProvider serviceProvider, IWindowProvider windowProvider)
+    public NavigationService(IServiceProvider serviceProvider, IMapper mapper, IWindowProvider windowProvider)
     {
         _serviceProvider = serviceProvider;
 
+        _mapper = mapper;
         _windowProvider = windowProvider;
     }
 
@@ -146,16 +148,8 @@ public sealed class NavigationService : INavigationService
     {
         if (presenterViewModelInitializerModel is not null && presenterViewModelInitializerModelType is not null)
         {
-            Type presenterViewModelInitializerType =
-                typeof(IPresenterViewModelInitializer<,>).MakeGenericType(presenterViewModelType, presenterViewModelInitializerModelType);
-
-            MethodInfo presenterViewModelInitializerInitializeMethodInfo = presenterViewModelInitializerType.GetMethods()
-                                                                                                            .Single();
-
-            object presenterViewModelInitializer = _serviceProvider.GetRequiredService(presenterViewModelInitializerType);
-
-            presenterViewModelInitializerInitializeMethodInfo
-                .Invoke(presenterViewModelInitializer, new object[] { presenterViewModel, presenterViewModelInitializerModel });
+            _mapper.Map(presenterViewModelInitializerModel, presenterViewModel,
+                presenterViewModelInitializerModelType, presenterViewModelType);
         }
     }
 
@@ -164,16 +158,8 @@ public sealed class NavigationService : INavigationService
     {
         if (presenterDataViewModelInitializerModel is not null && presenterDataViewModelInitializerModelType is not null)
         {
-            Type presenterDataViewModelInitializerType =
-                typeof(IPresenterDataViewModelInitializer<,>).MakeGenericType(presenterDataViewModelType, presenterDataViewModelInitializerModelType);
-
-            MethodInfo presenterDataViewModelInitializerInitializeMethodInfo = presenterDataViewModelInitializerType.GetMethods()
-                                                                                                                    .Single();
-
-            object presenterDataViewModelInitializer = _serviceProvider.GetRequiredService(presenterDataViewModelInitializerType);
-
-            presenterDataViewModelInitializerInitializeMethodInfo
-                .Invoke(presenterDataViewModelInitializer, new object[] { presenterDataViewModel, presenterDataViewModelInitializerModel });
+            _mapper.Map(presenterDataViewModelInitializerModel, presenterDataViewModel,
+                presenterDataViewModelInitializerModelType, presenterDataViewModelType);
         }
     }
 

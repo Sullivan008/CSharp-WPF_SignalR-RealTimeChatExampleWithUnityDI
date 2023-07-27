@@ -13,9 +13,11 @@
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow\SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Result\SullyTech.Wpf.Dialogs.Exception.Window.Result.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces.csproj" />
 	</ItemGroup>
 
 </Project>

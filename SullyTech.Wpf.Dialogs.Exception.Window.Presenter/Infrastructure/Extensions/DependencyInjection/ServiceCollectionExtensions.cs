@@ -2,7 +2,7 @@
 using SullyTech.Wpf.Controls.Window.Core.Presenter.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces;
 using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles.Infrastructure.Extensions.DependencyInjection;
 
 namespace SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Infrastructure.Extensions.DependencyInjection;
 
@@ -15,6 +15,6 @@ public static class ServiceCollectionExtensions
         @this.AddExceptionDialogPresenterViewModel();
         @this.AddExceptionDialogPresenterDataViewModel();
 
-        @this.AddExceptionDialogPresenterDataViewModelInitializer();
+        @this.AddExceptionDialogPresenterDataViewModelMappingProfile();
     }
 }

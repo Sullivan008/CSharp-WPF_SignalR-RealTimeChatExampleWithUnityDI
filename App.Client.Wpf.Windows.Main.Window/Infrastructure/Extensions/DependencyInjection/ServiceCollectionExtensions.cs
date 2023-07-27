@@ -1,6 +1,6 @@
 ﻿using App.Client.Wpf.Windows.Main.Window.Interfaces;
 using App.Client.Wpf.Windows.Main.Window.ViewModels.Infrastructure.Extensions.DependencyInjection;
-using App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers.Infrastructure.Extensions.DependencyInjection;
+using App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles.Infrastructure.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Standard.Infrastructure.Extensions.DependencyInjection;
 
@@ -15,6 +15,6 @@ public static class ServiceCollectionExtensions
         @this.AddMainWindowViewModel();
         @this.AddMainWindowSettingsViewModel();
 
-        @this.AddMainWindowSettingsViewModelInitializer();
+        @this.AddMainWindowSettingsViewModelMappingProfile();
     }
 }

@@ -11,7 +11,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Services.Window\SullyTech.Wpf.Controls.Window.Core.Services.Window.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Interfaces\SullyTech.Wpf.Controls.Window.Standard.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -35,13 +35,21 @@
 
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity\App.Client.Wpf.Modules.Identity.csproj" />
 
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.csproj" />
+
 		<ProjectReference Include="..\App.Client.Wpf.Windows.Main\App.Client.Wpf.Windows.Main.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.csproj" />
 
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.csproj" />
+
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception\SullyTech.Wpf.Dialogs.Exception.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message\SullyTech.Wpf.Dialogs.Message.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />

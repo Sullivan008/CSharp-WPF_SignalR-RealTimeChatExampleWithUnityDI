@@ -1,16 +1,14 @@
-﻿using System.Reflection;
+﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Core.Interfaces;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.Presenter.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.Presenter.Models.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.PresenterData.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
+using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces.Presenter;
+using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces.PresenterData;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Controls.Window.Core.Services.Window.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers.Window.Models.Interfaces;
-using SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers.WindowSettings.Models.Interfaces;
+using SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces.Window;
+using SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 using SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces.WindowSettings;
 
@@ -18,17 +16,16 @@ namespace SullyTech.Wpf.Controls.Window.Core.Services.Window.Abstractions;
 
 public abstract class WindowService : IWindowService
 {
+    protected readonly IMapper Mapper;
+
     protected readonly IServiceProvider ServiceProvider;
 
     protected WindowService(IServiceProvider serviceProvider)
     {
         ServiceProvider = serviceProvider;
+        Mapper = serviceProvider.GetRequiredService<IMapper>();
     }
-
-    protected abstract Type WindowViewModelInitializerGenericType { get; }
-
-    protected abstract Type WindowSettingsViewModelInitializerGenericType { get; }
-
+    
     protected virtual IWindow CreateWindow(Type windowType)
     {
         return (IWindow)ServiceProvider.GetRequiredService(windowType);
@@ -63,18 +60,8 @@ public abstract class WindowService : IWindowService
     {
         if (windowViewModelInitializerModel is not null && windowViewModelInitializerModelType is not null)
         {
-            Type windowViewModelInitializerType =
-                WindowViewModelInitializerGenericType.MakeGenericType(windowViewModelType, windowViewModelInitializerModelType);
-
-            MethodInfo windowViewModelInitializerInitializeMethodInfo = windowViewModelInitializerType.GetInterfaces()
-                                                                                                      .Single()
-                                                                                                      .GetMethods()
-                                                                                                      .Single();
-
-            object windowViewModelInitializer = ServiceProvider.GetRequiredService(windowViewModelInitializerType);
-
-            windowViewModelInitializerInitializeMethodInfo
-                .Invoke(windowViewModelInitializer, new object[] { windowViewModel, windowViewModelInitializerModel });
+            Mapper.Map(windowViewModelInitializerModel, windowViewModel,
+                windowViewModelInitializerModelType, windowViewModelType);
         }
     }
 
@@ -83,18 +70,8 @@ public abstract class WindowService : IWindowService
     {
         if (windowSettingsViewModelInitializerModel is not null && windowSettingsViewModelInitializerModelType is not null)
         {
-            Type windowSettingsViewModelInitializerType =
-                WindowSettingsViewModelInitializerGenericType.MakeGenericType(windowSettingsViewModelType, windowSettingsViewModelInitializerModelType);
-
-            MethodInfo windowSettingsViewModelInitializerInitializeMethodInfo = windowSettingsViewModelInitializerType.GetInterfaces()
-                                                                                                                      .Single()
-                                                                                                                      .GetMethods()
-                                                                                                                      .Single();
-
-            object windowSettingsViewModelInitializer = ServiceProvider.GetRequiredService(windowSettingsViewModelInitializerType);
-
-            windowSettingsViewModelInitializerInitializeMethodInfo
-                .Invoke(windowSettingsViewModelInitializer, new object[] { windowSettingsViewModel, windowSettingsViewModelInitializerModel });
+            Mapper.Map(windowSettingsViewModelInitializerModel, windowSettingsViewModel,
+                windowSettingsViewModelInitializerModelType, windowSettingsViewModelType);
         }
     }
 
@@ -103,16 +80,8 @@ public abstract class WindowService : IWindowService
     {
         if (presenterViewModelInitializerModel is not null && presenterViewModelInitializerModelType is not null)
         {
-            Type presenterViewModelInitializerType =
-                typeof(IPresenterViewModelInitializer<,>).MakeGenericType(presenterViewModelType, presenterViewModelInitializerModelType);
-
-            MethodInfo presenterViewModelInitializerInitializeMethodInfo = presenterViewModelInitializerType.GetMethods()
-                                                                                                            .Single();
-
-            object presenterViewModelInitializer = ServiceProvider.GetRequiredService(presenterViewModelInitializerType);
-
-            presenterViewModelInitializerInitializeMethodInfo
-                .Invoke(presenterViewModelInitializer, new object[] { presenterViewModel, presenterViewModelInitializerModel });
+            Mapper.Map(presenterViewModelInitializerModel, presenterViewModel,
+                presenterViewModelInitializerModelType, presenterViewModelType);
         }
     }
 
@@ -121,16 +90,8 @@ public abstract class WindowService : IWindowService
     {
         if (presenterDataViewModelInitializerModel is not null && presenterDataViewModelInitializerModelType is not null)
         {
-            Type presenterDataViewModelInitializerType =
-                typeof(IPresenterDataViewModelInitializer<,>).MakeGenericType(presenterDataViewModelType, presenterDataViewModelInitializerModelType);
-
-            MethodInfo presenterDataViewModelInitializerInitializeMethodInfo = presenterDataViewModelInitializerType.GetMethods()
-                                                                                                                    .Single();
-
-            object presenterDataViewModelInitializer = ServiceProvider.GetRequiredService(presenterDataViewModelInitializerType);
-
-            presenterDataViewModelInitializerInitializeMethodInfo
-                .Invoke(presenterDataViewModelInitializer, new object[] { presenterDataViewModel, presenterDataViewModelInitializerModel });
+            Mapper.Map(presenterDataViewModelInitializerModel, presenterDataViewModel,
+                presenterDataViewModelInitializerModelType, presenterDataViewModelType);
         }
     }
 

@@ -68,21 +68,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Wind
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces.csproj", "{A8F7B703-1218-4381-ABC4-8E7CA94A242D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers", "{818973B9-3DCE-44E4-8D23-C9CB43D50E16}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.csproj", "{65877D1F-7C2D-4162-9C68-E47D4F0B67C8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core", "SullyTech.Wpf.Controls.Window.Core\SullyTech.Wpf.Controls.Window.Core.csproj", "{23F886D0-ACFE-489D-BADE-2153D0CF73BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels", "SullyTech.Wpf.Controls.Window.Core.ViewModels", "{D39D4313-3E17-44D0-885F-4FAE75621C88}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers", "{5E06F7E7-3C55-4029-9B6D-C418047769AC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces", "{674D9A5E-925E-4152-A195-7696A4653B4B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces.csproj", "{74E6501C-B0DE-4B84-BD7E-89DCBB48718B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializers.csproj", "{D555B1AA-BFA1-403C-B7A7-16E5780EB037}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels", "SullyTech.Wpf.Controls.Window.Core.ViewModels\SullyTech.Wpf.Controls.Window.Core.ViewModels.csproj", "{10DE5640-B5FE-4C35-B137-54A27CDBC6FC}"
 EndProject
@@ -94,11 +86,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Wind
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces", "{BD8E1F04-98C2-43F3-A464-B5C285ED0693}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers", "{1C990BE4-A401-4BBF-AC18-16971F509AB2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.csproj", "{15C15857-1EE6-44EA-AF3D-B7A7A7222133}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializers.csproj", "{B348F6F1-890C-4AC7-B984-52C25693B193}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Commands", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Commands", "{E5963D61-A6A3-4A39-953F-69B717295882}"
 EndProject
@@ -131,10 +119,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Dialog.Result.Interfaces", "SullyTech.Wpf.Controls.Window.Dialog.Result.Interfaces\SullyTech.Wpf.Controls.Window.Dialog.Result.Interfaces.csproj", "{11A125D6-167D-433B-80DC-481D8ABB20A0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.csproj", "{0CD1A615-C28C-433A-B83C-82BDF9BECB2B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers", "{1C2649E5-70F6-4B9A-AA5D-EDDFED49FAC4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers.csproj", "{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Dialog.Services", "SullyTech.Wpf.Controls.Window.Dialog.Services", "{1EB047E0-F574-4B9E-A178-BDFC2A0EF545}"
 EndProject
@@ -228,17 +212,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Messa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Commands.csproj", "{797A99B1-450F-4475-8B36-AEC01AE5FFB0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers", "{D65F1E61-A3CF-4784-91B6-D9D721908B51}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers.csproj", "{96BC4434-2E87-47BF-89A4-400E0C975725}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer", "{D65F1E61-A3CF-4784-91B6-D9D721908B51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Commands", "{74853F81-043A-41BC-B7FB-25145EE3FFE8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Commands", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Commands\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Commands.csproj", "{E1E7EBE5-6B1F-441B-B817-35CEC958BF05}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers", "{AFE36B3A-2A1B-45D3-87E9-7531793F7831}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.csproj", "{89931EBA-FCE1-45C5-A36A-D8B44AC492DF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer", "{AFE36B3A-2A1B-45D3-87E9-7531793F7831}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels", "{EC1E9281-101D-4344-B6B2-181ADDB06DF7}"
 EndProject
@@ -248,13 +228,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Excep
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces", "{405C60AC-6ED2-4F46-A2A0-C0FB6B73606D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers", "{BAEF2809-BB8D-4A75-8E10-D368C664B4E1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer", "{BAEF2809-BB8D-4A75-8E10-D368C664B4E1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces.csproj", "{EE400A0D-D197-4982-BBE9-BD1832D0C58C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Commands", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Commands\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Commands.csproj", "{54624D15-3D67-47DB-8C55-3BAD8BAA7D48}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers.csproj", "{8282D22E-CD9C-4792-B0CF-F964FCEC717D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels", "{8DF448B7-F488-4927-8AB0-6132AE45781F}"
 EndProject
@@ -262,9 +240,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Messa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.csproj", "{3FDA2AF3-F234-490E-B286-15BB6B40BBDF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers", "{642A6E66-D7A9-4FFE-91F7-0190A255AB13}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers.csproj", "{A5DA0DD5-472A-4736-ACEF-FD29973D553A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer", "{642A6E66-D7A9-4FFE-91F7-0190A255AB13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Interfaces", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Interfaces", "{4CD74811-9EDD-4297-B601-080A37054EF0}"
 EndProject
@@ -287,8 +263,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Windows.Main.Window.ViewModels", "App.Client.Wpf.Windows.Main.Window.ViewModels\App.Client.Wpf.Windows.Main.Window.ViewModels.csproj", "{77447B38-68CC-44B8-ADE6-BA83AB83882C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces", "App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj", "{3B74244B-B404-4887-82B2-148A1B190A3C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers", "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers.csproj", "{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Commands", "App.Client.Wpf.Windows.Main.Window.ViewModels.Commands\App.Client.Wpf.Windows.Main.Window.ViewModels.Commands.csproj", "{20E86C6B-F2DD-416B-9683-5267F80528FE}"
 EndProject
@@ -458,7 +432,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces", "App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces", "{924A03B9-6E53-4EC5-B02D-6F9E250C92DF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers", "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers", "{F0FD8364-6585-4563-ABD2-31A167CB1A45}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer", "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer", "{F0FD8364-6585-4563-ABD2-31A167CB1A45}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Services.Navigation", "SullyTech.Wpf.Services.Navigation", "{09740007-178A-46BC-B824-8C1692FE84DA}"
 EndProject
@@ -536,17 +510,119 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Web.Api.Contracts
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Web.Api.Contracts.Interfaces", "SullyTech.Web.Api.Contracts.Interfaces\SullyTech.Web.Api.Contracts.Interfaces.csproj", "{DB8E5324-C093-471A-B1C9-F908D961409C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper", "SullyTech.Mapper", "{36B4909B-8FD3-43C3-BA87-D8174BD14349}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping", "{BA9E8641-AB71-400A-AA24-581C45FC1308}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper.Core", "SullyTech.Mapper.Core", "{990C95C0-4195-422B-8A70-F5B365F4166C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles.csproj", "{BAD1DF18-A5C1-4BA9-956C-C8D5C3046AEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Mapper.Core", "SullyTech.Mapper.Core\SullyTech.Mapper.Core.csproj", "{E789A453-69D5-418F-A463-5691A8FA52DE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles", "{7EC9A017-7777-4D46-BF7D-0F138E0D3187}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper.Services", "SullyTech.Mapper.Services", "{2F4E1840-F053-47FA-B062-D01C283E160B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models", "{95752EFC-6217-4792-9783-16258808855F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Mapper.Services.Mapper", "SullyTech.Mapper.Services.Mapper", "{A2BFDC9A-F44F-4F0A-839D-93979943A37A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces", "{1CF0EE37-01C4-4362-A0AE-E9890BE32FB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Mapper.Services.Mapper", "SullyTech.Mapper.Services.Mapper\SullyTech.Mapper.Services.Mapper.csproj", "{8204A402-B061-4913-99A6-D5B7F1794B6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces.csproj", "{0A9D1D75-7512-4382-B6F6-B349734B6F78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.csproj", "{9BA3FEEE-E8C7-443F-B49E-2AE27D8F345E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models", "{0F2C7390-EC1E-4586-BEFC-C749454FDFF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces", "{5F49A4DE-982E-420E-A79B-847D8B0DF47A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces.csproj", "{B8E43211-7A19-4D6A-B2A1-6D18A794D666}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.csproj", "{E98B2341-28A6-431E-82D3-A39FE912F0C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping", "{675C857C-CC00-40ED-9A74-AFFABB09AC07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles", "{CC30069E-D20D-4C46-B5EC-29E8FB055EB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles.csproj", "{78074E6D-5B68-433E-B358-1242A6E02FC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models", "{BA03A39C-FCD0-4211-93E6-D8E21142CA72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.Interfaces", "{F2F7D088-BD30-4A85-8D85-1FB43915C372}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.Interfaces.csproj", "{A62B1ADD-7E72-425C-A931-7D5C13AF62BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.csproj", "{C2770EF0-043D-44F1-8F05-C38DA139CE1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Mapping", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Mapping", "{F850EB8A-EE3F-49FF-891C-04CA497B85E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Mapping.Profiles", "{1F9BFA7F-4A53-49D6-82CD-9967898509CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Mapping.Profiles\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Mapping.Profiles.csproj", "{D5C0582D-3A5B-4ACF-B904-2BA47C587283}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models", "{64A05E76-411C-448A-B00D-C20FFBC20172}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces", "{9CD20294-D457-426D-AFC1-CF5CC60D4330}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces.csproj", "{52ED2FF6-6231-42BA-AEFE-9E077B63F99C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums", "{9B5F366B-DD59-467E-BC4B-7345685EEC22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums.csproj", "{0964C666-7ADD-4C2A-BCE6-8387A217A99C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.csproj", "{00AAB98D-ACCD-44E1-8A4F-2D1BA59278D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping", "{6C13E6C5-5204-4E2F-AA78-66AFAFEAEAB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping.Profiles", "{55DDA706-38D0-4B5D-A150-A1B1FED98779}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping.Profiles\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Mapping.Profiles.csproj", "{09F4C7A5-E60E-48FC-B5F3-2E0FDF1B5D3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer", "{B0333AAD-1838-4BF7-8FB2-C4E16ACBCBE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces", "{84F13989-8277-4061-BA30-F6EB062D926C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces.csproj", "{EFBBC476-C08C-423F-A51A-54683CB9820B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models", "{7BBF4AD7-AF30-4A57-8B1A-8DD3230FA86B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models\SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.csproj", "{56138621-22C5-4BF7-8553-DC397648B074}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer", "{52B6E19A-0ABD-4549-92E5-56291992D6C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models", "{7BFE9F41-D579-48DA-B3C2-8CF76AE50306}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces", "{EA7D6354-3CAA-4CBB-8FE9-044F4F8E527D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces.csproj", "{C2BC63CD-E7DE-420B-BA90-AFDF4F8AA485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.csproj", "{DEAF2A3E-9B48-4D8B-ADD2-9ABEEDAAE88F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer", "{B976EEDB-915C-4034-9D62-1BC383C997E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models", "{C53DAD07-D5A1-40E0-8ACA-1D926D13CDA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces", "{E56C611E-E6DA-406F-939B-0985B0B3DD76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces.csproj", "{DF9A5911-917E-4B12-9C1D-A1C7E8B77B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.csproj", "{37ED6FC9-FE20-4C63-B3D8-8E8198C99AA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer", "{161868A2-3474-4EB0-998E-050E2D4B6CB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models", "{87C505BC-3E82-4A29-9042-6C4FB06D7815}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces", "{573A00E8-2EAC-4B10-A128-94800728CEBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces.csproj", "{3F9A6E48-DC5E-4920-AD58-6D596389FAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.csproj", "{EE3EA781-0F2E-4293-9F7E-A29C8FF8A565}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models", "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models", "{9F1659E0-D8B8-4C25-9BE9-C80858F85B22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces", "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces", "{2E8F2A84-E21E-416C-B2EA-FF8E56922C9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces", "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces.csproj", "{0D60AF90-69D2-4E75-8D25-4B5EE4D1C316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models", "App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.csproj", "{99AE1BAC-37BC-4013-820A-6D8768872285}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping", "App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping", "{7E16F67E-00D7-4DB1-9119-D3A1E6D8A3BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles", "App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles", "{60337A0E-E382-407F-A093-10F2934F2106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles", "App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles\App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles.csproj", "{6C235DF3-405D-4FE5-849F-B8F0FC0A1FE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -610,10 +686,6 @@ Global
 		{A8F7B703-1218-4381-ABC4-8E7CA94A242D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8F7B703-1218-4381-ABC4-8E7CA94A242D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8F7B703-1218-4381-ABC4-8E7CA94A242D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65877D1F-7C2D-4162-9C68-E47D4F0B67C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65877D1F-7C2D-4162-9C68-E47D4F0B67C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65877D1F-7C2D-4162-9C68-E47D4F0B67C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65877D1F-7C2D-4162-9C68-E47D4F0B67C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23F886D0-ACFE-489D-BADE-2153D0CF73BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23F886D0-ACFE-489D-BADE-2153D0CF73BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23F886D0-ACFE-489D-BADE-2153D0CF73BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -622,10 +694,6 @@ Global
 		{74E6501C-B0DE-4B84-BD7E-89DCBB48718B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74E6501C-B0DE-4B84-BD7E-89DCBB48718B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74E6501C-B0DE-4B84-BD7E-89DCBB48718B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D555B1AA-BFA1-403C-B7A7-16E5780EB037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D555B1AA-BFA1-403C-B7A7-16E5780EB037}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D555B1AA-BFA1-403C-B7A7-16E5780EB037}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D555B1AA-BFA1-403C-B7A7-16E5780EB037}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10DE5640-B5FE-4C35-B137-54A27CDBC6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10DE5640-B5FE-4C35-B137-54A27CDBC6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10DE5640-B5FE-4C35-B137-54A27CDBC6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -638,10 +706,6 @@ Global
 		{15C15857-1EE6-44EA-AF3D-B7A7A7222133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15C15857-1EE6-44EA-AF3D-B7A7A7222133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15C15857-1EE6-44EA-AF3D-B7A7A7222133}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B348F6F1-890C-4AC7-B984-52C25693B193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B348F6F1-890C-4AC7-B984-52C25693B193}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B348F6F1-890C-4AC7-B984-52C25693B193}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B348F6F1-890C-4AC7-B984-52C25693B193}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -674,10 +738,6 @@ Global
 		{0CD1A615-C28C-433A-B83C-82BDF9BECB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CD1A615-C28C-433A-B83C-82BDF9BECB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CD1A615-C28C-433A-B83C-82BDF9BECB2B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{15D514C2-195D-412B-A4FF-8CB6D26977CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15D514C2-195D-412B-A4FF-8CB6D26977CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15D514C2-195D-412B-A4FF-8CB6D26977CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -754,18 +814,10 @@ Global
 		{797A99B1-450F-4475-8B36-AEC01AE5FFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{797A99B1-450F-4475-8B36-AEC01AE5FFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{797A99B1-450F-4475-8B36-AEC01AE5FFB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96BC4434-2E87-47BF-89A4-400E0C975725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96BC4434-2E87-47BF-89A4-400E0C975725}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96BC4434-2E87-47BF-89A4-400E0C975725}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96BC4434-2E87-47BF-89A4-400E0C975725}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1E7EBE5-6B1F-441B-B817-35CEC958BF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1E7EBE5-6B1F-441B-B817-35CEC958BF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1E7EBE5-6B1F-441B-B817-35CEC958BF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1E7EBE5-6B1F-441B-B817-35CEC958BF05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89931EBA-FCE1-45C5-A36A-D8B44AC492DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89931EBA-FCE1-45C5-A36A-D8B44AC492DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89931EBA-FCE1-45C5-A36A-D8B44AC492DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89931EBA-FCE1-45C5-A36A-D8B44AC492DF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{088531DE-5207-4E1B-A776-8DFC4DDDB50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{088531DE-5207-4E1B-A776-8DFC4DDDB50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{088531DE-5207-4E1B-A776-8DFC4DDDB50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -778,18 +830,10 @@ Global
 		{54624D15-3D67-47DB-8C55-3BAD8BAA7D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54624D15-3D67-47DB-8C55-3BAD8BAA7D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54624D15-3D67-47DB-8C55-3BAD8BAA7D48}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8282D22E-CD9C-4792-B0CF-F964FCEC717D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8282D22E-CD9C-4792-B0CF-F964FCEC717D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8282D22E-CD9C-4792-B0CF-F964FCEC717D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8282D22E-CD9C-4792-B0CF-F964FCEC717D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FDA2AF3-F234-490E-B286-15BB6B40BBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FDA2AF3-F234-490E-B286-15BB6B40BBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FDA2AF3-F234-490E-B286-15BB6B40BBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FDA2AF3-F234-490E-B286-15BB6B40BBDF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5DA0DD5-472A-4736-ACEF-FD29973D553A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5DA0DD5-472A-4736-ACEF-FD29973D553A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5DA0DD5-472A-4736-ACEF-FD29973D553A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5DA0DD5-472A-4736-ACEF-FD29973D553A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5A9353C4-9E10-4D9D-9612-C217FC1BA4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A9353C4-9E10-4D9D-9612-C217FC1BA4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A9353C4-9E10-4D9D-9612-C217FC1BA4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -822,10 +866,6 @@ Global
 		{3B74244B-B404-4887-82B2-148A1B190A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B74244B-B404-4887-82B2-148A1B190A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B74244B-B404-4887-82B2-148A1B190A3C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20E86C6B-F2DD-416B-9683-5267F80528FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20E86C6B-F2DD-416B-9683-5267F80528FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20E86C6B-F2DD-416B-9683-5267F80528FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -1014,14 +1054,102 @@ Global
 		{DB8E5324-C093-471A-B1C9-F908D961409C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB8E5324-C093-471A-B1C9-F908D961409C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB8E5324-C093-471A-B1C9-F908D961409C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E789A453-69D5-418F-A463-5691A8FA52DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E789A453-69D5-418F-A463-5691A8FA52DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E789A453-69D5-418F-A463-5691A8FA52DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E789A453-69D5-418F-A463-5691A8FA52DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8204A402-B061-4913-99A6-D5B7F1794B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD1DF18-A5C1-4BA9-956C-C8D5C3046AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD1DF18-A5C1-4BA9-956C-C8D5C3046AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD1DF18-A5C1-4BA9-956C-C8D5C3046AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD1DF18-A5C1-4BA9-956C-C8D5C3046AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9D1D75-7512-4382-B6F6-B349734B6F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9D1D75-7512-4382-B6F6-B349734B6F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9D1D75-7512-4382-B6F6-B349734B6F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9D1D75-7512-4382-B6F6-B349734B6F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA3FEEE-E8C7-443F-B49E-2AE27D8F345E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA3FEEE-E8C7-443F-B49E-2AE27D8F345E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA3FEEE-E8C7-443F-B49E-2AE27D8F345E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA3FEEE-E8C7-443F-B49E-2AE27D8F345E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E43211-7A19-4D6A-B2A1-6D18A794D666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E43211-7A19-4D6A-B2A1-6D18A794D666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E43211-7A19-4D6A-B2A1-6D18A794D666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E43211-7A19-4D6A-B2A1-6D18A794D666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E98B2341-28A6-431E-82D3-A39FE912F0C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E98B2341-28A6-431E-82D3-A39FE912F0C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E98B2341-28A6-431E-82D3-A39FE912F0C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E98B2341-28A6-431E-82D3-A39FE912F0C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78074E6D-5B68-433E-B358-1242A6E02FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78074E6D-5B68-433E-B358-1242A6E02FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78074E6D-5B68-433E-B358-1242A6E02FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78074E6D-5B68-433E-B358-1242A6E02FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A62B1ADD-7E72-425C-A931-7D5C13AF62BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62B1ADD-7E72-425C-A931-7D5C13AF62BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62B1ADD-7E72-425C-A931-7D5C13AF62BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A62B1ADD-7E72-425C-A931-7D5C13AF62BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2770EF0-043D-44F1-8F05-C38DA139CE1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2770EF0-043D-44F1-8F05-C38DA139CE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2770EF0-043D-44F1-8F05-C38DA139CE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2770EF0-043D-44F1-8F05-C38DA139CE1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C0582D-3A5B-4ACF-B904-2BA47C587283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C0582D-3A5B-4ACF-B904-2BA47C587283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C0582D-3A5B-4ACF-B904-2BA47C587283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C0582D-3A5B-4ACF-B904-2BA47C587283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52ED2FF6-6231-42BA-AEFE-9E077B63F99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52ED2FF6-6231-42BA-AEFE-9E077B63F99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52ED2FF6-6231-42BA-AEFE-9E077B63F99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52ED2FF6-6231-42BA-AEFE-9E077B63F99C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0964C666-7ADD-4C2A-BCE6-8387A217A99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0964C666-7ADD-4C2A-BCE6-8387A217A99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0964C666-7ADD-4C2A-BCE6-8387A217A99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0964C666-7ADD-4C2A-BCE6-8387A217A99C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00AAB98D-ACCD-44E1-8A4F-2D1BA59278D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00AAB98D-ACCD-44E1-8A4F-2D1BA59278D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00AAB98D-ACCD-44E1-8A4F-2D1BA59278D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00AAB98D-ACCD-44E1-8A4F-2D1BA59278D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F4C7A5-E60E-48FC-B5F3-2E0FDF1B5D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F4C7A5-E60E-48FC-B5F3-2E0FDF1B5D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F4C7A5-E60E-48FC-B5F3-2E0FDF1B5D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F4C7A5-E60E-48FC-B5F3-2E0FDF1B5D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBBC476-C08C-423F-A51A-54683CB9820B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBBC476-C08C-423F-A51A-54683CB9820B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBBC476-C08C-423F-A51A-54683CB9820B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBBC476-C08C-423F-A51A-54683CB9820B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56138621-22C5-4BF7-8553-DC397648B074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56138621-22C5-4BF7-8553-DC397648B074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56138621-22C5-4BF7-8553-DC397648B074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56138621-22C5-4BF7-8553-DC397648B074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BC63CD-E7DE-420B-BA90-AFDF4F8AA485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BC63CD-E7DE-420B-BA90-AFDF4F8AA485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BC63CD-E7DE-420B-BA90-AFDF4F8AA485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BC63CD-E7DE-420B-BA90-AFDF4F8AA485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAF2A3E-9B48-4D8B-ADD2-9ABEEDAAE88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAF2A3E-9B48-4D8B-ADD2-9ABEEDAAE88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAF2A3E-9B48-4D8B-ADD2-9ABEEDAAE88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAF2A3E-9B48-4D8B-ADD2-9ABEEDAAE88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9A5911-917E-4B12-9C1D-A1C7E8B77B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9A5911-917E-4B12-9C1D-A1C7E8B77B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9A5911-917E-4B12-9C1D-A1C7E8B77B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9A5911-917E-4B12-9C1D-A1C7E8B77B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37ED6FC9-FE20-4C63-B3D8-8E8198C99AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37ED6FC9-FE20-4C63-B3D8-8E8198C99AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37ED6FC9-FE20-4C63-B3D8-8E8198C99AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37ED6FC9-FE20-4C63-B3D8-8E8198C99AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9A6E48-DC5E-4920-AD58-6D596389FAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9A6E48-DC5E-4920-AD58-6D596389FAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9A6E48-DC5E-4920-AD58-6D596389FAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9A6E48-DC5E-4920-AD58-6D596389FAE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE3EA781-0F2E-4293-9F7E-A29C8FF8A565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE3EA781-0F2E-4293-9F7E-A29C8FF8A565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE3EA781-0F2E-4293-9F7E-A29C8FF8A565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE3EA781-0F2E-4293-9F7E-A29C8FF8A565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D60AF90-69D2-4E75-8D25-4B5EE4D1C316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D60AF90-69D2-4E75-8D25-4B5EE4D1C316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D60AF90-69D2-4E75-8D25-4B5EE4D1C316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D60AF90-69D2-4E75-8D25-4B5EE4D1C316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AE1BAC-37BC-4013-820A-6D8768872285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AE1BAC-37BC-4013-820A-6D8768872285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AE1BAC-37BC-4013-820A-6D8768872285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AE1BAC-37BC-4013-820A-6D8768872285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C235DF3-405D-4FE5-849F-B8F0FC0A1FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C235DF3-405D-4FE5-849F-B8F0FC0A1FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C235DF3-405D-4FE5-849F-B8F0FC0A1FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C235DF3-405D-4FE5-849F-B8F0FC0A1FE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1053,22 +1181,16 @@ Global
 		{59B56525-02DD-41F3-8103-D2CFD8C2F496} = {A42CDFDD-07F3-4AD3-8322-EE5D99E58FD4}
 		{DDB9DA00-C933-4F5F-879A-883DF1F93FEE} = {669D92E4-7833-4136-8E46-96FFB2D68132}
 		{A8F7B703-1218-4381-ABC4-8E7CA94A242D} = {DDB9DA00-C933-4F5F-879A-883DF1F93FEE}
-		{818973B9-3DCE-44E4-8D23-C9CB43D50E16} = {669D92E4-7833-4136-8E46-96FFB2D68132}
-		{65877D1F-7C2D-4162-9C68-E47D4F0B67C8} = {818973B9-3DCE-44E4-8D23-C9CB43D50E16}
 		{23F886D0-ACFE-489D-BADE-2153D0CF73BB} = {FF48CF71-FE58-4DC5-9116-8D718683EE60}
 		{D39D4313-3E17-44D0-885F-4FAE75621C88} = {FF48CF71-FE58-4DC5-9116-8D718683EE60}
-		{5E06F7E7-3C55-4029-9B6D-C418047769AC} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
 		{674D9A5E-925E-4152-A195-7696A4653B4B} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
 		{74E6501C-B0DE-4B84-BD7E-89DCBB48718B} = {674D9A5E-925E-4152-A195-7696A4653B4B}
-		{D555B1AA-BFA1-403C-B7A7-16E5780EB037} = {5E06F7E7-3C55-4029-9B6D-C418047769AC}
 		{10DE5640-B5FE-4C35-B137-54A27CDBC6FC} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
 		{E4571A7B-93B2-42B4-A2D2-F4474AA09C4D} = {FF48CF71-FE58-4DC5-9116-8D718683EE60}
 		{A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716} = {E4571A7B-93B2-42B4-A2D2-F4474AA09C4D}
 		{AD0BE13F-A0E3-4B19-BEB0-B4C2A7FA2737} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
 		{BD8E1F04-98C2-43F3-A464-B5C285ED0693} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
-		{1C990BE4-A401-4BBF-AC18-16971F509AB2} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
 		{15C15857-1EE6-44EA-AF3D-B7A7A7222133} = {BD8E1F04-98C2-43F3-A464-B5C285ED0693}
-		{B348F6F1-890C-4AC7-B984-52C25693B193} = {1C990BE4-A401-4BBF-AC18-16971F509AB2}
 		{E5963D61-A6A3-4A39-953F-69B717295882} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
 		{6BAEC3CD-0E0B-494B-B693-F99A6A5E0892} = {E5963D61-A6A3-4A39-953F-69B717295882}
 		{1CDE3A04-4C4C-4283-BF64-A685B73FC8CA} = {8E31F51B-D9F3-485B-B156-22F62AAF5F5C}
@@ -1085,8 +1207,6 @@ Global
 		{93C264F2-C5E1-412B-9694-C49883A4ED08} = {C8EE495F-28F0-4EB6-8F94-256408F2FD1F}
 		{11A125D6-167D-433B-80DC-481D8ABB20A0} = {93C264F2-C5E1-412B-9694-C49883A4ED08}
 		{0CD1A615-C28C-433A-B83C-82BDF9BECB2B} = {8E827759-7675-45F5-9258-1D05FEDB03D6}
-		{1C2649E5-70F6-4B9A-AA5D-EDDFED49FAC4} = {8E827759-7675-45F5-9258-1D05FEDB03D6}
-		{8B04FBA0-1762-4C22-83EF-1C6E6B3311BE} = {1C2649E5-70F6-4B9A-AA5D-EDDFED49FAC4}
 		{1EB047E0-F574-4B9E-A178-BDFC2A0EF545} = {CB424284-8723-496F-83E4-DA920448E2EC}
 		{76B74AEC-1826-4FCE-86B0-D0FA53A3655D} = {1EB047E0-F574-4B9E-A178-BDFC2A0EF545}
 		{15D514C2-195D-412B-A4FF-8CB6D26977CB} = {76B74AEC-1826-4FCE-86B0-D0FA53A3655D}
@@ -1134,11 +1254,9 @@ Global
 		{44C48CD6-4118-44A3-85D2-D5BEA57044BE} = {C1C8DD63-8FB7-4F18-BCF9-470F731DF96D}
 		{797A99B1-450F-4475-8B36-AEC01AE5FFB0} = {44C48CD6-4118-44A3-85D2-D5BEA57044BE}
 		{D65F1E61-A3CF-4784-91B6-D9D721908B51} = {C1C8DD63-8FB7-4F18-BCF9-470F731DF96D}
-		{96BC4434-2E87-47BF-89A4-400E0C975725} = {D65F1E61-A3CF-4784-91B6-D9D721908B51}
 		{74853F81-043A-41BC-B7FB-25145EE3FFE8} = {B03A67EB-49EA-430B-B09B-108F4F77EBC3}
 		{E1E7EBE5-6B1F-441B-B817-35CEC958BF05} = {74853F81-043A-41BC-B7FB-25145EE3FFE8}
 		{AFE36B3A-2A1B-45D3-87E9-7531793F7831} = {B03A67EB-49EA-430B-B09B-108F4F77EBC3}
-		{89931EBA-FCE1-45C5-A36A-D8B44AC492DF} = {AFE36B3A-2A1B-45D3-87E9-7531793F7831}
 		{EC1E9281-101D-4344-B6B2-181ADDB06DF7} = {467D2CAC-FB25-4B0C-8E4A-537A98AB311B}
 		{BE07A8C1-1F3F-4E0D-98E1-0AC653489C04} = {EC1E9281-101D-4344-B6B2-181ADDB06DF7}
 		{088531DE-5207-4E1B-A776-8DFC4DDDB50D} = {EC1E9281-101D-4344-B6B2-181ADDB06DF7}
@@ -1146,12 +1264,10 @@ Global
 		{BAEF2809-BB8D-4A75-8E10-D368C664B4E1} = {EC1E9281-101D-4344-B6B2-181ADDB06DF7}
 		{EE400A0D-D197-4982-BBE9-BD1832D0C58C} = {405C60AC-6ED2-4F46-A2A0-C0FB6B73606D}
 		{54624D15-3D67-47DB-8C55-3BAD8BAA7D48} = {BE07A8C1-1F3F-4E0D-98E1-0AC653489C04}
-		{8282D22E-CD9C-4792-B0CF-F964FCEC717D} = {BAEF2809-BB8D-4A75-8E10-D368C664B4E1}
 		{8DF448B7-F488-4927-8AB0-6132AE45781F} = {7B554C1F-AC3C-4616-8F89-9D60ECED627D}
 		{166DB307-32B5-4D67-9DC2-9A674F6666C1} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
 		{3FDA2AF3-F234-490E-B286-15BB6B40BBDF} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
 		{642A6E66-D7A9-4FFE-91F7-0190A255AB13} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
-		{A5DA0DD5-472A-4736-ACEF-FD29973D553A} = {642A6E66-D7A9-4FFE-91F7-0190A255AB13}
 		{4CD74811-9EDD-4297-B601-080A37054EF0} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
 		{5A9353C4-9E10-4D9D-9612-C217FC1BA4DD} = {4CD74811-9EDD-4297-B601-080A37054EF0}
 		{2DEDF7BE-9F0A-4469-8BDB-CEAFEA0DED81} = {166DB307-32B5-4D67-9DC2-9A674F6666C1}
@@ -1163,7 +1279,6 @@ Global
 		{A95F0322-AEE8-4EE9-8050-6CAC23A06A04} = {2F65402E-5584-4346-9DAE-1C5C8540CE3B}
 		{77447B38-68CC-44B8-ADE6-BA83AB83882C} = {C78A6374-547A-40CF-B251-BC5432473AB6}
 		{3B74244B-B404-4887-82B2-148A1B190A3C} = {924A03B9-6E53-4EC5-B02D-6F9E250C92DF}
-		{635AC1AD-9EF6-41EF-B160-A8F5AE6F2CAE} = {F0FD8364-6585-4563-ABD2-31A167CB1A45}
 		{20E86C6B-F2DD-416B-9683-5267F80528FE} = {9C1BC256-2F80-41FC-885C-EE22B69D7C53}
 		{0630882D-646A-45CC-9A6E-3FE004C332F5} = {C3245FBC-F3BB-47A8-9949-B66537464310}
 		{202116FD-6926-4539-8F6F-EE1BCF126511} = {0630882D-646A-45CC-9A6E-3FE004C332F5}
@@ -1286,12 +1401,63 @@ Global
 		{BD9A2ED8-DAD5-457F-8993-72926DB6BA1D} = {F46DF909-1D17-4721-B042-44B15A361EF5}
 		{2BE2DFE1-33B5-4DB9-8249-D6037AED711C} = {BD9A2ED8-DAD5-457F-8993-72926DB6BA1D}
 		{DB8E5324-C093-471A-B1C9-F908D961409C} = {2BE2DFE1-33B5-4DB9-8249-D6037AED711C}
-		{36B4909B-8FD3-43C3-BA87-D8174BD14349} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
-		{990C95C0-4195-422B-8A70-F5B365F4166C} = {36B4909B-8FD3-43C3-BA87-D8174BD14349}
-		{E789A453-69D5-418F-A463-5691A8FA52DE} = {990C95C0-4195-422B-8A70-F5B365F4166C}
-		{2F4E1840-F053-47FA-B062-D01C283E160B} = {36B4909B-8FD3-43C3-BA87-D8174BD14349}
-		{A2BFDC9A-F44F-4F0A-839D-93979943A37A} = {2F4E1840-F053-47FA-B062-D01C283E160B}
-		{8204A402-B061-4913-99A6-D5B7F1794B6C} = {A2BFDC9A-F44F-4F0A-839D-93979943A37A}
+		{BA9E8641-AB71-400A-AA24-581C45FC1308} = {EC1E9281-101D-4344-B6B2-181ADDB06DF7}
+		{BAD1DF18-A5C1-4BA9-956C-C8D5C3046AEB} = {7EC9A017-7777-4D46-BF7D-0F138E0D3187}
+		{7EC9A017-7777-4D46-BF7D-0F138E0D3187} = {BA9E8641-AB71-400A-AA24-581C45FC1308}
+		{95752EFC-6217-4792-9783-16258808855F} = {BAEF2809-BB8D-4A75-8E10-D368C664B4E1}
+		{1CF0EE37-01C4-4362-A0AE-E9890BE32FB4} = {95752EFC-6217-4792-9783-16258808855F}
+		{0A9D1D75-7512-4382-B6F6-B349734B6F78} = {1CF0EE37-01C4-4362-A0AE-E9890BE32FB4}
+		{9BA3FEEE-E8C7-443F-B49E-2AE27D8F345E} = {95752EFC-6217-4792-9783-16258808855F}
+		{0F2C7390-EC1E-4586-BEFC-C749454FDFF3} = {AFE36B3A-2A1B-45D3-87E9-7531793F7831}
+		{5F49A4DE-982E-420E-A79B-847D8B0DF47A} = {0F2C7390-EC1E-4586-BEFC-C749454FDFF3}
+		{B8E43211-7A19-4D6A-B2A1-6D18A794D666} = {5F49A4DE-982E-420E-A79B-847D8B0DF47A}
+		{E98B2341-28A6-431E-82D3-A39FE912F0C8} = {0F2C7390-EC1E-4586-BEFC-C749454FDFF3}
+		{675C857C-CC00-40ED-9A74-AFFABB09AC07} = {B03A67EB-49EA-430B-B09B-108F4F77EBC3}
+		{CC30069E-D20D-4C46-B5EC-29E8FB055EB6} = {675C857C-CC00-40ED-9A74-AFFABB09AC07}
+		{78074E6D-5B68-433E-B358-1242A6E02FC5} = {CC30069E-D20D-4C46-B5EC-29E8FB055EB6}
+		{BA03A39C-FCD0-4211-93E6-D8E21142CA72} = {642A6E66-D7A9-4FFE-91F7-0190A255AB13}
+		{F2F7D088-BD30-4A85-8D85-1FB43915C372} = {BA03A39C-FCD0-4211-93E6-D8E21142CA72}
+		{A62B1ADD-7E72-425C-A931-7D5C13AF62BA} = {F2F7D088-BD30-4A85-8D85-1FB43915C372}
+		{C2770EF0-043D-44F1-8F05-C38DA139CE1E} = {BA03A39C-FCD0-4211-93E6-D8E21142CA72}
+		{F850EB8A-EE3F-49FF-891C-04CA497B85E1} = {8DF448B7-F488-4927-8AB0-6132AE45781F}
+		{1F9BFA7F-4A53-49D6-82CD-9967898509CC} = {F850EB8A-EE3F-49FF-891C-04CA497B85E1}
+		{D5C0582D-3A5B-4ACF-B904-2BA47C587283} = {1F9BFA7F-4A53-49D6-82CD-9967898509CC}
+		{64A05E76-411C-448A-B00D-C20FFBC20172} = {D65F1E61-A3CF-4784-91B6-D9D721908B51}
+		{9CD20294-D457-426D-AFC1-CF5CC60D4330} = {64A05E76-411C-448A-B00D-C20FFBC20172}
+		{52ED2FF6-6231-42BA-AEFE-9E077B63F99C} = {9CD20294-D457-426D-AFC1-CF5CC60D4330}
+		{9B5F366B-DD59-467E-BC4B-7345685EEC22} = {64A05E76-411C-448A-B00D-C20FFBC20172}
+		{0964C666-7ADD-4C2A-BCE6-8387A217A99C} = {9B5F366B-DD59-467E-BC4B-7345685EEC22}
+		{00AAB98D-ACCD-44E1-8A4F-2D1BA59278D5} = {64A05E76-411C-448A-B00D-C20FFBC20172}
+		{6C13E6C5-5204-4E2F-AA78-66AFAFEAEAB9} = {C1C8DD63-8FB7-4F18-BCF9-470F731DF96D}
+		{55DDA706-38D0-4B5D-A150-A1B1FED98779} = {6C13E6C5-5204-4E2F-AA78-66AFAFEAEAB9}
+		{09F4C7A5-E60E-48FC-B5F3-2E0FDF1B5D3B} = {55DDA706-38D0-4B5D-A150-A1B1FED98779}
+		{B0333AAD-1838-4BF7-8FB2-C4E16ACBCBE8} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
+		{84F13989-8277-4061-BA30-F6EB062D926C} = {7BBF4AD7-AF30-4A57-8B1A-8DD3230FA86B}
+		{EFBBC476-C08C-423F-A51A-54683CB9820B} = {84F13989-8277-4061-BA30-F6EB062D926C}
+		{7BBF4AD7-AF30-4A57-8B1A-8DD3230FA86B} = {B0333AAD-1838-4BF7-8FB2-C4E16ACBCBE8}
+		{56138621-22C5-4BF7-8553-DC397648B074} = {7BBF4AD7-AF30-4A57-8B1A-8DD3230FA86B}
+		{52B6E19A-0ABD-4549-92E5-56291992D6C7} = {A2DCF1DA-0CFF-4BAC-BAD5-199264CD3716}
+		{7BFE9F41-D579-48DA-B3C2-8CF76AE50306} = {52B6E19A-0ABD-4549-92E5-56291992D6C7}
+		{EA7D6354-3CAA-4CBB-8FE9-044F4F8E527D} = {7BFE9F41-D579-48DA-B3C2-8CF76AE50306}
+		{C2BC63CD-E7DE-420B-BA90-AFDF4F8AA485} = {EA7D6354-3CAA-4CBB-8FE9-044F4F8E527D}
+		{DEAF2A3E-9B48-4D8B-ADD2-9ABEEDAAE88F} = {7BFE9F41-D579-48DA-B3C2-8CF76AE50306}
+		{B976EEDB-915C-4034-9D62-1BC383C997E7} = {8E827759-7675-45F5-9258-1D05FEDB03D6}
+		{C53DAD07-D5A1-40E0-8ACA-1D926D13CDA0} = {B976EEDB-915C-4034-9D62-1BC383C997E7}
+		{E56C611E-E6DA-406F-939B-0985B0B3DD76} = {C53DAD07-D5A1-40E0-8ACA-1D926D13CDA0}
+		{DF9A5911-917E-4B12-9C1D-A1C7E8B77B82} = {E56C611E-E6DA-406F-939B-0985B0B3DD76}
+		{37ED6FC9-FE20-4C63-B3D8-8E8198C99AA6} = {C53DAD07-D5A1-40E0-8ACA-1D926D13CDA0}
+		{161868A2-3474-4EB0-998E-050E2D4B6CB7} = {669D92E4-7833-4136-8E46-96FFB2D68132}
+		{87C505BC-3E82-4A29-9042-6C4FB06D7815} = {161868A2-3474-4EB0-998E-050E2D4B6CB7}
+		{573A00E8-2EAC-4B10-A128-94800728CEBB} = {87C505BC-3E82-4A29-9042-6C4FB06D7815}
+		{3F9A6E48-DC5E-4920-AD58-6D596389FAE6} = {573A00E8-2EAC-4B10-A128-94800728CEBB}
+		{EE3EA781-0F2E-4293-9F7E-A29C8FF8A565} = {87C505BC-3E82-4A29-9042-6C4FB06D7815}
+		{9F1659E0-D8B8-4C25-9BE9-C80858F85B22} = {F0FD8364-6585-4563-ABD2-31A167CB1A45}
+		{2E8F2A84-E21E-416C-B2EA-FF8E56922C9D} = {9F1659E0-D8B8-4C25-9BE9-C80858F85B22}
+		{0D60AF90-69D2-4E75-8D25-4B5EE4D1C316} = {2E8F2A84-E21E-416C-B2EA-FF8E56922C9D}
+		{99AE1BAC-37BC-4013-820A-6D8768872285} = {9F1659E0-D8B8-4C25-9BE9-C80858F85B22}
+		{7E16F67E-00D7-4DB1-9119-D3A1E6D8A3BA} = {C78A6374-547A-40CF-B251-BC5432473AB6}
+		{60337A0E-E382-407F-A093-10F2934F2106} = {7E16F67E-00D7-4DB1-9119-D3A1E6D8A3BA}
+		{6C235DF3-405D-4FE5-849F-B8F0FC0A1FE1} = {60337A0E-E382-407F-A093-10F2934F2106}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

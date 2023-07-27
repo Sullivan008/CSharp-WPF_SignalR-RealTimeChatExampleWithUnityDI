@@ -1,5 +1,5 @@
-﻿using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.Window.Models.Interfaces;
-using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.WindowSettings.Models.Interfaces;
+﻿using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces.Window;
+using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 
 namespace SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.MethodParameters.WindowShowOptions.Interfaces;
 

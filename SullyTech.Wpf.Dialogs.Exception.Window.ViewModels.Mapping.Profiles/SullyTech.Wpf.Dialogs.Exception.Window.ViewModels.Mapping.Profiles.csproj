@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mappers</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

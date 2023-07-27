@@ -11,7 +11,7 @@ using App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces.Pre
 using App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces.PresenterData;
 using App.Client.Wpf.Windows.Main.Infrastructure.Extensions.DependencyInjection;
 using App.Client.Wpf.Windows.Main.Services.MainWindow.Interfaces;
-using App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers.WindowSettings.Models;
+using App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.WindowSettings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,9 +23,14 @@ using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.Infrastructure.
 using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Exception.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Exception.Service.ExceptionDialog.Interfaces;
-using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.PresenterData.Models;
-using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers.WindowSettings.Models;
+using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.PresenterData;
+using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.WindowSettings;
 using SullyTech.Wpf.Dialogs.Message.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Dialogs.Message.Services.MessageDialog.Interfaces;
+using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums.Presenter;
+using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Presenter;
+using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.PresenterData;
+using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.WindowSettings;
 using SullyTech.Wpf.Notifications.Toast.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;

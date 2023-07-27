@@ -6,11 +6,11 @@ using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.MethodParameter
 using SullyTech.Wpf.Dialogs.Exception.Service.ExceptionDialog.Interfaces;
 using SullyTech.Wpf.Dialogs.Exception.Window.Interfaces;
 using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces;
-using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
+using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.Interfaces.PresenterData;
 using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Dialogs.Exception.Window.Result.Interfaces;
-using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers.WindowSettings.Models.Interfaces;
+using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces.WindowSettings;
 

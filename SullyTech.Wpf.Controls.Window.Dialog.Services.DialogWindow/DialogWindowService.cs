@@ -8,8 +8,6 @@ using SullyTech.Wpf.Controls.Window.Dialog.Interfaces;
 using SullyTech.Wpf.Controls.Window.Dialog.Result.Interfaces;
 using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.Interfaces;
 using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions.Interfaces;
-using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers.Window.Interfaces;
-using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers.WindowSettings.Interfaces;
 using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces.Window;
 
 namespace SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow;
@@ -22,10 +20,6 @@ public class DialogWindowService : WindowService, IDialogWindowService
     {
         _windowProvider = windowProvider;
     }
-
-    protected override Type WindowViewModelInitializerGenericType => typeof(IDialogWindowViewModelInitializer<,>);
-
-    protected override Type WindowSettingsViewModelInitializerGenericType => typeof(IDialogWindowSettingsViewModelInitializer<,>);
 
     public async Task<TIDialogResult> ShowDialogAsync<TIDialogResult>(IDialogWindowShowOptions windowShowOptions, IPresenterLoadOptions presenterLoadOptions)
         where TIDialogResult : IDialogResult

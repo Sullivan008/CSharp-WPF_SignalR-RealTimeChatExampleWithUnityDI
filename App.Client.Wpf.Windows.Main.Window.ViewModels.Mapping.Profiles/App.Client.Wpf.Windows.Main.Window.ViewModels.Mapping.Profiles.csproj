@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj" />
+	</ItemGroup>
+
+</Project>

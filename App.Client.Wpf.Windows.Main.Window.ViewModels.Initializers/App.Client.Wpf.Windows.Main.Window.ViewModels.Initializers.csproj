@@ -11,7 +11,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.csproj" />
 	</ItemGroup>
 
 </Project>

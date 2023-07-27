@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>AppApp.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.csproj" />
+	</ItemGroup>
+
+</Project>

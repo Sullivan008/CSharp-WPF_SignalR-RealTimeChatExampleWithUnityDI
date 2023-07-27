@@ -6,12 +6,12 @@ using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.MethodParameter
 using SullyTech.Wpf.Dialogs.Message.Services.MessageDialog.Interfaces;
 using SullyTech.Wpf.Dialogs.Message.Window.Interfaces;
 using SullyTech.Wpf.Dialogs.Message.Window.Presenter.Interfaces;
-using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers.Presenter.Models.Interfaces;
-using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializers.PresenterData.Models.Interfaces;
+using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces.Presenter;
+using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Interfaces.PresenterData;
 using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Interfaces.Presenter;
 using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Interfaces.PresenterData;
 using SullyTech.Wpf.Dialogs.Message.Window.Result.Interfaces;
-using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializers.WindowSettings.Models.Interfaces;
+using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Interfaces.WindowSettings;
 

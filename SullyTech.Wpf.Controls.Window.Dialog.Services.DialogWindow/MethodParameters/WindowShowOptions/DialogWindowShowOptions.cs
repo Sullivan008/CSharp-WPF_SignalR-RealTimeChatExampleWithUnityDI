@@ -1,7 +1,7 @@
 ﻿using SullyTech.Wpf.Controls.Window.Dialog.Interfaces;
 using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.MethodParameters.WindowShowOptions.Interfaces;
-using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers.Window.Models.Interfaces;
-using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializers.WindowSettings.Models.Interfaces;
+using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces.Window;
+using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces.WindowSettings;
 

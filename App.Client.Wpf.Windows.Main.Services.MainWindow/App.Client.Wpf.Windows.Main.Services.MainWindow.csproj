@@ -10,7 +10,8 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.Interfaces\App.Client.Wpf.Windows.Main.Window.Interfaces.csproj" />
-		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces.csproj" />
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Services.Window\SullyTech.Wpf.Controls.Window.Core.Services.Window.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.csproj" />
 	</ItemGroup>

@@ -24,7 +24,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter\SullyTech.Wpf.Controls.Window.Core.Presenter.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Mapping.Profiles.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.csproj" />
 	</ItemGroup>
 

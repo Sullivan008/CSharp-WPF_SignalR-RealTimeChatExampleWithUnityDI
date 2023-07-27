@@ -6,8 +6,6 @@ using SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces.Window;
 using SullyTech.Wpf.Controls.Window.Standard.Interfaces;
 using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.Interfaces;
 using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.MethodParameters.WindowShowOptions.Interfaces;
-using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.Window.Interfaces;
-using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializers.WindowSettings.Interfaces;
 using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces.Window;
 
 namespace SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow;
@@ -16,10 +14,6 @@ public sealed class StandardWindowService : WindowService, IStandardWindowServic
 {
     public StandardWindowService(IServiceProvider serviceProvider) : base(serviceProvider)
     { }
-
-    protected override Type WindowViewModelInitializerGenericType => typeof(IStandardWindowViewModelInitializer<,>);
-
-    protected override Type WindowSettingsViewModelInitializerGenericType => typeof(IStandardWindowSettingsViewModelInitializer<,>);
 
     public async Task ShowWindowAsync(IStandardWindowShowOptions windowShowOptions, IPresenterLoadOptions presenterLoadOptions)
     {

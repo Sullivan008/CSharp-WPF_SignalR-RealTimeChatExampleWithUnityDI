@@ -23,8 +23,8 @@
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog\SullyTech.Wpf.Controls.Window.Dialog.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.Interfaces.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.Presenter\SullyTech.Wpf.Dialogs.Exception.Window.Presenter.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializers.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Mapping.Profiles.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.csproj" />
 	</ItemGroup>
 
