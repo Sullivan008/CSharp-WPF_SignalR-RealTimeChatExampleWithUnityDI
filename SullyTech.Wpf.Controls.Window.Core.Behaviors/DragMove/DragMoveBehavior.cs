@@ -4,7 +4,7 @@ using Microsoft.Xaml.Behaviors;
 
 namespace SullyTech.Wpf.Controls.Window.Core.Behaviors.DragMove;
 
-public class DragMoveBehavior : Behavior<Window>
+public sealed class DragMoveBehavior : Behavior<Window>
 {
     protected override void OnAttached()
     {
