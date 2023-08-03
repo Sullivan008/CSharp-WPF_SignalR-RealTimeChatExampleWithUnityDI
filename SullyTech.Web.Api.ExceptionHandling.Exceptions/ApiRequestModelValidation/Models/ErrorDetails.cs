@@ -2,12 +2,7 @@
 
 public class ErrorDetails
 {
-    private readonly int? _code;
-    public int Code
-    {
-        get => _code ?? 0;
-        init => _code = value;
-    }
+    public required int Code { get; init; }
 
-    public string? Message { get; init; }
+    public required string Message { get; init; }
 }

@@ -8,9 +8,8 @@ public sealed class ApiFluentValidationActionFilter : IAsyncActionFilter
 {
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
-        ModelError? modelError =
-            context.ModelState.Values.SelectMany(x => x.Errors.Where(y => y.Exception is ApiRequestModelValidationException))
-                                     .FirstOrDefault();
+        ModelError? modelError = context.ModelState.Values.SelectMany(x => x.Errors.Where(y => y.Exception is ApiRequestModelValidationException))
+                                                          .FirstOrDefault();
 
         if (modelError?.Exception is not null)
         {

@@ -64,7 +64,7 @@ public sealed class ApiExceptionHandlerMiddleware
 
             await WriteApiRequestModelValidationErrorResponse(httpContext, responseModel);
         }
-        catch (ApiModelStateValidationAggregateException ex)
+        catch (ApiModelStateValidationException ex)
         {
             LogApiModelStateValidationException(ex);
 
@@ -80,7 +80,6 @@ public sealed class ApiExceptionHandlerMiddleware
 
             await WriteApiInternalServerErrorResponse(httpContext, responseModel);
         }
-
     }
 
     #region ApiException Handle Methods
@@ -88,7 +87,7 @@ public sealed class ApiExceptionHandlerMiddleware
     private void LogApiException(ApiException ex)
     {
         _logger.LogError(ex,
-            $"Exception Code: {(int)ExceptionCode.ApiException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
+            $"Error Type: {(int)ErrorType.ApiError} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
     }
 
     private static ApiErrorResponseModel CreateApiErrorResponseModel(HttpContext httpContext, ApiException ex)
@@ -98,8 +97,6 @@ public sealed class ApiExceptionHandlerMiddleware
             TraceId = httpContext.TraceIdentifier,
             ErrorCode = ex.ErrorDetails.Code,
             ErrorMessage = ex.ErrorDetails.Message,
-            ExceptionType = ex.GetType().Name,
-            ExceptionCode = (int)ExceptionCode.ApiException,
             Exception = ex.ToString()
         };
     }
@@ -108,9 +105,9 @@ public sealed class ApiExceptionHandlerMiddleware
     {
         JsonSerializerSettings jsonSerializerSettings = new()
         {
-            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
-                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
-                : Array.Empty<string>())
+            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment() ?
+                new[] { nameof(responseModel.Exception) } :
+                Array.Empty<string>())
         };
 
         string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
@@ -130,7 +127,7 @@ public sealed class ApiExceptionHandlerMiddleware
     private void LogApiValidationException(ApiValidationException ex)
     {
         _logger.LogError(ex,
-            $"Exception Code: {(int)ExceptionCode.ApiValidationException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
+            $"Error Type: {(int)ErrorType.ApiValidationError} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
     }
 
     private static ApiValidationErrorResponseModel CreateApiValidationErrorResponseModel(HttpContext httpContext, ApiValidationException ex)
@@ -139,23 +136,13 @@ public sealed class ApiExceptionHandlerMiddleware
         {
             TraceId = httpContext.TraceIdentifier,
             ErrorCode = ex.ErrorDetails.Code,
-            ErrorMessage = ex.ErrorDetails.Message,
-            ExceptionType = ex.GetType().Name,
-            ExceptionCode = (int)ExceptionCode.ApiValidationException,
-            Exception = ex.ToString()
+            ErrorMessage = ex.ErrorDetails.Message
         };
     }
 
     private async Task WriteApiValidationErrorResponse(HttpContext httpContext, ApiValidationErrorResponseModel responseModel)
     {
-        JsonSerializerSettings jsonSerializerSettings = new()
-        {
-            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
-                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
-                : Array.Empty<string>())
-        };
-
-        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
+        string jsonText = JsonConvert.SerializeObject(responseModel);
 
         httpContext.Response.Clear();
 
@@ -173,7 +160,7 @@ public sealed class ApiExceptionHandlerMiddleware
     private void LogApiRequestModelValidationException(ApiRequestModelValidationException ex)
     {
         _logger.LogError(ex,
-            $"Exception Code: {(int)ExceptionCode.ApiRequestModelValidationException} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
+            $"Error Type: {(int)ErrorType.ApiRequestModelValidationError} | Error Code: {ex.ErrorDetails.Code} | Message: {ex.ErrorDetails.Message}");
     }
 
     private static ApiRequestModelValidationErrorResponseModel CreateApiRequestModelValidationErrorResponseModel(HttpContext httpContext, ApiRequestModelValidationException ex)
@@ -182,23 +169,13 @@ public sealed class ApiExceptionHandlerMiddleware
         {
             TraceId = httpContext.TraceIdentifier,
             ErrorCode = ex.ErrorDetails.Code,
-            ErrorMessage = ex.ErrorDetails.Message,
-            ExceptionType = ex.GetType().Name,
-            ExceptionCode = (int)ExceptionCode.ApiRequestModelValidationException,
-            Exception = ex.ToString()
+            ErrorMessage = ex.ErrorDetails.Message
         };
     }
 
     private async Task WriteApiRequestModelValidationErrorResponse(HttpContext httpContext, ApiRequestModelValidationErrorResponseModel responseModel)
     {
-        JsonSerializerSettings jsonSerializerSettings = new()
-        {
-            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
-                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
-                : Array.Empty<string>())
-        };
-
-        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
+        string jsonText = JsonConvert.SerializeObject(responseModel);
 
         httpContext.Response.Clear();
 
@@ -212,34 +189,24 @@ public sealed class ApiExceptionHandlerMiddleware
 
     #region ApiModelStateValidationException Handle Methods
 
-    private void LogApiModelStateValidationException(ApiModelStateValidationAggregateException ex)
+    private void LogApiModelStateValidationException(ApiModelStateValidationException ex)
     {
         _logger.LogError(ex,
-            $"Exception Code: {(int)ExceptionCode.ApiModelStateValidationAggregationException} | Message: {ex.Message}");
+            $"Error Type: {(int)ErrorType.ApiModelStateValidationError} | Message: {ex.Message}");
     }
 
-    private ApiModelStateValidationErrorResponseModel CreateApiModelStateValidationErrorResponseModel(HttpContext httpContext, ApiModelStateValidationAggregateException ex)
+    private ApiModelStateValidationErrorResponseModel CreateApiModelStateValidationErrorResponseModel(HttpContext httpContext, ApiModelStateValidationException ex)
     {
         return new ApiModelStateValidationErrorResponseModel
         {
             TraceId = httpContext.TraceIdentifier,
-            ExceptionType = ex.GetType().Name,
-            ExceptionCode = (int)ExceptionCode.ApiModelStateValidationAggregationException,
-            ExceptionMessage = ex.Message,
-            Exception = ex.ToString()
+            ErrorMessage = ex.ErrorDetails.Message
         };
     }
 
-    private async Task WriteApiModelStateValidationErrorResponse(HttpContext httpContext, ApiModelStateValidationErrorResponseModel responseModel)
+    private static async Task WriteApiModelStateValidationErrorResponse(HttpContext httpContext, ApiModelStateValidationErrorResponseModel responseModel)
     {
-        JsonSerializerSettings jsonSerializerSettings = new()
-        {
-            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
-                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionCode) }
-                : Array.Empty<string>())
-        };
-
-        string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);
+        string jsonText = JsonConvert.SerializeObject(responseModel);
 
         httpContext.Response.Clear();
 
@@ -256,7 +223,7 @@ public sealed class ApiExceptionHandlerMiddleware
     private void LogApiInternalServerErrorException(Exception ex)
     {
         _logger.LogError(ex,
-            $"Exception Code: {(int)ExceptionCode.ApiInternalServerErrorException} | Message: {ex.Message}");
+            $"Error Type: {(int)ErrorType.ApiInternalServerError} | Message: {ex.Message}");
     }
 
     private static ApiInternalServerErrorResponseModel CreateApiInternalServerErrorResponseModel(HttpContext httpContext, Exception ex)
@@ -264,10 +231,9 @@ public sealed class ApiExceptionHandlerMiddleware
         return new ApiInternalServerErrorResponseModel
         {
             TraceId = httpContext.TraceIdentifier,
-            ExceptionCode = (int)ExceptionCode.ApiInternalServerErrorException,
-            ExceptionType = ex.GetType().Name,
-            ExceptionMessage = ex.Message,
-            Exception = ex.ToString()
+            Exception = ex.ToString(),
+            ExceptionType = ex.GetType().FullName!,
+            ExceptionMessage = ex.Message
         };
     }
 
@@ -275,9 +241,9 @@ public sealed class ApiExceptionHandlerMiddleware
     {
         JsonSerializerSettings jsonSerializerSettings = new()
         {
-            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment()
-                ? new[] { nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionMessage), nameof(responseModel.Exception) }
-                : Array.Empty<string>())
+            ContractResolver = new IgnorePropertiesResolver(!_webHostEnvironment.IsDevelopment() ?
+                new[] { nameof(responseModel.Exception), nameof(responseModel.ExceptionType), nameof(responseModel.ExceptionMessage) } :
+                Array.Empty<string>())
         };
 
         string jsonText = JsonConvert.SerializeObject(responseModel, jsonSerializerSettings);

@@ -2,5 +2,5 @@
 
 public class ErrorDetails
 {
-    public string? Message { get; init; }
+    public required string Message { get; init; }
 }

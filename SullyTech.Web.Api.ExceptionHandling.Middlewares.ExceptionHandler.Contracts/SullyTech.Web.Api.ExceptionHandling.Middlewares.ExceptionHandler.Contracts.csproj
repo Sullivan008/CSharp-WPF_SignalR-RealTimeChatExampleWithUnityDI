@@ -11,6 +11,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 		<ProjectReference Include="..\SullyTech.Web.Api.Contracts.Interfaces\SullyTech.Web.Api.Contracts.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums\SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Enums.csproj" />
 	</ItemGroup>
 
 </Project>

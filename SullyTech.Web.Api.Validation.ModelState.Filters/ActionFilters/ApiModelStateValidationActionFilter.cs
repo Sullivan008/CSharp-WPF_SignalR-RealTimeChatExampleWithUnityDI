@@ -13,18 +13,13 @@ public sealed class ApiModelStateValidationActionFilter : IAsyncActionFilter
 
         if (!context.ModelState.IsValid)
         {
-            IReadOnlyCollection<string> internalModelStateErrors = context.ModelState.Values
-                .Where(x => x.Errors.Count > 0)
-                .SelectMany(x => x.Errors)
-                .Where(x => !string.IsNullOrWhiteSpace(x.ErrorMessage))
-                .Select(x => x.ErrorMessage)
-                .ToList();
+            IReadOnlyCollection<string> modelStateErrors = context.ModelState.Values.Where(x => x.Errors.Count > 0)
+                                                                                    .SelectMany(x => x.Errors)
+                                                                                    .Where(x => !string.IsNullOrWhiteSpace(x.ErrorMessage))
+                                                                                    .Select(x => x.ErrorMessage)
+                                                                                    .ToList();
 
-            IReadOnlyCollection<ApiModelStateValidationException> modelStateValidationExceptions =
-                internalModelStateErrors.Select(x => new ApiModelStateValidationException(new ErrorDetails { Message = x }))
-                                        .ToList();
-
-            throw new ApiModelStateValidationAggregateException(modelStateValidationExceptions);
+            throw new ApiModelStateValidationException(new ErrorDetails { Message = modelStateErrors.First() });
         }
 
         await next();
@@ -32,13 +27,12 @@ public sealed class ApiModelStateValidationActionFilter : IAsyncActionFilter
 
     private static void CheckModelStateExceptions(ModelStateDictionary modelStateDictionary)
     {
-        ModelError? modelError = modelStateDictionary.Values
-            .SelectMany(x => x.Errors.Where(y => y.Exception != null))
-            .FirstOrDefault();
+        ModelError? modelError = modelStateDictionary.Values.SelectMany(x => x.Errors.Where(y => y.Exception != null))
+                                                            .FirstOrDefault();
 
         if (modelError?.Exception != null)
         {
-            throw modelError.Exception;
+            throw new ApiModelStateValidationException(new ErrorDetails { Message = modelError.Exception.Message }, modelError.Exception);
         }
     }
 }

@@ -4,71 +4,13 @@ namespace SullyTech.Web.Api.ExceptionHandling.Middlewares.ExceptionHandler.Contr
 
 public sealed class ApiErrorResponseModel : IApiResponseModel
 {
-    private readonly string? _traceId;
-    public string TraceId
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_traceId, nameof(TraceId));
+    public required string TraceId { get; init; }
 
-            return _traceId!;
-        }
+    public static int ErrorType => (int)Enums.ErrorType.ApiError;
 
-        init => _traceId = value;
-    }
+    public required int ErrorCode { get; init; }
 
-    private readonly int? _errorCode;
-    public int ErrorCode
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNull(_errorCode, nameof(ErrorCode));
+    public required string ErrorMessage { get; init; }
 
-            return _errorCode!.Value;
-        }
-
-        init => _errorCode = value;
-    }
-
-    public string? ErrorMessage { get; init; }
-
-    private readonly string? _exceptionType;
-    public string ExceptionType
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_exceptionType, nameof(ExceptionType));
-
-            return _exceptionType!;
-        }
-
-        init => _exceptionType = value;
-    }
-
-    private readonly int? _exceptionCode;
-    public int ExceptionCode
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNull(_exceptionCode, nameof(ExceptionCode));
-
-            return _exceptionCode!.Value;
-        }
-
-        init => _exceptionCode = value;
-    }
-
-
-    private readonly string? _exception;
-    public string Exception
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_exception, nameof(Exception));
-
-            return _exception!;
-        }
-
-        init => _exception = value;
-    }
+    public required string Exception { get; init; }
 }

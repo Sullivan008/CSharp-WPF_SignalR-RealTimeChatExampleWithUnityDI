@@ -8,7 +8,7 @@ using SullyTech.Web.Api.ExceptionHandling.Exceptions.ApiRequestModelValidation.M
 
 namespace SullyTech.Web.Api.Validation.Fluent.Validator;
 
-public abstract class ApiRequestModelValidator<TApiRequestModel> : AbstractValidator<TApiRequestModel>, IValidatorInterceptor
+public class ApiRequestModelValidator<TApiRequestModel> : AbstractValidator<TApiRequestModel>, IValidatorInterceptor
     where TApiRequestModel : IApiRequestModel
 {
     public IValidationContext BeforeAspNetValidation(ActionContext actionContext, IValidationContext commonContext)
@@ -22,7 +22,7 @@ public abstract class ApiRequestModelValidator<TApiRequestModel> : AbstractValid
         {
             validationResult.Errors.ForEach(validationFailure =>
             {
-                ErrorDetails errorDetails = MapValidationFailureToErrorDetails(validationFailure);
+                ErrorDetails errorDetails = new() { Code = int.Parse(validationFailure.ErrorCode), Message = validationFailure.ErrorMessage };
 
                 if (!actionContext.ModelState.TryAddModelException(errorDetails.Code.ToString(), new ApiRequestModelValidationException(errorDetails)))
                 {
@@ -32,16 +32,6 @@ public abstract class ApiRequestModelValidator<TApiRequestModel> : AbstractValid
             });
         }
 
-
         return validationResult;
-    }
-    
-    private static ErrorDetails MapValidationFailureToErrorDetails(ValidationFailure validationFailure)
-    {
-        return new ErrorDetails
-        {
-            Code = int.Parse(validationFailure.ErrorCode),
-            Message = validationFailure.ErrorMessage
-        };
     }
 }
