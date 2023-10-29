@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Initializer.Models.Interfaces.WindowSettings;
+using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Interfaces.WindowSettings;
 
@@ -9,7 +11,6 @@ internal sealed class MessageDialogWindowSettingsViewModelMappingProfile : Profi
     public MessageDialogWindowSettingsViewModelMappingProfile()
     {
         CreateMap<IMessageDialogWindowSettingsViewModelInitializerModel, IMessageDialogWindowSettingsViewModel>()
-            .ForMember(dest => dest.Title,
-                opt => opt.MapFrom(src => src.Title));
+            .IncludeBase<IDialogWindowSettingsViewModelInitializerModel, IDialogWindowSettingsViewModel>();
     }
 }

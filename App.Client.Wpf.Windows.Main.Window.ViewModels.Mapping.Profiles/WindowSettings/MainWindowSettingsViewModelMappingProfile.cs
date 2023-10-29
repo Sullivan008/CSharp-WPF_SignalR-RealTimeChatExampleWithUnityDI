@@ -1,6 +1,8 @@
 ﻿using App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 using App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.WindowSettings;
 using AutoMapper;
+using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces.WindowSettings;
+using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Interfaces.WindowSettings;
 
 namespace App.Client.Wpf.Windows.Main.Window.ViewModels.Mapping.Profiles.WindowSettings;
 
@@ -9,11 +11,6 @@ internal sealed class MainWindowSettingsViewModelMappingProfile : Profile
     public MainWindowSettingsViewModelMappingProfile()
     {
         CreateMap<IMainWindowSettingsViewModelInitializerModel, IMainWindowSettingsViewModel>()
-            .ForMember(dest => dest.Title,
-                opt => opt.MapFrom(src => src.Title))
-            .ForMember(dest => dest.Width,
-                opt => opt.MapFrom(src => src.Width))
-            .ForMember(dest => dest.Height,
-                opt => opt.MapFrom(src => src.Height));
+            .IncludeBase<IStandardWindowSettingsViewModelInitializerModel, IStandardWindowSettingsViewModel>();
     }
 }

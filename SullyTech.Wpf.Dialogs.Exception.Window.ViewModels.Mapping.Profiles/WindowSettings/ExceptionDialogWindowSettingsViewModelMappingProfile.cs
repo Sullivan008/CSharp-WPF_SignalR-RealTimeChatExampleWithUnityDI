@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Interfaces.WindowSettings;
+using SullyTech.Wpf.Controls.Window.Core.ViewModels.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.Interfaces.WindowSettings;
 using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Interfaces.WindowSettings;
 
@@ -9,7 +11,6 @@ internal sealed class ExceptionDialogWindowSettingsViewModelMappingProfile : Pro
     public ExceptionDialogWindowSettingsViewModelMappingProfile()
     {
         CreateMap<IExceptionDialogWindowSettingsViewModelInitializerModel, IExceptionDialogWindowSettingsViewModel>()
-            .ForMember(dest => dest.Title,
-                opt => opt.MapFrom(src => src.Title));
+            .IncludeBase<IWindowSettingsViewModelInitializerModel, IWindowSettingsViewModel>();
     }
 }

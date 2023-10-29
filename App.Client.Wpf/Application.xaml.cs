@@ -19,18 +19,16 @@ using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using SullyTech.Wpf.Controls.Window.Core.Providers.Window.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
+using SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Exception.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Exception.Service.ExceptionDialog.Interfaces;
 using SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initializer.Models.PresenterData;
 using SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.WindowSettings;
 using SullyTech.Wpf.Dialogs.Message.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Dialogs.Message.Services.MessageDialog.Interfaces;
-using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Enums.Presenter;
-using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.Presenter;
-using SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.PresenterData;
-using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.WindowSettings;
 using SullyTech.Wpf.Notifications.Toast.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
@@ -63,6 +61,10 @@ public partial class Application
             {
                 serviceCollection.AddChatHub(hostBuilderContext.Configuration);
                 serviceCollection.AddWindowProvider();
+
+                serviceCollection.AddWindowSettingsViewModelMappingProfile();
+                serviceCollection.AddDialogWindowSettingsViewModelMappingProfile();
+                serviceCollection.AddStandardWindowSettingsViewModelMappingProfile();
 
                 serviceCollection.AddStandardWindowService();
                 serviceCollection.AddDialogWindowService();

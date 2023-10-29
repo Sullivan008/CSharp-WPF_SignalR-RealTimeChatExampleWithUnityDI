@@ -41,7 +41,13 @@
 
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles.csproj" />
+
 		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.csproj" />
 

@@ -4,16 +4,17 @@ namespace SullyTech.Wpf.Controls.Window.Core.ViewModels.Initializer.Models.Windo
 
 public class WindowSettingsViewModelInitializerModel : IWindowSettingsViewModelInitializerModel
 {
-    private readonly string? _title;
-    public string Title
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_title, nameof(Title));
+    public string? Title { get; init; }
 
-            return _title!;
-        }
+    public double? Height { get; init; }
 
-        init => _title = value;
-    }
+    public double? Width { get; init; }
+
+    public double? Top { get; init; }
+
+    public double? Bottom { get; init; }
+
+    public double? Left { get; init; }
+
+    public double? Right { get; init; }
 }
