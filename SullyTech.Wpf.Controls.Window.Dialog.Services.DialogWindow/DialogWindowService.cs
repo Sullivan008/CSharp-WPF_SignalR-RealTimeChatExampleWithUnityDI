@@ -46,17 +46,20 @@ public class DialogWindowService : WindowService, IDialogWindowService
 
     private void InitializeWindowViewModels(IWindowViewModel windowViewModel, IDialogWindowShowOptions windowShowOptions)
     {
-        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType, windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
-        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType, windowShowOptions.WindowSettingsViewModelInitializerModel, windowShowOptions.WindowSettingsViewModelInitializerModelType);
+        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType,
+                                  windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
+
+        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType,
+                                          windowShowOptions.WindowSettingsViewModelInitializerModel, windowShowOptions.WindowSettingsViewModelInitializerModelType);
     }
 
     private void InitializePresenterViewModels(IPresenterViewModel presenterViewModel, IPresenterLoadOptions presenterLoadOptions)
     {
         InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelType,
-            presenterLoadOptions.PresenterViewModelInitializerModel, presenterLoadOptions.PresenterViewModelInitializerModelType);
+                                     presenterLoadOptions.PresenterViewModelInitializerModel, presenterLoadOptions.PresenterViewModelInitializerModelType);
 
         InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelType,
-            presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
+                                         presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
     }
 
     private void SetWindow(IDialogWindow window, IDialogWindowViewModel windowViewModel, IPresenter presenter, IPresenterViewModel presenterViewModel)

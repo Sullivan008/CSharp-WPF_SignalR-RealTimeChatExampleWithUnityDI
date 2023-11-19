@@ -61,7 +61,7 @@ public abstract class WindowService : IWindowService
         if (windowViewModelInitializerModel is not null && windowViewModelInitializerModelType is not null)
         {
             Mapper.Map(windowViewModelInitializerModel, windowViewModel,
-                windowViewModelInitializerModelType, windowViewModelType);
+                       windowViewModelInitializerModelType, windowViewModelType);
         }
     }
 
@@ -71,7 +71,7 @@ public abstract class WindowService : IWindowService
         if (windowSettingsViewModelInitializerModel is not null && windowSettingsViewModelInitializerModelType is not null)
         {
             Mapper.Map(windowSettingsViewModelInitializerModel, windowSettingsViewModel,
-                windowSettingsViewModelInitializerModelType, windowSettingsViewModelType);
+                       windowSettingsViewModelInitializerModelType, windowSettingsViewModelType);
         }
     }
 
@@ -81,7 +81,7 @@ public abstract class WindowService : IWindowService
         if (presenterViewModelInitializerModel is not null && presenterViewModelInitializerModelType is not null)
         {
             Mapper.Map(presenterViewModelInitializerModel, presenterViewModel,
-                presenterViewModelInitializerModelType, presenterViewModelType);
+                       presenterViewModelInitializerModelType, presenterViewModelType);
         }
     }
 
@@ -91,7 +91,7 @@ public abstract class WindowService : IWindowService
         if (presenterDataViewModelInitializerModel is not null && presenterDataViewModelInitializerModelType is not null)
         {
             Mapper.Map(presenterDataViewModelInitializerModel, presenterDataViewModel,
-                presenterDataViewModelInitializerModelType, presenterDataViewModelType);
+                       presenterDataViewModelInitializerModelType, presenterDataViewModelType);
         }
     }
 

@@ -8,10 +8,15 @@ namespace SullyTech.Wpf.Controls.Window.Core.Extensions.Window;
 public static class WindowExtensions
 {
     private const int SWP_NO_SIZE = 0x0001;
+
     private const int SWP_NO_MOVE = 0x0002;
+
     private const int SWP_NO_Z_ORDER = 0x0004;
+
     private const int SWP_FRAME_CHANGED = 0x0020;
+
     private const int GWL_EX_STYLE = -20;
+
     private const int WS_EX_DLG_MODAL_FRAME = 0x0001;
 
     [DllImport("user32.dll", SetLastError = true)]
@@ -39,7 +44,7 @@ public static class WindowExtensions
                 SetWindowLong(hWnd, GWL_EX_STYLE, extendedStyle | WS_EX_DLG_MODAL_FRAME);
 
                 SetWindowPos(hWnd, IntPtr.Zero, 0, 0, 0, 0,
-                    SWP_NO_MOVE | SWP_NO_SIZE | SWP_NO_Z_ORDER | SWP_FRAME_CHANGED);
+                             SWP_NO_MOVE | SWP_NO_SIZE | SWP_NO_Z_ORDER | SWP_FRAME_CHANGED);
             };
         }
     }

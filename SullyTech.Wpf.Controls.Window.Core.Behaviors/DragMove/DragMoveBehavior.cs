@@ -16,9 +16,9 @@ public sealed class DragMoveBehavior : Behavior<Window>
         AssociatedObject.MouseLeftButtonDown -= AssociatedObject_MouseLeftButtonDown;
     }
 
-    private static void AssociatedObject_MouseLeftButtonDown(object sender, MouseEventArgs e)
+    private static void AssociatedObject_MouseLeftButtonDown(object sender, MouseEventArgs eventArgs)
     {
-        if (e.LeftButton == MouseButtonState.Pressed && sender is Window window)
+        if (eventArgs.LeftButton == MouseButtonState.Pressed && sender is Window window)
         {
             if (window.WindowState == WindowState.Maximized)
             {

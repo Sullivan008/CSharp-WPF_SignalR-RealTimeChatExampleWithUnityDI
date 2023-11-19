@@ -10,6 +10,7 @@
 
 	<PropertyGroup>
 		<Product>SullyTech.Wpf.Controls.Window.Core.Extensions</Product>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
 	<ItemGroup>

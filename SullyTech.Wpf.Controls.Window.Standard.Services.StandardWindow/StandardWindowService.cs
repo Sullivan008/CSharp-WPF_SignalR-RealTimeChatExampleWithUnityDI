@@ -35,17 +35,20 @@ public sealed class StandardWindowService : WindowService, IStandardWindowServic
 
     private void InitializeWindowViewModels(IWindowViewModel windowViewModel, IStandardWindowShowOptions windowShowOptions)
     {
-        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType, windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
-        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType, windowShowOptions.WindowSettingsViewModelInitializerModel, windowShowOptions.WindowSettingsViewModelInitializerModelType);
+        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType, 
+                                  windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
+
+        InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType,
+                                          windowShowOptions.WindowSettingsViewModelInitializerModel, windowShowOptions.WindowSettingsViewModelInitializerModelType);
     }
 
     private void InitializePresenterViewModels(IPresenterViewModel presenterViewModel, IPresenterLoadOptions presenterLoadOptions)
     {
         InitializePresenterViewModel(presenterViewModel, presenterLoadOptions.PresenterViewModelType,
-            presenterLoadOptions.PresenterViewModelInitializerModel, presenterLoadOptions.PresenterViewModelInitializerModelType);
+                                     presenterLoadOptions.PresenterViewModelInitializerModel, presenterLoadOptions.PresenterViewModelInitializerModelType);
 
         InitializePresenterDataViewModel(presenterViewModel.Data, presenterLoadOptions.PresenterDataViewModelType,
-            presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
+                                         presenterLoadOptions.PresenterDataViewModelInitializerModel, presenterLoadOptions.PresenterDataViewModelInitializerModelType);
     }
 
     private void SetWindow(IStandardWindow window, IStandardWindowViewModel windowViewModel, IPresenter presenter, IPresenterViewModel presenterViewModel)

@@ -11,6 +11,6 @@ public class DialogWindowSettingsViewModelMappingProfile : Profile
     public DialogWindowSettingsViewModelMappingProfile()
     {
         CreateMap<IDialogWindowSettingsViewModelInitializerModel, IDialogWindowSettingsViewModel>()
-            .IncludeAllDerived();
+            .IncludeBase<IWindowSettingsViewModelInitializerModel, IWindowSettingsViewModel>();
     }
 }
