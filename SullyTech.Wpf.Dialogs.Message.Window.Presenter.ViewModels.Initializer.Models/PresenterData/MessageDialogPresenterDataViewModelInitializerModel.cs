@@ -5,16 +5,5 @@ namespace SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.
 
 public sealed class MessageDialogPresenterDataViewModelInitializerModel : PresenterDataViewModelInitializerModel, IMessageDialogPresenterDataViewModelInitializerModel
 {
-    private readonly string? _message;
-    public string Message
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_message, nameof(Message));
-
-            return _message!;
-        }
-
-        init => _message = value;
-    }
+    public required string Message { get; init; }
 }

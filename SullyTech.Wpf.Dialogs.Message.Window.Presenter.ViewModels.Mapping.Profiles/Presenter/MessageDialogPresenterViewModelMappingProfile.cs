@@ -20,6 +20,6 @@ internal sealed class MessageDialogPresenterViewModelMappingProfile : Profile
 
     private static DestIconType MapIconType(SrcIconType? iconType)
     {
-        return iconType.HasValue == false ? DestIconType.None : (DestIconType)iconType.Value;
+        return iconType.HasValue ? (DestIconType)iconType.Value : DestIconType.None;
     }
 }

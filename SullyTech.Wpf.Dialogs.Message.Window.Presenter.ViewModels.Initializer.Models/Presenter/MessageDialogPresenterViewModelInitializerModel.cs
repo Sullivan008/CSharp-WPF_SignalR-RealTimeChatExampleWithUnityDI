@@ -8,16 +8,5 @@ public sealed class MessageDialogPresenterViewModelInitializerModel : PresenterV
 {
     public IconType? IconType { get; init; }
 
-    private readonly ButtonType? _buttonType;
-    public ButtonType ButtonType
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNull(_buttonType, nameof(ButtonType));
-
-            return _buttonType!.Value;
-        }
-
-        init => _buttonType = value;
-    }
+    public required ButtonType ButtonType { get; init; }
 }
