@@ -137,10 +137,10 @@ public sealed class NavigationService : INavigationService
     private void InitializePresenterViewModels(IPresenterViewModel presenterViewModel, INavigateToOptions navigateToOptions)
     {
         InitializePresenterViewModel(presenterViewModel, navigateToOptions.PresenterViewModelType,
-            navigateToOptions.PresenterViewModelInitializerModel, navigateToOptions.PresenterViewModelInitializerModelType);
+                                     navigateToOptions.PresenterViewModelInitializerModel, navigateToOptions.PresenterViewModelInitializerModelType);
 
         InitializePresenterDataViewModel(presenterViewModel.Data, navigateToOptions.PresenterDataViewModelType,
-            navigateToOptions.PresenterDataViewModelInitializerModel, navigateToOptions.PresenterDataViewModelInitializerModelType);
+                                         navigateToOptions.PresenterDataViewModelInitializerModel, navigateToOptions.PresenterDataViewModelInitializerModelType);
     }
 
     private void InitializePresenterViewModel(IPresenterViewModel presenterViewModel, Type presenterViewModelType,
@@ -149,7 +149,7 @@ public sealed class NavigationService : INavigationService
         if (presenterViewModelInitializerModel is not null && presenterViewModelInitializerModelType is not null)
         {
             _mapper.Map(presenterViewModelInitializerModel, presenterViewModel,
-                presenterViewModelInitializerModelType, presenterViewModelType);
+                        presenterViewModelInitializerModelType, presenterViewModelType);
         }
     }
 
@@ -159,7 +159,7 @@ public sealed class NavigationService : INavigationService
         if (presenterDataViewModelInitializerModel is not null && presenterDataViewModelInitializerModelType is not null)
         {
             _mapper.Map(presenterDataViewModelInitializerModel, presenterDataViewModel,
-                presenterDataViewModelInitializerModelType, presenterDataViewModelType);
+                        presenterDataViewModelInitializerModelType, presenterDataViewModelType);
         }
     }
 
