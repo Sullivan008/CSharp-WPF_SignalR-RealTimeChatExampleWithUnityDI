@@ -222,34 +222,36 @@ public partial class Application
         //        Height = 750
         //    });
 
-        IMessageDialogService sd = _host.Services.GetRequiredService<IMessageDialogService>();
+        //IMessageDialogService sd = _host.Services.GetRequiredService<IMessageDialogService>();
 
-        await sd.ShowDialogAsync(
-            windowSettingsViewModelInitializerModel: new MessageDialogWindowSettingsViewModelInitializerModel
-            {
-                Title = "kefe",
-            },
-            presenterDataViewModelInitializerModel: new MessageDialogPresenterDataViewModelInitializerModel
-            {
-                Message = "tere"
-            },
-            presenterViewModelInitializerModel: new MessageDialogPresenterViewModelInitializerModel
-            {
-                ButtonType = ButtonType.OkCancel,
-                IconType = IconType.Information
-            });
-
-        //IExceptionDialogService ere = _host.Services.GetRequiredService<IExceptionDialogService>();
-        //await ere.ShowDialogAsync(new ExceptionDialogWindowSettingsViewModelInitializerModel
-        //{
-        //    Title = "a"
-        //},
-        //    new ExceptionDialogPresenterDataViewModelInitializerModel
+        //await sd.ShowDialogAsync(
+        //    windowSettingsViewModelInitializerModel: new MessageDialogWindowSettingsViewModelInitializerModel
         //    {
-        //        InnerException = new Exception("e"),
-        //        Message = "re",
-        //        StackTrace = "ke",
-        //        Type = ere.GetType()
+        //        Title = "kefe",
+        //    },
+        //    presenterDataViewModelInitializerModel: new MessageDialogPresenterDataViewModelInitializerModel
+        //    {
+        //        Message = "tere"
+        //    },
+        //    presenterViewModelInitializerModel: new MessageDialogPresenterViewModelInitializerModel
+        //    {
+        //        ButtonType = ButtonType.OkCancel,
+        //        IconType = IconType.Information
         //    });
+
+        IExceptionDialogService ere = _host.Services.GetRequiredService<IExceptionDialogService>();
+        await ere.ShowDialogAsync(new ExceptionDialogWindowSettingsViewModelInitializerModel
+        {
+            Title = "a",
+            Width = 50000,
+            Height = 150000
+        },
+            new ExceptionDialogPresenterDataViewModelInitializerModel
+            {
+                InnerException = new Exception("e"),
+                Message = "re",
+                StackTrace = "ke",
+                Type = ere.GetType()
+            });
     }
 }

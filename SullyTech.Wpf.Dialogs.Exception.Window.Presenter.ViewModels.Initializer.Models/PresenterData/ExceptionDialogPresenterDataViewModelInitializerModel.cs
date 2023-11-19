@@ -5,31 +5,9 @@ namespace SullyTech.Wpf.Dialogs.Exception.Window.Presenter.ViewModels.Initialize
 
 public sealed class ExceptionDialogPresenterDataViewModelInitializerModel : PresenterDataViewModelInitializerModel, IExceptionDialogPresenterDataViewModelInitializerModel
 {
-    private readonly string? _message;
-    public string Message
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNullOrWhitespace(_message, nameof(Exception));
+    public required string Message { get; init; }
 
-            return _message!;
-        }
-
-        init => _message = value;
-    }
-
-    private readonly Type? _type;
-    public Type Type
-    {
-        get
-        {
-            Guard.Guard.ThrowIfNull(_type, nameof(Type));
-
-            return _type!;
-        }
-
-        init => _type = value;
-    }
+    public required Type Type { get; init; }
 
     public string? StackTrace { get; init; }
 

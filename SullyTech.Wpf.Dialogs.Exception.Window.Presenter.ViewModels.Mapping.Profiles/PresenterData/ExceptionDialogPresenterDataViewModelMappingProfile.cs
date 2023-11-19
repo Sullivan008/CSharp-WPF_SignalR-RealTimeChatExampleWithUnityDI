@@ -19,19 +19,20 @@ internal sealed class ExceptionDialogPresenterDataViewModelMappingProfile : Prof
                 opt => opt.MapFrom(src => MapInnerException(src.InnerException)));
     }
 
-    private static string MapStackTrace(string? src)
+    private static string MapStackTrace(string? stackTrace)
     {
-        if (string.IsNullOrWhiteSpace(src))
+        if (string.IsNullOrWhiteSpace(stackTrace))
         {
             return "-";
         }
 
-        return src;
+        return stackTrace;
     }
 
     private static string MapInnerException(System.Exception? innerException)
     {
-        if (innerException is null)
+        if (innerException is null || 
+            string.IsNullOrWhiteSpace(innerException.ToString()))
         {
             return "-";
         }

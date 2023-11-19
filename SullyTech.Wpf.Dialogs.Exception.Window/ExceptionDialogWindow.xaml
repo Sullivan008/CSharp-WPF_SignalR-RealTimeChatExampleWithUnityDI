@@ -13,8 +13,8 @@
                      WindowStartupLocation="CenterScreen"
                      AllowsTransparency="True"
                      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-                     MinHeight="50" Height="50" MaxHeight="650"
-                     MinWidth="700" Width="700" MaxWidth="700"
+                     MinHeight="50" MaxHeight="650"
+                     MinWidth="700" MaxWidth="700"
                      Title="{Binding Settings.Title}">
 
     <behaviors:Interaction.Triggers>
