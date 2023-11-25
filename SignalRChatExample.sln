@@ -46,8 +46,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Guard", "SullyTec
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Extensions", "SullyTech.Extensions", "{7B15422E-64B4-4508-8D5A-B6BF3F4ED848}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Extensions", "SullyTech.Extensions\SullyTech.Extensions.csproj", "{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf", "SullyTech.Wpf", "{C9F18FD0-B9CB-4D6C-B49F-7ECC52947C48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Standard", "SullyTech.Wpf.Controls.Window.Standard", "{2AF346F6-0EBC-42A1-A7CE-9C946ADE19D4}"
@@ -628,25 +626,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.AutoMapper", "Sul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.AutoMapper.Extensions", "SullyTech.AutoMapper.Extensions", "{4291D063-D562-403E-A847-5A576D52FDDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.AutoMapper.Extensions", "SullyTech.AutoMapper.Extensions\SullyTech.AutoMapper.Extensions.csproj", "{42180CDE-F2D3-40B1-A074-5036B1EAF3E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.AutoMapper.Extensions", "SullyTech.AutoMapper.Extensions\SullyTech.AutoMapper.Extensions.csproj", "{42180CDE-F2D3-40B1-A074-5036B1EAF3E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping", "{33D6FDF0-66AF-4CA6-9023-4E32E4E49B8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles", "{182A6429-E3EE-4846-BFF8-1DA583EE9B6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles.csproj", "{D04DFB94-4914-407E-9A67-B225248C5862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles.csproj", "{D04DFB94-4914-407E-9A67-B225248C5862}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping", "{EF38C5E9-99D3-4110-B504-DFE25062F7C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles", "{351CD733-B94B-4177-9886-CDBBB53D4F59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles.csproj", "{49F5557E-985F-4D1D-AFF0-426C5311D60E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles.csproj", "{49F5557E-985F-4D1D-AFF0-426C5311D60E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping", "{D5D9C495-4973-41C9-AFF8-2A5363175253}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles", "{6CFF9943-10C8-4850-BBDA-2B219A87DCEE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles", "SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles.csproj", "{84B6B210-91E1-417E-A9F7-7032E111D215}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Extensions.Enum", "SullyTech.Extensions.Enum", "{0625B5B8-7CAA-4775-8854-DC35F9105368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Extensions.Enum", "SullyTech.Extensions.Enum\SullyTech.Extensions.Enum.csproj", "{EF9852B6-51DA-4913-8D29-03C76A49E3B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Extensions.Enumerable", "SullyTech.Extensions.Enumerable", "{565B8E3B-010C-4B24-9F89-514FC9993632}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Extensions.Enumerable", "SullyTech.Extensions.Enumerable\SullyTech.Extensions.Enumerable.csproj", "{B35F59FB-D6DA-4D76-A405-F2B91E85D238}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -690,10 +696,6 @@ Global
 		{5F3549EC-930F-493E-8EC8-403A9672F057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3549EC-930F-493E-8EC8-403A9672F057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F3549EC-930F-493E-8EC8-403A9672F057}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06BC2E19-9B4F-40AB-B6E1-953EEB30E51B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{06BC2E19-9B4F-40AB-B6E1-953EEB30E51B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06BC2E19-9B4F-40AB-B6E1-953EEB30E51B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -1190,6 +1192,14 @@ Global
 		{84B6B210-91E1-417E-A9F7-7032E111D215}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84B6B210-91E1-417E-A9F7-7032E111D215}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84B6B210-91E1-417E-A9F7-7032E111D215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9852B6-51DA-4913-8D29-03C76A49E3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9852B6-51DA-4913-8D29-03C76A49E3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9852B6-51DA-4913-8D29-03C76A49E3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9852B6-51DA-4913-8D29-03C76A49E3B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35F59FB-D6DA-4D76-A405-F2B91E85D238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35F59FB-D6DA-4D76-A405-F2B91E85D238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35F59FB-D6DA-4D76-A405-F2B91E85D238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35F59FB-D6DA-4D76-A405-F2B91E85D238}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1210,7 +1220,6 @@ Global
 		{4E61B1F8-D052-412D-98D4-7160DADF2968} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
 		{5F3549EC-930F-493E-8EC8-403A9672F057} = {4E61B1F8-D052-412D-98D4-7160DADF2968}
 		{7B15422E-64B4-4508-8D5A-B6BF3F4ED848} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
-		{67AD375E-C6E5-4828-AFA6-BB934A5E7CE7} = {7B15422E-64B4-4508-8D5A-B6BF3F4ED848}
 		{C9F18FD0-B9CB-4D6C-B49F-7ECC52947C48} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
 		{2AF346F6-0EBC-42A1-A7CE-9C946ADE19D4} = {29078DD9-CEB6-42E4-A8FA-7834341A79E4}
 		{06BC2E19-9B4F-40AB-B6E1-953EEB30E51B} = {2AF346F6-0EBC-42A1-A7CE-9C946ADE19D4}
@@ -1510,6 +1519,10 @@ Global
 		{D5D9C495-4973-41C9-AFF8-2A5363175253} = {D39D4313-3E17-44D0-885F-4FAE75621C88}
 		{6CFF9943-10C8-4850-BBDA-2B219A87DCEE} = {D5D9C495-4973-41C9-AFF8-2A5363175253}
 		{84B6B210-91E1-417E-A9F7-7032E111D215} = {6CFF9943-10C8-4850-BBDA-2B219A87DCEE}
+		{0625B5B8-7CAA-4775-8854-DC35F9105368} = {7B15422E-64B4-4508-8D5A-B6BF3F4ED848}
+		{EF9852B6-51DA-4913-8D29-03C76A49E3B7} = {0625B5B8-7CAA-4775-8854-DC35F9105368}
+		{565B8E3B-010C-4B24-9F89-514FC9993632} = {7B15422E-64B4-4508-8D5A-B6BF3F4ED848}
+		{B35F59FB-D6DA-4D76-A405-F2B91E85D238} = {565B8E3B-010C-4B24-9F89-514FC9993632}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
