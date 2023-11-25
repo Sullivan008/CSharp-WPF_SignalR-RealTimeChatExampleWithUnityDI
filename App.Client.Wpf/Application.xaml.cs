@@ -17,6 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
+using SullyTech.Guid.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Core.Providers.Window.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Core.Services.Window.Abstractions.MethodParameters.PresenterLoadOptions;
 using SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles.Infrastructure.Extensions.DependencyInjection;
@@ -59,6 +60,8 @@ public partial class Application
             })
             .ConfigureServices((hostBuilderContext, serviceCollection) =>
             {
+                serviceCollection.AddGuid();
+
                 serviceCollection.AddChatHub(hostBuilderContext.Configuration);
                 serviceCollection.AddWindowProvider();
 

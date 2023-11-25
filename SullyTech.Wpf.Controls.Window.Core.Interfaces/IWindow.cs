@@ -2,7 +2,7 @@
 
 public interface IWindow
 {
-    public string Id { get; }
+    public string Id { get; set; }
 
     public object DataContext { get; set; }
 

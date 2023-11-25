@@ -1,5 +1,7 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using SullyTech.Guid.Interfaces;
 using SullyTech.Wpf.Controls.Window.Core.Interfaces;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces;
 using SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Initializer.Models.Interfaces.Presenter;
@@ -16,6 +18,8 @@ namespace SullyTech.Wpf.Controls.Window.Core.Services.Window.Abstractions;
 
 public abstract class WindowService : IWindowService
 {
+    protected readonly IGuid Guid;
+
     protected readonly IMapper Mapper;
 
     protected readonly IServiceProvider ServiceProvider;
@@ -23,12 +27,17 @@ public abstract class WindowService : IWindowService
     protected WindowService(IServiceProvider serviceProvider)
     {
         ServiceProvider = serviceProvider;
+
+        Guid = serviceProvider.GetRequiredService<IGuid>();
         Mapper = serviceProvider.GetRequiredService<IMapper>();
     }
-    
+
     protected virtual IWindow CreateWindow(Type windowType)
     {
-        return (IWindow)ServiceProvider.GetRequiredService(windowType);
+        IWindow window = (IWindow)ServiceProvider.GetRequiredService(windowType);
+        window.Id = Guid.NewGuid().ToString();
+
+        return window;
     }
 
     protected virtual IWindowViewModel CreateWindowViewModel(IWindow window, Type windowViewModelType)

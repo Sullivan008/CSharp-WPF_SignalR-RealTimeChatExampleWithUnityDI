@@ -4,10 +4,21 @@ namespace SullyTech.Wpf.Controls.Window.Core;
 
 public class Window : System.Windows.Window, IWindow
 {
-    public string Id { get; }
-
-    public Window()
+    private string? _id;
+    public string Id
     {
-        Id = Guid.NewGuid().ToString();
+        get
+        {
+            Guard.Guard.ThrowIfNullOrWhitespace(_id, nameof(Id));
+
+            return _id!;
+        }
+
+        set
+        {
+            Guard.Guard.ThrowIfNullOrWhitespace(value, nameof(value));
+
+            _id = value!;
+        }
     }
 }

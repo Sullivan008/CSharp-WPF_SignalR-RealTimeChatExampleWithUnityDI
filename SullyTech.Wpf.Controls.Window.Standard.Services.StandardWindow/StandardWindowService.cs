@@ -35,7 +35,7 @@ public sealed class StandardWindowService : WindowService, IStandardWindowServic
 
     private void InitializeWindowViewModels(IWindowViewModel windowViewModel, IStandardWindowShowOptions windowShowOptions)
     {
-        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType, 
+        InitializeWindowViewModel(windowViewModel, windowShowOptions.WindowViewModelType,
                                   windowShowOptions.WindowViewModelInitializerModel, windowShowOptions.WindowViewModelInitializerModelType);
 
         InitializeWindowSettingsViewModel(windowViewModel.Settings, windowShowOptions.WindowSettingsViewModelType,
