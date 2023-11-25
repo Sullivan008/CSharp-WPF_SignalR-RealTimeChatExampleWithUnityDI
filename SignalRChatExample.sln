@@ -654,6 +654,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Extensions.Enumer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.Extensions.Enumerable", "SullyTech.Extensions.Enumerable\SullyTech.Extensions.Enumerable.csproj", "{B35F59FB-D6DA-4D76-A405-F2B91E85D238}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.DateInfo", "SullyTech.DateInfo", "{2B0A8A67-7AC9-47F8-AE42-3259C2CA2802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SullyTech.DateInfo", "SullyTech.DateInfo\SullyTech.DateInfo.csproj", "{C9B75EBB-687A-4248-833D-BEAB159D7F4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1200,6 +1204,10 @@ Global
 		{B35F59FB-D6DA-4D76-A405-F2B91E85D238}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B35F59FB-D6DA-4D76-A405-F2B91E85D238}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B35F59FB-D6DA-4D76-A405-F2B91E85D238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B75EBB-687A-4248-833D-BEAB159D7F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B75EBB-687A-4248-833D-BEAB159D7F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B75EBB-687A-4248-833D-BEAB159D7F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B75EBB-687A-4248-833D-BEAB159D7F4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1523,6 +1531,8 @@ Global
 		{EF9852B6-51DA-4913-8D29-03C76A49E3B7} = {0625B5B8-7CAA-4775-8854-DC35F9105368}
 		{565B8E3B-010C-4B24-9F89-514FC9993632} = {7B15422E-64B4-4508-8D5A-B6BF3F4ED848}
 		{B35F59FB-D6DA-4D76-A405-F2B91E85D238} = {565B8E3B-010C-4B24-9F89-514FC9993632}
+		{2B0A8A67-7AC9-47F8-AE42-3259C2CA2802} = {490CAE43-E10E-45FA-BDC1-7D8B6EAEE6DA}
+		{C9B75EBB-687A-4248-833D-BEAB159D7F4C} = {2B0A8A67-7AC9-47F8-AE42-3259C2CA2802}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}
