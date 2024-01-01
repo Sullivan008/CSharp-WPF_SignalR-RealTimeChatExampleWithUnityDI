@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
+using App.Client.Wpf.Windows.Main.Infrastructure.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -75,7 +76,7 @@ public partial class Application
                 serviceCollection.AddMessageDialog();
                 serviceCollection.AddExceptionDialog();
 
-                //serviceCollection.AddMainWindow();
+                serviceCollection.AddMainWindow();
 
                 //serviceCollection.AddIdentityModule();
                 //serviceCollection.AddChatModule();

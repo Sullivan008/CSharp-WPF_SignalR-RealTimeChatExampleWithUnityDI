@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MaterialDesignThemes" Version="5.0.0-ci484" />
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
@@ -29,6 +29,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+
+		<ProjectReference Include="..\App.Client.Wpf.Windows\App.Client.Wpf.Windows.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 

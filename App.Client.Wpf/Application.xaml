@@ -7,14 +7,14 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/materialdesigncolor.grey.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/materialdesigncolor.lime.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/accent/materialdesigncolor.lime.xaml" />
 
                 <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs;component/Message/Infrastructure/Resources/Resources.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs;component/Exception/Infrastructure/Resources/Resources.xaml"/>
 
-                <!--<ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.Message;component/Infrastructure/Resources/MessageDialog.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs.Exception;component/Infrastructure/Resources/ExceptionDialog.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/App.Client.Wpf.Windows;component/Main/Infrastructure/Resources/Resources.xaml"/>
 
+                <!--
                 <ResourceDictionary Source="pack://application:,,,/App.Client.Wpf.Modules.Identity;component/Infrastructure/Resources/IdentityModule.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/App.Client.Wpf.Modules.Chat;component/Infrastructure/Resources/ChatModule.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
