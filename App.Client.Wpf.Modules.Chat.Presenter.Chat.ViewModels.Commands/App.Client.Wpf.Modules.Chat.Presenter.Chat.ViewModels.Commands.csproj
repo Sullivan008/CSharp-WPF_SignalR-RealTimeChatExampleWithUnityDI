@@ -11,7 +11,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Chat.Presenter.Chat.Interfaces\App.Client.Wpf.Modules.Chat.Presenter.Chat.Interfaces.csproj" />
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Interfaces\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Commands\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Commands.csproj" />
 	</ItemGroup>
 
 </Project>

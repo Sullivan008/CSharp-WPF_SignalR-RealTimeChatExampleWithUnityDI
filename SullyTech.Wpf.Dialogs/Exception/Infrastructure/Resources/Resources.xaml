@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs;component/Exception/Window/UserControls/Infrastructure/Resources/Resources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SullyTech.Wpf.Dialogs;component/Exception/Presenter/UserControls/Infrastructure/Resources/Resources.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

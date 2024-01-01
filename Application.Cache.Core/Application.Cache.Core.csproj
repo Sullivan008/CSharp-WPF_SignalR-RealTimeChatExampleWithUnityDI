@@ -11,9 +11,4 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\SullyTech.Extensions.Enumerable\SullyTech.Extensions.Enumerable.csproj" />
-	  <ProjectReference Include="..\SullyTech.Extensions.Enum\SullyTech.Extensions.Enum.csproj" />
-	</ItemGroup>
-
 </Project>

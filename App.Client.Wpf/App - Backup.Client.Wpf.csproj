@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Client.Wpf</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ApplicationDefinition Include="Application.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+		<PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Client.SignalR.Hubs.Chat\App.Client.SignalR.Hubs.Chat.csproj" />
+
+		<ProjectReference Include="..\App.Client.Wpf.Windows.Main\App.Client.Wpf.Windows.Main.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Guid\SullyTech.Guid.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core\SullyTech.Wpf.Controls.Window.Core.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Core\SullyTech.Wpf.Controls.Window.Dialog.Core.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Services\SullyTech.Wpf.Controls.Window.Dialog.Services.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Core\SullyTech.Wpf.Controls.Window.Standard.Core.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Services\SullyTech.Wpf.Controls.Window.Standard.Services.csproj" />
+
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs\SullyTech.Wpf.Dialogs.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Notifications\SullyTech.Wpf.Notifications.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Providers\SullyTech.Wpf.Providers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Services\SullyTech.Wpf.Services.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.TraceListeners\SullyTech.Wpf.TraceListeners.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="NLog.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>

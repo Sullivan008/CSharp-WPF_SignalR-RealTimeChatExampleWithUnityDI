@@ -8,8 +8,4 @@
 		<Product>App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.Interfaces</Product>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Initializer.Models.Interfaces.csproj" />
-	</ItemGroup>
-
 </Project>

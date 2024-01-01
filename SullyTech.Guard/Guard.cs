@@ -1,10 +1,11 @@
-﻿using SullyTech.Guard.Exceptions;
+﻿using System.Runtime.CompilerServices;
+using SullyTech.Guard.Exceptions;
 
 namespace SullyTech.Guard;
 
 public static class Guard
 {
-    public static void ThrowIfNull<T>(T input, string parameterName, string? message = null)
+    public static void ThrowIfNull<T>(T input, [CallerArgumentExpression(nameof(input))] string? parameterName = default, string? message = null)
     {
         switch (Type.GetTypeCode(typeof(T)))
         {
@@ -25,7 +26,7 @@ public static class Guard
         }
     }
 
-    public static void ThrowIfNotNull<T>(T input, string parameterName, string? message = null)
+    public static void ThrowIfNotNull<T>(T input, [CallerArgumentExpression(nameof(input))] string? parameterName = default, string? message = null)
     {
         switch (Type.GetTypeCode(typeof(T)))
         {
@@ -46,7 +47,7 @@ public static class Guard
         }
     }
 
-    public static void ThrowIfNullOrWhitespace(string? input, string parameterName, string? message = null)
+    public static void ThrowIfNullOrWhitespace(string? input, [CallerArgumentExpression(nameof(input))] string? parameterName = default, string? message = null)
     {
         if (string.IsNullOrWhiteSpace(input))
         {
@@ -54,7 +55,7 @@ public static class Guard
         }
     }
 
-    public static void ThrowIfNotNullOrNotWhitespace(string? input, string parameterName, string? message = null)
+    public static void ThrowIfNotNullOrNotWhitespace(string? input, [CallerArgumentExpression(nameof(input))] string? parameterName = default, string? message = null)
     {
         if (!string.IsNullOrWhiteSpace(input))
         {

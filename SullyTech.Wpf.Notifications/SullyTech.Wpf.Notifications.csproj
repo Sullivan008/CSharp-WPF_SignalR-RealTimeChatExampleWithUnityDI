@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Notifications</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FontAwesome5" Version="2.1.11" />
+		<PackageReference Include="Notification.Wpf" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
+	</ItemGroup>
+
+</Project>

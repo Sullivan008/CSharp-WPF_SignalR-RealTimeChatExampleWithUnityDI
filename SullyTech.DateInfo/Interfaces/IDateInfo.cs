@@ -4,8 +4,6 @@
     {
         public DateTimeOffset ConvertToDateTimeOffset(DateTime value, TimeZoneInfo? timeZoneInfo = null);
 
-        public DateTimeOffset ConvertToDateTimeOffset(DateOnly value, TimeZoneInfo? timeZoneInfo = null);
-
         public DateTimeOffset ConvertToDateTimeOffset(string value);
 
         public DateOnly ConvertToDateOnly(DateTime value);

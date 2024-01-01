@@ -20,7 +20,6 @@
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces\App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces.csproj" />
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators.csproj" />
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter\SullyTech.Wpf.Controls.Window.Core.Presenter.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

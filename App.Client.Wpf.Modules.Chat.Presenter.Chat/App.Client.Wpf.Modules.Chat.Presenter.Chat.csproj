@@ -20,7 +20,6 @@
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Chat.Presenter.Chat.Interfaces\App.Client.Wpf.Modules.Chat.Presenter.Chat.Interfaces.csproj" />
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Interfaces\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter\SullyTech.Wpf.Controls.Window.Core.Presenter.csproj" />
 	</ItemGroup>
 
 </Project>

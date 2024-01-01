@@ -8,8 +8,4 @@
 		<Product>App.Client.Wpf.Modules.Chat.Presenter.Chat.Interfaces</Product>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.Interfaces.csproj" />
-	</ItemGroup>
-
 </Project>

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0-windows</TargetFramework>
+		<TargetFramework>net8.0-windows</TargetFramework>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -21,50 +21,33 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-		<PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+		<PackageReference Include="MaterialDesignThemes" Version="5.0.0-ci484" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="NLog.Extensions.Logging" Version="5.3.8" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\App.Client.SignalR.Hubs.Chat\App.Client.SignalR.Hubs.Chat.csproj" />
-
-		<ProjectReference Include="..\App.Client.Wpf.Modules.Chat\App.Client.Wpf.Modules.Chat.csproj" />
-
-		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity\App.Client.Wpf.Modules.Identity.csproj" />
-
-		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models\App.Client.Wpf.Windows.Main.Window.ViewModels.Initializer.Models.csproj" />
-
-		<ProjectReference Include="..\App.Client.Wpf.Windows.Main\App.Client.Wpf.Windows.Main.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
 
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Core.ViewModels.Mapping.Profiles.csproj" />
+		<ProjectReference Include="..\SullyTech.Guid\SullyTech.Guid.csproj" />
 
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Dialog.ViewModels.Mapping.Profiles.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core\SullyTech.Wpf.Controls.Window.Core.csproj" />
 
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow\SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Core\SullyTech.Wpf.Controls.Window.Dialog.Core.csproj" />
 
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles\SullyTech.Wpf.Controls.Window.Standard.ViewModels.Mapping.Profiles.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Services\SullyTech.Wpf.Controls.Window.Dialog.Services.csproj" />
 
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Exception.Window.ViewModels.Initializer.Models.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Core\SullyTech.Wpf.Controls.Window.Standard.Core.csproj" />
 
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Exception\SullyTech.Wpf.Dialogs.Exception.csproj" />
-
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Message.Window.Presenter.ViewModels.Initializer.Models.csproj" />
-
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models\SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Initializer.Models.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Dialogs.Message\SullyTech.Wpf.Dialogs.Message.csproj" />
-
-		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
-
-		<ProjectReference Include="..\SullyTech.Wpf.Services.Window.Closer\SullyTech.Wpf.Services.Window.Closer.csproj" />
-
-		<ProjectReference Include="..\SullyTech.Wpf.Services.Window.Title\SullyTech.Wpf.Services.Window.Title.csproj" />
-
-		<ProjectReference Include="..\SullyTech.Wpf.TraceListeners.BindingError\SullyTech.Wpf.TraceListeners.BindingError.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Services\SullyTech.Wpf.Controls.Window.Standard.Services.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Dialogs\SullyTech.Wpf.Dialogs.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Notifications\SullyTech.Wpf.Notifications.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Providers\SullyTech.Wpf.Providers.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Services\SullyTech.Wpf.Services.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.TraceListeners\SullyTech.Wpf.TraceListeners.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

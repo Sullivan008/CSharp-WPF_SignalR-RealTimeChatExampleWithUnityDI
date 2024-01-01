@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Controls.Window.Standard.Services</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Guid\SullyTech.Guid.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Core\SullyTech.Wpf.Controls.Window.Standard.Core.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -8,8 +8,4 @@
 		<Product>App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces</Product>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces\SullyTech.Wpf.Controls.Window.Core.Presenter.ViewModels.Interfaces.csproj" />
-	</ItemGroup>
-
 </Project>

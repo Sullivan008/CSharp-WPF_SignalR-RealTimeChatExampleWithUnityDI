@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0-windows</TargetFramework>
+		<TargetFramework>net8.0-windows</TargetFramework>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -13,8 +13,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.Interfaces\SullyTech.Wpf.Controls.Window.Core.Interfaces.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Presenter.Core\SullyTech.Wpf.Controls.Presenter.Core.csproj" />
 	</ItemGroup>
 
 </Project>

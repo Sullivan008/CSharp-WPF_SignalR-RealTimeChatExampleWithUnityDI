@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:userControls="clr-namespace:SullyTech.Wpf.Dialogs.Exception.Presenter.UserControls"
+                    xmlns:presenterViewModel="clr-namespace:SullyTech.Wpf.Dialogs.Exception.Presenter.ViewModels.Presenter">
+    <DataTemplate DataType="{x:Type presenterViewModel:ExceptionDialogPresenterViewModel}">
+        <userControls:ExceptionDialogPresenter/>
+    </DataTemplate>
+</ResourceDictionary>

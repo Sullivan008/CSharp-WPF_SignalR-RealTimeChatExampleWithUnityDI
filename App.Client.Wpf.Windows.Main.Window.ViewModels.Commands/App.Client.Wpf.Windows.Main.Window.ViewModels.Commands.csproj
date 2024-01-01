@@ -13,10 +13,6 @@
 		<ProjectReference Include="..\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces.csproj" />
 		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.Interfaces\App.Client.Wpf.Windows.Main.Window.Interfaces.csproj" />
 		<ProjectReference Include="..\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces\App.Client.Wpf.Windows.Main.Window.ViewModels.Interfaces.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Core.ViewModels.Commands\SullyTech.Wpf.Controls.Window.Core.ViewModels.Commands.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Notifications.Toast\SullyTech.Wpf.Notifications.Toast.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Services.Navigation\SullyTech.Wpf.Services.Navigation.csproj" />
-		<ProjectReference Include="..\SullyTech.Wpf.Services.Window.Destroyer\SullyTech.Wpf.Services.Window.Destroyer.csproj" />
 	</ItemGroup>
 
 </Project>

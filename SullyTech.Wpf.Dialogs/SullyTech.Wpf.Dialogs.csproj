@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Wpf.Dialogs</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="5.0.0-ci484" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Core\SullyTech.Wpf.Controls.Window.Dialog.Core.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Dialog.Services\SullyTech.Wpf.Controls.Window.Dialog.Services.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Services\SullyTech.Wpf.Services.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Exception\Presenter\UserControls\Infrastructure\Assets\icon-error.png" />
+		<None Remove="Message\Presenter\UserControls\Infrastructure\Assets\icon-error.png" />
+		<None Remove="Message\Presenter\UserControls\Infrastructure\Assets\icon-information.png" />
+		<None Remove="Message\Presenter\UserControls\Infrastructure\Assets\icon-question.png" />
+		<None Remove="Message\Presenter\UserControls\Infrastructure\Assets\icon-warning.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Exception\Presenter\UserControls\Infrastructure\Assets\icon-error.png" />
+		<Resource Include="Message\Presenter\UserControls\Infrastructure\Assets\icon-error.png" />
+		<Resource Include="Message\Presenter\UserControls\Infrastructure\Assets\icon-information.png" />
+		<Resource Include="Message\Presenter\UserControls\Infrastructure\Assets\icon-question.png" />
+		<Resource Include="Message\Presenter\UserControls\Infrastructure\Assets\icon-warning.png" />
+	</ItemGroup>
+
+</Project>

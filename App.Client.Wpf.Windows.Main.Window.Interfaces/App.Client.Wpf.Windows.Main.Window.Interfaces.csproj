@@ -8,8 +8,4 @@
 		<Product>App.Client.Wpf.Windows.Main.Window.Interfaces</Product>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Interfaces\SullyTech.Wpf.Controls.Window.Standard.Interfaces.csproj" />
-	</ItemGroup>
-
 </Project>

@@ -14,7 +14,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Extensions.Enum\SullyTech.Extensions.Enum.csproj" />
 		<ProjectReference Include="..\SullyTech.SignalR.Client.Core.Hub.Configuration\SullyTech.SignalR.Client.Core.Hub.Configuration.csproj" />
 	</ItemGroup>
 
