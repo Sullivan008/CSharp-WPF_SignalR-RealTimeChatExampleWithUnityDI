@@ -1,4 +1,6 @@
-﻿using SullyTech.Wpf.Controls.Presenter.Core.Commands.Abstractions;
+﻿using App.Client.Wpf.Modules.Chat.Presenters.Chat.UserControls;
+using App.Client.Wpf.Modules.Chat.Presenters.Chat.ViewModels;
+using SullyTech.Wpf.Controls.Presenter.Core.Commands.Abstractions;
 using SullyTech.Wpf.Services.Navigation.Interfaces;
 
 namespace App.Client.Wpf.Modules.Identity.Presenters.SignIn.ViewModels.Commands;
@@ -30,11 +32,7 @@ internal sealed class SignInCommand : AsyncCommand<SignInPresenterViewModel>
 
     private async Task NavigateToChatView()
     {
-        // TODO - IF implemented Chat - Presenter, then implemented it!
-
-        //await _navigationService.NavigateToAsync(
-        //    windowId: CallerViewModel.WindowId,
-        //    navigateToOptions: new NavigateToOptions<IChatPresenter, IChatPresenterViewModel, IChatPresenterDataViewModel>());
+        await _navigationService.NavigateToAsync<ChatPresenter, ChatPresenterViewModel>(CallerViewModel.WindowId);
 
         await Task.CompletedTask;
     }

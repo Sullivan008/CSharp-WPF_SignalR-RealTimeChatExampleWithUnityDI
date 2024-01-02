@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
+using App.Client.Wpf.Modules.Chat.Infrastructure.Extensions.DependencyInjection;
 using App.Client.Wpf.Modules.Identity.Infrastructure.Extensions.DependencyInjection;
 using App.Client.Wpf.Modules.Identity.Presenters.SignIn.UserControls;
 using App.Client.Wpf.Modules.Identity.Presenters.SignIn.ViewModels;
@@ -23,14 +24,6 @@ using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.Infrastruct
 using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.Interfaces;
 using SullyTech.Wpf.Dialogs.Exception.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Message.Infrastructure.Extensions.DependencyInjection;
-using SullyTech.Wpf.Dialogs.Message.Presenter.UserControls;
-using SullyTech.Wpf.Dialogs.Message.Presenter.ViewModels.Presenter;
-using SullyTech.Wpf.Dialogs.Message.Presenter.ViewModels.Presenter.Initializer.Enums;
-using SullyTech.Wpf.Dialogs.Message.Presenter.ViewModels.Presenter.Initializer.Models;
-using SullyTech.Wpf.Dialogs.Message.Window.Results;
-using SullyTech.Wpf.Dialogs.Message.Window.UserControls;
-using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Window;
-using SullyTech.Wpf.Dialogs.Message.Window.ViewModels.Window.Initializers.Models;
 using SullyTech.Wpf.Notifications.Toast.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Notifications.Toast.Interfaces;
 using SullyTech.Wpf.Notifications.Toast.MethodParameters.ShowNotificationOptions;
@@ -86,9 +79,7 @@ public partial class Application
                 serviceCollection.AddMainWindow();
 
                 serviceCollection.AddIdentityModule();
-
-                //serviceCollection.AddIdentityModule();
-                //serviceCollection.AddChatModule();
+                serviceCollection.AddChatModule();
             })
             .ConfigureLogging((hostBuilderContext, loggingBuilder) =>
             {
