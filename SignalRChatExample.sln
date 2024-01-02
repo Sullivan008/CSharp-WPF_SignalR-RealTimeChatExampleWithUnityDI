@@ -68,28 +68,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.SignalR.Client.Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SullyTech.Wpf.TraceListeners", "SullyTech.Wpf.TraceListeners", "{96F887CC-8BD7-4541-82E2-9D1AD9889FF4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity.Presenter", "App.Client.Wpf.Modules.Identity.Presenter", "{0630882D-646A-45CC-9A6E-3FE004C332F5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn", "App.Client.Wpf.Modules.Identity.Presenter.SignIn", "{202116FD-6926-4539-8F6F-EE1BCF126511}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn", "App.Client.Wpf.Modules.Identity.Presenter.SignIn\App.Client.Wpf.Modules.Identity.Presenter.SignIn.csproj", "{4A3914C6-1FE8-4F90-B1F1-9FE7B10EEFA5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels", "{9820F62F-528D-4F13-9937-6E87EFAB114C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.csproj", "{13F4C7E9-4289-4F46-B9EE-A1B63E1207C2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces", "{C7134327-F2E0-4550-A21F-59ABE763D733}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Interfaces.csproj", "{5B1C19AB-A168-4F83-9DAF-37520F3380C9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators", "{72DC2580-3F11-41E4-9E4C-878673D04A62}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Validators.csproj", "{06AD38DB-05DB-4A36-BEB4-C0FDFF51B896}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Commands", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Commands", "{C9C9351B-B9E7-4ADB-AD9A-552C79CAEC8F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Commands", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Commands\App.Client.Wpf.Modules.Identity.Presenter.SignIn.ViewModels.Commands.csproj", "{9FB5EDBF-CF95-49AD-A928-E0D73316FA09}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Interfaces", "App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Interfaces\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Interfaces.csproj", "{0FFB5FF5-41AB-4B7C-A570-37157D0D6BE4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Commands", "App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Commands\App.Client.Wpf.Modules.Chat.Presenter.Chat.ViewModels.Commands.csproj", "{F82449A4-91F9-4BA9-AC4C-1F01062A3824}"
@@ -167,16 +145,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.SignalR.Hubs.Chat.Configuration", "App.Client.SignalR.Hubs.Chat.Configuration", "{9E9ACF68-CE80-4653-B771-9BE76D81F075}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules", "App.Client.Wpf.Modules", "{ECD507DD-EA61-4041-B056-8C0C88F3D459}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity", "App.Client.Wpf.Modules.Identity", "{C3245FBC-F3BB-47A8-9949-B66537464310}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces", "{647BB89F-2BEE-41C5-9355-27F63B26B4AA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces", "App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces\App.Client.Wpf.Modules.Identity.Presenter.SignIn.Interfaces.csproj", "{8E83AAE1-8316-4375-884B-E3185AAC626F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity.Presenter", "App.Client.Wpf.Modules.Identity.Presenter\App.Client.Wpf.Modules.Identity.Presenter.csproj", "{CAD66AB9-F5F5-4592-985C-6379B64CA5F4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Client.Wpf.Modules.Identity", "App.Client.Wpf.Modules.Identity\App.Client.Wpf.Modules.Identity.csproj", "{3DCF6B55-5D56-452E-8C01-E46551E4CA12}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Client.Wpf.Modules.Chat", "App.Client.Wpf.Modules.Chat", "{3BB39504-5CE8-4045-8AAC-931C1DC8C158}"
 EndProject
@@ -258,6 +226,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SullyTech.Wpf.Dialogs", "Su
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Client.Wpf.Windows", "App.Client.Wpf.Windows\App.Client.Wpf.Windows.csproj", "{029F9409-3C8D-47A5-9130-51E9F59AA703}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Client.Wpf.Modules", "App.Client.Wpf.Modules\App.Client.Wpf.Modules.csproj", "{3F4F3964-107C-47E0-8D61-8C3A4C58BF46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -308,26 +278,6 @@ Global
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A3914C6-1FE8-4F90-B1F1-9FE7B10EEFA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A3914C6-1FE8-4F90-B1F1-9FE7B10EEFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A3914C6-1FE8-4F90-B1F1-9FE7B10EEFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A3914C6-1FE8-4F90-B1F1-9FE7B10EEFA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13F4C7E9-4289-4F46-B9EE-A1B63E1207C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13F4C7E9-4289-4F46-B9EE-A1B63E1207C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13F4C7E9-4289-4F46-B9EE-A1B63E1207C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13F4C7E9-4289-4F46-B9EE-A1B63E1207C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B1C19AB-A168-4F83-9DAF-37520F3380C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B1C19AB-A168-4F83-9DAF-37520F3380C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B1C19AB-A168-4F83-9DAF-37520F3380C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B1C19AB-A168-4F83-9DAF-37520F3380C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06AD38DB-05DB-4A36-BEB4-C0FDFF51B896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06AD38DB-05DB-4A36-BEB4-C0FDFF51B896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06AD38DB-05DB-4A36-BEB4-C0FDFF51B896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06AD38DB-05DB-4A36-BEB4-C0FDFF51B896}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9FB5EDBF-CF95-49AD-A928-E0D73316FA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FB5EDBF-CF95-49AD-A928-E0D73316FA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9FB5EDBF-CF95-49AD-A928-E0D73316FA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9FB5EDBF-CF95-49AD-A928-E0D73316FA09}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FFB5FF5-41AB-4B7C-A570-37157D0D6BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FFB5FF5-41AB-4B7C-A570-37157D0D6BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FFB5FF5-41AB-4B7C-A570-37157D0D6BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -380,18 +330,6 @@ Global
 		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{041AE64D-9CD3-494A-99B6-0F8392CB1B54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E83AAE1-8316-4375-884B-E3185AAC626F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E83AAE1-8316-4375-884B-E3185AAC626F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E83AAE1-8316-4375-884B-E3185AAC626F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E83AAE1-8316-4375-884B-E3185AAC626F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAD66AB9-F5F5-4592-985C-6379B64CA5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAD66AB9-F5F5-4592-985C-6379B64CA5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAD66AB9-F5F5-4592-985C-6379B64CA5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAD66AB9-F5F5-4592-985C-6379B64CA5F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3DCF6B55-5D56-452E-8C01-E46551E4CA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DCF6B55-5D56-452E-8C01-E46551E4CA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DCF6B55-5D56-452E-8C01-E46551E4CA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DCF6B55-5D56-452E-8C01-E46551E4CA12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E6D408A-8354-4197-9744-3E0BDF147295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E6D408A-8354-4197-9744-3E0BDF147295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E6D408A-8354-4197-9744-3E0BDF147295}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -480,6 +418,10 @@ Global
 		{029F9409-3C8D-47A5-9130-51E9F59AA703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{029F9409-3C8D-47A5-9130-51E9F59AA703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{029F9409-3C8D-47A5-9130-51E9F59AA703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4F3964-107C-47E0-8D61-8C3A4C58BF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4F3964-107C-47E0-8D61-8C3A4C58BF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4F3964-107C-47E0-8D61-8C3A4C58BF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4F3964-107C-47E0-8D61-8C3A4C58BF46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -511,17 +453,6 @@ Global
 		{C934C587-5198-4B1C-8FFA-1F0BA611B57E} = {A68695B6-D1B1-4372-BEED-6686EBC36B8C}
 		{2041897A-AD46-4796-8DE1-F4EC1B3E5B73} = {72B05101-4E26-4A89-8785-09DE50D59703}
 		{96F887CC-8BD7-4541-82E2-9D1AD9889FF4} = {C9F18FD0-B9CB-4D6C-B49F-7ECC52947C48}
-		{0630882D-646A-45CC-9A6E-3FE004C332F5} = {C3245FBC-F3BB-47A8-9949-B66537464310}
-		{202116FD-6926-4539-8F6F-EE1BCF126511} = {0630882D-646A-45CC-9A6E-3FE004C332F5}
-		{4A3914C6-1FE8-4F90-B1F1-9FE7B10EEFA5} = {202116FD-6926-4539-8F6F-EE1BCF126511}
-		{9820F62F-528D-4F13-9937-6E87EFAB114C} = {202116FD-6926-4539-8F6F-EE1BCF126511}
-		{13F4C7E9-4289-4F46-B9EE-A1B63E1207C2} = {9820F62F-528D-4F13-9937-6E87EFAB114C}
-		{C7134327-F2E0-4550-A21F-59ABE763D733} = {9820F62F-528D-4F13-9937-6E87EFAB114C}
-		{5B1C19AB-A168-4F83-9DAF-37520F3380C9} = {C7134327-F2E0-4550-A21F-59ABE763D733}
-		{72DC2580-3F11-41E4-9E4C-878673D04A62} = {9820F62F-528D-4F13-9937-6E87EFAB114C}
-		{06AD38DB-05DB-4A36-BEB4-C0FDFF51B896} = {72DC2580-3F11-41E4-9E4C-878673D04A62}
-		{C9C9351B-B9E7-4ADB-AD9A-552C79CAEC8F} = {9820F62F-528D-4F13-9937-6E87EFAB114C}
-		{9FB5EDBF-CF95-49AD-A928-E0D73316FA09} = {C9C9351B-B9E7-4ADB-AD9A-552C79CAEC8F}
 		{0FFB5FF5-41AB-4B7C-A570-37157D0D6BE4} = {4FAA0732-AE00-4A00-B29F-C396341A88E3}
 		{F82449A4-91F9-4BA9-AC4C-1F01062A3824} = {40FD9795-FC2C-44D2-B7BE-6A20C9C26378}
 		{D92D0B7C-E74E-432A-AB34-10F4CA7BE28A} = {16EE3FA6-0C76-4BE7-A026-DDB825B08757}
@@ -560,11 +491,6 @@ Global
 		{C13506AD-E489-4170-AB00-BF194DF5F243} = {BF511B2A-A342-4BDF-9C30-A10B3FBB24F9}
 		{9E9ACF68-CE80-4653-B771-9BE76D81F075} = {C13506AD-E489-4170-AB00-BF194DF5F243}
 		{ECD507DD-EA61-4041-B056-8C0C88F3D459} = {C103ECCB-5749-4970-9F68-4159E255492A}
-		{C3245FBC-F3BB-47A8-9949-B66537464310} = {ECD507DD-EA61-4041-B056-8C0C88F3D459}
-		{647BB89F-2BEE-41C5-9355-27F63B26B4AA} = {202116FD-6926-4539-8F6F-EE1BCF126511}
-		{8E83AAE1-8316-4375-884B-E3185AAC626F} = {647BB89F-2BEE-41C5-9355-27F63B26B4AA}
-		{CAD66AB9-F5F5-4592-985C-6379B64CA5F4} = {0630882D-646A-45CC-9A6E-3FE004C332F5}
-		{3DCF6B55-5D56-452E-8C01-E46551E4CA12} = {C3245FBC-F3BB-47A8-9949-B66537464310}
 		{3BB39504-5CE8-4045-8AAC-931C1DC8C158} = {ECD507DD-EA61-4041-B056-8C0C88F3D459}
 		{1E6D408A-8354-4197-9744-3E0BDF147295} = {3BB39504-5CE8-4045-8AAC-931C1DC8C158}
 		{DF282FB6-9753-417D-A25E-7928B9E01D04} = {3BB39504-5CE8-4045-8AAC-931C1DC8C158}
@@ -605,6 +531,7 @@ Global
 		{A81987DB-9E08-4728-AAF6-C98332501962} = {7B15422E-64B4-4508-8D5A-B6BF3F4ED848}
 		{AFE8BEC1-7B74-4FD0-B2C6-A2B55CBD9CCC} = {793FD0A2-9EE7-429D-A0F3-E8692B72F7A4}
 		{029F9409-3C8D-47A5-9130-51E9F59AA703} = {E01A0C79-0AC2-4089-829A-FD6BF1ED49BB}
+		{3F4F3964-107C-47E0-8D61-8C3A4C58BF46} = {ECD507DD-EA61-4041-B056-8C0C88F3D459}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B274C10-800E-4192-9335-FD8A9F658B46}

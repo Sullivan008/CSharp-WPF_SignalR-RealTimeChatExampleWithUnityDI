@@ -2,7 +2,13 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
+using App.Client.Wpf.Modules.Identity.Infrastructure.Extensions.DependencyInjection;
+using App.Client.Wpf.Modules.Identity.Presenters.SignIn.UserControls;
+using App.Client.Wpf.Modules.Identity.Presenters.SignIn.ViewModels;
 using App.Client.Wpf.Windows.Main.Infrastructure.Extensions.DependencyInjection;
+using App.Client.Wpf.Windows.Main.UserControls;
+using App.Client.Wpf.Windows.Main.ViewModels;
+using App.Client.Wpf.Windows.Main.ViewModels.Initializer.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,6 +20,7 @@ using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.Infrastructure.
 using SullyTech.Wpf.Controls.Window.Dialog.Services.DialogWindow.Interfaces;
 using SullyTech.Wpf.Controls.Window.Standard.Core.ViewModels.Window.Mapping.Profiles.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.Infrastructure.Extensions.DependencyInjection;
+using SullyTech.Wpf.Controls.Window.Standard.Services.StandardWindow.Interfaces;
 using SullyTech.Wpf.Dialogs.Exception.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Message.Infrastructure.Extensions.DependencyInjection;
 using SullyTech.Wpf.Dialogs.Message.Presenter.UserControls;
@@ -77,6 +84,8 @@ public partial class Application
                 serviceCollection.AddExceptionDialog();
 
                 serviceCollection.AddMainWindow();
+
+                serviceCollection.AddIdentityModule();
 
                 //serviceCollection.AddIdentityModule();
                 //serviceCollection.AddChatModule();
@@ -210,6 +219,7 @@ public partial class Application
     private async void ShowMainWindow()
     {
         IDialogWindowService dialogWindowService = _host.Services.GetRequiredService<IDialogWindowService>();
+        IStandardWindowService standardWindowService = _host.Services.GetRequiredService<IStandardWindowService>();
 
         //await dialogWindowService.ShowDialogAsync<ExceptionDialogWindow, ExceptionDialogResult, ExceptionDialogWindowViewModel,
         //                                          ExceptionDialogPresenter, ExceptionDialogPresenterViewModel>(
@@ -227,19 +237,28 @@ public partial class Application
         //        Type = dialogWindowService.GetType()
         //    });
 
-        await dialogWindowService.ShowDialogAsync<MessageDialogWindow, MessageDialogResult, MessageDialogWindowViewModel,
-            MessageDialogPresenter, MessageDialogPresenterViewModel>(
-            windowViewModelInitializerModel: new MessageDialogWindowViewModelInitializerModel
+        //await dialogWindowService.ShowDialogAsync<MessageDialogWindow, MessageDialogResult, MessageDialogWindowViewModel,
+        //    MessageDialogPresenter, MessageDialogPresenterViewModel>(
+        //    windowViewModelInitializerModel: new MessageDialogWindowViewModelInitializerModel
+        //    {
+        //        Title = "a",
+        //        Width = 50000,
+        //        Height = 150000
+        //    },
+        //    presenterViewModelInitializerModel: new MessageDialogPresenterViewModelInitializerModel
+        //    {
+        //        Message = "re",
+        //        ButtonType = ButtonType.OkCancel,
+        //        IconType = IconType.Information
+        //    });
+
+
+        await standardWindowService.ShowWindowAsync<MainWindow, MainWindowViewModel, SignInPresenter, SignInPresenterViewModel>(
+            windowViewModelInitializerModel: new MainWindowViewModelInitializerModel
             {
-                Title = "a",
-                Width = 50000,
-                Height = 150000
-            },
-            presenterViewModelInitializerModel: new MessageDialogPresenterViewModelInitializerModel
-            {
-                Message = "re",
-                ButtonType = ButtonType.OkCancel,
-                IconType = IconType.Information
+                Title = "SullyTech - Chat Application",
+                Width = 450,
+                Height = 750
             });
 
         //IMainWindowService mainWindowService = _host.Services.GetRequiredService<IMainWindowService>();

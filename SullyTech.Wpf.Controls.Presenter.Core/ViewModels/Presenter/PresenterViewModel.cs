@@ -53,7 +53,7 @@ public class PresenterViewModel : INotifyPropertyChanged
         await Task.CompletedTask;
     }
 
-    public event PropertyChangedEventHandler? PropertyChanged;
+    public virtual event PropertyChangedEventHandler? PropertyChanged;
     public virtual void OnPropertyChanged([CallerMemberName] string? name = default)
     {
         if (!string.IsNullOrWhiteSpace(name))

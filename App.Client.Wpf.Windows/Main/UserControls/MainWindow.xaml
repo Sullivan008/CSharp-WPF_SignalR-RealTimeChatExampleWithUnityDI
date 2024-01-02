@@ -9,11 +9,11 @@
                        WindowStyle="None"
                        ResizeMode="NoResize"
                        Background="{x:Null}"
-                       Title="{Binding Settings.Title, Mode=OneWay}"
-                       Top="{Binding Settings.Top, Mode=TwoWay}" 
-                       Left="{Binding Settings.Left, Mode=TwoWay}" 
-                       Width="{Binding Settings.Width, Mode=TwoWay}"
-                       Height="{Binding Settings.Height, Mode=TwoWay}" 
+                       Title="{Binding Title, Mode=OneWay}"
+                       Top="{Binding Top, Mode=TwoWay}" 
+                       Left="{Binding Left, Mode=TwoWay}" 
+                       Width="{Binding Width, Mode=TwoWay}"
+                       Height="{Binding Height, Mode=TwoWay}" 
                        AllowsTransparency="True"
                        TextElement.Foreground="{DynamicResource MaterialDesignBody}">
 

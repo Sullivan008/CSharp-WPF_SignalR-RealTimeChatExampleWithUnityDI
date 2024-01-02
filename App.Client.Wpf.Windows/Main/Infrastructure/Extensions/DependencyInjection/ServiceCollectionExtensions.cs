@@ -9,7 +9,7 @@ public static class ServiceCollectionExtensions
 {
     public static void AddMainWindow(this IServiceCollection @this)
     {
-        @this.AddMainWindowWindow();
+        @this.AddMainWindowWindowUserControl();
         @this.AddMainWindowViewModel();
         @this.AddMainWindowViewModelMappingProfile();
     }

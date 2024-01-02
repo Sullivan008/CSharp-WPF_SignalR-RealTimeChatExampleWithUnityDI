@@ -30,6 +30,8 @@
 
 	<ItemGroup>
 
+		<ProjectReference Include="..\App.Client.Wpf.Modules\App.Client.Wpf.Modules.csproj" />
+
 		<ProjectReference Include="..\App.Client.Wpf.Windows\App.Client.Wpf.Windows.csproj" />
 
 		<ProjectReference Include="..\SullyTech.Guard\SullyTech.Guard.csproj" />

@@ -5,7 +5,7 @@ namespace App.Client.Wpf.Windows.Main.UserControls.Infrastructure.Extensions.Dep
 
 internal static class ServiceCollectionExtensions
 {
-    public static void AddMainWindowWindow(this IServiceCollection @this)
+    public static void AddMainWindowWindowUserControl(this IServiceCollection @this)
     {
         @this.AddStandardWindow<MainWindow>();
     }

@@ -14,6 +14,8 @@
 
                 <ResourceDictionary Source="pack://application:,,,/App.Client.Wpf.Windows;component/Main/Infrastructure/Resources/Resources.xaml"/>
 
+                <ResourceDictionary Source="pack://application:,,,/App.Client.Wpf.Modules;component/Identity/Infrastructure/Resources/Resources.xaml"/>
+
                 <!--
                 <ResourceDictionary Source="pack://application:,,,/App.Client.Wpf.Modules.Identity;component/Infrastructure/Resources/IdentityModule.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/App.Client.Wpf.Modules.Chat;component/Infrastructure/Resources/ChatModule.xaml"/>-->

@@ -9,18 +9,25 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Product>App.Client.Wpf.Windows</Product>
+		<Product>App.Client.Wpf.Modules</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Wpf.Controls.Window.Standard.Core\SullyTech.Wpf.Controls.Window.Standard.Core.csproj" />
+		<ProjectReference Include="..\SullyTech.Wpf.Controls.Presenter.Core\SullyTech.Wpf.Controls.Presenter.Core.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Notifications\SullyTech.Wpf.Notifications.csproj" />
 		<ProjectReference Include="..\SullyTech.Wpf.Services\SullyTech.Wpf.Services.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Identity\Presenters\SignIn\UserControls\Infrastructure\Assets\chat-logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Identity\Presenters\SignIn\UserControls\Infrastructure\Assets\chat-logo.png" />
 	</ItemGroup>
 
 </Project>
