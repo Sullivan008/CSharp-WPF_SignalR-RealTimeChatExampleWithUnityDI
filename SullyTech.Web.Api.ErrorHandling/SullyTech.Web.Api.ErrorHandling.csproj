@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SullyTech.Extensions\SullyTech.Extensions.csproj" />
+		<ProjectReference Include="..\SullyTech.Web.Api.Controllers\SullyTech.Web.Api.Controllers.csproj" />
+		<ProjectReference Include="..\SullyTech.Web.Api.ErrorHandling.Core\SullyTech.Web.Api.ErrorHandling.Core.csproj" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Web.Api.ErrorHandling</Product>
+	</PropertyGroup>
+
+</Project>

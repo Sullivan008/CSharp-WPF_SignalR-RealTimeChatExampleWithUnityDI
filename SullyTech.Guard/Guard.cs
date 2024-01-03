@@ -62,4 +62,12 @@ public static class Guard
             throw new ArgumentNotNullException(parameterName, message ?? "The value is not null!");
         }
     }
+
+    public static void ThrowIfNullOrEmpty<T>(IEnumerable<T>? input, [CallerArgumentExpression(nameof(input))] string? parameterName = default, string? message = null)
+    {
+        if (input is null || !input.Any())
+        {
+            throw new ArgumentException(message ?? "The value cannot be null or empty!");
+        }
+    }
 }

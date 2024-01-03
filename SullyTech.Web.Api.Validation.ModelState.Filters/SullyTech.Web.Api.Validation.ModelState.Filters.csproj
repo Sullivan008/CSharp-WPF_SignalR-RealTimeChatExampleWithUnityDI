@@ -12,8 +12,4 @@
 		<Product>SullyTech.Web.Api.Validation.ModelState.Filters</Product>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\SullyTech.Web.Api.ExceptionHandling.Exceptions\SullyTech.Web.Api.ExceptionHandling.Exceptions.csproj" />
-	</ItemGroup>
-
 </Project>
