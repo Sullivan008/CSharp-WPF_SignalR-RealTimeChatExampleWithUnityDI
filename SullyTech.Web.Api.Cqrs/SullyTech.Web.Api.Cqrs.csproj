@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>SullyTech.Web.Api.Cqrs</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="FluentValidation" Version="11.9.0" />
+	  <PackageReference Include="MediatR" Version="12.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SullyTech.Extensions\SullyTech.Extensions.csproj" />
+	  <ProjectReference Include="..\SullyTech.Web.Api.Cqrs.Core\SullyTech.Web.Api.Cqrs.Core.csproj" />
+	</ItemGroup>
+
+</Project>
