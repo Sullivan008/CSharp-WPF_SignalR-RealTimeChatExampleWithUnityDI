@@ -5,7 +5,7 @@ namespace SullyTech.Web.Api.ErrorHandling.Core.Models;
 
 public sealed record ValidationError : Error
 {
-    public static string Title => "One or more validation errors occurred!";
+    public string Title => "One or more validation errors occurred!";
 
     public required ValidationErrorDictionary Errors { get; init; }
 }
