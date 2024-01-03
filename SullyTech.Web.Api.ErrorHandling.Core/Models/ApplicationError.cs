@@ -1,6 +1,8 @@
-﻿namespace SullyTech.Web.Api.ErrorHandling.Core.Models;
+﻿using SullyTech.Web.Api.ErrorHandling.Core.Models.Abstractions;
 
-public sealed record ApplicationError
+namespace SullyTech.Web.Api.ErrorHandling.Core.Models;
+
+public sealed record ApplicationError : Error
 {
     public required string Title { get; init; }
 
