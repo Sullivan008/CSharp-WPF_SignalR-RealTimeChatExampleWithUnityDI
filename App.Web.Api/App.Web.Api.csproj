@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Product>App.Web.Api</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.3.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="NLog.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="NLog.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\App.Web.Api.Controllers\App.Web.Api.Controllers.csproj" />
+	  <ProjectReference Include="..\SullyTech.DateInfo\SullyTech.DateInfo.csproj" />
+	</ItemGroup>
+
+</Project>

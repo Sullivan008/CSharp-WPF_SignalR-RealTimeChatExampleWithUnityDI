@@ -119,7 +119,7 @@ public sealed class StandardWindowService : IStandardWindowService
         where TPresenter : Presenter.Core.UserControls.Presenter.Presenter
         where TPresenterViewModel : PresenterViewModel
     {
-        presenter.DataContext = presenterViewModel;
+        //presenter.DataContext = presenterViewModel;
         windowViewModel.Presenter = presenter;
         window.DataContext = windowViewModel;
     }
@@ -130,7 +130,9 @@ public sealed class StandardWindowService : IStandardWindowService
         where TPresenter : Presenter.Core.UserControls.Presenter.Presenter
         where TPresenterViewModel : PresenterViewModel
     {
-        await presenterViewModel.OnBeforeLoadAsync();
+        await ((PresenterViewModel)presenter.DataContext).OnBeforeLoadAsync();
+
+        //await presenterViewModel.OnBeforeLoadAsync();
         await presenter.OnBeforeLoadAsync();
 
         await windowViewModel.OnBeforeLoadAsync();

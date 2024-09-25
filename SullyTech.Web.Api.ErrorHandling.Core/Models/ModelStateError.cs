@@ -5,7 +5,7 @@ namespace SullyTech.Web.Api.ErrorHandling.Core.Models;
 
 public sealed record ModelStateError : Error
 {
-    public string Title => "An error occurred during model binding or the model stat is invalid!";
+    public string Title => "An error occurred during 'Model Binding' or the 'Model state' is invalid!";
 
     public required ModelStateErrorDictionary Errors { get; init; }
 }

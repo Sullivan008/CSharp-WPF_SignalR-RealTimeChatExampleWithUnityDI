@@ -62,11 +62,11 @@ public sealed class ErrorHandlingMiddleware
 
         if (_webHostEnvironment.IsDevelopment())
         {
-            problemDetails.Extensions.Add("exception", ex.ToString());
             problemDetails.Extensions.Add("headers", httpContext.Request.Headers);
             problemDetails.Extensions.Add("path", httpContext.Request.Path);
             problemDetails.Extensions.Add("endpoint", httpContext.GetEndpoint()?.DisplayName);
             problemDetails.Extensions.Add("routeValues", httpContext.Request.RouteValues);
+            problemDetails.Extensions.Add("exception", ex.ToString());
         }
 
         httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
@@ -84,11 +84,11 @@ public sealed class ErrorHandlingMiddleware
 
         if (_webHostEnvironment.IsDevelopment())
         {
-            problemDetails.Extensions.Add("exception", ex.ToString());
             problemDetails.Extensions.Add("headers", httpContext.Request.Headers);
             problemDetails.Extensions.Add("path", httpContext.Request.Path);
             problemDetails.Extensions.Add("endpoint", httpContext.GetEndpoint()?.DisplayName);
             problemDetails.Extensions.Add("routeValues", httpContext.Request.RouteValues);
+            problemDetails.Extensions.Add("exception", ex.ToString());
         }
 
         httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;

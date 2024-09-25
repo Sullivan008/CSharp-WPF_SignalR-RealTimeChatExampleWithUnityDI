@@ -10,8 +10,9 @@ using SullyTech.Web.Api.ErrorHandling.Core.Models;
 
 namespace SullyTech.Web.Api.Cqrs.Command.PipelineBehaviors;
 
-public sealed class ValidationBehavior<TRequest> : IPipelineBehavior<TRequest, IResult>
+public sealed class ValidationBehavior<TRequest, TResult> : IPipelineBehavior<TRequest, IResult>
     where TRequest : ICommand
+    where TResult : IResult
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 

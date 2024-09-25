@@ -40,4 +40,11 @@ public sealed class SignInPresenterViewModel : ValidatablePresenterViewModel<Sig
     private ICommand? _signInCommand;
     public ICommand SignInCommand =>
         _signInCommand ??= new SignInCommand(this, _navigationService);
+
+    public override async Task OnBeforeLoadAsync()
+    {
+        //NickName = "asa aladár";
+
+        await Task.CompletedTask;
+    }
 }
